@@ -3,9 +3,9 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define m = Character("Min", image="min")
-define j = Character("Jane", image="min")
-define o = Character("October", image="min")
+define m = Character("Min", image="june")
+define j = Character("Jane", image="june")
+define o = Character("October", image="june")
 
 init python:
     config.side_image_tag = "june"
