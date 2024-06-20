@@ -3,33 +3,52 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+define m = Character("Min", image="min")
+define j = Character("Jane", image="min")
+define o = Character("October", image="min")
 
+init python:
+    config.side_image_tag = "june"
 
 # The game starts here.
 
-label start:
+label gamestart:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg bedroom
 
-    scene bg room
+    show jane smile
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "NARRATION"
 
-    show eileen happy
+    # If you want to hide the side image
+    $ config.side_image_tag = "None"
 
-    # These display lines of dialogue.
+    "This is a narration so the side image shouldn't appear."
 
-    e "You've created a new Ren'Py game."
+    # ""
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    #this above one makes a blank thing, good for comedic effect?
 
-    "does this work? -jam"
+    #NEED TO DO THIS EVERY TIME THERES NARRATION W/ NO MIN
+    # To unhide the side image
+    $ config.side_image_tag = "min"
 
-    # This ends the game.
+    m neutral "It's so cold"
+
+    o "Vee speaking rn"
+
+    m "You've created a new Ren'Py game."
+
+    m "Once you add a story, pictures, and music, you can release it to the world!"
+
+    j "Wait what do you mean this is just a tutorial"
+
+    $ config.side_image_tag = "None"
+
+    "It was in fact a tutorial"
+
+    $ config.side_image_tag = "min"
+
+    m "Idk man we're just testing it ig"
 
     return
