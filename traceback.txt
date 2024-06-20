@@ -1,0 +1,28 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "renpy/common/00start.rpy", line 279, in script
+    python:
+ScriptError: could not find label 'start'.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 635, in main
+    run(restart)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 145, in run
+    renpy.execution.run_context(True)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\execution.py", line 955, in run_context
+    context.run()
+  File "renpy/common/00start.rpy", line 279, in script
+    python:
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\script.py", line 1103, in lookup
+    raise ScriptError("could not find label '%s'." % str(original))
+ScriptError: could not find label 'start'.
+
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.2.1.24030407
+DeepSeaDatingSim 1.0
+Wed Jun 19 19:51:56 2024

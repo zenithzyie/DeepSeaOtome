@@ -12,7 +12,7 @@ init python:
 
 # The game starts here.
 
-label gamestart:
+label start:
 
     scene bg bedroom
 
