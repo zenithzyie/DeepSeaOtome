@@ -164,3 +164,9 @@ log.txt
 game/saves/persistent
 game/saves/navigation.json
 game/cache/shaders.txt
+game/saves/persistent
+game/saves/navigation.json
+game/cache/shaders.txt
+game/cache/screens.rpyb
+game/cache/bytecode-39.rpyb
+log.txt
