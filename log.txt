@@ -1,8 +1,8 @@
-2024-06-20 00:51:54 UTC
+2024-06-20 00:52:34 UTC
 Windows-10-10.0.19045
 Ren'Py 8.2.1.24030407
 
-Early init took 0.08s
+Early init took 0.07s
 Loading error handling took 0.03s
 Loading script took 0.15s
 Loading save slot metadata took 0.02s
@@ -22,12 +22,12 @@ nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.20s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.03s
 Build styles took 0.00s
 Load screen analysis took 0.00s
 Analyze screens took 0.01s
 Save screen analysis took 0.02s
-Prepare screens took 0.07s
+Prepare screens took 0.06s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.02s
 Running _start took 0.00s
@@ -43,23 +43,10 @@ Version: b'4.6.0 NVIDIA 537.13'
 Display Info: None
 Screen sizes: virtual=(1280, 720) physical=(1280, 720) drawable=(1280, 720)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 635, in main
-    run(restart)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 145, in run
-    renpy.execution.run_context(True)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\execution.py", line 955, in run_context
-    context.run()
-  File "renpy/common/00start.rpy", line 279, in script
-    python:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\script.py", line 1103, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'start'.
-
-While running game code:
-  File "renpy/common/00start.rpy", line 279, in script
-    python:
-ScriptError: could not find label 'start'.
+Cleaning stores took 0.00s
+Init translation took 0.00s
+Build styles took 0.00s
+Load screen analysis took 0.03s
+Analyze screens took 0.00s
+Prepare screens took 0.00s
+Running _start took 0.00s

@@ -31,7 +31,7 @@ label start:
 
     #NEED TO DO THIS EVERY TIME THERES NARRATION W/ NO MIN
     # To unhide the side image
-    $ config.side_image_tag = "min"
+    $ config.side_image_tag = "june"
 
     m neutral "It's so cold"
 
@@ -47,7 +47,7 @@ label start:
 
     "It was in fact a tutorial"
 
-    $ config.side_image_tag = "min"
+    $ config.side_image_tag = "june"
 
     m "Idk man we're just testing it ig"
 
