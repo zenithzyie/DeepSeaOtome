@@ -2,7 +2,7 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define y = Character("June", image="june")
+define y = Character("[player_name]", image="june")
 define g = Character("Grandpa", image="june")
 define h = Character("Hunter", image="june")
 define s = Character("Skylla", image="june")
@@ -20,10 +20,6 @@ init python:
 # The game starts here.
 
 label start:
-
-    scene bg black
-    #TODO Get player name
-
     # "NARRATION"
 
     # # If you want to hide the side image
@@ -57,7 +53,26 @@ label start:
 
     # m "Idk man we're just testing it ig"
 
-    jump prologue
+    jump get_name
+
+label get_name:
+    scene bg black
+    #GET PLAYER NAME
+    $player_name = renpy.input("What is your name?",length=15)
+    $player_name.strip
+
+    if player_name == "":
+        $ player_name="June"
+        
+    #Name check?
+    menu:
+        "Is [y] correct?"
+        "Yes":
+            jump prologue
+        "No":
+            jump get_name
+
+    
 
 #PROLOGUE
 label prologue:
@@ -68,13 +83,13 @@ label prologue:
     y neutral "It was sunny only moments ago! What is this?"
 
     $ config.side_image_tag = "None"
-    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, June!"
+    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!" #NOTE USE PLAYER NAME
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
 
     #TODO SCREEN SHAKE
-    h "June!" #NOTE USE PLAYER NAME
+    h "[y]!" #NOTE USE PLAYER NAME
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
@@ -193,14 +208,14 @@ label chapter1:
     #NOTE Are we hiding name until he reveals himself? 
     h "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the sea."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
-    h "I knew I saw a familiar face in the crowd. I knew it was you, June Finch~." #NOTE USE PLAYER NAME
+    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~." #NOTE USE PLAYER NAME
     "I turned to see who the hell the man was behind me. How did he know my name? Slapping his hand off mine I glared at his face. He wore a mask on his face, but even so - I did not recognize his voice."
     h "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
     "He scoffed and shook his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed Mask
-    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, June."
+    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]." #NOTE USE PLAYER NAME
     y "I haven't been in this part of Aquantis before, so you must have mistaken me for someone else"
     h "Ha- this isn't your first time here. I don't appreciate being treated like a stranger."
     "Bending down to my level, the stranger looked me right in the eyes."
@@ -302,7 +317,7 @@ label chapter1:
     g "I told you people I don't want any-"
     "The old man stood frozen before me. He looked as though he had seen a ghost."
     y "Grandpa...?"
-    g "Oh bless the stars... you got my letter? You're really here! My dear, sweet June!"
+    g "Oh bless the stars... you got my letter? You're really here! My dear, sweet [y]!" #NOTE USE PLAYER NAME
     "Suddenly I was lunged into his embrace. He may have been older, but boy did he sure still had his strength."
     "I hugged him tight, not nearly as hard as he was, but over all the wave anxious anticipation just had  seemed to vanish for that moment."
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
