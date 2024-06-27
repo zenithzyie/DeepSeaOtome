@@ -63,7 +63,7 @@ label get_name:
 
     if player_name == "":
         $ player_name="June"
-        
+
     #Name check?
     menu:
         "Is [y] correct?"
@@ -72,17 +72,20 @@ label get_name:
         "No":
             jump get_name
 
-    
+
 
 #PROLOGUE
 label prologue:
-    #TODO SCENE ? 
+    #TODO SCENE ?
     scene bg bedroom
 
     $ config.side_image_tag = "june"
     y neutral "It was sunny only moments ago! What is this?"
 
     $ config.side_image_tag = "None"
+
+    show jane smile with dissolve
+
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!" #NOTE USE PLAYER NAME
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
@@ -129,7 +132,7 @@ label chapter1:
     "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city was huge. From where I stood I could see the entire city and the ocean in the distance."
     "It's been years since I last stepped foot here."
     "Homes and shops descended down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
-    
+
     y "Excuse me- sir! Hello?"
 
     "Trying to grab anyone's attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I couldn't remember."
@@ -138,7 +141,7 @@ label chapter1:
 
     "The further I walked down from the top of the city, the more and more the atmosphere seemed to change. I could feel the eyes of  the people I passed by watching me."
     "It looked like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now.. I feel as though I should keep my eyes away from the gaze of others."
-   
+
     $ config.side_image_tag = "None"
     t "Tch, inlanders. What is someone like her out here for?"
     t "Inlander? Oy, you don't see many of them.. And she's got a fancy one of those picture devices, that could land us a nice bit of coin aye?"
@@ -155,28 +158,28 @@ label chapter1:
     #TODO - SPRITE CHANGE (??? Expression)
     "A merchant would be far easier to talk to for directions! I just hope I'm not expected to buy the fish covered in flies."
 
-    #TODO SCENE = CG (Merchant at Fish Stand) 
+    #TODO SCENE = CG (Merchant at Fish Stand)
     #or SCENE CHANGE - Shabby Market
     y "Good day to you sir. I'm sorry for disrupting you, but-"
     t "Bass or Tilapia?"
     y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
     t "Does this look like a map stand? I sell fish, you buy fish, you leave- ye get it?"
     y "I will pay you for the help! I'm just looking for this address."
-   
+
     "Before he could deny me once more, I showed the bottom half of the letter where the address was clearly written. He squints at the paper, adjusting his sight to get a better look at it"
-    
+
     t "....Girlie, do ye know where that is? That address is in the Black Market District. Someone like you doesn't belong there. Hell, even I avoid it. It's not exactly a tourist destination."
-    
+
     "Black Market District..?"
     y "Even so, I have to get there. I'll pay you if you just point me in the right direction."
     "He gave a sigh and pointed forwards to the end of the market square. There was an alleyway that seemed to lead to a wall."
-    t "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four. 
+    t "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four.
         Someone will open the elevator for you to take ya where you need going. That's all I know, and all I'll say."
     "He looked at me and grinned toothily."
     t "Payment?"
     y "Oh, yes. Thank you so much for the help."
     "Leaving him a decent amount of coin, I followed his instructions down towards the alleyway."
-    
+
     #TODO SCENE CHANGE - Brick Wall
     y "Alright...Grandfather you could have at least explained better how to reach you..living in the Black Market District.. It makes sense considering his job."
     "Upon reaching the end, I made a left turn down to see a brick wall. It had an odd discolouration, and I knew this must be the wall the merchant spoke of."
@@ -198,14 +201,14 @@ label chapter1:
     "Until it finally came to a stop, the door opened, and I was greeted with a new world."
 
     #TODO SCENE CHANGE -  Underground Black Market Faire
-    "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at. 
+    "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at.
         Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
-    
+
     y "This is incredible..."
     "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
     y "Mother would love to see this..."
     "My hand reached out for my camera."
-    #NOTE Are we hiding name until he reveals himself? 
+    #NOTE Are we hiding name until he reveals himself?
     h "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the sea."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
     h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~." #NOTE USE PLAYER NAME
@@ -223,7 +226,7 @@ label chapter1:
     "He stared at me for a moment before the realization hit."
     h "Ah, that's right. I still have the mask on."
     "With that, he swiftly removed his mask, and I was faced with someone I hadn't seen in a long time"
-    #NOTE Is there a sprite for this ?? 
+    #NOTE Is there a sprite for this ??
     y "...Hunter?"
     h "That's my name, yes"
     "He looked positively delighted to hear me say his name."
@@ -263,7 +266,7 @@ label chapter1:
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
     "There was a pale but beautiful face in the dark, behind glass."
-    "The further along we walked, the more of her face was revealed. 
+    "The further along we walked, the more of her face was revealed.
         Her body was so human and serene from the top, but her lower half....scales, a tail that flowed in the water and reflected off the dim lights around her."
     "A creature that was equal parts human and fish."
     y "A mermaid?"
@@ -275,33 +278,33 @@ label chapter1:
     "Suddenly, my view of the rest of the stand was unblocked, and I was able to peek through the empty spot in the crowd. It was a fish hawker's stand."
 
     #TODO SCENE = CG (Mermaid cut in half)
-    "Her sign read 'Catch of the day'.  
-        Another mermaid, eerily similar to the face banging on the glass, was laying on a table in front of the tank. 
+    "Her sign read 'Catch of the day'.
+        Another mermaid, eerily similar to the face banging on the glass, was laying on a table in front of the tank.
         Except she was chopped off from the hip below, tail being taken by rabid customers, piece by piece."
-    
+
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
     "I gripped Hunter's hand tighter, and he started to walk faster through the crowd."
     h "I said keep your eyes down, or people might see your face. Believe me, you don't want them remembering who you are."
     "I gave a regretful glance back before turning back away. It was the cruel reality of the world, but there wasn't much I could do about it..."
 
-    menu: 
+    menu:
         "Do you hunt now, too? Like your father?":
-            h "Well.. yeah I do. It's the family business, though your family left it. 
+            h "Well.. yeah I do. It's the family business, though your family left it.
                 Your old man always talked about wanting you to come back to join him..but when he announced his retirement, he sold some of those assets to my father."
         "Have you actually...killed them before?":
             h "Why do you sound so horrified? Fish is fish. If anything they're monsters using human faces. They don't deserve your pity"
-    
+
     "Once we had made it outside the underground and I could see the sky again, the sun was on its way down. It seems like I'd been there for hours. My legs were aching to sit after being lost all day."
 
     #TODO SCENE CHANGE - Port w/ Boats
     "But what surprised me the most was we were actually at the portside now, the edge of the country..practically the edge of the world."
     "Boats were lined up, fishermen and hunters alike lining the dock, carrying supplies to and fro the ships."
     "They were much different than the ones I had remembered as a kid. These were large, made of steel, and produced steam."
-    
+
     y "Does Grandpa live on one of these ships?"
     h "The only one not made of steel, that one over there."
 
-    "Out on the furthest side of the docks was a large wooden ship. It stuck out compared to the rest, with its clothed sails, and ornate details. 
+    "Out on the furthest side of the docks was a large wooden ship. It stuck out compared to the rest, with its clothed sails, and ornate details.
         There was clearly a lot of pride and dedication to the maintenance of it"
     "Was his home always on a boat? It was too fuzzy to remember clearly. I had a faint recollection of a boat, but I thought I would remember more than that upon seeing his home."
 
