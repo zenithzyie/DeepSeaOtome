@@ -86,19 +86,20 @@ label prologue:
 
     show jane smile with dissolve
 
-    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!" #NOTE USE PLAYER NAME
+    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!" 
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
 
     #TODO SCREEN SHAKE
-    h "[y]!" #NOTE USE PLAYER NAME
+    h "[y]!"
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
-    #TODO SFX - SPLASH
+    #SFX - SPLASH
+    play sound "audio/sfx_splash.flac"
 
-    #TODO SCENE CHANGE - (Underwater / Black)
+    #SCENE CHANGE - (Underwater / Black)
     scene bg black
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "I can feel myself fading...is this really the end for me?"
@@ -125,7 +126,7 @@ label chapter1:
     t "Please gather all personal belongings, we are arriving at Aquantis station!"
 
     $ config.side_image_tag = "june"
-    y "Oh, we're already here?"
+    y neutral "Oh, we're already here?"
 
     "Getting up from my seat I gathered my bags from the overhead, taking my camera first."
     "From my car seat window, I let the shutter go off, clicking quickly of the people outside. The screeching of the brakes signalled the train to a stop."
@@ -137,7 +138,7 @@ label chapter1:
 
     "Trying to grab anyone's attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I couldn't remember."
 
-    #TODO SCENE CHANGE - (Shabbier part of Town)
+    #SCENE CHANGE - (Shabbier part of Town)
     scene shabby town
 
     "The further I walked down from the top of the city, the more and more the atmosphere seemed to change. I could feel the eyes of  the people I passed by watching me."
@@ -153,14 +154,14 @@ label chapter1:
     "Slipping away from the men following behind me, I keep my camera close to my hip, hiding it with my coat to draw away any more notice. Was my grandfather truly living in such a hostile area?"
 
     #TODO SCENE CHANGE - (Shabby Market [Zoomed In])
+    scene shabby market
     "The smell grew worse as I suddenly found myself at a market, it was the smell of fish, salt, smoke and sewer. Though despite it, there seemed to be a few more normal townsfolk around."
     "I approached the friendliest-looking stand. A man stood there, hawking his catches."
 
     #TODO - SPRITE CHANGE (??? Expression)
     "A merchant would be far easier to talk to for directions! I just hope I'm not expected to buy the fish covered in flies."
 
-    #TODO SCENE = CG (Merchant at Fish Stand)
-    #or SCENE CHANGE - Shabby Market
+    #SCENE CHANGE - Shabby Market (or CG [Merchant at Fish Stand])
     scene shabby market
     y "Good day to you sir. I'm sorry for disrupting you, but-"
     t "Bass or Tilapia?"
@@ -195,19 +196,21 @@ label chapter1:
     "There was no response, but suddenly the wall was pulled back."
     "With cautionary steps, I pushed inside, seeing no one was there behind the door."
 
-    #TODO SCENE CHANGE - Black Screen
+    #SCENE CHANGE - Black Screen
     scene bg black
     "It closed the moment I entered. It must have been an ancient elevator, rusted and old."
 
-    #TODO SFX -  Elevator
+    #SFX -  Elevator
+    play sound "audio/sfx_elevator.wav"
     "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down? The prospect is terrifying..."
-    #TODO SFX -  Elevator
+    #SFX -  Elevator
+    play sound "audio/sfx_elevator2.wav"
     "Until it finally came to a stop, the door opened, and I was greeted with a new world."
 
     #TODO SCENE CHANGE -  Underground Black Market Faire
     scene bg bedroom
-    "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at.
-        Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
+    "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at."
+    "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
 
     y "This is incredible..."
     "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
@@ -216,14 +219,14 @@ label chapter1:
     #NOTE Are we hiding name until he reveals himself?
     h "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the sea."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
-    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~." #NOTE USE PLAYER NAME
+    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~." 
     "I turned to see who the hell the man was behind me. How did he know my name? Slapping his hand off mine I glared at his face. He wore a mask on his face, but even so - I did not recognize his voice."
     h "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
     "He scoffed and shook his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed Mask
-    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]." #NOTE USE PLAYER NAME
+    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]." 
     y "I haven't been in this part of Aquantis before, so you must have mistaken me for someone else"
     h "Ha- this isn't your first time here. I don't appreciate being treated like a stranger."
     "Bending down to my level, the stranger looked me right in the eyes."
@@ -249,7 +252,7 @@ label chapter1:
     h "Stop gawking at things like you've never been here before...People might think you're a spy or somethin'."
     "He unclipped his cloak and threw it on top of my head. My nose was assaulted with the salty smell of the sea."
 
-    #TODO SCENE CHANGE - Black Screen
+    #SCENE CHANGE - Black Screen
     scene bg black
     #TODO SCREEN SHAKE
 
@@ -264,7 +267,8 @@ label chapter1:
 
     "He took my hand and gave a low hush, leading me through the crowds of masked men and women. I looked down at my feet, hearing the mumbling roar of chatter."
 
-    #TODO SFX - CROWD
+    #SFX - CROWD
+    play sound "audio/sfx_crowd.wav" volume 0.2 loop
 
     "He walks meticulously, carefully weaving through the crowds of people, and I try my best to keep in step with his strides."
     "But then, I saw something tantalizingly curious out of the corner of my eye. Without thinking, I glanced up"
@@ -302,10 +306,11 @@ label chapter1:
         "Have you actually...killed them before?":
             h "Why do you sound so horrified? Fish is fish. If anything they're monsters using human faces. They don't deserve your pity"
 
+    stop sound fadeout 2.0
     "Once we had made it outside the underground and I could see the sky again, the sun was on its way down. It seems like I'd been there for hours. My legs were aching to sit after being lost all day."
 
-    #TODO SCENE CHANGE - Port w/ Boats
-    scene bg bedroom
+    #SCENE CHANGE - Port w/ Boats
+    scene port
     "But what surprised me the most was we were actually at the portside now, the edge of the country..practically the edge of the world."
     "Boats were lined up, fishermen and hunters alike lining the dock, carrying supplies to and fro the ships."
     "They were much different than the ones I had remembered as a kid. These were large, made of steel, and produced steam."
@@ -330,7 +335,7 @@ label chapter1:
     g "I told you people I don't want any-"
     "The old man stood frozen before me. He looked as though he had seen a ghost."
     y "Grandpa...?"
-    g "Oh bless the stars... you got my letter? You're really here! My dear, sweet [y]!" #NOTE USE PLAYER NAME
+    g "Oh bless the stars... you got my letter? You're really here! My dear, sweet [y]!"
     "Suddenly I was lunged into his embrace. He may have been older, but boy did he sure still had his strength."
     "I hugged him tight, not nearly as hard as he was, but over all the wave anxious anticipation just had  seemed to vanish for that moment."
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
