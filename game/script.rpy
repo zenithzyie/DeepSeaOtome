@@ -20,6 +20,7 @@ init python:
 # The game starts here.
 
 label start:
+    
     # "NARRATION"
 
     # # If you want to hide the side image
@@ -91,8 +92,8 @@ label prologue:
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
 
-    #TODO SCREEN SHAKE
-    h "[y]!"
+    #SCREEN SHAKE
+    h "[y]!" with screenShake
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
@@ -254,9 +255,9 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    #TODO SCREEN SHAKE
 
-    y "Gah! Hey- don't just throw this dirty thing on me!"
+    #SCREEN SHAKE
+    y "Gah! Hey- don't just throw this dirty thing on me!" with screenShake
     h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and to avoid seeing things you shouldn't be looking at anyways."
     y " Seeing things I shouldn't be..?"
     "What did he mean by that? Things I shouldn't see...I felt a pressing need to see them - but a far more pressing urge to stay alive"
@@ -353,5 +354,66 @@ label chapter1:
 
     #END FOR NOW
 
-
     return
+
+#Shake(position, duration, maximum distance) 
+init:
+
+    python:
+    
+        import math
+
+        class Shaker(object):
+        
+            anchors = {
+                'top' : 0.0,
+                'center' : 0.5,
+                'bottom' : 1.0,
+                'left' : 0.0,
+                'right' : 1.0,
+                }
+        
+            def __init__(self, start, child, dist):
+                if start is None:
+                    start = child.get_placement()
+                #
+                self.start = [ self.anchors.get(i, i) for i in start ]  # central position
+                self.dist = dist    # maximum distance, in pixels, from the starting point
+                self.child = child
+                
+            def __call__(self, t, sizes):
+                # Float to integer... turns floating point numbers to
+                # integers.                
+                def fti(x, r):
+                    if x is None:
+                        x = 0
+                    if isinstance(x, float):
+                        return int(x * r)
+                    else:
+                        return x
+
+                xpos, ypos, xanchor, yanchor = [ fti(a, b) for a, b in zip(self.start, sizes) ]
+
+                xpos = xpos - xanchor
+                ypos = ypos - yanchor
+                
+                nx = xpos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+                ny = ypos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
+
+                return (int(nx), int(ny), 0, 0)
+        
+        def _Shake(start, time, child=None, dist=100.0, **properties):
+
+            move = Shaker(start, child, dist=dist)
+        
+            return renpy.display.layout.Motion(move,
+                        time,
+                        child,
+                        add_sizes=True,
+                        **properties)
+
+        Shake = renpy.curry(_Shake)
+    #
+    #Screenshake variable, to use in script 
+    $ screenShake = Shake((0, 0, 0, 0), 0.3, dist=20)
+#
