@@ -138,6 +138,7 @@ label chapter1:
     "Trying to grab anyone's attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I couldn't remember."
 
     #TODO SCENE CHANGE - (Shabbier part of Town)
+    scene shabby town
 
     "The further I walked down from the top of the city, the more and more the atmosphere seemed to change. I could feel the eyes of  the people I passed by watching me."
     "It looked like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now.. I feel as though I should keep my eyes away from the gaze of others."
@@ -160,6 +161,7 @@ label chapter1:
 
     #TODO SCENE = CG (Merchant at Fish Stand)
     #or SCENE CHANGE - Shabby Market
+    scene shabby market
     y "Good day to you sir. I'm sorry for disrupting you, but-"
     t "Bass or Tilapia?"
     y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
@@ -181,6 +183,7 @@ label chapter1:
     "Leaving him a decent amount of coin, I followed his instructions down towards the alleyway."
 
     #TODO SCENE CHANGE - Brick Wall
+    scene bg bedroom
     y "Alright...Grandfather you could have at least explained better how to reach you..living in the Black Market District.. It makes sense considering his job."
     "Upon reaching the end, I made a left turn down to see a brick wall. It had an odd discolouration, and I knew this must be the wall the merchant spoke of."
     "Well."
@@ -193,6 +196,7 @@ label chapter1:
     "With cautionary steps, I pushed inside, seeing no one was there behind the door."
 
     #TODO SCENE CHANGE - Black Screen
+    scene bg black
     "It closed the moment I entered. It must have been an ancient elevator, rusted and old."
 
     #TODO SFX -  Elevator
@@ -201,6 +205,7 @@ label chapter1:
     "Until it finally came to a stop, the door opened, and I was greeted with a new world."
 
     #TODO SCENE CHANGE -  Underground Black Market Faire
+    scene bg bedroom
     "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at.
         Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
 
@@ -265,6 +270,7 @@ label chapter1:
     "But then, I saw something tantalizingly curious out of the corner of my eye. Without thinking, I glanced up"
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
+    scene bg bedroom
     "There was a pale but beautiful face in the dark, behind glass."
     "The further along we walked, the more of her face was revealed.
         Her body was so human and serene from the top, but her lower half....scales, a tail that flowed in the water and reflected off the dim lights around her."
@@ -272,12 +278,14 @@ label chapter1:
     y "A mermaid?"
 
     #TODO SCENE = CG (Mermaid in Tank [Full])
+    scene bg bedroom
     "She was so beautiful."
     "Long silver hair that moved in the water just like her tail. She was mouthing something, banging on the glass. But not a word could be heard through it. Her eyes seemed to lock onto mine for a moment."
     "Was she asking for my help?"
     "Suddenly, my view of the rest of the stand was unblocked, and I was able to peek through the empty spot in the crowd. It was a fish hawker's stand."
 
     #TODO SCENE = CG (Mermaid cut in half)
+    scene bg bedroom
     "Her sign read 'Catch of the day'.
         Another mermaid, eerily similar to the face banging on the glass, was laying on a table in front of the tank.
         Except she was chopped off from the hip below, tail being taken by rabid customers, piece by piece."
@@ -297,6 +305,7 @@ label chapter1:
     "Once we had made it outside the underground and I could see the sky again, the sun was on its way down. It seems like I'd been there for hours. My legs were aching to sit after being lost all day."
 
     #TODO SCENE CHANGE - Port w/ Boats
+    scene bg bedroom
     "But what surprised me the most was we were actually at the portside now, the edge of the country..practically the edge of the world."
     "Boats were lined up, fishermen and hunters alike lining the dock, carrying supplies to and fro the ships."
     "They were much different than the ones I had remembered as a kid. These were large, made of steel, and produced steam."
@@ -314,6 +323,7 @@ label chapter1:
     y "Fine."
 
     #TODO SCENE CHANGE - Port w/ Boats (ZOOM)
+    scene port
     "Stepping closer to the ship, my stomach was turning in knots. Ten years apart finally coming to an end. Perhaps my parents estranged us over a misunderstanding. I want to hear his side of it all."
     "Hunter knocks at the Captain's Quarters of the ship."
     "There was some loud grunting and muffled swearing as the door opened."
