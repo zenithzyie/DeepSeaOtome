@@ -11,6 +11,11 @@ define p = Character("Prince Thioran", image="june")
 define j = Character("Jorunn", image="june")
 define t = Character("Townsperson", image="june")
 
+define u = Character("???", image="june")
+define guard = Character("Guard", image="june")
+define uprince = Character("Striking Merman", image="june")
+define ubunny = Character("Thieving Merman", image="june")
+
 define farleft = Position(xpos=0.25)
 define moreleft = Position(xpos=0.35)
 define center = Position(xpos=0.45)
@@ -77,7 +82,7 @@ label prologue:
 
     show grandpa surprised at moreleft with dissolve
 
-    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
+    uprince "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -93,7 +98,9 @@ label prologue:
     #SCENE CHANGE - (Underwater / Black)
     scene bg black
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
-    "I can feel myself fading...is this really the end for me?"
+    "The regret floods my mind, but it's too late."
+    "I can feel myself fading...is this really the end...?"
+
 
     jump chapter1
 
@@ -423,7 +430,7 @@ label chapter1:
 
     "An unimportant thought crosses my mind. I've heard of something like this before."
     "Sailors being sung to by the sea to only be met with death..."
-    y "A siren's song." 
+    y "A siren's song."
     "At the edge of the boat now, my eyes look down below for the cause of my affliction, But the darkness below the waves are  all I can see, and the voice all I could hear."
     "And with all my might I held tightly to the slippery ledge that parted me from the water, and yet my body went against my will to stay put."
     "I sit atop the ledge."
@@ -508,7 +515,7 @@ label chapter1:
     scene bg sea
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
-    t "Sharks ahead! Get the prince out of here!" 
+    t "Sharks ahead! Get the prince out of here!"
     t "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
     j "Sharks? Ah, we are in the witch's country, aren't we?"
     j "I'll be taking these home then! Goodbye!"
@@ -567,7 +574,7 @@ label ch1_followprince:
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
-    p "Stay still for a moment." 
+    p "Stay still for a moment."
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
     "Almost instantly, I could feel my energy return. I suppose being so small, even a little bit of blood loss could make you quite weak."
@@ -634,7 +641,7 @@ label ch1_followprince:
     c "Well, this certainly is something, isn't it?"
 
     #END OF DEMO!!!!!!!
-    
+
     return
 
 #Shake(position, duration, maximum distance)
