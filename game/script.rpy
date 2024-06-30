@@ -110,7 +110,7 @@ label chapter1:
     scene bg shabby town
 
     $ config.side_image_tag = "june"
-    "Salty air…I remember how I would try to stick out my tongue to taste it."
+    "Salty air...I remember how I would try to stick out my tongue to taste it."
 
     "I was a child the last time I did something as silly as that."
     "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
@@ -474,9 +474,11 @@ label chapter1:
     scene bg black
 
     s "Hmm, hmm, hmm."
-    s "After all these years, this is where it's been, encased in a protective spell? I can't just rip it out either.."
-    s "...This is going to take time. Alas, keeping her alive for now is my only choice."
-    s "Why did he ever offer something like this to a human..?"
+    s "After all these years, this is where it's been, encased in a protective spell?"
+    s "I can't just rip it out either..."
+    s "...This is going to take time."
+    s "Alas, keeping her alive for now is my only choice."
+    s "Why did he ever offer something like this to a human?"
     #SCENE CHANGE - underwater cave (skylla's)
     scene bg underwater cave
     $ config.side_image_tag = "june"
@@ -495,7 +497,8 @@ label chapter1:
     "I try to swim at her, but an invisible wall stops me before I can get close enough to smack her."
     "Near-invisible, I should say. The walls are shining."
     "A bubble?"
-    s "None of that swimming off! Stay put here, dearie, and be good, yes? You'll give me what I want in time."
+    s "None of that swimming off! Stay put here, dearie, and be good, yes?"
+    s "You'll give me what I want in time."
     s "Now, where did I put that pestle?"
     "The voice swims away, and I'm left alone to contemplate my new fate."
     "Pushing my hands, well- fins against the bubble I can hardly push through!"
@@ -506,26 +509,29 @@ label chapter1:
     s "Extraction of a pearl...extraction..."
     "She comes back over to me, her sharp eyes are stunningly beautiful."
     "Yet I can't help but feel fear as she grabs the bubble, bringing me closer to her face, examining me with a ravenous intent."
-    s "Do you even know what it is that you possess? Do you humans still practice magic on land?"
+    s "Do you humans still practice magic on land?"
+    s "Do you even know what it is that you possess?"
     $ config.side_image_tag = "june"
     y "Bl-Blub?"
     $ config.side_image_tag = "None"
-    s "No, you seem ignorant. Yet I know it's inside you. I can see it radiating off you, faintly hidden, but it's there."
+    s "No, you seem ignorant. Yet I know it's inside you. I can see it radiating off you."
+    s "Faint and hidden, but it's there."
     "What do I possess? What could I even have? And magic practice? I'm not in a fairytale, am I!?"
     s "How did you convince him to give it to you? Bribery?"
     $ config.side_image_tag = "june"
     y "Blub?"
     $ config.side_image_tag = "None"
-    "What was she even talking about? I didn't steal anything. Surely this is a mistake."
+    "Surely this is a mistake of some sort."
     s "Let's just get started. We have a lot of trial and error to go through."
     "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
     "My heart was rushing in my tiny body. She could pop me in an instant as well."
     "She drew closer to whatever she was preparing to test on me in the back of the cave before she suddenly paused, listening closely to something as her ears twitched."
-    up "The further out you swim, the more guilty that you are! Those fish belong to the Vanguard. Return them now, and I will not arrest you."
+    up "The further out you swim, the more guilty that you are! Those fish belong to the vanguard."
+    up "Return them now, and I will not arrest you."
     s "That voice...he's not supposed to be here."
     "She squeezes me painfully in frustration."
     uj "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
-    uj "Perhaps you should ask your vanguard how they got these fish in the first place? It wasn't very kind or knightly."
+    uj "Perhaps you should ask your guards how they got these fish in the first place? It wasn't very kind or knightly."
     up "Are you suggesting we stole from {i}you{/i}?"
     up "If my men have done harm to your village and stole from you. I will personally take accountability and return those fish and then some to your village."
     up "However, the fact of the matter is that you stole from the royal guard!"
@@ -613,11 +619,11 @@ label ch1_followprince:
     up "You speak strangely, but it's not as strange as to why you are here. You're either extremely resilient, or a spy of that Sea Witch."
     y "I'm not a spy! I'm just a resilient type, as you say!"
     "I sincerely hope he believes me, as it's true."
-    up "...Yeah, for now let's just say that. Well, I helped you, so please return to your reefs now safely."
+    up "...let's just say that for now. Your wounds have been taken care of, so please, return to your reefs...safely."
     guard "Prince Thioran!! Are you injured?"
     p "Of course not."
     "His vanguard found us, relieved to see their charge unhurt."
-    "However, one of the guards pointed their weapon at me."
+    "However, the guards pointed their weapons at me."
     guard "Isn't it strange for that kind of fish to be at this depth of the ocean?"
     guard "Couldn't this one be a spy?"
     "No, surely they wouldn't just kill me for being strange!!"
@@ -664,13 +670,23 @@ label ch1_followprince:
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus."
+    "The prince does not seem to notice..."
     "My will is no longer mine, and I am no more than a mere fish lost in the sea."
     "It's just like how I felt when the siren dragged me under."
     "Suddenly, a burst of light breaks free from my body, and I feel my fins begin to change."
 
-    #SHE TRANSFORMS WOOOO MERMAID JUNE MORE HERE IDK
-    p "Wtf?"
-    c "Well, this certainly is something, isn't it?"
+    scene bg black with dissolve
+
+    "..........."
+
+    show fishjune with dissolve
+
+    "You've reached the end of the demo for Heart's Depth!"
+    "Thank you so much for playing! Follow our game page for updates when they come."
+    "We sincerely look forward to releasing the rest of the story."
+    "Take care! And stay fishy!"
+
+    hide fishjune with dissolve
 
     #END OF DEMO!!!!!!!
 

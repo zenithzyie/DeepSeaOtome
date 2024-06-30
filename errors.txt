@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 513: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        s "Do you even know what it is that you possess?
+
+Ren'Py Version: Ren'Py 8.2.1.24030407
+Sun Jun 30 18:27:36 2024
