@@ -444,14 +444,16 @@ label chapter1:
     s "Why did he ever offer something like this to a human..?"
     #SCENE CHANGE - underwater cave (skylla's)
     scene bg underwater cave
+    $ config.side_image_tag = "june"
     "..."
     "...Where am I?"
     s "Ah, you've awoken, little human. Or shall I say fish?"
-    y "Blub!"
+    y neutral "Blub!"
     "....Huh."
     y "Blub blub blub!"
     "The strange voice laughs at me, and I recognize it."
     y "BLUB BLUB BLUB!!!"
+    $ config.side_image_tag = "None"
     s "That's no way to speak as a lady!"
     "Try as I might, none of my words come out right."
     "I've been turned into a fish by the siren!?"
@@ -470,11 +472,15 @@ label chapter1:
     "She comes back over to me, her sharp eyes are stunningly beautiful."
     "Yet I can't help but feel fear as she grabs the bubble, bringing me closer to her face, examining me with a ravenous intent."
     s "Do you even know what it is that you possess? Do you humans still practice magic on land?"
+    $ config.side_image_tag = "june"
     y "Bl-Blub?"
+    $ config.side_image_tag = "None"
     s "No, you seem ignorant. Yet I know it's inside you. I can see it radiating off you, faintly hidden, but it's there."
     "What do I possess? What could I even have? And magic practice? I'm not in a fairytale, am I!?"
     s "How did you convince him to give it to you? Bribery?"
+    $ config.side_image_tag = "june"
     y "Blub?"
+    $ config.side_image_tag = "None"
     "What was she even talking about? I didn't steal anything. Surely this is a mistake."
     s "Let's just get started. We have a lot of trial and error to go through."
     "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
@@ -500,7 +506,6 @@ label chapter1:
 
     #SCENE CHANGE - sea wilderness
     scene bg sea
-
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
     t "Sharks ahead! Get the prince out of here!" 
@@ -519,20 +524,29 @@ label chapter1:
 
     #Follow Striking Prince
     #Follow Relatable Boy (can't choose this yet, lol)
-    #menu:
-    #    "Follow Striking Prince":
+    menu:
+        "Follow Striking Prince":
+            jump ch1_followprince
 
+
+label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
     "Perhaps the prince would be kind to someone in need? I hope I'm not a species of fish they fight over for eating."
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
-    y "BLUBBB!!!!"
+    $ config.side_image_tag = "june"
+    y neutral "BLUBBB!!!!"
     "With all the might I could muster I push my way through the current, leaving a trail of bubbles behind me."
     "It felt like riding  a bike downhill, without any brakes to stop me. I couldn't stop before crashing into the back of the striking merman's head."
     #SCREEN SHAKE
+    $ config.side_image_tag = "None"
+    show prince 4 at center with dissolve
     p "!!!" with screenShake
     p "Who dares-"
+    $ config.side_image_tag = "june"
     y "Please help me!!"
+    $ config.side_image_tag = "None"
+    show prince 5
     p "...?"
     t "The fish drew their attention!"
     "The sharks hurl toward us in a frenzy, chomping at the water and whatever moves in front of it."
@@ -540,13 +554,16 @@ label chapter1:
     "I know I've scraped something swimming out of the cave. It's a minor itch, but I can feel the blood seeping from my body as I propel through the water."
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seemed to realize this, at least."
+    show prince 4
     p "You- lead it that way!"
     "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
     "My worry is unwarranted."
     "He must have quickly brandished a weapon with great speed between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
     "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
     "Surely this is more tantalizing than my pitiful injury."
+    show prince 5
     p "Let us away, before the others come."
+    $ config.side_image_tag = "june"
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
@@ -617,7 +634,7 @@ label chapter1:
     c "Well, this certainly is something, isn't it?"
 
     #END OF DEMO!!!!!!!
-
+    
     return
 
 #Shake(position, duration, maximum distance)
