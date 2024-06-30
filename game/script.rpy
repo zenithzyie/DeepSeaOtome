@@ -102,7 +102,7 @@ label prologue:
 #CHAPTER 1
 label chapter1:
     #TODO SCENE = CG (Train)
-    scene bg bedroom
+    scene shabby town
 
     $ config.side_image_tag = "june"
     "Salty air...I remember how I would try to stick out my tongue to taste it."
