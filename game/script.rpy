@@ -110,15 +110,14 @@ label chapter1:
     scene bg shabby town
 
     $ config.side_image_tag = "june"
-    "Salty air...I remember how I would try to stick out my tongue to taste it."
-    "I was a child the last time I did something as silly as that."
-    "Life was so carefree back then..."
-    "I can't wait to see it again, but when I think about the ocean, I can't help feeling like I had broken a promise to it."
-    "It has been 10 years since I've  last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
+    "Salty air…I remember how I would try to stick out my tongue to taste it."
 
-    "I only ever got to see my grandfather on special holidays in the summer."
-    "I can't really remember why my mother stopped letting me see him. She said she had lost trust in him after some incident I had gone through as a child. Even now, she refuses to say what happened."
-    "I would ask him, but I would rather just enjoy our time together in peace."
+    "I was a child the last time I did something as silly as that."
+    "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
+    "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
+    "I only ever got to see my grandfather on special holidays in the summer., but now I'm returning to Aquantis again just to see him."
+    "I can’t really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
+    "Even though I am now grown, she refuses to say what happened."
 
     $ config.side_image_tag = "None"
     t "Please gather all personal belongings, we are arriving at Aquantis station!"
@@ -126,21 +125,23 @@ label chapter1:
     $ config.side_image_tag = "june"
     y neutral "Oh, we're already here?"
 
-    "Getting up from my seat I gathered my bags from the overhead, taking my camera first."
-    "From my car seat window, I let the shutter go off, clicking quickly of the people outside. The screeching of the brakes signalled the train to a stop."
-    "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city was huge. From where I stood I could see the entire city and the ocean in the distance."
+    "The screeching of the brakes signal the train to a stop."
+    "From my car seat window, I let the shutter of my camera go off, taking a picture of the people outside."
     "It's been years since I last stepped foot here."
+    "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
     "Homes and shops descended down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
-
-    y "Excuse me- sir! Hello?"
-
-    "Trying to grab anyone's attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I couldn't remember."
+    Y "Excuse me- sir! Hello?"
+    "He ignores me, walking quickly away from the station."
+    "I try to ask few more people, but not one wants  to give me the time of day."
+    "Trying to grab anyone’s attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
     scene bg shabby town
 
-    "The further I walked down from the top of the city, the more and more the atmosphere seemed to change. I could feel the eyes of  the people I passed by watching me."
-    "It looked like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now.. I feel as though I should keep my eyes away from the gaze of others."
+    "The further I walk down from the top of the city, the more and more the atmosphere seems to change."
+    "Rather than being ignored, it seems I'm attracting an uncomfortable attention."
+    "I can feel the eyes of  the people I pass by watching me.”
+    “It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, I feel as though I should keep my eyes to myself."
 
     $ config.side_image_tag = "None"
     t "Tch, inlanders. What is someone like her out here for?"
@@ -148,56 +149,60 @@ label chapter1:
 
     #TODO - SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
-    "Were they referring to my camera? They were hardly being secretive about wanting to rob me!"
-    "Slipping away from the men following behind me, I keep my camera close to my hip, hiding it with my coat to draw away any more notice. Was my grandfather truly living in such a hostile area?"
+    "Are they referring to my camera? They're hardly being secretive about wanting to rob me!"
+    "I quietly slip away from the men watching me, heading further down the road."
+    "I keep my camera close to my hip, hiding it with my coat to draw away any more notice."
 
     #SCENE CHANGE - (Shabby Market [Zoomed In])
     scene bg shabby market
-    "The smell grew worse as I suddenly found myself at a market, it was the smell of fish, salt, smoke and sewer. Though despite it, there seemed to be a few more normal townsfolk around."
-    "I approached the friendliest-looking stand. A man stood there, hawking his catches."
+    "The smell grows worse as I suddenly find myself at a market."
+    "The smell of fish, salt, smoke and sewer is strong here. Though despite it, there seemed to be a few friendlier townsfolk around."
+    "I approach the friendliest of the bunch. A man mans his fish stand, hawking his catches."
 
     #TODO - SPRITE CHANGE (??? Expression)
-    "A merchant would be far easier to talk to for directions! I just hope I'm not expected to buy the fish covered in flies."
+    "I just hope I'm not expected to buy the fish covered in flies."
 
     #SCENE CHANGE - Shabby Market (or CG [Merchant at Fish Stand])
     scene bg shabby market
     y "Good day to you sir. I'm sorry for disrupting you, but-"
     t "Bass or Tilapia?"
     y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
-    t "Does this look like a map stand? I sell fish, you buy fish, you leave- ye get it?"
+    t "Does I look like a map stand? I sell fish, ye buy fish, ye leave- ye get it?"
     y "I will pay you for the help! I'm just looking for this address."
 
     "Before he could deny me once more, I showed the bottom half of the letter where the address was clearly written. He squints at the paper, adjusting his sight to get a better look at it"
 
-    t "....Girlie, do ye know where that is? That address is in the Black Market District. Someone like you doesn't belong there. Hell, even I avoid it. It's not exactly a tourist destination."
+    t "...Girlie, do ye know where that is? That's in the Black Market District. Someone like you don't belong there. Hell, even I avoid it."
 
     "Black Market District..?"
     y "Even so, I have to get there. I'll pay you if you just point me in the right direction."
-    "He gave a sigh and pointed forwards to the end of the market square. There was an alleyway that seemed to lead to a wall."
-    t "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four.
-        Someone will open the elevator for you to take ya where you need going. That's all I know, and all I'll say."
-    "He looked at me and grinned toothily."
+    "He gave a sigh and pointed forwards to the end of the market square."
+    "Truly, the only way to get through to these people is money."
+    T "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four."
+    t "That'll open the elevator for ya to take ya where you need goin'."
+    t "That's all I know, and all I'll say."
+    "He looks at me and grins toothily."
     t "Payment?"
     y "Oh, yes. Thank you so much for the help."
-    "Leaving him a decent amount of coin, I followed his instructions down towards the alleyway."
+    "I leave him a fair amount of coin and follow his instructions to the alleyway."
 
     #SCENE CHANGE - Brick Wall
     scene bg brickwall
-    y "Alright...Grandfather you could have at least explained better how to reach you..living in the Black Market District.. It makes sense considering his job."
-    "Upon reaching the end, I made a left turn down to see a brick wall. It had an odd discolouration, and I knew this must be the wall the merchant spoke of."
+    "Upon reaching the end, I make a left turn down to see a brick wall. It has an odd discolouration unlike the rest."
+    "This must be the wall the merchant spoke of. "
     "Well."
     "I stared at the wall for a few moments. It was certainly not something I had planned to do on this trip."
     "I suppose I'll just have to give it a go."
-    "..3..4..5..."
-    "..1..2..3..."
-    "..2..3..4..."
-    "There was no response, but suddenly the wall was pulled back."
+    "..3..4..5…"
+    "..1..2..3…"
+    "..2..3..4.."
+    "There is no response, but..."
+    "Suddenly, the wall was pulled back."
     "With cautionary steps, I pushed inside, seeing no one was there behind the door."
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    "It closed the moment I entered. It must have been an ancient elevator, rusted and old."
-
+    "It closes the moment I enter. It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav"
     "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down? The prospect is terrifying..."
