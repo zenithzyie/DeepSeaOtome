@@ -170,3 +170,5 @@ game/cache/shaders.txt
 game/cache/screens.rpyb
 game/cache/bytecode-39.rpyb
 log.txt
+traceback.txt
+log.txt

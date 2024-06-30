@@ -3,12 +3,20 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define y = Character("[player_name]", image="june")
-define g = Character("Grandpa", image="june")
+define g = Character("Grandfather", image="june")
 define h = Character("Hunter", image="june")
 define s = Character("Skylla", image="june")
 define c = Character("Cetus", image="june")
 define p = Character("Prince Thioran", image="june")
+define j = Character("Jorunn", image="june")
 define t = Character("Townsperson", image="june")
+
+define farleft = Position(xpos=0.25)
+define moreleft = Position(xpos=0.35)
+define center = Position(xpos=0.45)
+define moreright = Position(xpos=0.60)
+define farright = Position(xpos=0.70)
+define prettyfarright = Position(xpos=0.85)
 
 # define m = Character("Min", image="june")
 # define j = Character("Jane", image="june")
@@ -20,7 +28,7 @@ init python:
 # The game starts here.
 
 label start:
-    
+
     # "NARRATION"
 
     # # If you want to hide the side image
@@ -37,22 +45,6 @@ label start:
     # $ config.side_image_tag = "june"
 
     # m neutral "It's so cold"
-
-    # o "Vee speaking rn"
-
-    # m "You've created a new Ren'Py game."
-
-    # m "Once you add a story, pictures, and music, you can release it to the world!"
-
-    # j "Wait what do you mean this is just a tutorial"
-
-    # $ config.side_image_tag = "None"
-
-    # "It was in fact a tutorial"
-
-    # $ config.side_image_tag = "june"
-
-    # m "Idk man we're just testing it ig"
 
     jump get_name
 
@@ -78,16 +70,16 @@ label get_name:
 #PROLOGUE
 label prologue:
     #TODO SCENE ?
-    scene bg bedroom
+    scene sea bg
 
     $ config.side_image_tag = "june"
     y neutral "It was sunny only moments ago! What is this?"
 
     $ config.side_image_tag = "None"
 
-    show jane smile with dissolve
+    show prince 1 at center with dissolve
 
-    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!" 
+    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -220,14 +212,14 @@ label chapter1:
     #NOTE Are we hiding name until he reveals himself?
     h "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the sea."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
-    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~." 
+    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
     "I turned to see who the hell the man was behind me. How did he know my name? Slapping his hand off mine I glared at his face. He wore a mask on his face, but even so - I did not recognize his voice."
     h "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
     "He scoffed and shook his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed Mask
-    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]." 
+    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]."
     y "I haven't been in this part of Aquantis before, so you must have mistaken me for someone else"
     h "Ha- this isn't your first time here. I don't appreciate being treated like a stranger."
     "Bending down to my level, the stranger looked me right in the eyes."
@@ -356,15 +348,15 @@ label chapter1:
 
     return
 
-#Shake(position, duration, maximum distance) 
+#Shake(position, duration, maximum distance)
 init:
 
     python:
-    
+
         import math
 
         class Shaker(object):
-        
+
             anchors = {
                 'top' : 0.0,
                 'center' : 0.5,
@@ -372,7 +364,7 @@ init:
                 'left' : 0.0,
                 'right' : 1.0,
                 }
-        
+
             def __init__(self, start, child, dist):
                 if start is None:
                     start = child.get_placement()
@@ -380,10 +372,10 @@ init:
                 self.start = [ self.anchors.get(i, i) for i in start ]  # central position
                 self.dist = dist    # maximum distance, in pixels, from the starting point
                 self.child = child
-                
+
             def __call__(self, t, sizes):
                 # Float to integer... turns floating point numbers to
-                # integers.                
+                # integers.
                 def fti(x, r):
                     if x is None:
                         x = 0
@@ -396,16 +388,16 @@ init:
 
                 xpos = xpos - xanchor
                 ypos = ypos - yanchor
-                
+
                 nx = xpos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
                 ny = ypos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
 
                 return (int(nx), int(ny), 0, 0)
-        
+
         def _Shake(start, time, child=None, dist=100.0, **properties):
 
             move = Shaker(start, child, dist=dist)
-        
+
             return renpy.display.layout.Motion(move,
                         time,
                         child,
@@ -414,6 +406,6 @@ init:
 
         Shake = renpy.curry(_Shake)
     #
-    #Screenshake variable, to use in script 
+    #Screenshake variable, to use in script
     $ screenShake = Shake((0, 0, 0, 0), 0.3, dist=20)
 #
