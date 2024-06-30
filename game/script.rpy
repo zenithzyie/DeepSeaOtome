@@ -18,10 +18,6 @@ define moreright = Position(xpos=0.60)
 define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
 
-# define m = Character("Min", image="june")
-# define j = Character("Jane", image="june")
-# define o = Character("October", image="june")
-
 init python:
     config.side_image_tag = "june"
 
@@ -77,7 +73,9 @@ label prologue:
 
     $ config.side_image_tag = "None"
 
-    show prince 1 at center with dissolve
+    show prince 1 at moreright with dissolve
+
+    show grandpa surprised at moreleft with dissolve
 
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
