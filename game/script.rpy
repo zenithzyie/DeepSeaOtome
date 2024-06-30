@@ -144,7 +144,7 @@ label chapter1:
     "Were they referring to my camera? They were hardly being secretive about wanting to rob me!"
     "Slipping away from the men following behind me, I keep my camera close to my hip, hiding it with my coat to draw away any more notice. Was my grandfather truly living in such a hostile area?"
 
-    #TODO SCENE CHANGE - (Shabby Market [Zoomed In])
+    #SCENE CHANGE - (Shabby Market [Zoomed In])
     scene shabby market
     "The smell grew worse as I suddenly found myself at a market, it was the smell of fish, salt, smoke and sewer. Though despite it, there seemed to be a few more normal townsfolk around."
     "I approached the friendliest-looking stand. A man stood there, hawking his catches."
@@ -174,8 +174,8 @@ label chapter1:
     y "Oh, yes. Thank you so much for the help."
     "Leaving him a decent amount of coin, I followed his instructions down towards the alleyway."
 
-    #TODO SCENE CHANGE - Brick Wall
-    scene bg bedroom
+    #SCENE CHANGE - Brick Wall
+    scene bg brickwall
     y "Alright...Grandfather you could have at least explained better how to reach you..living in the Black Market District.. It makes sense considering his job."
     "Upon reaching the end, I made a left turn down to see a brick wall. It had an odd discolouration, and I knew this must be the wall the merchant spoke of."
     "Well."
@@ -198,8 +198,8 @@ label chapter1:
     play sound "audio/sfx_elevator2.wav"
     "Until it finally came to a stop, the door opened, and I was greeted with a new world."
 
-    #TODO SCENE CHANGE -  Underground Black Market Faire
-    scene bg bedroom
+    #SCENE CHANGE -  Underground Black Market Faire
+    scene underground market
     "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
 
@@ -253,8 +253,8 @@ label chapter1:
     "What did he mean by that? Things I shouldn't see...I felt a pressing need to see them - but a far more pressing urge to stay alive"
     "I did as he asked, even if the cloak was starting to chafe on my shoulders and crush my hat."
 
-    #TODO SCENE CHANGE - Black Market
-    scene bg bedroom
+    #SCENE CHANGE - Black Market
+    scene underground market
 
     "He took my hand and gave a low hush, leading me through the crowds of masked men and women. I looked down at my feet, hearing the mumbling roar of chatter."
 
@@ -265,7 +265,7 @@ label chapter1:
     "But then, I saw something tantalizingly curious out of the corner of my eye. Without thinking, I glanced up"
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
-    scene bg bedroom
+    scene underground market
     "There was a pale but beautiful face in the dark, behind glass."
     "The further along we walked, the more of her face was revealed.
         Her body was so human and serene from the top, but her lower half....scales, a tail that flowed in the water and reflected off the dim lights around her."
@@ -273,14 +273,14 @@ label chapter1:
     y "A mermaid?"
 
     #TODO SCENE = CG (Mermaid in Tank [Full])
-    scene bg bedroom
+    scene underground market
     "She was so beautiful."
     "Long silver hair that moved in the water just like her tail. She was mouthing something, banging on the glass. But not a word could be heard through it. Her eyes seemed to lock onto mine for a moment."
     "Was she asking for my help?"
     "Suddenly, my view of the rest of the stand was unblocked, and I was able to peek through the empty spot in the crowd. It was a fish hawker's stand."
 
     #TODO SCENE = CG (Mermaid cut in half)
-    scene bg bedroom
+    scene underground market
     "Her sign read 'Catch of the day'.
         Another mermaid, eerily similar to the face banging on the glass, was laying on a table in front of the tank.
         Except she was chopped off from the hip below, tail being taken by rabid customers, piece by piece."
@@ -323,9 +323,12 @@ label chapter1:
     "Stepping closer to the ship, my stomach was turning in knots. Ten years apart finally coming to an end. Perhaps my parents estranged us over a misunderstanding. I want to hear his side of it all."
     "Hunter knocks at the Captain's Quarters of the ship."
     "There was some loud grunting and muffled swearing as the door opened."
+    show grandpa neutral at center with dissolve
     g "I told you people I don't want any-"
+    show grandpa surprised
     "The old man stood frozen before me. He looked as though he had seen a ghost."
     y "Grandpa...?"
+    show grandpa happy
     g "Oh bless the stars... you got my letter? You're really here! My dear, sweet [y]!"
     "Suddenly I was lunged into his embrace. He may have been older, but boy did he sure still had his strength."
     "I hugged him tight, not nearly as hard as he was, but over all the wave anxious anticipation just had  seemed to vanish for that moment."
@@ -334,6 +337,7 @@ label chapter1:
     "Grandpa practically grabbed the two of us both into a hug."
     "Once he had squeezed the daylight out of us, he let go."
     g "It's been years!! Oh just how many years have I've seen the both of ye's together.. How many years have it been since I've seen you. How's your mother? She never replies when I write to her.."
+    show grandpa neutral
     g "Nor has she ever let you reply to the letters I've sent you over the years."
     "My heart sank."
     y "Mother has been well, as well as Father. But, well.."
