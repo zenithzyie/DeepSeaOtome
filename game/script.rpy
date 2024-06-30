@@ -82,7 +82,7 @@ label prologue:
 
     show grandpa surprised at moreleft with dissolve
 
-    uprince "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
+    up "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -232,13 +232,13 @@ label chapter1:
     "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
-    h "You don’t remember your old playmate? I'm hurt! After all these years, I didn’t once forget about you, [y]."
+    u "You don’t remember your old playmate? I'm hurt! After all these years, I didn’t once forget about you, [y]."
     y "I haven’t been in this part of Aquantis before. You must have me mistaken for someone else."
-    h "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I suppose it's been awhile."
+    u "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I suppose it's been awhile."
     "Bending down to my level, the stranger looks me right in the eyes."
-    h "Jogging anything in that noggin’? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
+    u "Jogging anything in that noggin’? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
     "He stares at me for a moment before the realization hits."
-    h "Ah, that's right. Perhaps the name will help."
+    u "Ah, that's right. Perhaps the name will help."
     h "Hunter Aubrey Morrowe."
     y "...Hunter?"
     h "That's my name, yes."
@@ -597,7 +597,7 @@ label ch1_followprince:
     "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
     "Surely this is more tantalizing than my pitiful injury."
     show prince 5
-    p "Let us away, before the others come."
+    up "Let us away, before the others come."
     $ config.side_image_tag = "june"
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
