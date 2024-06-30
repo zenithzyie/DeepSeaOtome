@@ -13,8 +13,8 @@ define t = Character("Townsperson", image="june")
 
 define u = Character("???", image="june")
 define guard = Character("Guard", image="june")
-define uprince = Character("Striking Merman", image="june")
-define ubunny = Character("Thieving Merman", image="june")
+define up = Character("Striking Prince", image="june")
+define uj = Character("Thieving Merman", image="june")
 
 define farleft = Position(xpos=0.25)
 define moreleft = Position(xpos=0.35)
@@ -130,7 +130,7 @@ label chapter1:
     "It's been years since I last stepped foot here."
     "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
     "Homes and shops descended down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
-    Y "Excuse me- sir! Hello?"
+    y "Excuse me- sir! Hello?"
     "He ignores me, walking quickly away from the station."
     "I try to ask few more people, but not one wants  to give me the time of day."
     "Trying to grab anyone’s attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I can't remember."
@@ -521,14 +521,14 @@ label chapter1:
     "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
     "My heart was rushing in my tiny body. She could pop me in an instant as well."
     "She drew closer to whatever she was preparing to test on me in the back of the cave before she suddenly paused, listening closely to something as her ears twitched."
-    p "The further out you swim, the more guilty that you are! Those fish belong to the Vanguard. Return them now, and I will not arrest you."
+    up "The further out you swim, the more guilty that you are! Those fish belong to the Vanguard. Return them now, and I will not arrest you."
     s "That voice...he's not supposed to be here."
     "She squeezes me painfully in frustration."
-    j "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
-    j "Perhaps you should ask your vanguard how they got these fish in the first place? It wasn't very kind or knightly."
-    p "Are you suggesting we stole from {i}you{/i}?"
-    p "If my men have done harm to your village and stole from you. I will personally take accountability and return those fish and then some to your village."
-    p "However, the fact of the matter is that you stole from the royal guard!"
+    uj "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
+    uj "Perhaps you should ask your vanguard how they got these fish in the first place? It wasn't very kind or knightly."
+    up "Are you suggesting we stole from {i}you{/i}?"
+    up "If my men have done harm to your village and stole from you. I will personally take accountability and return those fish and then some to your village."
+    up "However, the fact of the matter is that you stole from the royal guard!"
     s "I need to chase them away...ah, how about this..."
     s "Heheheh~."
     "She waves out to the voices, whispering in a tongue I can't understand."
@@ -543,11 +543,11 @@ label chapter1:
     scene bg sea
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
-    t "Sharks ahead! Get the prince out of here!"
-    t "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
-    j "Sharks? Ah, we are in the witch's country, aren't we?"
-    j "I'll be taking these home then! Goodbye!"
-    p "You damned, fish-grubbing parasite! Grah, fine!"
+    guard "Sharks ahead! Get the prince out of here!"
+    guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
+    uj "Sharks? Ah, we are in the witch's country, aren't we?"
+    uj "I'll be taking these home then! Goodbye!"
+    up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
     "Hiding between the broken shells of sea hunterships, I could see the sharks patrolling. Did the siren summon them?"
@@ -576,21 +576,21 @@ label ch1_followprince:
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     show prince 4 at center with dissolve
-    p "!!!" with screenShake
-    p "Who dares-"
+    up "!!!" with screenShake
+    up "Who dares-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
     $ config.side_image_tag = "None"
     show prince 5
-    p "...?"
-    t "The fish drew their attention!"
+    up "...?"
+    guard "The fish drew their attention!"
     "The sharks hurl toward us in a frenzy, chomping at the water and whatever moves in front of it."
     "I swim as quickly as I can past the striking merman, hoping the sharks have caught my scent."
     "I know I've scraped something swimming out of the cave. It's a minor itch, but I can feel the blood seeping from my body as I propel through the water."
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seemed to realize this, at least."
     show prince 4
-    p "You- lead it that way!"
+    up "You- lead it that way!"
     "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
     "My worry is unwarranted."
     "He must have quickly brandished a weapon with great speed between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
@@ -602,7 +602,7 @@ label ch1_followprince:
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
-    p "Stay still for a moment."
+    up "Stay still for a moment."
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
     "Almost instantly, I could feel my energy return. I suppose being so small, even a little bit of blood loss could make you quite weak."
@@ -610,15 +610,16 @@ label ch1_followprince:
     y "Ah, I should, no, wait, I forget myself."
     y "Thank you, sir."
     "Through some miracle, it seems he can understand me."
-    p "You speak strangely, but it's not as strange as to why you are here. You're either extremely resilient, or a spy of that Sea Witch."
+    up "You speak strangely, but it's not as strange as to why you are here. You're either extremely resilient, or a spy of that Sea Witch."
     y "I'm not a spy! I'm just a resilient type, as you say!"
     "I sincerely hope he believes me, as it's true."
-    p "...Yeah, for now let's just say that. Well, I helped you, so please return to your reefs now safely."
-    t "My lord!! Are you injured?"
+    up "...Yeah, for now let's just say that. Well, I helped you, so please return to your reefs now safely."
+    guard "Prince Thioran!! Are you injured?"
     p "Of course not."
     "His vanguard found us, relieved to see their charge unhurt."
     "However, one of the guards pointed their weapon at me."
-    t "Isn't it strange for that kind of fish to be at this depth of the ocean?"
+    guard "Isn't it strange for that kind of fish to be at this depth of the ocean?"
+    guard "Couldn't this one be a spy?"
     "No, surely they wouldn't just kill me for being strange!!"
     "The Prince thought for a moment, but mostly just looked exhausted and wanted to just end the day."
     p "It is quite uncommon. Most of her kind couldn't withstand the depths of the sea. However, if she was a spy, I doubt the sharks would have attacked her."
@@ -626,7 +627,7 @@ label ch1_followprince:
     p "I believe she was only swept up in our clash."
     p "Regardless, there's other matters we must attend to, and we have wasted enough time already."
     "He turns to address me last."
-    p "So please, you are free to go with. You have my permission."
+    p "So please, you are free to go. You have my permission."
     "I don't need his blessing- I just need whatever magic power he has to help me turn back to normal!"
     "Clearly he knows a trick or two, especially with those sharks."
     y "If it's alright, I would like to make a request. "
@@ -648,9 +649,11 @@ label ch1_followprince:
     "He would be devastated to find out I went overboard!"
     "They're going to think I drowned.."
     "I need to return back."
+    scene bg sea
     "The waters seem to brighten more as we swim, peaks of coral and schools of beautiful fish."
     "We arrive at a place just before a city, where a mesmerizing merman waits for the prince."
     c "My lovely nephew! Where have you been? I hear news of an attack, and you do not deign to tell me?"
+    show prince 1 at right with dissolve
     p "Cetus. It has been a long day. You will have to forgive my impropriety."
     c "Always so stiff. I merely jest. I know no trouble would come of an attack on you."
     "The man called Cetus seems familiar as well. The more he speaks, the more I feel a sense that I have met him before."
@@ -665,72 +668,10 @@ label ch1_followprince:
     "It's just like how I felt when the siren dragged me under."
     "Suddenly, a burst of light breaks free from my body, and I feel my fins begin to change."
 
-    #SHE TRANSFORMS WOOOO MERMAID JUNE
+    #SHE TRANSFORMS WOOOO MERMAID JUNE MORE HERE IDK
     p "Wtf?"
     c "Well, this certainly is something, isn't it?"
 
     #END OF DEMO!!!!!!!
 
     return
-
-#Shake(position, duration, maximum distance)
-init:
-
-    python:
-
-        import math
-
-        class Shaker(object):
-
-            anchors = {
-                'top' : 0.0,
-                'center' : 0.5,
-                'bottom' : 1.0,
-                'left' : 0.0,
-                'right' : 1.0,
-                }
-
-            def __init__(self, start, child, dist):
-                if start is None:
-                    start = child.get_placement()
-                #
-                self.start = [ self.anchors.get(i, i) for i in start ]  # central position
-                self.dist = dist    # maximum distance, in pixels, from the starting point
-                self.child = child
-
-            def __call__(self, t, sizes):
-                # Float to integer... turns floating point numbers to
-                # integers.
-                def fti(x, r):
-                    if x is None:
-                        x = 0
-                    if isinstance(x, float):
-                        return int(x * r)
-                    else:
-                        return x
-
-                xpos, ypos, xanchor, yanchor = [ fti(a, b) for a, b in zip(self.start, sizes) ]
-
-                xpos = xpos - xanchor
-                ypos = ypos - yanchor
-
-                nx = xpos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
-                ny = ypos + (1.0-t) * self.dist * (renpy.random.random()*2-1)
-
-                return (int(nx), int(ny), 0, 0)
-
-        def _Shake(start, time, child=None, dist=100.0, **properties):
-
-            move = Shaker(start, child, dist=dist)
-
-            return renpy.display.layout.Motion(move,
-                        time,
-                        child,
-                        add_sizes=True,
-                        **properties)
-
-        Shake = renpy.curry(_Shake)
-    #
-    #Screenshake variable, to use in script
-    $ screenShake = Shake((0, 0, 0, 0), 0.3, dist=20)
-#
