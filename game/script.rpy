@@ -178,7 +178,7 @@ label chapter1:
     y "Even so, I have to get there. I'll pay you if you just point me in the right direction."
     "He gave a sigh and pointed forwards to the end of the market square."
     "Truly, the only way to get through to these people is money."
-    T "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four."
+    t "Take a left down that alley, give five knocks on the brick, pause, give three knocks, and pause again to give four."
     t "That'll open the elevator for ya to take ya where you need goin'."
     t "That's all I know, and all I'll say."
     "He looks at me and grins toothily."
@@ -205,158 +205,181 @@ label chapter1:
     "It closes the moment I enter. It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav"
-    "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down? The prospect is terrifying..."
+    "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down?"
     #SFX -  Elevator
     play sound "audio/sfx_elevator2.wav"
-    "Until it finally came to a stop, the door opened, and I was greeted with a new world."
+    "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
 
     #SCENE CHANGE -  Underground Black Market Faire
     scene bg underground market
-    "It was almost like a circus, or a fairground. Many tent booths were set up and had strange knick knacks begging to be looked at."
-    "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. My eyes followed every gleaming thing being displayed."
+    "It's  almost like a circus, or a fairground. Many merchant's booths had strange knick-knacks begging to be looked at."
+    "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. "
+    "My eyes follow every gleaming thing being displayed."
 
     y "This is incredible..."
     "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
     y "Mother would love to see this..."
-    "My hand reached out for my camera."
+    "My hand reaches for my camera once more."
     #NOTE Are we hiding name until he reveals himself?
-    h "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the sea."
+    u " I wouldn’t dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
-    h "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
-    "I turned to see who the hell the man was behind me. How did he know my name? Slapping his hand off mine I glared at his face. He wore a mask on his face, but even so - I did not recognize his voice."
-    h "It's a bit rude to slap a friend, isn't it?"
-    y "Who are you, exactly?"
-    "He scoffed and shook his head."
+    u "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
+    u "I turned to see who the hell the man was behind me. How does he know my name? I slap his hand away from mine and glare at his face."
+    "I do not recognize him."
+    u "It’s a bit rude to slap a friend, isn't it?"
 
-    #TODO SPRITE CHANGE - Hunter Disappointed Mask
-    h "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]."
-    y "I haven't been in this part of Aquantis before, so you must have mistaken me for someone else"
-    h "Ha- this isn't your first time here. I don't appreciate being treated like a stranger."
-    "Bending down to my level, the stranger looked me right in the eyes."
-    h "Jogging anything in that noggin'? I've grown up a bit since you've last seen this mug..how about it?"
-    "He stared at me for a moment before the realization hit."
-    h "Ah, that's right. I still have the mask on."
-    "With that, he swiftly removed his mask, and I was faced with someone I hadn't seen in a long time"
-    #NOTE Is there a sprite for this ??
+    y "Who are you, exactly?"
+    "He scoffs and shakes his head."
+
+    #TODO SPRITE CHANGE - Hunter Disappointed
+    h "You don’t remember your old playmate? I'm hurt! After all these years, I didn’t once forget about you, [y]."
+    y "I haven’t been in this part of Aquantis before. You must have me mistaken for someone else."
+    h "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I suppose it's been awhile."
+    "Bending down to my level, the stranger looks me right in the eyes."
+    h "Jogging anything in that noggin’? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
+    "He stares at me for a moment before the realization hits."
+    h "Ah, that's right. Perhaps the name will help."
+    h "Hunter Aubrey Morrowe."
     y "...Hunter?"
-    h "That's my name, yes"
-    "He looked positively delighted to hear me say his name."
-    h "You do remember me~! It's been only about, what... ten years since we've last seen each other? I never expected you to return here..."
-    "Hunter..."
-    "We used to play near the beach as kids. If there was anyone I'd recall besides my grandfather, it'd be Hunter."
-    "We were fast friends, though I can't remember much of what we did. Back then, he was a strange, scrawny little kid."
-    "But aside from that, I remember his smile when he was trying to show me shells or bugs he found on the beach."
-    "As I looked at him now, it seemed like the only thing that remained was that smile."
-    y "Yes- you've certainly gotten...taller. But I came to see my grandfather, if you still remember him."
-    h "Ah~ family visit.. Of course I still remember the old man. His hunting company practically owns half the market strip. Though he went into retirement a few years ago."
-    h "I'm assuming you need some help?"
-    y "Well, yes..."
-    h "I'll take you to him. Just keep that camera out of view."
-    h "Stop gawking at things like you've never been here before...People might think you're a spy or somethin'."
-    "He unclipped his cloak and threw it on top of my head. My nose was assaulted with the salty smell of the sea."
+    h "That's my name, yes."
+    "He looks positively delighted to hear me say his name."
+    y "..."
+    y "Oh!"
+    y "Right, Hammy! You were so different when we were young!"
+    "He deflates as soon as I say it."
+    h "Ah, you still remember that nickname. Pity..."
+    y "But of course, I'll just call you Hunter, now."
+    "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
+    "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
+    h "At least you remember me! It's been only about, what… ten years since we’ve last seen each other?"
+    h "I'll be honest, never expected you to come back."
+    "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
+    "As I look at him now, it seems like the only thing that remains is that smile."
+    y "I came to see my grandfather, if you still remember him."
+    h "Ah~ family visit. Of course I still remember the old man. His hunting company practically owned half the market strip. Though he went into retirement a few years ago."
+    h "Need some help finding your way?"
+    y "Well, yes, if you wouldn't mind..."
+    h "I’ll take you. Just keep your camera out of view."
+    h "And stop gawking at things like you’ve never been here before...People might think you’re a spy or somethin’."
+    "He unclips his cloak and throws it on top of my head. My nose is assaulted with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
     scene bg black
 
     #SCREEN SHAKE
-    y "Gah! Hey- don't just throw this dirty thing on me!" with screenShake
+    y "Hey! don't just throw this dirty thing on me!" with screenShake
     h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and to avoid seeing things you shouldn't be looking at anyways."
-    y " Seeing things I shouldn't be..?"
-    "What did he mean by that? Things I shouldn't see...I felt a pressing need to see them - but a far more pressing urge to stay alive"
-    "I did as he asked, even if the cloak was starting to chafe on my shoulders and crush my hat."
+    y "Seeing things I shouldn't be..?"
+    "Things I am forbidden to see...I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
+    "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
 
     #SCENE CHANGE - Black Market
     scene bg underground market
 
-    "He took my hand and gave a low hush, leading me through the crowds of masked men and women. I looked down at my feet, hearing the mumbling roar of chatter."
+    "He takes my hand and gives a low hush, leading me through the crowd. I look down at my feet."
 
     #SFX - CROWD
     play sound "audio/sfx_crowd.wav" volume 0.2 loop
 
     "He walks meticulously, carefully weaving through the crowds of people, and I try my best to keep in step with his strides."
-    "But then, I saw something tantalizingly curious out of the corner of my eye. Without thinking, I glanced up"
+    "But then, I see something tantalizingly curious out of the corner of my eye. Without thinking, I glance up. "
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg underground market
-    "There was a pale but beautiful face in the dark, behind glass."
-    "The further along we walked, the more of her face was revealed.
-        Her body was so human and serene from the top, but her lower half....scales, a tail that flowed in the water and reflected off the dim lights around her."
-    "A creature that was equal parts human and fish."
-    y "A mermaid?"
+    "There is a pale but beautiful face in the dark, behind glass."
+    "The further along we walk, the more of her face is revealed."
+    "Her body is so human and serene from the top, but her lower half....scales, a tail that flows in the water and reflects off the dim lights around her."
+    "A woman....no, a creature that is equal parts human and fish."
+
+    y "Beautiful..."
 
     #TODO SCENE = CG (Mermaid in Tank [Full])
     scene bg underground market
-    "She was so beautiful."
-    "Long silver hair that moved in the water just like her tail. She was mouthing something, banging on the glass. But not a word could be heard through it. Her eyes seemed to lock onto mine for a moment."
-    "Was she asking for my help?"
-    "Suddenly, my view of the rest of the stand was unblocked, and I was able to peek through the empty spot in the crowd. It was a fish hawker's stand."
+    "Her long silver hair moves in the water just like her tail. She is mouthing something, banging on the glass, but I can't hear a word."
+    "Her eyes seem to lock onto mine for a moment."
+    "Is she asking for my help?"
+    "Suddenly, my view of the rest of the stand is unblocked, and I am able to peek through the empty spot in the crowd. It's a fish hawker's stand."
 
     #TODO SCENE = CG (Mermaid cut in half)
     scene bg underground market
-    "Her sign read 'Catch of the day'.
-        Another mermaid, eerily similar to the face banging on the glass, was laying on a table in front of the tank.
-        Except she was chopped off from the hip below, tail being taken by rabid customers, piece by piece."
-
+    "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
+    "Except she is missing her body from the hip below; tail being taken by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
-    "I gripped Hunter's hand tighter, and he started to walk faster through the crowd."
+    "I grip Hunter's hand tighter, and he starts to walk faster through the crowd."
+
     h "I said keep your eyes down, or people might see your face. Believe me, you don't want them remembering who you are."
-    "I gave a regretful glance back before turning back away. It was the cruel reality of the world, but there wasn't much I could do about it..."
+    y "I know."
+    "I glance back for just a moment before turning back away."
+    "The cruel reality of the world. There isn’t much I can do about it."
+    "To fill the air with something else, I ask Hunter a question."
 
     menu:
         "Do you hunt now, too? Like your father?":
-            h "Well.. yeah I do. It's the family business, though your family left it.
-                Your old man always talked about wanting you to come back to join him..but when he announced his retirement, he sold some of those assets to my father."
+            h "Well, yeah, I do. It’s the family business, though your family left it to mine."
+            h "Your old man always talked about wanting you to come back to join him, but when he announced his retirement, he sold most of it to my father instead."
+            y "I see..."
+
         "Have you actually...killed them before?":
-            h "Why do you sound so horrified? Fish is fish. If anything they're monsters using human faces. They don't deserve your pity"
+            h "Why do you sound so horrified? Fish is fish. Don't be fooled by their appearances."
+            h "If anything, they’re monsters using human faces. They don't deserve your pity."
+            h "...But yes, I have."
+            y "..."
 
     stop sound fadeout 2.0
-    "Once we had made it outside the underground and I could see the sky again, the sun was on its way down. It seems like I'd been there for hours. My legs were aching to sit after being lost all day."
 
     #SCENE CHANGE - Port w/ Boats
     scene bg port
-    "But what surprised me the most was we were actually at the portside now, the edge of the country..practically the edge of the world."
-    "Boats were lined up, fishermen and hunters alike lining the dock, carrying supplies to and fro the ships."
+    "Once we make it outside the underground and I can finally see the sky again, the sun is high in the sky."
+    y "It's afternoon already?"
+    h "Wandering does that to ya. When did your train get here?"
+    y "Early morning. My legs are aching to sit."
+    h "We're almost there. Don't keel over on me, would you?"
+    y "I wouldn't dream of it."
+    "We're actually at the portside now, the edge of the country. Practically the edge of the world."
+    "Boats lined up, fishermen and hunters alike lining the dock, carrying supplies to and from the ships."
     "They were much different than the ones I had remembered as a kid. These were large, made of steel, and produced steam."
-
-    y "Does Grandpa live on one of these ships?"
-    h "The only one not made of steel, that one over there."
-
-    "Out on the furthest side of the docks was a large wooden ship. It stuck out compared to the rest, with its clothed sails, and ornate details.
-        There was clearly a lot of pride and dedication to the maintenance of it"
-    "Was his home always on a boat? It was too fuzzy to remember clearly. I had a faint recollection of a boat, but I thought I would remember more than that upon seeing his home."
-
-    h "Well, keep moving along already. You know that only hunters and fishermen are the only one's really allowed at the docks. Come on."
-    y "Hey, don't start shoving me- I appreciate the help, but you don't have to follow me the whole way there."
-    h "I have business there already, running into you was just a coincidence. I have to prepare for my next voyage tomorrow anyway."
-    y "Fine."
+    y "Does Grandfather live on one of these ships?"
+    h "The only one still not made of steel, that one over there."
+    "Out on the furthest side of the docks was a large wooden ship. It stuck out compared to the rest, with its clothed sails, and ornate details."
+    "There was clearly a lot of pride and dedication to the maintenance of it."
+    "I had a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
+    h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
+    y "Hey, don’t start shoving me- I appreciate the help, but you really don’t have to follow me the whole way there."
+    h "I have business with your old man already, running into you was just a coincidence. Let's go!"
+    y "Alright, alright, let's go."
 
     #TODO SCENE CHANGE - Port w/ Boats (ZOOM)
     scene bg port
-    "Stepping closer to the ship, my stomach was turning in knots. Ten years apart finally coming to an end. Perhaps my parents estranged us over a misunderstanding. I want to hear his side of it all."
-    "Hunter knocks at the Captain's Quarters of the ship."
-    "There was some loud grunting and muffled swearing as the door opened."
-    show grandpa neutral at center with dissolve
-    g "I told you people I don't want any-"
-    show grandpa surprised
-    "The old man stood frozen before me. He looked as though he had seen a ghost."
-    y "Grandpa...?"
-    show grandpa happy
-    g "Oh bless the stars... you got my letter? You're really here! My dear, sweet [y]!"
-    "Suddenly I was lunged into his embrace. He may have been older, but boy did he sure still had his strength."
-    "I hugged him tight, not nearly as hard as he was, but over all the wave anxious anticipation just had  seemed to vanish for that moment."
+    "We board a small rowboat to take us there."
+    "Before I know it, we arrive on deck, and Hunter walks towards the entrance of the boat interior."
+    "Ten years apart finally coming to an end. Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
+    "I want to hear his side of it, regardless."
+    "I want answers."
+    "Hunter knocks at the entrance of the ship."
+    "There's some loud grunting and muffled swearing as the door opens."
+    show grandpa neutral at right with dissolve
+    g "I told you people I don't have any-"
+    "The old man stands frozen before me. He looks as though he's seen a ghost."
+    y "Grandfather…?"
+    g "Oh, bless the stars… you got my letter? You’re really here! My dear, sweet June!"
+    "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
+    "I hug him tight in return. The wave of anxious anticipation I had moments before seemed to vanish entirely."
+    y "It's been too long, Grandfather!"
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
-    h "Heh? That's not necessary-"
-    "Grandpa practically grabbed the two of us both into a hug."
-    "Once he had squeezed the daylight out of us, he let go."
-    g "It's been years!! Oh just how many years have I've seen the both of ye's together.. How many years have it been since I've seen you. How's your mother? She never replies when I write to her.."
-    show grandpa neutral
-    g "Nor has she ever let you reply to the letters I've sent you over the years."
-    "My heart sank."
-    y "Mother has been well, as well as Father. But, well.."
-    y "She read the letters, but never let me see them. I had only recently seen them myself. She let me keep the gifts you sent, but never the letters..."
-    g "Marie..."
-    "He let out a wistful sigh."
-    g "What's done is done. Come on, then! Let's get you settled in."
+    h "Hah? Sir, that’s not necessary-"
+    g "Just 'cause you're a man now doesn't mean I can't still embarrass ye like my own grandchild!"
+    "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh."
+    "Once he has squeezed the daylight out of us, he lets go."
+    g "It's been years! Oh, just how many years has it been since  I’ve seen the both of ye together.. How many years has it been since I’ve seen you, June."
+    g "How’s your mother? She never replies when I write to her."
+    g "Nor has she ever let you reply to the letters I’ve sent you over the years."
+    "My heart sinks."
+    y "Mother has been well, as well as Father. But, well."
+    y "She read the letters, but never let me see them. I only recently saw them myself."
+    y "She let me keep the gifts you sent, but never the letters..."
+    g "Oh, Marie..."
+    "He lets out a wistful sigh."
+    g "Can't be helped, I s'pose. Come on, then! Let's get you settled in."
 
     #SCENE CHANGE - Black Screen
     scene bg black
@@ -422,9 +445,9 @@ label chapter1:
     "The sounds of the waves and the wind made Hunter's words a bit hard to hear."
     "I hold my camera up, making sure my hand was ready to press the trigger once I saw a mermaid."
     #SPRITE?
-    s "Come...come with me..."
+    u "Come...come with me..."
     y "What...?"
-    s "O' ye of land to the queen of sea..."
+    u "O' ye of land to the queen of sea..."
     "My thoughts feel hazy, and my body feels as though I'm floating."
     h "June, what are you doing?!"
     s "Come to Skylla..."
@@ -436,8 +459,8 @@ label chapter1:
     "An unimportant thought crosses my mind. I've heard of something like this before."
     "Sailors being sung to by the sea to only be met with death..."
     y "A siren's song."
-    "At the edge of the boat now, my eyes look down below for the cause of my affliction, But the darkness below the waves are  all I can see, and the voice all I could hear."
-    "And with all my might I held tightly to the slippery ledge that parted me from the water, and yet my body went against my will to stay put."
+    "At the edge of the boat now, my eyes look down below for the cause of my affliction, But the darkness below the waves are all I can see, and the voice all I could hear."
+    "And with all my might I held tightly to the slippery ledge that parted me from the water, and yet my body went against my will to stay."
     "I sit atop the ledge."
     "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
 
@@ -535,7 +558,7 @@ label chapter1:
     "Either way, they're both starting to swim away"
 
     #Follow Striking Prince
-    #Follow Relatable Boy (can't choose this yet, lol)
+    #Follow Scrappy Boy (can't choose this yet, lol)
     menu:
         "Follow Striking Prince":
             jump ch1_followprince
@@ -594,11 +617,12 @@ label ch1_followprince:
     t "My lord!! Are you injured?"
     p "Of course not."
     "His vanguard found us, relieved to see their charge unhurt."
-    #SOMETHING ELSE HERE IDK IM TIRED
+    "However, one of the guards pointed their weapon at me."
     t "Isn't it strange for that kind of fish to be at this depth of the ocean?"
-    "The Prince gave a thought for expression, but mostly just looked exhausted and wanted to just end the day."
-    "Yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
+    "No, surely they wouldn't just kill me for being strange!!"
+    "The Prince thought for a moment, but mostly just looked exhausted and wanted to just end the day."
     p "It is quite uncommon. Most of her kind couldn't withstand the depths of the sea. However, if she was a spy, I doubt the sharks would have attacked her."
+    "Yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
     p "I believe she was only swept up in our clash."
     p "Regardless, there's other matters we must attend to, and we have wasted enough time already."
     "He turns to address me last."
