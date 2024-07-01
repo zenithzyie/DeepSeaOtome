@@ -120,14 +120,14 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
 
     "I was a child the last time I did something as silly as that."
-    "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
+    "I can't wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see my grandfather on special holidays in the summer., but now I'm returning to Aquantis again just to see him."
-    "I can’t really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
+    "I can't really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
     "Even though I am now grown, she refuses to say what happened."
 
     $ config.side_image_tag = "None"
-    t "Please gather all personal belongings, we are arriving at Aquantis station!"
+    t "Please gather all personal belongings, we are arriving at Aquantis Station!"
 
     $ config.side_image_tag = "june"
     y neutral "Oh, we're already here?"
@@ -140,7 +140,7 @@ label chapter1:
     y "Excuse me- sir! Hello?"
     "He ignores me, walking quickly away from the station."
     "I try to ask few more people, but not one wants  to give me the time of day."
-    "Trying to grab anyone’s attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I can't remember."
+    "Trying to grab anyone's attention around here seems impossible! They all just ignore me. Were they so unfriendly to people from outside when I was younger? I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
     scene bg shabby town
@@ -230,22 +230,22 @@ label chapter1:
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
     #NOTE Are we hiding name until he reveals himself?
-    u "I wouldn’t dare to take out that camera here, unless you're planning on joining the fish in the stands."
+    u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
     u "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
     u "I turned to see who the hell the man was behind me. How does he know my name? I slap his hand away from mine and glare at his face."
     "I do not recognize him."
-    u "It’s a bit rude to slap a friend, isn't it?"
+    u "It's a bit rude to slap a friend, isn't it?"
 
     y "Who are you, exactly?"
     "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
-    u "You don’t remember your old playmate? I'm hurt! After all these years, I didn’t once forget about you, [y]."
-    y "I haven’t been in this part of Aquantis before. You must have me mistaken for someone else."
-    u "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I suppose it's been awhile."
+    u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]."
+    y "I haven't been in this part of Aquantis before. You must have me mistaken for someone else."
+    u "Ha- this isn't your first time here. Don't appreciate being treated like a stranger, though I suppose it's been awhile."
     "Bending down to my level, the stranger looks me right in the eyes."
-    u "Jogging anything in that noggin’? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
+    u "Jogging anything in that noggin'? I've grown up a bit since you've last seen this mug...how 'bout it?"
     "He stares at me for a moment before the realization hits."
     u "Ah, that's right. Perhaps the name will help."
     h "Hunter Aubrey Morrowe."
@@ -260,7 +260,7 @@ label chapter1:
     y "But of course, I'll just call you Hunter, now."
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
-    h "At least you remember me! It's been only about, what… ten years since we’ve last seen each other?"
+    h "At least you remember me! It's been only about, what… ten years since we've last seen each other?"
     h "I'll be honest, never expected you to come back."
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
@@ -268,8 +268,8 @@ label chapter1:
     h "Ah~ family visit. Of course I still remember the old man. His hunting company practically owned half the market strip. Though he went into retirement a few years ago."
     h "Need some help finding your way?"
     y "Well, yes, if you wouldn't mind..."
-    h "I’ll take you. Just keep your camera out of view."
-    h "And stop gawking at things like you’ve never been here before...People might think you’re a spy or somethin’."
+    h "I'll take you. Just keep your camera out of view."
+    h "And stop gawking at things like you've never been here before...People might think you're a spy or somethin'."
     "He unclips his cloak and throws it on top of my head. My nose is assaulted with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
@@ -319,18 +319,18 @@ label chapter1:
     h "I said keep your eyes down, or people might see your face. Believe me, you don't want them remembering who you are."
     y "I know."
     "I glance back for just a moment before turning back away."
-    "The cruel reality of the world. There isn’t much I can do about it."
+    "The cruel reality of the world. There isn't much I can do about it."
     "To fill the air with something else, I ask Hunter a question."
 
     menu:
         "Do you hunt now, too? Like your father?":
-            h "Well, yeah, I do. It’s the family business, though your family left it to mine."
+            h "Well, yeah, I do. It's the family business, though your family left it to mine."
             h "Your old man always talked about wanting you to come back to join him, but when he announced his retirement, he sold most of it to my father instead."
             y "I see..."
 
         "Have you actually...killed them before?":
             h "Why do you sound so horrified? Fish is fish. Don't be fooled by their appearances."
-            h "If anything, they’re monsters using human faces. They don't deserve your pity."
+            h "If anything, they're monsters using human faces. They don't deserve your pity."
             h "...But yes, I have."
             y "..."
 
@@ -354,7 +354,7 @@ label chapter1:
     "There was clearly a lot of pride and dedication to the maintenance of it."
     "I had a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
-    y "Hey, don’t start shoving me- I appreciate the help, but you really don’t have to follow me the whole way there."
+    y "Hey, don't start shoving me- I appreciate the help, but you really don't have to follow me the whole way there."
     h "I have business with your old man already, running into you was just a coincidence. Let's go!"
     y "Alright, alright, let's go."
 
@@ -371,18 +371,18 @@ label chapter1:
     g "I told you people I don't have any-"
     "The old man stands frozen before me. He looks as though he's seen a ghost."
     y "Grandfather…?"
-    g "Oh, bless the stars… you got my letter? You’re really here! My dear, sweet June!"
+    g "Oh, bless the stars… you got my letter? You're really here! My dear, sweet June!"
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
     "I hug him tight in return. The wave of anxious anticipation I had moments before seemed to vanish entirely."
     y "It's been too long, Grandfather!"
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
-    h "Hah? Sir, that’s not necessary-"
+    h "Hah? Sir, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass ye like my own grandchild!"
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh."
     "Once he has squeezed the daylight out of us, he lets go."
-    g "It's been years! Oh, just how many years has it been since  I’ve seen the both of ye together.. How many years has it been since I’ve seen you, June."
-    g "How’s your mother? She never replies when I write to her."
-    g "Nor has she ever let you reply to the letters I’ve sent you over the years."
+    g "It's been years! Oh, just how many years has it been since  I've seen the both of ye together.. How many years has it been since I've seen you, June."
+    g "How's your mother? She never replies when I write to her."
+    g "Nor has she ever let you reply to the letters I've sent you over the years."
     "My heart sinks."
     y "Mother has been well, as well as Father. But, well."
     y "She read the letters, but never let me see them. I only recently saw them myself."
