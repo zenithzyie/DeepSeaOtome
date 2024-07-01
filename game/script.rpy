@@ -26,15 +26,19 @@ define prettyfarright = Position(xpos=0.85)
 
 init python:
     config.side_image_tag = "june"
+    #proritize voice as highest volume
+    config.emphasize_audio_channels = [ 'voice' ]
 
 # The game starts here.
 
 label start:
-
     $ hunter_points = 0
     $ prince_points = 0
     $ jorunn_points = 0
     $ cetus_points = 0
+
+    #lower music when voice line is playing
+    default preferences.emphasize_audio = True
 
     # "NARRATION"
 
@@ -531,7 +535,7 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    play music "music_underwater.mp3"
+    play music "music_underwater.mp3" volume 0.7
 
     s "Hmm, hmm, hmm."
     s "After all these years, this is where it's been, encased in a protective spell?"
@@ -597,14 +601,20 @@ label chapter1:
     "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
     "My heart was rushing in my tiny body. She could pop me in an instant as well."
     "She drew closer to whatever she was preparing to test on me in the back of the cave before she suddenly paused, listening closely to something as her ears twitched."
+    #Voice Lines Start
+    voice "audio/voice/prince/THIODAL-1.wav"
     up "The further out you swim, the more guilty that you are! Those fish belong to the vanguard."
+    voice "audio/voice/prince/THIODAL-2.wav"
     up "Return them now, and I will not arrest you."
     s "That voice...he's not supposed to be here."
     "She squeezes me painfully in frustration."
     uj "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
     uj "Perhaps you should ask your guards how they got these fish in the first place? It wasn't very kind or knightly."
+    voice "audio/voice/prince/THIODAL-3.wav"
     up "Are you suggesting we stole from {i}you{/i}?"
+    voice "audio/voice/prince/THIODAL-4.wav"
     up "If my men have done harm to your village and stolen from you, I will personally take accountability in returning those fish and providing recompense."
+    voice "audio/voice/prince/THIODAL-5.wav"
     up "However, the fact of the matter is that you stole from the royal guard!"
     s "I need to chase them away..."
     s "Ah, how about this!"
@@ -625,6 +635,7 @@ label chapter1:
     guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
     uj "I'll be taking these home then! Goodbye!"
+    voice "audio/voice/prince/THIODAL-6.wav"
     up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
@@ -655,12 +666,15 @@ label ch1_followprince:
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     show prince 4 at center with dissolve
+    voice "audio/voice/prince/THIODAL-7.wav"
     up "!!!" with screenShake
+    voice "audio/voice/prince/THIODAL-8.wav"
     up "Who dares-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
     $ config.side_image_tag = "None"
     show prince 5
+    voice "audio/voice/prince/THIODAL-9.wav"
     up "...?"
     guard "The fish drew their attention!"
     "The sharks hurl toward us in a frenzy, chomping at the water and whatever moves in front of it."
@@ -669,6 +683,7 @@ label ch1_followprince:
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seemed to realize this, at least."
     show prince 4
+    voice "audio/voice/prince/THIODAL-10.wav"
     up "You- lead it that way!"
     "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
     "However, my worry is unwarranted."
@@ -676,11 +691,13 @@ label ch1_followprince:
     "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
     "Surely this is more tantalizing than my pitiful injury."
     show prince 5
+    voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
+    voice "audio/voice/prince/THIODAL-12.wav"
     up "Stay still for a moment."
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
@@ -689,11 +706,14 @@ label ch1_followprince:
     y "Ah, I should, no, wait, I forget myself."
     y "Thank you, sir."
     "Through some miracle, it seems he can understand me."
+    voice "audio/voice/prince/THIODAL-13.wav"
     up "You speak strangely, but that's none of my concern. You're either extremely resilient, or a spy of that Sea Witch."
     y "I'm not a spy! I'm just a resilient type, as you say!"
     "I sincerely hope he believes me, as it's true."
-    up "...let's just say that for now. Your wounds have been taken care of, so please, return to your reefs...safely."
+    voice "audio/voice/prince/THIODAL-14.wav"
+    up "...Let's just say that for now. Your wounds have been taken care of, so please, return to your reefs...safely."
     guard "Prince Thioran!! Are you injured?"
+    voice "audio/voice/prince/THIODAL-15 v2.wav"
     p "Of course not."
     "His vanguard found us, relieved to see their charge unhurt."
     "However, the guards pointed their weapons at me."
@@ -701,18 +721,24 @@ label ch1_followprince:
     guard "Couldn't this one be a spy?"
     "No, surely they wouldn't just kill me for being strange!!"
     "The Prince thought for a moment, but mostly just looked exhausted and wanted to just end the day."
+    voice "audio/voice/prince/THIODAL-16.wav"
     p "It is quite uncommon. Most of her kind couldn't withstand the depths of the sea."
+    voice "audio/voice/prince/THIODAL-17.wav"
     p "However, if she was a spy, I doubt the sharks would have attacked her."
     "Yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
+    voice "audio/voice/prince/THIODAL-18.wav"
     p "I believe she was only swept up in our clash."
+    voice "audio/voice/prince/THIODAL-19.wav"
     p "Regardless, there are other matters we must attend to, and we've already wasted enough time."
     "He turns to address me last."
+    voice "audio/voice/prince/THIODAL-20.wav"
     p "So please, you are free to go. You have my permission."
     "I don't need his blessing- I just need whatever magic power he has to help me turn back to normal!"
     "Clearly he knows a trick or two, especially with those sharks."
     y "If it's alright, I would like to make a request. "
     y "Could you lead me back to...the kingdom? I...have business there."
     "He stares at me for a few moments, with an indeterminable expression on his face."
+    voice "audio/voice/prince/THIODAL-21.wav"
     p "You may follow us. When we arrive, attend to your business. Any other troubles from then on must be your own."
     y "That's more than enough! Thank you!"
     "That is definitely not enough!!"
@@ -736,15 +762,18 @@ label ch1_followprince:
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
     show prince 1 at right with dissolve
+    voice "audio/voice/prince/THIODAL-22.wav"
     p "Cetus. It has been a long day. You will have to forgive my impropriety."
     c "Always so stiff."
     c "I merely jest. I know no trouble would come of an attack on you."
     "The man called Cetus seems familiar as well. The more he speaks, the more I feel a sense that I have met him before."
     c "Oh? Who's this you have following you like a pet, Thio?"
     "His gaze catches on me, and I want nothing more than to dart behind a rock and hide from it."
+    voice "audio/voice/prince/THIODAL-23.wav"
     p "I...did not ask for a name. She has business here in the city. By formality, I have allowed her to return with me."
     c "I see..."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
+    voice "audio/voice/prince/THIODAL-24.wav"
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus."
     "The prince does not seem to take notice..."
