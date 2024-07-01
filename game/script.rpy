@@ -445,7 +445,7 @@ label chapter1:
     play sound "audio/sfx_waveCrash.wav"
     scene bg white with screenShake
     #SFX - choppy waves
-    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop 
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     h " The waters are getting choppier, stay away from the ledge!"
     y "Well, obviously! I can hardly stand straight!"
@@ -683,7 +683,7 @@ label ch1_followprince:
     c "Oh? Who's this you have following you like a pet, Thio?"
     "His gaze catches on me, and I want nothing more than to dart behind a rock and hide from it."
     p "I...did not ask for a name. She has business here in the city. By formality, I have allowed her to return with me."
-    c "I see."
+    c "I see..."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus."
