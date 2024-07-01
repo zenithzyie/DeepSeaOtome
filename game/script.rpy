@@ -429,11 +429,12 @@ label chapter1:
 
 
     #TODO SCENE CHANGE - Sea
-    scene bg calmwave
+    scene bg calmwave with dissolve
     stop music fadeout 1.0
     #SFX - waves (calm)
     play sound "audio/sfx_wavesCalm.ogg" loop
 
+    "on sea now"
 
 
     #SCENE CHANGE - view of the sea (stormy)
@@ -450,7 +451,7 @@ label chapter1:
     y "Who...? This is familiar to me, but...?"
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.wav"
-    scene bg white with screenShake
+    scene bg choppywave with screenShake
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
@@ -699,6 +700,7 @@ label ch1_followprince:
     "It's just like how I felt when the siren dragged me under."
     "Suddenly, a burst of light breaks my body free from the trance, and I feel my fins begin to change."
 
+    stop music fadeout 2.0
     scene bg black with dissolve
 
     "..........."
