@@ -147,8 +147,8 @@ label chapter1:
 
     "The further I walk down from the top of the city, the more and more the atmosphere seems to change."
     "Rather than being ignored, it seems I'm attracting an uncomfortable attention."
-    "I can feel the eyes of  the people I pass by watching me.”
-    “It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, I feel as though I should keep my eyes to myself."
+    "I can feel the eyes of  the people I pass by watching me."
+    "It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, I feel as though I should keep my eyes to myself."
 
     $ config.side_image_tag = "None"
     t "Tch, inlanders. What is someone like her out here for?"
@@ -230,7 +230,7 @@ label chapter1:
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
     #NOTE Are we hiding name until he reveals himself?
-    u " I wouldn’t dare to take out that camera here, unless you're planning on joining the fish in the stands."
+    u "I wouldn’t dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
     u "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
     u "I turned to see who the hell the man was behind me. How does he know my name? I slap his hand away from mine and glare at his face."
@@ -442,19 +442,19 @@ label chapter1:
 
     "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
     "The sea is calm, and the sun is shining down."
-    H "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
-    Y "Mermaids sunbathe? Really?"
-    H "When they feel safe enough to. If they spot my little skiff, the show's over."
-    H "Gotta be quick with your pictures."
-    Y "Of course!"
+    h "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
+    y "Mermaids sunbathe? Really?"
+    h "When they feel safe enough to. If they spot my little skiff, the show's over."
+    h "Gotta be quick with your pictures."
+    y "Of course!"
     "My only experiences are with inland animal photography, I can't imagine it would be harder than capturing birds on film."
     "The boat travels further out to sea, putting the port behind us."
-    H "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, June!"
+    h "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, June!"
     "I'm about to respond to him, but the ship catches on the waves, and I stumble."
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
-    H "What the damn-"
+    h "What the damn-"
     "The weather changes nearly in an instant."
     "I can't see a hint of blue in the sky."
     "It's covered by clouds of grey, instead."
@@ -474,7 +474,7 @@ label chapter1:
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
-    h " The waters are getting choppier, stay away from the ledge!"
+    h "The waters are getting choppier, stay away from the ledge!"
     y "Well, obviously! I can hardly stand straight!"
     "He returns back to his position, eyes staying forward and ahead as the winds grow stronger."
     "I could hardly see out, but I couldn't give up my quest for a picture."
