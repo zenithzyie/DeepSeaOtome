@@ -51,6 +51,10 @@ label start:
 
 label get_name:
     scene bg black
+
+    show side june neutral at farleft with dissolve:
+        yalign 0.1
+
     #GET PLAYER NAME
     $player_name = renpy.input("What is your name?",length=15)
     $player_name.strip
@@ -63,6 +67,8 @@ label get_name:
         "Is [y] correct?"
         "Yes":
             jump prologue
+            hide side june neutral with dissolve
+
         "No":
             jump get_name
 
