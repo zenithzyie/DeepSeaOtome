@@ -99,7 +99,7 @@ label prologue:
 
     # show hunter at moreright with dissolve
 
-    up "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
+    u "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -244,7 +244,7 @@ label chapter1:
     "My hand reaches for my camera once more."
     $ config.side_image_tag = "None"
 
-    # show hunter sprite
+    show hunter neutral with dissolve
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
@@ -254,7 +254,7 @@ label chapter1:
     u "It's a bit rude to slap a friend, isn't it?"
     $ config.side_image_tag = "june"
     y neutral "Who are you, exactly?"
-    "He scoffs and shakes his head."
+    "He scoffs and shakes his head." with hpunch
 
     #TODO SPRITE CHANGE - Hunter Disappointed
     u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]."
@@ -314,7 +314,7 @@ label chapter1:
     #SCENE CHANGE - Black Market
     scene bg underground market
 
-    # show hunter sprite
+    show hunter neutral with dissolve
 
     "He takes my hand and gives a low hush, leading me through the crowd. I look down at my feet."
 
@@ -325,8 +325,7 @@ label chapter1:
     "But then, I see something tantalizingly curious out of the corner of my eye. Without thinking, I glance up. "
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
-    scene bg underground market
-    # show hunter sprite
+    scene bg underground market with dissolve
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
     "Her body is so human and serene from the top, but her lower half....scales, a tail that flows in the water and reflects off the dim lights around her."
@@ -347,7 +346,7 @@ label chapter1:
     "Except she is missing her body from the hip below; tail being taken by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
     "I grip Hunter's hand tighter, and he starts to walk faster through the crowd."
-
+    show hunter neutral with dissolve
     h "I said keep your eyes down, or people might see your face. Believe me, you don't want them remembering who you are."
     $ config.side_image_tag = "june"
     y neutral "I know."
@@ -375,6 +374,7 @@ label chapter1:
     scene bg port
     "Once we make it outside the underground and I can finally see the sky again, the sun is high in the sky."
     y neutral "It's afternoon already?"
+    show hunter neutral with dissolve
     h "Wandering does that to ya. When did your train get here?"
     y "Early morning. My legs are aching to sit."
     h "We're almost there. Don't keel over on me, would you?"
@@ -395,13 +395,15 @@ label chapter1:
     #TODO SCENE CHANGE - Port w/ Boats (ZOOM)
     scene bg port
     "We board a small rowboat to take us there."
+    show hunter neutral with dissolve
     "Before I know it, we arrive on deck, and Hunter walks towards the entrance of the boat interior."
     "Ten years apart finally coming to an end. Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
     "I want to hear his side of it, regardless."
     "I want answers."
+    show hunter neutral at right with move
     "Hunter knocks at the entrance of the ship."
     "There's some loud grunting and muffled swearing as the door opens."
-    show grandpa neutral with dissolve
+    show grandpa neutral at left with dissolve
     g "I told you people I don't have any-"
     show grandpa surprised with vpunch
     "The old man stands frozen before me. He looks as though he's seen a ghost."
@@ -414,8 +416,10 @@ label chapter1:
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
     h "Hah? Sir, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass ye like my own grandchild!"
+    show grandpa happy at right with move
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh."
     "Once he has squeezed the daylight out of us, he lets go."
+    show grandpa happy at left with move
     g "It's been years! Oh, just how many years has it been since  I've seen the both of ye together.. How many years has it been since I've seen you, [y]."
     g "How's your mother? She never replies when I write to her."
     g "Nor has she ever let you reply to the letters I've sent you over the years."
@@ -440,7 +444,7 @@ label chapter1:
     "Today, Grandfather and I shop for the next week's supply of food before he meets a trader in the afternoon."
     "Along with Hunter, who just happened to be free."
 
-    # show hunter at right with dissolve
+    show hunter neutral at right with dissolve
 
     y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
@@ -459,6 +463,7 @@ label chapter1:
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep Merrill waitin'. The ship won't pay for itself!"
     hide grandpa happy at left with dissolve
+    show hunter neutral at farright with move
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
     y "Grandfather..."
     "Out of habit, my hand finds my camera still sitting at my side, waiting, and I'm struck with a thought."
@@ -468,7 +473,7 @@ label chapter1:
     h "With what?"
     y "We're going to make Grandfather's day!"
     h "What, buy him mermaid nigiri for dinner?"
-    y "No! I'm going to take a picture of a live one."
+    y "No! I'm going to take a picture of a live one." with hpunch
     y "Imagine what people would pay for a picture!"
     "Hunter seems to think about it for a moment."
     y "Please?"
@@ -486,13 +491,16 @@ label chapter1:
     "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
     "The sea is calm, and the sun is shining down."
 
-    # show hunter with dissolve
+    show hunter neutral with dissolve
 
     h "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     h "When they feel safe enough to. If they spot my little skiff, the show's over."
     h "Gotta be quick with your pictures."
     y neutral "Of course!"
+
+    hide hunter neutral with dissolve
+
     "My only experiences are with inland animal photography, I can't imagine it would be harder than capturing birds on film."
     "The boat travels further out to sea, putting the port behind us."
     h "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, [y]!"
@@ -501,16 +509,16 @@ label chapter1:
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
 
-    # show hunter with vshake
-
+    show hunter neutral with vpunch
     h "What the damn-"
     "The weather changes nearly in an instant."
     "I can't see a hint of blue in the sky."
     "It's covered by clouds of grey, instead."
     y shocked "It was sunny only moments ago! What is this?"
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
+    hide hunter neutral with vpunch
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
-    "The lurching nearly throws me to the floorboards, but I grab the mast just in time to stay upright"
+    "The lurching nearly throws me to the floorboards, but I grab the mast just in time to stay upright."
     y "Ah..."
     #SCREENSHAKE
     "Something stirs in the back of my memory as I stare into the waves. Something is glowing through the wind and rain."  with screenShake
@@ -523,8 +531,10 @@ label chapter1:
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
+    show hunter neutral with vpunch
     h "The waters are getting choppier, stay away from the ledge!"
     y huffed "Well, obviously! I can hardly stand straight!"
+    hide hunter neutral with dissolve
     "He returns back to his position, eyes staying forward and ahead as the winds grow stronger."
     "I could hardly see out, but I couldn't give up my quest for a picture."
     "The sounds of the waves and the wind made Hunter's words a bit hard to hear."
@@ -539,10 +549,11 @@ label chapter1:
 
     "The singing felt as though it was only for my ears to hear alone, the waves calling out to me to sink in."
     h "Shit, it's a siren! [y]!"
+    show hunter neutral with vpunch
     "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
-
     "An unimportant thought crosses my mind. I've heard of something like this before."
     "Sailors being sung to by the sea to only be met with death..."
+    hide hunter neutral with dissolve
     y "A siren's song."
     "At the edge of the boat now, my eyes look down below for the cause of my affliction, But the darkness below the waves are all I can see, and the voice all I could hear."
     "And with all my might I held tightly to the slippery ledge that parted me from the water, and yet my body went against my will to stay."
@@ -658,10 +669,11 @@ label chapter1:
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
     show prince 4 at left with dissolve
-    # show jorunn at right with dissolve
+    show jorunn sweat at moreright with dissolve
     guard "Sharks ahead! Get the prince out of here!"
     guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
+    show jorunn glee at moreright with vpunch
     uj "I'll be taking these home then! Goodbye!"
     voice "audio/voice/prince/THIODAL-6.wav"
     show prince 4 at left with hpunch
@@ -671,7 +683,7 @@ label chapter1:
     "Hiding between the broken shells of sea hunterships, I could see the sharks patrolling. Did the siren summon them?"
     "The merman that was surrounded by knights was called a prince, huh?"
     "He sure looked like one, his fins were unlike any other I've seen, a striking array of blue."
-    "Do I approach him..? Or perhaps the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
+    "Do I approach him..? Or do I follow the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
     "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
     "Either way, they're both starting to swim away."
 
@@ -685,7 +697,7 @@ label chapter1:
 
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
-    # hide jorunn at right with slideright
+    hide jorunn glee with moveoutright
     "Perhaps the prince would be kind to someone in need? I hope I'm not a species of fish they fight over for eating."
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
@@ -823,14 +835,16 @@ label ch1_followprince:
 
     "..........."
 
-    show fishjune with dissolve
+    show jorunn glee at moreleft with dissolve
 
-    "You've reached the end of the demo for Heart's Depth!"
-    "Thank you so much for playing! Follow our game page for updates when they come."
-    "We sincerely look forward to releasing the rest of the story."
-    "Take care! And stay fishy!"
+    j "Hello there!"
+    j "You've reached the end of the demo for Heart's Depth!"
+    j "Thank you so much for playing! Follow our game page for updates when they come."
+    j "We sincerely look forward to releasing the rest of the story." with vpunch
+    j "Take care! And stay fishy!"
 
-    hide fishjune with dissolve
+    play sound "audio/sfx_splash.flac"
+    hide jorunn glee with dissolve
 
     #END OF DEMO!!!!!!!
 
