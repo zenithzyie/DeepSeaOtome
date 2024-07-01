@@ -1,24 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 133, in script
-    Y "Excuse me- sir! Hello?"
-Exception: Sayer 'Y' is not defined.
+  File "game/script.rpy", line 555, in script
+    scene bg black with vshake
+  File "game/script.rpy", line 555, in <module>
+    scene bg black with vshake
+NameError: name 'vshake' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 133, in script
-    Y "Excuse me- sir! Hello?"
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2557, in execute
-    Say.execute(self)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'Y' is not defined.
+  File "game/script.rpy", line 555, in script
+    scene bg black with vshake
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 1359, in execute
+    paired = renpy.python.py_eval(self.paired)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 555, in <module>
+    scene bg black with vshake
+NameError: name 'vshake' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
-DeepSeaDatingSim 1.0
-Sun Jun 30 14:57:27 2024
+HeartsDepth 1.0
+Mon Jul  1 01:55:06 2024

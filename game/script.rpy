@@ -17,6 +17,7 @@ define guard = Character("Guard", image="june")
 define up = Character("Striking Prince", image="june")
 define uj = Character("Thieving Merman", image="june")
 
+define furthleft = Position(xpos=0.20)
 define farleft = Position(xpos=0.25)
 define moreleft = Position(xpos=0.35)
 define center = Position(xpos=0.45)
@@ -87,16 +88,16 @@ label get_name:
 #PROLOGUE
 label prologue:
     #TODO SCENE ?
-    scene bg sea
+    scene bg choppywave with dissolve
+
+    play music "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     $ config.side_image_tag = "june"
     y neutral "It was sunny only moments ago! What is this?"
 
     $ config.side_image_tag = "None"
 
-    show prince 1 at moreright with dissolve
-
-    show grandpa surprised at moreleft with dissolve
+    # show hunter at moreright with dissolve
 
     up "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
@@ -109,10 +110,11 @@ label prologue:
     "I try to reach for it, forgetting myself for just a moment."
 
     #SFX - SPLASH
+    scene bg black with vpunch
     play sound "audio/sfx_splash.flac"
 
     #SCENE CHANGE - (Underwater / Black)
-    scene bg black
+    stop music
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The regret floods my mind, but it's too late."
     "I can feel myself fading...is this really the end...?"
@@ -132,7 +134,7 @@ label chapter1:
     "I was a child the last time I did something as silly as that."
     "I can't wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
-    "I only ever got to see my grandfather on special holidays in the summer., but now I'm returning to Aquantis again just to see him."
+    "I only ever got to see my grandfather on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can't really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
     "Even though I am now grown, she refuses to say what happened."
 
@@ -208,7 +210,7 @@ label chapter1:
     "Upon reaching the end, I make a left turn down to see a brick wall. It has an odd discolouration unlike the rest."
     "This must be the wall the merchant spoke of. "
     "Well."
-    "I stared at the wall for a few moments. It was certainly not something I had planned to do on this trip."
+    "I stare at the wall for a few moments. This is certainly not something I had planned for this trip."
     "I suppose I'll just have to give it a go."
     "..3..4..5…"
     "..1..2..3…"
@@ -224,6 +226,9 @@ label chapter1:
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav"
     "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down?"
+    "..."
+    "..."
+    "..."
     #SFX -  Elevator
     play sound "audio/sfx_elevator2.wav"
     "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
@@ -240,6 +245,9 @@ label chapter1:
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
     $ config.side_image_tag = "None"
+
+    # show hunter sprite
+
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
     u "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
@@ -308,6 +316,8 @@ label chapter1:
     #SCENE CHANGE - Black Market
     scene bg underground market
 
+    # show hunter sprite
+
     "He takes my hand and gives a low hush, leading me through the crowd. I look down at my feet."
 
     #SFX - CROWD
@@ -318,6 +328,7 @@ label chapter1:
 
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg underground market
+    # show hunter sprite
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
     "Her body is so human and serene from the top, but her lower half....scales, a tail that flows in the water and reflects off the dim lights around her."
@@ -392,10 +403,12 @@ label chapter1:
     "I want answers."
     "Hunter knocks at the entrance of the ship."
     "There's some loud grunting and muffled swearing as the door opens."
-    show grandpa neutral at right with dissolve
+    show grandpa neutral with dissolve
     g "I told you people I don't have any-"
+    show grandpa surprised with vpunch
     "The old man stands frozen before me. He looks as though he's seen a ghost."
     y neutral "Grandfather…?"
+    show grandpa happy with dissolve
     g "Oh, bless the stars… you got my letter? You're really here! My dear, sweet [y]!"
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
     "I hug him tight in return. The wave of anxious anticipation I had moments before seemed to vanish entirely."
@@ -412,6 +425,7 @@ label chapter1:
     y "Mother has been well, as well as Father. But, well."
     y "She read the letters, but never let me see them. I only recently saw them myself."
     y "She let me keep the gifts you sent, but never the letters..."
+    show grandpa neutral with dissolve
     g "Oh, Marie..."
     "He lets out a wistful sigh."
     g "Can't be helped, I s'pose. Come on, then! Let's get you settled in."
@@ -423,8 +437,13 @@ label chapter1:
     #SCENE CHANGE - Shabby Market
     scene bg shabby market
 
+    show grandpa happy at left with dissolve
+
     "Today, Grandfather and I shop for the next week's supply of food before he meets a trader in the afternoon."
     "Along with Hunter, who just happened to be free."
+
+    # show hunter at right with dissolve
+
     y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
     y "Color, I can do that. But I'd rather not have to smell them at all."
@@ -432,6 +451,7 @@ label chapter1:
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!"
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids"
+    show grandpa neutral at left with dissolve
     g "But I s'pose you'll never get to see that, would ye."
     "He also wishes I could've inherited his love for the hunt."
     y "Apologies, Grandfather..."
@@ -440,12 +460,13 @@ label chapter1:
     h "Mr. Eaton, Merrill's open."
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep Merrill waitin'. The ship won't pay for itself!"
+    hide grandpa happy at left with dissolve
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
     y "Grandfather..."
     "Out of habit, my hand finds my camera still sitting at my side, waiting, and I'm struck with a thought."
     y "Hunter."
     h "Hmmh?"
-    y "I need your help"
+    y "I need your help."
     h "With what?"
     y "We're going to make Grandfather's day!"
     h "What, buy him mermaid nigiri for dinner?"
@@ -458,7 +479,6 @@ label chapter1:
     h "Alright, it's a nice day. Let's get him a picture."
     y "Thank you!"
 
-
     #TODO SCENE CHANGE - Sea
     scene bg calmwave with dissolve
     stop music fadeout 1.0
@@ -467,6 +487,9 @@ label chapter1:
 
     "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
     "The sea is calm, and the sun is shining down."
+
+    # show hunter with dissolve
+
     h "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     h "When they feel safe enough to. If they spot my little skiff, the show's over."
@@ -479,6 +502,9 @@ label chapter1:
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
+
+    # show hunter with vshake
+
     h "What the damn-"
     "The weather changes nearly in an instant."
     "I can't see a hint of blue in the sky."
@@ -500,14 +526,14 @@ label chapter1:
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     h "The waters are getting choppier, stay away from the ledge!"
-    y neutral "Well, obviously! I can hardly stand straight!"
+    y huffed "Well, obviously! I can hardly stand straight!"
     "He returns back to his position, eyes staying forward and ahead as the winds grow stronger."
     "I could hardly see out, but I couldn't give up my quest for a picture."
     "The sounds of the waves and the wind made Hunter's words a bit hard to hear."
-    "I hold my camera up, making sure my hand was ready to press the trigger once I saw a mermaid."
+    y neutral"I hold my camera up, making sure my hand was ready to press the trigger once I saw a mermaid."
     #SPRITE?
     u "Come...come with me..."
-    y "What...?"
+    y shocked "What...?"
     u "O' ye of land to the queen of sea..."
     "My thoughts feel hazy, and my body feels as though I'm floating."
     h "[y], what are you doing?!"
@@ -526,7 +552,9 @@ label chapter1:
     "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
 
     #SFX - SPLASH
+    scene bg black with hpunch
     play sound "audio/sfx_splash.flac"
+
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The song stops, but my body is numb."
     "The regret floods my mind, but it's too late."
@@ -631,20 +659,23 @@ label chapter1:
     scene bg sea
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
+    show prince 4 at left with dissolve
+    # show jorunn at right with dissolve
     guard "Sharks ahead! Get the prince out of here!"
     guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
     uj "I'll be taking these home then! Goodbye!"
     voice "audio/voice/prince/THIODAL-6.wav"
+    show prince 4 at left with hpunch
     up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
     "Hiding between the broken shells of sea hunterships, I could see the sharks patrolling. Did the siren summon them?"
-    "The merman that was surrounded by knights was called a prince huh?"
+    "The merman that was surrounded by knights was called a prince, huh?"
     "He sure looked like one, his fins were unlike any other I've seen, a striking array of blue."
     "Do I approach him..? Or perhaps the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
     "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
-    "Either way, they're both starting to swim away"
+    "Either way, they're both starting to swim away."
 
     #Follow Striking Prince
     #Follow Scrappy Boy (can't choose this yet, lol)
@@ -656,6 +687,7 @@ label chapter1:
 
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
+    # hide jorunn at right with slideright
     "Perhaps the prince would be kind to someone in need? I hope I'm not a species of fish they fight over for eating."
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
@@ -665,10 +697,11 @@ label ch1_followprince:
     "It felt like riding  a bike downhill, without any brakes to stop me. I couldn't stop before crashing into the back of the striking merman's head."
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
-    show prince 4 at center with dissolve
     voice "audio/voice/prince/THIODAL-7.wav"
-    up "!!!" with screenShake
+    show prince 1 at furthleft with hpunch
+    up "!!!"
     voice "audio/voice/prince/THIODAL-8.wav"
+    show prince 4 with hpunch
     up "Who dares-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
@@ -682,7 +715,7 @@ label ch1_followprince:
     "I know I've scraped something swimming out of the cave. It's a minor itch, but I can feel the blood seeping from my body as I propel through the water."
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seemed to realize this, at least."
-    show prince 4
+    show prince 4 at furthleft with dissolve
     voice "audio/voice/prince/THIODAL-10.wav"
     up "You- lead it that way!"
     "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
@@ -690,7 +723,7 @@ label ch1_followprince:
     "He must have quickly brandished a weapon with great speed between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
     "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
     "Surely this is more tantalizing than my pitiful injury."
-    show prince 5
+    show prince 5 with dissolve
     voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
@@ -699,8 +732,10 @@ label ch1_followprince:
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
     voice "audio/voice/prince/THIODAL-12.wav"
     up "Stay still for a moment."
+    show prince 4 with dissolve
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
+    show prince 5 with dissolve
     "Almost instantly, I could feel my energy return. I suppose being so small, even a little bit of blood loss could make you quite weak."
     y "Was that healing magic? I've only heard of it in books."
     y "Ah, I should, no, wait, I forget myself."
@@ -737,8 +772,10 @@ label ch1_followprince:
     "Clearly he knows a trick or two, especially with those sharks."
     y "If it's alright, I would like to make a request. "
     y "Could you lead me back to...the kingdom? I...have business there."
+    show prince 3 with dissolve
     "He stares at me for a few moments, with an indeterminable expression on his face."
     voice "audio/voice/prince/THIODAL-21.wav"
+    show prince 5 with dissolve
     p "You may follow us. When we arrive, attend to your business. Any other troubles from then on must be your own."
     y "That's more than enough! Thank you!"
     "That is definitely not enough!!"
@@ -762,6 +799,7 @@ label ch1_followprince:
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
     show prince 1 at right with dissolve
+    # show cetus at left with dissolve
     voice "audio/voice/prince/THIODAL-22.wav"
     p "Cetus. It has been a long day. You will have to forgive my impropriety."
     c "Always so stiff."
@@ -775,11 +813,12 @@ label ch1_followprince:
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     voice "audio/voice/prince/THIODAL-24.wav"
     p "I will return shortly to my duties, Uncle."
-    "My body seizes, and I feel drawn towards Cetus."
+    "My body seizes, and I feel drawn towards Cetus." with hpunch
     "The prince does not seem to take notice..."
     "My will is no longer mine, and I am no more than a mere fish lost in the sea."
     "It's just like how I felt when the siren dragged me under."
     "Suddenly, a burst of light breaks my body free from the trance, and I feel my fins begin to change."
+    scene bg white with hpunch
 
     stop music fadeout 2.0
     scene bg black with dissolve
