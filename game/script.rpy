@@ -3,6 +3,7 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define y = Character("[player_name]", image="june")
+define ny = Character(None, image="june") # for narration
 define g = Character("Grandfather", image="june")
 define h = Character("Hunter", image="june")
 define s = Character("Skylla", image="june")
@@ -154,24 +155,24 @@ label chapter1:
     t "Tch, inlanders. What is someone like her out here for?"
     t "Inlander? Oy, you don't see many of them.. And she's got a fancy one of those picture devices, that could land us a nice bit of coin aye?"
 
-    #TODO - SPRITE CHANGE (Annoyed Expression)
+    #SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
-    "Are they referring to my camera? They're hardly being secretive about wanting to rob me!"
+    ny huffed "Are they referring to my camera? They're hardly being secretive about wanting to rob me!"
     "I quietly slip away from the men watching me, heading further down the road."
     "I keep my camera close to my hip, hiding it with my coat to draw away any more notice."
 
     #SCENE CHANGE - (Shabby Market [Zoomed In])
     scene bg shabby market
-    "The smell grows worse as I suddenly find myself at a market."
+    ny neutral "The smell grows worse as I suddenly find myself at a market."
     "The smell of fish, salt, smoke and sewer is strong here. Though despite it, there seemed to be a few friendlier townsfolk around."
     "I approach the friendliest of the bunch. A man mans his fish stand, hawking his catches."
 
-    #TODO - SPRITE CHANGE (??? Expression)
-    "I just hope I'm not expected to buy the fish covered in flies."
+    #SPRITE CHANGE (??? Expression)
+    ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
     #SCENE CHANGE - Shabby Market (or CG [Merchant at Fish Stand])
     scene bg shabby market
-    y "Good day to you sir. I'm sorry for disrupting you, but-"
+    y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
     t "Bass or Tilapia?"
     y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
     t "Does I look like a map stand? I sell fish, ye buy fish, ye leave- ye get it?"
@@ -225,11 +226,11 @@ label chapter1:
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. "
     "My eyes follow every gleaming thing being displayed."
 
-    y "This is incredible..."
+    y neutral "This is incredible..."
     "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
-    #NOTE Are we hiding name until he reveals himself?
+    $ config.side_image_tag = "None"
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sunk as I stood frozen, feeling a gloved hand on top of my own, stopping me."
     u "I knew I saw a familiar face in the crowd. I knew it was you, [y] Finch~."
@@ -276,9 +277,9 @@ label chapter1:
     scene bg black
 
     #SCREEN SHAKE
-    y "Hey! don't just throw this dirty thing on me!" with screenShake
+    y huffed "Hey! don't just throw this dirty thing on me!" with screenShake
     h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and to avoid seeing things you shouldn't be looking at anyways."
-    y "Seeing things I shouldn't be..?"
+    y neutral "Seeing things I shouldn't be..?"
     "Things I am forbidden to see...I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
     "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
 
