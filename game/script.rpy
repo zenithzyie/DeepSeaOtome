@@ -420,17 +420,24 @@ label chapter1:
     h "What, buy him mermaid nigiri for dinner?"
     y  "No! I'm going to take a picture of a live one."
     y "Imagine what people would pay for a picture!"
-    h "I s'pose inlanders would think they'd be interestin'."
-    #Hunter is down bad so he agrees
+    "Hunter seems to think about it for a moment."
+    y "Please?"
+    "I put on my best begging expression, and he gives in immediately."
+    h "I s'pose inlanders would think they'd be interestin' enough."
+    h "Alright, it's a nice day. Let's get him a picture."
+    y "Thank you!"
+
 
     #TODO SCENE CHANGE - Sea
-    scene bg white
+    scene bg calmwave
     stop music fadeout 1.0
     #SFX - waves (calm)
     play sound "audio/sfx_wavesCalm.ogg" loop
 
+
+
     #SCENE CHANGE - view of the sea (stormy)
-    scene bg white
+    scene bg choppywave
     y "It was sunny only moments ago! What is this?"
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, June!"
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
