@@ -118,8 +118,6 @@ label prologue:
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The regret floods my mind, but it's too late."
     "I can feel myself fading...is this really the end...?"
-
-
     jump chapter1
 
 #CHAPTER 1
