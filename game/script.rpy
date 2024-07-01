@@ -242,8 +242,8 @@ label chapter1:
     u "I turned to see who the hell the man was behind me. How does he know my name? I slap his hand away from mine and glare at his face."
     "I do not recognize him."
     u "It's a bit rude to slap a friend, isn't it?"
-
-    y "Who are you, exactly?"
+    $ config.side_image_tag = "june"
+    y neutral "Who are you, exactly?"
     "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
@@ -319,7 +319,7 @@ label chapter1:
     "Her body is so human and serene from the top, but her lower half....scales, a tail that flows in the water and reflects off the dim lights around her."
     "A woman....no, a creature that is equal parts human and fish."
 
-    y "Beautiful..."
+    y neutral "Beautiful..."
 
     #TODO SCENE = CG (Mermaid in Tank [Full])
     scene bg underground market
@@ -336,7 +336,8 @@ label chapter1:
     "I grip Hunter's hand tighter, and he starts to walk faster through the crowd."
 
     h "I said keep your eyes down, or people might see your face. Believe me, you don't want them remembering who you are."
-    y "I know."
+    $ config.side_image_tag = "june"
+    y neutral "I know."
     "I glance back for just a moment before turning back away."
     "The cruel reality of the world. There isn't much I can do about it."
     "To fill the air with something else, I ask Hunter a question."
@@ -360,7 +361,7 @@ label chapter1:
     play music "music_town.mp3" fadein 1.0
     scene bg port
     "Once we make it outside the underground and I can finally see the sky again, the sun is high in the sky."
-    y "It's afternoon already?"
+    y neutral "It's afternoon already?"
     h "Wandering does that to ya. When did your train get here?"
     y "Early morning. My legs are aching to sit."
     h "We're almost there. Don't keel over on me, would you?"
@@ -390,7 +391,7 @@ label chapter1:
     show grandpa neutral at right with dissolve
     g "I told you people I don't have any-"
     "The old man stands frozen before me. He looks as though he's seen a ghost."
-    y "Grandfather…?"
+    y neutral "Grandfather…?"
     g "Oh, bless the stars… you got my letter? You're really here! My dear, sweet [y]!"
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
     "I hug him tight in return. The wave of anxious anticipation I had moments before seemed to vanish entirely."
@@ -420,7 +421,7 @@ label chapter1:
 
     "Today, Grandfather and I shop for the next week's supply of food before he meets a trader in the afternoon."
     "Along with Hunter, who just happened to be free."
-    y "...I don't know a thing about shopping for fish."
+    y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
     y "Color, I can do that. But I'd rather not have to smell them at all."
     g "There's been worse smells, little bug."
@@ -463,10 +464,10 @@ label chapter1:
     "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
     "The sea is calm, and the sun is shining down."
     h "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
-    y "Mermaids sunbathe? Really?"
+    y shocked "Mermaids sunbathe? Really?"
     h "When they feel safe enough to. If they spot my little skiff, the show's over."
     h "Gotta be quick with your pictures."
-    y "Of course!"
+    y neutral "Of course!"
     "My only experiences are with inland animal photography, I can't imagine it would be harder than capturing birds on film."
     "The boat travels further out to sea, putting the port behind us."
     h "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, [y]!"
@@ -478,7 +479,7 @@ label chapter1:
     "The weather changes nearly in an instant."
     "I can't see a hint of blue in the sky."
     "It's covered by clouds of grey, instead."
-    y "It was sunny only moments ago! What is this?"
+    y shocked "It was sunny only moments ago! What is this?"
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
     "The lurching nearly throws me to the floorboards, but I grab the mast just in time to stay upright"
@@ -495,7 +496,7 @@ label chapter1:
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     h "The waters are getting choppier, stay away from the ledge!"
-    y "Well, obviously! I can hardly stand straight!"
+    y neutral "Well, obviously! I can hardly stand straight!"
     "He returns back to his position, eyes staying forward and ahead as the winds grow stronger."
     "I could hardly see out, but I couldn't give up my quest for a picture."
     "The sounds of the waves and the wind made Hunter's words a bit hard to hear."
