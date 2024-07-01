@@ -31,6 +31,11 @@ init python:
 
 label start:
 
+    $ hunter_points = 0
+    $ prince_points = 0
+    $ jorunn_points = 0
+    $ cetus_points = 0
+
     # "NARRATION"
 
     # # If you want to hide the side image
@@ -42,7 +47,7 @@ label start:
 
     # #this above one makes a blank thing, good for comedic effect?
 
-    # #NEED TO DO THIS EVERY TIME THERES NARRATION W/ NO MIN
+    # #NEED TO DO THIS EVERY TIME THERES NARRATION W/ NO PROTAG
     # # To unhide the side image
     # $ config.side_image_tag = "june"
 
@@ -258,7 +263,20 @@ label chapter1:
     y "Right, Hammy! You were so different when we were young!"
     "He deflates as soon as I say it."
     h "Ah, you still remember that nickname. Pity..."
-    y "But of course, I'll just call you Hunter, now."
+
+    menu:
+        "Tease him.":
+            $ hunter_points += 1
+            y "Well, Hammy, you don't leave my mind that easily!"
+            h "Please, really, just Hunter is fine."
+            y "But your face is so cute when I say it!"
+            h "You..."
+            "He looks away from me. I believe he is thoroughly embarrassed now."
+            y "Of course, I'll just call you Hunter. I'm just having my fun."
+
+        "Drop it.":
+            y "But of course, I'll just call you Hunter, now."
+
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
     h "At least you remember me! It's been only about, what… ten years since we've last seen each other?"
@@ -325,6 +343,7 @@ label chapter1:
 
     menu:
         "Do you hunt now, too? Like your father?":
+            $ hunter_points += 1
             h "Well, yeah, I do. It's the family business, though your family left it to mine."
             h "Your old man always talked about wanting you to come back to join him, but when he announced his retirement, he sold most of it to my father instead."
             y "I see..."
@@ -353,7 +372,7 @@ label chapter1:
     h "The only one still not made of steel, that one over there."
     "Out on the furthest side of the docks was a large wooden ship. It stuck out compared to the rest, with its clothed sails, and ornate details."
     "There was clearly a lot of pride and dedication to the maintenance of it."
-    "I had a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
+    "I had a faint recollection of Grandfather owning a boat, of course, but I thought I would remember more than that upon seeing his home."
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
     y "Hey, don't start shoving me- I appreciate the help, but you really don't have to follow me the whole way there."
     h "I have business with your old man already, running into you was just a coincidence. Let's go!"
@@ -425,7 +444,7 @@ label chapter1:
     h "With what?"
     y "We're going to make Grandfather's day!"
     h "What, buy him mermaid nigiri for dinner?"
-    y  "No! I'm going to take a picture of a live one."
+    y "No! I'm going to take a picture of a live one."
     y "Imagine what people would pay for a picture!"
     "Hunter seems to think about it for a moment."
     y "Please?"
@@ -534,9 +553,20 @@ label chapter1:
     s "That's no way to speak as a lady!"
     "Try as I might, none of my words come out right."
     "I've been turned into a fish by the siren!?"
-    "I try to swim at her, but an invisible wall stops me before I can get close enough to smack her."
-    "Near-invisible, I should say. The walls are shining."
-    "A bubble?"
+    menu:
+        "Stay still.":
+            $ cetus_points += 1
+            $ prince_points -= 1
+            "I don't want to risk angering her."
+            "Best to stay still and hope for the best..."
+
+        "Get her!":
+            $ prince_points += 1
+            $ cetus_points -= 1
+            "I try to swim at her, but an invisible wall stops me before I can get close enough to smack her."
+            "Near-invisible, I should say. The walls are shining."
+            "A bubble?"
+
     s "None of that swimming off! Stay put here, dearie, and be good, yes?"
     s "You'll give me what I want in time."
     s "Now, where did I put that pestle?"
@@ -608,6 +638,7 @@ label chapter1:
     #Follow Scrappy Boy (can't choose this yet, lol)
     menu:
         "Follow Striking Prince":
+            $ prince_points += 1
             jump ch1_followprince
 
 
