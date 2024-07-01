@@ -434,11 +434,24 @@ label chapter1:
     #SFX - waves (calm)
     play sound "audio/sfx_wavesCalm.ogg" loop
 
-    "on sea now"
-
+    "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
+    "The sea is calm, and the sun is shining down."
+    H "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
+    Y "Mermaids sunbathe? Really?"
+    H "When they feel safe enough to. If they spot my little skiff, the show's over."
+    H "Gotta be quick with your pictures."
+    Y "Of course!"
+    "My only experiences are with inland animal photography, I can't imagine it would be harder than capturing birds on film."
+    "The boat travels further out to sea, putting the port behind us."
+    H "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, June!"
+    "I'm about to respond to him, but the ship catches on the waves, and I stumble."
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
+    H "What the damn-"
+    "The weather changes nearly in an instant."
+    "I can't see a hint of blue in the sky."
+    "It's covered by clouds of grey, instead."
     y "It was sunny only moments ago! What is this?"
     h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, June!"
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
