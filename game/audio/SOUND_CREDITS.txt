@@ -1,3 +1,4 @@
+SOUND EFFECTS:
 sfx_splash
 SPLASH (by blaukreuz) by qubodup -- https://freesound.org/s/212143/ -- License: Creative Commons 0
 130723_Brela_HarborJump_F_4824.wav by blaukreuz -- https://freesound.org/s/195877/ -- License: Creative Commons 0
@@ -10,3 +11,25 @@ toaster oven or lift/elevator bell by azumarill -- https://freesound.org/s/56462
 
 sfx_crowd
 06182 male crowd talking - looping.wav by Robinhood76 -- https://freesound.org/s/331627/ -- License: Attribution NonCommercial 4.0
+
+sfx_wavesCalm
+Waves_Crashing_Rocks_IT.wav by uniuniversal -- https://freesound.org/s/620213/ -- License: Creative Commons 0
+
+sfx_wavesChoppy
+Waves crashing on the rocks in Veracruz by felix.blume -- https://freesound.org/s/411509/ -- License: Creative Commons 0
+
+sfx_waveCrash
+wave2.wav by Kayyy -- https://freesound.org/s/61012/ -- License: Attribution 3.0
+
+MUSIC:
+music_town
+Music by Golden Sound Lab from Pixabay
+https://pixabay.com/music/traditional-jazz-wiggle-until-you-giggle-217437/
+
+music_blackmarket
+Music by LFC Records from Pixabay
+https://pixabay.com/music/ambient-dark-piano-ambient-background-music-gloomy-night-218622/
+
+music_underwater
+Music Wondrous Waters from Pixabay
+https://pixabay.com/music/ambient-wondrous-waters-119518/

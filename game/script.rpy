@@ -108,6 +108,7 @@ label prologue:
 label chapter1:
     #TODO SCENE = CG (Train)
     scene bg shabby town
+    play music "music_town.mp3" fadein 1.0
 
     $ config.side_image_tag = "june"
     "Salty air...I remember how I would try to stick out my tongue to taste it."
@@ -199,6 +200,7 @@ label chapter1:
     "There is no response, but..."
     "Suddenly, the wall was pulled back."
     "With cautionary steps, I pushed inside, seeing no one was there behind the door."
+    stop music fadeout 5.0
 
     #SCENE CHANGE - Black Screen
     scene bg black
@@ -211,6 +213,7 @@ label chapter1:
     "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
 
     #SCENE CHANGE -  Underground Black Market Faire
+    play music "music_blackmarket.mp3"
     scene bg underground market
     "It's  almost like a circus, or a fairground. Many merchant's booths had strange knick-knacks begging to be looked at."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves being sold here as rarities. "
@@ -328,6 +331,7 @@ label chapter1:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
+    play music "music_town.mp3" fadein 1.0
     scene bg port
     "Once we make it outside the underground and I can finally see the sky again, the sun is high in the sky."
     y "It's afternoon already?"
@@ -421,7 +425,9 @@ label chapter1:
 
     #TODO SCENE CHANGE - Sea
     scene bg white
-    #TODO SFX - waves (calm)
+    stop music fadeout 1.0
+    #SFX - waves (calm)
+    play sound "audio/sfx_wavesCalm.ogg" loop
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg white
@@ -435,8 +441,11 @@ label chapter1:
 
     #TODO FLASHBACK CG for a second of baby prince and june
     y "Who...? This is familiar to me, but...?"
-    #TODO SFX - loud crash, screen shake
-    #TODO SFX - choppy waves
+    #SFX - loud crash, screen shake
+    play sound "audio/sfx_waveCrash.wav"
+    scene bg white with screenShake
+    #SFX - choppy waves
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop 
 
     h " The waters are getting choppier, stay away from the ledge!"
     y "Well, obviously! I can hardly stand straight!"
@@ -464,14 +473,17 @@ label chapter1:
     "I sit atop the ledge."
     "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
 
-    #TODO SPLASH SFX
+    #SFX - SPLASH
+    play sound "audio/sfx_splash.flac"
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The song stops, but my body is numb."
     "The regret floods my mind, but it's too late."
     "I can feel myself fading...is this really the end...?"
+    stop sound fadeout 2.0
 
     #SCENE CHANGE - Black Screen
     scene bg black
+    play music "music_underwater.mp3"
 
     s "Hmm, hmm, hmm."
     s "After all these years, this is where it's been, encased in a protective spell?"
