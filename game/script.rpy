@@ -524,7 +524,7 @@ label chapter1:
     "..."
     "...Where am I?"
     s "Ah, you've awoken, little human. Or shall I say fish?"
-    y neutral "Blub!"
+    y neutral fish "Blub!"
     "....Huh."
     y "Blub blub blub!"
     "The strange voice laughs at me, and I recognize it."
@@ -616,7 +616,7 @@ label ch1_followprince:
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
     $ config.side_image_tag = "june"
-    y neutral "BLUBBB!!!!"
+    y neutral fish "BLUBBB!!!!"
     "With all the might I could muster I push my way through the current, leaving a trail of bubbles behind me."
     "It felt like riding  a bike downhill, without any brakes to stop me. I couldn't stop before crashing into the back of the striking merman's head."
     #SCREEN SHAKE
