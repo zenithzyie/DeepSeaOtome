@@ -87,6 +87,13 @@ label get_name:
 
 #PROLOGUE
 label prologue:
+
+    scene onboat with dissolve
+    show hunter neutral with dissolve
+    $ config.side_image_tag = "june"
+    y neutral "It was sunny only moments ago! What is this?"
+    "TESTING!!!!"
+
     #TODO SCENE ?
     scene bg choppywave with dissolve
 
@@ -767,7 +774,7 @@ label ch1_followprince:
     "No, surely they wouldn't just kill me for being strange!!"
     "The Prince thought for a moment, but mostly just looked exhausted and wanted to just end the day."
     voice "audio/voice/prince/THIODAL-16.wav"
-    p "It is quite uncommon. Most of her kind couldn't withstand the depths of the sea."
+    p "It is quite uncommon. Most of her kind wouldn't be able to withstand these depths."
     voice "audio/voice/prince/THIODAL-17.wav"
     p "However, if she was a spy, I doubt the sharks would have attacked her."
     "Yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
@@ -818,7 +825,7 @@ label ch1_followprince:
     c "Oh? Who's this you have following you like a pet, Thio?"
     "His gaze catches on me, and I want nothing more than to dart behind a rock and hide from it."
     voice "audio/voice/prince/THIODAL-23.wav"
-    p "I...did not ask for a name. She has business here in the city. By formality, I have allowed her to return with me."
+    p "I...did not ask for a name. She claims to have business here in the city. By formality, I allowed her to return with me."
     c "I see..."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     voice "audio/voice/prince/THIODAL-24.wav"
