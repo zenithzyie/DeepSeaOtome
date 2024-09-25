@@ -675,15 +675,15 @@ label chapter1:
     scene bg sea
     "It doesn't matter where I go, just far away from that witch!"
     "The hole happened to bring me straight in the thick of things outside the cave."
-    show prince 4 at left with dissolve
-    show jorunn sweat at moreright with dissolve
+    show prince 4 at left, bob with dissolve
+    show jorunn sweat at bob, moreright with dissolve
     guard "Sharks ahead! Get the prince out of here!"
     guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
-    show jorunn glee at moreright with vpunch
+    show jorunn glee at bob, moreright with vpunch
     uj "I'll be taking these home then! Goodbye!"
     voice "audio/voice/prince/THIODAL-6.wav"
-    show prince 4 at left with hpunch
+    show prince 4 at left, bob with hpunch
     up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
@@ -715,15 +715,15 @@ label ch1_followprince:
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     voice "audio/voice/prince/THIODAL-7.wav"
-    show prince 1 at furthleft with hpunch
+    show prince 1 at bob, furthleft with hpunch
     up "!!!"
     voice "audio/voice/prince/THIODAL-8.wav"
-    show prince 4 with hpunch
+    show prince 4 at bob with hpunch
     up "Who dares-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
     $ config.side_image_tag = "None"
-    show prince 5
+    show prince 5 
     voice "audio/voice/prince/THIODAL-9.wav"
     up "...?"
     guard "The fish drew their attention!"
@@ -732,7 +732,7 @@ label ch1_followprince:
     "I know I've scraped something swimming out of the cave. It's a minor itch, but I can feel the blood seeping from my body as I propel through the water."
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seemed to realize this, at least."
-    show prince 4 at furthleft with dissolve
+    show prince 4 at bob, furthleft with dissolve
     voice "audio/voice/prince/THIODAL-10.wav"
     up "You- lead it that way!"
     "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
@@ -740,7 +740,7 @@ label ch1_followprince:
     "He must have quickly brandished a weapon with great speed between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
     "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
     "Surely this is more tantalizing than my pitiful injury."
-    show prince 5 with dissolve
+    show prince 5 at bob, with dissolve
     voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
@@ -815,7 +815,7 @@ label ch1_followprince:
     "We arrive at a place just before a city, where a mesmerizing merman waits for the prince."
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
-    show prince 1 at right with dissolve
+    show prince 1 at right, bob with dissolve
     # show cetus at left with dissolve
     voice "audio/voice/prince/THIODAL-22.wav"
     p "Cetus. It has been a long day. You will have to forgive my impropriety."

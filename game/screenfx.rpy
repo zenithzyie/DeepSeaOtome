@@ -1,3 +1,10 @@
+#BOBBING
+transform bob:
+    yalign 1.0
+    linear 2.0 yalign 1.7
+    linear 2.0 yalign 1.0
+    repeat
+
 #Shake(position, duration, maximum distance)
 init:
 
