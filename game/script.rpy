@@ -88,7 +88,11 @@ label get_name:
 #PROLOGUE
 label prologue:
 
-    scene onboat with dissolve
+    scene bg choppywave with dissolve
+
+    #USING SHIFT + P TO OPEN THE ACTION BUTTON CAMERA THING
+    #YOU COULD DO ANYTHING WITH THIS HOLY FUCK
+
     show hunter neutral with dissolve
     $ config.side_image_tag = "june"
     y neutral "It was sunny only moments ago! What is this?"
@@ -137,7 +141,7 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
 
     "I was a child the last time I did something as silly as that."
-    "I can't wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
+    "I can't wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see my grandfather on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can't really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
@@ -151,7 +155,7 @@ label chapter1:
 
     "The screeching of the brakes signal the train to a stop."
     "From my car seat window, I let the shutter of my camera go off, taking a picture of the people outside."
-    "It's been years since I last stepped foot here."
+    "It's been years since I last set foot here."
     "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
     "Homes and shops descended down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
     y "Excuse me- sir! Hello?"
@@ -723,7 +727,7 @@ label ch1_followprince:
     $ config.side_image_tag = "june"
     y "Please help me!!"
     $ config.side_image_tag = "None"
-    show prince 5 
+    show prince 5
     voice "audio/voice/prince/THIODAL-9.wav"
     up "...?"
     guard "The fish drew their attention!"

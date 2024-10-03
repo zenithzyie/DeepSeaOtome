@@ -1,28 +1,35 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 676, in script
-    show jorunn glee at moreright with goup
-  File "game/script.rpy", line 676, in <module>
-    show jorunn glee at moreright with goup
-NameError: name 'goup' is not defined
+  File "game/ActionEditor.rpy", line 13, in script
+    init -1098 python:
+  File "game/ActionEditor.rpy", line 13, in script
+    init -1098 python:
+  File "game/ActionEditor.rpy", line 18, in <module>
+    sound_viewer = _viewers.open_sound_viewer,
+AttributeError: 'StoreModule' object has no attribute 'open_sound_viewer'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 676, in script
-    show jorunn glee at moreright with goup
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 1359, in execute
-    paired = renpy.python.py_eval(self.paired)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1209, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 676, in <module>
-    show jorunn glee at moreright with goup
-NameError: name 'goup' is not defined
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
+    renpy.main.main()
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 526, in main
+    renpy.game.context().run(node)
+  File "game/ActionEditor.rpy", line 13, in script
+    init -1098 python:
+  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
+  File "game/ActionEditor.rpy", line 13, in script
+    init -1098 python:
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 823, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/ActionEditor.rpy", line 18, in <module>
+    sound_viewer = _viewers.open_sound_viewer,
+AttributeError: 'StoreModule' object has no attribute 'open_sound_viewer'
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
-HeartsDepth 1.0
-Mon Jul  1 03:04:06 2024
+HeartsDepthDEMO 1.1
+Thu Oct  3 02:56:56 2024
