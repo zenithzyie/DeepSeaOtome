@@ -1,35 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/ActionEditor.rpy", line 13, in script
-    init -1098 python:
-  File "game/ActionEditor.rpy", line 13, in script
-    init -1098 python:
-  File "game/ActionEditor.rpy", line 18, in <module>
-    sound_viewer = _viewers.open_sound_viewer,
-AttributeError: 'StoreModule' object has no attribute 'open_sound_viewer'
+  File "game/script.rpy", line 574, in script
+    if "[player_name]" = "June":
+SyntaxError: invalid syntax (game/script.rpy, line 574)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\bootstrap.py", line 359, in bootstrap
-    renpy.main.main()
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\main.py", line 526, in main
-    renpy.game.context().run(node)
-  File "game/ActionEditor.rpy", line 13, in script
-    init -1098 python:
-  File "lib/python3.9/future/utils/__init__.py", line 444, in raise_
-  File "game/ActionEditor.rpy", line 13, in script
-    init -1098 python:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/ActionEditor.rpy", line 18, in <module>
-    sound_viewer = _viewers.open_sound_viewer,
-AttributeError: 'StoreModule' object has no attribute 'open_sound_viewer'
+  File "game/script.rpy", line 574, in script
+    if "[player_name]" = "June":
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 1842, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1207, in py_eval
+    code = py_compile(code, 'eval')
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1144, in py_compile
+    raise e
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1081, in py_compile
+    raise orig_e
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1073, in py_compile
+    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
+SyntaxError: invalid syntax (game/script.rpy, line 574)
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 HeartsDepthDEMO 1.1
-Thu Oct  3 02:56:56 2024
+Sat Oct 19 23:37:40 2024

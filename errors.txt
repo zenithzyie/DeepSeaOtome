@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 842: expected statement.
-    "We sincerely look forward to releasing the rest of the story." vpunch
-                                                                          ^
+File "game/script.rpy", line 576: expected 'simple_expression' not found.
+    show grandpa happy with jump
+                            ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Mon Jul  1 03:09:56 2024
+Sat Oct 19 23:40:02 2024
