@@ -48,9 +48,7 @@ label prologue:
     $ config.side_image_tag = "june"
     y shocked "It was sunny only moments ago! What is this?"
 
-    $ config.side_image_tag = "None"
-
-    # show hunter at moreright with dissolve
+    show hunter silhouette with dissolve
 
     u "Blasted...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
@@ -58,7 +56,7 @@ label prologue:
     "I can see something glowing through the wind and rain."
 
     #SCREEN SHAKE
-    h "[y]!" with screenShake
+    u "[y]!" with screenShake
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
@@ -79,18 +77,13 @@ label chapter1:
     scene bg shabby town
     play music "music_town.mp3" fadein 1.0
 
-    $ config.side_image_tag = "june"
     "Salty air…I remember how I would try to stick out my tongue to taste it."
-
     "I was a child the last time I did something as silly as that."
     "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
-    "I only ever got to see my grandfather on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
+    "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can’t really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
     "Even though I am now grown, she refuses to say what happened."
-    t "Please gather all personal belongings, we are arriving at Aquantis station!"
-
-    $ config.side_image_tag = "None"
     t "Please gather all personal belongings, we are arriving at Aquantis Station!"
 
     $ config.side_image_tag = "june"
@@ -127,7 +120,7 @@ label chapter1:
     y "Excuse me- sir! Hello?"
     "He ignores me, walking quickly away from the station."
     "I try to ask few more people, but not one wants to give me the time of day."
-    "Trying to grab anyone's attention around here seems impossible! They all just ignore me."
+    ny huffed "Trying to grab anyone's attention around here seems impossible! They all just ignore me."
     "Were they so unfriendly to people from outside when I was younger? I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
@@ -137,8 +130,6 @@ label chapter1:
     "Rather than being ignored, it seems I'm attracting an uncomfortable attention."
     "Their gazes feel heavy on me as I walk by."
     "It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, it feels gloomy and unwelcoming."
-
-    $ config.side_image_tag = "None"
     t "Tch, inlanders. What is someone like her out here for?"
     t "Inlander? Oy, you don't see many of them. And she's got a fancy one of those picture devices, that could land us a nice bit of coin aye?"
 
@@ -155,6 +146,7 @@ label chapter1:
     menu:
         "What catches your eye?"
         "The newsboard":
+            $ seastorm = True
             "There's a board filled with notices and posters here."
             y "Beware of sea witch storms..."
             # Show propaganda poster here
@@ -174,7 +166,7 @@ label chapter1:
 
         "The newspaper":
             $ newspaper = True
-            "Extra, extra! Read all about it!"
+            t "Extra, extra! Read all about it!"
             "I purchase a copy of the weekly news,"
             "Several Fishing Companies Absorbed by Morrowe Family: What Will They Do Now?"
             y "Morrowe...that name sounds familiar."
@@ -188,14 +180,14 @@ label chapter1:
         set menuset
         "Talk to..."
         "Elderly woman":
-            y " Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
+            y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
             "The woman turns to me. She has a crazed look on her face."
             woman "Knock knock."
             y "Pardon?"
             woman "Knock knock."
             y "Oh, I know this one. Who’s there?"
             woman "Knock knock."
-            y "Uh…knock knock?"
+            y flustered "Uh...knock knock?"
             "The old woman grins toothily."
             woman "Knock knock."
             y "Have a good day, ma'am."
@@ -209,8 +201,8 @@ label chapter1:
             kid "Oh, I know that place!"
             kid "My mama says I’m not allowed to go to the west alley."
             kid "She says there’s bad people there."
-            y "Oh…"
-            y "Well, thank you for your help."
+            y shocked "Oh…"
+            y neutral "Well, thank you for your help."
             jump talktownsfolk
 
         "Fishmonger":
@@ -218,7 +210,6 @@ label chapter1:
             ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
             #SCENE CHANGE - Shabby Market (or CG [Merchant at Fish Stand])
-            scene bg shabby market
             y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or Tilapia?"
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
@@ -233,13 +224,15 @@ label chapter1:
             fishmonger "That's all I know, and all I’ll say."
             "He looks at me and grins toothily."
             fishmonger "Payment?"
-            "Clearly, the only language merchants speak is money..."
-            y "Oh, yes. Thank you so much for the help."
+            ny huffed "Clearly, the only language merchants speak is money..."
+            y neutral "Oh, yes. Thank you so much for the help."
             "I leave him a fair amount of coin for his trouble."
             jump talktownsfolk
 
     #SCENE CHANGE - Brick Wall
     scene bg brickwall
+    $ config.side_image_tag = "june"
+    ny neutral"I arrive at the west alleyway. It's a rather nondescript path."
     "Upon reaching the end, I make a left turn down to see a brick wall. It has an odd discolouration unlike the rest."
     "This must be the wall the merchant spoke of. "
     "Well."
@@ -253,31 +246,32 @@ label chapter1:
                 "Next was..."
                 "3":
                     menu:
+                        "And finally..."
                         "4":
                             jump afterknocking
                         "5":
-                            "Was that it? Nothing is happening."
-                            "Let me try again."
+                            ny huffed "Was that it? Nothing is happening."
+                            ny neutral "Let me try again."
                             jump knocking
                         "3":
-                            "Was that it? Nothing is happening."
-                            "Let me try again."
+                            ny huffed "Was that it? Nothing is happening."
+                            ny neutral "Let me try again."
                             jump knocking
                 "4":
-                    "No, that doesn't seem right..."
-                    "Let me try again."
+                    ny huffed "No, that doesn't seem right..."
+                    ny neutral "Let me try again."
                     jump knocking
                 "5":
-                    "No, that doesn't seem right..."
-                    "Let me try again."
+                    ny huffed "No, that doesn't seem right..."
+                    ny neutral "Let me try again."
                     jump knocking
         "3":
-            "No, that doesn't seem right..."
-            "Let me try again."
+            ny huffed "No, that doesn't seem right..."
+            ny neutral "Let me try again."
             jump knocking
         "4":
-            "No, that doesn't seem right..."
-            "Let me try again."
+            ny huffed "No, that doesn't seem right..."
+            ny neutral "Let me try again."
             jump knocking
 
     label afterknocking:
@@ -285,7 +279,7 @@ label chapter1:
     "..1..2..3…"
     "..2..3..4.."
     "There is no response at first, but..."
-    "Suddenly, the wall is pulled back."
+    ny shocked "Suddenly, the wall is pulled back."
     "With cautionary steps, I push inside, seeing no one is there behind the door."
     stop music fadeout 5.0
 
@@ -314,18 +308,16 @@ label chapter1:
     "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
-    $ config.side_image_tag = "None"
 
     show hunter neutral with dissolve
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
-    "I turn to see who the hell the man is behind me. How does he know my name? I slap his hand away from mine and glare at his face."
+    ny huffed "I turn to see who the hell the man is behind me. How does he know my name? I slap his hand away from mine and glare at his face."
     "I do not recognize him."
     u "It's a bit rude to slap a friend, isn't it?"
-    $ config.side_image_tag = "june"
-    y huffed "Who are you, exactly?"
+    y "Who are you, exactly?"
     "He scoffs and shakes his head." with hpunch
 
     #TODO SPRITE CHANGE - Hunter Disappointed
@@ -339,8 +331,8 @@ label chapter1:
     "He pulls down his mask to reveal a handsome and somewhat-familiar face."
     h "Hunter Aubrey Morrowe."
     if newspaper:
-        "Oh, Morrowe! That means..."
-    y "...Hunter?"
+        ny shocked "Oh, Morrowe! That means..."
+    y neutral "...Hunter?"
     h "That's my name, yes."
     "He looks positively delighted to hear me say his name."
     y "..."
@@ -383,8 +375,8 @@ label chapter1:
     #SCREEN SHAKE
     y huffed "Hey- don't just throw this dirty thing on me!"
     h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
-    y neutral "Seeing things I shouldn't be..?"
-    "Things I am forbidden to see...I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
+    y shocked "Seeing things I shouldn't be..?"
+    ny neutral"Things I am forbidden to see...I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
     "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
 
     #SCENE CHANGE - Black Market
@@ -489,10 +481,10 @@ label chapter1:
 
     #SCENE CHANGE - Port w/ Boats
     play music "music_town.mp3" fadein 1.0
-    show bg port with dissolve
+    scene bg port with dissolve
+    "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     y neutral "It's afternoon already?"
     show hunter neutral with dissolve
-    "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     h "Wandering does that to ya. When did your train get here?"
     y "Early morning. My legs are aching to sit."
     h "We're almost there. Don't keel over on me, would you?"
@@ -500,9 +492,9 @@ label chapter1:
     "We're actually at the portside now, the edge of the country. Practically the edge of the world."
     "Ships are anchored near the shore. Fishermen and hunters alike line the dock, carrying supplies to and from the ships."
     "They are much different than the ones I remember as a kid. These are large, made of steel, and produce steam."
-    y "Does Grandfather live on one of these ships?"
+    y shocked "Does Grandfather live on one of these ships?"
     h "The only one not made of steel, that one over there."
-    "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, with its clothed sails, and ornate details."
+    ny neutral "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, with its clothed sails, and ornate details."
     "It has clearly been maintained with a lot of pride and dedication."
     "I have a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
@@ -530,7 +522,7 @@ label chapter1:
     show grandpa surprised with vpunch
     "The old man stands frozen before me. He looks as though he's seen a ghost."
     y shocked "Grandfather…?"
-    show grandpa happy
+    show grandpa happy at jumpin
     g "Oh, bless the stars...you got my letter? you're really here! My dear, sweet [y]!"
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
     "I hug him tightly in return. The wave of anxious anticipation I had moments before seems to vanish entirely."
@@ -567,43 +559,40 @@ label chapter1:
     "Today, Grandfather and I are shopping for the next week's supply of food before he meets a trader in the afternoon."
     show hunter neutral at right with dissolve
     "Along with Hunter, who just happened to be free."
-
     y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
     y "Color, I can do that. But I'd rather not have to smell them at all."
     g "There's been worse smells, little bug."
+    show grandpa happy at jumpin
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!"
-    show grandpa happy with jumpin
     "I've learned some things from Grandpa in my time here."
-    "He's quite proud of his history at sea with the mermaids"
+    "He's quite proud of his history at sea with the mermaids."
     show grandpa neutral at left with dissolve
     g "But I s'pose you'll never get to see that, would ye."
     "He also wishes I could've inherited his love for the hunt."
-    y "Apologies, Grandfather..."
+    y flustered "Apologies, Grandfather..."
     g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup of tea."
-    "Hunter taps Grandfather on the shoulder."
-    h "Mr. Eaton, Merrill's open."
+    ny neutral "Hunter taps Grandfather on the shoulder."
+    h "Mr. Eaton, she's open."
     "Grandfather pulls out his timepiece and flips it open."
-    g "Ah, look at the time already. Can't keep Merrill waitin'. The ship won't pay for itself!"
+    g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
     hide grandpa happy at left with dissolve
     show hunter neutral at farright with move
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
-    y "Grandfather..."
-    "Out of habit, my hand finds my camera still sitting at my side, waiting, and I'm struck with a thought."
-    y "Hunter."
+    y flustered "Grandfather..."
+    "Out of habit, my hand finds my camera still sitting at my side, waiting."
+    y "I wish I could find some way to cheer him up."
     h "Hmmh?"
-    y "I need your help."
-    h "With what?"
+    y neutral "Is there anything Grandfather likes that I could get him?"
+    h "A present, huh?"
+    h "Hmm, I have an idea."
+    y "You do?"
+    h "Mr. Eaton'd be ecstatic to hear you go out to see one of his old haunts."
+    h "How do you fancy a boat ride?"
+    h "I can steer us to the safer part of the sea."
+    y "That sounds perfect!"
+    y "Oh, thank you, Hunter!"
     y "We're going to make Grandfather's day!"
-    h "What, buy him mermaid nigiri for dinner?"
-    y "No! I'm going to take a picture of a live one." with hpunch
-    y "Imagine what people would pay for a picture!"
-    "Hunter seems to think about it for a moment."
-    y "Please?"
-    "I put on my best begging expression, and he gives in immediately."
-    h "I s'pose inlanders would think they'd be interestin' enough."
-    h "Alright, it's a nice day. Let's get him a picture."
-    y "Thank you!"
 
     #TODO SCENE CHANGE - Sea
     scene bg calmwave with dissolve
@@ -615,19 +604,18 @@ label chapter1:
     "The sea is calm, and the sun is shining down."
 
     show hunter neutral with dissolve
-
-    h "I'm going to steer us towards the calmer ones. Might be able to spot one goin' onto the rocks for a sunbathe."
+    $ config.side_image_tag = "june"
+    h "I'm going to steer us towards the calmer ones. Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
-    h "When they feel safe enough to. If they spot my little skiff, the show's over."
-    h "Gotta be quick with your pictures."
-    y neutral "Of course!"
-
+    h "Yep. But if they spot my little skiff, the show's over."
+    h "There's no safer place than this part o' the sea."
     hide hunter neutral with dissolve
-
-    "My only experiences are with inland animal photography, I can't imagine it would be harder than capturing birds on film."
+    ny neutral "I keep my camera at the ready, not willing to let any photo opportunities pass me by."
+    "My only experiences are with inland animal photography, but surely sea animals are no more difficult than capturing birds on film."
     "The boat travels further out to sea, putting the port behind us."
-    h "As long as we avoid the hostile ones, we'll be in the clear. Keep an eye out, [y]!"
-    "I'm about to respond to him, but the ship catches on the waves, and I stumble."
+    show hunter neutral with dissolve
+    h "How are you enjoying the view?"
+    ny shocked "I'm about to respond to him, but the ship catches on the waves, and I stumble." with vpunch
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
@@ -636,13 +624,19 @@ label chapter1:
     h "What the damn-"
     "The weather changes nearly in an instant."
     "I can't see a hint of blue in the sky."
-    "It's covered by clouds of grey, instead."
+    "Our perfect sailing day was covered by clouds of grey."
     y shocked "It was sunny only moments ago! What is this?"
-    h "Blasted...I've sailed us right into the sea witch's storm! Hold onto something, [y]!"
+    h "Blasted...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    if seastorm:
+        "I remember reading something about this."
+        "If this is a sea witch’s storm…"
+        "My hair stands on end just thinking about what devastation will ensue."
+
     hide hunter neutral with vpunch
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
-    "The lurching nearly throws me to the floorboards, but I grab the mast just in time to stay upright."
-    y "Ah..."
+    "The lurching nearly throws me to the floorboards, but I grab the side of the ship just in time to stay upright."
+    $ config.side_image_tag = "june"
+    y shocked "Ah..."
     #SCREENSHAKE
     "Something stirs in the back of my memory as I stare into the waves. Something is glowing through the wind and rain."  with screenShake
 
@@ -650,7 +644,7 @@ label chapter1:
     y "Who...? This is familiar to me, but...?"
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.wav"
-    scene bg choppywave with screenShake
+    show bg choppywave with screenShake
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
@@ -658,28 +652,29 @@ label chapter1:
     h "The waters are getting choppier, stay away from the ledge!"
     y huffed "Well, obviously! I can hardly stand straight!"
     hide hunter neutral with dissolve
-    "He returns back to his position, eyes staying forward and ahead as the winds grow stronger."
-    "I could hardly see out, but I couldn't give up my quest for a picture."
-    "The sounds of the waves and the wind made Hunter's words a bit hard to hear."
-    y neutral"I hold my camera up, making sure my hand was ready to press the trigger once I saw a mermaid."
+    "He returns back to his position, eyes staying forward as the winds grow stronger."
+    "I can hardly see out, but I can't give up my quest for a picture."
+    "The sounds of the waves and the wind make Hunter's words hard to hear."
+    $ config.side_image_tag = "june"
+    "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
     #SPRITE?
     u "Come...come with me..."
     y shocked "What...?"
     u "O' ye of land to the queen of sea..."
-    "My thoughts feel hazy, and my body feels as though I'm floating."
+    "My thoughts are hazy, and my body feels as though I'm floating."
     h "[y], what are you doing?!"
-    s "Come to Skylla..."
-
-    "The singing felt as though it was only for my ears to hear alone, the waves calling out to me to sink in."
+    u "Come..."
+    s "to Skylla..."
+    "The singing feels as though it is only for my ears to hear alone, the waves calling out for me to sink in."
     h "Shit, it's a siren! [y]!"
     show hunter neutral with vpunch
     "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
     "An unimportant thought crosses my mind. I've heard of something like this before."
-    "Sailors being sung to by the sea to only be met with death..."
+    "Sailors being sung to by the sea, only to be met with death..."
     hide hunter neutral with dissolve
     y "A siren's song."
-    "At the edge of the boat now, my eyes look down below for the cause of my affliction, But the darkness below the waves are all I can see, and the voice all I could hear."
-    "And with all my might I held tightly to the slippery ledge that parted me from the water, and yet my body went against my will to stay."
+    "At the edge of the boat now, my eyes look down below for the cause of my affliction, but the darkness below the waves are all I can see, and the voice all I can hear."
+    "With all my might I hold tightly to the slippery railing that parts me from the water, and yet my body is going against my will to stay put."
     "I sit atop the ledge."
     "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
 
@@ -690,13 +685,13 @@ label chapter1:
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The song stops, but my body is numb."
     "The regret floods my mind, but it's too late."
-    "I can feel myself fading...is this really the end...?"
+    "I can feel myself fading..."
+    "..."
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Black Screen
     scene bg black
     play music "music_underwater.mp3" volume 0.7
-
     s "Hmm, hmm, hmm."
     s "After all these years, this is where it's been, encased in a protective spell?"
     s "I can't just rip it out either..."
@@ -708,13 +703,12 @@ label chapter1:
     $ config.side_image_tag = "june"
     "..."
     "...Where am I?"
-    s "Ah, you've awoken, little human. Or shall I say fish?"
+    u "Ah, you've awoken, little human. Or shall I say fish?"
     y neutral fish "Blub!"
     "....Huh."
     y "Blub blub blub!"
     "The strange voice laughs at me, and I recognize it."
     y "BLUB BLUB BLUB!!!"
-    $ config.side_image_tag = "None"
     s "That's no way to speak as a lady!"
     "Try as I might, none of my words come out right."
     "I've been turned into a fish by the siren!?"
@@ -733,7 +727,7 @@ label chapter1:
             "A bubble?"
 
     s "None of that swimming off! Stay put here, dearie, and be good, yes?"
-    s "you'll give me what I want in time."
+    s "You'll give me what I want in time."
     s "Now, where did I put that pestle?"
     "The voice swims away, and I'm left alone to contemplate my new fate."
     "Pushing my hands, well- fins against the bubble I can hardly push through!"
@@ -742,72 +736,74 @@ label chapter1:
     "Am I going to die being eaten for some fish's dinner, same as the mermaids above?"
     "From the distance through the water I could hear the siren talking to herself, swimming to and fro around the cave."
     s "Extraction of a pearl...extraction..."
-    "She comes back over to me, her sharp eyes are stunningly beautiful."
-    "yet I can't help but feel fear as she grabs the bubble, bringing me closer to her face, examining me with a ravenous intent."
+    "She comes back over to me, her sharp eyes stunningly beautiful."
+    "Yet I can't help but feel fear as she grabs the bubble, bringing me closer to her face, examining me with a ravenous intent."
+    s"Who made you so small? So difficult to see."
     s "Do you humans still practice magic on land?"
     s "Do you even know what it is that you possess?"
-    $ config.side_image_tag = "june"
     y "Bl-Blub?"
-    $ config.side_image_tag = "None"
     s "No, you seem ignorant. yet I know it's inside you. I can see it radiating off you."
     s "Faint and hidden, but it's there."
     "What do I possess? What could I even have? And magic practice? I'm not in a fairytale, am I!?"
     s "How did you convince him to give it to you? Bribery?"
-    $ config.side_image_tag = "june"
-    y "Blub?"
-    $ config.side_image_tag = "None"
+    y neutral fish "Blub?"
     "Surely this is a mistake of some sort."
     s "Let's just get started. We have a lot of trial and error ahead of us."
     "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
     "My heart was rushing in my tiny body. She could pop me in an instant as well."
-    "She drew closer to whatever she was preparing to test on me in the back of the cave before she suddenly paused, listening closely to something as her ears twitched."
+    "She closes in on whatever she was preparing to test on me in the back of the cave before she suddenly pauses, listening closely to something as her ear fins twitch."
+
     #Voice Lines Start
-    voice "audio/voice/prince/THIODAL-1.wav"
-    up "The further out you swim, the more guilty that you are! Those fish belong to the vanguard."
-    voice "audio/voice/prince/THIODAL-2.wav"
-    up "Return them now, and I will not arrest you."
+    # voice "audio/voice/prince/THIODAL-1.wav"
+    u "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
+    # voice "audio/voice/prince/THIODAL-2.wav"
+    u "Return them now, and I will not arrest you."
     s "That voice...he's not supposed to be here."
     "She squeezes me painfully in frustration."
-    uj "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
-    uj "Perhaps you should ask your guards how they got these fish in the first place? It wasn't very kind or knightly."
-    voice "audio/voice/prince/THIODAL-3.wav"
-    up "Are you suggesting we stole from {i}you{/i}?"
-    voice "audio/voice/prince/THIODAL-4.wav"
-    up "If my men have done harm to your village and stolen from you, I will personally take accountability in returning those fish and providing recompense."
-    voice "audio/voice/prince/THIODAL-5.wav"
-    up "However, the fact of the matter is that you stole from the royal guard!"
+    u "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
+    u "Perhaps you should ask your Vanguard how they got these fish in the first place? It wasn't very kind or knightly."
+    # voice "audio/voice/prince/THIODAL-3.wav"
+    u "Are you suggesting {i}we{/i} stole from {i}you{/i}?"
+    # voice "audio/voice/prince/THIODAL-4.wav"
+    u "If my men have done harm to your village and stolen from you, I will personally take accountability in returning those fish and providing recompense."
+    # voice "audio/voice/prince/THIODAL-5.wav"
+    u "However, the fact of the matter is that you stole from the royal guard!"
     s "I need to chase them away..."
     s "Ah, how about this!"
     s "Heheheh~."
-    "She waves out to the voices, whispering in a tongue I can't understand."
-    "But her hand's grip slightly loosened, just enough for me to squirm out of her grasp."
-    s "you little eel! Get back here!"
+    "She waves her free hand out to the voices, whispering in a tongue I can't understand."
+    "My body starts to tingle all over."
+    "But her hand's grip has loosened, just enough for me to squirm out of her grasp."
+    s "You little eel! Get back here!" with vpunch
     "Quickly zipping across the room, I push my tiny fins as hard as they can go."
     "Her tentacles try to grasp me, but I am too small for them to catch."
     "And just through sheer luck, in front of me in the cave wall is a crack, just small enough for me to fit through!"
     "I can hear the siren cursing behind the wall as I swim away."
 
     #SCENE CHANGE - sea wilderness
-    scene bg sea
+    scene bg sea with vpunch
     "It doesn't matter where I go, just far away from that witch!"
-    "The hole happened to bring me straight in the thick of things outside the cave."
-    show prince 4 at left with dissolve
-    show jorunn sweat at moreright with dissolve
+    "The hole appears to have brought me straight into the thick of things outside the cave."
+    show prince 4 at left, bob with dissolve
+    show jorunn sweat at bob, moreright with dissolve
     guard "Sharks ahead! Get the prince out of here!"
-    guard "We've been in the witch's domain for far too long, your Majesty! We must return, now!"
+    guard "We've been in the witch's domain for too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
-    show jorunn glee at moreright with vpunch
+    show jorunn glee at bob with vpunch
     uj "I'll be taking these home then! Goodbye!"
-    voice "audio/voice/prince/THIODAL-6.wav"
-    show prince 4 at left with hpunch
-    up "you damned, fish-grubbing parasite! Grah, fine!"
+    # voice "audio/voice/prince/THIODAL-6.wav"
+    show prince 4 at bob with hpunch
+    up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
-    "Hiding between the broken shells of sea hunterships, I could see the sharks patrolling. Did the siren summon them?"
+    "Hiding between the broken shells of sea hunter ships, I can see sharks patrolling. Did the siren summon them?"
     "The merman that was surrounded by knights was called a prince, huh?"
-    "He sure looked like one, his fins were unlike any other I've seen, a striking array of blue."
-    "Do I approach him..? Or do I follow the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
-    "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
+    "He sure looks like one. His fins are unlike any other I’ve seen, a striking array of blue."
+    "Do I approach him..? Or perhaps the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
+    if promermaid >= 1:
+        "Anything would be better than returning to the sea witch."
+    if antimermaid >= 1:
+        "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
     "Either way, they're both starting to swim away."
 
     #Follow Striking Prince
@@ -817,8 +813,6 @@ label chapter1:
             $ prince_points += 1
             jump ch1_followprince
 
-
-
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
     hide jorunn glee with moveoutright
@@ -827,95 +821,99 @@ label ch1_followprince:
     "3....2...1!!"
     $ config.side_image_tag = "june"
     y neutral fish "BLUBBB!!!!"
-    "With all the might I could muster I push my way through the current, leaving a trail of bubbles behind me."
-    "It felt like riding  a bike downhill, without any brakes to stop me. I couldn't stop before crashing into the back of the striking merman's head."
+    "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
+    "It feels like riding a bicycle downhill without any brakes to stop me."
+    "I can’t stop, crashing into the back of the striking merman’s head."
+
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
-    voice "audio/voice/prince/THIODAL-7.wav"
+    # voice "audio/voice/prince/THIODAL-7.wav"
     show prince 1 at bob, furthleft with hpunch
     up "!!!"
-    voice "audio/voice/prince/THIODAL-8.wav"
+    # voice "audio/voice/prince/THIODAL-8.wav"
     show prince 4 at bob with hpunch
     up "Who dares-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
-    $ config.side_image_tag = "None"
     show prince 5
-    voice "audio/voice/prince/THIODAL-9.wav"
+    # voice "audio/voice/prince/THIODAL-9.wav"
     up "...?"
     guard "The fish drew their attention!"
-    "The sharks hurl toward us in a frenzy, chomping at the water and whatever moves in front of it."
-    "I swim as quickly as I can past the striking merman, hoping the sharks have caught my scent."
+    "The sharks hurl towards us in a frenzy, chomping at the water and whatever moves in front of them."
+    "I swim as quickly as I can past the striking merman, hoping the sharks haven't caught my scent."
     "I know I've scraped something swimming out of the cave. It's a minor itch, but I can feel the blood seeping from my body as I propel through the water."
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
-    "The princely fellow seemed to realize this, at least."
+    "The princely fellow seems to realize this, at least."
+
     show prince 4 at bob, furthleft with dissolve
-    voice "audio/voice/prince/THIODAL-10.wav"
-    up "you- lead it that way!"
-    "Swimming toward where he directs, I swim right past him, watching in horror to see he stays in place!"
+    # voice "audio/voice/prince/THIODAL-10.wav"
+    up "You- lead it that way!"
+    "I swim in the direction he is pointing, and I notice in horror that he has not followed me there."
     "However, my worry is unwarranted."
-    "He must have quickly brandished a weapon with great speed between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
-    "The shark sinks quickly to the ocean floor, pushing up the floor of the ocean, blood intermingling with the tide."
-    "Surely this is more tantalizing than my pitiful injury."
+    "He must have quickly brandished a weapon between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
+    "The shark sinks quickly to the ocean floor, pushing up the sand below, blood intermingling with the tide."
+    "Surely this dead shark is more tantalizing than my pitiful injury."
+
     show prince 5 at bob, with dissolve
-    voice "audio/voice/prince/THIODAL-11.wav"
+    # voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
     y "....R-Right!"
     "How fearsome his strength must be. He certainly doesn't seem the type."
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
-    voice "audio/voice/prince/THIODAL-12.wav"
+    # voice "audio/voice/prince/THIODAL-12.wav"
     up "Stay still for a moment."
     show prince 4 with dissolve
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
     show prince 5 with dissolve
     "Almost instantly, I could feel my energy return. I suppose being so small, even a little bit of blood loss could make you quite weak."
-    y "Was that healing magic? I've only heard of it in books."
-    y "Ah, I should, no, wait, I forget myself."
+    "Was that healing magic? I've only heard of it in books."
+    y "Ah, I should--no, wait. I forget myself."
     y "Thank you, sir."
     "Through some miracle, it seems he can understand me."
-    voice "audio/voice/prince/THIODAL-13.wav"
-    up "you speak strangely, but that's none of my concern. you're either extremely resilient, or a spy of that Sea Witch."
+    # voice "audio/voice/prince/THIODAL-13.wav"
+    up "You speak strangely, but that's none of my concern. You're either extremely resilient, or a spy of that Sea Witch."
     y "I'm not a spy! I'm just a resilient type, as you say!"
     "I sincerely hope he believes me, as it's true."
-    voice "audio/voice/prince/THIODAL-14.wav"
-    up "...Let's just say that for now. your wounds have been taken care of, so please, return to your reefs...safely."
+    # voice "audio/voice/prince/THIODAL-14.wav"
+    up "I suppose I will believe you for this moment. Your wounds have been taken care of, so please, return to your reefs...safely."
     guard "Prince Thioran!! Are you injured?"
-    voice "audio/voice/prince/THIODAL-15 v2.wav"
+    # voice "audio/voice/prince/THIODAL-15 v2.wav"
     p "Of course not."
     "His vanguard found us, relieved to see their charge unhurt."
     "However, the guards pointed their weapons at me."
-    guard "Isn't it strange for that kind of fish to be at this depth of the ocean?"
+    guard "Her kind shouldn't be this deep in the ocean."
     guard "Couldn't this one be a spy?"
     "No, surely they wouldn't just kill me for being strange!!"
-    "The Prince thought for a moment, but mostly just looked exhausted and wanted to just end the day."
-    voice "audio/voice/prince/THIODAL-16.wav"
+    "The Prince seems to think about this for a moment, but he looks too exhausted to give it proper consideration."
+    "Yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
+    # voice "audio/voice/prince/THIODAL-16.wav"
     p "It is quite uncommon. Most of her kind wouldn't be able to withstand these depths."
-    voice "audio/voice/prince/THIODAL-17.wav"
+    # voice "audio/voice/prince/THIODAL-17.wav"
     p "However, if she was a spy, I doubt the sharks would have attacked her."
-    "yet his glances at me, do they feel familiar? It would be impossible for us to have met before today, yet I get the feeling we have, somehow."
-    voice "audio/voice/prince/THIODAL-18.wav"
+    # voice "audio/voice/prince/THIODAL-18.wav"
     p "I believe she was only swept up in our clash."
-    voice "audio/voice/prince/THIODAL-19.wav"
+    # voice "audio/voice/prince/THIODAL-19.wav"
     p "Regardless, there are other matters we must attend to, and we've already wasted enough time."
     "He turns to address me last."
-    voice "audio/voice/prince/THIODAL-20.wav"
-    p "So please, you are free to go. you have my permission."
+    # voice "audio/voice/prince/THIODAL-20.wav"
+    p "So please, you are free to go. You have my permission."
     "I don't need his blessing- I just need whatever magic power he has to help me turn back to normal!"
     "Clearly he knows a trick or two, especially with those sharks."
     y "If it's alright, I would like to make a request. "
     y "Could you lead me back to...the kingdom? I...have business there."
     show prince 3 with dissolve
     "He stares at me for a few moments, with an indeterminable expression on his face."
-    voice "audio/voice/prince/THIODAL-21.wav"
+    # voice "audio/voice/prince/THIODAL-21.wav"
     show prince 5 with dissolve
-    p "you may follow us. When we arrive, attend to your business. Any other troubles from then on must be your own."
+    p "You may follow us. When we arrive, attend to your business. Any other troubles from then on must be your own."
     y "That's more than enough! Thank you!"
     "That is definitely not enough!!"
-    "I must stay with him, if there is even a chance to find some answers to cure my fishy affliction!"
+    "If I stay, that could be my chance to find some answers to cure my fishy affliction!"
     "I follow the Prince and his guards across the sea, taking in the sights as I pass them."
-    "I was behind the Knights that swam in a march, putting distance between me and the prince."
+
+    "I am behind the Knights that swam in a march, putting distance between me and the prince."
     "I suppose I'm no longer allowed to speak with him."
     "..."
     "Left alone with my thoughts, my mind races every which way."
@@ -923,29 +921,34 @@ label ch1_followprince:
     "I wish I had my camera. But it wouldn't survive the plunge."
     "I hope it somehow escaped my fate."
     "Hunter must think the worst outcome for me, falling like I did."
-    "Oh, Grandfather..!"
+    "And...oh, Grandfather!"
     "He would be devastated to find out I went overboard!"
     "They're going to think I drowned.."
     "I need to return back."
-    scene bg sea
+    "As we swim further along, the waters seem to brighten with colorful bursts of coral formations and beautiful schools of fish."
+    "We arrive at a place just before a city, where a mesmerizing merman is waiting for the prince."
+
+    scene bg sea with dissolve
     "The waters seem to brighten more as we swim, peaks of coral and schools of beautiful fish."
-    "We arrive at a place just before a city, where a mesmerizing merman waits for the prince."
+    $ config.side_image_tag = "june"
+    ny june neutral fish "We arrive at a place just before a city, where a mesmerizing merman waits."
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
     show prince 1 at right, bob with dissolve
     # show cetus at left with dissolve
-    voice "audio/voice/prince/THIODAL-22.wav"
+    # voice "audio/voice/prince/THIODAL-22.wav"
     p "Cetus. It has been a long day. you will have to forgive my impropriety."
     c "Always so stiff."
     c "I merely jest. I know no trouble would come of an attack on you."
-    "The man called Cetus seems familiar as well. The more he speaks, the more I feel a sense that I have met him before."
+    "The man called Cetus seems familiar as well. The more he speaks, the more I also feel a sense that I have met him before."
     c "Oh? Who's this you have following you like a pet, Thio?"
-    "His gaze catches on me, and I want nothing more than to dart behind a rock and hide from it."
-    voice "audio/voice/prince/THIODAL-23.wav"
+    "His gaze catches on me, and I want nothing more than to dart behind a rock and hide."
+    # voice "audio/voice/prince/THIODAL-23.wav"
     p "I...did not ask for a name. She claims to have business here in the city. By formality, I allowed her to return with me."
-    c "I see..."
+    c "I see."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
-    voice "audio/voice/prince/THIODAL-24.wav"
+    # voice "audio/voice/prince/THIODAL-24.wav"
+    show prince 5 at right, bob with dissolve
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus." with hpunch
     "The prince does not seem to take notice..."
@@ -959,14 +962,17 @@ label ch1_followprince:
 
     "..........."
 
-    show jorunn glee at moreleft with dissolve
+    show jorunn glee with dissolve
 
     j "Hello there!"
-    j "you've reached the end of the demo for Heart's Depth!"
-    j "Thank you so much for playing! Follow our game page for updates when they come."
+    j "You've reached the end of the demo for Heart's Depth!"
     j "We sincerely look forward to releasing the rest of the story." with vpunch
-    j "Take care! And stay fishy!"
-
+    show jorunn pissed at moreleft with dissolve
+    j "I hope they put me in the next update..."
+    show jorunn glee at moreleft with dissolve
+    j "Anyway."
+    j "Thank you so much for playing! Follow our game page for updates."
+    j "We have much, much more to come..."
     play sound "audio/sfx_splash.flac"
     hide jorunn glee with dissolve
 

@@ -26,6 +26,7 @@ define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
 
 default newspaper = False
+default seastorm = False
 default promermaid = 0
 default antimermaid = 0
 
@@ -37,16 +38,15 @@ init python:
     config.emphasize_audio_channels = [ 'voice' ]
 
 transform jumpin:
-    xpos 0.25  ypos 0.17
+    ease2 0.2 yoffset -5
+    ease2 0.2 yoffset 0
+
+transform jump_up:
+    pause .15
     yoffset 0
-    easein 0.25 yoffset -100
-    easeout 0.25 yoffset 0
-    easein 0.2 yoffset -30
-    easeout 0.2 yoffset 0
-    easein 0.15 yoffset -10
-    easeout 0.15 yoffset 0
-    easein 0.1 yoffset -4
-    easeout 0.1 yoffset 0
+    easein .150 yoffset -25
+    easeout .150 yoffset 0
+    yoffset 0
 
 #USE SHIFT + P TO OPEN THE ACTION BUTTON CAMERA THING
 #YOU COULD DO ANYTHING WITH THIS HOLY FUCK

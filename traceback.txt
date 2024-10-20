@@ -1,28 +1,86 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 574, in script
-    if "[player_name]" = "June":
-SyntaxError: invalid syntax (game/script.rpy, line 574)
+While loading <renpy.display.im.Image object ('images/jorunn sweat.png') at 0x00000000054117c0>:
+  File "game/script.rpy", line 789, in script
+    guard "Sharks ahead! Get the prince out of here!"
+OSError: Couldn't find file 'images/jorunn sweat.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 574, in script
-    if "[player_name]" = "June":
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 1842, in execute
-    if renpy.python.py_eval(condition):
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1207, in py_eval
-    code = py_compile(code, 'eval')
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1144, in py_compile
+  File "game/script.rpy", line 789, in script
+    guard "Sharks ahead! Get the prince out of here!"
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2557, in execute
+    Say.execute(self)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 615, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\exports.py", line 1493, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1394, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1045, in do_display
+    display_say(who,
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 741, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ui.py", line 301, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 2165, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 2818, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 1352, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 486, in renpy.display.render.render_screen
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\transform.py", line 957, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\transform.py", line 957, in render
+    return RenderTransform(self).render(width, height, st, at)
+  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
+  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 380, in render
+    surf = render(self.child, width, height, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\image.py", line 513, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\image.py", line 316, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 260, in renpy.display.render.render
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 626, in render
+    return cache.get(self, render=True)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 309, in get
+    surf = image.load()
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 761, in load
     raise e
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1081, in py_compile
-    raise orig_e
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1073, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, 1)
-SyntaxError: invalid syntax (game/script.rpy, line 574)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 711, in load
+    filelike = renpy.loader.load(self.filename, directory="images")
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\loader.py", line 672, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/jorunn sweat.png'.
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 HeartsDepthDEMO 1.1
-Sat Oct 19 23:37:40 2024
+Sun Oct 20 01:37:29 2024
