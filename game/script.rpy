@@ -788,7 +788,7 @@ label chapter1:
     scene bg sea with vpunch
     "It doesn't matter where I go, just far away from that witch!"
     "The hole appears to have brought me straight into the thick of things outside the cave."
-    show prince 4 at left with dissolve
+    show prince angry at left with dissolve
     show jorunn sweat at moreright with dissolve
     guard "Sharks ahead! Get the prince out of here!"
     guard "We've been in the witch's domain for too long, your Majesty! We must return, now!"
@@ -796,7 +796,7 @@ label chapter1:
     show jorunn glee with vpunch
     uj "I'll be taking these home then! Goodbye!"
     # voice "audio/voice/prince/THIODAL-6.wav"
-    show prince 4 with hpunch
+    show prince angry with hpunch
     up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
@@ -832,14 +832,14 @@ label ch1_followprince:
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     # voice "audio/voice/prince/THIODAL-7.wav"
-    show prince 1 at furthleft with hpunch
+    show prince sweat at furthleft with hpunch
     up "!!!"
     # voice "audio/voice/prince/THIODAL-8.wav"
-    show prince 4 with hpunch
+    show prince angry with hpunch
     up "Who-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
-    show prince 5
+    show prince neutral
     # voice "audio/voice/prince/THIODAL-9.wav"
     up "...?"
     guard "The fish drew their attention!"
@@ -849,7 +849,7 @@ label ch1_followprince:
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seems to realize this, at least."
 
-    show prince 4 at furthleft with dissolve
+    show prince angry at furthleft with dissolve
     # voice "audio/voice/prince/THIODAL-10.wav"
     up "You there! Lead it that way!"
     "I swim in the direction he is pointing, and I notice in horror that he has not followed me there."
@@ -858,7 +858,7 @@ label ch1_followprince:
     "The shark sinks quickly to the ocean floor, pushing up the sand below, blood intermingling with the tide."
     "Surely this dead shark is more tantalizing than my pitiful injury."
 
-    show prince 5 with dissolve
+    show prince neutral with dissolve
     # voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
@@ -867,10 +867,10 @@ label ch1_followprince:
     "The wave of adrenaline is starting to finally calm down, but I follow him diligently to a safer spot away from the cave and the sharks."
     # voice "audio/voice/prince/THIODAL-12.wav"
     up "Stay still for a moment."
-    show prince 4 with dissolve
+    show prince angry with dissolve
     "His brow furrows as he draws closer to me, his hands hovering my sides, but not quite enclosing my body."
     "A faint glow surrounds me, the scales reforming over in moments."
-    show prince 5 with dissolve
+    show prince neutral with dissolve
     "Almost instantly, I could feel my energy return. I suppose being so small, even a little bit of blood loss could make you quite weak."
     "Was that healing magic? I've only heard of it in books."
     y "Ah, I should--no, wait. I forget myself."
@@ -907,10 +907,10 @@ label ch1_followprince:
     "Clearly he knows a trick or two, especially with those sharks."
     y "If it's alright, I would like to make a request. "
     y "Could you lead me back to...the kingdom? I...have business there."
-    show prince 3 with dissolve
+    show prince soft with dissolve
     "He stares at me for a few moments, with an indeterminable expression on his face."
     # voice "audio/voice/prince/THIODAL-21.wav"
-    show prince 5 with dissolve
+    show prince neutral with dissolve
     p "You may follow us. When we arrive, attend to your business. Any other troubles from then on must be your own."
     y "That's more than enough! Thank you!"
     "That is definitely not enough!!"
@@ -938,7 +938,7 @@ label ch1_followprince:
     ny june neutral fish "We arrive at a place just before a city, where a mesmerizing merman waits."
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
-    show prince 1 at right with dissolve
+    show prince sweat at right with dissolve
     # show cetus at left with dissolve
     # voice "audio/voice/prince/THIODAL-22.wav"
     p "Cetus. It has been a long day. You will have to forgive my impropriety."
@@ -952,7 +952,7 @@ label ch1_followprince:
     c "I see."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     # voice "audio/voice/prince/THIODAL-24.wav"
-    show prince 5 at right with dissolve
+    show prince neutral at right with dissolve
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus." with hpunch
     "The prince does not seem to take notice..."
