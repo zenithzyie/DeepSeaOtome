@@ -43,7 +43,7 @@ label prologue:
     #TODO SCENE ?
     scene bg choppywave with dissolve
 
-    play music "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
+    play sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     $ config.side_image_tag = "june"
     y shocked "It was sunny only moments ago! What is this?"
@@ -77,7 +77,7 @@ label chapter1:
     scene bg shabby town
     play music "music_town.mp3" fadein 1.0
 
-    "Salty air…I remember how I would try to stick out my tongue to taste it."
+    "Salty air...I remember how I would try to stick out my tongue to taste it."
     "I was a child the last time I did something as silly as that."
     "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
@@ -96,16 +96,17 @@ label chapter1:
         "Take a picture of..."
         "The people outside":
             "From my car seat window, I let the shutter of my camera go off, taking a picture of the people outside."
+            play sound "audio/sfx_cameraShutter.wav"
             show camera with irisin
             hide camera with dissolve
-            # Camera sfx here
             y "Let's see how it turned out!"
             # Image of picture here
-            y "Everyone's dress is so modern..."
+            y "Everyone's dress is so modern and lightweight."
             y "I'm not Inland anymore, that much is clear."
 
         "The town around":
             "From my car seat window, I let the shutter of my camera go off, taking a picture of the town"
+            play sound "audio/sfx_cameraShutter.wav"
             show camera with irisin
             hide camera with dissolve
             # Camera sfx here
@@ -241,19 +242,27 @@ label chapter1:
 
     menu knocking:
         "What was the code..?"
+        "3":
+            ny huffed "No, that doesn't seem right..."
+            ny neutral "Let me try again."
+            jump knocking
+        "4":
+            ny huffed "No, that doesn't seem right..."
+            ny neutral "Let me try again."
+            jump knocking
         "5":
             menu:
                 "Next was..."
                 "3":
                     menu:
                         "And finally..."
-                        "4":
-                            jump afterknocking
-                        "5":
+                        "3":
                             ny huffed "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
                             jump knocking
-                        "3":
+                        "4":
+                            jump afterknocking
+                        "5":
                             ny huffed "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
                             jump knocking
@@ -265,14 +274,6 @@ label chapter1:
                     ny huffed "No, that doesn't seem right..."
                     ny neutral "Let me try again."
                     jump knocking
-        "3":
-            ny huffed "No, that doesn't seem right..."
-            ny neutral "Let me try again."
-            jump knocking
-        "4":
-            ny huffed "No, that doesn't seem right..."
-            ny neutral "Let me try again."
-            jump knocking
 
     label afterknocking:
     "..3..4..5…"
@@ -482,6 +483,7 @@ label chapter1:
     #SCENE CHANGE - Port w/ Boats
     play music "music_town.mp3" fadein 1.0
     scene bg port with dissolve
+    play sound "audio/sfx_wavesCalm.ogg" loop
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     y neutral "It's afternoon already?"
     show hunter neutral with dissolve
@@ -520,6 +522,8 @@ label chapter1:
     show grandpa neutral at left with dissolve
     g "I told you people I don't want any-"
     show grandpa surprised with vpunch
+    stop music fadeout 1.0
+    #SFX - waves (calm)
     "The old man stands frozen before me. He looks as though he's seen a ghost."
     y shocked "Grandfather…?"
     show grandpa happy at jumpin
@@ -619,7 +623,7 @@ label chapter1:
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
-
+    play sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
     show hunter neutral with vpunch
     h "What the damn-"
     "The weather changes nearly in an instant."
@@ -784,15 +788,15 @@ label chapter1:
     scene bg sea with vpunch
     "It doesn't matter where I go, just far away from that witch!"
     "The hole appears to have brought me straight into the thick of things outside the cave."
-    show prince 4 at left, bob with dissolve
-    show jorunn sweat at bob, moreright with dissolve
+    show prince 4 at left with dissolve
+    show jorunn sweat at moreright with dissolve
     guard "Sharks ahead! Get the prince out of here!"
     guard "We've been in the witch's domain for too long, your Majesty! We must return, now!"
     uj "Sharks? Ah, we are in the witch's country, aren't we?"
-    show jorunn glee at bob with vpunch
+    show jorunn glee with vpunch
     uj "I'll be taking these home then! Goodbye!"
     # voice "audio/voice/prince/THIODAL-6.wav"
-    show prince 4 at bob with hpunch
+    show prince 4 with hpunch
     up "You damned, fish-grubbing parasite! Grah, fine!"
     "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
     "Maybe one of them can help me?"
@@ -828,11 +832,11 @@ label ch1_followprince:
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     # voice "audio/voice/prince/THIODAL-7.wav"
-    show prince 1 at bob, furthleft with hpunch
+    show prince 1 at furthleft with hpunch
     up "!!!"
     # voice "audio/voice/prince/THIODAL-8.wav"
-    show prince 4 at bob with hpunch
-    up "Who dares-"
+    show prince 4 with hpunch
+    up "Who-"
     $ config.side_image_tag = "june"
     y "Please help me!!"
     show prince 5
@@ -845,16 +849,16 @@ label ch1_followprince:
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seems to realize this, at least."
 
-    show prince 4 at bob, furthleft with dissolve
+    show prince 4 at furthleft with dissolve
     # voice "audio/voice/prince/THIODAL-10.wav"
-    up "You- lead it that way!"
+    up "You there! Lead it that way!"
     "I swim in the direction he is pointing, and I notice in horror that he has not followed me there."
     "However, my worry is unwarranted."
     "He must have quickly brandished a weapon between the eyes of the great white, as a cloud of bubbles and a hole in its head are all I can see before it is over."
     "The shark sinks quickly to the ocean floor, pushing up the sand below, blood intermingling with the tide."
     "Surely this dead shark is more tantalizing than my pitiful injury."
 
-    show prince 5 at bob, with dissolve
+    show prince 5 with dissolve
     # voice "audio/voice/prince/THIODAL-11.wav"
     up "Let us away, before the others come."
     $ config.side_image_tag = "june"
@@ -934,10 +938,10 @@ label ch1_followprince:
     ny june neutral fish "We arrive at a place just before a city, where a mesmerizing merman waits."
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
-    show prince 1 at right, bob with dissolve
+    show prince 1 at right with dissolve
     # show cetus at left with dissolve
     # voice "audio/voice/prince/THIODAL-22.wav"
-    p "Cetus. It has been a long day. you will have to forgive my impropriety."
+    p "Cetus. It has been a long day. You will have to forgive my impropriety."
     c "Always so stiff."
     c "I merely jest. I know no trouble would come of an attack on you."
     "The man called Cetus seems familiar as well. The more he speaks, the more I also feel a sense that I have met him before."
@@ -948,7 +952,7 @@ label ch1_followprince:
     c "I see."
     "Cetus stares at me for a moment before he starts chanting in a low tone. The prince does not pay it any heed."
     # voice "audio/voice/prince/THIODAL-24.wav"
-    show prince 5 at right, bob with dissolve
+    show prince 5 at right with dissolve
     p "I will return shortly to my duties, Uncle."
     "My body seizes, and I feel drawn towards Cetus." with hpunch
     "The prince does not seem to take notice..."

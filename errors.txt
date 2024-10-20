@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 787: multiple at clauses are prohibited.
-    show prince 4 at left at bob with dissolve
-                            ^
+File "game/script.rpy", line 627: end of line expected.
+    sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
+                                      ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Sun Oct 20 01:51:12 2024
+Sun Oct 20 03:55:04 2024
