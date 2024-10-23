@@ -59,9 +59,50 @@ layeredimage prince:
             "prince_soft.png"
         attribute sweat:
             "prince_sweat.png"
-    #group eyes auto:
-        #attribute blinking default:
-            #"prince_eye_closed.png" at blink
+    group eyes auto:
+        attribute blinking default:
+            "prince_eye_closed.png" at blink
+
+layeredimage grandpa:
+    group expressions:
+        attribute happy:
+            "grandpa_happy.png"
+        attribute surprised:
+            "grandpa_surprised.png"
+        attribute neutral:
+            "grandpa_neutral.png"
+    group eyes auto:
+        attribute blinking default:
+            "grandpa_eye_closed.png" at blink
+
+layeredimage side june:
+    group expressions:
+        attribute flustered:
+            "side_june_flustered.png"
+        attribute huffed:
+            "side_june_huffed.png"
+        attribute neutral:
+            "side_june_neutral.png"
+        attribute shocked:
+            "side_june_shocked.png"  
+    group eyes auto:
+        attribute blinking default:
+            "side_june_eye_closed.png" at blink
+
+layeredimage side june fish:
+    group expressions:
+        attribute neutral:
+            "side_june_fish_neutral.png"
+
+layeredimage hunter:
+    group expressions:
+        attribute neutral:
+            "hunter_neutral.png"
+    group eyes auto:
+        attribute blinking default:
+            "hunter_eye_closed.png" at blink
+
+
 
 
 init python:
