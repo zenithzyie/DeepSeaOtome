@@ -317,7 +317,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("Credits") action ShowMenu("template_1a")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
