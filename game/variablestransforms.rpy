@@ -32,6 +32,38 @@ default antimermaid = 0
 
 default menuset = set()
 
+#Character blinking
+transform blink:
+    alpha 0.0
+    #random intervals for blinking
+    choice:
+        5.5
+    choice:
+        4.0
+    choice:
+        1.5
+    alpha 1.0
+    0.15
+    alpha 0.0
+    repeat
+
+layeredimage prince:
+    group expressions:
+        attribute angry:
+            "prince_angry.png"
+        attribute blush:
+            "prince_blush.png"
+        attribute neutral:
+            "prince_neutral.png"
+        attribute soft:
+            "prince_soft.png"
+        attribute sweat:
+            "prince_sweat.png"
+    group eyes auto:
+        attribute blinking default:
+            "prince_eye_closed.png" at blink
+    
+
 init python:
     config.side_image_tag = "june"
     #proritize voice as highest volume
