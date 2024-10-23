@@ -59,10 +59,10 @@ layeredimage prince:
             "prince_soft.png"
         attribute sweat:
             "prince_sweat.png"
-    group eyes auto:
-        attribute blinking default:
-            "prince_eye_closed.png" at blink
-    
+    #group eyes auto:
+        #attribute blinking default:
+            #"prince_eye_closed.png" at blink
+
 
 init python:
     config.side_image_tag = "june"

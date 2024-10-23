@@ -12,7 +12,7 @@ init python:
     gui.init(1280, 720)
 
 ## Enable checks for invalid or unstable properties in screens or transforms
-define config.check_conflicting_properties = True
+#define config.check_conflicting_properties = True
 
 
 ################################################################################

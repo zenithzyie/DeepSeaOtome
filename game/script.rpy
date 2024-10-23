@@ -18,7 +18,7 @@ label get_name:
     show side june neutral at farleft with dissolve:
         yalign 0.1
 
-    #GET PLAyER NAME
+    #GET PLAYER NAME
     $player_name = renpy.input("What is your name?",length=15)
     $player_name.strip
 
@@ -75,7 +75,7 @@ label prologue:
 label chapter1:
     #TODO SCENE = CG (Train)
     scene bg shabby town
-    play music "music_town.mp3" fadein 1.0
+    play music "audio/music_town.mp3" fadein 1.0
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     "I was a child the last time I did something as silly as that."
@@ -298,7 +298,7 @@ label chapter1:
     "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
 
     #SCENE CHANGE -  Underground Black Market Faire
-    play music "music_blackmarket.mp3"
+    play music "audio/music_blackmarket.mp3"
     scene bg underground market with slideawayleft
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
@@ -322,7 +322,7 @@ label chapter1:
     "He scoffs and shakes his head." with hpunch
 
     #TODO SPRITE CHANGE - Hunter Disappointed
-    u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you, [y]."
+    u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
     y neutral "I haven't been in this part of Aquantis before. You must have me mistaken for someone else."
     u "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I s'pose it's been awhile."
     "Bending down to my level, the stranger looks me right in the eyes."
@@ -473,6 +473,7 @@ label chapter1:
                     "That’s the way it is."
 
         "Have you actually...killed them before?":
+            $ promermaid += 1
             h "Why do you sound so horrified? Fish is fish. Don't be fooled by their appearances."
             h "If anything, they're monsters using human faces. They don't deserve your pity."
             h "...But yes, I have."
@@ -481,7 +482,7 @@ label chapter1:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music "music_town.mp3" fadein 1.0
+    play music "audio/music_town.mp3" fadein 1.0
     scene bg port with dissolve
     play sound "audio/sfx_wavesCalm.ogg" loop
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
@@ -695,13 +696,13 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    play music "music_underwater.mp3" volume 0.7
-    s "Hmm, hmm, hmm."
-    s "After all these years, this is where it's been, encased in a protective spell?"
-    s "I can't just rip it out either..."
-    s "...This is going to take time."
-    s "Alas, keeping her alive for now is my only choice."
-    s "Why did he ever offer something like this to a human?"
+    play music "audio/music_underwater.mp3" volume 0.7
+    u "Hmm, hmm, hmm."
+    u "After all these years, this is where it's been, encased in a protective spell?"
+    u "I can't just rip it out either..."
+    u "...This is going to take time."
+    u "Alas, keeping her alive for now is my only choice."
+    u "Why did he ever offer something like this to a human?"
     #SCENE CHANGE - underwater cave (skylla's)
     scene bg underwater cave
     $ config.side_image_tag = "june"
