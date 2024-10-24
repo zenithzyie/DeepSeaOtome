@@ -78,7 +78,7 @@ screen template_2a():
 
             # Credit block: EM
             hbox:
-                add "gui/window_icon.png" zoom 0.59
+                add "logos/em logo.png" zoom 0.59
                 null width 25 # manual horizontal spacing
                 vbox:
                     null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 22: invalid syntax
-    player_name = renpy.input("What is your name?", input default "Gerald", length=15)
-                                                           ^
+File "game/script.rpy", line 840: end of line expected.
+    hide jorunn glee with moveoutright:
+                                      ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Oct 23 21:28:39 2024
+Wed Oct 23 22:42:02 2024

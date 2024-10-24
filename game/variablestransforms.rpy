@@ -102,14 +102,25 @@ layeredimage hunter:
         attribute blinking default:
             "hunter_eye_closed.png" at blink
 
-
-
+layeredimage jorunn:
+    group expressions:
+        attribute pissed:
+            "jorunn_pissed.png"
+        attribute flustered:
+            "jorunn_flustered.png"
+        attribute neutral:
+            "jorunn_neutral.png"
+        attribute glee:
+            "jorunn_glee.png"
+        attribute sweat:
+            "jorunn_sweat.png"
+    ypos 780
 
 init python:
     config.side_image_tag = "june"
     #proritize voice as highest volume
     config.emphasize_audio_channels = [ 'voice' ]
-    
+
 transform jumpin:
     ease2 0.2 yoffset -5
     ease2 0.2 yoffset 0

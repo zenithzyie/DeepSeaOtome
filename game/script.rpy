@@ -300,6 +300,7 @@ label chapter1:
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music "audio/music_blackmarket.mp3"
+    play sound "audio/sfx_crowd.wav" volume 0.005 loop
     scene bg underground market with slideawayleft
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
@@ -314,9 +315,10 @@ label chapter1:
     show hunter neutral with dissolve
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
-    "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
+    "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me." with vpunch
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
-    ny huffed "I turn to see who the hell the man is behind me. How does he know my name? I slap his hand away from mine and glare at his face."
+    ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
+    "I slap his hand away from mine and glare at his face." with vpunch
     "I do not recognize him."
     u "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
@@ -363,7 +365,8 @@ label chapter1:
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
     y "I came to see my grandfather, if you still remember him."
-    h "Ah~ family visit. Of course I still remember the old man. His hunting company practically owned half the market strip. Though he went into retirement a few years ago."
+    h "Ah~ family visit. Of course I still remember the old man. His hunting company practically owned half the market strip."
+    h "Though he went into retirement a few years ago."
     "He tilts his head, gazing at me intently."
     h "Need some help finding your way?"
     y "Well, yes, if you wouldn't mind..."
@@ -389,7 +392,7 @@ label chapter1:
     "He takes my hand and gives a low hush, leading me through the crowd. I look down at my feet."
 
     #SFX - CROWD
-    play sound "audio/sfx_crowd.wav" volume 0.2 loop
+    play sound "audio/sfx_crowd.wav" volume 0.04 loop fadein 2.5
 
     "He walks meticulously, carefully weaving through the crowds of people, and I try my best to keep in step with his strides."
     "But then, I see something tantalizingly curious out of the corner of my eye. Without thinking, I glance up."
@@ -417,6 +420,8 @@ label chapter1:
 
     #TODO SCENE = CG (Mermaid cut in half)
 
+    stop sound fadeout 3.5
+
     window auto hide
     camera:
         subpixel True
@@ -442,6 +447,7 @@ label chapter1:
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
     "I grip Hunter's hand tighter, and he starts to walk faster through the crowd."
+
     scene bg black with dissolve:
         zoom 2.0
     camera:
@@ -454,6 +460,8 @@ label chapter1:
     "I glance back for just a moment before turning back away."
     "The cruel reality of the world. There isn't much I can do about it."
     "To fill the air with something else, I ask Hunter a question."
+
+    play sound "audio/sfx_crowd.wav" volume 0.009 loop fadein 2.5
 
     menu:
         "Do you hunt now, too? Like your father?":
@@ -485,7 +493,7 @@ label chapter1:
     #SCENE CHANGE - Port w/ Boats
     play music "audio/music_town.mp3" fadein 1.0
     scene bg port with dissolve
-    play sound "audio/sfx_wavesCalm.ogg" loop
+    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     y neutral "It's afternoon already?"
     show hunter neutral with dissolve
@@ -530,14 +538,14 @@ label chapter1:
     y shocked "Grandfather…?"
     show grandpa happy at jumpin
     g "Oh, bless the stars...you got my letter? you're really here! My dear, sweet [y]!"
-    "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded."
+    "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The wave of anxious anticipation I had moments before seems to vanish entirely."
     y neutral "It's been too long, Grandfather!"
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
     h "Hah? Sir, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass ye like my own grandchild!"
     show grandpa happy at right with move
-    "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh."
+    "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh." with hpunch
     "Once he has squeezed the daylight out of us, he lets go."
     show grandpa happy at left with move:
         ease2 0.3
@@ -555,11 +563,12 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
+    stop sound fadeout 2.0
     "Time just flies by, and before I know it, it's been a week."
 
     #SCENE CHANGE - Shabby Market
     scene bg shabby market with dissolve
-
+    play music "audio/music_town.mp3" fadein 1.0
     show grandpa happy at left with dissolve
 
     "Today, Grandfather and I are shopping for the next week's supply of food before he meets a trader in the afternoon."
@@ -570,7 +579,7 @@ label chapter1:
     y "Color, I can do that. But I'd rather not have to smell them at all."
     g "There's been worse smells, little bug."
     show grandpa happy at jumpin
-    g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!"
+    g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
     show grandpa neutral at left with dissolve
@@ -604,7 +613,7 @@ label chapter1:
     scene bg calmwave with dissolve
     stop music fadeout 1.0
     #SFX - waves (calm)
-    play sound "audio/sfx_wavesCalm.ogg" loop
+    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.3
 
     "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
     "The sea is calm, and the sun is shining down."
@@ -625,7 +634,7 @@ label chapter1:
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
-    play sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
+    play sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
     show hunter neutral with vpunch
     h "What the damn-"
     "The weather changes nearly in an instant."
@@ -649,7 +658,7 @@ label chapter1:
     #TODO FLASHBACK CG for a second of baby prince and june
     y "Who...? This is familiar to me, but...?"
     #SFX - loud crash, screen shake
-    play sound "audio/sfx_waveCrash.wav"
+    play sound "audio/sfx_waveCrash.wav" fadeout 1.0
     show bg choppywave with screenShake
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
@@ -664,6 +673,11 @@ label chapter1:
     $ config.side_image_tag = "june"
     "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
     #SPRITE?
+
+    play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.06 loop
+    play music "audio/music_underwater.mp3" volume 0.2 fadein 1.0
+
     u "Come...come with me..."
     y shocked "What...?"
     u "O' ye of land to the queen of sea..."
@@ -683,10 +697,10 @@ label chapter1:
     "With all my might I hold tightly to the slippery railing that parts me from the water, and yet my body is going against my will to stay put."
     "I sit atop the ledge."
     "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
-
+    stop music fadeout 1.0
     #SFX - SPLASH
     scene bg black with hpunch
-    play sound "audio/sfx_splash.flac"
+    play sound "audio/sfx_splash.flac" volume 0.6
 
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "The song stops, but my body is numb."
@@ -719,9 +733,10 @@ label chapter1:
     "Try as I might, none of my words come out right."
     "I've been turned into a fish by the siren!?"
     menu:
-        "Stay still.":
+        "Stay very, very still.":
             $ cetus_points += 1
             $ prince_points -= 1
+            "My body freezes up with fear."
             "I don't want to risk angering her."
             "Best to stay still and hope for the best..."
 
@@ -731,11 +746,12 @@ label chapter1:
             "I try to swim at her, but an invisible wall stops me before I can get close enough to smack her."
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
+            s "None of that swimming off!"
 
-    s "None of that swimming off! Stay put here, dearie, and be good, yes?"
+    s "Stay put, dearie, and be good, yes?"
     s "You'll give me what I want in time."
     s "Now, where did I put that pestle?"
-    "The voice swims away, and I'm left alone to contemplate my new fate."
+    "She swims away, and I'm left alone to contemplate my new fate."
     "Pushing my hands, well- fins against the bubble I can hardly push through!"
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
