@@ -805,7 +805,6 @@ screen preferences():
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
 
-
 style pref_label is gui_label
 style pref_label_text is gui_label_text
 style pref_vbox is vbox

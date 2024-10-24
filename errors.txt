@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/potato credits screen/credits_screen_template_2a.rpy", line 67: expecting name after dot.
-    add "gui/window_icon.png" zoom 0.5.2
-                                       ^
+File "game/script.rpy", line 22: invalid syntax
+    player_name = renpy.input("What is your name?", input default "Gerald", length=15)
+                                                           ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Oct 23 19:55:33 2024
+Wed Oct 23 21:28:39 2024

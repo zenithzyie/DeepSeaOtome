@@ -1,4 +1,4 @@
-﻿
+
 label start:
     $ hunter_points = 0
     $ prince_points = 0
@@ -19,7 +19,8 @@ label get_name:
         yalign 0.1
 
     #GET PLAYER NAME
-    $player_name = renpy.input("What is your name?",length=15)
+    $player_name = renpy.input("What is your name?", default = "June", length=15)
+
     $player_name.strip
 
     if player_name == "":
@@ -288,13 +289,13 @@ label chapter1:
     scene bg black with slideawayright
     "It closes the moment I enter. It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
-    play sound "audio/sfx_elevator.wav"
+    play sound "audio/sfx_elevator.wav" volume 0.1
     "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down?"
     "..."
     "..."
     "..."
     #SFX -  Elevator
-    play sound "audio/sfx_elevator2.wav"
+    play sound "audio/sfx_elevator2.wav" volume 0.1
     "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
 
     #SCENE CHANGE -  Underground Black Market Faire

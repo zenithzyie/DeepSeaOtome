@@ -84,7 +84,7 @@ layeredimage side june:
         attribute neutral:
             "side_june_neutral.png"
         attribute shocked:
-            "side_june_shocked.png"  
+            "side_june_shocked.png"
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
@@ -109,7 +109,7 @@ init python:
     config.side_image_tag = "june"
     #proritize voice as highest volume
     config.emphasize_audio_channels = [ 'voice' ]
-
+    
 transform jumpin:
     ease2 0.2 yoffset -5
     ease2 0.2 yoffset 0

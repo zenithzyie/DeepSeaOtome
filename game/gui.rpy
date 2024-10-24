@@ -57,13 +57,13 @@ define gui.interface_text_color = '#ffffff'
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "Philosopher-Regular.ttf"
+define gui.text_font = gui.preference ("fonts/OpenDyslexic.otf", "fonts/Philosopher-Regular.ttf")
 
 ## The font used for character names.
-define gui.name_text_font = "NEWBOROU.ttf"
+define gui.name_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts/NEWBOROU.ttf")
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "NEWBOROU.ttf"
+define gui.interface_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts/NEWBOROU.ttf")
 
 ## The size of normal dialogue text.
 define gui.text_size = 22
