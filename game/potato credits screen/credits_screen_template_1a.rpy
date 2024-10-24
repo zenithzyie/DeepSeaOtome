@@ -10,13 +10,13 @@ screen template_1a():
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("1a: One column, one list"), scroll="viewport"):
+    use game_menu(_("Credits"), scroll="viewport"):
 
         style_prefix "about"
 
         # vbox for credits
         vbox:
-            text "Credits:" style "about_header" 
+            text "Credits:" style "about_header"
 
             # spacing between each element
             spacing 50
@@ -38,13 +38,13 @@ screen template_1a():
                         textbutton _("https://gaming-variety-potato.itch.io/") action OpenURL("https://gaming-variety-potato.itch.io/") style "credits_url_button" text_style "credits_url_text"
                     hbox:
                         add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text" 
+                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text"
 
             # Credit block
             hbox:
                 add "logo"
 
-                null width 50  
+                null width 50
 
                 vbox:
                     null height 10
@@ -54,13 +54,13 @@ screen template_1a():
                     null height 30
                     hbox:
                         add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text" 
+                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text"
 
             # Credit block
             hbox:
                 add "logo"
 
-                null width 50  
+                null width 50
 
                 vbox:
                     null height 10
@@ -70,7 +70,23 @@ screen template_1a():
                     null height 30
                     hbox:
                         add "twitter-original"
-                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text"  
+                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text"
+
+            # Credit block
+            hbox:
+                add "logo"
+
+                null width 50
+
+                vbox:
+                    null height 10
+                    text "Name 3" style "credits_name"
+                    null height 10
+                    text "(Placeholder)" style "credits_role"
+                    null height 30
+                    hbox:
+                        add "twitter-original"
+                        textbutton _("https://www.twitter.com/gaming_v_potato/") action OpenURL("https://www.twitter.com/gaming_v_potato/") style "credits_url_button" text_style "credits_url_text"
 
             ## Unrelated to the credit template
             text "Asset Attribution:" style "about_header"
@@ -85,7 +101,7 @@ screen template_1a():
                 add "twitter-original"
                 text "twitter icon edited from {a=https://iconduck.com/icons/13242/twitter-original}Devicons Set V2{/a}" yalign 1.0
 
-            text "Devicons Set V2 is an Icon Set of 427 icons. It is exclusively made up of color icons. It's been open sourced with the license: MIT License. All icons can be used for personal & commercial purposes."    
+            text "Devicons Set V2 is an Icon Set of 427 icons. It is exclusively made up of color icons. It's been open sourced with the license: MIT License. All icons can be used for personal & commercial purposes."
 
             ## Default content that came with Ren'Py's About screen
             label "[config.name!t]"
@@ -96,4 +112,3 @@ screen template_1a():
                 text "[gui.about!t]\n"
 
             text _("Made with {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
-

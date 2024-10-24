@@ -11,7 +11,7 @@ style credits_category_header:
 # inherit style from text_button
 style credits_url_button is text_button
 
-#########################################################################################################################  
+#########################################################################################################################
 
 # style definitions only used by template 1
 
@@ -25,9 +25,9 @@ style credits_role:
 # inherit style from hyperlink_text
 style credits_url_text is hyperlink_text
 style credits_url_text:
-    size 18
+    size 20
 
-#########################################################################################################################    
+#########################################################################################################################
 
 # style definitions only used by template 2
 
@@ -41,4 +41,4 @@ style credits_role_small:
 # inherit from hyperlink_text
 style credits_url_text_small is hyperlink_text
 style credits_url_text_small:
-    size 15
+    size 20

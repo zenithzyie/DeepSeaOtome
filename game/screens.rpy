@@ -317,7 +317,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("Credits") action ShowMenu("template_1a")
+        textbutton _("Credits") action ShowMenu("template_2a")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -508,7 +508,7 @@ style game_menu_navigation_frame:
     yfill True
 
 style game_menu_content_frame:
-    left_margin 40
+    left_margin 20
     right_margin 20
     top_margin 10
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 627: end of line expected.
-    sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
-                                      ^
+File "game/potato credits screen/credits_screen_template_2a.rpy", line 67: expecting name after dot.
+    add "gui/window_icon.png" zoom 0.5.2
+                                       ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Sun Oct 20 03:55:04 2024
+Wed Oct 23 19:55:33 2024
