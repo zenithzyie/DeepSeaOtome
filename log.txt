@@ -1,14 +1,14 @@
-2024-10-24 05:53:58 UTC
+2024-10-24 06:23:03 UTC
 Windows-10-10.0.19045
 Ren'Py 8.2.1.24030407
 
 Early init took 0.08s
 Loading error handling took 0.04s
-Loading script took 0.38s
+Loading script took 0.15s
 Loading save slot metadata took 0.04s
 Loading persistent took 0.00s
-Running init code took 0.07s
-Loading analysis data took 0.02s
+Running init code took 0.05s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Reloading save slot metadata took 0.03s
 Index archives took 0.00s
@@ -28,27 +28,4 @@ Analyze screens took 0.00s
 Save screen analysis took 0.00s
 Prepare screens took 0.12s
 Save pyanalysis. took 0.00s
-Save bytecode. took 0.03s
-Running _start took 0.00s
-Interface start took 0.06s
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1920, 1080)
-swap interval: 1 frames
-Windowed mode.
-Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce GTX 1650 SUPER/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 560.94'
-Display Info: None
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1280, 720) physical=(1175, 661) drawable=(1175, 661)
-Maximum texture size: 4096x4096
+Save bytecode. took 0.00s
