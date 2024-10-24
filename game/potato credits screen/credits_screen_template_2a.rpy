@@ -35,7 +35,7 @@ screen template_2a():
                     null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                     text "Zenith Zyie" style "credits_name_small"
                     null height 10  # manual vertical spacing
-                    text "Writing, Coding & Production" style "credits_role_small"
+                    text "Director, Writing & Coding" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "itch-io"
@@ -44,6 +44,36 @@ screen template_2a():
                         #add "twitter-original"
                         textbutton _("Website") action OpenURL("https://zenithzyie.carrd.co/") style "credits_url_button" text_style "credits_url_text_small"
 
+            # Credit block
+            ## Default content that came with Ren'Py's About screen
+            hbox:
+                add "gui/window_icon.png" zoom 0.59
+                null width 25 # manual horizontal spacing
+                vbox:
+                    null height 5
+                    label "[config.name!t]" style "credits_name_small"
+                    null height 10
+                    text _("Version [config.version!t]") style "credits_role_small"
+                    null height 10
+                    hbox:
+                        textbutton _("itch.io") action OpenURL("https://zenithzyie.itch.io/hearts-depth") style "credits_url_button" text_style "credits_url_text_small"
+                    hbox:
+                        textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
+
+
+            # Credit block: EM
+            hbox:
+                add "logos/em logo.png" zoom 0.59
+                null width 25 # manual horizontal spacing
+                vbox:
+                    null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
+                    text "Em" style "credits_name_small"
+                    null height 10  # manual vertical spacing
+                    text "Lead Character Art & Production" style "credits_role_small"
+                    null height 10
+                    hbox:
+                        #add "twitter-original"
+                        textbutton _("Instagram") action OpenURL("https://www.instagram.com/e.ggily") style "credits_url_button" text_style "credits_url_text_small"
             # Credit block: ALI
             hbox:
                 add "gui/window_icon.png" zoom 0.59
@@ -52,7 +82,7 @@ screen template_2a():
                     null height 5
                     text "Alibun" style "credits_name_small"
                     null height 10
-                    text "Character Art & Writing" style "credits_role_small"
+                    text "Writing & Character Art" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"
@@ -60,7 +90,6 @@ screen template_2a():
                     hbox:
                         #add "twitter-original"
                         textbutton _("Artstation") action OpenURL("https://www.artstation.com/alibunn") style "credits_url_button" text_style "credits_url_text_small"
-
 
             # Credit block: SOJIN
             hbox:
@@ -76,19 +105,34 @@ screen template_2a():
                         #add "twitter-original"
                         textbutton _("Website") action OpenURL("https://sojinkim.myportfolio.com/") style "credits_url_button" text_style "credits_url_text_small"
 
-            # Credit block: EM
+
+            # Credit block: ALYSSA
             hbox:
-                add "logos/em logo.png" zoom 0.59
+                add "gui/window_icon.png" zoom 0.59
                 null width 25 # manual horizontal spacing
                 vbox:
-                    null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                    text "Em" style "credits_name_small"
-                    null height 10  # manual vertical spacing
-                    text "Character Art & Production" style "credits_role_small"
+                    null height 5
+                    text "Alyssa" style "credits_name_small"
+                    null height 10
+                    text "Writing" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"
-                        textbutton _("Instagram") action OpenURL("https://www.instagram.com/e.ggily") style "credits_url_button" text_style "credits_url_text_small"
+                        textbutton _("itch.io") action OpenURL("https://araetzel.itch.io/") style "credits_url_button" text_style "credits_url_text_small"
+
+            # Credit block: YUJA
+            hbox:
+                add "gui/window_icon.png" zoom 0.59
+                null width 25 # manual horizontal spacing
+                vbox:
+                    null height 5
+                    text "Yuja" style "credits_name_small"
+                    null height 10
+                    text "Environment Art & UI Design" style "credits_role_small"
+                    null height 10
+                    hbox:
+                        #add "twitter-original"
+                        textbutton _("Website") action OpenURL("https://tokipado.com/") style "credits_url_button" text_style "credits_url_text_small"
 
             # Credit block: MANGO
             hbox:
@@ -107,7 +151,6 @@ screen template_2a():
                         #add "twitter-original"
                         textbutton _("Twitter/X") action OpenURL("https://x.com/islandofmangos") style "credits_url_button" text_style "credits_url_text_small"
 
-
             # Credit block: LAURA
             hbox:
                 add "gui/window_icon.png" zoom 0.59
@@ -122,20 +165,6 @@ screen template_2a():
                         #add "twitter-original"
                         textbutton _("Twitter/X") action OpenURL("https://x.com/waweii") style "credits_url_button" text_style "credits_url_text_small"
 
-            # Credit block: YUJA
-            hbox:
-                add "gui/window_icon.png" zoom 0.59
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Yuja" style "credits_name_small"
-                    null height 10
-                    text "Environment Art & UI Design" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        #add "twitter-original"
-                        textbutton _("Website") action OpenURL("https://tokipado.com/") style "credits_url_button" text_style "credits_url_text_small"
-
             # Credit block: LU
             hbox:
                 add "logos/lu logo.png" zoom 0.6
@@ -149,20 +178,6 @@ screen template_2a():
                     hbox:
                         #add "twitter-original"
                         textbutton _("itch.io") action OpenURL("https://itch.io/profile/flrmstr") style "credits_url_button" text_style "credits_url_text_small"
-
-            # Credit block: ALYSSA
-            hbox:
-                add "gui/window_icon.png" zoom 0.59
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    text "Alyssa" style "credits_name_small"
-                    null height 10
-                    text "Writing" style "credits_role_small"
-                    null height 10
-                    hbox:
-                        #add "twitter-original"
-                        textbutton _("itch.io") action OpenURL("https://araetzel.itch.io/") style "credits_url_button" text_style "credits_url_text_small"
 
             # Credit block: LEMNISCATE
             hbox:
@@ -180,7 +195,7 @@ screen template_2a():
 
             # Credit block: JUSTIN
             hbox:
-                add "gui/window_icon.png" zoom 0.59
+                add "logos/justin logo.png" zoom 0.59
                 null width 25 # manual horizontal spacing
                 vbox:
                     null height 5
@@ -191,20 +206,6 @@ screen template_2a():
                     hbox:
                         #add "twitter-original"
                         textbutton _("itch.io") action OpenURL("https://itch.io/profile/vylphix") style "credits_url_button" text_style "credits_url_text_small"
-
-            # Credit block
-            ## Default content that came with Ren'Py's About screen
-            hbox:
-                add "gui/window_icon.png" zoom 0.59
-                null width 25 # manual horizontal spacing
-                vbox:
-                    null height 5
-                    label "[config.name!t]" style "credits_name_small"
-                    null height 10
-                    text _("Version [config.version!t]") style "credits_role_small"
-                    null height 10
-                    hbox:
-                        textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
 
             # fill unused grid spot (when amount is uneven) with null
             null
