@@ -300,7 +300,7 @@ label chapter1:
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music "audio/music_blackmarket.mp3"
-    play sound "audio/sfx_crowd.wav" volume 0.005 loop
+    play sound "audio/sfx_crowd.wav" volume 0.009 loop
     scene bg underground market with slideawayleft
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
@@ -355,7 +355,7 @@ label chapter1:
             "He looks away from me. I believe he is thoroughly embarrassed now."
             y "Of course, I'll just call you Hunter. I'm just having my fun."
 
-        "Drop it.":
+        "Let it be.":
             y "But of course, I'll just call you Hunter."
 
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
@@ -400,7 +400,7 @@ label chapter1:
     #TODO SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
     camera:
-        zoom 2.0
+        zoom 2.1
     show cg sushi with fade
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
@@ -421,7 +421,6 @@ label chapter1:
     #TODO SCENE = CG (Mermaid cut in half)
 
     stop sound fadeout 3.5
-
     window auto hide
     camera:
         subpixel True
@@ -439,9 +438,8 @@ label chapter1:
     camera:
         zoom 0.5
     show cg sushi
-    window auto show
-
     $ config.side_image_tag = "None"
+    window auto show
 
     "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
@@ -464,11 +462,14 @@ label chapter1:
     play sound "audio/sfx_crowd.wav" volume 0.009 loop fadein 2.5
 
     menu:
-        "Do you hunt now, too? Like your father?":
+        "Do you hunt now, too?":
             $ hunter_points += 1
             h "Well, yeah, I do. It's the family business, though your family left it to mine."
             h "Your old man always talked about wanting you to come back to join him, but when he announced his retirement, he sold most of it to my mother instead."
-            y "I see..."
+            if newspaper:
+                "I wonder if that was one of the deals the newspaper was talking about."
+            y "I see."
+            "I wonder how many mermaids die like that..."
             menu:
                 "Thinking about it..."
                 "I pity them.":

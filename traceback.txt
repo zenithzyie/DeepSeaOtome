@@ -1,42 +1,28 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 531, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 531, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 542, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "game/script.rpy", line 424, in script
+    if show_gross:
+  File "game/script.rpy", line 424, in <module>
+    if show_gross:
+NameError: name 'show_gross' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 531, in script
-    python hide:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 823, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1178, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 531, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 542, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\loadsave.py", line 829, in load
-    log.unfreeze(roots, label="_after_load")
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 1130, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 925, in rollback
-    self.load_failed()
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 843, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+  File "game/script.rpy", line 424, in script
+    if show_gross:
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 1842, in execute
+    if renpy.python.py_eval(condition):
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 424, in <module>
+    if show_gross:
+NameError: name 'show_gross' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 HeartsDepthDEMO 1.1
-Wed Oct 23 22:25:40 2024
+Wed Oct 23 23:15:24 2024

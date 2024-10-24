@@ -25,6 +25,8 @@ define moreright = Position(xpos=0.60)
 define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
 
+define show_gross = False
+
 default newspaper = False
 default seastorm = False
 default promermaid = 0

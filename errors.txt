@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 840: end of line expected.
-    hide jorunn glee with moveoutright:
-                                      ^
+File "game/script.rpy", line 426: reached end of line when expecting ':'.
+    if show_gross = True
+                        ^
+
+File "game/script.rpy", line 445: expected statement.
+    else:
+        ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Oct 23 22:42:02 2024
+Wed Oct 23 23:13:27 2024
