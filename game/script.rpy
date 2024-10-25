@@ -948,8 +948,6 @@ label ch1_followprince:
     "He would be devastated to find out I went overboard!"
     "They're going to think I drowned.."
     "I need to return back."
-    "As we swim further along, the waters seem to brighten with colorful bursts of coral formations and beautiful schools of fish."
-    "We arrive at a place just before a city, where a mesmerizing merman is waiting for the prince."
 
     scene bg sea with dissolve
     "The waters seem to brighten more as we swim, peaks of coral and schools of beautiful fish."
