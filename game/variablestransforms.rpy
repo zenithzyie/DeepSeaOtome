@@ -1,6 +1,6 @@
 ﻿
 define y = Character("[player_name]", image="june")
-define ny = Character(None, image="june") # for narration
+define ny = Character(None, what_italic=True, image="june") # for narration
 define g = Character("Grandfather", image="june")
 define h = Character("Hunter", image="june")
 define s = Character("Skylla", image="june")
