@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/options.rpy", line 65: invalid syntax
-    "audio/sfx_wavesCalm.ogg" volume 0.6
-                               ^
+File "game/script.rpy", line 853: is not terminated with a newline. (Check strings and parenthesis.)
+(Perhaps you left out a " at the end of the first line.)
+        "Just then, a loud rumble echoes through the area. The waters feel like they’re slowly beginning to churn.”
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Thu Oct 24 19:16:53 2024
+Mon Dec 16 02:12:46 2024

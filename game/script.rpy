@@ -75,28 +75,30 @@ label prologue:
 #CHAPTER 1
 label chapter1:
     #TODO SCENE = CG (Train)
-    scene bg shabby town
+    scene bg black with dissolve
     play music "audio/music_town.mp3" fadein 1.0
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
+    scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "I can’t wait to see it again, but when I think about the ocean, I can't help but feel  like I broke a promise to it."
+    "I can’t wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can’t really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
     "Even though I am now grown, she refuses to say what happened."
-    t "Please gather all personal belongings, we are arriving at Aquantis Station!"
-
-    $ config.side_image_tag = "june"
-    y neutral "Oh, we're already here?"
+    conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
 
     "The screeching of the brakes signal the train to a stop."
-    "I bring out my camera."
+    scene bg shabby town with dissolve
+
+    $ config.side_image_tag = "june"
+    y neutral "At last. Hello, Aquantis!"
+
+    "As soon as I exit the train car, I let the shutter of my camera go off, taking a picture."
 
     menu:
         "Take a picture of..."
         "The people outside":
-            "From my car seat window, I let the shutter of my camera go off, taking a picture of the people outside."
             play sound "audio/sfx_cameraShutter.wav"
             show camera with irisin
             hide camera with dissolve
@@ -117,7 +119,7 @@ label chapter1:
             y "It’s hard to believe that the port used to be further down."
 
     "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
-    "It's been years since I last set foot here."
+    "It's been years since I last set foot here, after all."
     "A quaint assortment of homes and shops descend down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
     y "Excuse me- sir! Hello?"
     "He ignores me, walking quickly away from the station."
@@ -132,8 +134,8 @@ label chapter1:
     "Rather than being ignored, it seems I'm attracting an uncomfortable attention."
     "Their gazes feel heavy on me as I walk by."
     "It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, it feels gloomy and unwelcoming."
-    t "Tch, inlanders. What is someone like her out here for?"
-    t "Inlander? Oy, you don't see many of them. And she's got a fancy one of those picture devices, that could land us a nice bit of coin aye?"
+    badguy "Tch, inlanders. What is someone like her out here for?"
+    badguy "Inlander? Oy, you don't see many of them. And she's got a fancy one of those picture devices, that could land us a nice bit of coin, aye?"
 
     #SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
@@ -142,7 +144,7 @@ label chapter1:
     "I keep my camera close to my hip, hiding it with my coat to prevent any further unwanted attention."
 
   #SCENE CHANGE - (Shabby Market [Zoomed In])
-    scene bg shabby market
+    scene bg shabby market with dissolve
     ny neutral "The smell grows worse as I suddenly find myself at a market."
     "There are so many interesting things to see."
     menu:
@@ -164,7 +166,7 @@ label chapter1:
             kid "No way, it's my turn!"
             y "How cute."
             kid "I don’t wanna be no stinkin’ fish! I’ma be a hunter!"
-            "I wonder if I ever played like that as a kid here."
+            "I wonder if I ever played that kind of game as a kid here."
 
         "The newspaper":
             $ newspaper = True
@@ -211,7 +213,7 @@ label chapter1:
             #SPRITE CHANGE (??? Expression)
             ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
-            #SCENE CHANGE - Shabby Market (or CG [Merchant at Fish Stand])
+            #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
             y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or Tilapia?"
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
@@ -222,7 +224,7 @@ label chapter1:
             "Black Market District..?"
             y "Even so, I have to get there. I’ll pay you if you just point me in the right direction."
             "He sighs."
-            fishmonger "Five knocks on the brick, pause, give three knocks, and pause again to give four."
+            fishmonger "Five hits on the brick. Pause, give three, and pause again to give four."
             fishmonger "That's all I know, and all I’ll say."
             "He looks at me and grins toothily."
             fishmonger "Payment?"
@@ -413,7 +415,7 @@ label chapter1:
 
     $ config.side_image_tag = "None"
 
-    "Her long silver hair moves in the water just like her tail. She is mouthing something, banging on the glass, but I can't hear a word."
+    "Her long brown hair moves in the water just like her tail. She is mouthing something, banging on the glass, but I can't hear a word."
     "Her eyes seem to lock onto mine for a moment."
     "Is she asking for my help?"
     "Suddenly, my view of the rest of the stand is unblocked, and I am able to peek through the empty spot in the crowd. It is a fish hawker's stand."
@@ -444,7 +446,7 @@ label chapter1:
     "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
-    "I grip Hunter's hand tighter, and he starts to walk faster through the crowd."
+    "I fight down the sudden bile rising up my throat and squeeze Hunter's hand, and he starts to walk faster through the crowd."
 
     scene bg black with dissolve:
         zoom 2.0
@@ -484,15 +486,16 @@ label chapter1:
 
         "Have you actually...killed them before?":
             $ promermaid += 1
-            h "Why do you sound so horrified? Fish is fish. Don't be fooled by their appearances."
-            h "If anything, they're monsters using human faces. They don't deserve your pity."
+            h "Why do you sound so horrified? Don't be fooled by their appearances."
+            h "I've seen them kill a man in the blink of an eye."
+            h "They're monsters using human faces. They don't deserve your pity."
             h "...But yes, I have."
             y "..."
 
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music "audio/music_town.mp3" fadein 1.0
+    play music "audio/music_town.mp3" fadein 2.0
     scene bg port with dissolve
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
@@ -544,13 +547,13 @@ label chapter1:
     y neutral "It's been too long, Grandfather!"
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
     h "Hah? Sir, that's not necessary-"
-    g "Just 'cause you're a man now doesn't mean I can't still embarrass ye like my own grandchild!"
+    g "Just 'cause you're a man now doesn't mean I can't still embarrass you like my own grandchild!"
     show grandpa happy at right with move
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh." with hpunch
     "Once he has squeezed the daylight out of us, he lets go."
     show grandpa happy at left with move:
         ease2 0.3
-    g "It's been years! Oh, just how many years has it been since  I've seen the both of ye together...How many years has it been since I've seen you, [y]."
+    g "It's been years! Oh, just how many years has it been since  I've seen the both of you together...How many years has it been since I've seen you, [y]."
     g "How's your mother? She never replies when I write to her."
     g "Nor has she ever let you reply to the letters I've sent you over the years."
     "My heart sinks."
@@ -578,13 +581,15 @@ label chapter1:
     y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
     y "Color, I can do that. But I'd rather not have to smell them at all."
+
+    # REMEMBER: variable to check if name is june - little birdie for any name other than june, little bug/junebug for june
     g "There's been worse smells, little bug."
     show grandpa happy at jumpin
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
     show grandpa neutral at left with dissolve
-    g "But I s'pose you'll never get to see that, would ye."
+    g "But I s'pose you'll never get to see that, would you."
     "He also wishes I could've inherited his love for the hunt."
     y flustered "Apologies, Grandfather..."
     g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup of tea."
@@ -621,7 +626,7 @@ label chapter1:
 
     show hunter neutral with dissolve
     $ config.side_image_tag = "june"
-    h "I'm going to steer us towards the calmer ones. Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
+    h "I'm going to steer us towards the calmer places. Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     h "Yep. But if they spot my little skiff, the show's over."
     h "There's no safer place than this part o' the sea."
@@ -684,8 +689,8 @@ label chapter1:
     u "O' ye of land to the queen of sea..."
     "My thoughts are hazy, and my body feels as though I'm floating."
     h "[y], what are you doing?!"
-    u "Come..."
-    s "to Skylla..."
+    u "Come with me..."
+    u "...to the depths below..."
     "The singing feels as though it is only for my ears to hear alone, the waves calling out for me to sink in."
     h "Shit, it's a siren! [y]!"
     show hunter neutral with vpunch
@@ -713,26 +718,28 @@ label chapter1:
     #SCENE CHANGE - Black Screen
     scene bg black
     play music "audio/music_underwater.mp3" volume 0.7
-    u "Hmm, hmm, hmm."
-    u "After all these years, this is where it's been, encased in a protective spell?"
-    u "I can't just rip it out either..."
-    u "...This is going to take time."
-    u "Alas, keeping her alive for now is my only choice."
-    u "Why did he ever offer something like this to a human?"
-    #SCENE CHANGE - underwater cave (skylla's)
-    scene bg underwater cave
-    $ config.side_image_tag = "june"
+    siren "After all these long years… you’ve finally returned home to me..."
     "..."
     "...Where am I?"
-    u "Ah, you've awoken, little human. Or shall I say fish?"
-    y neutral fish "Blub!"
+    siren "Hmm, hmm, hmm."
+    "A strange voice is humming a familiar song."
+    siren "Ah! you've woken up, little human."
+    y "Blub!"
     "....Huh."
     y "Blub blub blub!"
-    "The strange voice laughs at me, and I recognize it."
-    y "BLUB BLUB BLUB!!!"
-    s "That's no way to speak as a lady!"
+    siren "Or shall I say fish?"
+    "Hands, impossibly large and glowing strangely, come down to cradle me."
+
+    #PUT SKYLLA HAND CG HERE
+
+    #SCENE CHANGE - underwater cave (skylla's)
+    scene bg underwater cave with dissolve
+    $ config.side_image_tag = "june"
+    "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
+    y neutral fish "BLUB BLUB BLUB!!!"
+    siren "Ahaha! Oh, you cute thing. That's no way to speak as a lady!"
     "Try as I might, none of my words come out right."
-    "I've been turned into a fish by the siren!?"
+    "And I've...{w} been turned into a fish by this siren!?"
     menu:
         "Stay very, very still.":
             $ cetus_points += 1
@@ -747,82 +754,125 @@ label chapter1:
             "I try to swim at her, but an invisible wall stops me before I can get close enough to smack her."
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
-            s "None of that swimming off!"
 
-    s "Stay put, dearie, and be good, yes?"
-    s "You'll give me what I want in time."
+    siren "Aw. You’re hurting my feelings!{w} Aren’t you happy to see me?{w} When Skylla calls, little mers are meant to follow."
+    "Skylla..? Is that the name of this siren?"
+    "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
+    s "There’s no reason to rush. We have all the time in the world together. You'll give me what I want in due time."
     s "Now, where did I put that pestle?"
-    "She swims away, and I'm left alone to contemplate my new fate."
-    "Pushing my hands, well- fins against the bubble I can hardly push through!"
+    "The voice swims away, and I'm left alone to contemplate my new fate."
+    "No matter how hard I press my hands - well, fins - against the bubble, I can't push through!"
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
-    "Am I going to die being eaten for some fish's dinner, same as the mermaids above?"
-    "From the distance through the water I could hear the siren talking to herself, swimming to and fro around the cave."
-    s "Extraction of a pearl...extraction..."
-    "She comes back over to me, her sharp eyes stunningly beautiful."
-    "Yet I can't help but feel fear as she grabs the bubble, bringing me closer to her face, examining me with a ravenous intent."
-    s"Who made you so small? So difficult to see."
-    s "Do you humans still practice magic on land?"
-    s "Do you even know what it is that you possess?"
-    y "Bl-Blub?"
-    s "No, you seem ignorant. yet I know it's inside you. I can see it radiating off you."
-    s "Faint and hidden, but it's there."
-    "What do I possess? What could I even have? And magic practice? I'm not in a fairytale, am I!?"
-    s "How did you convince him to give it to you? Bribery?"
-    y neutral fish "Blub?"
-    "Surely this is a mistake of some sort."
-    s "Let's just get started. We have a lot of trial and error ahead of us."
-    "Her clawed fingers gracefully pop the bubble, but just as swiftly in that motion her hand clasps around me."
-    "My heart was rushing in my tiny body. She could pop me in an instant as well."
-    "She closes in on whatever she was preparing to test on me in the back of the cave before she suddenly pauses, listening closely to something as her ear fins twitch."
+    "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped into the wrong shape."
+    "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
+    "Forever? Like this?"
+    "Or maybe...{w}am I going to die after being eaten as a special dinner course?"
+    "Suddenly the memories of the mermaid market come to mind. Their bodies had been taken apart to become a cheap meal."
+    "I am no different from them now.{w} Just as helpless."
+    "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
+    s "One piece at a time..."
+    "No.{w} No, no, no."
+    "Think, June, think! There has to be a way out of here!"
+    "If there’s a way to turn a human into a fish, surely there’s a way to turn a fish back into human, right?"
+    "I glance around the cave I’m in."
+    "It’s dark here, hard to see. My new tiny eyes struggle to take in everything all at once."
+    "From what I can see there’s only a path forward deeper towards the siren’s lair. No windows, or whatever the underwater equivalent is."
+    "There are what looks like glowing stones on the walls. What are the odds that they could magically explode?"
+    "Come on, [y]! You can do better than this! What else is there?"
 
-    #Voice Lines Start
-    # voice "audio/voice/prince/THIODAL-1.wav"
-    u "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
-    # voice "audio/voice/prince/THIODAL-2.wav"
-    u "Return them now, and I will not arrest you."
-    s "That voice...he's not supposed to be here."
-    "She squeezes me painfully in frustration."
-    u "Well, I'm sorry, my liege, but I'm sure you'll find something else out there to eat."
-    u "Perhaps you should ask your Vanguard how they got these fish in the first place? It wasn't very kind or knightly."
-    # voice "audio/voice/prince/THIODAL-3.wav"
-    u "Are you suggesting {i}we{/i} stole from {i}you{/i}?"
-    # voice "audio/voice/prince/THIODAL-4.wav"
-    u "If my men have done harm to your village and stolen from you, I will personally take accountability in returning those fish and providing recompense."
-    # voice "audio/voice/prince/THIODAL-5.wav"
-    u "However, the fact of the matter is that you stole from the royal guard!"
-    s "I need to chase them away..."
-    s "Ah, how about this!"
-    s "Heheheh~."
-    "She waves her free hand out to the voices, whispering in a tongue I can't understand."
-    "My body starts to tingle all over."
-    "But her hand's grip has loosened, just enough for me to squirm out of her grasp."
-    s "You little eel! Get back here!" with vpunch
-    "Quickly zipping across the room, I push my tiny fins as hard as they can go."
-    "Her tentacles try to grasp me, but I am too small for them to catch."
-    "And just through sheer luck, in front of me in the cave wall is a crack, just small enough for me to fit through!"
-    "I can hear the siren cursing behind the wall as I swim away."
+    "Before I can finish the thought, the siren swims back towards me."
+    "Her clawed fingers gracefully pop the bubble trapping me, but just as swiftly in that motion her hand clasps around me."
+    "My heart begins rushing in my tiny body. She could pop me in an instant as well."
+    s "Hold still now, cute thing. This won’t hurt."
+    "It’s a lie. Strange magic begins to glow out of the siren’s hands as she softly sings."
+    "It’s beautiful beyond words, but the moment it starts I start to feel a burning pain spreading across my body."
+    s "It’s okay! Don’t be stubborn now. Come on, it's me!"
+    "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
+    "The moment I feel like I’m about to snap in two, a sudden blinding light flashes throughout the cave."
 
-    #SCENE CHANGE - sea wilderness
+    #FLASH EFFECT
+
+    "The siren screams as she drops me, falling backwards."
+    s "No. No! This- this isn’t right."
+    "Once I blink the white spots out my vision I look up and find the siren staring at me with a shocked expression on her beautiful face."
+    "Her hands are bleeding."
+    "We both stare at each other, frozen, before I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
+    s "You little {i}eel!{/i} Get back here!"
+
+    y "Blub blub!!"
+
+    "As if! Who in their right mind would do that!?"
+    "Her tentacles try to grasp me, but I’m too small for them to catch."
+    s "Fine! Be like that!"
+    "She begins humming to herself again, and a bolt of magic shoots out of her hands."
+    "I twist away just in time, and the magic misses me and collides with one of the glowing stones on the wall of the cave."
+    "Time seems to slow down."
+    "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode."
+    "The force spends me sprawling backwards in pain, but I don’t have time to linger on it because the explosion has created a hole just big enough to squeeze through."
+
+    scene bg black
+
+    "I swim as fast as I can. Faster than I’ve ever ran when I had legs."
+    "My heart is thumping madly in my chest as I force my way through the debris. "
+    "The sharper pieces scrape and cut through my fins but I barely pay them any mind as I keep swimming.{w} I think that if I had my voice I would be crying."
+    "I can hear the siren cursing as I swim away, but eventually it shrinks into a distant shriek as I keep charging forward with all I have."
+    "It doesn't matter where I go, just as long as it’s far away from that awful witch!"
+
     scene bg sea with vpunch
-    "It doesn't matter where I go, just far away from that witch!"
-    "The hole appears to have brought me straight into the thick of things outside the cave."
-    show prince angry at left with dissolve
-    show jorunn sweat at moreright with dissolve
-    guard "Sharks ahead! Get the prince out of here!"
-    guard "We've been in the witch's domain for too long, your Majesty! We must return, now!"
-    uj "Sharks? Ah, we are in the witch's country, aren't we?"
-    show jorunn glee with vpunch
-    uj "I'll be taking these home then! Goodbye!"
-    # voice "audio/voice/prince/THIODAL-6.wav"
-    show prince angry with hpunch
-    up "You damned, fish-grubbing parasite! Grah, fine!"
-    "It seems like the two opposing parties are separating, and I need to figure out where to go, now!"
-    "Maybe one of them can help me?"
-    "Hiding between the broken shells of sea hunter ships, I can see sharks patrolling. Did the siren summon them?"
-    "The merman that was surrounded by knights was called a prince, huh?"
-    "He sure looks like one. His fins are unlike any other I’ve seen, a striking array of blue."
-    "Do I approach him..? Or perhaps the other fellow? He seems like he might be more willing to help me, like some of the townsfolk I know back home."
+
+    "I stop to catch my breath after what feels like a lifetime."
+    $ config.side_image_tag = "june"
+    y fish neutral "Blub…blub…"
+    "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
+    "Grandpa…Hunter…they must think that I’m dead by now."
+    "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
+    "But... {w}how am I supposed to make it back to land?"
+    "The only one that might be able to change me back is that siren, but there's no way I can go back there."
+    "Before I can dive any further into those thoughts I hear voices approaching from a distance."
+    "I quickly dart into some foliage to hide."
+
+    #THIO AND JOR ENTER THE STAGE
+    #Voice Lines Start (old, deleted the comments where they were due to script changes)
+    show kelp with vpunch
+    novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
+    novisualthio "Return them now, and your judgment will be fair."
+    novisualjor "Well I am sorry, my prince! But I was kind of hoping I could skip the judgement part entirely!"
+    novisualjor "Maybe you could ask your Vanguard to find you something else for your dinner? They could always go pilfer from other villages."
+
+    "A '{i}prince{/i}'?"
+    "Curiosity piqued, I lean over as much as I dare to stare at the new arrivals."
+
+    hide kelp with dissolve
+
+    show prince angry at left
+    show jorunn sweat at moreright
+    with dissolve
+
+    "Ahead of me, two mer-people are staring each other down."
+    "One of them is a young man carrying a large net stuffed full of fish."
+    "The other one has fins unlike any other I’ve seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
+
+    "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
+    up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
+    uj "Oh no. No, of course not!"
+    show jorunn glee at moreright
+    uj "...But if the shoal fits!"
+    up "You thieving little-"
+
+    show prince sweat at left
+    show jorunn sweat at moreright
+    with vpunch
+
+    "Just then, a loud rumble echoes through the area. The waters feel like they’re slowly beginning to churn."
+    guard "It’s another sea storm, Your Highness! We must head back now before it picks up any further."
+    show prince angry at left
+    up "Dammit. Why now of all times..!"
+    show jorunn glee at moreright
+    uj "Well I guess that's my cue! I’ll be taking these home then. Goodbye!"
+    "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever kind of storm is coming." with vpunch
+    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous...but they might be my only shot at getting help right now."
+
     if promermaid >= 1:
         "Anything would be better than returning to the sea witch."
     if antimermaid >= 1:
