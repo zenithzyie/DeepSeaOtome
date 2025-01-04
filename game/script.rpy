@@ -43,7 +43,7 @@ label prologue:
 
     #TODO SCENE ?
     scene bg choppywave with dissolve
-
+    play music "audio/music_storm.mp3" volume 0.4
     play sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     $ config.side_image_tag = "june"
@@ -495,7 +495,7 @@ label chapter1:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music "audio/music_town.mp3" fadein 2.0
+    play music "audio/music_port.mp3" fadein 2.0 volume 0.4
     scene bg port with dissolve
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
@@ -640,6 +640,7 @@ label chapter1:
 
     #SCENE CHANGE - view of the sea (stormy)
     scene bg choppywave
+    play music "audio/music_storm.mp3" fadein 2.0 volume 0.4
     play sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
     show hunter neutral with vpunch
     h "What the damn-"

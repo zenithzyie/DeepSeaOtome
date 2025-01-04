@@ -24,7 +24,6 @@ wave2.wav by Kayyy -- https://freesound.org/s/61012/ -- License: Attribution 3.0
 sfx_cameraShutter
 Minolta Camera Shutter.wav by ThunderQuads -- https://freesound.org/people/ThunderQuads/sounds/467186/ -- License: Creative Commons 0
 
-
 MUSIC:
 music_town
 Music by Golden Sound Lab from Pixabay
@@ -37,3 +36,11 @@ https://pixabay.com/music/ambient-dark-piano-ambient-background-music-gloomy-nig
 music_underwater
 Music Wondrous Waters from Pixabay
 https://pixabay.com/music/ambient-wondrous-waters-119518/
+
+music_port
+Sunlit Puddles composed by MFP【Marron Fields Production】
+https://dova-s.jp/EN/bgm/play20751.html
+
+music_storm
+monster lurking underwater composed by alaki paca
+https://dova-s.jp/EN/bgm/play19853.html
