@@ -495,9 +495,10 @@ label chapter1:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music "audio/music_port.mp3" fadein 2.0 volume 0.4
+    play music "audio/music_port.mp3" fadein 2.0 volume 0.3
     scene bg port with dissolve
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
+    play sound "audio/sfx_seagulls.ogg" loop volume 0.8 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     y neutral "It's afternoon already?"
     show hunter neutral with dissolve

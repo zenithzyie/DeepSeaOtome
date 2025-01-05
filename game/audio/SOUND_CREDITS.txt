@@ -24,6 +24,9 @@ wave2.wav by Kayyy -- https://freesound.org/s/61012/ -- License: Attribution 3.0
 sfx_cameraShutter
 Minolta Camera Shutter.wav by ThunderQuads -- https://freesound.org/people/ThunderQuads/sounds/467186/ -- License: Creative Commons 0
 
+sfx_seagulls
+seagulls by Eelke -- https://freesound.org/s/144835/ -- License: Attribution 4.0
+
 MUSIC:
 music_town
 Music by Golden Sound Lab from Pixabay
