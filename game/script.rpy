@@ -108,7 +108,6 @@ label chapter1:
             y "I'm not Inland anymore, that much is clear."
 
         "The town around":
-            "From my car seat window, I let the shutter of my camera go off, taking a picture of the town"
             play sound "audio/sfx_cameraShutter.wav"
             show camera with irisin
             hide camera with dissolve
@@ -219,11 +218,19 @@ label chapter1:
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger " Do I look like a map stand? I sell fish. Ye buy fish, then ya leave, ye get it?"
             y "I will pay you for the help! I’m just looking for this address."
-            "Before he could deny me once more, I show the bottom half of the letter where the address is clearly written. He squints at the paper, adjusting his sight to get a better look at it."
+            "Before he could deny me once more, I show the bottom half of the letter where the address is clearly written."
+            #with suggestions from Tay
+            fishmonger "I ain't gonna be telling any airsick in-landler how to get—"
+            "He squints at the paper, adjusting his sight to get a better look at it."
+            fishmonger "What did you say your name was again?"
+            y "It's [player_name] Finch."
+            fishmonger "Finch, you say..."
+            "He scratches his chin and sighs."
+            #moved dialogue around - end of tay suggestions
             fishmonger "....Girlie, do ye know where that is? That's in the Black Market District. Someone like you don't belong there. Hell, even I avoid it."
             "Black Market District..?"
             y "Even so, I have to get there. I’ll pay you if you just point me in the right direction."
-            "He sighs."
+            fishmonger "Alrighty, little lady."
             fishmonger "Five hits on the brick. Pause, give three, and pause again to give four."
             fishmonger "That's all I know, and all I’ll say."
             "He looks at me and grins toothily."
@@ -735,10 +742,12 @@ label chapter1:
     #PUT SKYLLA HAND CG HERE
 
     #SCENE CHANGE - underwater cave (skylla's)
-    scene bg underwater cave with dissolve
+    scene bg underwater cave with dissolve:
+        zoom 0.5
     $ config.side_image_tag = "june"
     "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
     y neutral fish "BLUB BLUB BLUB!!!"
+    show skylla neutral with dissolve
     siren "Ahaha! Oh, you cute thing. That's no way to speak as a lady!"
     "Try as I might, none of my words come out right."
     "And I've...{w} been turned into a fish by this siren!?"
@@ -762,10 +771,12 @@ label chapter1:
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
     s "There’s no reason to rush. We have all the time in the world together. You'll give me what I want in due time."
     s "Now, where did I put that pestle?"
+    hide skylla neutral with dissolve
     "The voice swims away, and I'm left alone to contemplate my new fate."
     "No matter how hard I press my hands - well, fins - against the bubble, I can't push through!"
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
+    stop music fadeout 2.0
     "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped into the wrong shape."
     "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
     "Forever? Like this?"
@@ -775,7 +786,7 @@ label chapter1:
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
     "No.{w} No, no, no."
-    "Think, June, think! There has to be a way out of here!"
+    "Think, [player_name], think! There has to be a way out of here!"
     "If there’s a way to turn a human into a fish, surely there’s a way to turn a fish back into human, right?"
     "I glance around the cave I’m in."
     "It’s dark here, hard to see. My new tiny eyes struggle to take in everything all at once."
@@ -783,6 +794,7 @@ label chapter1:
     "There are what looks like glowing stones on the walls. What are the odds that they could magically explode?"
     "Come on, [y]! You can do better than this! What else is there?"
 
+    show skylla neutral with dissolve
     "Before I can finish the thought, the siren swims back towards me."
     "Her clawed fingers gracefully pop the bubble trapping me, but just as swiftly in that motion her hand clasps around me."
     "My heart begins rushing in my tiny body. She could pop me in an instant as well."
@@ -827,7 +839,9 @@ label chapter1:
     $ config.side_image_tag = "june"
     y fish neutral "Blub…blub…"
     "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
-    "Grandpa…Hunter…they must think that I’m dead by now."
+    play music "audio/music_underwater.mp3" volume 0.7
+
+    "Grandpa...Hunter...they must think that I’m dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But... {w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."

@@ -97,6 +97,13 @@ layeredimage side june:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
 
+layeredimage skylla:
+    group expressions:
+        attribute neutral:
+            "skylla_neutral.png"
+            zoom 0.3
+    ypos 780
+
 layeredimage side june fish:
     group expressions:
         attribute neutral:
