@@ -27,6 +27,12 @@ Minolta Camera Shutter.wav by ThunderQuads -- https://freesound.org/people/Thund
 sfx_seagulls
 seagulls by Eelke -- https://freesound.org/s/144835/ -- License: Attribution 4.0
 
+sfx_hum
+Woman Humming Softly- MP3 by MayaTakeda -- https://freesound.org/s/646179/ -- License: Creative Commons 0
+
+sfx_thunder
+Thunder2 by Yoyodaman234 -- https://freesound.org/s/267551/ -- License: Creative Commons 0
+
 MUSIC:
 music_town
 Music by Golden Sound Lab from Pixabay
@@ -47,3 +53,7 @@ https://dova-s.jp/EN/bgm/play17070.html
 music_storm
 monster lurking underwater composed by alaki paca
 https://dova-s.jp/EN/bgm/play19853.html
+
+music_cave
+Mysterious composed by shimtone
+https://dova-s.jp/EN/bgm/play19650.html

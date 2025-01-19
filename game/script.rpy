@@ -647,9 +647,10 @@ label chapter1:
     ny shocked "I'm about to respond to him, but the ship catches on the waves, and I stumble." with vpunch
 
     #SCENE CHANGE - view of the sea (stormy)
+    play sound "audio/sfx_thunder.ogg" volume 0.9
     scene bg choppywave
     play music "audio/music_storm.mp3" fadein 2.0 volume 0.4
-    play sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
     show hunter neutral with vpunch
     h "What the damn-"
     "The weather changes nearly in an instant."
@@ -690,8 +691,9 @@ label chapter1:
     #SPRITE?
 
     play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
+    $ renpy.music.set_volume(0.3, 2, 'music')
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.06 loop
-    play music "audio/music_underwater.mp3" volume 0.2 fadein 1.0
+    play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
 
     u "Come...come with me..."
     y shocked "What...?"
@@ -726,12 +728,14 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    play music "audio/music_underwater.mp3" volume 0.7
+    play music "audio/music_cave.mp3" volume 0.9
     siren "After all these long years… you’ve finally returned home to me..."
     "..."
     "...Where am I?"
+    play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
     siren "Hmm, hmm, hmm."
     "A strange voice is humming a familiar song."
+    stop sound fadeout 1.0
     siren "Ah! you've woken up, little human."
     y "Blub!"
     "....Huh."
@@ -776,7 +780,7 @@ label chapter1:
     "No matter how hard I press my hands - well, fins - against the bubble, I can't push through!"
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
-    stop music fadeout 2.0
+    #stop music fadeout 2.0
     "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped into the wrong shape."
     "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
     "Forever? Like this?"
@@ -834,12 +838,11 @@ label chapter1:
     "It doesn't matter where I go, just as long as it’s far away from that awful witch!"
 
     scene bg sea with vpunch
-
+    play music "audio/music_underwater.mp3" volume 0.7 fadeout 1.0
     "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
     y fish neutral "Blub…blub…"
     "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
-    play music "audio/music_underwater.mp3" volume 0.7
 
     "Grandpa...Hunter...they must think that I’m dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
