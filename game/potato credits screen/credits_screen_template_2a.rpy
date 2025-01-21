@@ -60,7 +60,6 @@ screen template_2a():
                     hbox:
                         textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
 
-
             # Credit block: EM
             hbox:
                 add "logos/em logo.png" zoom 0.59
@@ -69,7 +68,7 @@ screen template_2a():
                     null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                     text "Em" style "credits_name_small"
                     null height 10  # manual vertical spacing
-                    text "Lead Character Art & Production" style "credits_role_small"
+                    text "Lead Character Art, Writing & Production" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"
@@ -82,7 +81,7 @@ screen template_2a():
                     null height 5
                     text "Alibun" style "credits_name_small"
                     null height 10
-                    text "Writing & Character Art" style "credits_role_small"
+                    text "Co-Director, Character Art & Writing" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"

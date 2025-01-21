@@ -13,6 +13,7 @@ define woman = Character("Elderly Woman", image="june")
 define fishmonger = Character("Fishmonger", image="june")
 define conductor = Character("Conductor", image="june")
 define badguy = Character("Ne'er-do-well", image="june")
+define paperboy = Character("Paperboy", image="june")
 define narrator = Character(None, what_italic=True)
 
 define u = Character("???", image="june")
@@ -34,6 +35,7 @@ define prettyfarright = Position(xpos=0.85)
 define show_gross = False
 
 default newspaper = False
+default childrenplaying = False
 default seastorm = False
 default promermaid = 0
 default antimermaid = 0
@@ -108,6 +110,9 @@ layeredimage side june fish:
     group expressions:
         attribute neutral:
             "side_june_fish_neutral.png"
+            zoom 0.4
+            xpos 172
+            ypos 250
 
 layeredimage hunter:
     group expressions:
