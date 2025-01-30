@@ -737,7 +737,7 @@ label chapter1:
     y "Blub!"
     "....Huh."
     y "Blub blub blub!"
-    siren "Or shall I say fish?"
+    siren "Or, shall I say, little fish?"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
 
     #PUT SKYLLA HAND CG HERE
@@ -767,10 +767,11 @@ label chapter1:
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
 
-    siren "Aw. You’re hurting my feelings!{w} Aren’t you happy to see me?{w} When Skylla calls, little mers are meant to follow."
+    siren "Aw. You’re hurting my feelings!{w} Aren’t you happy to see me?"
+    siren "When Skylla calls, little mers are meant to follow."
     "Skylla..? Is that the name of this siren?"
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
-    s "There’s no reason to rush. We have all the time in the world together. You'll give me what I want in due time."
+    s "There’s no need to rush. We have all the time in the world together. You'll give me what I want in due time."
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
     "The voice swims away, and I'm left alone to contemplate my new fate."
@@ -838,7 +839,7 @@ label chapter1:
     play music "audio/music_underwater.mp3" volume 0.7 fadeout 1.0
     "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
-    y fish neutral "Blub…blub…"
+    y fish neutral "Blub...blub..."
     "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
 
     "Grandpa...Hunter...they must think that I’m dead by now."
@@ -853,7 +854,7 @@ label chapter1:
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
     novisualthio "Return them now, and your judgment will be fair."
-    novisualjor "Well I am sorry, my prince! But I was kind of hoping I could skip the judgement part entirely!"
+    novisualjor "Well, I am sorry, my prince! But I was kind of hoping I could skip the judgement part entirely!"
     novisualjor "Maybe you could ask your Vanguard to find you something else for your dinner? They could always go pilfer from other villages."
 
     "A '{i}prince{/i}'?"
@@ -898,13 +899,14 @@ label chapter1:
     #Follow Striking Prince
     #Follow Scrappy Boy (can't choose this yet, lol)
     menu:
+        "What do I do...?"
         "Follow Striking Prince":
             $ prince_points += 1
             jump ch1_followprince
         "Follow Scrappy Boy":
             $ jorunn_points += 1
             jump ch1_followjorunn
-        "Find another way":
+        "Find another way" if antimermaid >= 1:
             jump ch1_badend1
 
 label ch1_badend1:

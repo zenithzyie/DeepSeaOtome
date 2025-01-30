@@ -198,3 +198,9 @@ log.txt
 log.txt
 game/saves/persistent
 game/options.rpy
+game/cache/bytecode-39.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt
+game/saves/auto-10-LT1.save
+log.txt
+game/saves/navigation.json
