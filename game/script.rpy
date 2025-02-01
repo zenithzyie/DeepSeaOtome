@@ -560,7 +560,7 @@ label chapter1:
         ease2 0.3
     g "It's been years! Oh, just how many years has it been since  I've seen the both of you together...How many years has it been since I've seen you, [y]."
     g "How's your mother? She never replies when I write to her."
-    g "Nor has she ever let you reply to the letters I've sent you over the years."
+    g "Nor has she ever let you reply to the letters I've sent you over the years..."
     "My heart sinks."
     y "Mother has been well, as well as Father. But, well..."
     y "She read the letters, but never let me see them. I only recently saw them myself."
