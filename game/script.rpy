@@ -318,17 +318,22 @@ label chapter1:
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
 
-    show hunter neutral with dissolve
+    show hunter neutral at Position(xpos=0.10):
+        zoom 1.5
+    with dissolve
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
-    "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me." with vpunch
+    "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
+    show hunter neutral at Position(xpos=0.20):
+        zoom 1
+    with vpunch
     ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
     "I slap his hand away from mine and glare at his face." with vpunch
     "I do not recognize him."
     u "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
-    "He scoffs and shakes his head." with hpunch
+    "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
     u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
@@ -338,7 +343,11 @@ label chapter1:
     u "Jogging anything in that noggin? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
     "He stares at me for a moment before the realization hits."
     u "Ah, that's right."
-    "He pulls down his mask to reveal a handsome and somewhat-familiar face."
+    #if we go mask route, just pop this back in but it doesn't make sense right now
+    #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
+    show hunter neutral at Position(xpos=0.10):
+        zoom 1.5
+    with dissolve
     h "Hunter Aubrey Morrowe."
     if newspaper:
         ny shocked "Oh, Morrowe! That means..."
@@ -346,8 +355,8 @@ label chapter1:
     h "That's my name, yes."
     "He looks positively delighted to hear me say his name."
     y "..."
-    y "Oh!"
-    y "Right, Hammy! you were so different when we were young!"
+    y shocked "Oh!"
+    y neutral "Right, Hammy! you were so different when we were young!"
     "He deflates as soon as I say it."
     h "Ah, you still remember that nickname. Pity..."
 
@@ -410,8 +419,8 @@ label chapter1:
     show cg sushi with fade
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
-    "Her body is so human and serene from the top, but her lower half....scales, a tail that flows in the water and reflects off the dim lights around her."
-    "A woman....no, a creature that is equal parts human and fish."
+    "Her body is so human and serene from the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
+    "A woman...{w}no, a creature that is equal parts human and fish."
 
     $ config.side_image_tag = "june"
 
@@ -546,7 +555,7 @@ label chapter1:
     "The old man stands frozen before me. He looks as though he's seen a ghost."
     y shocked "Grandfather…?"
     show grandpa happy at jumpin
-    g "Oh, bless the stars...you got my letter? you're really here! My dear, sweet [y]!"
+    g "Oh, bless the stars...you got my letter? You're really here! My dear, sweet [y]!"
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The wave of anxious anticipation I had moments before seems to vanish entirely."
     y neutral "It's been too long, Grandfather!"
@@ -570,6 +579,8 @@ label chapter1:
     g "Oh, Marie..."
     "He lets out a wistful sigh."
     g "Can't be helped, I s'pose. Come on, then! Let's get you settled in."
+
+    #ADDITIONAL SCENE HERE WITH GRANDPA
 
     #SCENE CHANGE - Black Screen
     scene bg black

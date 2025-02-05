@@ -34,6 +34,9 @@ define prettyfarright = Position(xpos=0.85)
 
 define show_gross = False
 
+transform ts_moveZ(dist, ts_speed=0.5):
+    linear ts_speed zoom dist yoffset (-dist*100 if dist < 1.0 else (dist-1.0) * 750)
+
 default newspaper = False
 default childrenplaying = False
 default seastorm = False
