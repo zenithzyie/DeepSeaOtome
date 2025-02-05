@@ -558,7 +558,8 @@ label chapter1:
     "Once he has squeezed the daylight out of us, he lets go."
     show grandpa happy at left with move:
         ease2 0.3
-    g "It's been years! Oh, just how many years has it been since  I've seen the both of you together...How many years has it been since I've seen you, [y]."
+    g "Oh, just how many years has it been since I've seen the both of you together?"
+    g "It's good to see you, little birdie."
     g "How's your mother? She never replies when I write to her."
     g "Nor has she ever let you reply to the letters I've sent you over the years..."
     "My heart sinks."

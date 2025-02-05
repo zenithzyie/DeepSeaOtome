@@ -106,6 +106,13 @@ layeredimage skylla:
             zoom 0.3
     ypos 780
 
+layeredimage prashadi:
+    group expressions:
+        attribute neutral:
+            "prashgrandpa1.png"
+            zoom 0.2
+    ypos 1410
+
 layeredimage side june fish:
     group expressions:
         attribute neutral:
