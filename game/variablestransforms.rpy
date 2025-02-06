@@ -46,6 +46,8 @@ default promermaid = 0
 default antimermaid = 0
 
 default menuset = set()
+init:
+    $ flash = Fade(.25, 0, .75, color="#fff")
 
 #Character blinking
 transform blink:
@@ -108,8 +110,25 @@ layeredimage skylla:
     group expressions:
         attribute neutral:
             "skylla_neutral.png"
-            zoom 0.3
+        attribute angry:
+            "SKYLLA_ANGRY.png"
+        attribute angryteeth:
+            "SKYLLA_ANGRYTEETH.png"
+        attribute flustered:
+            "SKYLLA_FLUSTERED.png"
+        attribute happy:
+            "SKYLLA_HAPPY.png"
+        attribute nervous:
+            "SKYLLA_NERVOUS.png"
+        attribute sad:
+            "SKYLLA_SAD.png"
+        attribute surprised:
+            "SKYLLA_SURPRISED.png"
+    zoom 0.3
     ypos 780
+    group eyes auto:
+        attribute blinking default:
+            "SKYLLA_BLINK.png" at blink
 
 layeredimage prashadi:
     group expressions:

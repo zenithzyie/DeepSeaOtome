@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/ch1_follow_jorunn.rpy", line 249: expected statement.
-    Prashadi turning her into a mermaid
-                                       ^
+File "game/variablestransforms.rpy", line 130: Duplicate property zoom
+    zoom 0.3
+        ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Wed Feb  5 20:04:53 2025
+Wed Feb  5 22:46:58 2025

@@ -1,24 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/ch1_follow_jorunn.rpy", line 275, in script
-    PR "Ah… From the depths, your true form emerges! Well, only partially."
-Exception: Sayer 'PR' is not defined.
+  File "game/script.rpy", line 841, in script
+    "The siren screams as she drops me, falling backwards." with Flash
+  File "game/script.rpy", line 841, in <module>
+    "The siren screams as she drops me, falling backwards." with Flash
+NameError: name 'Flash' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/ch1_follow_jorunn.rpy", line 275, in script
-    PR "Ah… From the depths, your true form emerges! Well, only partially."
+  File "game/script.rpy", line 841, in script
+    "The siren screams as she drops me, falling backwards." with Flash
   File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2557, in execute
     Say.execute(self)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 575, in execute
-    who = eval_who(self.who, self.who_fast)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 464, in eval_who
-    raise Exception("Sayer '%s' is not defined." % who)
-Exception: Sayer 'PR' is not defined.
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 614, in execute
+    say_menu_with(self.with_, renpy.game.interface.set_transition)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 429, in say_menu_with
+    what = renpy.python.py_eval(expression)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1209, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1202, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/script.rpy", line 841, in <module>
+    "The siren screams as she drops me, falling backwards." with Flash
+NameError: name 'Flash' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.2.1.24030407
 HeartsDepthDEMO 1.3
-Wed Feb  5 20:21:18 2025
+Wed Feb  5 23:09:34 2025

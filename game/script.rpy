@@ -162,7 +162,7 @@ label chapter1:
             kid "No way, it's my turn!"
             y "How cute."
             kid "I don’t wanna be no stinkin’ fish! I’ma be a hunter!"
-            "I wonder if I ever played that kind of game as a kid here."
+            "I wonder if I ever played something like that as a kid here."
 
         "The paperboy":
             $ newspaper = True
@@ -318,18 +318,21 @@ label chapter1:
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
 
-    show hunter neutral at Position(xpos=0.10):
+    #this zooms in on him centered
+    show hunter neutral:
+        xalign 0.5
         zoom 1.5
     with dissolve
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
-    show hunter neutral at Position(xpos=0.20):
-        zoom 1
+    show hunter neutral:
+        xalign 0.5
+        ease 0.2 zoom 1
     with vpunch
     ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
-    "I slap his hand away from mine and glare at his face." with vpunch
+    "I slap his hand away from mine and glare at his face."
     "I do not recognize him."
     u "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
@@ -345,10 +348,11 @@ label chapter1:
     u "Ah, that's right."
     #if we go mask route, just pop this back in but it doesn't make sense right now
     #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
-    show hunter neutral at Position(xpos=0.10):
-        zoom 1.5
-    with dissolve
-    h "Hunter Aubrey Morrowe."
+    show hunter neutral:
+        xalign 0.5
+        ease 0.7 zoom 1.5
+    pause 0.8
+    h "Hunter {w=0.1}Aubrey{w=0.1} Morrowe."
     if newspaper:
         ny shocked "Oh, Morrowe! That means..."
     y neutral "...Hunter?"
@@ -356,7 +360,7 @@ label chapter1:
     "He looks positively delighted to hear me say his name."
     y "..."
     y shocked "Oh!"
-    y neutral "Right, Hammy! you were so different when we were young!"
+    y neutral "Right, Hammy! You were so different when we were young!"
     "He deflates as soon as I say it."
     h "Ah, you still remember that nickname. Pity..."
 
@@ -375,7 +379,7 @@ label chapter1:
 
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
-    h "At least you remember me! It's been only about, what… ten years since we’ve last seen each other?"
+    h "At least you do remember me! It's been only about, what... ten years since we’ve last seen each other?"
     h "I'll be honest, never expected you to come back."
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
@@ -386,7 +390,7 @@ label chapter1:
     h "Need some help finding your way?"
     y "Well, yes, if you wouldn't mind..."
     h "I’ll take you. Just keep your camera out of view."
-    h "And stop gawking at things like you’ve never been here before...People might think you’re a spy or somethin'."
+    h "And stop gawking at things like you’ve never been here before... People might think you’re a spy or somethin'."
     "He unclips his cloak and throws it on top of my head. My nose is assaulted with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
@@ -394,9 +398,9 @@ label chapter1:
 
     #SCREEN SHAKE
     y huffed "Hey- don't just throw this dirty thing on me!"
-    h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
+    h "Just keep it for now. Keep your eyes down so people can't clearly see your face... and avoid seeing things you shouldn't be looking at anyways."
     y shocked "Seeing things I shouldn't be..?"
-    ny neutral"Things I am forbidden to see...I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
+    ny neutral"Things I am forbidden to see... I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
     "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
 
     #SCENE CHANGE - Black Market
@@ -434,6 +438,7 @@ label chapter1:
     "Suddenly, my view of the rest of the stand is unblocked, and I am able to peek through the empty spot in the crowd. It is a fish hawker's stand."
 
     #TODO SCENE = CG (Mermaid cut in half)
+    #This zoom needs a little work, it's a little strange in game/stuttery
 
     stop sound fadeout 3.5
     window auto hide
@@ -535,7 +540,6 @@ label chapter1:
     #TODO SCENE CHANGE - Port w/ Boats (ZOOM)
     scene bg port
     "We board a small rowboat to take us there."
-    show hunter neutral with dissolve
     camera:
         ease2 3.36 zoom 1.5
     "Before I know it, we arrive on deck, and Hunter walks towards the entrance of the ship's interior."
@@ -544,7 +548,9 @@ label chapter1:
     "I want answers."
     camera:
         ease2 1.0 zoom 1.0
-    show hunter neutral at right with move
+    pause 0.5
+    show hunter neutral at right
+    with dissolve
     "Hunter knocks at the entrance of the ship."
     "There's some loud grunting and muffled swearing as the door opens."
     show grandpa neutral at left with dissolve
@@ -600,7 +606,7 @@ label chapter1:
     y "Color, I can do that. But I'd rather not have to smell them at all."
 
     # REMEMBER: variable to check if name is june - little birdie for any name other than june, little bug/junebug for june
-    g "There's been worse smells, little bug."
+    g "There's been worse smells, little birdie."
     show grandpa happy at jumpin
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
@@ -608,7 +614,7 @@ label chapter1:
     show grandpa neutral at left with dissolve
     g "But I s'pose you'll never get to see that, would you."
     "He also wishes I could've inherited his love for the hunt."
-    y flustered "Apologies, Grandfather..."
+    y flustered "Sorry, Grandfather..."
     g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup of tea."
     ny neutral "Hunter taps Grandfather on the shoulder."
     h "Mr. Eaton, she's open."
@@ -650,6 +656,7 @@ label chapter1:
     hide hunter neutral with dissolve
     ny neutral "I keep my camera at the ready, not willing to let any photo opportunities pass me by."
     "My only experiences are with inland animal photography, but surely sea animals are no more difficult than capturing birds on film."
+    "I wonder if I'll be able to catch a picture of a mermaid?"
     "The boat travels further out to sea, putting the port behind us."
     show hunter neutral with dissolve
     h "How are you enjoying the view?"
@@ -669,7 +676,7 @@ label chapter1:
     h "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     if seastorm:
         "I remember reading something about this."
-        "If this is a sea witch’s storm…"
+        "If this is a sea witch’s storm..."
         "My hair stands on end just thinking about what devastation will ensue."
 
     hide hunter neutral with vpunch
@@ -738,14 +745,14 @@ label chapter1:
     #SCENE CHANGE - Black Screen
     scene bg black
     play music "audio/music_cave.mp3" volume 0.9
-    siren "After all these long years… you’ve finally returned home to me..."
+    siren "After all these long years... you’ve finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
     siren "Hmm, hmm, hmm."
     "A strange voice is humming a familiar song."
     stop sound fadeout 1.0
-    siren "Ah! you've woken up, little human."
+    siren "Ah! You've woken up, little human."
     y "Blub!"
     "....Huh."
     y "Blub blub blub!"
@@ -760,8 +767,8 @@ label chapter1:
     $ config.side_image_tag = "june"
     "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
     y neutral fish "BLUB BLUB BLUB!!!"
-    show skylla neutral with dissolve
-    siren "Ahaha! Oh, you cute thing. That's no way to speak as a lady!"
+    show skylla happy with dissolve
+    siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "Try as I might, none of my words come out right."
     "And I've...{w} been turned into a fish by this siren!?"
     menu:
@@ -779,14 +786,20 @@ label chapter1:
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
 
-    siren "Aw. You’re hurting my feelings!{w} Aren’t you happy to see me?"
+    siren "Aw. You’re hurting my feelings! Aren’t you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
     "Skylla..? Is that the name of this siren?"
+    show skylla neutral:
+        yalign 0.1
+        ease 0.5 zoom 1.5
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
-    s "There’s no need to rush. We have all the time in the world together. You'll give me what I want in due time."
+    s "There’s no need to rush. We have all the time in the world together. You'll give me what I want... in due time."
+    show skylla happy:
+        yalign 0.1
+        ease 0.7 zoom 1
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    "The voice swims away, and I'm left alone to contemplate my new fate."
+    pause 0.5
     "No matter how hard I press my hands - well, fins - against the bubble, I can't push through!"
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
@@ -808,24 +821,34 @@ label chapter1:
     "There are what looks like glowing stones on the walls. What are the odds that they could magically explode?"
     "Come on, [y]! You can do better than this! What else is there?"
 
-    show skylla neutral with dissolve
+    show skylla happy with dissolve
     "Before I can finish the thought, the siren swims back towards me."
     "Her clawed fingers gracefully pop the bubble trapping me, but just as swiftly in that motion her hand clasps around me."
     "My heart begins rushing in my tiny body. She could pop me in an instant as well."
+    show skylla:
+        yalign 0.1
+        ease 0.5 zoom 1.5
     s "Hold still now, cute thing. This won’t hurt."
+    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "It’s a lie. Strange magic begins to glow out of the siren’s hands as she softly sings."
     "It’s beautiful beyond words, but the moment it starts I start to feel a burning pain spreading across my body."
     s "It’s okay! Don’t be stubborn now. Come on, it's me!"
     "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
-    "The moment I feel like I’m about to snap in two, a sudden blinding light flashes throughout the cave." with vpunch
+    show skylla angry
+    "The moment I feel like I’m about to snap in two, a sudden blinding light flashes throughout the cave." with flash
 
     #FLASH EFFECT
-
+    stop sound
+    show skylla angry:
+        yalign 0.1
+        ease 0.02 zoom 1
     "The siren screams as she drops me, falling backwards."
+    show skylla surprised
     s "No. No! This- this isn’t right."
     "Once I blink the white spots out my vision I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."
     "We both stare at each other, frozen, before I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
+    show skylla angry with vpunch
     s "You little {i}eel!{/i} Get back here!"
 
     y "Blub blub!!"
@@ -833,12 +856,16 @@ label chapter1:
     "As if! Who in their right mind would do that!?"
     "Her tentacles try to grasp me, but I’m too small for them to catch."
     s "Fine! Be like that!"
+    show skylla angryteeth
+    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
-    "I twist away just in time, and the magic misses me and collides with one of the glowing stones on the wall of the cave."
+    "I twist away just in time, and the magic misses me and collides with one of the glowing stones on the wall of the cave." with vpunch
+    hide skylla with dissolve
+    stop sound
     "Time seems to slow down."
-    "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with vpunch
+    "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
     "The force spends me sprawling backwards in pain, but I don’t have time to linger on it because the explosion has created a hole just big enough to squeeze through."
-
+    stop music
     scene bg black
 
     "I swim as fast as I can. Faster than I’ve ever ran when I had legs."
@@ -866,7 +893,7 @@ label chapter1:
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
     novisualthio "Return them now, and your judgment will be fair."
-    novisualjor "Well, I am sorry, my prince! But I was kind of hoping I could skip the judgement part entirely!"
+    novisualjor "Well, I am sorry, my prince! But I was hoping I could skip the judgement part entirely!"
     novisualjor "Maybe you could ask your Vanguard to find you something else for your dinner? They could always go pilfer from other villages."
 
     "A '{i}prince{/i}'?"
@@ -886,7 +913,7 @@ label chapter1:
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
     uj "Oh no. No, of course not!"
     show jorunn glee at moreright
-    uj "...But if the shoal fits!"
+    uj "...But if the shell fits!"
     up "You thieving little-"
 
     show prince sweat at left
@@ -898,9 +925,9 @@ label chapter1:
     show prince angry at left
     up "Dammit. Why now of all times..!"
     show jorunn glee at moreright
-    uj "Well I guess that's my cue! I’ll be taking these home then. Goodbye!"
-    "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever kind of storm is coming." with vpunch
-    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous...but they might be my only shot at getting help right now."
+    uj "Well, I guess that's my cue! I’ll be taking these home then. Goodbye!"
+    "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
+    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous... but they might be my only shot at getting help right now."
 
     if promermaid >= 1:
         "Anything would be better than returning to the sea witch."
