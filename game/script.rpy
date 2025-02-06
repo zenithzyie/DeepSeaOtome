@@ -120,7 +120,7 @@ label chapter1:
     "He ignores me, walking quickly away from the station."
     "I try to ask few more people, but not one wants to give me the time of day."
     ny huffed "Trying to grab anyone's attention around here seems impossible! They all just ignore me."
-    "Were they so unfriendly to people from outside when I was younger? {w} I can't remember."
+    "Were they so unfriendly to people from outside when I was younger? {w}I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
     scene bg shabby town
@@ -195,7 +195,7 @@ label chapter1:
             jump talktownsfolk
 
         "Child with toy":
-            y "Hey, there! Do you know where I could find this area?"
+            y neutral "Hey, there! Do you know where I could find this area?"
             "The child is holding a plush octopus tightly. It looks well-loved."
             "I show him the address, and he glances at it."
             kid "Oh, I know that place!"

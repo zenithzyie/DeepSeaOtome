@@ -204,3 +204,8 @@ game/cache/shaders.txt
 game/saves/auto-10-LT1.save
 log.txt
 game/saves/navigation.json
+errors.txt
+game/cache/bytecode-39.rpyb
+game/cache/py3analysis.rpyb
+game/cache/screens.rpyb
+game/cache/shaders.txt

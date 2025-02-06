@@ -16,6 +16,8 @@ define badguy = Character("Ne'er-do-well", image="june")
 define paperboy = Character("Paperboy", image="june")
 define narrator = Character(None, what_italic=True)
 
+define Pr = Character("Prashadi", image="june")
+
 define u = Character("???", image="june")
 define guard = Character("Guard", image="june")
 define novisualthio = Character("Angry Voice", image="june")

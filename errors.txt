@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/variablestransforms.rpy", line 115: expected 'simple_expression' not found.
-    ypos
-        ^
+File "game/ch1_follow_jorunn.rpy", line 249: expected statement.
+    Prashadi turning her into a mermaid
+                                       ^
 
 Ren'Py Version: Ren'Py 8.2.1.24030407
-Mon Jan 20 18:18:20 2025
+Wed Feb  5 20:04:53 2025
