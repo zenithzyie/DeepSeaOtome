@@ -39,10 +39,11 @@ label get_name:
 #PROLOGUE
 label prologue:
     #TODO SCENE ?
-    scene bg choppywave with dissolve
-    show noise with dissolve:
+    scene bg choppywave
+    show noise:
         alpha .3
-    
+    with dissolve
+
     play music "audio/music_storm.mp3" volume 0.4
     play sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
@@ -329,11 +330,11 @@ label chapter1:
             Null(694.0, 699.0)
             'hunter neutral' with dissolve
         parallel:
-            zoom 1.0 
-            linear 0.80 zoom 1.5 
+            zoom 1.0
+            linear 0.80 zoom 1.5
     with Pause(0.90)
     show hunter neutral:
-        zoom 1.5 
+        zoom 1.5
     window auto show
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
@@ -835,58 +836,58 @@ label chapter1:
     "Think, [y], think! There has to be a way out of here!"
     "If there’s a way to turn a human into a fish, surely there’s a way to turn a fish back into human, right?"
     "I glance around the cave I’m in."
-    
+
     window auto hide
     camera:
-        subpixel True 
+        subpixel True
         parallel:
-            pos (0, 0) 
-            linear 0.88 pos (-864, -7) 
-            linear 0.80 pos (-12, -475) 
-            linear 0.78 pos (-858, -480) 
+            pos (0, 0)
+            linear 0.88 pos (-864, -7)
+            linear 0.80 pos (-12, -475)
+            linear 0.78 pos (-858, -480)
         parallel:
-            zoom 1.0 
-            linear 0.22 zoom 1.61 
+            zoom 1.0
+            linear 0.22 zoom 1.61
     with Pause(2.56)
     camera:
-        pos (-858, -480) zoom 1.61 
+        pos (-858, -480) zoom 1.61
     window auto show
 
     "It’s dark here, hard to see. My new tiny eyes struggle to take in everything all at once."
 
     window auto hide
     camera:
-        subpixel True 
-        pos (-858, -480) 
-        linear 0.83 pos (-804, -318) 
+        subpixel True
+        pos (-858, -480)
+        linear 0.83 pos (-804, -318)
     with Pause(0.93)
     camera:
-        pos (-804, -318) 
+        pos (-804, -318)
     window auto show
 
     "From what I can see there’s only a path forward deeper towards the siren’s lair. No windows, or whatever the underwater equivalent is."
-    
+
     window auto hide
     camera:
-        subpixel True 
-        pos (-864, -288) zoom 1.61 
-        linear 1.32 pos (-108, -102) zoom 2.04 
+        subpixel True
+        pos (-864, -288) zoom 1.61
+        linear 1.32 pos (-108, -102) zoom 2.04
     with Pause(1.42)
     camera:
-        pos (-108, -102) zoom 2.04 
+        pos (-108, -102) zoom 2.04
     window auto show
 
 
     "There are what looks like glowing stones on the walls. What are the odds that they could magically explode?"
-    
+
     window auto hide
     camera:
-        subpixel True 
-        pos (-108, -102) zoom 2.04 
-        linear 0.40 pos (0, 0) zoom 1.0 
+        subpixel True
+        pos (-108, -102) zoom 2.04
+        linear 0.40 pos (0, 0) zoom 1.0
     with Pause(0.50)
     camera:
-        pos (0, 0) zoom 1.0 
+        pos (0, 0) zoom 1.0
     window auto show
 
     "Come on, [y]! You can do better than this! What else is there?"
