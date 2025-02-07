@@ -743,7 +743,6 @@ screen preferences():
                         label _("Display")
                         textbutton _("Window") action Preference("display", "window")
                         textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
                 vbox:
                     style_prefix "check"
                     label _("Skip")
@@ -757,6 +756,20 @@ screen preferences():
                     #textbutton _("Off") action ToggleVariable("show_gross", true_value=False)
                     ## Additional vboxes of type "radio_pref" or "check_pref" can be
                     ## added here, to add additional creator-defined preferences.
+
+                vbox:
+                    style_prefix "radio"
+                    textbutton _("Speech Pauses") action ToggleField(persistent,"speech_pauses")
+
+                    showif persistent.speech_pauses:
+                        label _("Makes dialogue have natural pauses.")
+                        #vbox:
+                            #style_prefix "slider"
+                            #label _("Commas")
+                            #bar value FieldValue(persistent, "speech_pause_comma", step=.05, style=u'slider', min=0.05, max=1.0)
+                            #label _("Sentences")
+                            #bar value FieldValue(persistent, "speech_pause_period", step=.05, style=u'slider', min=0.1, max=2.0)
+
 
             null height (4 * gui.pref_spacing)
 
@@ -879,7 +892,6 @@ style slider_button_text:
 
 style slider_vbox:
     xsize 450
-
 
 ## History screen ##############################################################
 ##
