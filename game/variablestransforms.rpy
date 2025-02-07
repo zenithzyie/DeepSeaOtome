@@ -183,6 +183,12 @@ transform jump_up:
     easeout .150 yoffset 0
     yoffset 0
 
+transform slightRight:
+    xpos 0.6
+
+transform centre:
+    xpos 0.5
+
 #USE SHIFT + P TO OPEN THE ACTION BUTTON CAMERA THING
 #YOU COULD DO ANYTHING WITH THIS HOLY FUCK
 

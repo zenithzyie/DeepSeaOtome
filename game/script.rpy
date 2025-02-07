@@ -322,16 +322,26 @@ label chapter1:
     "My hand reaches for my camera once more."
 
     #this zooms in on him centered
+    window auto hide
     show hunter neutral:
         xalign 0.5
-        zoom 1.5
-    with dissolve
+        parallel:
+            Null(694.0, 699.0)
+            'hunter neutral' with dissolve
+        parallel:
+            zoom 1.0 
+            linear 0.80 zoom 1.5 
+    with Pause(0.90)
+    show hunter neutral:
+        zoom 1.5 
+    window auto show
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
     show hunter neutral:
         xalign 0.5
+        ypos 0.03
         ease 0.2 zoom 1
     with vpunch
     ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
@@ -366,6 +376,10 @@ label chapter1:
     y neutral "Right, Hammy! You were so different when we were young!"
     "He deflates as soon as I say it."
     h "Ah, you still remember that nickname. Pity..."
+    show hunter neutral:
+        xalign 0.5
+        ypos 0.03
+        ease 0.2 zoom 1
 
     menu:
         "Tease him.":
@@ -531,10 +545,12 @@ label chapter1:
     "Ships are anchored near the shore. Fishermen and hunters alike line the dock, carrying supplies to and from the ships."
     "They are much different than the ones I remember as a kid. These are large, made of steel, and produce steam."
     y shocked "Does Grandfather live on one of these ships?"
+    show hunter neutral at slightRight with move
     h "The only one not made of steel, that one over there."
     ny neutral "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, with its clothed sails, and ornate details."
     "It has clearly been maintained with a lot of pride and dedication."
     "I have a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
+    show hunter neutral at centre with move
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
     y "Hey, don’t start shoving me- I appreciate the help, but you really don’t have to follow me the whole way there."
     h "I have business with your old man already, running into you was just a coincidence. Let's go!"
