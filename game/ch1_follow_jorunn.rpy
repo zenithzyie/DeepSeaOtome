@@ -4,12 +4,14 @@ label ch1_followjorunn:
     #BRANCH - FOLLOW JORUNN
     hide prince angry with moveoutleft
     "LMAO"
-    scene bg underwater cave:
-        zoom 0.5
+    scene testprash:
+        zoom 0.2667
+    $ config.side_image_tag = "june"
+    "hmm"
     show prashadi neutral
     with dissolve
-    "Wow"
-    y "Hi grandpa lol"
+    "Test"
+    y neutral fish "Hi grandpa!!!"
     show prashadi neutral:
         zoom 2
         ypos 2610

@@ -4,6 +4,8 @@
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
     hide jorunn glee with moveoutright
+    scene bg capitalcity
+    show prince neutral
     "Perhaps the prince would be kind to someone in need? I hope I'm not a species of fish they fight over for eating."
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
