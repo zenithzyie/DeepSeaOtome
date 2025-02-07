@@ -762,7 +762,7 @@ screen preferences():
                     textbutton _("Speech Pauses") action ToggleField(persistent,"speech_pauses")
 
                     showif persistent.speech_pauses:
-                        label _("Makes dialogue have natural pauses.")
+                        label _("Dialogue has natural pauses.")
                         #vbox:
                             #style_prefix "slider"
                             #label _("Commas")
