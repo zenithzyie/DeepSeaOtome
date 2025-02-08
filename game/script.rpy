@@ -75,7 +75,7 @@ label prologue:
 
 #CHAPTER 1
 label chapter1:
-    #TODO SCENE = CG (Train)
+    #SCENE = CG (Train)
     scene bg black with dissolve
     play music "audio/music_town.mp3" fadein 1.0
 
@@ -475,7 +475,7 @@ label chapter1:
     "He walks meticulously, carefully weaving through the crowds of people, and I try my best to keep in step with his strides."
     "But then, I see something tantalizingly curious out of the corner of my eye. Without thinking, I glance up."
 
-    #TODO SCENE = CG (Mermaid in Tank [Zoomed])
+    #SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
     camera:
         zoom 2.1
@@ -496,30 +496,17 @@ label chapter1:
     "Is she asking for my help?"
     "Suddenly, my view of the rest of the stand is unblocked, and I am able to peek through the empty spot in the crowd. It is a fish hawker's stand."
 
-    #TODO SCENE = CG (Mermaid cut in half)
-    #This zoom needs a little work, it's a little strange in game/stuttery
-
+    #SCENE = CG (Mermaid cut in half)
     stop sound fadeout 3.5
     window auto hide
-    camera:
-        subpixel True
-        zoom 1.0
-        ease2 3.36 zoom 0.5
     show cg sushi:
-        subpixel True xzoom 1.0 zoom 2.23
-        parallel:
-            xpos 1.04
-            linear 3.36 xpos 1.1
-        parallel:
-            ypos 2.02
-            linear 3.36 ypos 2.22
-    with Pause(3.46)
-    camera:
-        zoom 0.5
-    show cg sushi
-    $ config.side_image_tag = "None"
+        subpixel True 
+        pos (0.5, 1.0) xzoom 1.0 zoom 1.0 
+        ease 3.00 pos (0.24, 0.49) xzoom 1.0 zoom 0.49 
+    with Pause(3.10)
+    show cg sushi:
+        pos (0.24, 0.49) xzoom 1.0 zoom 0.49 
     window auto show
-
     "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
@@ -608,7 +595,7 @@ label chapter1:
     h "I have business with your old man already, running into you was just a coincidence. Let's go!"
     y "Alright, alright, let's go."
 
-    #TODO SCENE CHANGE - Port w/ Boats (ZOOM)
+    #SCENE CHANGE - Port w/ Boats (ZOOM)
     scene bg port
     "We board a small rowboat to take us there."
     camera:
@@ -723,7 +710,7 @@ label chapter1:
     y "Oh, thank you, Hunter!"
     y "We're going to make Grandfather's day!"
 
-    #TODO SCENE CHANGE - Sea
+    #SCENE CHANGE - Sea
     scene bg calmwave with dissolve
     stop music fadeout 1.0
     #SFX - waves (calm)
