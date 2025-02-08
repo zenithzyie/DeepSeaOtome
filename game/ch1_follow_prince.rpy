@@ -4,8 +4,6 @@
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
     hide jorunn glee with moveoutright
-    scene bg capitalcity
-    show prince neutral
     "Perhaps the prince would be kind to someone in need? I hope I'm not a species of fish they fight over for eating."
     "All I have to do is just wait for this shark to pass..."
     "3....2...1!!"
@@ -13,16 +11,29 @@ label ch1_followprince:
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
     "It feels like riding a bicycle downhill without any brakes to stop me."
+    show prince angry:
+        subpixel True 
+        pos (0.0, 1.0) zoom 1.0 
+        linear 0.33 pos (-0.23, 1.87) zoom 2.0 
+    with Pause(0.43)
+    show prince angry:
+        pos (-0.23, 1.87) zoom 2.0 
     "I can’t stop, crashing into the back of the striking merman’s head."
-
     #SCREEN SHAKE
     $ config.side_image_tag = "None"
     # voice "audio/voice/prince/THIODAL-7.wav"
-    show prince sweat at furthleft with hpunch
+    show prince sweat with hpunch
     up "!!!"
     # voice "audio/voice/prince/THIODAL-8.wav"
     show prince angry with hpunch
     up "Who-"
+    show prince angry:
+        subpixel True 
+        pos (-0.23, 1.87) zoom 2.0 
+        linear 0.19 pos (0.15, 1.0) zoom 1.0 
+    with Pause(0.29)
+    show prince angry:
+        pos (0.15, 1.0) zoom 1.0 
     $ config.side_image_tag = "june"
     y "Please help me!!"
     show prince neutral
@@ -35,7 +46,7 @@ label ch1_followprince:
     "And if sharks are drawn to blood, it's only a matter of time before I'm done for!"
     "The princely fellow seems to realize this, at least."
 
-    show prince angry at furthleft with dissolve
+    show prince angry with dissolve
     # voice "audio/voice/prince/THIODAL-10.wav"
     up "You there! Lead it that way!"
     "I swim in the direction he is pointing, and I notice in horror that he has not followed me there."
@@ -102,10 +113,10 @@ label ch1_followprince:
     "That is definitely not enough!!"
     "If I stay, that could be my chance to find some answers to cure my fishy affliction!"
     "I follow the Prince and his guards across the sea, taking in the sights as I pass them."
-
     "I am behind the Knights that swam in a march, putting distance between me and the prince."
     "I suppose I'm no longer allowed to speak with him."
     "..."
+    hide prince with dissolve
     "Left alone with my thoughts, my mind races every which way."
     "Am I the first human to experience the sea like this?"
     "I wish I had my camera. But it wouldn't survive the plunge."
@@ -115,10 +126,18 @@ label ch1_followprince:
     "He would be devastated to find out I went overboard!"
     "They're going to think I drowned.."
     "I need to return back."
-
-    scene bg sea with dissolve
     "The waters seem to brighten more as we swim, peaks of coral and schools of beautiful fish."
     $ config.side_image_tag = "june"
+    window auto hide
+    show bg capitalcity:
+        xalign 0.5
+        subpixel True 
+        zoom 1.05 
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    show bg capitalcity:
+        zoom 1.0 
     ny june neutral fish "We arrive at a place just before a city, where a mesmerizing merman waits."
     c "My lovely nephew! Where have you been?"
     c "I hear news of an attack, and you do not deign to tell me?"
