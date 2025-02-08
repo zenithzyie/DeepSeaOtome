@@ -91,11 +91,19 @@ label chapter1:
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
 
     "The screeching of the brakes signal the train to a stop."
-    scene bg shabby town with dissolve
-
+    #SUBTLE ZOOM IN FROM CENTRE
+    window auto hide
+    show bg shabby town:
+        xalign 0.5
+        subpixel True 
+        zoom 1.05 
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    show bg shabby town:
+        zoom 1.0 
     $ config.side_image_tag = "june"
     y neutral "At last. Hello, Aquantis!"
-
     "As soon as I exit the train car, I let the shutter of my camera go off, taking a picture."
 
     menu:
@@ -311,7 +319,30 @@ label chapter1:
     #SCENE CHANGE -  Underground Black Market Faire
     play music "audio/music_blackmarket.mp3"
     play sound "audio/sfx_crowd.wav" volume 0.009 loop
-    scene bg underground market with slideawayleft
+    #scene bg underground market with slideawayleft
+    #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
+    window auto hide
+    show bg underground market:
+        subpixel True pos (0.92, 1.69) zoom 1.85 
+    with dissolve
+    with Pause(0.75)
+    show bg black with dissolve
+    show bg underground market:
+        subpixel True pos (0.37, 1.04) zoom 1.85 
+    with dissolve
+    with Pause(0.75)
+    show bg black with dissolve
+    #SUBTLE ZOOM IN FROM CENTRE
+    show bg underground market:
+        subpixel True pos (0.0, 1.0) zoom 1.05
+        xalign 0.5
+        subpixel True 
+        zoom 1.05 
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    show bg underground market:
+        zoom 1.0 
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
