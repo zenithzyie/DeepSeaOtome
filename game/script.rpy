@@ -151,7 +151,17 @@ label chapter1:
     "I keep my camera close to my hip, hiding it with my coat to prevent any further unwanted attention."
 
   #SCENE CHANGE - (Shabby Market [Zoomed In])
-    scene bg shabby market with dissolve
+    #SUBTLE ZOOM IN FROM CENTRE
+    window auto hide
+    show bg shabby market:
+        xalign 0.5
+        subpixel True 
+        zoom 1.05 
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    show bg shabby market:
+        zoom 1.0 
     ny neutral "The smell grows worse as I suddenly find myself at a market."
     "There are so many interesting things to see."
     menu:
@@ -563,7 +573,17 @@ label chapter1:
 
     #SCENE CHANGE - Port w/ Boats
     play music "audio/music_port.mp3" fadein 2.0 volume 0.3
-    scene bg port with dissolve
+    #SUBTLE ZOOM IN FROM CENTRE
+    window auto hide
+    scene bg port:
+        xalign 0.5
+        subpixel True 
+        zoom 1.05 
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    show bg port:
+        zoom 1.0 
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     play sound "audio/sfx_seagulls.ogg" loop volume 0.8 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
@@ -613,7 +633,21 @@ label chapter1:
     y shocked "Grandfather…?"
     show grandpa happy at jumpin
     g "Oh, bless the stars...you got my letter? You're really here! My dear, sweet [y]!"
+    show grandpa happy:
+        subpixel True 
+        ypos 1.0 zoom 1.0 
+        linear 0.60 ypos 1.27 zoom 1.5 
+    with Pause(0.70)
+    show grandpa happy:
+        ypos 1.27 zoom 1.5 
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
+    show grandpa happy:
+        subpixel True 
+        ypos 1.27 zoom 1.5 
+        linear 0.20 ypos 1.0 zoom 1.0 
+    with Pause(0.20)
+    show grandpa happy:
+        ypos 1.0 zoom 1.0 
     "I hug him tightly in return. The wave of anxious anticipation I had moments before seems to vanish entirely."
     y neutral "It's been too long, Grandfather!"
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
