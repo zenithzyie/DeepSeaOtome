@@ -52,7 +52,7 @@ label prologue:
 
     show hunter silhouette with dissolve
 
-    u "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    u "Blast... I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -95,13 +95,13 @@ label chapter1:
     window auto hide
     show bg shabby town:
         xalign 0.5
-        subpixel True 
-        zoom 1.05 
+        subpixel True
+        zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
     show bg shabby town:
-        zoom 1.0 
+        zoom 1.0
     $ config.side_image_tag = "june"
     y neutral "At last. Hello, Aquantis!"
     "As soon as I exit the train car, I let the shutter of my camera go off, taking a picture."
@@ -155,13 +155,13 @@ label chapter1:
     window auto hide
     show bg shabby market:
         xalign 0.5
-        subpixel True 
-        zoom 1.05 
+        subpixel True
+        zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
     show bg shabby market:
-        zoom 1.0 
+        zoom 1.0
     ny neutral "The smell grows worse as I suddenly find myself at a market."
     "There are so many interesting things to see."
     menu:
@@ -333,12 +333,12 @@ label chapter1:
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
     show bg underground market:
-        subpixel True pos (0.92, 1.69) zoom 1.85 
+        subpixel True pos (0.92, 1.69) zoom 1.85
     with dissolve
     with Pause(0.75)
     show bg black with dissolve
     show bg underground market:
-        subpixel True pos (0.37, 1.04) zoom 1.85 
+        subpixel True pos (0.37, 1.04) zoom 1.85
     with dissolve
     with Pause(0.75)
     show bg black with dissolve
@@ -346,13 +346,13 @@ label chapter1:
     show bg underground market:
         subpixel True pos (0.0, 1.0) zoom 1.05
         xalign 0.5
-        subpixel True 
-        zoom 1.05 
+        subpixel True
+        zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
     show bg underground market:
-        zoom 1.0 
+        zoom 1.0
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
@@ -500,12 +500,12 @@ label chapter1:
     stop sound fadeout 3.5
     window auto hide
     show cg sushi:
-        subpixel True 
-        pos (0.5, 1.0) xzoom 1.0 zoom 1.0 
-        ease 3.00 pos (0.24, 0.49) xzoom 1.0 zoom 0.49 
+        subpixel True
+        pos (0.5, 1.0) xzoom 1.0 zoom 1.0
+        ease 3.00 pos (0.24, 0.49) xzoom 1.0 zoom 0.49
     with Pause(3.10)
     show cg sushi:
-        pos (0.24, 0.49) xzoom 1.0 zoom 0.49 
+        pos (0.24, 0.49) xzoom 1.0 zoom 0.49
     window auto show
     "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
@@ -564,13 +564,13 @@ label chapter1:
     window auto hide
     scene bg port:
         xalign 0.5
-        subpixel True 
-        zoom 1.05 
+        subpixel True
+        zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
     show bg port:
-        zoom 1.0 
+        zoom 1.0
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     play sound "audio/sfx_seagulls.ogg" loop volume 0.8 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
@@ -621,22 +621,22 @@ label chapter1:
     show grandpa happy at jumpin
     g "Oh, bless the stars...you got my letter? You're really here! My dear, sweet [y]!"
     show grandpa happy:
-        subpixel True 
-        ypos 1.0 zoom 1.0 
-        linear 0.60 ypos 1.27 zoom 1.5 
+        subpixel True
+        ypos 1.0 zoom 1.0
+        linear 0.60 ypos 1.27 zoom 1.5
     with Pause(0.70)
     show grandpa happy:
-        ypos 1.27 zoom 1.5 
+        ypos 1.27 zoom 1.5
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
-    show grandpa happy:
-        subpixel True 
-        ypos 1.27 zoom 1.5 
-        linear 0.20 ypos 1.0 zoom 1.0 
-    with Pause(0.20)
-    show grandpa happy:
-        ypos 1.0 zoom 1.0 
     "I hug him tightly in return. The wave of anxious anticipation I had moments before seems to vanish entirely."
     y neutral "It's been too long, Grandfather!"
+    show grandpa happy:
+        subpixel True
+        ypos 1.27 zoom 1.5
+        linear 0.20 ypos 1.0 zoom 1.0
+    with Pause(0.20)
+    show grandpa happy:
+        ypos 1.0 zoom 1.0
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
     h "Hah? Sir, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass you like my own grandchild!"
@@ -684,7 +684,7 @@ label chapter1:
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
     show grandpa neutral at left with dissolve
-    g "But I s'pose you'll never get to see that, would you."
+    g "But I s'pose you'll never get to see that, would you..."
     "He also wishes I could've inherited his love for the hunt."
     y flustered "Sorry, Grandfather..."
     g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup of tea."
@@ -730,6 +730,8 @@ label chapter1:
     "My only experiences are with inland animal photography, but surely sea animals are no more difficult than capturing birds on film."
     "I wonder if I'll be able to catch a picture of a mermaid?"
     "The boat travels further out to sea, putting the port behind us."
+    "No mermaids in sight."
+    "Some time passes, and Hunter makes light conversation."
     show hunter neutral with dissolve
     h "How are you enjoying the view?"
     ny shocked "I'm about to respond to him, but the ship catches on the waves, and I stumble." with vpunch
@@ -745,7 +747,7 @@ label chapter1:
     "I can't see a hint of blue in the sky."
     "Our perfect sailing day was covered by clouds of grey."
     y shocked "It was sunny only moments ago! What is this?"
-    h "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    h "Blast... I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     if seastorm:
         "I remember reading something about this."
         "If this is a sea witch’s storm..."
@@ -768,16 +770,42 @@ label chapter1:
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     show hunter neutral with vpunch
+    "The sounds of the waves and the wind make Hunter's words hard to hear."
     h "The waters are getting choppier, stay away from the ledge!"
-    y huffed "Well, obviously! I can hardly stand straight!"
+    y shocked "I'll try! I can hardly stand straight!"
     hide hunter neutral with dissolve
     "He returns back to his position, eyes staying forward as the winds grow stronger."
-    "I can hardly see out, but I can't give up my quest for a picture."
-    "The sounds of the waves and the wind make Hunter's words hard to hear."
-    $ config.side_image_tag = "june"
-    "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
-    #SPRITE?
+    ny flustered "I want to listen to him, but in that moment, I imagine Grandfather's face from earlier today."
+    show grandpa neutral
+    show bg shabby market
+    show noise:
+        alpha .3
+    with dissolve
+    g "{i}But I s'pose you'll never get to see that, would you...{/i}"
+    hide grandpa
+    hide noise
+    show bg choppywave
+    with dissolve
+    "Wouldn't he love to know I was out here where he was? Enjoying the sea and mermaids like he did?"
+    menu:
+        "..."
+        "Listen to Hunter.":
+            # +Hunter points
+            "I shouldn't take unnecessary risks..."
+            "My life isn't worth a photo."
+            if seastorm:
+                "Especially if they're as deadly as the papers say they are."
+            ny neutral "I move closer to where Hunter is, towards the back of the boat."
 
+        "I can't give up on a picture.":
+            "I can hardly see out, but I can't give up my quest for a picture."
+            if seastorm:
+                "Even if this is a sea witch storm, I'm sure we'll probably be fine..!"
+            ny neutral "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
+            "The water laps at the edge of the boat ferociously."
+
+    $ config.side_image_tag = "june"
+    #SPRITE?
     play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
     $ renpy.music.set_volume(0.3, 2, 'music')
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.06 loop
@@ -791,6 +819,7 @@ label chapter1:
     u "Come with me..."
     u "...to the depths below..."
     "The singing feels as though it is only for my ears to hear alone, the waves calling out for me to sink in."
+    "My legs begin to move on their own."
     h "Shit, it's a siren! [y]!"
     show hunter neutral with vpunch
     "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
@@ -1004,7 +1033,7 @@ label chapter1:
     y fish neutral "Blub...blub..."
     "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
 
-    "Grandpa...Hunter...they must think that I’m dead by now."
+    "Grandpa... Hunter... they must think that I’m dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But... {w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
