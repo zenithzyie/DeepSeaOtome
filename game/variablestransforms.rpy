@@ -17,6 +17,7 @@ define paperboy = Character("Paperboy", image="june")
 define narrator = Character(None, what_italic=True)
 
 define Pr = Character("Prashadi", image="june")
+define gpa = Character("Grandfather?", image="june")
 
 define u = Character("???", image="june")
 define guard = Character("Guard", image="june")
@@ -26,10 +27,13 @@ define up = Character("Princely Merman", image="june")
 define uj = Character("Thieving Merman", image="june")
 define siren = Character("Melodious Voice", image="june")
 
+define left2 = Position(xpos=0.32)
+define right2 = Position(xpos=0.66)
+
 define furthleft = Position(xpos=0.20)
 define farleft = Position(xpos=0.25)
 define moreleft = Position(xpos=0.35)
-define center = Position(xpos=0.45)
+define center = Position(xpos=0.75)
 define moreright = Position(xpos=0.60)
 define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
@@ -72,10 +76,14 @@ layeredimage prince:
             "prince_blush.png"
         attribute neutral:
             "prince_neutral.png"
+        attribute frown:
+            "prince_frown.png"
         attribute soft:
             "prince_soft.png"
         attribute sweat:
             "prince_sweat.png"
+    zoom 0.28
+    ypos 730
     group eyes auto:
         attribute blinking default:
             "prince_eye_closed.png" at blink
@@ -88,6 +96,8 @@ layeredimage grandpa:
             "grandpa_surprised.png"
         attribute neutral:
             "grandpa_neutral.png"
+    zoom 0.124
+    ypos 750
     group eyes auto:
         attribute blinking default:
             "grandpa_eye_closed.png" at blink
@@ -124,7 +134,7 @@ layeredimage skylla:
             "SKYLLA_SAD.png"
         attribute surprised:
             "SKYLLA_SURPRISED.png"
-    zoom 0.3
+    zoom 0.29
     ypos 780
     group eyes auto:
         attribute blinking default:
@@ -165,7 +175,7 @@ layeredimage jorunn:
             "jorunn_glee.png"
         attribute sweat:
             "jorunn_sweat.png"
-    ypos 780
+    ypos 790
 
 init python:
     config.side_image_tag = "june"
@@ -173,8 +183,12 @@ init python:
     config.emphasize_audio_channels = [ 'voice' ]
 
 transform jumpin:
-    ease2 0.2 yoffset -5
+    ease2 0.2 yoffset -18
     ease2 0.2 yoffset 0
+
+transform jumpin2:
+    ease2 0.2 ypos 700
+    ease2 0.2 ypos 730
 
 transform jump_up:
     pause .15

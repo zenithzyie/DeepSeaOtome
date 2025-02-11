@@ -611,7 +611,7 @@ label chapter1:
     with dissolve
     "Hunter knocks at the entrance of the ship."
     "There's some loud grunting and muffled swearing as the door opens."
-    show grandpa neutral at left with dissolve
+    show grandpa neutral at Position(xpos=0.32) with dissolve
     g "I told you people I don't want any-"
     show grandpa surprised with vpunch
     stop music fadeout 1.0
@@ -622,7 +622,7 @@ label chapter1:
     g "Oh, bless the stars...you got my letter? You're really here! My dear, sweet [y]!"
     show grandpa happy:
         subpixel True
-        ypos 1.0 zoom 1.0
+        zoom 1.0
         linear 0.60 ypos 1.27 zoom 1.5
     with Pause(0.70)
     show grandpa happy:
@@ -640,10 +640,10 @@ label chapter1:
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
     h "Hah? Sir, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass you like my own grandchild!"
-    show grandpa happy at right with move
+    show grandpa happy at Position(xpos=0.64) with move
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh." with hpunch
     "Once he has squeezed the daylight out of us, he lets go."
-    show grandpa happy at left with move:
+    show grandpa happy at Position(xpos=0.32) with move:
         ease2 0.3
     g "Oh, just how many years has it been since I've seen the both of you together?"
     g "It's good to see you, little birdie."
@@ -668,7 +668,7 @@ label chapter1:
     #SCENE CHANGE - Shabby Market
     scene bg shabby market with dissolve
     play music "audio/music_town.mp3" fadein 1.0
-    show grandpa happy at left with dissolve
+    show grandpa happy at left2 with dissolve
 
     "Today, Grandfather and I are shopping for the next week's supply of food before he meets a trader in the afternoon."
     show hunter neutral at right with dissolve
@@ -683,7 +683,7 @@ label chapter1:
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
-    show grandpa neutral at left with dissolve
+    show grandpa neutral with dissolve
     g "But I s'pose you'll never get to see that, would you..."
     "He also wishes I could've inherited his love for the hunt."
     y flustered "Sorry, Grandfather..."
@@ -693,7 +693,7 @@ label chapter1:
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
     hide grandpa happy at left with dissolve
-    show hunter neutral at farright with move
+    show hunter neutral at center with move
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
     y flustered "Grandfather..."
     "Out of habit, my hand finds my camera still sitting at my side, waiting."
@@ -860,15 +860,13 @@ label chapter1:
     siren "Or, shall I say, little fish?"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
 
-    #PUT SKYLLA HAND CG HERE
+    scene cg skyllahands with dissolve:
+        zoom 0.343
 
     #SCENE CHANGE - underwater cave (skylla's)
-    scene bg underwater cave with dissolve:
-        zoom 0.5
     $ config.side_image_tag = "june"
     "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
-    y neutral fish "BLUB BLUB BLUB!!!"
-    show skylla happy with dissolve
+    y fish neutral "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "Try as I might, none of my words come out right."
     "And I've...{w} been turned into a fish by this siren!?"
@@ -887,7 +885,11 @@ label chapter1:
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
 
-    siren "Aw. You’re hurting my feelings! Aren’t you happy to see me?"
+    scene bg underwater cave:
+        zoom 0.5
+    show skylla happy
+    with dissolve
+    siren neutral fish "Aw. You’re hurting my feelings! Aren’t you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
     "Skylla..? Is that the name of this siren?"
     show skylla neutral:
@@ -1053,8 +1055,8 @@ label chapter1:
 
     hide kelp with dissolve
 
-    show prince angry at left
-    show jorunn sweat at moreright
+    show prince angry at farleft
+    show jorunn sweat at right2
     with dissolve
 
     "Ahead of me, two mer-people are staring each other down."
@@ -1064,19 +1066,19 @@ label chapter1:
     "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
     uj "Oh no. No, of course not!"
-    show jorunn glee at moreright
+    show jorunn glee
     uj "...But if the shell fits!"
     up "You thieving little-"
 
-    show prince sweat at left
-    show jorunn sweat at moreright
+    show prince sweat at jumpin2
+    show jorunn sweat at jumpin
     with vpunch
 
     "Just then, a loud rumble echoes through the area. The waters feel like they’re slowly beginning to churn."
     guard "It’s another sea storm, Your Highness! We must head back now before it picks up any further."
-    show prince angry at left
+    show prince angry
     up "Dammit. Why now of all times..!"
-    show jorunn glee at moreright
+    show jorunn glee
     uj "Well, I guess that's my cue! I’ll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
     "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous... but they might be my only shot at getting help right now."
@@ -1107,6 +1109,7 @@ label ch1_badend1:
     with dissolve
 
     "There has to be another way out of this."
+    "I can't trust either of them!"
     "Both merpeople swim away, and I’m alone."
     "Sort of..."
     "The other fish are swimming in a frenzy trying to get away from the vortex of water."
@@ -1119,7 +1122,8 @@ label ch1_badend1:
     "I try swimming anyway, as fast as I can go."
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It’s too late!"
-    "The last thing I see before my eyes close forever is a ship."
+    "The last thing I see before my eyes close forever is something large, crashing right into me."
+    scene black with vpunch
     "Ravaged by the sea, I die."
     "BAD END 1."
 
@@ -1136,14 +1140,16 @@ label endofdemo:
     j "Hello there!"
     j "You've reached the end of the demo for Heart's Depth!"
     j "We sincerely look forward to releasing the rest of the story." with vpunch
-    show jorunn pissed at moreleft with dissolve
+    show jorunn pissed with dissolve
     j "I hope they put me in the next update..."
-    show jorunn glee at moreleft with dissolve
+    show jorunn glee with dissolve
     j "Anyway."
     j "Thank you so much for playing! Follow our game page for updates."
     j "We have much, much more to come..."
+    hide jorunn glee
+    with dissolve
     play sound "audio/sfx_splash.flac"
-    hide jorunn glee with dissolve
+    with Pause(1.0)
 
     #END OF DEMO!!!!!!!
 
