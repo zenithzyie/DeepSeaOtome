@@ -5,34 +5,34 @@ label ch1_followjorunn:
     hide prince angry with moveoutleft
 
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
-    "It’s now or never!"
+    "It's now or never!"
     "3... 2... 1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
-    "I can’t stop! I crash into the scrappy boy's shoulder."
+    "I can't stop! I crash into the scrappy boy's shoulder."
     j "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
     j "Oh, well this is new! Never had a fish come swimming up to my net before."
-    "Wait, hang on now! Please don’t eat me!"
+    "Wait, hang on now! Please don't eat me!"
     y "Blub blub blub!!"
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
     "He holds onto me but moves me around, like he's appraising what my value at a pawn shop would be."
-    j "Huh? What’s this?"
+    j "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
     y "Blub!"
     "Ouch!"
     "The thief holds whatever he plucked from me close to his face, inspecting it with a rather curious expression."
     j "...!"
     "It takes me a moment to recognize it myself."
-    "It looks like a shard of the glowing stones back from the siren’s cave. It must have gotten caught in my fins during my escape. I hadn’t even noticed."
+    "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
     j "Weird. This thing stinks of magic."
     "Then, gently, with the skill of someone who has handled many fish just like me, he brings me closer to his face."
-    j "Now that I’m looking, so do you, little fishie!"
+    j "Now that I'm looking, so do you, little fishie!"
     y "Blub!!"
-    j "You’re no normal fish, are you?"
+    j "You're no normal fish, are you?"
 
 #(Screenshake)
 
@@ -56,14 +56,14 @@ label ch1_followjorunn:
             "The foliage is thick here, tall plants towering over the both of us like massive trees."
             "With the storm muffled by the cover of the kelp forest, the world around me feels different. The swim even feels peaceful."
             "Wow..."
-            j "It’s pretty way out here, don’t you think?"
-            "I nod, even though he can’t see it. I really wish I could take a picture of the ocean from here."
-            j "If we go a bit further out, you’ll see my home. But that’s not as important right now. We gotta get you fixed up!"
+            j "It's pretty way out here, don't you think?"
+            "I nod, even though he can't see it. I really wish I could take a picture of the ocean from here."
+            j "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
 
         "Lean back.":
             "My exhaustion wins over and I lean back against the crook of his neck, desperate for a minute of rest."
-            "If it bothers the merman he doesn’t say anything about it."
-            "It’s oddly comforting."
+            "If it bothers the merman he doesn't say anything about it."
+            "It's oddly comforting."
             "It feels quite nice to rest against his soft hair."
 
     "I begin to zone out from exhaustion when he speaks again."
@@ -72,15 +72,15 @@ label ch1_followjorunn:
     j "But you can call me Jor. That's what my family calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"
-    "He’s a rather talkative fellow, isn't he!"
+    "He's a rather talkative fellow, isn't he!"
     j "Right. Can't talk and all that."
     "He sounds almost a bit disappointed that I can't reply."
-    j "Don't worry. Miss Prash will know what to do with you. She’s the master when it comes to all this magic stuff."
+    j "Don't worry. Miss Prash will know what to do with you. She's the master when it comes to all this magic stuff."
     j "And you look like magic stuff."
     "Miss Prash..?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
-    j "Or, uh, unless I’m losing it, and you’re just a normal fish."
-    j "I hope I’m not just talking to myself right now..."
+    j "Or, uh, unless I'm losing it, and you're just a normal fish."
+    j "I hope I'm not just talking to myself right now..."
     y "Blub!!!"
     "Even so, he keeps swimming, content to keep me in his hair for the time being."
     "The storm rumbles on, and he quiets down to focus on the journey."
@@ -93,7 +93,7 @@ label ch1_followjorunn:
 #SCENE CHANGE? - Kelp Forest
 
     "The chatty merman swims onward, and I watch as the kelp forest grows thicker and eventually large rocky formations begin to jut out of the ground."
-    j "Almost there, little fishie! I hope you’ve been enjoying the ride so far."
+    j "Almost there, little fishie! I hope you've been enjoying the ride so far."
     "With that, he takes us both into one of the holes in the rocks, leading to a cave."
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
 
@@ -101,8 +101,8 @@ label ch1_followjorunn:
     "When I was younger, grandfather would tell me stories of his hunting trips out at sea. Of how dangerous it could be when all light left the world. "
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
     "I think this is what he must have meant."
-    "I can’t see anything in front of me at all."
-    "The only signs that I’m alive are my own thoughts, and the feel of  Jor’s steady swimming as he takes us deeper still."
+    "I can't see anything in front of me at all."
+    "The only signs that I'm alive are my own thoughts, and the feel of  Jor's steady swimming as he takes us deeper still."
     "What kind of merperson even lives in a place like this?"
     "As the darkness stretches on, I begin to feel anxious."
 
@@ -116,16 +116,16 @@ label ch1_followjorunn:
             "Maybe I made the wrong decision following him..."
             "What was I thinking, trusting a merman? His kind is the reason why I fell off Hunter's boat in the first place."
             "Anything could be in here, and I'm just letting him lead me into my doom."
-            "Just when I think we’re going to be wandering around in this dark void forever, something glimmers in the distance."
+            "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
-    "Just when I think we’re going to be wandering around in this dark void forever, something glimmers in the distance."
+    "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
-#SCENE CHANGE - Prashadi’s Cave
+#SCENE CHANGE - Prashadi's Cave
 
     j "And... here we are!"
     "The tight tunnel walls give away into an open clearing."
     "...!"
-    "It’s a large cavern."
+    "It's a large cavern."
 
     scene testprash:
         zoom 0.2667
@@ -160,20 +160,20 @@ label ch1_followjorunn:
     j "Hello? Miss Prash?"
     j "..."
     j "Prashadi!! I'm back!" with vpunch
-    "According to Jorunn’s description, this Prashadi is a beautiful person."
-    "I’m not sure what to expect."
+    "According to Jorunn's description, this Prashadi is a beautiful person."
+    "I'm not sure what to expect."
     "I think back to the mermaids in the black market with their long hair and shiny scales."
     "Maybe she will be similar to them?"
-    u "Ah, you’ve made it back, Jor! Did you find anything good today?"
+    u "Ah, you've made it back, Jor! Did you find anything good today?"
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
 
-    #(a flash of grandpa’s sprite here)
+    #(a flash of grandpa's sprite here)
 
     "Grandfather!?"
     j "I found something really interesting! Take a look, Miss Prash!"
     "Jorunn pushes me towards 'Miss Prash', and I can only stare, dumbfounded."
-    "That’s Grandfather. That’s him."
+    "That's Grandfather. That's him."
     "But Jorunn is still calling him ‘Miss Prash.'"
     "What in the world?"
     j "She had some kind of magic shards stuck in her fins."
@@ -182,9 +182,9 @@ label ch1_followjorunn:
 
     menu:
         "Grandfather is a mermaid. This is..."
-        "Ridiculous. That can’t be possible.":
+        "Ridiculous. That can't be possible.":
             "But... it's undeniable that whoever I'm seeing now has Grandfather's face."
-            "I don’t even know what to think."
+            "I don't even know what to think."
 
         "Have I been lied to this whole time?":
             "He hunted mermaids even as he himself was one?"
@@ -192,7 +192,7 @@ label ch1_followjorunn:
 
     "Regardless, it seems he is known as Prashadi here."
     "Grandfather..."
-    Pr "It seems like she’s been cursed as well."
+    Pr "It seems like she's been cursed as well."
     j "Who would curse a cute little fish like this?"
     Pr "Not fish. This one used to be human!"
     j "Miss Prash, are you saying...?"
@@ -202,20 +202,20 @@ label ch1_followjorunn:
     "Jorunn looks at me with sparkling eyes."
     j "Are you able to turn her back?"
     Pr "Let me get a closer look."
-    "Prashadi swims closer to me, and I can see more of this figure with Grandfather’s face."
+    "Prashadi swims closer to me, and I can see more of this figure with Grandfather's face."
     "I stare at him, hoping to somehow get him to recognize me, but he ignores me in favor of making strange hand movements."
-    "The water starts to feel heavy, like it’s clinging to my fins as Prashadi begins."
+    "The water starts to feel heavy, like it's clinging to my fins as Prashadi begins."
     "His hands wave like they're weaving something together from the water around us."
     "It's an entirely foreign movement to me."
     "This merman cannot possibly be Grandfather."
     "A strange, sparkling mist begins to envelop me."
     "My fins start to itch and tingle. I begin writhing in the thickening water with discomfort, bubbles spurting all around."
     "Before I can decide if the mist is safe, it gently carries me upward."
-    "I’m being pulled towards the surface of the water."
-    "Wait... I can’t breathe out of water like this!"
-    "The tingling in my fins grows stronger as the mist gets thicker. I can’t see anything."
-    "My whole fish body feels like it’s being pulled apart then put back together in the same instant."
-    "All I can do is squeeze my eyes shut and hope I’m not about to drown."
+    "I'm being pulled towards the surface of the water."
+    "Wait... I can't breathe out of water like this!"
+    "The tingling in my fins grows stronger as the mist gets thicker. I can't see anything."
+    "My whole fish body feels like it's being pulled apart then put back together in the same instant."
+    "All I can do is squeeze my eyes shut and hope I'm not about to drown."
 
     #BLACK SCENE
 
