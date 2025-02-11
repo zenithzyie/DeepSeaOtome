@@ -112,40 +112,24 @@ label ch1_followprince:
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
     "...?"
     up "Hold still. There’s something in your…"
-
     "I feel the tiniest prick and then his hand lifts away from me to examine what he found."
-
     "It takes me a moment to recognize it myself."
-
     "It looks like a shard of the glowing stones back from the siren’s cave. It must have gotten caught in my fins during my escape. I hadn’t even noticed."
-
     up "This is no ordinary rubble. There’s traces of magic all over it...and all over /you/."
-
     "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
-
     up "Hmm…"
-
     "The hands around me shift closer as he swims faster with newfound purpose, gliding effortlessly through the crowd of merfolk. They bow as he passes by."
-
     "All I can do is stay between his hands."
-
     up "I must take you to my uncle."
-
     up "Perhaps he can explain this strange connection I feel with you."
-
     "He must be another member of the royal family."
-
     "This uncle knows more about magic?"
-
     "...Can he turn me back into a human?"
-
     "I suppose all I can do is wait for the Prince to take us there."
-
     "We go through the city quickly, passing all sorts of things I wish I could take a closer look at."
-
     "Eventually, we arrive at the grandest structure, which must be the palace."
-
     "The prince takes me through wide halls, servants greeting him as we pass."
+
     window auto hide
     scene bg throneroom:
         xalign 0.5
@@ -155,95 +139,53 @@ label ch1_followprince:
     with dissolve
     with Pause(1.75)
     "Our final destination: a grand throne room."
-
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
-
-    show cetus_neutral at right2 with dissolve:
-        zoom 0.55
-        subpixel True pos (0.32, 48)
+    show cetus neutral at left2 with dissolve:
         xzoom -1
-
     show prince frown at farleft with dissolve
 
     ny neutral fish "With purple hair and fairer complexion, he doesn’t seem closely related to the prince."
-
     "Even his tail is different. Instead of a single tail, he has several tentacles instead, like an octopus."
-
     "He reminds me more of that sea witch, but it's clear he's not the same as she was."
-
     "This man is far more elegant… he holds himself like a royal."
-
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
-
     "Concern is wrought all over his face, and I know this has to be the uncle."
-
     c "Thioran! Where have you been?"
-
     c "I've been looking all over for you. It's not safe to be out wandering while the sea storms rage on."
-
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
-
     "Ah! The prince is named Thioran?"
-
     "Thioran and Cetus… such strange names merpeople have."
-
     "Cetus shakes his head and sighs."
-
     c "No matter. As long as you're safe..."
-
     c "Now, you look troubled. Whatever is the matter?"
-
     p "It’s just-{w} here. I found her near the storm."
-
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
-
     "Cetus’ eyes catch on me, and I freeze at the sudden attention."
-
     "Any thoughts I may have had halt to a stop."
-
     c "Oh? What's this? Find another pet for yourself out there, Thio?"
-
     c "You know you don't need my permission to keep her."
-
     p "I wanted to ask you to examine her."
-
     p "She is rather strange. I've never seen a fish like her, and despite being incapable of speech, I seem to be able to understand her intentions."
-
-    p "I feel this…"
-
+    p "I feel this..."
     p  "I feel something drawing me in. I can’t quite explain it."
-
     "...?"
-
     p "She shouldn’t have any arcane connections. She appears to be just a normal fish."
-
     y "Blub!"
-
     "I definitely am not!"
-
     "Cetus begins to approach, brows furrowing."
-
     "His gaze is piercing."
-
     "It almost feels like he’s staring right through me, right at something I can’t see."
-
     c "Hmm?"
-
     "I feel oddly flustered as he inspects my body."
-
     "This would be a rather inappropriate gaze were I still human."
-
     c "May I touch your fins, little fish?"
-
     menu:
         "Agree.":
             "If he can help me return to normal, I'll do anything!"
-
             "I swim closer to him, indicating my agreement. (+1 cetus)"
 
         "Hesitate.":
             "I glance back up at Prince Thioran. He gives me the slightest of nods."
-
             show prince soft
             p "Go on, it's alright."
             #(Thio +1)
@@ -251,54 +193,30 @@ label ch1_followprince:
             show prince frown
 
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
-
     c "What an interesting little thing."
-
     "The prince moves closer to us with a troubled look."
-
     p "What do you see, uncle?"
-
     c "Hmm... well she's not from these waters, that I can tell. However, that's a tale for another time."
-
     c "More importantly, she's been cursed. By something rather skilled, no less."
-
     p "Cursed?"
-
     "That's right! It's a relief that he can tell."
-
     "If only I hadn't been stupid enough to fall overboard for that sea witch's music."
-
     p "Is there anything you can do about it?"
-
     c "Yes. Though the curse is rather complex, it won't be a match for me."
-
     c "I shall start unraveling the enchantment now. You may want to swim back, Thio."
-
     "Really? Just like that? I'll finally be free from this nightmare!"
-
     "Cetus' hands start to glow as he starts to cast his spell."
-
     "His hands move like the conductor of an orchestra, and strings of magic entwine themselves around my body."
-
     "Cetus begins to chant in a language I do not know, his hypnotic voice droning on and drowning out my thoughts."
-
     "Wait…{w} what will happen to me if I turn back human underwater?"
-
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
-
     y "Blub! Blub!"
-
     "No..! I’ll drown! I don’t want to die like this!"
-
     show prince sweat
     p "Wait a moment, uncle! There’s something wrong."
-
     c "Now, no need for that. It'll be over in just a moment."
-
     "The magic crescendos, and the tightness around me grows in kind."
-
     "I squeeze my eyes shut, preparing for the worst."
-
     "Grandpa..! Hunter!"
 
     #(brief pause)
@@ -306,17 +224,11 @@ label ch1_followprince:
     #(next update, fade to cg of june)
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
-
     "I gasp for breath, relieved to find that I’m not drowning."
-
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
-
     "Cetus has stopped chanting, and all I can hear is the rush of water around me."
-
     c "Welcome back to your body, my dear."
-
     "I open my eyes."
-
     "The strings have disappeared, and all that is left is me and the effects of Cetus’ spell."
 
     scene bg white with hpunch

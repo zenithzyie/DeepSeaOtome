@@ -147,6 +147,16 @@ layeredimage prashadi:
             zoom 0.2
     ypos 1410
 
+layeredimage cetus:
+    group expressions:
+        attribute neutral:
+            "cetus_neutral.png"
+    zoom 0.55
+    ypos 0.07
+    group eyes auto:
+        attribute blinking default:
+            "cetus_blink.png" at blink
+
 layeredimage side june fish:
     group expressions:
         attribute neutral:
