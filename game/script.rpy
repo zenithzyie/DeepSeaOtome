@@ -82,10 +82,10 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "I can’t wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
+    "I can't wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
-    "I can’t really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
+    "I can't really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
     "Even though I'm now a grown woman, she refuses to say what happened."
     "...And Grandfather is the only other one with answers."
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
@@ -124,7 +124,7 @@ label chapter1:
             y "Let's see how it turned out!"
             # Image of picture here
             y "This part of town has a great view of the sea."
-            y "It’s hard to believe that the port used to be further down."
+            y "It's hard to believe that the port used to be further down."
 
     "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
     "A quaint assortment of homes and shops descend down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
@@ -150,7 +150,7 @@ label chapter1:
     "I quietly slip away from the men watching me, heading further down the road."
     "I keep my camera close to my hip, hiding it with my coat to prevent any further unwanted attention."
 
-  #SCENE CHANGE - (Shabby Market [Zoomed In])
+    #SCENE CHANGE - (Shabby Market [Zoomed In])
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     show bg shabby market:
@@ -174,7 +174,7 @@ label chapter1:
             "Do your town a favor! Report any mermaid sightings to your local Seahunting Guild."
             "The longer they live, the shorter the land!"
             "A group of people stand just past the newsboard, yelling."
-            t "It’s the end of times! Return to fish!"
+            t "It's the end of times! Return to fish!"
             "I walk away quickly. Best not to interact with those types."
 
         "Children playing in the street":
@@ -183,7 +183,7 @@ label chapter1:
             kid "I want to be the mermaid hunter this time!"
             kid "No way, it's my turn!"
             y "How cute."
-            kid "I don’t wanna be no stinkin’ fish! I’ma be a hunter!"
+            kid "I don't wanna be no stinkin' fish! I'ma be a hunter!"
             "I wonder if I ever played something like that as a kid here."
 
         "The paperboy":
@@ -207,7 +207,7 @@ label chapter1:
             woman "Knock knock."
             y "Pardon?"
             woman "Knock knock."
-            y "Oh, I know this one. Who’s there?"
+            y "Oh, I know this one. Who's there?"
             woman "Knock knock."
             y flustered "Uh...knock knock?"
             "The old woman grins toothily."
@@ -221,9 +221,9 @@ label chapter1:
             "The child is holding a plush octopus tightly. It looks well-loved."
             "I show him the address, and he glances at it."
             kid "Oh, I know that place!"
-            kid "My mama says I’m not allowed to go to the west alley."
-            kid "She says there’s bad people there."
-            y shocked "Oh…"
+            kid "My mama says I'm not allowed to go to the west alley."
+            kid "She says there's bad people there."
+            y shocked "Oh..."
             y neutral "Well, thank you for your help."
             jump talktownsfolk
 
@@ -236,7 +236,7 @@ label chapter1:
             fishmonger "Bass or Tilapia?"
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger " Do I look like a map stand? I sell fish. Ye buy fish, then ya leave, ye get it?"
-            y "I will pay you for the help! I’m just looking for this address."
+            y "I will pay you for the help! I'm just looking for this address."
             "Before he could deny me once more, I show the bottom half of the letter where the address is clearly written."
             #with suggestions from Tay
             fishmonger "I ain't gonna be telling any airsick in-landler how to get—"
@@ -248,10 +248,10 @@ label chapter1:
             #moved dialogue around - end of tay suggestions
             fishmonger "....Girlie, do ye know where that is? That's in the Black Market District. Someone like you don't belong there. Hell, even I avoid it."
             "Black Market District..?"
-            y "Even so, I have to get there. I’ll pay you if you just point me in the right direction."
+            y "Even so, I have to get there. I'll pay you if you just point me in the right direction."
             fishmonger "Alrighty, little lady."
             fishmonger "Five hits on the brick. Pause, give three, and pause again to give four."
-            fishmonger "That's all I know, and all I’ll say."
+            fishmonger "That's all I know, and all I'll say."
             "He looks at me and grins toothily."
             fishmonger "Payment?"
             ny huffed "Clearly, the only language merchants speak is money..."
@@ -305,8 +305,8 @@ label chapter1:
                     jump knocking
 
     label afterknocking:
-    "..3..4..5…"
-    "..1..2..3…"
+    "..3..4..5..."
+    "..1..2..3..."
     "..2..3..4.."
     "There is no response at first, but..."
     ny shocked "Suddenly, the wall is pulled back."
@@ -396,9 +396,9 @@ label chapter1:
     #TODO SPRITE CHANGE - Hunter Disappointed
     u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
     y neutral "I haven't been in this part of Aquantis before. You must have me mistaken for someone else."
-    u "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger, though I s'pose it's been awhile."
+    u "Ha- this isn't your first time here. Don't appreciate being treated like a stranger, though I s'pose it's been awhile."
     "Bending down to my level, the stranger looks me right in the eyes."
-    u "Jogging anything in that noggin? I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
+    u "Jogging anything in that noggin? I've grown up a bit since you've last seen this mug...how 'bout it?"
     "He stares at me for a moment before the realization hits."
     u "Ah, that's right."
     #if we go mask route, just pop this back in but it doesn't make sense right now
@@ -438,7 +438,7 @@ label chapter1:
 
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
-    h "At least you do remember me! It's been only about, what... ten years since we’ve last seen each other?"
+    h "At least you do remember me! It's been only about, what... ten years since we've last seen each other?"
     h "I'll be honest, never expected you to come back."
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
@@ -448,8 +448,8 @@ label chapter1:
     "He tilts his head, gazing at me intently."
     h "Need some help finding your way?"
     y "Well, yes, if you wouldn't mind..."
-    h "I’ll take you. Just keep your camera out of view."
-    h "And stop gawking at things like you’ve never been here before... People might think you’re a spy or somethin'."
+    h "I'll take you. Just keep your camera out of view."
+    h "And stop gawking at things like you've never been here before... People might think you're a spy or somethin'."
     "He unclips his cloak and throws it on top of my head. My nose is assaulted with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
@@ -542,11 +542,11 @@ label chapter1:
                     $ promermaid += 1
                     "I would be terrified if I were in their situation."
                     "If I were a mermaid, I would rather die in the sea, at home. Not here..."
-                "That’s just how it is.":
+                "That's just how it is.":
                     $ antimermaid += 1
                     "Grandpa and Hunter make their living in a world like this."
                     "Either the world floods over completely, or we keep our land safe."
-                    "That’s the way it is."
+                    "That's the way it is."
 
         "Have you actually...killed them before?":
             $ promermaid += 1
@@ -591,7 +591,7 @@ label chapter1:
     "I have a faint recollection of Grandfather owning  a boat, of course, but I thought I would remember more than that upon seeing his home."
     show hunter neutral at centre with move
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
-    y "Hey, don’t start shoving me- I appreciate the help, but you really don’t have to follow me the whole way there."
+    y "Hey, don't start shoving me- I appreciate the help, but you really don't have to follow me the whole way there."
     h "I have business with your old man already, running into you was just a coincidence. Let's go!"
     y "Alright, alright, let's go."
 
@@ -617,7 +617,7 @@ label chapter1:
     stop music fadeout 1.0
     #SFX - waves (calm)
     "The old man stands frozen before me. He looks as though he's seen a ghost."
-    y shocked "Grandfather…?"
+    y shocked "Grandfather...?"
     show grandpa happy at jumpin
     g "Oh, bless the stars...you got my letter? You're really here! My dear, sweet [y]!"
     show grandpa happy:
@@ -750,7 +750,7 @@ label chapter1:
     h "Blast... I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     if seastorm:
         "I remember reading something about this."
-        "If this is a sea witch’s storm..."
+        "If this is a sea witch's storm..."
         "My hair stands on end just thinking about what devastation will ensue."
 
     hide hunter neutral with vpunch
@@ -846,7 +846,7 @@ label chapter1:
     #SCENE CHANGE - Black Screen
     scene bg black
     play music "audio/music_cave.mp3" volume 0.9
-    siren "After all these long years... you’ve finally returned home to me..."
+    siren "After all these long years... you've finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
@@ -889,14 +889,14 @@ label chapter1:
         zoom 0.5
     show skylla happy
     with dissolve
-    siren neutral fish "Aw. You’re hurting my feelings! Aren’t you happy to see me?"
+    siren neutral fish "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
     "Skylla..? Is that the name of this siren?"
     show skylla neutral:
         yalign 0.1
         ease 0.5 zoom 1.5
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
-    s "There’s no need to rush. We have all the time in the world together. You'll give me what I want... in due time."
+    s "There's no need to rush. We have all the time in the world together. You'll give me what I want... in due time."
     show skylla happy:
         yalign 0.1
         ease 0.7 zoom 1
@@ -917,8 +917,8 @@ label chapter1:
     s "One piece at a time..."
     "No.{w} No, no, no."
     "Think, [y], think! There has to be a way out of here!"
-    "If there’s a way to turn a human into a fish, surely there’s a way to turn a fish back into human, right?"
-    "I glance around the cave I’m in."
+    "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into human, right?"
+    "I glance around the cave I'm in."
 
     window auto hide
     camera:
@@ -936,7 +936,7 @@ label chapter1:
         pos (-858, -480) zoom 1.61
     window auto show
 
-    "It’s dark here, hard to see. My new tiny eyes struggle to take in everything all at once."
+    "It's dark here, hard to see. My new tiny eyes struggle to take in everything all at once."
 
     window auto hide
     camera:
@@ -948,7 +948,7 @@ label chapter1:
         pos (-804, -318)
     window auto show
 
-    "From what I can see there’s only a path forward deeper towards the siren’s lair. No windows, or whatever the underwater equivalent is."
+    "From what I can see there's only a path forward deeper towards the siren's lair. No windows, or whatever the underwater equivalent is."
 
     window auto hide
     camera:
@@ -982,14 +982,14 @@ label chapter1:
     show skylla:
         yalign 0.1
         ease 0.5 zoom 1.5
-    s "Hold still now, cute thing. This won’t hurt."
+    s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It’s a lie. Strange magic begins to glow out of the siren’s hands as she softly sings."
-    "It’s beautiful beyond words, but the moment it starts I start to feel a burning pain spreading across my body."
-    s "It’s okay! Don’t be stubborn now. Come on, it's me!"
+    "It's a lie. Strange magic begins to glow out of the siren's hands as she softly sings."
+    "It's beautiful beyond words, but the moment it starts I start to feel a burning pain spreading across my body."
+    s "It's okay! Don't be stubborn now. Come on, it's me!"
     "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
     show skylla angry
-    "The moment I feel like I’m about to snap in two, a sudden blinding light flashes throughout the cave." with flash
+    "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
 
     #FLASH EFFECT
     stop sound
@@ -998,7 +998,7 @@ label chapter1:
         ease 0.02 zoom 1
     "The siren screams as she drops me, falling backwards."
     show skylla surprised
-    s "No. No! This- this isn’t right."
+    s "No. No! This- this isn't right."
     "Once I blink the white spots out my vision I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."
     "We both stare at each other, frozen, before I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
@@ -1008,7 +1008,7 @@ label chapter1:
     y "Blub blub!!"
 
     "As if! Who in their right mind would do that!?"
-    "Her tentacles try to grasp me, but I’m too small for them to catch."
+    "Her tentacles try to grasp me, but I'm too small for them to catch."
     s "Fine! Be like that!"
     show skylla angryteeth
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
@@ -1018,24 +1018,24 @@ label chapter1:
     stop sound
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
-    "The force spends me sprawling backwards in pain, but I don’t have time to linger on it because the explosion has created a hole just big enough to squeeze through."
+    "The force spends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
     stop music
     scene bg black
 
-    "I swim as fast as I can. Faster than I’ve ever ran when I had legs."
+    "I swim as fast as I can. Faster than I've ever ran when I had legs."
     "My heart is thumping madly in my chest as I force my way through the debris. "
     "The sharper pieces scrape and cut through my fins but I barely pay them any mind as I keep swimming.{w} I think that if I had my voice I would be crying."
     "I can hear the siren cursing as I swim away, but eventually it shrinks into a distant shriek as I keep charging forward with all I have."
-    "It doesn't matter where I go, just as long as it’s far away from that awful witch!"
+    "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
     scene bg sea with vpunch
     play music "audio/music_underwater.mp3" volume 0.7 fadeout 1.0
     "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
     y fish neutral "Blub...blub..."
-    "Now that the adrenaline has faded I feel exhausted. My body feels like it’s been run over. Everything hurts."
+    "Now that the adrenaline has faded I feel exhausted. My body feels like it's been run over. Everything hurts."
 
-    "Grandpa... Hunter... they must think that I’m dead by now."
+    "Grandpa... Hunter... they must think that I'm dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But... {w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
@@ -1061,7 +1061,7 @@ label chapter1:
 
     "Ahead of me, two mer-people are staring each other down."
     "One of them is a young man carrying a large net stuffed full of fish."
-    "The other one has fins unlike any other I’ve seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
+    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
 
     "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
@@ -1074,12 +1074,12 @@ label chapter1:
     show jorunn sweat at jumpin
     with vpunch
 
-    "Just then, a loud rumble echoes through the area. The waters feel like they’re slowly beginning to churn."
-    guard "It’s another sea storm, Your Highness! We must head back now before it picks up any further."
+    "Just then, a loud rumble echoes through the area. The waters feel like they're slowly beginning to churn."
+    guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show prince angry
     up "Dammit. Why now of all times..!"
     show jorunn glee
-    uj "Well, I guess that's my cue! I’ll be taking these home then. Goodbye!"
+    uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
     "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous... but they might be my only shot at getting help right now."
 
@@ -1110,18 +1110,18 @@ label ch1_badend1:
 
     "There has to be another way out of this."
     "I can't trust either of them!"
-    "Both merpeople swim away, and I’m alone."
+    "Both merpeople swim away, and I'm alone."
     "Sort of..."
     "The other fish are swimming in a frenzy trying to get away from the vortex of water."
     "The seastorm gets louder and louder."
     "What if I hid in the seaweed again?"
     "The seastorm is getting closer with every moment I hesitate."
-    "I know! I’ll try taking shelter in a nearby rock formation!"
+    "I know! I'll try taking shelter in a nearby rock formation!"
     "The problem is, everything is so far away from me."
-    "It’ll take far too long to reach shelter."
+    "It'll take far too long to reach shelter."
     "I try swimming anyway, as fast as I can go."
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
-    "It’s too late!"
+    "It's too late!"
     "The last thing I see before my eyes close forever is something large, crashing right into me."
     scene black with vpunch
     "Ravaged by the sea, I die."

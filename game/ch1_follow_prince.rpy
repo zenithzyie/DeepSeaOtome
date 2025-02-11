@@ -8,9 +8,9 @@ label ch1_followprince:
         pos (0.0, 1.0) zoom 1.0
     with move
     $ config.side_image_tag = "june"
-    "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy…"
+    "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
     "It's now or never!"
-    "3… 2… 1!!"
+    "3... 2... 1!!"
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
 
@@ -22,41 +22,41 @@ label ch1_followprince:
     show prince angry:
         pos (-0.23, 1.87) zoom 2.0
 
-    "I can’t stop! I crash into the back of the princely merman’s head." with vpunch
+    "I can't stop! I crash into the back of the princely merman's head." with vpunch
     #SCREEN SHAKE
     up "!!!"
     up "Who-"
     y "Blub blub!"
     show prince sweat
     up "...?"
-    "For a brief moment I think I’ve made some sort of mistake and that I’ll be eaten on the spot."
+    "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
     "Then, with a surprising amount of gentleness, his hands come up to cup my body."
     guard "Your Highness?"
     y "Blub blub blub!!"
-    "Please help me! If I stay out in this storm I’ll die!"
+    "Please help me! If I stay out in this storm I'll die!"
     "If only I could speak real words!"
-    "Strangely enough, he pauses, as if he can understand what I’m saying."
+    "Strangely enough, he pauses, as if he can understand what I'm saying."
     guard "Is something the matter? The storm is closing in."
     show prince frown
-    up "No. It’s nothing."
+    up "No. It's nothing."
     "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
-    up "Let’s go."
+    up "Let's go."
     "The relief I feel is so strong that I feel my fins go weak. Thank goodness. Looks like I made the right choice after all."
-    "I can feel the merman begin to swim. I’m exhausted but curious about where we’re going."
+    "I can feel the merman begin to swim. I'm exhausted but curious about where we're going."
 
     menu:
-        "Look through the princely mermaid’s fingers.":
-            "My curiosity wins over, and I swim forward a little to try to peer through the space between the prince’s fingers."
-            "It looks as though we’re swimming somewhere deeper into the depths of the ocean. Foliage and sand whip past us. We are going quite fast!"
+        "Look through the princely mermaid's fingers.":
+            "My curiosity wins over, and I swim forward a little to try to peer through the space between the prince's fingers."
+            "It looks as though we're swimming somewhere deeper into the depths of the ocean. Foliage and sand whip past us. We are going quite fast!"
             "I can catch glimpses of merpeople appearing to be farmers, tending to their fields of kelp and other sea plants I do not recognize."
             "Some wave to the prince as we pass."
             "Despite this, he keeps swimming, his hand acting as a shield."
 
         "Lean back against the princely mermaid.":
             #+1 Thio
-            "My exhaustion wins over and I lean back against the merman’s skin, desperate for a minute of rest."
+            "My exhaustion wins over and I lean back against the merman's skin, desperate for a minute of rest."
             "I must be held somewhere against his chest because from here I can feel his heartbeat, going strong and steady."
-            "It’s warm and comforting."
+            "It's warm and comforting."
             "The storm rumbles on, and I have no need to fear it any longer."
             "The prince swims on in silence."
             "Left alone with my thoughts, my mind races every which way."
@@ -82,7 +82,7 @@ label ch1_followprince:
 
     show bg capitalcity
     "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
-    "I feel smaller than I already am…"
+    "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the Inlanders decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
     show prince frown
@@ -92,32 +92,32 @@ label ch1_followprince:
     "Away from the threat of the storm, he begins swimming again. This time, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
     show prince sweat
-    up "Is something the matter? If you're uncomfortable in my hands, I can try to be less… rough."
+    up "Is something the matter? If you're uncomfortable in my hands, I can try to be less... rough."
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
     y "Blub!"
     "Quickly, I shake myself in protest at the suggestion. He is already very gentle."
-    "I’m just glad he isn’t finding my staring strange."
+    "I'm just glad he isn't finding my staring strange."
     show prince frown
     "He nods before returning his gaze back ahead."
     up "We will be at the palace before long. How did you end up so far away? And alone?"
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
     "I'm not really sure how much he can hear, but I'm willing to try telling him my story."
-    y "Blub… blub?"
+    y "Blub... blub?"
     "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
-    up "What are you…"
+    up "What are you..."
     show prince sweat
     up "I apologize. It appears I can't fully understand your meaning."
     show prince frown
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
     "...?"
-    up "Hold still. There’s something in your…"
+    up "Hold still. There's something in your..."
     "I feel the tiniest prick and then his hand lifts away from me to examine what he found."
     "It takes me a moment to recognize it myself."
-    "It looks like a shard of the glowing stones back from the siren’s cave. It must have gotten caught in my fins during my escape. I hadn’t even noticed."
-    up "This is no ordinary rubble. There’s traces of magic all over it...and all over /you/."
+    "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
+    up "This is no ordinary rubble. There's traces of magic all over it...and all over /you/."
     "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
-    up "Hmm…"
+    up "Hmm..."
     "The hands around me shift closer as he swims faster with newfound purpose, gliding effortlessly through the crowd of merfolk. They bow as he passes by."
     "All I can do is stay between his hands."
     up "I must take you to my uncle."
@@ -144,37 +144,37 @@ label ch1_followprince:
         xzoom -1
     show prince frown at farleft with dissolve
 
-    ny neutral fish "With purple hair and fairer complexion, he doesn’t seem closely related to the prince."
+    ny neutral fish "With purple hair and fairer complexion, he doesn't seem closely related to the prince."
     "Even his tail is different. Instead of a single tail, he has several tentacles instead, like an octopus."
     "He reminds me more of that sea witch, but it's clear he's not the same as she was."
-    "This man is far more elegant… he holds himself like a royal."
+    "This man is far more elegant... he holds himself like a royal."
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
     c "Thioran! Where have you been?"
     c "I've been looking all over for you. It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
     "Ah! The prince is named Thioran?"
-    "Thioran and Cetus… such strange names merpeople have."
+    "Thioran and Cetus... such strange names merpeople have."
     "Cetus shakes his head and sighs."
     c "No matter. As long as you're safe..."
     c "Now, you look troubled. Whatever is the matter?"
-    p "It’s just-{w} here. I found her near the storm."
+    p "It's just-{w} here. I found her near the storm."
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
-    "Cetus’ eyes catch on me, and I freeze at the sudden attention."
+    "Cetus' eyes catch on me, and I freeze at the sudden attention."
     "Any thoughts I may have had halt to a stop."
     c "Oh? What's this? Find another pet for yourself out there, Thio?"
     c "You know you don't need my permission to keep her."
     p "I wanted to ask you to examine her."
     p "She is rather strange. I've never seen a fish like her, and despite being incapable of speech, I seem to be able to understand her intentions."
     p "I feel this..."
-    p  "I feel something drawing me in. I can’t quite explain it."
+    p  "I feel something drawing me in. I can't quite explain it."
     "...?"
-    p "She shouldn’t have any arcane connections. She appears to be just a normal fish."
+    p "She shouldn't have any arcane connections. She appears to be just a normal fish."
     y "Blub!"
     "I definitely am not!"
     "Cetus begins to approach, brows furrowing."
     "His gaze is piercing."
-    "It almost feels like he’s staring right through me, right at something I can’t see."
+    "It almost feels like he's staring right through me, right at something I can't see."
     c "Hmm?"
     "I feel oddly flustered as he inspects my body."
     "This would be a rather inappropriate gaze were I still human."
@@ -189,7 +189,7 @@ label ch1_followprince:
             show prince soft
             p "Go on, it's alright."
             #(Thio +1)
-            "Well, if the prince says it’s alright…"
+            "Well, if the prince says it's alright..."
             show prince frown
 
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
@@ -208,12 +208,12 @@ label ch1_followprince:
     "Cetus' hands start to glow as he starts to cast his spell."
     "His hands move like the conductor of an orchestra, and strings of magic entwine themselves around my body."
     "Cetus begins to chant in a language I do not know, his hypnotic voice droning on and drowning out my thoughts."
-    "Wait…{w} what will happen to me if I turn back human underwater?"
+    "Wait...{w} what will happen to me if I turn back human underwater?"
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
     y "Blub! Blub!"
-    "No..! I’ll drown! I don’t want to die like this!"
+    "No..! I'll drown! I don't want to die like this!"
     show prince sweat
-    p "Wait a moment, uncle! There’s something wrong."
+    p "Wait a moment, uncle! There's something wrong."
     c "Now, no need for that. It'll be over in just a moment."
     "The magic crescendos, and the tightness around me grows in kind."
     "I squeeze my eyes shut, preparing for the worst."
@@ -224,12 +224,12 @@ label ch1_followprince:
     #(next update, fade to cg of june)
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
-    "I gasp for breath, relieved to find that I’m not drowning."
+    "I gasp for breath, relieved to find that I'm not drowning."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
     "Cetus has stopped chanting, and all I can hear is the rush of water around me."
     c "Welcome back to your body, my dear."
     "I open my eyes."
-    "The strings have disappeared, and all that is left is me and the effects of Cetus’ spell."
+    "The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
 
     scene bg white with hpunch
     jump endofdemo
