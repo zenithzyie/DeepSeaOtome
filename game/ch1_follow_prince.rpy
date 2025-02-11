@@ -13,7 +13,6 @@ label ch1_followprince:
     "3... 2... 1!!"
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
-
     show prince angry:
         subpixel True
         pos (0.0, 1.0) zoom 1.0
@@ -21,7 +20,6 @@ label ch1_followprince:
     with Pause(0.33)
     show prince angry:
         pos (-0.23, 1.87) zoom 2.0
-
     "I can't stop! I crash into the back of the princely merman's head." with vpunch
     #SCREEN SHAKE
     up "!!!"

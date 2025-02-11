@@ -9,15 +9,30 @@ label ch1_followjorunn:
     "3... 2... 1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
+    show jorunn sweat:
+        subpixel True 
+        pos (0.6, 790) zoom 1.0 
+        linear 0.33 pos (0.5, 1522) zoom 2.5 
+    with Pause(0.43)
+    show jorunn sweat:
+        pos (0.5, 1522) zoom 2.5 
     "I can't stop! I crash into the scrappy boy's shoulder."
     j "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
+    show jorunn glee:
+        subpixel True 
+        ypos 1522 zoom 2.5 
+        linear 0.20 ypos 790 zoom 1.0 
+    with Pause(0.30)
+    show jorunn glee:
+        ypos 790 zoom 1.0 
     j "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
     y "Blub blub blub!!"
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
+    show jorunn neutral
     "He holds onto me but moves me around, like he's appraising what my value at a pawn shop would be."
     j "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
@@ -29,6 +44,14 @@ label ch1_followjorunn:
     "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
     j "Weird. This thing stinks of magic."
+    show jorunn neutral:
+        subpixel True 
+        pos (0.5, 790) zoom 1.0 
+        linear 0.33 pos (0.45, 1660) zoom 2.5 
+    with Pause(0.43)
+    show jorunn neutral:
+        pos (0.45, 1660) zoom 2.5 
+
     "Then, gently, with the skill of someone who has handled many fish just like me, he brings me closer to his face."
     j "Now that I'm looking, so do you, little fishie!"
     y "Blub!!"
@@ -56,6 +79,7 @@ label ch1_followjorunn:
             "The foliage is thick here, tall plants towering over the both of us like massive trees."
             "With the storm muffled by the cover of the kelp forest, the world around me feels different. The swim even feels peaceful."
             "Wow..."
+            show jorunn glee
             j "It's pretty way out here, don't you think?"
             "I nod, even though he can't see it. I really wish I could take a picture of the ocean from here."
             j "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
@@ -66,13 +90,16 @@ label ch1_followjorunn:
             "It's oddly comforting."
             "It feels quite nice to rest against his soft hair."
 
+    show jorunn neutral
     "I begin to zone out from exhaustion when he speaks again."
+    show jorunn glee
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
     "Jorunn... what strange names merfolk have."
     j "But you can call me Jor. That's what my family calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"
     "He's a rather talkative fellow, isn't he!"
+    show jorunn neutral
     j "Right. Can't talk and all that."
     "He sounds almost a bit disappointed that I can't reply."
     j "Don't worry. Miss Prash will know what to do with you. She's the master when it comes to all this magic stuff."
@@ -80,7 +107,9 @@ label ch1_followjorunn:
     "Miss Prash..?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
     j "Or, uh, unless I'm losing it, and you're just a normal fish."
+    show jorunn pissed
     j "I hope I'm not just talking to myself right now..."
+    show jorunn neutral
     y "Blub!!!"
     "Even so, he keeps swimming, content to keep me in his hair for the time being."
     "The storm rumbles on, and he quiets down to focus on the journey."
@@ -93,7 +122,9 @@ label ch1_followjorunn:
 #SCENE CHANGE? - Kelp Forest
 
     "The chatty merman swims onward, and I watch as the kelp forest grows thicker and eventually large rocky formations begin to jut out of the ground."
+    show jorunn glee
     j "Almost there, little fishie! I hope you've been enjoying the ride so far."
+    show jorunn neutral
     "With that, he takes us both into one of the holes in the rocks, leading to a cave."
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
 
