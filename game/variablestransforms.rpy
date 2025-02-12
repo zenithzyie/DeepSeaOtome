@@ -185,7 +185,8 @@ layeredimage jorunn:
             "jorunn_glee.png"
         attribute sweat:
             "jorunn_sweat.png"
-    ypos 790
+    zoom 0.34
+    ypos 1080
 
 init python:
     config.side_image_tag = "june"

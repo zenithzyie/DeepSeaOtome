@@ -9,24 +9,26 @@ label ch1_followjorunn:
     "3... 2... 1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
-    show jorunn sweat:
-        subpixel True 
-        pos (0.6, 790) zoom 1.0 
-        linear 0.33 pos (0.5, 1522) zoom 2.5 
-    with Pause(0.43)
-    show jorunn sweat:
-        pos (0.5, 1522) zoom 2.5 
-    "I can't stop! I crash into the scrappy boy's shoulder."
+
+    show jorunn glee:
+        subpixel True
+        pos (0.66, 1080) zoom 1.0
+        linear 0.39 pos (0.45, 1914) zoom 2.0
+    with Pause(0.39)
+    show jorunn glee:
+        pos (0.45, 1914) zoom 2.0
+
+    "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
     j "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
     show jorunn glee:
-        subpixel True 
-        ypos 1522 zoom 2.5 
-        linear 0.20 ypos 790 zoom 1.0 
+        subpixel True
+        ypos 1522 zoom 2.5
+        linear 0.20 ypos 790 zoom 1.0
     with Pause(0.30)
     show jorunn glee:
-        ypos 790 zoom 1.0 
+        ypos 790 zoom 1.0
     j "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
     y "Blub blub blub!!"
@@ -45,12 +47,12 @@ label ch1_followjorunn:
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
     j "Weird. This thing stinks of magic."
     show jorunn neutral:
-        subpixel True 
-        pos (0.5, 790) zoom 1.0 
-        linear 0.33 pos (0.45, 1660) zoom 2.5 
+        subpixel True
+        pos (0.5, 790) zoom 1.0
+        linear 0.33 pos (0.45, 1660) zoom 2.5
     with Pause(0.43)
     show jorunn neutral:
-        pos (0.45, 1660) zoom 2.5 
+        pos (0.45, 1660) zoom 2.5
 
     "Then, gently, with the skill of someone who has handled many fish just like me, he brings me closer to his face."
     j "Now that I'm looking, so do you, little fishie!"

@@ -85,8 +85,8 @@ label chapter1:
     "I can't wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
-    "I can't really remember why my mother stopped letting me see Grandfather. She said she had lost trust in him after something that happened to me here when I was a child."
-    "Even though I'm now a grown woman, she refuses to say what happened."
+    "I can't really remember why my mother stopped taking me to see Grandfather."
+    "Even though I'm now a grown woman, she refuses to say why."
     "...And Grandfather is the only other one with answers."
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
 
@@ -380,7 +380,7 @@ label chapter1:
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
-    u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch~."
+    u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch."
     show hunter neutral:
         xalign 0.5
         ypos 0.03
@@ -443,7 +443,7 @@ label chapter1:
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
     y "I came to see my grandfather, if you still remember him."
-    h "Ah~ family visit. Of course I still remember the old man. His hunting company practically owned half the market strip."
+    h "Ah, family visit. Of course I still remember the old man. His hunting company practically owned half the market strip."
     h "Though he went into retirement a few years ago."
     "He tilts his head, gazing at me intently."
     h "Need some help finding your way?"
@@ -683,11 +683,16 @@ label chapter1:
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
+    g "And dont get me started on sirens!"
+    g "I only ever saw one in my career, and it damn near got my whole crew!"
+    h "Yeah, right, old man. They've been deader longer than you've been alive."
+    h "All you ended up with was an overgrown mermaid, not a siren."
+    g "Har har har!"
     show grandpa neutral with dissolve
-    g "But I s'pose you'll never get to see that, would you..."
+    g "But I s'pose you'll never get to see you a mermaid like that, would you..."
     "He also wishes I could've inherited his love for the hunt."
     y flustered "Sorry, Grandfather..."
-    g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup of tea."
+    g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup o' tea."
     ny neutral "Hunter taps Grandfather on the shoulder."
     h "Mr. Eaton, she's open."
     "Grandfather pulls out his timepiece and flips it open."
@@ -781,7 +786,7 @@ label chapter1:
     show noise:
         alpha .3
     with dissolve
-    g "{i}But I s'pose you'll never get to see that, would you...{/i}"
+    g "{i}But I s'pose you'll never get to see a mermaid like that, would you...{/i}"
     hide grandpa
     hide noise
     show bg choppywave
@@ -820,7 +825,7 @@ label chapter1:
     u "...to the depths below..."
     "The singing feels as though it is only for my ears to hear alone, the waves calling out for me to sink in."
     "My legs begin to move on their own."
-    h "Shit, it's a siren! [y]!"
+    h "Shit, it's a siren!? [y]!"
     show hunter neutral with vpunch
     "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
     "An unimportant thought crosses my mind. I've heard of something like this before."
@@ -1135,18 +1140,16 @@ label endofdemo:
 
     "..........."
 
-    show jorunn glee with dissolve
+    show prashadi neutral with dissolve
 
-    j "Hello there!"
-    j "You've reached the end of the demo for Heart's Depth!"
-    j "We sincerely look forward to releasing the rest of the story." with vpunch
-    show jorunn pissed with dissolve
-    j "I hope they put me in the next update..."
-    show jorunn glee with dissolve
-    j "Anyway."
-    j "Thank you so much for playing! Follow our game page for updates."
-    j "We have much, much more to come..."
-    hide jorunn glee
+    Pr "Hello there!"
+    Pr "You've reached the end of the demo for Heart's Depth!"
+    Pr "With this update, we've completely overhauled the game jam demo."
+    Pr "From here on, expect updates to come in chapters!" with jumpin
+    Pr "Look forward to seeing the rest of our story, heh heh heh."
+    Pr "Thank you so much for playing! Follow our game page for updates."
+    Pr "There's so much more to see..."
+    hide prashadi
     with dissolve
     play sound "audio/sfx_splash.flac"
     with Pause(1.0)
