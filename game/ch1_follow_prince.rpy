@@ -4,8 +4,7 @@
 label ch1_followprince:
     #BRANCH - FOLLOW PRINCE
     hide jorunn glee with moveoutright
-    show prince at center:
-        pos (0.0, 1.0) zoom 1.0
+    show prince at Position(xpos=0.45)
     with move
     $ config.side_image_tag = "june"
     "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
@@ -13,13 +12,15 @@ label ch1_followprince:
     "3... 2... 1!!"
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
+
     show prince angry:
         subpixel True
-        pos (0.0, 1.0) zoom 1.0
-        linear 0.33 pos (-0.23, 1.87) zoom 2.0
-    with Pause(0.33)
+        pos (0.45, 730) zoom 1.0
+        linear 0.36 pos (0.38, 1288) zoom 2.0
+    with Pause(0.46)
     show prince angry:
-        pos (-0.23, 1.87) zoom 2.0
+        pos (0.38, 1288) zoom 2.0
+
     "I can't stop! I crash into the back of the princely merman's head." with vpunch
     #SCREEN SHAKE
     up "!!!"
@@ -83,7 +84,7 @@ label ch1_followprince:
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the Inlanders decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
-    show prince frown
+    show prince frown at Position(xpos=0.45) with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
@@ -179,8 +180,9 @@ label ch1_followprince:
     c "May I touch your fins, little fish?"
     menu:
         "Agree.":
+            #(+1 cetus)
             "If he can help me return to normal, I'll do anything!"
-            "I swim closer to him, indicating my agreement. (+1 cetus)"
+            "I swim closer to him, indicating my agreement."
 
         "Hesitate.":
             "I glance back up at Prince Thioran. He gives me the slightest of nods."

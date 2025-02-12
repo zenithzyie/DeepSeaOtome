@@ -97,7 +97,6 @@ layeredimage grandpa:
         attribute neutral:
             "grandpa_neutral.png"
     zoom 0.124
-    ypos 750
     group eyes auto:
         attribute blinking default:
             "grandpa_eye_closed.png" at blink

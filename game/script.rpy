@@ -643,7 +643,7 @@ label chapter1:
     show grandpa happy at Position(xpos=0.64) with move
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh." with hpunch
     "Once he has squeezed the daylight out of us, he lets go."
-    show grandpa happy at Position(xpos=0.32) with move:
+    show grandpa happy at left2 with move:
         ease2 0.3
     g "Oh, just how many years has it been since I've seen the both of you together?"
     g "It's good to see you, little birdie."
@@ -680,6 +680,8 @@ label chapter1:
     # REMEMBER: variable to check if name is june - little birdie for any name other than june, little bug/junebug for june
     g "There's been worse smells, little birdie."
     show grandpa happy at jumpin
+    show grandpa happy:
+        ypos 1.0 zoom 1.0
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
     "I've learned some things from Grandpa in my time here."
     "He's quite proud of his history at sea with the mermaids."
@@ -1145,7 +1147,8 @@ label endofdemo:
     Pr "Hello there!"
     Pr "You've reached the end of the demo for Heart's Depth!"
     Pr "With this update, we've completely overhauled the game jam demo."
-    Pr "From here on, expect updates to come in chapters!" with jumpin
+    show prashadi at jumpin
+    Pr "From here on, expect updates to come in chapters!"
     Pr "Look forward to seeing the rest of our story, heh heh heh."
     Pr "Thank you so much for playing! Follow our game page for updates."
     Pr "There's so much more to see..."

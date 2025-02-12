@@ -22,13 +22,7 @@ label ch1_followjorunn:
     j "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
-    show jorunn glee:
-        subpixel True
-        ypos 1522 zoom 2.5
-        linear 0.20 ypos 790 zoom 1.0
-    with Pause(0.30)
-    show jorunn glee:
-        ypos 790 zoom 1.0
+
     j "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
     y "Blub blub blub!!"
@@ -38,31 +32,34 @@ label ch1_followjorunn:
     "He holds onto me but moves me around, like he's appraising what my value at a pawn shop would be."
     j "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
-    y "Blub!"
-    "Ouch!"
+    "Ouch!" with vpunch
     "The thief holds whatever he plucked from me close to his face, inspecting it with a rather curious expression."
     j "...!"
     "It takes me a moment to recognize it myself."
     "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
     j "Weird. This thing stinks of magic."
-    show jorunn neutral:
-        subpixel True
-        pos (0.5, 790) zoom 1.0
-        linear 0.33 pos (0.45, 1660) zoom 2.5
-    with Pause(0.43)
-    show jorunn neutral:
-        pos (0.45, 1660) zoom 2.5
+
+
+    show jorunn glee:
+        subpixel True ypos 2592 zoom 2.75
 
     "Then, gently, with the skill of someone who has handled many fish just like me, he brings me closer to his face."
     j "Now that I'm looking, so do you, little fishie!"
     y "Blub!!"
     j "You're no normal fish, are you?"
 
-#(Screenshake)
-
-    "A rumble echoes through the water as the currents become stronger."
+    "A rumble echoes through the water as the currents become stronger." with screenShake
     "It looks like the seastorm is picking up even more!"
+
+    show jorunn glee:
+        subpixel True
+        pos (0.45, 2592) zoom 2.75
+        linear 0.32 pos (0.5, 1050) zoom 1.0
+    with Pause(0.32)
+    show jorunn glee:
+        pos (0.5, 1050) zoom 1.0
+
     j "First thing's first, we'd better get out of here."
     "He places me on his shoulder, right under all his hair. It's surprisingly well covered."
     "The currents seem weaker from here, I feel as if I can stay here without ever coming to harm."
@@ -70,6 +67,10 @@ label ch1_followjorunn:
     y "Blub..!"
     "He's not going to eat me!"
     "The relief I feel is so strong that I feel my fins go weak. Thank goodness. Looks like I made the right choice after all."
+    scene bg sea
+    show kelp
+    show jorunn neutral
+    with dissolve
     "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
 
     menu:
@@ -108,8 +109,8 @@ label ch1_followjorunn:
     j "And you look like magic stuff."
     "Miss Prash..?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
+    show jorunn sweat
     j "Or, uh, unless I'm losing it, and you're just a normal fish."
-    show jorunn pissed
     j "I hope I'm not just talking to myself right now..."
     show jorunn neutral
     y "Blub!!!"
@@ -129,7 +130,7 @@ label ch1_followjorunn:
     show jorunn neutral
     "With that, he takes us both into one of the holes in the rocks, leading to a cave."
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
-
+    scene bg black with dissolve
     "The deeper we go, the darker it gets."
     "When I was younger, grandfather would tell me stories of his hunting trips out at sea. Of how dangerous it could be when all light left the world. "
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
@@ -149,7 +150,6 @@ label ch1_followjorunn:
             "Maybe I made the wrong decision following him..."
             "What was I thinking, trusting a merman? His kind is the reason why I fell off Hunter's boat in the first place."
             "Anything could be in here, and I'm just letting him lead me into my doom."
-            "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
     "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
@@ -158,50 +158,51 @@ label ch1_followjorunn:
     j "And... here we are!"
     "The tight tunnel walls give away into an open clearing."
     "...!"
+    scene testprash with dissolve:
+        zoom 0.2667
     "It's a large cavern."
 
-    scene testprash:
-        zoom 0.2667
     $ config.side_image_tag = "june"
-    "hmm"
-    show prashadi neutral
-    with dissolve
-    y neutral fish "Hi grandpa!!!"
-    show prashadi neutral:
-        zoom 2
-        ypos 2610
-    "wow"
 
-    show prashadi neutral:
-        subpixel True
-        pos (0.5, 1410) zpos 0.0 xzoom 1.0 zoom 1.0
-        linear 3.08 pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
-    with Pause(3.18)
-    show prashadi neutral:
-        pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
+#    show prashadi neutral:
+#        zoom 2
+#        ypos 2610
 
-    "YEAH BABY"
+#    show prashadi neutral:
+#        subpixel True
+#        pos (0.5, 1410) zpos 0.0 xzoom 1.0 zoom 1.0
+#        linear 3.08 pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
 
-    show prashadi neutral:
-        ypos 888 xzoom 1.0 zoom 0.61
+#    show prashadi neutral:
+#        pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
 
     "And are those... stars above us?"
+    show jorunn glee with dissolve
     j "Miss Prash! Are you in here?"
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
     "How is this even possible? The sky? Does that mean there's air above us too?"
     "But we definitely swam deeper down to get here."
+    show jorunn sweat
     j "Hello? Miss Prash?"
     j "..."
+    show jorunn pissed
     j "Prashadi!! I'm back!" with vpunch
-    "According to Jorunn's description, this Prashadi is a beautiful person."
+    show jorunn neutral
     "I'm not sure what to expect."
     "I think back to the mermaids in the black market with their long hair and shiny scales."
     "Maybe she will be similar to them?"
+    show jorunn glee at right2 with move
     u "Ah, you've made it back, Jor! Did you find anything good today?"
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
 
     #(a flash of grandpa's sprite here)
+    show grandpa neutral at left2
+    with dissolve
+    pause 0.2
+    hide grandpa
+    show prashadi neutral at left2
+    with fade
 
     "Grandfather!?"
     j "I found something really interesting! Take a look, Miss Prash!"
@@ -210,6 +211,7 @@ label ch1_followjorunn:
     "But Jorunn is still calling him ‘Miss Prash.'"
     "What in the world?"
     j "She had some kind of magic shards stuck in her fins."
+    show jorunn neutral
     j "I tried to take them out, but they crumbled really easily..."
     gpa "Well now, that is interesting!"
 
@@ -228,10 +230,12 @@ label ch1_followjorunn:
     Pr "It seems like she's been cursed as well."
     j "Who would curse a cute little fish like this?"
     Pr "Not fish. This one used to be human!"
+    show jorunn sweat
     j "Miss Prash, are you saying...?"
     Pr "Your little friend here used to have legs. And a voice. Possibly, even hair."
     Pr "A real human, she was."
     "Yes, that's right! It's [y], your granddaughter!"
+    show jorunn glee
     "Jorunn looks at me with sparkling eyes."
     j "Are you able to turn her back?"
     Pr "Let me get a closer look."
@@ -251,6 +255,7 @@ label ch1_followjorunn:
     "All I can do is squeeze my eyes shut and hope I'm not about to drown."
 
     #BLACK SCENE
+    scene bg black with fade
 
     "Grandpa... Hunter..."
     "Will they spend the rest of their years never knowing what happened to me after the storm?"
@@ -262,7 +267,7 @@ label ch1_followjorunn:
 
     #PRASH CAVE
 
-    "The mist has dissipated, and all that is left is me and the effects of Prashadi's spell."
+    #"The mist has dissipated, and all that is left is me and the effects of Prashadi's spell."
 
     #SCENE CHANGE - fade to black
 
