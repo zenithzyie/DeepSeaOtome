@@ -58,7 +58,7 @@ label prologue:
     "I can see something glowing through the wind and rain."
 
     #SCREEN SHAKE
-    u "[y]!" with screenShake
+    u "[y!u]!" with screenShake
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
