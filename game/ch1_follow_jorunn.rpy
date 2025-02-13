@@ -29,10 +29,10 @@ label ch1_followjorunn:
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
     show jorunn neutral
-    "He holds onto me but moves me around, like he's appraising what my value at a pawn shop would be."
+    "He holds onto me but moves me around, inspecting me."
     j "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
-    "Ouch!" with vpunch
+    "Ouch!"
     "The thief holds whatever he plucked from me close to his face, inspecting it with a rather curious expression."
     j "...!"
     "It takes me a moment to recognize it myself."
@@ -185,7 +185,6 @@ label ch1_followjorunn:
     show jorunn sweat
     j "Hello? Miss Prash?"
     j "..."
-    show jorunn pissed
     j "Prashadi!! I'm back!" with vpunch
     show jorunn neutral
     "I'm not sure what to expect."

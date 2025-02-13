@@ -82,7 +82,6 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "I can't wait to see it again, but when I think about the ocean, I can't help but feel like I broke a promise to it."
     "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can't really remember why my mother stopped taking me to see Grandfather."
@@ -638,7 +637,7 @@ label chapter1:
     show grandpa happy:
         ypos 1.0 zoom 1.0
     g "Oh, and I see the lad brought you here. Thank you my boy, get in here too!"
-    h "Hah? Sir, that's not necessary-"
+    h "Hah? Ey, that's not necessary-"
     g "Just 'cause you're a man now doesn't mean I can't still embarrass you like my own grandchild!"
     show grandpa happy at Position(xpos=0.64) with move
     "Grandfather traps Hunter too. Though Hunter groans, I can't help but laugh." with hpunch
@@ -696,7 +695,7 @@ label chapter1:
     y flustered "Sorry, Grandfather..."
     g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup o' tea."
     ny neutral "Hunter taps Grandfather on the shoulder."
-    h "Mr. Eaton, she's open."
+    h "Oy, old man. She's open."
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
     hide grandpa happy at left with dissolve
