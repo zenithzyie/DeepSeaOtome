@@ -19,35 +19,39 @@ label ch1_followjorunn:
         pos (0.45, 1914) zoom 2.0
 
     "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
-    j "Huh?"
+    uj "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
 
-    j "Oh, well this is new! Never had a fish come swimming up to my net before."
+    uj "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
     y "Blub blub blub!!"
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
     show jorunn neutral
     "He holds onto me but moves me around, inspecting me."
-    j "Huh? What's this?"
+    uj "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
     "Ouch!"
     "The thief holds whatever he plucked from me close to his face, inspecting it with a rather curious expression."
-    j "...!"
+    uj "...!"
     "It takes me a moment to recognize it myself."
     "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
-    j "Weird. This thing stinks of magic."
+    uj "Weird. This thing stinks of magic."
 
-
+    show jorunn glee:
+        subpixel True
+        pos (0.45, 1914) zoom 2.0
+        linear 0.30 pos (0.45, 2592) zoom 2.75
+    with Pause(0.30)
     show jorunn glee:
         subpixel True ypos 2592 zoom 2.75
 
     "Then, gently, with the skill of someone who has handled many fish just like me, he brings me closer to his face."
-    j "Now that I'm looking, so do you, little fishie!"
+    uj "Now that I'm looking, so do you, little fishie!"
     y "Blub!!"
-    j "You're no normal fish, are you?"
+    uj "You're no normal fish, are you?"
 
     "A rumble echoes through the water as the currents become stronger." with screenShake
     "It looks like the seastorm is picking up even more!"
@@ -55,15 +59,15 @@ label ch1_followjorunn:
     show jorunn glee:
         subpixel True
         pos (0.45, 2592) zoom 2.75
-        linear 0.32 pos (0.5, 1050) zoom 1.0
+        linear 0.32 pos (0.5, 1080) zoom 1.0
     with Pause(0.32)
     show jorunn glee:
-        pos (0.5, 1050) zoom 1.0
+        pos (0.5, 1080) zoom 1.0
 
-    j "First thing's first, we'd better get out of here."
+    uj "First thing's first, we'd better get out of here."
     "He places me on his shoulder, right under all his hair. It's surprisingly well covered."
     "The currents seem weaker from here, I feel as if I can stay here without ever coming to harm."
-    j "Hang tight, okay? Once we get home, the forest will cover us from the worst of the storm."
+    uj "Hang tight, okay? Once we get home, the forest will cover us from the worst of the storm."
     y "Blub..!"
     "He's not going to eat me!"
     "The relief I feel is so strong that I feel my fins go weak. Thank goodness. Looks like I made the right choice after all."
@@ -74,7 +78,7 @@ label ch1_followjorunn:
     "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
 
     menu:
-        "I'm nested in Jorunn's hair..."
+        "I'm nested in the thieving merman's hair..."
         "Try to look through.":
             #+1 jor
             "My curiosity wins over, and I swim forward a little to try to peer through the hair into the sea around us."
@@ -83,9 +87,9 @@ label ch1_followjorunn:
             "With the storm muffled by the cover of the kelp forest, the world around me feels different. The swim even feels peaceful."
             "Wow..."
             show jorunn glee
-            j "It's pretty way out here, don't you think?"
+            uj "It's pretty way out here, don't you think?"
             "I nod, even though he can't see it. I really wish I could take a picture of the ocean from here."
-            j "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
+            uj "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
 
         "Lean back.":
             "My exhaustion wins over and I lean back against the crook of his neck, desperate for a minute of rest."
