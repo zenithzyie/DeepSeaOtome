@@ -82,7 +82,7 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "It has been 10 years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
+    "It has been ten years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
     "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
     "I can't really remember why my mother stopped taking me to see Grandfather."
     "Even though I'm now a grown woman, she refuses to say why."
@@ -232,7 +232,7 @@ label chapter1:
 
             #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
             y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
-            fishmonger "Bass or Tilapia?"
+            fishmonger "Bass or tilapia?"
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger " Do I look like a map stand? I sell fish. Ye buy fish, then ya leave, ye get it?"
             y "I will pay you for the help! I'm just looking for this address."
@@ -358,7 +358,7 @@ label chapter1:
     "My eyes follow every gleaming thing on display."
 
     y shocked "This is incredible..."
-    "As I walked around in awe, my eyes caught on a stand of tropical flowers arranged in a beautiful pattern."
+    "As I walked around in awe, my eyes catch on a stand of tropical flowers arranged in a beautiful pattern."
     y "Mother would love to see this..."
     "My hand reaches for my camera once more."
 
@@ -440,7 +440,7 @@ label chapter1:
 
     "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
-    h "At least you do remember me! It's been only about, what... ten years since we've last seen each other?"
+    h "At least you do remember me! It's been only about, what...ten years since we've last seen each other?"
     h "I'll be honest, never expected you to come back."
     "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
     "As I look at him now, it seems like the only thing that remains is that smile."
@@ -459,7 +459,7 @@ label chapter1:
 
     #SCREEN SHAKE
     y huffed "Hey- don't just throw this dirty thing on me!"
-    h "Just keep it for now. Keep your eyes down so people can't clearly see your face... and avoid seeing things you shouldn't be looking at anyways."
+    h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
     y shocked "Seeing things I shouldn't be..?"
     ny neutral"Things I am forbidden to see... I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
     "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
@@ -855,7 +855,7 @@ label chapter1:
     #SCENE CHANGE - Black Screen
     scene bg black
     play music "audio/music_cave.mp3" volume 0.9
-    siren "After all these long years... you've finally returned home to me..."
+    siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
@@ -878,7 +878,7 @@ label chapter1:
     y fish neutral "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "Try as I might, none of my words come out right."
-    "And I've...{w} been turned into a fish by this siren!?"
+    "And I've...{w}been turned into a fish by this siren!?"
     menu:
         "Stay very, very still.":
             $ cetus_points += 1
@@ -905,7 +905,7 @@ label chapter1:
         yalign 0.1
         ease 0.5 zoom 1.5
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
-    s "There's no need to rush. We have all the time in the world together. You'll give me what I want... in due time."
+    s "There's no need to rush. We have all the time in the world together. You'll give me what I want...in due time."
     show skylla happy:
         yalign 0.1
         ease 0.7 zoom 1
@@ -1044,9 +1044,9 @@ label chapter1:
     y fish neutral "Blub...blub..."
     "Now that the adrenaline has faded I feel exhausted. My body feels like it's been run over. Everything hurts."
 
-    "Grandpa... Hunter... they must think that I'm dead by now."
+    "Grandpa...Hunter...they must think that I'm dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
-    "But... {w}how am I supposed to make it back to land?"
+    "But...{w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
     "Before I can dive any further into those thoughts I hear voices approaching from a distance."
     "I quickly dart into some foliage to hide."
@@ -1090,7 +1090,7 @@ label chapter1:
     show jorunn glee
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
-    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous... but they might be my only shot at getting help right now."
+    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous...but they might be my only shot at getting help right now."
 
     if promermaid >= 1:
         "Anything would be better than returning to the sea witch."

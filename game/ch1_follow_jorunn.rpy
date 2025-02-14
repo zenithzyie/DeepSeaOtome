@@ -6,7 +6,7 @@ label ch1_followjorunn:
 
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
     "It's now or never!"
-    "3... 2... 1!!"
+    "3...2...1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
 
@@ -101,7 +101,7 @@ label ch1_followjorunn:
     "I begin to zone out from exhaustion when he speaks again."
     show jorunn glee
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
-    "Jorunn... what strange names merfolk have."
+    "Jorunn...what strange names merfolk have."
     j "But you can call me Jor. That's what my family calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"
@@ -159,7 +159,7 @@ label ch1_followjorunn:
 
 #SCENE CHANGE - Prashadi's Cave
 
-    j "And... here we are!"
+    j "And...here we are!"
     "The tight tunnel walls give away into an open clearing."
     "...!"
     scene testprash with dissolve:
@@ -180,7 +180,7 @@ label ch1_followjorunn:
 #    show prashadi neutral:
 #        pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
 
-    "And are those... stars above us?"
+    "And are those...stars above us?"
     show jorunn glee with dissolve
     j "Miss Prash! Are you in here?"
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
@@ -211,7 +211,7 @@ label ch1_followjorunn:
     j "I found something really interesting! Take a look, Miss Prash!"
     "Jorunn pushes me towards 'Miss Prash', and I can only stare, dumbfounded."
     "That's Grandfather. That's him."
-    "But Jorunn is still calling him ‘Miss Prash.'"
+    "But Jorunn is still calling him 'Miss Prash.'"
     "What in the world?"
     j "She had some kind of magic shards stuck in her fins."
     show jorunn neutral
@@ -221,7 +221,7 @@ label ch1_followjorunn:
     menu:
         "Grandfather is a mermaid. This is..."
         "Ridiculous. That can't be possible.":
-            "But... it's undeniable that whoever I'm seeing now has Grandfather's face."
+            "But...it's undeniable that whoever I'm seeing now has Grandfather's face."
             "I don't even know what to think."
 
         "Have I been lied to this whole time?":
@@ -260,7 +260,7 @@ label ch1_followjorunn:
     #BLACK SCENE
     scene bg black with fade
 
-    "Grandpa... Hunter..."
+    "Grandpa...Hunter..."
     "Will they spend the rest of their years never knowing what happened to me after the storm?"
     "My face suddenly breaks the surface of the water, startling me from my thoughts, and I take a big gulp of air."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me afloat."
