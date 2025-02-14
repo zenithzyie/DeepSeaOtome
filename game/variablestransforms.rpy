@@ -1,12 +1,20 @@
 ﻿
-define y = Character("[player_name]", image="june")
+######################################################################
+#Protagonist + Narrator Names
+define y = Character("[player_name]", image="june", color="#ee701f")
 define ny = Character(None, what_italic=True, image="june") # for narration
-define g = Character("Grandfather", image="june")
-define h = Character("Hunter", image="june")
-define s = Character("Skylla", image="june")
-define c = Character("Cetus", image="june")
-define p = Character("Prince Thioran", image="june")
-define j = Character("Jorunn", image="june")
+define narrator = Character(None, what_italic=True) #for pure narration no image
+######################################################################
+#Main Character Names
+define h = Character("Hunter", image="june", color="#c6271d")
+define s = Character("Skylla", image="june", color="#e9a1d6")
+define c = Character("Cetus", image="june", color="#70418b")
+define p = Character("Prince Thioran", image="june", color="#4e94c9")
+define j = Character("Jorunn", image="june", color="#cb8b4f")
+define g = Character("Grandfather", image="june", color="#bcc0a3")
+define Pr = Character("Prashadi", image="june", color="#d3ffff")
+######################################################################
+#NPC Names
 define t = Character("Townsperson", image="june")
 define kid = Character("Kid", image="june")
 define woman = Character("Elderly Woman", image="june")
@@ -14,19 +22,32 @@ define fishmonger = Character("Fishmonger", image="june")
 define conductor = Character("Conductor", image="june")
 define badguy = Character("Ne'er-do-well", image="june")
 define paperboy = Character("Paperboy", image="june")
-define narrator = Character(None, what_italic=True)
-
-define Pr = Character("Prashadi", image="june")
-define gpa = Character("Grandfather?", image="june")
-
-define u = Character("???", image="june")
 define guard = Character("Guard", image="june")
-define novisualthio = Character("Angry Voice", image="june")
-define novisualjor = Character("Mischievous Voice", image="june")
-define up = Character("Princely Merman", image="june")
-define uj = Character("Thieving Merman", image="june")
-define siren = Character("Melodious Voice", image="june")
-
+######################################################################
+#Unknown Character Names
+define u = Character("???", image="june")
+define novisualthio = Character("Angry Voice", image="june", color="#4e94c9")
+define novisualjor = Character("Mischievous Voice", image="june", color="#cb8b4f")
+define up = Character("Princely Merman", image="june", color="#4e94c9")
+define uj = Character("Thieving Merman", image="june", color="#cb8b4f")
+define uhunter = Character("Strange Man", image="june", color="#c6271d")
+define ucetus = Character("Royal Merman", image="june", color="#70418b")
+define siren = Character("Melodious Voice", image="june", color="#e9a1d6")
+define gpa = Character("Grandfather?", image="june", color="#bcc0a3")
+######################################################################
+#Various Variables
+default newspaper = False
+default childrenplaying = False
+default seastorm = False
+default promermaid = 0
+default antimermaid = 0
+######################################################################
+#Various Variables 2: Electric Boogaloo
+default menuset = set()
+init:
+    $ flash = Fade(.25, 0, .75, color="#fff")
+######################################################################
+#Transforms and Locations
 define left2 = Position(xpos=0.32)
 define right2 = Position(xpos=0.66)
 
@@ -38,20 +59,11 @@ define moreright = Position(xpos=0.60)
 define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
 
-define show_gross = False
+#For when we add the ability to toggle gore (eventually)
+#define show_gross = False
 
 transform ts_moveZ(dist, ts_speed=0.5):
     linear ts_speed zoom dist yoffset (-dist*100 if dist < 1.0 else (dist-1.0) * 750)
-
-default newspaper = False
-default childrenplaying = False
-default seastorm = False
-default promermaid = 0
-default antimermaid = 0
-
-default menuset = set()
-init:
-    $ flash = Fade(.25, 0, .75, color="#fff")
 
 #Character blinking
 transform blink:

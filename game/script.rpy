@@ -82,8 +82,11 @@ label chapter1:
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "It has been ten years since I've last seen the ocean. Perhaps it was just because I missed Grandfather after being inland without contact for so long."
-    "I only ever got to see him on special holidays in the summer, but now I'm returning to Aquantis again just to see him."
+    "It has been ten years since I last saw the ocean."
+    "I used to visit quite often over the summer as a child. Grandfather would always be so excited to have me over."
+    "It's been ten years since I've last seen him, too."
+    "Perhaps it's just because I missed him after being without contact for so long, but..."
+    "Now I'm returning to Aquantis again, just to see him."
     "I can't really remember why my mother stopped taking me to see Grandfather."
     "Even though I'm now a grown woman, she refuses to say why."
     "...And Grandfather is the only other one with answers."
@@ -168,7 +171,8 @@ label chapter1:
         "The wooden newsboard":
             $ seastorm = True
             "There's a board filled with notices and posters here."
-            y "Beware of sea witch storms..."
+            "Beware of sea witch storms..."
+            "Deadly storms that strike with no rhyme or reason - use caution when traveling without seasoned sailors."
             # Show propaganda poster here
             "Do your town a favor! Report any mermaid sightings to your local Seahunting Guild."
             "The longer they live, the shorter the land!"
@@ -183,7 +187,7 @@ label chapter1:
             kid "No way, it's my turn!"
             y "How cute."
             kid "I don't wanna be no stinkin' fish! I'ma be a hunter!"
-            "I wonder if I ever played something like that as a kid here."
+            "I wonder if I ever played something like that when I was young here."
 
         "The paperboy":
             $ newspaper = True
@@ -379,9 +383,9 @@ label chapter1:
         ypos 0.0
     window auto show
 
-    u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
+    uhunter "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
     "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
-    u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch."
+    uhunter "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch."
     show hunter neutral:
         xalign 0.5
         ypos 0.0
@@ -390,18 +394,18 @@ label chapter1:
     ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
     "I slap his hand away from mine and glare at his face."
     "I do not recognize him."
-    u "It's a bit rude to slap a friend, isn't it?"
+    uhunter "It's a bit rude to slap a friend, isn't it?"
     y "Who are you, exactly?"
     "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
-    u "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
+    uhunter "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
     y neutral "I haven't been in this part of Aquantis before. You must have me mistaken for someone else."
-    u "Ha- this isn't your first time here. Don't appreciate being treated like a stranger, though I s'pose it's been awhile."
+    uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger, though I s'pose it's been awhile."
     "Bending down to my level, the stranger looks me right in the eyes."
-    u "Jogging anything in that noggin? I've grown up a bit since you've last seen this mug...how 'bout it?"
+    uhunter "Jogging anything in that noggin? I've grown up a bit since you've last seen this mug...how 'bout it?"
     "He stares at me for a moment before the realization hits."
-    u "Ah, that's right."
+    uhunter "Ah, that's right."
     #if we go mask route, just pop this back in but it doesn't make sense right now
     #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
     show hunter neutral:
@@ -409,7 +413,7 @@ label chapter1:
         ypos 0.0
         ease 0.7 zoom 1.5
     pause 0.8
-    h "Hunter {w=0.1}Aubrey{w=0.1} Morrowe."
+    uhunter "Hunter {w=0.1}Aubrey{w=0.1} Morrowe."
     if newspaper:
         ny shocked "Oh, Morrowe! That means..."
     y neutral "...Hunter?"
@@ -438,7 +442,7 @@ label chapter1:
         "Let it be.":
             y "But of course, I'll just call you Hunter."
 
-    "We used to play near the beach as kids. If there was anyone I'd recall from my time here, it'd be him."
+    "We used to play near the beach as children. If there was anyone I'd recall from my time here, it'd be him."
     "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
     h "At least you do remember me! It's been only about, what...ten years since we've last seen each other?"
     h "I'll be honest, never expected you to come back."
@@ -452,17 +456,34 @@ label chapter1:
     y "Well, yes, if you wouldn't mind..."
     h "I'll take you. Just keep your camera out of view."
     h "And stop gawking at things like you've never been here before... People might think you're a spy or somethin'."
-    "He unclips his cloak and throws it on top of my head. My nose is assaulted with the salty smell of the sea."
+    "He unclips his cloak and throws it on top of my head. My nose is filled with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
     scene bg black with screenShake
 
-    #SCREEN SHAKE
-    y huffed "Hey- don't just throw this dirty thing on me!"
-    h "Just keep it for now. Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
+    h "Just keep it for now."
+    y shocked "Hey-!"
+    menu:
+        "Thanks?":
+            $ hunter_points += 1
+            h "S'alright."
+            h "Should keep you from standin' out too much."
+            ny neutral "His cloak is heavy, but it's not a bad weight."
+            "Amidst the salt, there's another scent my nose welcomes: a more subtle vanilla."
+            "It's far more palatable. Maybe it's from Hunter's detergent?"
+
+
+        "What's the big idea, man!?":
+            $ hunter_points -= 1
+            h huffed "Sorry 'bout this."
+            y "Don't just throw this dirty thing on me!"
+            h "It'll help you blend in, yeah? You don't want people gettin' the wrong ideas about you."
+            y "I suppose."
+
+    h "Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
     y shocked "Seeing things I shouldn't be..?"
-    ny neutral"Things I am forbidden to see... I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
-    "I do as he asks, even if the cloak starts to chafe on my shoulders and crush my hat."
+    ny neutral "Things I am forbidden to see... I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
+    "I do as he asks, even if his cloak is starting to chafe on my shoulders and crush my hat."
 
     #SCENE CHANGE - Black Market
     scene bg underground market
@@ -484,7 +505,7 @@ label chapter1:
     show cg sushi with fade
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
-    "Her body is so human and serene from the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
+    "Her body is so human on the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
     "A woman...{w}no, a creature that is equal parts human and fish."
 
     $ config.side_image_tag = "june"
@@ -576,6 +597,7 @@ label chapter1:
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     play sound "audio/sfx_seagulls.ogg" loop volume 0.8 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
+    "I hand Hunter his cloak, and he puts it back on."
     y neutral "It's afternoon already?"
     show hunter neutral with dissolve
     h "Wandering does that to ya. When did your train get here?"
@@ -584,7 +606,7 @@ label chapter1:
     y "I wouldn't dream of it."
     "We're actually at the portside now, the edge of the country. Practically the edge of the world."
     "Ships are anchored near the shore. Fishermen and hunters alike line the dock, carrying supplies to and from the ships."
-    "They are much different than the ones I remember as a kid. These are large, made of steel, and produce steam."
+    "The ships are different than the ones I remember. These are large, made of steel, and produce steam."
     y shocked "Does Grandfather live on one of these ships?"
     show hunter neutral at slightRight with move
     h "The only one not made of steel, that one over there."
@@ -594,7 +616,7 @@ label chapter1:
     show hunter neutral at centre with move
     h "Well, keep moving along already. I thought you'd be more excited to see your Grandpa!"
     y "Hey, don't start shoving me- I appreciate the help, but you really don't have to follow me the whole way there."
-    h "I have business with your old man already, running into you was just a coincidence. Let's go!"
+    h "I have business with your old man, actually. Running into you was just a coincidence. Let's go!"
     y "Alright, alright, let's go."
 
     #SCENE CHANGE - Port w/ Boats (ZOOM)
@@ -666,6 +688,9 @@ label chapter1:
     scene bg black
     stop sound fadeout 2.0
     "Time just flies by, and before I know it, it's been a week."
+    "Despite my best attempts, Grandfather has not been able to answer my questions."
+    "Or rather...he doesn't want to."
+    "He's avoiding any talk about my past."
 
     #SCENE CHANGE - Shabby Market
     scene bg shabby market with dissolve
@@ -696,23 +721,31 @@ label chapter1:
     g "But I s'pose you'll never get to see you a mermaid like that, would you..."
     "He also wishes I could've inherited his love for the hunt."
     y flustered "Sorry, Grandfather..."
-    g "Nah, it don't bother me, little bug. Don't worry about me, I know it ain't everyone's cup o' tea."
-    ny neutral "Hunter taps Grandfather on the shoulder."
+    g "Nah, it don't bother me, little birdie. Don't worry about me, I know it ain't everyone's cup o' tea."
+    y "It's alright."
+    y "Say, Grandfather, when you get the time, can we please talk about that summer..."
+    show grandpa surprised with dissolve
+    g "[y!c]...right now? I thought ye were done with that business."
+    y huffed "Grandfather, please-"
+    show grandpa neutral with dissolve
+    #ny "Hunter taps Grandfather on the shoulder."
     h "Oy, old man. She's open."
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
-    hide grandpa happy at left with dissolve
+    hide grandpa with dissolve
     show hunter neutral at centre with move
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
     y flustered "Grandfather..."
+    "Part of me wonders if it's because I keep asking about my past."
     "Out of habit, my hand finds my camera still sitting at my side, waiting."
     y "I wish I could find some way to cheer him up."
+    ny huffed "And get him to talk..."
     h "Hmmh?"
     y neutral "Is there anything Grandfather likes that I could get him?"
     h "A present, huh?"
     h "Hmm, I have an idea."
     y "You do?"
-    h "Mr. Eaton'd be ecstatic to hear you go out to see one of his old haunts."
+    h "The old man'd be ecstatic to hear you go out to see one of his old haunts."
     h "How do you fancy a boat ride?"
     h "I can steer us to the safer part of the sea."
     y "That sounds perfect!"
@@ -739,6 +772,7 @@ label chapter1:
     "My only experiences are with inland animal photography, but surely sea animals are no more difficult than capturing birds on film."
     "I wonder if I'll be able to catch a picture of a mermaid?"
     "The boat travels further out to sea, putting the port behind us."
+    "I take the occasional picture of the waves or a seagull, but not much else enters my camera's lens."
     "No mermaids in sight."
     "Some time passes, and Hunter makes light conversation."
     show hunter neutral with dissolve
@@ -796,6 +830,8 @@ label chapter1:
     show bg choppywave
     with dissolve
     "Wouldn't he love to know I was out here where he was? Enjoying the sea and mermaids like he did?"
+    "Wouldn't that bring me just that much closer to learning the truth?"
+    "Surely he couldn't turn me away, then?"
     menu:
         "..."
         "Listen to Hunter.":
@@ -833,7 +869,7 @@ label chapter1:
     show hunter neutral with vpunch
     "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
     "An unimportant thought crosses my mind. I've heard of something like this before."
-    "Sailors being sung to by the sea, only to be met with death..."
+    "In fairy tales...sailors were sung to by the sea, only to be met with death..."
     hide hunter neutral with dissolve
     y "A siren's song."
     "At the edge of the boat now, my eyes look down below for the cause of my affliction, but the darkness below the waves are all I can see, and the voice all I can hear."
@@ -877,6 +913,7 @@ label chapter1:
     "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
     y fish neutral "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
+    $ config.side_image_tag = "None"
     "Try as I might, none of my words come out right."
     "And I've...{w}been turned into a fish by this siren!?"
     menu:
@@ -898,6 +935,7 @@ label chapter1:
         zoom 0.5
     show skylla happy
     with dissolve
+    $ config.side_image_tag = "june"
     siren neutral fish "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
     "Skylla..? Is that the name of this siren?"
@@ -1059,7 +1097,7 @@ label chapter1:
     novisualjor "Well, I am sorry, my prince! But I was hoping I could skip the judgement part entirely!"
     novisualjor "Maybe you could ask your Vanguard to find you something else for your dinner? They could always go pilfer from other villages."
 
-    "A '{i}prince{/i}'?"
+    "A 'prince'?"
     "Curiosity piqued, I lean over as much as I dare to stare at the new arrivals."
 
     hide kelp with dissolve
@@ -1105,7 +1143,7 @@ label chapter1:
         "Follow Striking Prince":
             $ prince_points += 1
             jump ch1_followprince
-        "Follow Scrappy Boy":
+        "Follow Thieving Merman":
             $ jorunn_points += 1
             jump ch1_followjorunn
         "Find another way" if antimermaid >= 1:

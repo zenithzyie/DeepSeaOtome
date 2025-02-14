@@ -139,9 +139,10 @@ label ch1_followprince:
     with Pause(1.75)
     "Our final destination: a grand throne room."
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
-    show cetus neutral at left2 with dissolve:
+    show cetus neutral at left2:
         xzoom -1
-    show prince frown at farleft with dissolve
+    show prince frown at farleft
+    with dissolve
 
     ny neutral fish "With purple hair and fairer complexion, he doesn't seem closely related to the prince."
     "Even his tail is different. Instead of a single tail, he has several tentacles instead, like an octopus."
@@ -149,8 +150,8 @@ label ch1_followprince:
     "This man is far more elegant...he holds himself like a royal."
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
-    u "Thioran! Where have you been?"
-    u "I've been looking all over for you. It's not safe to be out wandering while the sea storms rage on."
+    ucetus "Thioran! Where have you been?"
+    ucetus "I've been looking all over for you. It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
     "Ah! The prince is named Thioran?"
     "Thioran and Cetus...such strange names merpeople have."
@@ -161,7 +162,7 @@ label ch1_followprince:
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
     "Cetus' eyes catch on me, and I freeze at the sudden attention."
     "Any thoughts I may have had halt to a stop."
-    c "Oh? What's this? Find another pet for yourself out there, Thio?"
+    c "Oh? What's this? Find another pet for yourself out there, Thioran?"
     c "You know you don't need my permission to keep her."
     p "I wanted to ask you to examine her."
     p "She is rather strange. I've never seen a fish like her, and despite being incapable of speech, I seem to be able to understand her intentions."
@@ -213,8 +214,8 @@ label ch1_followprince:
     y "Blub! Blub!"
     "No..! I'll drown! I don't want to die like this!"
     show prince sweat
-    p "Wait a moment, uncle! There's something wrong."
-    c "Now, no need for that. It'll be over in just a moment."
+    p "Wait a moment, Uncle! There's something wrong."
+    "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."
     "I squeeze my eyes shut, preparing for the worst."
     "Grandpa..! Hunter!"
@@ -229,7 +230,8 @@ label ch1_followprince:
     "Cetus has stopped chanting, and all I can hear is the rush of water around me."
     c "Welcome back to your body, my dear."
     "I open my eyes."
-    "The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
+
+    #"The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
 
     scene bg white with hpunch
     jump endofdemo

@@ -135,6 +135,7 @@ label ch1_followjorunn:
     "With that, he takes us both into one of the holes in the rocks, leading to a cave."
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
     scene bg black with dissolve
+    stop music fadeout 5.0
     "The deeper we go, the darker it gets."
     "When I was younger, grandfather would tell me stories of his hunting trips out at sea. Of how dangerous it could be when all light left the world. "
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
@@ -146,11 +147,13 @@ label ch1_followjorunn:
 
     menu:
         "I'm sure it will be alright.":
+            $ promermaid += 1
             "No... I came this far already. I can't lose hope here."
             "At the end of his stories, Grandpa always came back home safe."
             "I have to trust that I can do the same."
 
         "I'm regretting trusting him.":
+            $ antimermaid += 1
             "Maybe I made the wrong decision following him..."
             "What was I thinking, trusting a merman? His kind is the reason why I fell off Hunter's boat in the first place."
             "Anything could be in here, and I'm just letting him lead me into my doom."
@@ -158,11 +161,12 @@ label ch1_followjorunn:
     "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
 #SCENE CHANGE - Prashadi's Cave
+    play music "audio/music_underwater.mp3" volume 0.7
 
     j "And...here we are!"
     "The tight tunnel walls give away into an open clearing."
     "...!"
-    scene testprash with dissolve:
+    scene bg prashadi cave with dissolve:
         zoom 0.2667
     "It's a large cavern."
 
@@ -226,33 +230,35 @@ label ch1_followjorunn:
 
         "Have I been lied to this whole time?":
             "He hunted mermaids even as he himself was one?"
-            "How is this even possible?"
+            "How could this be?"
 
     "Regardless, it seems he is known as Prashadi here."
     "Grandfather..."
-    Pr "It seems like she's been cursed as well."
+    gpa "It seems like she's been cursed as well."
     j "Who would curse a cute little fish like this?"
-    Pr "Not fish. This one used to be human!"
+    gpa "Not fish. This one used to be human!"
     show jorunn sweat
     j "Miss Prash, are you saying...?"
-    Pr "Your little friend here used to have legs. And a voice. Possibly, even hair."
-    Pr "A real human, she was."
+    gpa "Your little friend here used to have legs. And a voice. Possibly, even hair."
+    gpa "A real human, she was."
     "Yes, that's right! It's [y], your granddaughter!"
     show jorunn glee
     "Jorunn looks at me with sparkling eyes."
     j "Are you able to turn her back?"
-    Pr "Let me get a closer look."
+    gpa "Let me get a closer look."
     "Prashadi swims closer to me, and I can see more of this figure with Grandfather's face."
     "I stare at him, hoping to somehow get him to recognize me, but he ignores me in favor of making strange hand movements."
-    "The water starts to feel heavy, like it's clinging to my fins as Prashadi begins."
+    "The water starts to feel heavy, like it's clinging to my fins as he begins."
     "His hands wave like they're weaving something together from the water around us."
     "It's an entirely foreign movement to me."
     "This merman cannot possibly be Grandfather."
+    show mist:
+        zoom 0.2667
+    with dissolve
     "A strange, sparkling mist begins to envelop me."
     "My fins start to itch and tingle. I begin writhing in the thickening water with discomfort, bubbles spurting all around."
     "Before I can decide if the mist is safe, it gently carries me upward."
     "I'm being pulled towards the surface of the water."
-    "Wait... I can't breathe out of water like this!"
     "The tingling in my fins grows stronger as the mist gets thicker. I can't see anything."
     "My whole fish body feels like it's being pulled apart then put back together in the same instant."
     "All I can do is squeeze my eyes shut and hope I'm not about to drown."
