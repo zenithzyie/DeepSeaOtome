@@ -168,6 +168,8 @@ layeredimage hunter:
     group expressions:
         attribute neutral:
             "hunter_neutral.png"
+    zoom 0.3
+    ypos 1.46
     group eyes auto:
         attribute blinking default:
             "hunter_eye_closed.png" at blink

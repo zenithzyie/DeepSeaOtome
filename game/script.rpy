@@ -366,6 +366,7 @@ label chapter1:
     window auto hide
     show hunter neutral:
         xalign 0.5
+        ypos 0.0
         parallel:
             Null(694.0, 699.0)
             'hunter neutral' with dissolve
@@ -375,6 +376,7 @@ label chapter1:
     with Pause(0.90)
     show hunter neutral:
         zoom 1.5
+        ypos 0.0
     window auto show
 
     u "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
@@ -382,7 +384,7 @@ label chapter1:
     u "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch."
     show hunter neutral:
         xalign 0.5
-        ypos 0.03
+        ypos 0.0
         ease 0.2 zoom 1
     with vpunch
     ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
@@ -404,6 +406,7 @@ label chapter1:
     #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
     show hunter neutral:
         xalign 0.5
+        ypos 0.0
         ease 0.7 zoom 1.5
     pause 0.8
     h "Hunter {w=0.1}Aubrey{w=0.1} Morrowe."
@@ -419,7 +422,7 @@ label chapter1:
     h "Ah, you still remember that nickname. Pity..."
     show hunter neutral:
         xalign 0.5
-        ypos 0.03
+        ypos 0.0
         ease 0.2 zoom 1
 
     menu:
@@ -606,7 +609,7 @@ label chapter1:
     camera:
         ease2 1.0 zoom 1.0
     pause 0.5
-    show hunter neutral at right
+    show hunter neutral at right2
     with dissolve
     "Hunter knocks at the entrance of the ship."
     "There's some loud grunting and muffled swearing as the door opens."
@@ -670,7 +673,7 @@ label chapter1:
     show grandpa happy at left2 with dissolve
 
     "Today, Grandfather and I are shopping for the next week's supply of food before he meets a trader in the afternoon."
-    show hunter neutral at right with dissolve
+    show hunter neutral at right2 with dissolve
     "Along with Hunter, who just happened to be free."
     y neutral "...I don't know a thing about shopping for fish."
     h "It's easy enough. Just look at the colorin' and the smell."
@@ -699,7 +702,7 @@ label chapter1:
     "Grandfather pulls out his timepiece and flips it open."
     g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
     hide grandpa happy at left with dissolve
-    show hunter neutral at center with move
+    show hunter neutral at centre with move
     "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
     y flustered "Grandfather..."
     "Out of habit, my hand finds my camera still sitting at my side, waiting."
