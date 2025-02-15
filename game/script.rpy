@@ -567,7 +567,7 @@ label chapter1:
                     "If I were a mermaid, I would rather die in the sea, at home. Not here..."
                 "That's just how it is.":
                     $ antimermaid += 1
-                    "Grandpa and Hunter make their living in a world like this."
+                    "Grandfather and Hunter make their living in a world like this."
                     "Either the world floods over completely, or we keep our land safe."
                     "That's the way it is."
 
@@ -710,7 +710,7 @@ label chapter1:
     show grandpa happy:
         ypos 1.0 zoom 1.0
     g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
-    "I've learned some things from Grandpa in my time here."
+    "I've learned some things from Grandfather in my time here."
     "He's quite proud of his history at sea with the mermaids."
     g "And dont get me started on sirens!"
     g "I only ever saw one in my career, and it damn near got my whole crew!"
@@ -1082,7 +1082,7 @@ label chapter1:
     y fish neutral "Blub...blub..."
     "Now that the adrenaline has faded I feel exhausted. My body feels like it's been run over. Everything hurts."
 
-    "Grandpa...Hunter...they must think that I'm dead by now."
+    "Grandfather...Hunter...they must think that I'm dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But...{w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
