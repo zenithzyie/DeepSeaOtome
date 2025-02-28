@@ -132,7 +132,7 @@ label chapter1:
     "A quaint assortment of homes and shops descend down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
     y "Excuse me- sir! Hello?"
     "He ignores me, walking quickly away from the station."
-    "I try to ask few more people, but not one wants to give me the time of day."
+    "I try to ask a few more people, but not one wants to give me the time of day."
     ny huffed "Trying to grab anyone's attention around here seems impossible! They all just ignore me."
     "Were they so unfriendly to people from outside when I was younger? {w}I can't remember."
 
@@ -943,7 +943,7 @@ label chapter1:
         yalign 0.1
         ease 0.5 zoom 1.5
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
-    s "There's no need to rush. We have all the time in the world together. You'll give me what I want...in due time."
+    s "There's no need to rush. We have all the time in the world together. And you'll give me what I want."
     show skylla happy:
         yalign 0.1
         ease 0.7 zoom 1
