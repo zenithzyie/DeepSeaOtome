@@ -122,7 +122,10 @@ layeredimage side june:
         attribute neutral:
             "side_june_neutral.png"
         attribute shocked:
-            "side_june_shocked.png"
+            "testjune.png"
+            zoom 0.277
+            xpos -218
+            ypos 20
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
