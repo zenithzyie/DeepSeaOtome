@@ -122,7 +122,7 @@ layeredimage side june:
         attribute neutral:
             "side_june_neutral.png"
         attribute shocked:
-            "testjune.png"
+            "testjune2.png"
             zoom 0.277
             xpos -218
             ypos 20

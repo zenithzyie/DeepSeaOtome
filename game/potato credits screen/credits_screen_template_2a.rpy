@@ -68,7 +68,7 @@ screen template_2a():
                     null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                     text "Em" style "credits_name_small"
                     null height 10  # manual vertical spacing
-                    text "Lead Character Art, Writing & Production" style "credits_role_small"
+                    text "Director, Lead Character Art, Writing & Production" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"
@@ -81,7 +81,7 @@ screen template_2a():
                     null height 5
                     text "Alibun" style "credits_name_small"
                     null height 10
-                    text "Co-Director, Character Art & Writing" style "credits_role_small"
+                    text "Director, Character Art & Writing" style "credits_role_small"
                     null height 10
                     hbox:
                         #add "twitter-original"
