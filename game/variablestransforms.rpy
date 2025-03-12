@@ -1,39 +1,49 @@
-﻿
+
+image ctc_pos:
+    "gui/ctc_icon.png"
+    xpos 0.78 ypos 0.94
+    xanchor 1.0 yanchor 1.0
+    linear 0.3 alpha 1.0
+    pause 1.7
+    linear 0.3 alpha 0.0
+    pause 0.2
+    repeat
+
 ######################################################################
 #Protagonist + Narrator Names
-define y = Character("[player_name]", image="june", color="#ee701f")
-define ny = Character(None, what_italic=True, image="june") # for narration
-define narrator = Character(None, what_italic=True) #for pure narration no image
+define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed")
+define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
+define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
 ######################################################################
 #Main Character Names
-define h = Character("Hunter", image="june", color="#c6271d")
-define s = Character("Skylla", image="june", color="#e9a1d6")
-define c = Character("Cetus", image="june", color="#70418b")
-define p = Character("Prince Thioran", image="june", color="#4e94c9")
-define j = Character("Jorunn", image="june", color="#cb8b4f")
-define g = Character("Grandfather", image="june", color="#bcc0a3")
-define Pr = Character("Prashadi", image="june", color="#d3ffff")
+define h = Character("Hunter", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed")
+define s = Character("Skylla", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed")
+define c = Character("Cetus", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed")
+define p = Character("Prince Thioran", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
+define j = Character("Jorunn", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
+define g = Character("Grandfather", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed")
+define Pr = Character("Prashadi", image="june", color="#d3ffff", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #NPC Names
-define t = Character("Townsperson", image="june")
-define kid = Character("Kid", image="june")
-define woman = Character("Elderly Woman", image="june")
-define fishmonger = Character("Fishmonger", image="june")
-define conductor = Character("Conductor", image="june")
-define badguy = Character("Ne'er-do-well", image="june")
-define paperboy = Character("Paperboy", image="june")
-define guard = Character("Guard", image="june")
+define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
+define kid = Character("Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
+define woman = Character("Elderly Woman", image="june", ctc="ctc_pos", ctc_position="fixed")
+define fishmonger = Character("Fishmonger", image="june", ctc="ctc_pos", ctc_position="fixed")
+define conductor = Character("Conductor", image="june", ctc="ctc_pos", ctc_position="fixed")
+define badguy = Character("Ne'er-do-well", image="june", ctc="ctc_pos", ctc_position="fixed")
+define paperboy = Character("Paperboy", image="june", ctc="ctc_pos", ctc_position="fixed")
+define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Unknown Character Names
-define u = Character("???", image="june")
-define novisualthio = Character("Angry Voice", image="june", color="#4e94c9")
-define novisualjor = Character("Mischievous Voice", image="june", color="#cb8b4f")
-define up = Character("Princely Merman", image="june", color="#4e94c9")
-define uj = Character("Thieving Merman", image="june", color="#cb8b4f")
-define uhunter = Character("Strange Man", image="june", color="#c6271d")
-define ucetus = Character("Royal Merman", image="june", color="#70418b")
-define siren = Character("Melodious Voice", image="june", color="#e9a1d6")
-define gpa = Character("Grandfather?", image="june", color="#bcc0a3")
+define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
+define novisualthio = Character("Angry Voice", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
+define novisualjor = Character("Mischievous Voice", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
+define up = Character("Princely Merman", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
+define uj = Character("Thieving Merman", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
+define uhunter = Character("Strange Man", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed")
+define ucetus = Character("Royal Merman", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed")
+define siren = Character("Melodious Voice", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed")
+define gpa = Character("Grandfather?", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Various Variables
 default newspaper = False
@@ -122,10 +132,10 @@ layeredimage side june:
         attribute neutral:
             "side_june_neutral.png"
         attribute shocked:
-            "testjune2.png"
-            zoom 0.277
-            xpos -218
-            ypos 20
+            "side_june_shocked.png"
+            #zoom 0.277
+            #xpos -218
+            #ypos 20
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
