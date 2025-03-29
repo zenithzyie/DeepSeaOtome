@@ -682,7 +682,11 @@ label chapter1:
     "He lets out a wistful sigh."
     g "Can't be helped, I s'pose. Come on, then! Let's get you settled in."
 
-    #ADDITIONAL SCENE HERE WITH GRANDPA
+    #ADDITIONAL GRANDPA SCENE
+    scene bg gpa:
+        anchor (24, 6) zoom 0.34
+    "wow"
+    show grandpa happy at left2
 
     #SCENE CHANGE - Black Screen
     scene bg black

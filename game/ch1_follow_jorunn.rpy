@@ -3,6 +3,10 @@
 label ch1_followjorunn:
     #BRANCH - FOLLOW JORUNN
     hide prince angry with moveoutleft
+    scene bg jorvillage:
+        zoom 0.34
+    y neutral "wow"
+    show jorunn sweat
 
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
     "It's now or never!"

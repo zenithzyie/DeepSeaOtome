@@ -71,7 +71,7 @@ define prettyfarright = Position(xpos=0.85)
 
 #For when we add the ability to toggle gore (eventually)
 #define show_gross = False
-
+######################################################################
 transform ts_moveZ(dist, ts_speed=0.5):
     linear ts_speed zoom dist yoffset (-dist*100 if dist < 1.0 else (dist-1.0) * 750)
 
@@ -136,6 +136,9 @@ layeredimage side june:
             #zoom 0.277
             #xpos -218
             #ypos 20
+        #xzoom -1
+        #xpos -80
+        #ypos 20
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
