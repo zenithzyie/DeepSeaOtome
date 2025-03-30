@@ -11,18 +11,18 @@ image ctc_pos:
 
 ######################################################################
 #Protagonist + Narrator Names
-define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed")
-define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
-define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
+define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all")
+define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all") # for narration
+define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all") #for pure narration no image
 ######################################################################
 #Main Character Names
-define h = Character("Hunter", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed")
-define s = Character("Skylla", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed")
-define c = Character("Cetus", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed")
-define p = Character("Prince Thioran", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
-define j = Character("Jorunn", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
-define g = Character("Grandfather", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed")
-define Pr = Character("Prashadi", image="june", color="#d3ffff", ctc="ctc_pos", ctc_position="fixed")
+define h = Character("Hunter", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
+define s = Character("Skylla", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
+define c = Character("Cetus", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
+define p = Character("Prince Thioran", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
+define j = Character("Jorunn", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
+define g = Character("Grandfather", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Grandfather")
+define Pr = Character("Prashadi", image="june", color="#d3ffff", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi")
 ######################################################################
 #NPC Names
 define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -38,12 +38,12 @@ define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fix
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
 define novisualthio = Character("Angry Voice", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
 define novisualjor = Character("Mischievous Voice", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
-define up = Character("Princely Merman", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
-define uj = Character("Thieving Merman", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
-define uhunter = Character("Strange Man", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed")
-define ucetus = Character("Royal Merman", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed")
-define siren = Character("Melodious Voice", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed")
-define gpa = Character("Grandfather?", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed")
+define up = Character("Princely Merman", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
+define uj = Character("Thieving Merman", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
+define uhunter = Character("Strange Man", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
+define ucetus = Character("Royal Merman", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
+define siren = Character("Melodious Voice", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
+define gpa = Character("Grandfather?", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi")
 ######################################################################
 #Various Variables
 default newspaper = False
@@ -75,6 +75,17 @@ define prettyfarright = Position(xpos=0.85)
 transform ts_moveZ(dist, ts_speed=0.5):
     linear ts_speed zoom dist yoffset (-dist*100 if dist < 1.0 else (dist-1.0) * 750)
 
+######################################################################
+#Audio / BGM
+define audio.bgm_prashCave = "audio/music/02 Magic in the Meadow.mp3" 
+define audio.bgm_blackMarket = "audio/music/05 The Matron_s Scribe.ogg"
+define audio.bgm_portTown = "audio/music/07 Song for Slumber.ogg"
+define audio.bgm_cave = "audio/music/08 Mist Across the Castle Plains.mp3"
+define audio.bgm_jorVilliage = "audio/music/10 Tiny Creatures Along the Way.mp3"
+define audio.bgm_palaceThrone = "audio/music/11 Successful Journey.mp3"
+define audio.bgm_skyllaCave = "audio/music/12 Spectral Phantoms Awake.ogg"
+define audio.bgm_capital = "audio/music/13 Beatiful Reflections.ogg"
+
 #Character blinking
 transform blink:
     alpha 0.0
@@ -91,6 +102,7 @@ transform blink:
     repeat
 
 layeredimage prince:
+    at sprite_highlight('Prince Thioran')
     group expressions:
         attribute angry:
             "prince_angry.png"
@@ -111,6 +123,7 @@ layeredimage prince:
             "prince_eye_closed.png" at blink
 
 layeredimage grandpa:
+    at sprite_highlight('Grandfather')
     group expressions:
         attribute happy:
             "grandpa_happy.png"
@@ -144,6 +157,7 @@ layeredimage side june:
             "side_june_eye_closed.png" at blink
 
 layeredimage skylla:
+    at sprite_highlight('Skylla')
     group expressions:
         attribute neutral:
             "skylla_neutral.png"
@@ -168,6 +182,7 @@ layeredimage skylla:
             "SKYLLA_BLINK.png" at blink
 
 layeredimage prashadi:
+    at sprite_highlight('Prashadi')
     group expressions:
         attribute neutral:
             "prashgrandpa1.png"
@@ -175,6 +190,7 @@ layeredimage prashadi:
     ypos 1410
 
 layeredimage cetus:
+    at sprite_highlight('Cetus')
     group expressions:
         attribute neutral:
             "cetus_neutral.png"
@@ -193,6 +209,7 @@ layeredimage side june fish:
             ypos 250
 
 layeredimage hunter:
+    at sprite_highlight('Hunter')
     group expressions:
         attribute neutral:
             "hunter_neutral.png"
@@ -203,6 +220,7 @@ layeredimage hunter:
             "hunter_eye_closed.png" at blink
 
 layeredimage jorunn:
+    at sprite_highlight('Jorunn')
     group expressions:
         attribute pissed:
             "jorunn_pissed.png"

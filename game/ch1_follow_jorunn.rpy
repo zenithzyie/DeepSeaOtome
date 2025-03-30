@@ -165,7 +165,7 @@ label ch1_followjorunn:
     "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
 #SCENE CHANGE - Prashadi's Cave
-    play music "audio/music_underwater.mp3" volume 0.7
+    play music bgm_prashCave
 
     j "And...here we are!"
     "The tight tunnel walls give away into an open clearing."

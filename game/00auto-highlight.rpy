@@ -138,8 +138,8 @@ init -10 python:
             # if isinstance(speaking_char, list):
             #     is_talking = char_name in speaking_char
             # - Or if you want some special name like "all" to mean every sprite should be focused:
-            # if speaking_char == 'all':
-            #     is_talking = True
+            if speaking_char == 'all':
+                is_talking = True
 
             #### Check & Update Status ####
             # - If our key in the sprite_focus dictionary is a number AND anim_time is less than that number
@@ -183,11 +183,13 @@ init -10 python:
             #   For example, if the talking non-talking version has the sprite moved down 10 pixels,
             #   the talking version should start from 10 pixels down and rise up.
             if is_talking: # Apply the talking transformation
-                trans.matrixcolor = SaturationMatrix((1.0-sat_change) + curr_ease * sat_change) * BrightnessMatrix(-bright_change + curr_ease * bright_change)
+                #trans.matrixcolor = SaturationMatrix((1.0-sat_change) + curr_ease * sat_change) * BrightnessMatrix(-bright_change + curr_ease * bright_change)
+                trans.matrixcolor = IdentityMatrix()
                 trans.zoom = min(curr_ease * zoom_change + (1.0-zoom_change), 1.0)
                 trans.yoffset = y_change - curr_ease * y_change # Delete here if you removed y_change earlier
             else:           # Apply the not-talking transformation
-                trans.matrixcolor = SaturationMatrix(1.0 - curr_ease * sat_change) * BrightnessMatrix(curr_ease * -bright_change)
+                #trans.matrixcolor = SaturationMatrix(1.0 - curr_ease * sat_change) * BrightnessMatrix(curr_ease * -bright_change)
+                trans.matrixcolor = TintMatrix("#6E6E6E") * SaturationMatrix(1.0)
                 trans.zoom = max(1.0 - curr_ease * zoom_change, (1.0-zoom_change))
                 trans.yoffset = y_change * curr_ease            # Delete here if you removed y_change earlier
             # Finally, we don't really want to ever stop running this.

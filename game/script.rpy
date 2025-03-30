@@ -330,7 +330,7 @@ label chapter1:
     "Until it finally comes to a stop, the door opens, and I am greeted with a new world."
 
     #SCENE CHANGE -  Underground Black Market Faire
-    play music "audio/music_blackmarket.mp3"
+    play music bgm_blackMarket volume 0.4
     play sound "audio/sfx_crowd.wav" volume 0.009 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
@@ -582,7 +582,7 @@ label chapter1:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music "audio/music_port.mp3" fadein 2.0 volume 0.3
+    play music bgm_portTown fadein 2.0 volume 0.4
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     scene bg port:
@@ -894,7 +894,6 @@ label chapter1:
 
     #SCENE CHANGE - Black Screen
     scene bg black
-    play music "audio/music_cave.mp3" volume 0.9
     siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
@@ -913,6 +912,7 @@ label chapter1:
         zoom 0.343
 
     #SCENE CHANGE - underwater cave (skylla's)
+    play music bgm_skyllaCave volume 0.8
     $ config.side_image_tag = "june"
     "All at once I recognize her, or her voice at least. This is the same siren that caused me to go overboard."
     y fish neutral "BLUB BLUB BLUB!!!"
@@ -1111,8 +1111,8 @@ label chapter1:
     with dissolve
 
     "Ahead of me, two mer-people are staring each other down."
-    "One of them is a young man carrying a large net stuffed full of fish."
-    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
+    "One of them is a young man carrying a large net stuffed full of fish." (cb_name = "Jorunn")
+    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side." (cb_name = "Prince Thioran")
 
     "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"

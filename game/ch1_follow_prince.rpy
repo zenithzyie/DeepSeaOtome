@@ -79,6 +79,7 @@ label ch1_followprince:
     with dissolve
     with Pause(1.75)
 
+    play music bgm_capital volume 0.8
     show bg capitalcity
     "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
     "I feel smaller than I already am..."
