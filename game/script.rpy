@@ -80,7 +80,11 @@ label chapter1:
     play music "audio/music_town.mp3" fadein 1.0
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
-    scene cg train with dissolve
+    if not renpy.seen_image("cg train"):
+        scene cg train with dissolve
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
     "It has been ten years since I last saw the ocean."
     "I used to visit quite often over the summer as a child. Grandfather would always be so excited to have me over."
@@ -530,6 +534,11 @@ label chapter1:
     show cg sushi:
         pos (0.24, 0.49) xzoom 1.0 zoom 0.49
     window auto show
+    #so you don't unlock it until it zooms out
+    if not renpy.seen_image("cg_sushi_unlock"):
+        show cg_sushi_unlock
+        hide cg_sushi_unlock
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
     "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
     "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
     "As if she was just the catch of the day. Another fish for someone to eat for dinner."
@@ -908,8 +917,14 @@ label chapter1:
     siren "Or, shall I say, little fish?"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
 
-    scene cg skyllahands with dissolve:
-        zoom 0.343
+    if not renpy.seen_image("cg skyllahands"):
+        scene cg skyllahands with dissolve:
+            zoom 0.343
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg skyllahands with dissolve:
+            zoom 0.343
+        
 
     #SCENE CHANGE - underwater cave (skylla's)
     play music bgm_skyllaCave volume 0.8
