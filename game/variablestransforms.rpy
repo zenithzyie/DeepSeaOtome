@@ -77,7 +77,7 @@ transform ts_moveZ(dist, ts_speed=0.5):
 
 ######################################################################
 #Audio / BGM
-define audio.bgm_prashCave = "audio/music/02 Magic in the Meadow.mp3" 
+define audio.bgm_prashCave = "audio/music/02 Magic in the Meadow.mp3"
 define audio.bgm_blackMarket = "audio/music/05 The Matron_s Scribe.ogg"
 define audio.bgm_portTown = "audio/music/07 Song for Slumber.ogg"
 define audio.bgm_cave = "audio/music/08 Mist Across the Castle Plains.mp3"
@@ -100,7 +100,7 @@ transform blink:
     0.15
     alpha 0.0
     repeat
-
+######################################################################
 layeredimage prince:
     at sprite_highlight('Prince Thioran')
     group expressions:
@@ -121,7 +121,7 @@ layeredimage prince:
     group eyes auto:
         attribute blinking default:
             "prince_eye_closed.png" at blink
-
+######################################################################
 layeredimage grandpa:
     at sprite_highlight('Grandfather')
     group expressions:
@@ -135,7 +135,7 @@ layeredimage grandpa:
     group eyes auto:
         attribute blinking default:
             "grandpa_eye_closed.png" at blink
-
+######################################################################
 layeredimage side june:
     group expressions:
         attribute flustered:
@@ -155,7 +155,7 @@ layeredimage side june:
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
-
+######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')
     group expressions:
@@ -180,15 +180,16 @@ layeredimage skylla:
     group eyes auto:
         attribute blinking default:
             "SKYLLA_BLINK.png" at blink
-
+######################################################################
 layeredimage prashadi:
     at sprite_highlight('Prashadi')
     group expressions:
         attribute neutral:
             "prashgrandpa1.png"
-            zoom 0.2
-    ypos 1410
-
+            fit "contain"
+            xysize (1100,1100)
+    ypos 1190
+######################################################################
 layeredimage cetus:
     at sprite_highlight('Cetus')
     group expressions:
@@ -199,7 +200,7 @@ layeredimage cetus:
     group eyes auto:
         attribute blinking default:
             "cetus_blink.png" at blink
-
+######################################################################
 layeredimage side june fish:
     group expressions:
         attribute neutral:
@@ -207,7 +208,7 @@ layeredimage side june fish:
             zoom 0.4
             xpos 172
             ypos 250
-
+######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')
     group expressions:
@@ -218,7 +219,7 @@ layeredimage hunter:
     group eyes auto:
         attribute blinking default:
             "hunter_eye_closed.png" at blink
-
+######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
     group expressions:
@@ -234,7 +235,7 @@ layeredimage jorunn:
             "jorunn_sweat.png"
     zoom 0.34
     ypos 1080
-
+######################################################################
 init python:
     config.side_image_tag = "june"
     #proritize voice as highest volume

@@ -358,8 +358,10 @@ label chapter1:
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-    show bg underground market:
-        zoom 1.0
+    show testmarket:
+        fit "contain"
+#    show bg underground market:
+#        zoom 1.0
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
@@ -924,7 +926,7 @@ label chapter1:
     else:
         scene cg skyllahands with dissolve:
             zoom 0.343
-        
+
 
     #SCENE CHANGE - underwater cave (skylla's)
     play music bgm_skyllaCave volume 0.8
@@ -1197,13 +1199,16 @@ label ch1_badend1:
 
 label endofdemo:
     stop music fadeout 2.0
-    scene bg black with dissolve
+    scene bg prashadi cave:
+        fit "contain"
+    with dissolve
 
     "..........."
 
-    show prashadi neutral with dissolve
+    show prashadi neutral at left with dissolve
 
     Pr "Hello there!"
+    Pr "So what's next?"
     Pr "You've reached the end of the demo for Heart's Depth!"
     Pr "With this update, we've completely overhauled the game jam demo."
     show prashadi at jumpin
