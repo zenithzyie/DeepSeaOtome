@@ -358,10 +358,10 @@ label chapter1:
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-    show testmarket:
+#    show testmarket:
+#        fit "contain"
+    show bg underground market:
         fit "contain"
-#    show bg underground market:
-#        zoom 1.0
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
@@ -694,10 +694,10 @@ label chapter1:
     g "Can't be helped, I s'pose. Come on, then! Let's get you settled in."
 
     #ADDITIONAL GRANDPA SCENE
-    scene bg gpa:
-        anchor (24, 6) zoom 0.34
-    "wow"
-    show grandpa happy at left2
+    #scene bg gpa:
+    #    anchor (24, 6) zoom 0.34
+    #"wow"
+    #show grandpa happy at left2
 
     #SCENE CHANGE - Black Screen
     scene bg black
@@ -1201,14 +1201,12 @@ label endofdemo:
     stop music fadeout 2.0
     scene bg prashadi cave:
         fit "contain"
+    show prashadi neutral
     with dissolve
 
     "..........."
 
-    show prashadi neutral at left with dissolve
-
     Pr "Hello there!"
-    Pr "So what's next?"
     Pr "You've reached the end of the demo for Heart's Depth!"
     Pr "With this update, we've completely overhauled the game jam demo."
     show prashadi at jumpin
