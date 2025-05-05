@@ -145,7 +145,7 @@ label ch1_followjorunn:
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
     "I think this is what he must have meant."
     "I can't see anything in front of me at all."
-    "The only signs that I'm alive are my own thoughts, and the feel of  Jor's steady swimming as he takes us deeper still."
+    "The only signs that I'm alive are my own thoughts, and the feel of  Jorunn's steady swimming as he takes us deeper still."
     "What kind of merperson even lives in a place like this?"
     "As the darkness stretches on, I begin to feel anxious."
 
