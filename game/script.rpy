@@ -1086,7 +1086,7 @@ label chapter1:
     stop sound
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
-    "The force spends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
+    "The force sends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
     stop music
     scene bg black
 
