@@ -1,82 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('images/mist.png') at 0x00000000053f4c70>:
-  File "game/ch1_follow_jorunn.rpy", line 261, in script
-    "A strange, sparkling mist begins to envelop me."
-OSError: Couldn't find file 'images/mist.png'.
+While running game code:
+  File "game/script.rpy", line 263, in script
+    y neutral "It's [player] Finch."
+NameError: name 'player' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/ch1_follow_jorunn.rpy", line 261, in script
-    "A strange, sparkling mist begins to envelop me."
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2557, in execute
+  File "game/script.rpy", line 263, in script
+    y neutral "It's [player] Finch."
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 615, in execute
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 623, in execute
     renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\exports.py", line 1493, in say
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\exports\sayexports.py", line 132, in say
     who(what, *args, **kwargs)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1394, in __call__
-    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1045, in do_display
-    display_say(who,
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 741, in display_say
-    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ui.py", line 301, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 2165, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 2818, in interact_core
-    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\core.py", line 1352, in draw_screen
-    surftree = renpy.display.render.render_screen(
-  File "render.pyx", line 486, in renpy.display.render.render_screen
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\transform.py", line 957, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\layout.py", line 900, in render
-    surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\transform.py", line 957, in render
-    return RenderTransform(self).render(width, height, st, at)
-  File "accelerator.pyx", line 978, in renpy.display.accelerator.RenderTransform.render
-  File "accelerator.pyx", line 413, in renpy.display.accelerator.RenderTransform.render_child
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\image.py", line 513, in render
-    return wrap_render(self.target, width, height, st, at)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\image.py", line 316, in wrap_render
-    rend = render(child, w, h, st, at)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 260, in renpy.display.render.render
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 626, in render
-    return cache.get(self, render=True)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 309, in get
-    surf = image.load()
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 761, in load
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1455, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1369, in prefix_suffix
+    return (sub(prefix) + sub(body) + sub(suffix))
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\character.py", line 1349, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\substitutions.py", line 373, in substitute
+    s = interpolate(s, variables) # type: ignore
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\substitutions.py", line 86, in interpolate
     raise e
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\display\im.py", line 711, in load
-    filelike = renpy.loader.load(self.filename, directory="images")
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\loader.py", line 672, in load
-    raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/mist.png'.
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\substitutions.py", line 78, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1215, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1208, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "<none>", line 1, in <module>
+NameError: name 'player' is not defined
 
 Windows-10-10.0.19045 AMD64
-Ren'Py 8.2.1.24030407
-HeartsDepthDEMO 2.0
-Fri Feb 14 03:41:04 2025
+Ren'Py 8.3.6.25022803
+HeartsDepthDEMO 2.0.1
+Fri May  9 21:13:19 2025

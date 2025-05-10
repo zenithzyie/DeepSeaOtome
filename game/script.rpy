@@ -86,9 +86,9 @@ label chapter1:
     else:
         scene cg train with dissolve
     "I was a child the last time I did something as silly as that."
-    "It has been ten years since I last saw the ocean."
+    "It's been at least ten years since I've seen the ocean."
     "I used to visit quite often over the summer as a child. Grandfather would always be so excited to have me over."
-    "It's been ten years since I've last seen him, too."
+    "It's been over ten years since I've last seen him, too."
     "Perhaps it's just because I missed him after being without contact for so long, but..."
     "Now I'm returning to Aquantis again, just to see him."
     "I can't really remember why my mother stopped taking me to see Grandfather."
@@ -129,14 +129,13 @@ label chapter1:
             hide camera with dissolve
             y "Let's see how it turned out!"
             # Image of picture here
+            "A quaint assortment of homes and shops descend down the hill that leads to the harbor."
             y "This part of town has a great view of the sea."
-            y "It's hard to believe that the port used to be further down."
 
-    "The letter Grandfather sent me had his address, though it would be helpful to ask for some directions. The harbor city is huge."
-    "A quaint assortment of homes and shops descend down the hill that lead to the ports, cramped with new and old parts of the city mixed together."
+    "The letters Grandfather sent had his address, though it would be helpful to ask for some directions. The harbor city is huge."
     y "Excuse me- sir! Hello?"
-    "He ignores me, walking quickly away from the station."
-    "I try to ask a few more people, but not one wants to give me the time of day."
+    "He ignores me, walking away from the station."
+    "I try to ask a few more people, but no one wants to give me the time of day."
     ny huffed "Trying to grab anyone's attention around here seems impossible! They all just ignore me."
     "Were they so unfriendly to people from outside when I was younger? {w}I can't remember."
 
@@ -153,8 +152,7 @@ label chapter1:
     #SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
     ny huffed "Are they referring to my camera? They're hardly being secretive about wanting to rob me!"
-    "I quietly slip away from the men watching me, heading further down the road."
-    "I keep my camera close to my hip, hiding it with my coat to prevent any further unwanted attention."
+    "I quickly walk away from the men watching me, holding my camera closer."
 
     #SCENE CHANGE - (Shabby Market [Zoomed In])
     #SUBTLE ZOOM IN FROM CENTRE
@@ -167,22 +165,19 @@ label chapter1:
     with dissolve
     with Pause(1.75)
     show bg shabby market:
-        zoom 1.0
-    ny neutral "The smell grows worse as I suddenly find myself at a market."
+        fit "contain"
+    #play sound "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
+    #make this a more occasional/easygoing market sfx
+    ny neutral "I suddenly find myself at a market."
     "There are so many interesting things to see."
     menu:
         "What catches your eye?"
         "The wooden newsboard":
             $ seastorm = True
             "There's a board filled with notices and posters here."
-            "Beware of sea witch storms..."
+            "Beware of sudden sea storms..."
             "Deadly storms that strike with no rhyme or reason - use caution when traveling without seasoned sailors."
             # Show propaganda poster here
-            "Do your town a favor! Report any mermaid sightings to your local Seahunting Guild."
-            "The longer they live, the shorter the land!"
-            "A group of people stand just past the newsboard, yelling."
-            t "It's the end of times! Return to fish!"
-            "I walk away quickly. Best not to interact with those types."
 
         "Children playing in the street":
             $ childrenplaying = True
@@ -202,36 +197,53 @@ label chapter1:
             y "But where have I heard it from..?"
             "I tuck the newspaper in my coat for later."
 
-    "The smell of fish, salt, smoke and sewer is strong here. Though despite it, there seemed to be a few friendlier townsfolk around."
+    "There seems to be friendlier townsfolk around now that I’ve reached the market."
 
     "Where do I start...?"
     menu talktownsfolk:
         set menuset
         "Talk to..."
         "Elderly woman":
-            y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
+            y " Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
             "The woman turns to me. She has a crazed look on her face."
             woman "Knock knock."
             y "Pardon?"
             woman "Knock knock."
-            y "Oh, I know this one. Who's there?"
+            y "Oh, I know this one. Who’s there?"
+            "Her glazed eyes stare unblinkingly at me."
             woman "Knock knock."
-            y flustered "Uh...knock knock?"
-            "The old woman grins toothily."
-            woman "Knock knock."
-            y "Have a good day, ma'am."
-            "I walk away quickly."
+            "…"
+            y "Uh…knock knock?"
+            "The woman grins toothily, looking pleased with my response."
+            woman "Knock knock!"
+            #bolding makes it look weird
+            "It doesn’t seem like she’s trying to tell me a joke at all."
+            "I wonder if I should show her the address on the letter."
+            "Even so, this is really getting nowhere..."
+            "Surely there are others around who can help me find Grandfather?"
+            y "Have a good day, ma’am."
+            "I quickly walk away from the strange woman, though I can’t help but feel like whatever she kept repeating is important somehow."
+
             jump talktownsfolk
 
         "Child with toy":
-            y neutral "Hey, there! Do you know where I could find this area?"
+            y "Hey, there! Do you know where I could find this area?"
             "The child is holding a plush octopus tightly. It looks well-loved."
-            "I show him the address, and he glances at it."
+            "I show him the address on the letter, and he glances at it."
             kid "Oh, I know that place!"
-            kid "My mama says I'm not allowed to go to the west alley."
-            kid "She says there's bad people there."
-            y shocked "Oh..."
-            y neutral "Well, thank you for your help."
+            "The child’s eyes gleam proudly with excitement and he hugs the octopus toy tighter against his chest."
+            kid "That’s near the west alley. My mama says I can’t play over there."
+            kid "She says it’s full of bad people."
+            "He gives me a look."
+            kid "Are you bad people?"
+            y "No, I’m just looking for someone who lives here."
+            "I smile at him reassuringly."
+            y "Thank you for your help."
+            "The child nods happily."
+            kid "No problem, lady!"
+            "He dashes off with a giggle."
+            "I have no choice but to find someone else for more information."
+
             jump talktownsfolk
 
         "Fishmonger":
@@ -239,37 +251,44 @@ label chapter1:
             ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
             #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
-            y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
-            fishmonger "Bass or tilapia?"
+            y "Good day to you sir. I'm sorry for disrupting you, but-"
+            fishmonger "Bass or tilapia?" with vpunch
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
-            fishmonger " Do I look like a map stand? I sell fish. Ye buy fish, then ya leave, ye get it?"
+            fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then ya leave, ya get it?"
             y "I will pay you for the help! I'm just looking for this address."
-            "Before he could deny me once more, I show the bottom half of the letter where the address is clearly written."
-            #with suggestions from Tay
             fishmonger "I ain't gonna be telling any airsick in-landler how to get—"
-            "He squints at the paper, adjusting his sight to get a better look at it."
-            fishmonger "What did you say your name was again?"
-            y "It's [player_name] Finch."
-            fishmonger "Finch, you say..."
+            "Before he can deny me again, I show him the bottom half of the letter where the address is clearly written."
+            "He squints at the paper."
+            fishmonger "What did ya say ya name was again?"
+            y neutral "It's [y] Finch."
+            fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            #moved dialogue around - end of tay suggestions
-            fishmonger "....Girlie, do ye know where that is? That's in the Black Market District. Someone like you don't belong there. Hell, even I avoid it."
-            "Black Market District..?"
-            y "Even so, I have to get there. I'll pay you if you just point me in the right direction."
-            fishmonger "Alrighty, little lady."
-            fishmonger "Five hits on the brick. Pause, give three, and pause again to give four."
+            fishmonger "The code for that wall’s five, three, four. An’ remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
-            "He looks at me and grins toothily."
+            "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
-            ny huffed "Clearly, the only language merchants speak is money..."
-            y neutral "Oh, yes. Thank you so much for the help."
-            "I leave him a fair amount of coin for his trouble."
+            "Clearly, the only language merchants speak is money..."
+            y "Oh, yes. Thank you so much for the help."
+            "That was far from helpful!"
+            "But, I leave him a fair amount of coin for his trouble anyway."
+            "Perhaps I will have better luck with someone else."
+
             jump talktownsfolk
 
     #SCENE CHANGE - Brick Wall
+    "It seems I have spoken to everyone I can in the area."
+
+    "According to what I’ve been told, I need to go to the west alley and knock on the wall."
+
+    "The code was… five, three, four?"
+
+    "That really isn’t much to go off of. People have such an odd way of giving directions in Aquantis."
+
+    "Still, it’s more than what I started with."
+
     scene bg brickwall
     $ config.side_image_tag = "june"
-    ny neutral"I arrive at the west alleyway. It's a rather nondescript path."
+    ny neutral "I arrive at the west alleyway. It's a rather nondescript path."
     "Upon reaching the end, I make a left turn down to see a brick wall. It has an odd discolouration unlike the rest."
     "This must be the wall the merchant spoke of. "
     "Well."
@@ -317,11 +336,12 @@ label chapter1:
     "..2..3..4.."
     "There is no response at first, but..."
     ny shocked "Suddenly, the wall is pulled back."
-    "With cautionary steps, I push inside, seeing no one is there behind the door."
+    "With cautionary steps, I move closer."
     stop music fadeout 5.0
 
     #SCENE CHANGE - Black Screen
     scene bg black with slideawayright
+    #note: this could be somehting like....better
     "It closes the moment I enter. It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav" volume 0.1
@@ -358,8 +378,6 @@ label chapter1:
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-#    show testmarket:
-#        fit "contain"
     show bg underground market:
         fit "contain"
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
@@ -506,9 +524,11 @@ label chapter1:
 
     #SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
-    camera:
-        zoom 2.1
-    show cg sushi with fade
+#    camera:
+#        zoom 2.1
+#    show cg sushi with fade
+    show testmermaidsushi with fade:
+        fit "contain"
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
     "Her body is so human on the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
