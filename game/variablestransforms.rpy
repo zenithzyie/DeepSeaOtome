@@ -185,7 +185,28 @@ layeredimage prashadi:
     at sprite_highlight('Prashadi')
     group expressions:
         attribute neutral:
-            "prashgrandpa1.png"
+            "prashgrandpa NUETRAL2.png"
+            fit "contain"
+            xysize (1100,1100)
+        attribute angry:
+            "prashgrandpa ANGRY2.png"
+            fit "contain"
+            xysize (1100,1100)
+        attribute happy:
+            "prashgrandpa HAPPY2.png"
+            fit "contain"
+            xysize (1100,1100)
+        attribute nervous:
+            "prashgrandpa NERVOUS2.png"
+            fit "contain"
+            xysize (1100,1100)
+        attribute shocked:
+            "prashgrandpa SHOCKED2.png"
+            fit "contain"
+            xysize (1100,1100)
+    group eyes auto:
+        attribute blinking default:
+            "prashgrandpa_eye_closed.png" at blink
             fit "contain"
             xysize (1100,1100)
     ypos 1190
