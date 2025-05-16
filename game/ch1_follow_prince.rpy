@@ -81,7 +81,7 @@ label ch1_followprince:
 
     play music bgm_capital volume 0.8
     show bg capitalcity
-    "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
+    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the Inlanders decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."

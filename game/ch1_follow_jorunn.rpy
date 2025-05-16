@@ -79,7 +79,7 @@ label ch1_followjorunn:
     show kelp
     show jorunn neutral
     with dissolve
-    "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
+    ny neutral fish "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
 
     menu:
         "I'm nested in the thieving merman's hair..."
@@ -140,7 +140,7 @@ label ch1_followjorunn:
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
     scene bg black with dissolve
     stop music fadeout 5.0
-    "The deeper we go, the darker it gets."
+    ny neutral fish "The deeper we go, the darker it gets."
     "When I was younger, grandfather would tell me stories of his hunting trips out at sea. Of how dangerous it could be when all light left the world. "
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
     "I think this is what he must have meant."
@@ -172,7 +172,7 @@ label ch1_followjorunn:
     "...!"
     scene bg prashadi cave with dissolve:
         zoom 0.2667
-    "It's a large cavern."
+    ny neutral fish "It's a large cavern."
 
     $ config.side_image_tag = "june"
 

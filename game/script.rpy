@@ -52,7 +52,7 @@ label prologue:
 
     show hunter silhouette with dissolve
 
-    u "Blast... I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    u "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
@@ -197,7 +197,7 @@ label chapter1:
             y "But where have I heard it from..?"
             "I tuck the newspaper in my coat for later."
 
-    "There seems to be friendlier townsfolk around now that I’ve reached the market."
+    "There seems to be friendlier townsfolk around now that I've reached the market."
 
     "Where do I start...?"
     menu talktownsfolk:
@@ -209,7 +209,7 @@ label chapter1:
             woman "Knock knock."
             y "Pardon?"
             woman "Knock knock."
-            y "Oh, I know this one. Who’s there?"
+            y "Oh, I know this one. Who's there?"
             "Her glazed eyes stare unblinkingly at me."
             woman "Knock knock."
             "…"
@@ -217,12 +217,12 @@ label chapter1:
             "The woman grins toothily, looking pleased with my response."
             woman "Knock knock!"
             #bolding makes it look weird
-            "It doesn’t seem like she’s trying to tell me a joke at all."
+            "It doesn't seem like she's trying to tell me a joke at all."
             "I wonder if I should show her the address on the letter."
             "Even so, this is really getting nowhere..."
             "Surely there are others around who can help me find Grandfather?"
-            y "Have a good day, ma’am."
-            "I quickly walk away from the strange woman, though I can’t help but feel like whatever she kept repeating is important somehow."
+            y "Have a good day, ma'am."
+            "I quickly walk away from the strange woman, though I can't help but feel like whatever she kept repeating is important somehow."
 
             jump talktownsfolk
 
@@ -231,12 +231,12 @@ label chapter1:
             "The child is holding a plush octopus tightly. It looks well-loved."
             "I show him the address on the letter, and he glances at it."
             kid "Oh, I know that place!"
-            "The child’s eyes gleam proudly with excitement and he hugs the octopus toy tighter against his chest."
-            kid "That’s near the west alley. My mama says I can’t play over there."
-            kid "She says it’s full of bad people."
+            "The child's eyes gleam proudly with excitement and he hugs the octopus toy tighter against his chest."
+            kid "That's near the west alley. My mama says I can't play over there."
+            kid "She says it's full of bad people."
             "He gives me a look."
             kid "Are you bad people?"
-            y "No, I’m just looking for someone who lives here."
+            y "No, I'm just looking for someone who lives here."
             "I smile at him reassuringly."
             y "Thank you for your help."
             "The child nods happily."
@@ -263,7 +263,7 @@ label chapter1:
             y neutral "It's [y] Finch."
             fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            fishmonger "The code for that wall’s five, three, four. An’ remember to pause in between!"
+            fishmonger "The code for that wall's five, three, four. An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
@@ -278,13 +278,13 @@ label chapter1:
     #SCENE CHANGE - Brick Wall
     "It seems I have spoken to everyone I can in the area."
 
-    "According to what I’ve been told, I need to go to the west alley and knock on the wall."
+    "According to what I've been told, I need to go to the west alley and knock on the wall."
 
     "The code was… five, three, four?"
 
-    "That really isn’t much to go off of. People have such an odd way of giving directions in Aquantis."
+    "That really isn't much to go off of. People have such an odd way of giving directions in Aquantis."
 
-    "Still, it’s more than what I started with."
+    "Still, it's more than what I started with."
 
     scene bg brickwall
     $ config.side_image_tag = "june"
@@ -360,26 +360,28 @@ label chapter1:
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
     show bg underground market:
-        subpixel True pos (0.92, 1.69) zoom 1.85
+        subpixel True pos (0.73, 3.89) zoom 2.0
     with dissolve
     with Pause(0.75)
-    show bg black with dissolve
     show bg underground market:
-        subpixel True pos (0.37, 1.04) zoom 1.85
-    with dissolve
+        subpixel True pos (2.11, 2.16) zoom 1.50
+    with fade
     with Pause(0.75)
-    show bg black with dissolve
+    show bg underground market:
+        subpixel True pos (-0.28, 3.43) zoom 2.0
+    with fade
+    with Pause(0.75)
     #SUBTLE ZOOM IN FROM CENTRE
     show bg underground market:
+        fit "contain"
         subpixel True pos (0.0, 1.0) zoom 1.05
         xalign 0.5
         subpixel True
         zoom 1.05
         linear 1.75 zoom 1.0
-    with dissolve
+    with fade
     with Pause(1.75)
-    show bg underground market:
-        fit "contain"
+    show bg underground market
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
     "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
     "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
@@ -479,7 +481,7 @@ label chapter1:
     h "Need some help finding your way?"
     y "Well, yes, if you wouldn't mind..."
     h "I'll take you. Just keep your camera out of view."
-    h "And stop gawking at things like you've never been here before... People might think you're a spy or somethin'."
+    h "And stop gawking at things like you've never been here before...People might think you're a spy or somethin'."
     "He unclips his cloak and throws it on top of my head. My nose is filled with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
@@ -506,11 +508,13 @@ label chapter1:
 
     h "Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
     y shocked "Seeing things I shouldn't be..?"
-    ny neutral "Things I am forbidden to see... I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
+    ny neutral "Things I am forbidden to see...? What could he be talking about?"
+    "I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
     "I do as he asks, even if his cloak is starting to chafe on my shoulders and crush my hat."
 
     #SCENE CHANGE - Black Market
-    scene bg underground market
+    scene bg underground market:
+        fit "contain"
 
     show hunter neutral with dissolve
 
@@ -570,7 +574,9 @@ label chapter1:
         zoom 2.0
     camera:
         zoom 1.0
-    scene bg underground market with fade
+    scene bg underground market:
+        fit "contain"
+    with fade
     show hunter neutral with dissolve
     h "I said keep your eyes down, or people might see your face. You don't want them remembering what you look like."
     $ config.side_image_tag = "june"
@@ -825,7 +831,7 @@ label chapter1:
     "I can't see a hint of blue in the sky."
     "Our perfect sailing day was covered by clouds of grey."
     y shocked "It was sunny only moments ago! What is this?"
-    h "Blast... I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    h "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
     if seastorm:
         "I remember reading something about this."
         "If this is a sea witch's storm..."
@@ -1132,6 +1138,8 @@ label chapter1:
 
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
+    show prince angry at farleft
+    show jorunn sweat at right2
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
     novisualthio "Return them now, and your judgment will be fair."
