@@ -531,7 +531,7 @@ label chapter1:
 #    camera:
 #        zoom 2.1
 #    show cg sushi with fade
-    show testmermaidsushi with fade:
+    show cg sushi with fade:
         fit "contain"
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
