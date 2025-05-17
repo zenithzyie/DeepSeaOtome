@@ -528,11 +528,11 @@ label chapter1:
 
     #SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
-#    camera:
-#        zoom 2.1
-#    show cg sushi with fade
-    show cg sushi with fade:
-        fit "contain"
+    show cg sushi:
+        subpixel True pos (0,0) zoom 1.0
+    with fade
+    #show cg sushi with fade:
+    #    fit "contain"
     "There is a pale but beautiful face in the dark, behind glass."
     "The further along we walk, the more of her face is revealed."
     "Her body is so human on the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
@@ -554,11 +554,12 @@ label chapter1:
     window auto hide
     show cg sushi:
         subpixel True
-        pos (0.5, 1.0) xzoom 1.0 zoom 1.0
-        ease 3.00 pos (0.24, 0.49) xzoom 1.0 zoom 0.49
+        pos (0, 0) xzoom 1.0 zoom 1.0
+        ease 3.10 pos (0, 0) xzoom 1.0 zoom 0.3334
     with Pause(3.10)
     show cg sushi:
-        pos (0.24, 0.49) xzoom 1.0 zoom 0.49
+        fit "contain"
+        pos (0, 0) xzoom 1.0 zoom 1.0
     window auto show
     #so you don't unlock it until it zooms out
     if not renpy.seen_image("cg_sushi_unlock"):
