@@ -9,16 +9,32 @@ label start:
 
     #lower music when voice line is playing
     default preferences.emphasize_audio = True
-
     jump get_name
 
 label get_name:
     scene bg black
 
+    show text "My granddaughter.{w}":
+        align (0.5,0.5)
+    with dissolve
+    pause
+    show text "It's getting warmer here. Summer already now. {p}You used to love playing by pier here with me as a baby.{p} You remember that, birdie?{w}":
+        align (0.5,0.5)
+    with dissolve
+    pause
+    show text "You must be tall enough to go on the boats by yourself now.{w}":
+        align (0.5,0.5)
+    with dissolve
+    pause
+    show text "I miss you. I hope to you see again one day.{w}":
+        align (0.5,0.5)
+    with dissolve
+    pause
+    hide text with dissolve
     show side june neutral at farleft with dissolve:
         yalign 0.1
 
-    #GET PLAYER NAME
+label enter_name:
     $player_name = renpy.input("What is your name?", default = "June", length=15)
 
     $player_name.strip
@@ -34,7 +50,7 @@ label get_name:
             hide side june neutral with dissolve
 
         "No":
-            jump get_name
+            jump enter_name
 
 #PROLOGUE
 label prologue:
@@ -52,13 +68,14 @@ label prologue:
 
     show hunter silhouette with dissolve
 
-    u "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    u "Blast...I've sailed us right into a sea witch's storm! Hold onto something!"
     "The ship creaks as he tries to turn it back towards the port, but the waves are unrelenting."
     "Something stirs in the back of my memory as I stare down into the waves below."
     "I can see something glowing through the wind and rain."
 
     #SCREEN SHAKE
     u "[y!u]!" with screenShake
+    #u "!!!" with screenShake
     $ config.side_image_tag = "june"
     "I try to reach for it, forgetting myself for just a moment."
 
@@ -71,7 +88,7 @@ label prologue:
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "Regret floods my mind, but it's too late."
     "I can feel myself fading..."
-    jump chapter1
+    jump get_name
 
 #CHAPTER 1
 label chapter1:
