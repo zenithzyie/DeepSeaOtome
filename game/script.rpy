@@ -348,9 +348,7 @@ label chapter1:
                     jump knocking
 
     label afterknocking:
-    "..3..4..5..."
-    "..1..2..3..."
-    "..2..3..4.."
+
     "There is no response at first, but..."
     ny shocked "Suddenly, the wall is pulled back."
     "With cautionary steps, I move closer."
@@ -400,8 +398,7 @@ label chapter1:
     with Pause(1.75)
     show bg underground market
     "It's almost like a circus, or a fairground. Many merchants' booths have strange knick-knacks begging to be looked at."
-    "It's hard to make out any faces. No one here seems keen to be recognized in any fashion; a sea of cloths and rags stare back at me as I exit the elevator."
-    "Exotic fruits, animals, books, and so many more things from what must have been lands long gone to the waves are being sold here as rarities."
+    "It's hard to make out any faces. No one here seems keen to be recognized."
     "My eyes follow every gleaming thing on display."
 
     y shocked "This is incredible..."
@@ -426,19 +423,18 @@ label chapter1:
         ypos 0.0
     window auto show
 
-    uhunter "I wouldn't dare to take out that camera here, unless you're planning on joining the fish in the stands."
-    "My heart sinks as I stand frozen, feeling a gloved hand on top of my own, stopping me."
-    uhunter "I thought I saw a familiar face in the crowd. I didn't know it was you, [y] Finch."
+    uhunter "Careful where you point that thing. I wouldn’t take your camera out here ‘less you want to leave in a barrel."
+    "I freeze as a stranger’s hand reaches over to cover my own ."
+    uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
     show hunter neutral:
         xalign 0.5
         ypos 0.0
         ease 0.2 zoom 1
     with vpunch
-    ny huffed "I turn to see who the hell the man is behind me. How does he know my name?"
-    "I slap his hand away from mine and glare at his face."
-    "I do not recognize him."
-    uhunter "It's a bit rude to slap a friend, isn't it?"
+    ny shocked "I turn to see who the man is behind me. How does he know my name?"
+    "I quickly yank my hand away."
     y "Who are you, exactly?"
+    uhunter "Bit rude to greet a friend like that, isn't it?"
     "He scoffs and shakes his head."
 
     #TODO SPRITE CHANGE - Hunter Disappointed
@@ -516,7 +512,7 @@ label chapter1:
             "It's far more palatable. Maybe it's from Hunter's detergent?"
 
 
-        "What's the big idea, man!?":
+        "What's the big idea, man?":
             $ hunter_points -= 1
             h huffed "Sorry 'bout this."
             y "Don't just throw this dirty thing on me!"
