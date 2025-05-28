@@ -46,7 +46,7 @@ label enter_name:
     menu:
         "Is [y] correct?"
         "Yes":
-            jump prologue
+            jump chapter1
             hide side june neutral with dissolve
 
         "No":
@@ -54,7 +54,6 @@ label enter_name:
 
 #PROLOGUE
 label prologue:
-    #TODO SCENE ?
     scene bg choppywave
     show noise:
         alpha .3
@@ -88,20 +87,22 @@ label prologue:
     "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
     "Regret floods my mind, but it's too late."
     "I can feel myself fading..."
-    jump get_name
 
 #CHAPTER 1
 label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     play music "audio/music_town.mp3" fadein 1.0
+    play sound "audio/sfx_train.mp3" fadein 2.0 volume 0.07 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
-    if not renpy.seen_image("cg train"):
-        scene cg train with dissolve
+    if not renpy.seen_image("cg_train"):
+        scene cg_train with dissolve:
+            fit "contain"
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
-        scene cg train with dissolve
+        scene cg_train with dissolve:
+            fit "contain"
     "I was a child the last time I did something as silly as that."
     "It's been at least ten years since I've seen the ocean."
     "I used to visit quite often over the summer as a child. Grandfather would always be so excited to have me over."
@@ -112,8 +113,9 @@ label chapter1:
     "Even though I'm now a grown woman, she refuses to say why."
     "...And Grandfather is the only other one with answers."
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
+    stop sound fadeout 2.0
 
-    "The screeching of the brakes signal the train to a stop."
+    #"The screeching of the brakes signal the train to a stop."
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     show bg shabby town:
@@ -435,16 +437,10 @@ label chapter1:
     "I quickly yank my hand away."
     y "Who are you, exactly?"
     uhunter "Bit rude to greet a friend like that, isn't it?"
-    "He scoffs and shakes his head."
-
-    #TODO SPRITE CHANGE - Hunter Disappointed
-    uhunter "You don't remember your old playmate? I'm hurt! After all these years, I didn't once forget about you."
-    y neutral "I haven't been in this part of Aquantis before. You must have me mistaken for someone else."
-    uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger, though I s'pose it's been awhile."
-    "Bending down to my level, the stranger looks me right in the eyes."
-    uhunter "Jogging anything in that noggin? I've grown up a bit since you've last seen this mug...how 'bout it?"
-    "He stares at me for a moment before the realization hits."
-    uhunter "Ah, that's right."
+    y "A friend?"
+    y neutral "I’m sorry sir, you’ve got the wrong person. I haven’t been in this part of Aquantis before."
+    uhunter "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger either, though I s'pose it's been awhile."
+#    "He pulls down his mask to reveal a handsome and somewhat-familiar face."
     #if we go mask route, just pop this back in but it doesn't make sense right now
     #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
     show hunter neutral:
@@ -452,17 +448,29 @@ label chapter1:
         ypos 0.0
         ease 0.7 zoom 1.5
     pause 0.8
-    uhunter "Hunter {w=0.1}Aubrey{w=0.1} Morrowe."
+    uhunter "Hunter {w=0.1}Morrowe."
     if newspaper:
-        ny shocked "Oh, Morrowe! That means..."
-    y neutral "...Hunter?"
-    h "That's my name, yes."
-    "He looks positively delighted to hear me say his name."
-    y "..."
-    y shocked "Oh!"
-    y neutral "Right, Hammy! You were so different when we were young!"
-    "He deflates as soon as I say it."
-    h "Ah, you still remember that nickname. Pity..."
+        ny shocked "Morrowe? I saw that name in the newspaper earlier. But the man himself looks unfamiliar."
+    h " Jogging anything in that noggin?"
+    h "I’ve grown up a bit since you’ve last seen this mug...how 'bout it?"
+    menu:
+        y neutral "Ehrrmmmmm……Pardon?"
+        "No wtf.":
+            "Freak!"
+        "No, sorry.":
+            "Still don't get it..."
+
+    h "Ha…you’re really going to make me say it then?"
+    h "..."
+    h "It’s Hammy."
+    h "We used to play together as kids."
+    "An old memory comes back to me. I used to play with a kid down at the beach."
+    "I remember his smile when he was trying to show me shells or bugs he found on the beach."
+    "If there was anyone I'd recall from my time here, it'd be him."
+    y "That’s right! Hammy!"
+    "His shoulders deflate."
+    h "Of all the things you could remember me by, it just had to be that nickname…"
+
     show hunter neutral:
         xalign 0.5
         ypos 0.0
@@ -471,59 +479,55 @@ label chapter1:
     menu:
         "Tease him.":
             $ hunter_points += 1
-            y "Well, Hammy, you don't leave my mind that easily!"
+            y "Well, Hammy, it's hard to forget a nickname like that!"
             h "Please, really, just Hunter is fine."
-            y "But your face is so cute when I say it!"
+            y "But your face is so funny when I say it!"
             h "You..."
             "He looks away from me. I believe he is thoroughly embarrassed now."
-            y "Of course, I'll call you Hunter. I'm just having my fun."
+            y "Oh, fine. I’ll just call you Hunter then."
 
         "Let it be.":
-            y "But of course, I'll just call you Hunter."
+            y "Of course, I'll just call you Hunter now."
+            y "We’re not children anymore."
 
-    "We used to play near the beach as children. If there was anyone I'd recall from my time here, it'd be him."
-    "We were fast friends, though I can't remember much of what we did together. He was a strange little kid."
-    h "At least you do remember me! It's been only about, what...ten years since we've last seen each other?"
+    h "That's my name, yes."
+    y "You look so different now!"
+    h "Well, it's been about, what… ten years or so since we’ve last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
-    "I do remember his smile when he was trying to show me shells or bugs he found on the beach."
-    "As I look at him now, it seems like the only thing that remains is that smile."
     y "I came to see my grandfather, if you still remember him."
-    h "Ah, family visit. Of course I still remember the old man. His hunting company practically owned half the market strip."
-    h "Though he went into retirement a few years ago."
-    "He tilts his head, gazing at me intently."
-    h "Need some help finding your way?"
-    y "Well, yes, if you wouldn't mind..."
-    h "I'll take you. Just keep your camera out of view."
-    h "And stop gawking at things like you've never been here before...People might think you're a spy or somethin'."
-    "He unclips his cloak and throws it on top of my head. My nose is filled with the salty smell of the sea."
+    h "{i}Remember{/i} him? 'Course I remember him. Always grateful for the old man takin' care of me all these years."
+    h "He’s going to be so happy to see you."
+    h "But what are you doing down here then?"
+
+    y "Well...I was following the address on this letter he sent me. The townspeople pointed me here."
+    "I show him Grandfather’s letter."
+    h "Looks like it was sent from his old shop address down here, but that’s been closed since he retired."
+    "Pardon?"
+    h "Heh, lost your way again, [y]? Some things never change."
+    y "Hey!"
+    "I’m not that bad with directions! I was misled!!!"
+    h "Follow me. I’ll take you to the old man’s place."
+    y "Really? You would do that?"
+    h "Just keep your camera out of view."
+    h "And stop gawking at things like you’ve never been here before...People might think you’re a reporter or somethin’."
+    "He throws me his coat. My nose is filled with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
     scene bg black with screenShake
 
     h "Just keep it for now."
-    y shocked "Hey-!"
     menu:
         "Thanks?":
             $ hunter_points += 1
-            h "S'alright."
-            h "Should keep you from standin' out too much."
+            h "Sure."
+            h "Should keep you from standing out too much."
             ny neutral "His cloak is heavy, but it's not a bad weight."
-            "Amidst the salt, there's another scent my nose welcomes: a more subtle vanilla."
-            "It's far more palatable. Maybe it's from Hunter's detergent?"
 
-
-        "What's the big idea, man?":
+        "What are you doing?":
             $ hunter_points -= 1
-            h huffed "Sorry 'bout this."
-            y "Don't just throw this dirty thing on me!"
-            h "It'll help you blend in, yeah? You don't want people gettin' the wrong ideas about you."
-            y "I suppose."
-
-    h "Keep your eyes down so people can't clearly see your face...and avoid seeing things you shouldn't be looking at anyways."
-    y shocked "Seeing things I shouldn't be..?"
-    ny neutral "Things I am forbidden to see...? What could he be talking about?"
-    "I feel a pressing need to see them - but a far more pressing urge to stay hidden from the rest of the townsfolk here."
-    "I do as he asks, even if his cloak is starting to chafe on my shoulders and crush my hat."
+            y "Don't just throw this thing on me!"
+            h "It'll help you blend in, yeah? You don't want people getting the wrong idea."
+            y "I suppose..."
 
     #SCENE CHANGE - Black Market
     scene bg underground market:
@@ -531,25 +535,22 @@ label chapter1:
 
     show hunter neutral with dissolve
 
-    "He takes my hand and gives a low hush, leading me through the crowd. I look down at my feet."
+    "He takes my hand, leading me through the crowd. I try my best to keep in step with his long strides."
 
     #SFX - CROWD
     play sound "audio/sfx_crowd.wav" volume 0.04 loop fadein 2.5
 
-    "He walks meticulously, carefully weaving through the crowds of people, and I try my best to keep in step with his strides."
-    "But then, I see something tantalizingly curious out of the corner of my eye. Without thinking, I glance up."
+    "As we’re walking, I see something moving in the corner of my eye."
+    "Without thinking, I glance up. "
 
     #SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
     show cg sushi:
         subpixel True pos (0,0) zoom 1.0
     with fade
-    #show cg sushi with fade:
-    #    fit "contain"
-    "There is a pale but beautiful face in the dark, behind glass."
-    "The further along we walk, the more of her face is revealed."
-    "Her body is so human on the top, but her lower half...{w}scales, a tail that flows in the water and reflects off the dim lights around her."
-    "A woman...{w}no, a creature that is equal parts human and fish."
+    "There is a pale but beautiful face behind the glass."
+    "The top half her body looks human, but her lower half ends in a tail."
+    "A woman...{w}no - a creature - that is equal parts human and fish."
 
     $ config.side_image_tag = "june"
 
@@ -557,10 +558,10 @@ label chapter1:
 
     $ config.side_image_tag = "None"
 
-    "Her long brown hair moves in the water just like her tail. She is mouthing something, banging on the glass, but I can't hear a word."
+    "She is mouthing something and banging on the glass."
     "Her eyes seem to lock onto mine for a moment."
     "Is she asking for my help?"
-    "Suddenly, my view of the rest of the stand is unblocked, and I am able to peek through the empty spot in the crowd. It is a fish hawker's stand."
+    "For a moment, the crowd parts, and I’m able to see the rest of the stand."
 
     #SCENE = CG (Mermaid cut in half)
     stop sound fadeout 3.5
@@ -579,10 +580,22 @@ label chapter1:
         show cg_sushi_unlock
         hide cg_sushi_unlock
         $ renpy.notify("A new CG has been unlocked in the gallery.")
-    "Her sign reads 'Catch of the day'. Another mermaid, eerily similar to the face banging on the glass, on a table in front of the tank."
-    "Except she is missing her body from the hip below; tail ripe for the taking by rabid customers, piece by piece."
-    "As if she was just the catch of the day. Another fish for someone to eat for dinner."
-    "I fight down the sudden bile rising up my throat and squeeze Hunter's hand, and he starts to walk faster through the crowd."
+    "Another mermaid, eerily similar to the one banging on the glass, is on display in front of the tank."
+    "Her tail is ripe for the taking, piece by piece."
+
+    menu:
+
+        "It's awful.":
+            $ promermaid += 1
+            "This is horrible..."
+            "They look so human, how could someone still want to consume them?"
+            "I fight down the sudden bile rising up my throat and squeeze Hunter's hand. He starts to walk faster through the crowd."
+
+        "It's curious.":
+            $ antimermaid += 1
+            "What do they use mermaid for?"
+            "Bait? Food? What kind of dishes would mermaid tail make?"
+            "Hunter must have noticed I was staring for too long. He pulls on my hand and starts to walk faster through the crowd."
 
     scene bg black with dissolve:
         zoom 2.0
@@ -594,42 +607,56 @@ label chapter1:
     show hunter neutral with dissolve
     h "I said keep your eyes down, or people might see your face. You don't want them remembering what you look like."
     $ config.side_image_tag = "june"
-    y neutral "I know."
-    "I glance back for just a moment before turning back away."
-    "The cruel reality of the world. There isn't much I can do about it."
+    y neutral "Sorry. I haven’t seen a mermaid before. It’s just a bit surprising."
+    h "...Huh. Right."
     "To fill the air with something else, I ask Hunter a question."
 
     play sound "audio/sfx_crowd.wav" volume 0.009 loop fadein 2.5
 
     menu:
-        "Do you hunt now, too?":
+        "Do you hunt them too?":
             $ hunter_points += 1
-            h "Well, yeah, I do. It's the family business, though your family left it to mine."
-            h "Your old man always talked about wanting you to come back to join him, but when he announced his retirement, he sold most of it to my mother instead."
+            h "Yeah, I do. Family business, remember?"
             if newspaper:
-                "I wonder if that was one of the deals the newspaper was talking about."
-            y "I see."
-            "I wonder how many mermaids die like that..."
-            menu:
-                "Thinking about it..."
-                "I pity them.":
-                    $ promermaid += 1
-                    "I would be terrified if I were in their situation."
-                    "If I were a mermaid, I would rather die in the sea, at home. Not here..."
-                "That's just how it is.":
-                    $ antimermaid += 1
-                    "Grandfather and Hunter make their living in a world like this."
-                    "Either the world floods over completely, or we keep our land safe."
-                    "That's the way it is."
-
+                y "I thought it was a fishing company?"
+                h "On the surface, sure."
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
+            else:
+                y "I don’t quite remember much, to be honest."
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
         "Have you actually...killed them before?":
-            $ promermaid += 1
-            h "Why do you sound so horrified? Don't be fooled by their appearances."
-            h "I've seen them kill a man in the blink of an eye."
-            h "They're monsters using human faces. They don't deserve your pity."
-            h "...But yes, I have."
+            h "I have."
+            h "It’s my job to keep the waters safe."
+            h "Either they die or our sailors do."
             y "..."
+            h "Don't be fooled by their looks. I've seen them kill a man in the blink of an eye."
+            "...A lot has changed since I last saw him."
 
+    h "The old man used to hunt mermaids, too."
+    h "When he retired, he sold most of his ships to my mother."
+    y "Grandfather did that?"
+    "I know Grandfather owned a ship. I don’t remember him hunting mermaids at all."
+    h "Yeah. something something something"
+
+    if promermaid >= 1:
+        "I feel bad for them."
+        "If I were a mermaid, I'd rather meet my end at home. Not here. Not like this."
+        "What a terrible fate."
+        y "Can we move further along now?"
+        y "I don’t think I can look at this any longer."
+        h "Don’t worry, we’re just about there now."
+        "He gives my hand a reassuring squeeze."
+
+    if antimermaid >= 1:
+        "Grandfather and Hunter make their living in a world like this."
+        "That's the way it is. I’d rather the people be safe."
+        y "How much further do we have to go?"
+        h "We're almost there."
+
+    "A slight breeze blows against my face and I can hear seagulls calling faintly in the distance."
+    h "Exit’s right this way. C’mon, [y]."
+
+#need transition here
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
@@ -646,7 +673,7 @@ label chapter1:
     show bg port:
         zoom 1.0
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
-    play sound "audio/sfx_seagulls.ogg" loop volume 0.8 fadein 1.0
+    play sound "audio/sfx_seagulls.ogg" loop volume 1 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
     "I hand Hunter his cloak, and he puts it back on."
     y neutral "It's afternoon already?"
@@ -1239,6 +1266,7 @@ label ch1_badend1:
 
     jump endofdemo
 
+#Change this
 label endofdemo:
     stop music fadeout 2.0
     scene bg prashadi cave:
