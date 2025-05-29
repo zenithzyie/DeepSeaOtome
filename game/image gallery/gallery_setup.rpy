@@ -21,7 +21,7 @@ init python:
             self.is_locked = lockme
 
     gallery_items = []
-    gallery_items.append(GalleryItem("", ["cg train"],"hoverimgSM" ))
+    gallery_items.append(GalleryItem("", ["cg train"],"hoverimgLG" ))
     gallery_items.append(GalleryItem("", ["cg_sushi_unlock"] ,"hoverimgLG"))
     gallery_items.append(GalleryItem("", ["cg skyllahands"],"hoverimgLG" ))
 
@@ -36,7 +36,7 @@ image hoverimgLG = ("images/gallery/hoverLG.png")
 
 
 #gallery images
-image cg train = ("images/cg train.png")
+image cg train = ("images/cg_train.jpg")
 image cg_sushi_unlock = ("images/cg sushi.jpg")
 image cg skyllahands = ("images/cg skyllahands.png")
 
