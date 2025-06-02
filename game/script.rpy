@@ -671,7 +671,8 @@ label chapter1:
     with dissolve
     with Pause(1.75)
     show bg port:
-        zoom 1.0
+        fit "contain"
+
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     play sound "audio/sfx_seagulls.ogg" loop volume 1 fadein 1.0
     "Once we make it outside the underground and I can finally see the sky again, the sun is already far along on its journey."
