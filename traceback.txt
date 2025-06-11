@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 263, in script
-    y neutral "It's [player] Finch."
-NameError: name 'player' is not defined
+  File "game/ch0_talktograndpa.rpy", line 57, in script
+    y "Well...[w]I didn’t give it much thought. I just wanted to come see you."
+NameError: name 'w' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 263, in script
-    y neutral "It's [player] Finch."
+  File "game/ch0_talktograndpa.rpy", line 57, in script
+    y "Well...[w]I didn’t give it much thought. I just wanted to come see you."
   File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 2586, in execute
     Say.execute(self)
   File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 623, in execute
@@ -33,9 +33,9 @@ Full traceback:
   File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1208, in py_eval_bytecode
     return eval(bytecode, globals, locals)
   File "<none>", line 1, in <module>
-NameError: name 'player' is not defined
+NameError: name 'w' is not defined
 
 Windows-10-10.0.19045 AMD64
 Ren'Py 8.3.6.25022803
 HeartsDepthDEMO 2.0.1
-Fri May  9 21:13:19 2025
+Sun Jun  8 21:45:42 2025
