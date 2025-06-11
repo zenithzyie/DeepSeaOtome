@@ -379,15 +379,15 @@ label chapter1:
     show bg underground market:
         subpixel True pos (0.73, 3.89) zoom 2.0
     with dissolve
-    with Pause(0.75)
+    with Pause(1.05)
     show bg underground market:
         subpixel True pos (2.11, 2.16) zoom 1.50
     with fade
-    with Pause(0.75)
+    with Pause(1.05)
     show bg underground market:
         subpixel True pos (-0.28, 3.43) zoom 2.0
     with fade
-    with Pause(0.75)
+    with Pause(1.05)
     #SUBTLE ZOOM IN FROM CENTRE
     show bg underground market:
         fit "contain"
