@@ -37,6 +37,31 @@ Woman Humming Softly- MP3 by MayaTakeda -- https://freesound.org/s/646179/ -- Li
 sfx_thunder
 Thunder2 by Yoyodaman234 -- https://freesound.org/s/267551/ -- License: Creative Commons 0
 
+sfx_clothdrrop
+clothes drop 2 by ZoviPoland (Freesound)
+https://pixabay.com/sound-effects/clothes-drop-2-40202/
+
+sfx_explode
+Explosive Glass Shattering 09 by DavidDumaisAudio
+https://pixabay.com/sound-effects/explosive-glass-shattering-09-190267/
+
+sfx_runningwater
+Small cave river flow by Duasun (Freesound)
+https://pixabay.com/sound-effects/small-cave-river-flow-29472/
+
+sfx_brickWallMoving
+Stones Falling by iwanPlays (Freesound)
+https://pixabay.com/sound-effects/stones-falling-6375/
+
+sfx_steam
+steam sfx by adr1911 (Freesound)
+https://pixabay.com/sound-effects/steam-sfx-26907/
+
+sfx_boatCreaking
+Inside boat by lupalenzuela (Freesound)
+https://pixabay.com/sound-effects/inside-boat-50546/
+
+
 MUSIC:
 music_town
 Music by Golden Sound Lab from Pixabay
