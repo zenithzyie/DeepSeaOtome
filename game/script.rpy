@@ -14,19 +14,19 @@ label start:
 label get_name:
     scene bg black
 
-    show text "My granddaughter.{w}":
+    show text "{i}My granddaughter.{/i}{w}":
         align (0.5,0.5)
     with dissolve
     pause
-    show text "It's getting warmer here. Summer already now. {p}You used to love playing by pier here with me as a baby.{p} You remember that, birdie?{w}":
+    show text "{i}It's getting warmer here. Summer already now. {p}You used to love playing by pier with me as a baby.{p} You remember that, little birdie?{/i}{w}":
         align (0.5,0.5)
     with dissolve
     pause
-    show text "You must be tall enough to go on the boats by yourself now.{w}":
+    show text "{i}You must be tall enough to go on the boats by yourself now.{/i}{w}":
         align (0.5,0.5)
     with dissolve
     pause
-    show text "I miss you. I hope to you see again one day.{w}":
+    show text "{i}I miss you. I hope to you see again one day.{/i}{w}":
         align (0.5,0.5)
     with dissolve
     pause
@@ -109,8 +109,8 @@ label chapter1:
     "It's been over ten years since I've last seen him, too."
     "Perhaps it's just because I missed him after being without contact for so long, but..."
     "Now I'm returning to Aquantis again, just to see him."
-    "I can't really remember why my mother stopped taking me to see Grandfather."
-    "Even though I'm now a grown woman, she refuses to say why."
+    "I can't really remember why Mother stopped taking me to see Grandfather."
+    "Even though I'm a grown woman now, she refuses to say why."
     "...And Grandfather is the only other one with answers."
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
     stop sound fadeout 2.0
@@ -129,7 +129,7 @@ label chapter1:
         zoom 1.0
     $ config.side_image_tag = "june"
     y neutral "At last. Hello, Aquantis!"
-    "As soon as I exit the train car, I let the shutter of my camera go off, taking a picture."
+    "As soon as I exit the train car, I remove my camera from my purse to take a picture."
 
     menu:
         "Take a picture of..."
@@ -139,7 +139,7 @@ label chapter1:
             hide camera with dissolve
             y "Let's see how it turned out!"
             # Image of picture here
-            y "Everyone's dress is so modern and lightweight."
+            y "Everyone's dress is so lightweight."
             y "I'm not Inland anymore, that much is clear."
 
         "The town around":
@@ -166,12 +166,12 @@ label chapter1:
     "Their gazes feel heavy on me as I walk by."
     "It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, it feels gloomy and unwelcoming."
     badguy "Tch, inlanders. What is someone like her out here for?"
-    badguy "Inlander? Oy, you don't see many of them. And she's got a fancy one of those picture devices, that could land us a nice bit of coin, aye?"
+    badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin’ bag on her. That could land us a nice bit of coin, aye?"
 
     #SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
-    ny huffed "Are they referring to my camera? They're hardly being secretive about wanting to rob me!"
-    "I quickly walk away from the men watching me, holding my camera closer."
+    ny huffed "They're hardly being secretive about wanting to rob me!"
+    "I quickly walk away from the men watching me, holding my bag closer to my side."
 
     #SCENE CHANGE - (Shabby Market [Zoomed In])
     #SUBTLE ZOOM IN FROM CENTRE
@@ -188,14 +188,14 @@ label chapter1:
     #play sound "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
     #make this a more occasional/easygoing market sfx
     ny neutral "I suddenly find myself at a market."
-    "There are so many interesting things to see."
+    "There are so many interesting things to look at here."
     menu:
         "What catches your eye?"
         "The wooden newsboard":
             $ seastorm = True
             "There's a board filled with notices and posters here."
-            "Beware of sudden sea storms..."
-            "Deadly storms that strike with no rhyme or reason - use caution when traveling without seasoned sailors."
+            "Beware of sudden storms..."
+            "Deadly sea storms that strike with no rhyme or reason - use caution when traveling without seasoned sailors."
             # Show propaganda poster here
 
         "Children playing in the street":
@@ -205,7 +205,7 @@ label chapter1:
             kid "No way, it's my turn!"
             y "How cute."
             kid "I don't wanna be no stinkin' fish! I'ma be a hunter!"
-            "I wonder if I ever played something like that when I was young here."
+            "I wonder if I ever played like that as a kid here."
 
         "The paperboy":
             $ newspaper = True
@@ -213,10 +213,12 @@ label chapter1:
             "I purchase a copy of the weekly news."
             "Several Fishing Companies Absorbed by Morrowe Family: What Will They Do Now?"
             y "Morrowe...that name sounds familiar."
-            y "But where have I heard it from..?"
+            y "But where have I heard it from?"
             "I tuck the newspaper in my coat for later."
 
-    "There seems to be friendlier townsfolk around now that I've reached the market."
+    "The townsfolk seem friendlier around here as well."
+
+    "Perhaps they can help me find Grandfather's address."
 
     "Where do I start...?"
     menu talktownsfolk:
@@ -232,7 +234,7 @@ label chapter1:
             "Her glazed eyes stare unblinkingly at me."
             woman "Knock knock."
             "…"
-            y "Uh…knock knock?"
+            y "Uh...knock knock?"
             "The woman grins toothily, looking pleased with my response."
             woman "Knock knock!"
             #bolding makes it look weird
@@ -275,7 +277,7 @@ label chapter1:
             y "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then ya leave, ya get it?"
             y "I will pay you for the help! I'm just looking for this address."
-            fishmonger "I ain't gonna be telling any airsick in-landler how to get—"
+            fishmonger "I ain't gonna be telling any airsick Inlandler how to get—"
             "Before he can deny me again, I show him the bottom half of the letter where the address is clearly written."
             "He squints at the paper."
             fishmonger "What did ya say ya name was again?"
@@ -299,13 +301,13 @@ label chapter1:
 
     "According to what I've been told, I need to go to the west alley and knock on the wall."
 
-    "The code was… five, three, four?"
+    "The code was... five, three, four?"
 
     "That really isn't much to go off of. People have such an odd way of giving directions in Aquantis."
 
     "Still, it's more than what I started with."
 
-    scene bg brickwall
+    scene bg brickwall with dissolve
     $ config.side_image_tag = "june"
     ny neutral "I arrive at the west alleyway. It's a rather nondescript path."
     "Upon reaching the end, I make a left turn down to see a brick wall. It has an odd discolouration unlike the rest."
@@ -314,15 +316,23 @@ label chapter1:
     "I stare at the wall for a few moments. This is certainly not something I had planned for this trip."
     "I suppose I'll just have to give it a go."
 
-    menu knocking:
+label knocking:
+    if knocking >= 3:
+        jump knockwhatever
+    else:
+        jump knockknock
+
+    menu knockknock:
         "What was the code..?"
         "3":
             ny huffed "No, that doesn't seem right..."
             ny neutral "Let me try again."
+            $ knocking += 1
             jump knocking
         "4":
             ny huffed "No, that doesn't seem right..."
             ny neutral "Let me try again."
+            $ knocking += 1
             jump knocking
         "5":
             menu:
@@ -333,24 +343,34 @@ label chapter1:
                         "3":
                             ny huffed "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
+                            $ knocking += 1
                             jump knocking
                         "4":
                             jump afterknocking
                         "5":
                             ny huffed "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
+                            $ knocking += 1
                             jump knocking
                 "4":
                     ny huffed "No, that doesn't seem right..."
                     ny neutral "Let me try again."
+                    $ knocking += 1
                     jump knocking
                 "5":
                     ny huffed "No, that doesn't seem right..."
                     ny neutral "Let me try again."
+                    $ knocking += 1
                     jump knocking
 
-    label afterknocking:
+label knockwhatever:
+    "After a few attempts, I'm fairly certain I've forgotten the code."
+    y "..."
+    "Whatever!"
+    "I knock on the wall repeatedly in frustration, with no rhyme or reason!"
+    "..."
 
+label afterknocking:
     "There is no response at first, but..."
     ny shocked "Suddenly, the wall is pulled back."
     "With cautionary steps, I move closer."
@@ -399,10 +419,10 @@ label chapter1:
     with fade
     with Pause(1.75)
     show bg underground market
-    "It takes a few seconds for my eyes to adjust to the dim lighting."
+    "It takes a few seconds for my eyes to adjust to the dim lighting as I step out of the elevator."
     "A strange new world greets me.  Creatures I’ve never seen before are lined up in tanks or hung out on display."
     "Even the people here are mysterious, their features obscured by masks or dark clothing. No one seems keen on being recognized."
-    "What is this place?"
+    ny neutral "What is this place?"
     "Why did Grandfather's address lead me here? Was I given the wrong directions?"
     "Not to mention the smell of the sewer is rather unpleasant. It’s no wonder everyone has their faces covered."
     "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to open."
@@ -505,7 +525,7 @@ label chapter1:
     y "Well...I was following the address on this letter he sent me. The townspeople pointed me here."
     "I show him Grandfather’s letter."
     h "Looks like it was sent from his old shop down here, but that’s been closed since he retired."
-    y "Pardon?"
+    y shocked "Pardon?"
     h "Heh, lost your way again, [y]? Some things never change."
     y huffed "I’m not that bad with directions! I was misled..."
     h "Yeah, yeah. Follow me. I’ll take you to the old man’s place."
@@ -636,24 +656,22 @@ label chapter1:
 
     "A lot has changed since I last saw him."
     h "Y’know, the old man used to hunt mermaids, too."
-    y "Really? {i}Grandfather{/i} did?"
+    y shocked "Really? {i}Grandfather{/i} did?"
     h "Yep– the best of us. Then he retired and sold most of his ships to my mother."
     y "I know Grandfather owned a ship, but I don’t remember him mentioning anything about mermaids."
     h "You should ask him. He'd tell you all 'bout his time at sea."
 
     if promermaid >= 1:
-        "I can’t believe Grandfather did something like that."
+        ny flustered "I can’t believe Grandfather did something like that."
         "If I were a mermaid, I’d rather meet my end at sea. {w}Not here. {w}Not like this."
         y  "Can we keep moving?"
         y "I don’t think I can stand being here any longer."
-        h  "Don’t worry, we’re just about there now."
         "He gives my hand a reassuring squeeze."
 
     if antimermaid >= 1:
-        "Grandfather and Hunter make their living in a world like this."
+        ny neutral "Grandfather and Hunter make their living in a world like this."
         "That's the way it is. I’d rather the people be safe."
         y "How much further do we have to go?"
-        h "We're almost there."
 
     h "Exit’s right this way. C’mon, [y]."
     "True to Hunter’s word, we soon find our way out."
@@ -906,7 +924,7 @@ label timeskip1:
     y shocked "Mermaids sunbathe? Really?"
     h "Yep. But if they spot my little skiff, the show's over."
     "I take my camera out of my purse."
-    "I wonder if I'll be able to catch a picture of a mermaid?"
+    ny neutral "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
     h "So, you’re into photography now?"
     y "Aye, Captain!"
@@ -916,7 +934,7 @@ label timeskip1:
     y "Do you keep any records as a mermaid hunter? Photos?"
     h "Records, yes. Photos, no."
     h "Don’t like being near them any more than we have to."
-    y "Oh. They’re really that dangerous?"
+    y flustered "Oh. They’re really that dangerous?"
     h "Yeah. It’s the pretty ones you gotta watch out for."
     h "Nothing for you to worry about though. You’ll be–"
     h "..."
@@ -1307,6 +1325,11 @@ label ch1_badend1:
 
 #Change this
 label endofdemo:
+
+    "Thank you for playing Heart's Depth! Follow our game page for updates..."
+
+    return
+    #past this is unused for now
     stop music fadeout 2.0
     scene bg prashadi cave:
         fit "contain"

@@ -44,22 +44,23 @@ label ch1_followprince:
     "I can feel the merman begin to swim. I'm exhausted but curious about where we're going."
 
     menu:
-        "Look through the princely mermaid's fingers.":
+        "I'm nested in the princely merman's hands..."
+        "Look through.":
             "My curiosity wins over, and I swim forward a little to try to peer through the space between the prince's fingers."
             "It looks as though we're swimming somewhere deeper into the depths of the ocean. Foliage and sand whip past us. We are going quite fast!"
             "I can catch glimpses of merpeople appearing to be farmers, tending to their fields of kelp and other sea plants I do not recognize."
             "Some wave to the prince as we pass."
-            "Despite this, he keeps swimming, his hand acting as a shield."
+            "Despite this, he keeps swimming, his hands acting as a shield."
 
-        "Lean back against the princely mermaid.":
+        "Settle back.":
             #+1 Thio
             "My exhaustion wins over and I lean back against the merman's skin, desperate for a minute of rest."
             "I must be held somewhere against his chest because from here I can feel his heartbeat, going strong and steady."
             "It's warm and comforting."
             "The storm rumbles on, and I have no need to fear it any longer."
             "The prince swims on in silence."
-            "Left alone with my thoughts, my mind races every which way."
 
+    "Left alone with my thoughts, my mind races every which way."
     "Am I the first human to experience the sea like this?"
     "I wish I had my camera. {w}But it wouldn't survive the plunge..."
     "I hope it somehow escaped my fate."
@@ -69,7 +70,7 @@ label ch1_followprince:
     scene bg black with dissolve
     "Some time passes, and the prince stops suddenly, jostling me from my thoughts."
     "I notice a multitude of colorful lights seeping through his fingers. Are we really at the bottom of the ocean? How can it be so bright here?"
-    "Intrigued, I swim a bit closer to the edge of his hand to get a better look."
+    "Intrigued, I swim a bit closer to get a better look."
     window auto hide
     scene bg capitalcity:
         xalign 0.5
@@ -83,7 +84,7 @@ label ch1_followprince:
     show bg capitalcity
     ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
     "I feel smaller than I already am..."
-    "Colorful corals are everywhere, decorating mermaid homes and streetways like the Inlanders decorate their homes with flowers."
+    "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
     show prince frown at Position(xpos=0.45) with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
@@ -123,9 +124,9 @@ label ch1_followprince:
     up "I must take you to my uncle."
     up "Perhaps he can explain this strange connection I feel with you."
     "He must be another member of the royal family."
-    "This uncle knows more about magic?"
+    "Does he know more about magic?"
     "...Can he turn me back into a human?"
-    "I suppose all I can do is wait for the Prince to take us there."
+    "I suppose all I can do is wait for the prince to take us there."
     "We go through the city quickly, passing all sorts of things I wish I could take a closer look at."
     "Eventually, we arrive at the grandest structure, which must be the palace."
     "The prince takes me through wide halls, servants greeting him as we pass."
@@ -145,10 +146,8 @@ label ch1_followprince:
     show prince frown at farleft
     with dissolve
 
-    ny neutral fish "With purple hair and fairer complexion, he doesn't seem closely related to the prince."
-    "Even his tail is different. Instead of a single tail, he has several tentacles instead, like an octopus."
-    "He reminds me more of that sea witch, but it's clear he's not the same as she was."
-    "This man is far more elegant...he holds himself like a royal."
+    ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
+    "He holds himself like a royal."
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
     ucetus "Thioran! Where have you been?"
@@ -197,7 +196,7 @@ label ch1_followprince:
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
     c "What an interesting little thing."
     "The prince moves closer to us with a troubled look."
-    p "What do you see, uncle?"
+    p "What do you see, Uncle?"
     c "Hmm...well she's not from these waters, that I can tell. However, that's a tale for another time."
     c "More importantly, she's been cursed. By something rather skilled, no less."
     p "Cursed?"
@@ -218,6 +217,7 @@ label ch1_followprince:
     p "Wait a moment, Uncle! There's something wrong."
     "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."
+    scene bg black with dissolve
     "I squeeze my eyes shut, preparing for the worst."
     "Grandpa..! Hunter!"
 

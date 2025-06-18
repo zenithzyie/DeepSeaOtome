@@ -51,6 +51,7 @@ default childrenplaying = False
 default seastorm = False
 default promermaid = 0
 default antimermaid = 0
+default knocking = 0
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()

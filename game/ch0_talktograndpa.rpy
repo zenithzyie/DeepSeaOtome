@@ -29,7 +29,6 @@ label grandpatalk:
         fit "contain"
     with dissolve
 
-
     "Is that Grandfather? He looks so young and happy."
     "That must be Grandmother and Mother next to him."
     g "Yer so much like her. A fine young woman ye have grown into."

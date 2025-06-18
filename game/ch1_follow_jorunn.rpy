@@ -95,7 +95,7 @@ label ch1_followjorunn:
             "I nod, even though he can't see it. I really wish I could take a picture of the ocean from here."
             uj "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
 
-        "Lean back.":
+        "Settle back.":
             "My exhaustion wins over and I lean back against the crook of his neck, desperate for a minute of rest."
             "If it bothers the merman he doesn't say anything about it."
             "It's oddly comforting."
