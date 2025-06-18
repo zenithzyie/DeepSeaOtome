@@ -112,6 +112,7 @@ label chapter1:
     "I can't really remember why Mother stopped taking me to see Grandfather."
     "Even though I'm a grown woman now, she refuses to say why."
     "...And Grandfather is the only other one with answers."
+    play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings, we are arriving at Aquantis Station!"
     stop sound fadeout 2.0
 
@@ -375,7 +376,8 @@ label afterknocking:
     ny shocked "Suddenly, the wall is pulled back."
     "With cautionary steps, I move closer."
     stop music fadeout 5.0
-
+    
+    play sound "audio/sfx_brickWallMoving.mp3" volume 0.44
     #SCENE CHANGE - Black Screen
     scene bg black with slideawayright
     #note: this could be somehting like....better
@@ -393,6 +395,7 @@ label afterknocking:
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.4
     play sound "audio/sfx_crowd.wav" volume 0.009 loop
+    #play sound "audio/sfx_runningSewer.mp3" volume 0.026 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -535,6 +538,7 @@ label afterknocking:
     "He throws me his coat. My nose is filled with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
+    play sound "audio/sfx_cloakdrop.mp3"
     scene bg black with screenShake
 
     h "Just keep it for now."
@@ -1210,6 +1214,7 @@ label timeskip1:
     stop sound
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
+    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.2
     "The force sends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
     stop music
     scene bg black
