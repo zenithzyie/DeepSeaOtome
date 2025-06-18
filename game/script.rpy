@@ -681,8 +681,8 @@ label chapter1:
 
     $ config.side_image_tag = "june"
     y neutral "It's afternoon already?"
-    h "Wandering does that to you."
     show hunter neutral with dissolve
+    h "Wandering does that to you."
     "He pulls the mask off his face and I hand him back his coat."
     h "When did your train get here?"
     y "Early morning. My legs are aching to sit."
@@ -774,77 +774,95 @@ label timeskip1:
     #SCENE CHANGE - Black Screen
     scene bg black with dissolve
     stop sound fadeout 2.0
-    "Time just flies by, and before I know it, it's been a week."
+    "Time goes by quickly, and a few days pass just like that."
     "Despite my best attempts, Grandfather has not been able to answer my questions."
-    "Or rather...he doesn't want to."
-    "He's avoiding any talk about my past."
 
     #SCENE CHANGE - Shabby Market
     scene bg shabby market with dissolve
     play music "audio/music_town.mp3" fadein 1.0
-    show grandpa happy at left2 with dissolve
+    show grandpa neutral at left2 with dissolve
 
     "Today, Grandfather and I are going out shopping."
 
     show hunter neutral at right2 with dissolve
     "Along with Hunter, who just happened to be free."
 
-    y neutral "It's been some time since I last went shopping for fish."
+    y neutral "Thanks for joining us, Hunter."
 
+    #Show Hunter happy
+    h "Sure. Had some time today."
+
+    y "It's been awhile since I last went shopping for fish."
+
+    show grandpa happy
     g "Don’t ye worry, little birdie. I know my way around the markets."
 
+    #Show Hunter neutral
     h "There any fish you got in mind?"
 
     y "I have no idea. Whatever tastes good, I suppose."
+
+    g "Ye ain’t really tasted fish till yer out at sea. There’s all kinds."
+
+    g "O’course some fish bite back. Ye got to watch out for the mermaids out there."
 
     show grandpa happy at jumpin
     show grandpa happy:
         ypos 1.0 zoom 1.0
 
-    g "Ye ain’t seen real beauty till yer out at sea, but she ain’t be without dangers either."
     show grandpa neutral
     g "Worst is the sirens."
-    y "Sirens?"
+    y shocked "Sirens?"
     g "Blasted horrible creatures. I only ever saw one in my career, and it damn near got my whole crew!"
+    #show hunter smile
     h "Yeah, right, old man. They've been dead longer than you've been alive."
-    h "All you ended up with was an overgrown manatee, not a siren."
+    h "All you got was a squealing manatee, not a siren."
     show grandpa happy
     g "Har har har!"
+    show grandpa neutral
     g "If only ye'd visited sooner, [y]. Ye could'a seen me in action."
-
-    y "It’s unfortunate. I wish I could’ve spent more time with you."
+    #june sad instead of flustered
+    y flustered "It’s unfortunate. I wish I could’ve spent more time with you."
     g "Ain’t got any reason to regret all that. Yer here now, and that's what matters."
-    y "Have we ever been out to sea together? I don't recall if we have."
+    y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral
     g "Aye, but never out too deep. The sea’s a dangerous place for a wee lass."
+    show grandpa happy
     g "Shame ye don't remember. I caught ye all kinds of colorful fish."
     "I shouldn't press too hard, but..."
     y "Mother was okay with that?"
+    show grandpa surprised
     g "[y]...right now? I thought ye were done with that business."
-    y "You cant avoid me forever come on"
+    y "But you still haven’t–"
+    show grandpa neutral
     g "Ah, I've been standin' too long. My back's goin' again."
     g "Go and finish shoppin’ without me."
-    y "Grandfather, please."
-    g "This old man with his bad back will just slow ye down."
+    ny flustered "Oh, not this again!"
+    y "Grandfather, {i}please{/i}."
+    g "Ye ain’t gonna want this old man with his bad back slowin’ ye down."
     g "I'll see ye later tonight, aye!"
     hide grandpa with dissolve
-    "He hurries off."
+    "My questions are once again left unanswered as Grandfather hurries away."
     #show hunter at center with move
+    #Show hunter raised eyebrow
     h "Sure moves fast when he wants to."
     y "Grandfather..."
     "What will it take for him to feel comfortable enough to talk about what happened?"
     "Out of habit, I reach for the camera inside my purse."
-    "Maybe there’s a way I can prove to him that I’m ready to hear his story."
+    ny neutral "Perhaps there’s a way I can prove to him that I’m ready to hear his story."
+    #show hunter nervous
     h "Don't know if I like that look in your eyes. What are you plotting, [y]?"
-    y "You have a boat too, don't you, Hunter?"
+    y "You have a boat, don't you, Hunter?"
+    #show hunter neutral
     h "Yeah, I got one."
     y "What if you took me out to sea? Further than Grandfather ever took me?"
     y "If I head out far enough, he’ll understand that I'm not a child anymore."
     h "Nope."
-    y "No? How come?"
+    y shocked "No? How come?"
     h "If something happens to you, he’ll have my hide."
+    #show hunter smile
     h "‘Sides, you don’t have the sea legs for it."
-    y "We don’t have to go out that deep. Just enough for one photo."
+    y neutral "We don’t have to go out that deep. Just enough for one photo."
 
     #Show hunter raised eyebrow emoji
     h "..."
@@ -853,17 +871,23 @@ label timeskip1:
         "\"Please, Hammy!\"":
             #show hunter (blush)
             h "Ugh."
+            #june smile
             y "Come on, you can do a favor for an old friend, right?"
+            #show hunter smile
             h "Stubborn as ever, [y]."
 
         "\"I would appreciate it.\"":
+            #june smile
             y "Friends help each other out, yes?"
-            y "It would be most gentlemanly of you."
-            h "Since it’s you asking..."
+            #show hunter raised eyebrow
+            h "Pulling that card, huh?"
 
+    #show hunter neutral
     h "Fine. But we're only going out to the safest parts of the sea."
+    #june warm smile
     y "Thank you! You won't regret it, Hunter."
     y "It'll be fun. We can pretend to be pirates, just like when we were kids!"
+    #show hunter smile
     h "Sure. But I get to be Captain this time."
 
     #SCENE CHANGE - Sea
@@ -872,39 +896,34 @@ label timeskip1:
     #SFX - waves (calm)
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.3
 
-    "We embark on Hunter's fishing boat."
+    "We embark on Hunter's boat."
     "The sea is calm, and the sun is shining down on us."
 
+    #show hunter smile instead
     show hunter neutral with dissolve
     $ config.side_image_tag = "june"
     h "Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     h "Yep. But if they spot my little skiff, the show's over."
+    "I take my camera out of my purse."
     "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
-    hide hunter neutral with dissolve
-    ny neutral "My only experiences are with inland wildlife, but surely sea creatures are no more difficult than capturing birds on film."
-
     h "So, you’re into photography now?"
-    y "Aye, Captain! I really enjoy it."
-    h "You used to hate sitting still long enough to get yours taken."
-    y "I guess I’ve changed since then."
-
-    "The boat travels further out to sea, putting the port behind us."
-    "I enjoy the sound of the waves lapping against the boat as we glide along."
-
-    menu:
-        "What made you decide to be a mermaid hunter?":
-            h "Family business. PEER PRESSURE."
-        "Do you still collect weird stuff?":
-            h "Weird stuff? Woooow."
-
-    "Something here. Avoid mermaid bossmans, yes."
+    y "Aye, Captain!"
+    h "Heh. Didn’t think you’d have the patience for it."
+    y "Perhaps not when I was younger, but I really enjoy it now."
+    y "It’s like making physical copies of memories. Even if you forget something, the photo lasts forever."
+    y "Do you keep any records as a mermaid hunter? Photos?"
+    h "Records, yes. Photos, no."
+    h "Don’t like being near them any more than we have to."
+    y "Oh. They’re really that dangerous?"
+    h "Yeah. It’s the pretty ones you gotta watch out for."
+    h "Nothing for you to worry about though. You’ll be–"
+    h "..."
 
     show hunter neutral with dissolve
     h "Hang on. Something’s not right."
     "I'm about to respond to him, but the ship catches on the waves, and I stumble."
-    "Hunter reaches out to steady me."
 
     #SCENE CHANGE - view of the sea (stormy)
     play sound "audio/sfx_thunder.ogg" volume 0.9
@@ -913,25 +932,24 @@ label timeskip1:
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
     show hunter neutral with vpunch
 
-    "The weather changes nearly in an instant, the winds roughly chopping the waves and rocking the boat."
     "I can't see a hint of blue in the sky."
     y shocked "It was sunny only moments ago! What is this?"
     h "Hold onto something, [y]! This storm’s not natural. I’ll steer us out of it."
 
     if seastorm:
-        "I remember reading something about this."
+        "I remember reading something about storms that appear without warning like this."
         "I should be safe since Hunter is here, right?"
 
     hide hunter neutral with vpunch
-    "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
-    "The lurching nearly throws me to the floorboards, but I grab the side of the ship just in time to stay upright."
+    "The ship creaks as he tries to turn it back towards the port."
+    "The lurching nearly throws me to the floorboards and I grab the side of the boat to stay upright."
     $ config.side_image_tag = "june"
-    y shocked "Ah..."
+    y shocked "Ah...!" with screenShake
     #SCREENSHAKE
-    "Something stirs in the back of my memory as I stare into the waves. Something is glowing through the wind and rain."  with screenShake
+    "Something stirs in the back of my memory as I stare into the waves."
+    "Is the water... glowing?"
 
     #TODO FLASHBACK CG for a second of baby prince and june
-    y "Who...? This is familiar to me, but...?"
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.wav" fadeout 1.0
     show bg choppywave with screenShake
@@ -939,26 +957,23 @@ label timeskip1:
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
 
     show hunter neutral with vpunch
-    "The sounds of the waves and the wind make Hunter's words hard to hear."
-    h "The waters are getting choppier, stay away from the ledge!"
+    h "Stay away from the edge!"
     y shocked "I'll try! I can hardly stand straight!"
     hide hunter neutral with dissolve
-    "He returns back to his position, eyes staying forward as the winds grow stronger."
-    ny flustered "I want to listen to him, but in that moment, I imagine Grandfather's face from earlier today."
-    "Wouldn't that bring me just that much closer to learning the truth?"
-    "Surely he couldn't turn me away, then?"
+    ny flustered "I want to listen to him, but in that moment, I recall Grandfather's face from earlier today."
+    "I didn't get to take a photo yet to bring back to him."
     menu:
         "..."
         "Listen to Hunter.":
             # +Hunter points
-            "I shouldn't take unnecessary risks..."
+            "I shouldn't take unnecessary risks."
             "My life isn't worth a photo."
-            ny neutral "I move closer to where Hunter is, towards the back of the boat."
+            ny neutral "I tuck my camera back into my purse and move away from the edge."
 
         "I can't give up on a picture.":
-            "I can hardly see out, but I can't give up my quest for a picture."
-            ny neutral "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
-            "The water laps at the edge of the boat ferociously."
+            "Being out at sea during a storm like this should be just as good of proof that I can handle whatever Grandfather has to say."
+            ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amounts..."
+
 
     $ config.side_image_tag = "june"
     #SPRITE?
@@ -970,37 +985,34 @@ label timeskip1:
     u "Come...come with me..."
     y shocked "What...?"
     u "O' ye of land to the queen of sea..."
-    "My thoughts are hazy, and my body feels as though I'm floating."
+    "A haze clouds my thoughts and my legs start to move on their own."
+    "I lean over the side of the boat, searching for the source of the singing, but all I can see are the churning waves below."
     h "[y], what are you doing?!"
     u "Come with me..."
     u "...to the depths below..."
-    "The singing feels as though it is only for my ears to hear alone, the waves calling out for me to sink in."
-    "My legs begin to move on their own."
-    h "Shit, it's a siren!? [y]!"
+    "The alluring voice seems like it’s singing for my ears alone."
     show hunter neutral with vpunch
-    "Hunter abandons his position at the helm of the ship and races towards me, but I can't imagine why."
-    "An unimportant thought crosses my mind. I've heard of something like this before."
-    "In fairy tales...sailors were sung to by the sea, only to be met with death..."
-    hide hunter neutral with dissolve
-    y "A siren's song."
-    "At the edge of the boat now, my eyes look down below for the cause of my affliction, but the darkness below the waves are all I can see, and the voice all I can hear."
-    "With all my might I hold tightly to the slippery railing that parts me from the water, and yet my body is going against my will to stay put."
-    "I sit atop the ledge."
-    "And just for a split moment I think I can hear Hunter calling my name before I take the plunge."
+    h "Shit, it's a siren! Cover your ears, [y]!"
+    "Hunter abandons his position at the helm and races towards me, but I can't imagine why."
+    "My hands tightly grip the slippery rail that’s keeping me from falling in, and yet the rest of my body is going against my will to stay put."
+    "For a split second, I think I can hear Hunter calling my name before I take the plunge."
+
     stop music fadeout 1.0
     #SFX - SPLASH
-    scene bg black with hpunch
+    scene bg drowning:
+        fit "contain"
+    with hpunch
     play sound "audio/sfx_splash.flac" volume 0.6
 
-    "The light of the surface is drifting further and further away. My body is sinking deeper, and the loud sounds from the surface are lost in the waves."
-    "The song stops, but my body is numb."
-    "Regret floods my mind, but it's too late."
+    "The light of the surface drifts further and further away as my body sinks deeper into the emptiness."
+    "The singing stops, but my body remains numb."
     "I can feel myself fading..."
-    "..."
+
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Black Screen
-    scene bg black
+    scene bg black with dissolve
+    "..."
     siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
@@ -1082,7 +1094,7 @@ label timeskip1:
     "No.{w} No, no, no."
     "Think, [y], think! There has to be a way out of here!"
     "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into human, right?"
-    "I glance around the cave I'm in."
+    "I glance around the cave."
 
     window auto hide
     camera:
@@ -1124,8 +1136,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-
-    "There are what looks like glowing stones on the walls. What are the odds that they could magically explode?"
+    "Glowing stones line the cave walls. What are the odds that they could magically explode?"
 
     window auto hide
     camera:
@@ -1148,8 +1159,7 @@ label timeskip1:
         ease 0.5 zoom 1.5
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It's a lie. Strange magic begins to glow out of the siren's hands as she softly sings."
-    "It's beautiful beyond words, but the moment it starts I start to feel a burning pain spreading across my body."
+    "It’a a lie. A burning pain begins to spread across my body as she sings."
     s "It's okay! Don't be stubborn now. Come on, it's me!"
     "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
     show skylla angry

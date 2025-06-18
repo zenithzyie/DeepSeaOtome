@@ -141,7 +141,7 @@ label ch1_followjorunn:
     scene bg black with dissolve
     stop music fadeout 5.0
     ny neutral fish "The deeper we go, the darker it gets."
-    "When I was younger, grandfather would tell me stories of his hunting trips out at sea. Of how dangerous it could be when all light left the world. "
+    "Grandfather told me stories of how dangerous it could be when all light leaves the world."
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
     "I think this is what he must have meant."
     "I can't see anything in front of me at all."
