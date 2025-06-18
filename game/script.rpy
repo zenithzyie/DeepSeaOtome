@@ -167,7 +167,7 @@ label chapter1:
     "Their gazes feel heavy on me as I walk by."
     "It looks like these parts have fallen into harder times. When I was younger I remember it being more lively and nice, but now, it feels gloomy and unwelcoming."
     badguy "Tch, inlanders. What is someone like her out here for?"
-    badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin’ bag on her. That could land us a nice bit of coin, aye?"
+    badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
 
     #SPRITE CHANGE (Annoyed Expression)
     $ config.side_image_tag = "june"
@@ -423,11 +423,11 @@ label afterknocking:
     with Pause(1.75)
     show bg underground market
     "It takes a few seconds for my eyes to adjust to the dim lighting as I step out of the elevator."
-    "A strange new world greets me.  Creatures I’ve never seen before are lined up in tanks or hung out on display."
+    "A strange new world greets me.  Creatures I've never seen before are lined up in tanks or hung out on display."
     "Even the people here are mysterious, their features obscured by masks or dark clothing. No one seems keen on being recognized."
     ny neutral "What is this place?"
     "Why did Grandfather's address lead me here? Was I given the wrong directions?"
-    "Not to mention the smell of the sewer is rather unpleasant. It’s no wonder everyone has their faces covered."
+    "Not to mention the smell of the sewer is rather unpleasant. It's no wonder everyone has their faces covered."
     "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to open."
     "It seems I have no choice but to keep moving. There must be another way out somewhere."
     "As I push through the crowd, I can't help but notice what's on display in the stands."
@@ -452,8 +452,8 @@ label afterknocking:
         ypos 0.0
     window auto show
 
-    uhunter "Careful where you point that thing. I wouldn’t take your camera out here ‘less you want to leave in a barrel."
-    "I freeze as a stranger’s hand reaches over to cover my own ."
+    uhunter "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
+    "I freeze as a stranger's hand reaches over to cover my own ."
     uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
     show hunter neutral:
         xalign 0.5
@@ -465,8 +465,8 @@ label afterknocking:
     y "Who are you, exactly?"
     uhunter "Bit rude to greet a friend like that, isn't it?"
     y "A friend?"
-    y neutral "I’m sorry sir, you’ve got the wrong person. I haven’t been in this part of Aquantis before."
-    uhunter "Ha- this isn’t your first time here. Don’t appreciate being treated like a stranger either, though I s'pose it's been awhile."
+    y neutral "I'm sorry sir, you've got the wrong person. I haven't been in this part of Aquantis before."
+    uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger either, though I s'pose it's been awhile."
     "He pulls down his mask to reveal a handsome face."
     #if we go mask route, just pop this back in but it doesn't make sense right now
     #"He pulls down his mask to reveal a handsome and somewhat-familiar face."
@@ -487,14 +487,14 @@ label afterknocking:
             y neutral "I'm not sure what you mean, sorry."
             y "I don't think I know anyone by that name."
 
-    h "Ha...you’re really going to make me say it then?"
+    h "Ha...you're really going to make me say it then?"
     h "..."
-    h "It’s Hammy."
+    h "It's Hammy."
     h "We used to play together as kids."
     "An old memory comes back to me. I used to play with a kid down at the beach."
     "I remember his smile when he was showing me the shells or bugs he found."
     "If there was anyone I'd recall from my time here, it'd be him."
-    y "That’s right! Hammy!"
+    y "That's right! Hammy!"
     "His shoulders deflate."
     h "Of all the things you could remember me by, it just had to be that nickname…"
 
@@ -515,26 +515,26 @@ label afterknocking:
 
         "Let it be.":
             y "Of course, I'll just call you Hunter now."
-            y "We’re not children anymore."
+            y "We're not children anymore."
 
     h "...Didn't think I'd ever hear you say my name again."
     y "You look so different now!"
-    h "Well, it's been about, what… ten years or so since we’ve last seen each other? Would hope I look different."
+    h "Well, it's been about, what… ten years or so since we've last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
     y "I came to see my grandfather, if you still remember him."
     h "{i}Remember{/i} him? 'Course I remember him. Always grateful for the old man takin' care of me all these years."
     h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking ‘round here instead. {w}Feeling nostalgic?"
 
     y "Well...I was following the address on this letter he sent me. The townspeople pointed me here."
-    "I show him Grandfather’s letter."
-    h "Looks like it was sent from his old shop down here, but that’s been closed since he retired."
+    "I show him Grandfather's letter."
+    h "Looks like it was sent from his old shop down here, but that's been closed since he retired."
     y shocked "Pardon?"
     h "Heh, lost your way again, [y]? Some things never change."
-    y huffed "I’m not that bad with directions! I was misled..."
-    h "Yeah, yeah. Follow me. I’ll take you to the old man’s place."
+    y huffed "I'm not that bad with directions! I was misled..."
+    h "Yeah, yeah. Follow me. I'll take you to the old man's place."
     y shocked "Really? You would do that?"
     h "I got business with him anyways."
-    h "Just keep your camera out of view. People might think you’re a reporter or something."
+    h "Just keep your camera out of view. People might think you're a reporter or something."
     "He throws me his coat. My nose is filled with the salty smell of the sea."
 
     #SCENE CHANGE - Black Screen
@@ -567,7 +567,7 @@ label afterknocking:
     #SFX - CROWD
     play sound "audio/sfx_crowd.wav" volume 0.04 loop fadein 2.5
 
-    "As we’re walking, I see something moving out of the corner of my eye."
+    "As we're walking, I see something moving out of the corner of my eye."
     "Without thinking, I glance up. "
 
     #SCENE = CG (Mermaid in Tank [Zoomed])
@@ -588,7 +588,7 @@ label afterknocking:
     "She is mouthing something and banging urgently on the glass."
     "Her eyes seem to lock onto mine for a moment."
     "Is she asking for my help?"
-    "The crowd parts, and I’m able to see the rest of the stand."
+    "The crowd parts, and I'm able to see the rest of the stand."
 
     #SCENE = CG (Mermaid cut in half)
     stop sound fadeout 3.5
@@ -636,7 +636,7 @@ label afterknocking:
     show hunter neutral with dissolve
     h "Try to keep your eyes down, or people might see your face."
     $ config.side_image_tag = "june"
-    y neutral "Sorry. I haven’t seen a mermaid before. It’s just a bit surprising."
+    y neutral "Sorry. I haven't seen a mermaid before. It's just a bit surprising."
     h "...Huh. {w}Right."
     h "You get used to seeing them after a while."
     play sound "audio/sfx_crowd.wav" volume 0.009 loop fadein 2.5
@@ -650,35 +650,35 @@ label afterknocking:
                 h "On the surface, sure."
                 h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
             else:
-                y "I don’t quite remember much, to be honest."
+                y "I don't quite remember much, to be honest."
                 h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
         "You don't kill them too...do you?":
             h "My family does a lot of fishing. Some of that is mermaids...if you look under the table."
             h "Either they die or our sailors do."
             y "..."
-            h "Don't be fooled, [y]. They’re more dangerous than they look."
+            h "Don't be fooled, [y]. They're more dangerous than they look."
 
     "A lot has changed since I last saw him."
-    h "Y’know, the old man used to hunt mermaids, too."
+    h "Y'know, the old man used to hunt mermaids, too."
     y shocked "Really? {i}Grandfather{/i} did?"
-    h "Yep– the best of us. Then he retired and sold most of his ships to my mother."
-    y "I know Grandfather owned a ship, but I don’t remember him mentioning anything about mermaids."
+    h "Yep- the best of us. Then he retired and sold most of his ships to my mother."
+    y "I know Grandfather owned a ship, but I don't remember him mentioning anything about mermaids."
     h "You should ask him. He'd tell you all 'bout his time at sea."
 
     if promermaid >= 1:
-        ny flustered "I can’t believe Grandfather did something like that."
-        "If I were a mermaid, I’d rather meet my end at sea. {w}Not here. {w}Not like this."
+        ny flustered "I can't believe Grandfather did something like that."
+        "If I were a mermaid, I'd rather meet my end at sea. {w}Not here. {w}Not like this."
         y  "Can we keep moving?"
-        y "I don’t think I can stand being here any longer."
+        y "I don't think I can stand being here any longer."
         "He gives my hand a reassuring squeeze."
 
     if antimermaid >= 1:
         ny neutral "Grandfather and Hunter make their living in a world like this."
-        "That's the way it is. I’d rather the people be safe."
+        "That's the way it is. I'd rather the people be safe."
         y "How much further do we have to go?"
 
-    h "Exit’s right this way. C’mon, [y]."
-    "True to Hunter’s word, we soon find our way out."
+    h "Exit's right this way. C'mon, [y]."
+    "True to Hunter's word, we soon find our way out."
 
 #need transition here
     stop sound fadeout 2.0
@@ -688,14 +688,14 @@ label afterknocking:
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     scene bg port:
+        fit "contain"
         xalign 0.5
         subpixel True
         zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-    show bg port:
-        fit "contain"
+    show bg port
 
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
     play sound "audio/sfx_seagulls.ogg" loop volume 1 fadein 1.0
@@ -708,13 +708,13 @@ label afterknocking:
     "He pulls the mask off his face and I hand him back his coat."
     h "When did your train get here?"
     y "Early morning. My legs are aching to sit."
-    h  "Don’t keel over just yet."
+    h  "Don't keel over just yet."
     y "I wouldn't dream of it."
     "We're at the portside now; the edge of the country. The ocean looks so vast and endless."
     "Sailors are carrying supplies to and from the ships at the dock."
     y "Does Grandfather live on one of these?"
-    show hunter neutral at slightRight with move
-    h "The ole girl over there, can’t miss her."
+    show hunter neutral at farright with move
+    h "The ole girl over there, can't miss her."
     "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, towering proudly over the harbor."
     "It has clearly been maintained well."
 
@@ -722,7 +722,7 @@ label afterknocking:
 
     "All these years apart are finally coming to an end. Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
     "I want to hear his side of it, regardless."
-    "We cross the ramp onto Grandfather’s ship and approach the closed doors of the Captain’s Quarters."
+    "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
     "Hunter gives a few strong knocks with the back of his hand."
     "..."
     g "Aye, I hear ye-"
@@ -731,7 +731,7 @@ label afterknocking:
     y shocked "Grandfather?"
     show grandpa surprised with vpunch
     stop music fadeout 1.0
-    "He staggers back as though he’s seen a ghost."
+    "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
     g "Oh, bless the stars... Yer really here! My dear, sweet [y]!"
@@ -753,23 +753,23 @@ label afterknocking:
     with Pause(0.20)
     show grandpa happy:
         ypos 1.0 zoom 1.0
-    g "An’ I see the lad brought ye here. Thank ye, my boy."
+    g "An' I see the lad brought ye here. Thank ye, my boy."
     h "‘Course."
     show grandpa happy at Position(xpos=0.64) with move
     "Hunter is barely able to respond before Grandfather traps him in his arms too. Hunter groans in response and I can't help but laugh." with vpunch
     "Once Grandfather has squeezed the daylights out of us, he lets go."
     show grandpa happy at left2 with move:
         ease2 0.3
-    g "Oh, just how many years has it been since I’ve seen ye, [y]?"
+    g "Oh, just how many years has it been since I've seen ye, [y]?"
     g "And yer mother? Is she with ye?"
-    y "I’m sorry, Grandfather. It’s just me."
+    y "I'm sorry, Grandfather. It's just me."
     show grandpa neutral with dissolve
     g "Oh, Marie…"
     "He lets out a wistful sigh."
     g "Can't be helped, I s'pose."
-    g "Come on in, then. Ye had a long journey, I’m sure."
-    h "I’ll let you two catch up."
-    y "But didn’t you say you had business with Grandfather?"
+    g "Come on in, then. Ye had a long journey, I'm sure."
+    h "I'll let you two catch up."
+    y "But didn't you say you had business with Grandfather?"
     h "Heh, I did. Had to deliver a lost package safely to his door."
     #Blushing June Emote here
     y flustered "Oh!"
@@ -780,10 +780,10 @@ label afterknocking:
         "Will I see you again?":
             #plus hunter
             h "...Yeah."
-            h "I won’t be far."
+            h "I won't be far."
         "Goodbye.":
             #minus hunter
-            h "Goodbye, [y]. Don’t be a stranger, yeah?"
+            h "Goodbye, [y]. Don't be a stranger, yeah?"
 
     "He turns to leave, nodding respectfully to Grandfather."
     h "See you 'round, old man."
@@ -817,16 +817,16 @@ label timeskip1:
     y "It's been awhile since I last went shopping for fish."
 
     show grandpa happy
-    g "Don’t ye worry, little birdie. I know my way around the markets."
+    g "Don't ye worry, little birdie. I know my way around the markets."
 
     #Show Hunter neutral
     h "There any fish you got in mind?"
 
     y "I have no idea. Whatever tastes good, I suppose."
 
-    g "Ye ain’t really tasted fish till yer out at sea. There’s all kinds."
+    g "Ye ain't really tasted fish till yer out at sea. There's all kinds."
 
-    g "O’course some fish bite back. Ye got to watch out for the mermaids out there."
+    g "O'course some fish bite back. Ye got to watch out for the mermaids out there."
 
     show grandpa happy at jumpin
     show grandpa happy:
@@ -844,26 +844,27 @@ label timeskip1:
     show grandpa neutral
     g "If only ye'd visited sooner, [y]. Ye could'a seen me in action."
     #june sad instead of flustered
-    y flustered "It’s unfortunate. I wish I could’ve spent more time with you."
-    g "Ain’t got any reason to regret all that. Yer here now, and that's what matters."
+    y flustered "It's unfortunate. I wish I could've spent more time with you."
+    g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral
-    g "Aye, but never out too deep. The sea’s a dangerous place for a wee lass."
+    g "Aye, but never out too deep. The sea's a dangerous place for a wee lass."
     show grandpa happy
     g "Shame ye don't remember. I caught ye all kinds of colorful fish."
     "I shouldn't press too hard, but..."
     y "Mother was okay with that?"
     show grandpa surprised
     g "[y]...right now? I thought ye were done with that business."
-    y "But you still haven’t–"
+    y "But you still haven't-"
     show grandpa neutral
     g "Ah, I've been standin' too long. My back's goin' again."
-    g "Go and finish shoppin’ without me."
+    g "Go and finish shoppin' without me."
     ny flustered "Oh, not this again!"
     y "Grandfather, {i}please{/i}."
-    g "Ye ain’t gonna want this old man with his bad back slowin’ ye down."
+    g "Ye ain't gonna want this old man with his bad back slowin' ye down."
     g "I'll see ye later tonight, aye!"
     hide grandpa with dissolve
+    show hunter at centre with move
     "My questions are once again left unanswered as Grandfather hurries away."
     #show hunter at center with move
     #Show hunter raised eyebrow
@@ -871,20 +872,20 @@ label timeskip1:
     y "Grandfather..."
     "What will it take for him to feel comfortable enough to talk about what happened?"
     "Out of habit, I reach for the camera inside my purse."
-    ny neutral "Perhaps there’s a way I can prove to him that I’m ready to hear his story."
+    ny neutral "Perhaps there's a way I can prove to him that I'm ready to hear his story."
     #show hunter nervous
     h "Don't know if I like that look in your eyes. What are you plotting, [y]?"
     y "You have a boat, don't you, Hunter?"
     #show hunter neutral
     h "Yeah, I got one."
     y "What if you took me out to sea? Further than Grandfather ever took me?"
-    y "If I head out far enough, he’ll understand that I'm not a child anymore."
+    y "If I head out far enough, he'll understand that I'm not a child anymore."
     h "Nope."
     y shocked "No? How come?"
-    h "If something happens to you, he’ll have my hide."
+    h "If something happens to you, he'll have my hide."
     #show hunter smile
-    h "‘Sides, you don’t have the sea legs for it."
-    y neutral "We don’t have to go out that deep. Just enough for one photo."
+    h "‘Sides, you don't have the sea legs for it."
+    y neutral "We don't have to go out that deep. Just enough for one photo."
 
     #Show hunter raised eyebrow emoji
     h "..."
@@ -930,21 +931,21 @@ label timeskip1:
     "I take my camera out of my purse."
     ny neutral "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
-    h "So, you’re into photography now?"
+    h "So, you're into photography now?"
     y "Aye, Captain!"
-    h "Heh. Didn’t think you’d have the patience for it."
+    h "Heh. Didn't think you'd have the patience for it."
     y "Perhaps not when I was younger, but I really enjoy it now."
-    y "It’s like making physical copies of memories. Even if you forget something, the photo lasts forever."
+    y "It's like making physical copies of memories. Even if you forget something, the photo lasts forever."
     y "Do you keep any records as a mermaid hunter? Photos?"
     h "Records, yes. Photos, no."
-    h "Don’t like being near them any more than we have to."
-    y flustered "Oh. They’re really that dangerous?"
-    h "Yeah. It’s the pretty ones you gotta watch out for."
-    h "Nothing for you to worry about though. You’ll be–"
+    h "Don't like being near them any more than we have to."
+    y flustered "Oh. They're really that dangerous?"
+    h "Yeah. It's the pretty ones you gotta watch out for."
+    h "Nothing for you to worry about though. You'll be-"
     h "..."
 
     show hunter neutral with dissolve
-    h "Hang on. Something’s not right."
+    h "Hang on. Something's not right."
     "I'm about to respond to him, but the ship catches on the waves, and I stumble."
 
     #SCENE CHANGE - view of the sea (stormy)
@@ -956,7 +957,7 @@ label timeskip1:
 
     "I can't see a hint of blue in the sky."
     y shocked "It was sunny only moments ago! What is this?"
-    h "Hold onto something, [y]! This storm’s not natural. I’ll steer us out of it."
+    h "Hold onto something, [y]! This storm's not natural. I'll steer us out of it."
 
     if seastorm:
         "I remember reading something about storms that appear without warning like this."
@@ -1012,11 +1013,11 @@ label timeskip1:
     h "[y], what are you doing?!"
     u "Come with me..."
     u "...to the depths below..."
-    "The alluring voice seems like it’s singing for my ears alone."
+    "The alluring voice seems like it's singing for my ears alone."
     show hunter neutral with vpunch
     h "Shit, it's a siren! Cover your ears, [y]!"
     "Hunter abandons his position at the helm and races towards me, but I can't imagine why."
-    "My hands tightly grip the slippery rail that’s keeping me from falling in, and yet the rest of my body is going against my will to stay put."
+    "My hands tightly grip the slippery rail that's keeping me from falling in, and yet the rest of my body is going against my will to stay put."
     "For a split second, I think I can hear Hunter calling my name before I take the plunge."
 
     stop music fadeout 1.0
@@ -1181,7 +1182,7 @@ label timeskip1:
         ease 0.5 zoom 1.5
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It’a a lie. A burning pain begins to spread across my body as she sings."
+    "It'a a lie. A burning pain begins to spread across my body as she sings."
     s "It's okay! Don't be stubborn now. Come on, it's me!"
     "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
     show skylla angry
