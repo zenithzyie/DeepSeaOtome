@@ -754,7 +754,8 @@ label afterknocking:
     show grandpa happy:
         ypos 1.0 zoom 1.0
     g "An' I see the lad brought ye here. Thank ye, my boy."
-    h "‘Course."
+    h "‘Course."   
+    $ speaking_char = "all"
     show grandpa happy at Position(xpos=0.64) with move
     "Hunter is barely able to respond before Grandfather traps him in his arms too. Hunter groans in response and I can't help but laugh." with vpunch
     "Once Grandfather has squeezed the daylights out of us, he lets go."
@@ -803,7 +804,7 @@ label timeskip1:
     scene bg shabby market with dissolve
     play music "audio/music_town.mp3" fadein 1.0
     show grandpa neutral at left2 with dissolve
-
+    $ speaking_char = "all"
     "Today, Grandfather and I are going out shopping."
 
     show hunter neutral at right2 with dissolve
@@ -864,6 +865,7 @@ label timeskip1:
     g "Ye ain't gonna want this old man with his bad back slowin' ye down."
     g "I'll see ye later tonight, aye!"
     hide grandpa with dissolve
+    $ speaking_char = "Hunter"
     show hunter at centre with move
     "My questions are once again left unanswered as Grandfather hurries away."
     #show hunter at center with move
@@ -1259,10 +1261,14 @@ label timeskip1:
     show jorunn sweat at right2
     with dissolve
 
+    $ speaking_char = "all"
     "Ahead of me, two mer-people are staring each other down."
-    "One of them is a young man carrying a large net stuffed full of fish." (cb_name = "Jorunn")
-    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side." (cb_name = "Prince Thioran")
+    $ speaking_char = "Jorunn"
+    "One of them is a young man carrying a large net stuffed full of fish."
+    $ speaking_char = "Prince Thioran"
+    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
 
+    $ speaking_char = "all"
     "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
     uj "Oh no. No, of course not!"
@@ -1291,6 +1297,7 @@ label timeskip1:
 
     #Follow Striking Prince
     #Follow Scrappy Boy (can't choose this yet, lol)
+    $ speaking_char = "all"
     menu:
         "What do I do...?"
         "Follow Striking Prince":

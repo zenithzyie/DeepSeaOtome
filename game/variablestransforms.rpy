@@ -11,9 +11,9 @@ image ctc_pos:
 
 ######################################################################
 #Protagonist + Narrator Names
-define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all")
-define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all") # for narration
-define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="all") #for pure narration no image
+define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed")
+define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
+define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
 ######################################################################
 #Main Character Names
 define h = Character("Hunter", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")

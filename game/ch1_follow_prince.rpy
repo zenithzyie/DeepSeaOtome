@@ -141,6 +141,7 @@ label ch1_followprince:
     with Pause(1.75)
     "Our final destination: a grand throne room."
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
+    $ speaking_char = "all"
     show cetus neutral at left2:
         xzoom -1
     show prince frown at farleft

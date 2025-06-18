@@ -206,7 +206,8 @@ label ch1_followjorunn:
     u "Ah, you've made it back, Jor! Did you find anything good today?"
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
-
+    $ speaking_char = "all"
+    
     #(a flash of grandpa's sprite here)
     show grandpa neutral at left2
     with dissolve
