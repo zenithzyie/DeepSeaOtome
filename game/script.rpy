@@ -784,60 +784,87 @@ label timeskip1:
     play music "audio/music_town.mp3" fadein 1.0
     show grandpa happy at left2 with dissolve
 
-    "Today, Grandfather and I are shopping for the next week's supply of food before he meets a trader in the afternoon."
+    "Today, Grandfather and I are going out shopping."
+
     show hunter neutral at right2 with dissolve
     "Along with Hunter, who just happened to be free."
-    y neutral "...I don't know a thing about shopping for fish."
-    h "It's easy enough. Just look at the colorin' and the smell."
-    y "Color, I can do that. But I'd rather not have to smell them at all."
 
-    # REMEMBER: variable to check if name is june - little birdie for any name other than june, little bug/junebug for june
-    g "There's been worse smells, little birdie."
+    y neutral "It's been some time since I last went shopping for fish."
+
+    g "Don’t ye worry, little birdie. I know my way around the markets."
+
+    h "There any fish you got in mind?"
+
+    y "I have no idea. Whatever tastes good, I suppose."
+
     show grandpa happy at jumpin
     show grandpa happy:
         ypos 1.0 zoom 1.0
-    g "When ye've been on a ship for three days 'n three nights with ten dead mermaids and they're startin' to curdle in the sun, that's when the smell's bad! Har har!" with vpunch
-    "I've learned some things from Grandfather in my time here."
-    "He's quite proud of his history at sea with the mermaids."
-    g "And don't get me started on sirens!"
-    g "I only ever saw one in my career, and it damn near got my whole crew!"
-    h "Yeah, right, old man. They've been deader longer than you've been alive."
-    h "All you ended up with was an overgrown mermaid, not a siren."
+
+    g "Ye ain’t seen real beauty till yer out at sea, but she ain’t be without dangers either."
+    show grandpa neutral
+    g "Worst is the sirens."
+    y "Sirens?"
+    g "Blasted horrible creatures. I only ever saw one in my career, and it damn near got my whole crew!"
+    h "Yeah, right, old man. They've been dead longer than you've been alive."
+    h "All you ended up with was an overgrown manatee, not a siren."
+    show grandpa happy
     g "Har har har!"
-    show grandpa neutral with dissolve
-    g "But I s'pose you'll never get to see you a mermaid like that, would you..."
-    "He also wishes I could've inherited his love for the hunt."
-    y flustered "Sorry, Grandfather..."
-    g "Nah, it don't bother me, little birdie. Don't worry about me, I know it ain't everyone's cup o' tea."
-    y "It's alright."
-    y "Say, Grandfather, when you get the time, can we please talk about that summer..."
-    show grandpa surprised with dissolve
-    g "[y!c]...right now? I thought ye were done with that business."
-    y huffed "Grandfather, please-"
-    show grandpa neutral with dissolve
-    #ny "Hunter taps Grandfather on the shoulder."
-    h "Oy, old man. She's open."
-    "Grandfather pulls out his timepiece and flips it open."
-    g "Ah, look at the time already. Can't keep 'er waitin'. The ship won't pay for itself!"
+    g "If only ye'd visited sooner, [y]. Ye could'a seen me in action."
+
+    y "It’s unfortunate. I wish I could’ve spent more time with you."
+    g "Ain’t got any reason to regret all that. Yer here now, and that's what matters."
+    y "Have we ever been out to sea together? I don't recall if we have."
+    show grandpa neutral
+    g "Aye, but never out too deep. The sea’s a dangerous place for a wee lass."
+    g "Shame ye don't remember. I caught ye all kinds of colorful fish."
+    "I shouldn't press too hard, but..."
+    y "Mother was okay with that?"
+    g "[y]...right now? I thought ye were done with that business."
+    y "You cant avoid me forever come on"
+    g "Ah, I've been standin' too long. My back's goin' again."
+    g "Go and finish shoppin’ without me."
+    y "Grandfather, please."
+    g "This old man with his bad back will just slow ye down."
+    g "I'll see ye later tonight, aye!"
     hide grandpa with dissolve
-    show hunter neutral at centre with move
-    "Grandfather takes his leave. I can tell he's trying to be cheerful, but he still looks dejected."
-    y flustered "Grandfather..."
-    "Part of me wonders if it's because I keep asking about my past."
-    "Out of habit, my hand finds my camera still sitting at my side, waiting."
-    y "I wish I could find some way to cheer him up."
-    ny huffed "And get him to talk..."
-    h "Hmmh?"
-    y neutral "Is there anything Grandfather likes that I could get him?"
-    h "A present, huh?"
-    h "Hmm, I have an idea."
-    y "You do?"
-    h "The old man'd be ecstatic to hear you go out to see one of his old haunts."
-    h "How do you fancy a boat ride?"
-    h "I can steer us to the safer part of the sea."
-    y "That sounds perfect!"
-    y "Oh, thank you, Hunter!"
-    y "We're going to make Grandfather's day!"
+    "He hurries off."
+    #show hunter at center with move
+    h "Sure moves fast when he wants to."
+    y "Grandfather..."
+    "What will it take for him to feel comfortable enough to talk about what happened?"
+    "Out of habit, I reach for the camera inside my purse."
+    "Maybe there’s a way I can prove to him that I’m ready to hear his story."
+    h "Don't know if I like that look in your eyes. What are you plotting, [y]?"
+    y "You have a boat too, don't you, Hunter?"
+    h "Yeah, I got one."
+    y "What if you took me out to sea? Further than Grandfather ever took me?"
+    y "If I head out far enough, he’ll understand that I'm not a child anymore."
+    h "Nope."
+    y "No? How come?"
+    h "If something happens to you, he’ll have my hide."
+    h "‘Sides, you don’t have the sea legs for it."
+    y "We don’t have to go out that deep. Just enough for one photo."
+
+    #Show hunter raised eyebrow emoji
+    h "..."
+
+    menu:
+        "\"Please, Hammy!\"":
+            #show hunter (blush)
+            h "Ugh."
+            y "Come on, you can do a favor for an old friend, right?"
+            h "Stubborn as ever, [y]."
+
+        "\"I would appreciate it.\"":
+            y "Friends help each other out, yes?"
+            y "It would be most gentlemanly of you."
+            h "Since it’s you asking..."
+
+    h "Fine. But we're only going out to the safest parts of the sea."
+    y "Thank you! You won't regret it, Hunter."
+    y "It'll be fun. We can pretend to be pirates, just like when we were kids!"
+    h "Sure. But I get to be Captain this time."
 
     #SCENE CHANGE - Sea
     scene bg calmwave with dissolve
@@ -845,26 +872,39 @@ label timeskip1:
     #SFX - waves (calm)
     play sound "audio/sfx_wavesCalm.ogg" loop volume 0.3
 
-    "We embark on Hunter's fishing vessel, he at the helm and I at the edge of the railing."
-    "The sea is calm, and the sun is shining down."
+    "We embark on Hunter's fishing boat."
+    "The sea is calm, and the sun is shining down on us."
 
     show hunter neutral with dissolve
     $ config.side_image_tag = "june"
-    h "I'm going to steer us towards the calmer places. Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
+    h "Might be able to spot a 'maid goin' onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     h "Yep. But if they spot my little skiff, the show's over."
-    h "There's no safer place than this part o' the sea."
-    hide hunter neutral with dissolve
-    ny neutral "I keep my camera at the ready, not willing to let any photo opportunities pass me by."
-    "My only experiences are with inland animal photography, but surely sea animals are no more difficult than capturing birds on film."
     "I wonder if I'll be able to catch a picture of a mermaid?"
+    "That should be more than enough to impress Grandfather."
+    hide hunter neutral with dissolve
+    ny neutral "My only experiences are with inland wildlife, but surely sea creatures are no more difficult than capturing birds on film."
+
+    h "So, you’re into photography now?"
+    y "Aye, Captain! I really enjoy it."
+    h "You used to hate sitting still long enough to get yours taken."
+    y "I guess I’ve changed since then."
+
     "The boat travels further out to sea, putting the port behind us."
-    "I take the occasional picture of the waves or a seagull, but not much else enters my camera's lens."
-    "No mermaids in sight."
-    "Some time passes, and Hunter makes light conversation."
+    "I enjoy the sound of the waves lapping against the boat as we glide along."
+
+    menu:
+        "What made you decide to be a mermaid hunter?":
+            h "Family business. PEER PRESSURE."
+        "Do you still collect weird stuff?":
+            h "Weird stuff? Woooow."
+
+    "Something here. Avoid mermaid bossmans, yes."
+
     show hunter neutral with dissolve
-    h "How are you enjoying the view?"
-    ny shocked "I'm about to respond to him, but the ship catches on the waves, and I stumble." with vpunch
+    h "Hang on. Something’s not right."
+    "I'm about to respond to him, but the ship catches on the waves, and I stumble."
+    "Hunter reaches out to steady me."
 
     #SCENE CHANGE - view of the sea (stormy)
     play sound "audio/sfx_thunder.ogg" volume 0.9
@@ -872,16 +912,15 @@ label timeskip1:
     play music "audio/music_storm.mp3" fadein 2.0 volume 0.4
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
     show hunter neutral with vpunch
-    h "What the damn-"
-    "The weather changes nearly in an instant."
+
+    "The weather changes nearly in an instant, the winds roughly chopping the waves and rocking the boat."
     "I can't see a hint of blue in the sky."
-    "Our perfect sailing day was covered by clouds of grey."
     y shocked "It was sunny only moments ago! What is this?"
-    h "Blast...I've sailed us right into a sea witch's storm! Hold onto something, [y]!"
+    h "Hold onto something, [y]! This storm’s not natural. I’ll steer us out of it."
+
     if seastorm:
         "I remember reading something about this."
-        "If this is a sea witch's storm..."
-        "My hair stands on end just thinking about what devastation will ensue."
+        "I should be safe since Hunter is here, right?"
 
     hide hunter neutral with vpunch
     "The ship creaks as he tries to turn it back towards the port, but it seems to make no progress at all."
@@ -906,17 +945,6 @@ label timeskip1:
     hide hunter neutral with dissolve
     "He returns back to his position, eyes staying forward as the winds grow stronger."
     ny flustered "I want to listen to him, but in that moment, I imagine Grandfather's face from earlier today."
-    show grandpa neutral
-    show bg shabby market
-    show noise:
-        alpha .3
-    with dissolve
-    g "{i}But I s'pose you'll never get to see a mermaid like that, would you...{/i}"
-    hide grandpa
-    hide noise
-    show bg choppywave
-    with dissolve
-    "Wouldn't he love to know I was out here where he was? Enjoying the sea and mermaids like he did?"
     "Wouldn't that bring me just that much closer to learning the truth?"
     "Surely he couldn't turn me away, then?"
     menu:
@@ -925,14 +953,10 @@ label timeskip1:
             # +Hunter points
             "I shouldn't take unnecessary risks..."
             "My life isn't worth a photo."
-            if seastorm:
-                "Especially if they're as deadly as the papers say they are."
             ny neutral "I move closer to where Hunter is, towards the back of the boat."
 
         "I can't give up on a picture.":
             "I can hardly see out, but I can't give up my quest for a picture."
-            if seastorm:
-                "Even if this is a sea witch storm, I'm sure we'll probably be fine..!"
             ny neutral "I hold my camera up, making sure my hand is ready to press the trigger once I see a mermaid."
             "The water laps at the edge of the boat ferociously."
 
