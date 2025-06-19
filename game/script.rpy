@@ -120,7 +120,7 @@ label chapter1:
             "A quaint assortment of homes and shops descend down the hill that leads to the harbor."
             y "This part of town has a great view of the sea."
 
-    "Grandfather’s address is on the letter I have, but it would be helpful to ask for some directions. The harbor city is huge."
+    "Grandfather's address is on the letter I have, but it would be helpful to ask for some directions. The harbor city is huge."
     y "Excuse me- sir! Hello?"
     "He ignores me and walks away from the station without a glance."
     "I try to ask a few more people for help, but no one wants to even give me the time of day."
@@ -285,7 +285,7 @@ label chapter1:
     "This must be the wall the fishmonger spoke of."
     "Well."
     "I stare at the wall for a few moments."
-    "This is certainly not something I had planned for this trip, but if it’s the only way to get to Grandfather..."
+    "This is certainly not something I had planned for this trip, but if it's the only way to get to Grandfather..."
     "I suppose I'll just have to give it a go."
 
 label knocking:
@@ -1151,7 +1151,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the cave walls, but I’m far too small to be able to use them for anything."
+    "Glowing stones line the cave walls, but I'm far too small to be able to use them for anything."
 
     window auto hide
     camera:
