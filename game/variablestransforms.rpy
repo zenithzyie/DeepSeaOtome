@@ -241,16 +241,27 @@ layeredimage hunter:
     group expressions:
         attribute neutral:
             "hunter_neutral.png"
+        attribute angry:
+            "hunter_angry.png"
+        attribute raisedeyebrow:
+            "hunter_eyebrowraise.png"
+        attribute flustered:
+            "hunter_flustered.png"
         attribute happy:
             "hunter_happy.png"
         attribute nervous:
             "hunter_nervous.png"
+        attribute sad:
+            "hunter_sad.png"
+        attribute shocked:
+            "hunter_shocked.png"
         attribute warmsmile:
             "hunter_warmsmile.png"
-        attribute raisedeyebrow:
-            "hunter_eyebrowraise.png"
         attribute 2:
             "hunter_neutral.png"
+    group coverings:
+        attribute mask:
+            "hunter_mask.png"
     group eyes auto:
         attribute blinking default:
             "hunter_eye_closed.png" at blink

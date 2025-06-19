@@ -401,40 +401,31 @@ label afterknocking:
     ny shocked "What is this place?"
     "Why did Grandfather's address lead me here? Was I given the wrong directions?"
     "Not to mention the smell of the sewer is rather unpleasant. It's no wonder everyone has their faces covered."
-    ny neutral "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to open."
+    ny neutral "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to openS."
     "It seems I have no choice but to keep moving. There must be another way out somewhere."
     "As I push through the crowd, I can't help but notice what's on display in the stands."
     "Some of the sea creatures are quite beautiful. These are worth remembering."
     "Surely a picture wouldn't hurt?"
     "I reach for my camera."
-    show hunter neutral
-
-    #this zooms in on him centered
-    #NEEDS FIXED WITH NEW SPRITE
-#    window auto hide
-#    show hunter neutral:
-#        xalign 0.5
-#        ypos 0.0
-#        parallel:
-#            Null(694.0, 699.0)
-#            'hunter neutral' with dissolve
-#        parallel:
-#            zoom 1.0
-#            linear 0.80 zoom 1.5
-#    with Pause(0.90)
-#    show hunter neutral:
-#        zoom 1.5
-#        ypos 0.0
-#    window auto show
+    show hunter neutral mask with dissolve
+    window auto hide
+    show hunter neutral:
+        subpixel True 
+        ypos 1.17 zoom 1.0 
+        linear 0.80 ypos 1.75 zoom 1.5 
+    with Pause(0.80)
+    with dissolve
+    show hunter neutral:
+        ypos 1.75 zoom 1.5 
+    window auto show
 
     uhunter "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
     "I freeze as a stranger's hand reaches over to cover my own ."
     uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
-#    show hunter neutral:
-#        xalign 0.5
-#        ypos 0.0
-#        ease 0.2 zoom 1
-#    with vpunch
+    show hunter neutral:
+        xalign 0.5
+        ease 0.2 ypos 1.17 zoom 1
+    with vpunch
     ny shocked "I turn to see who the man is behind me. How does he know my name?"
     "I quickly yank my hand away."
     y "Who are you, exactly?"
@@ -445,11 +436,11 @@ label afterknocking:
     show hunter raisedeyebrow with dissolve
     uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger either, though I s'pose it's been awhile."
     "He pulls down his mask to reveal a handsome face."
-#    show hunter neutral:
-#        xalign 0.5
-#        ypos 0.0
-#        ease 0.7 zoom 1.5
-#    pause 0.8
+    #TAKE OFF MASK
+    show hunter neutral -mask:
+        xalign 0.5
+        ease 0.7 ypos 1.75 zoom 1.5 
+    pause 0.2
     show hunter neutral with dissolve
     uhunter "Hunter. Hunter {w=0.1}Morrowe."
     if newspaper:
@@ -463,7 +454,7 @@ label afterknocking:
             y neutral "I'm not sure what you mean, sorry."
             y "I don't think I know anyone by that name."
 
-    #show hunter flustered with dissolve
+    show hunter flustered with dissolve
     h "Ha... you're really going to make me say it then?"
     h "..."
     h "It's Hammy."
@@ -476,10 +467,9 @@ label afterknocking:
     "His shoulders deflate."
     h "Of all the things you could remember me by, it just had to be that nickname…"
 
-#    show hunter neutral:
-#        xalign 0.5
-#        ypos 0.0
-#        ease 0.2 zoom 1
+    show hunter neutral:
+        xalign 0.5
+        ease 0.2 ypos 1.17 zoom 1
 
     menu:
         "Tease him.":
@@ -488,6 +478,7 @@ label afterknocking:
             h "Please, really, just Hunter is fine."
             y "But your face is so funny when I say it!"
             h "You..."
+            show hunter flustered with dissolve
             "He looks away from me. I believe he is thoroughly embarrassed now."
             y "Of course, I'll call you Hunter. I'm just having my fun."
 
@@ -545,7 +536,7 @@ label afterknocking:
     scene bg underground market:
         fit "contain"
 
-    show hunter neutral
+    show hunter neutral mask
     with dissolve
 
     "I slide the coat down over my shoulders and Hunter pulls his mask back up."
@@ -620,7 +611,7 @@ label afterknocking:
     scene bg underground market:
         fit "contain"
     with fade
-    show hunter neutral with dissolve
+    show hunter neutral mask with dissolve
     h "Try to keep your eyes down, or people might see your face."
     $ config.side_image_tag = "june"
     y neutral "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
@@ -706,7 +697,7 @@ label afterknocking:
     show hunter neutral at farright with move
     h "The ole girl over there, can't miss her."
     "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, towering proudly over the harbor."
-    y "So that’s his home..."
+    y "So that's his home..."
 
     #show hunter neutral at centre with move
     #june sad
@@ -827,7 +818,7 @@ label timeskip1:
     g "Worst is the sirens."
     y shocked "Sirens?"
     g "Blasted horrible creatures. I only ever saw one in my career, and it damn near got my whole crew!"
-    #show hunter smile
+    show hunter happy
     h "Yeah, right, old man. They've been dead longer than you've been alive."
     h "All you got was a squealing manatee, not a siren."
     show grandpa happy at jumpin
@@ -886,7 +877,7 @@ label timeskip1:
 
     menu:
         "\"Please, Hammy!\"":
-            #show hunter blush
+            show hunter flustered
             h "Ugh."
             #june smile
             y "Come on, you can do a favor for an old friend, right?"
@@ -1153,7 +1144,7 @@ label timeskip1:
     window auto hide
     camera:
         subpixel True
-        pos (-864, -288) zoom 1.61
+        pos (-804, -318) zoom 1.61
         linear 1.32 pos (-108, -102) zoom 2.04
     with Pause(1.42)
     camera:
