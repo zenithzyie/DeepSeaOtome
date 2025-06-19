@@ -23,7 +23,7 @@ init python:
     gallery_items = []
     gallery_items.append(GalleryItem("", ["cg train"],"hoverimgLG" ))
     gallery_items.append(GalleryItem("", ["cg_sushi_unlock"] ,"hoverimgLG"))
-    gallery_items.append(GalleryItem("", ["cg skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
 
 
 
@@ -39,4 +39,3 @@ image hoverimgLG = ("images/gallery/hoverLG.png")
 image cg train = ("images/cg_train.jpg")
 image cg_sushi_unlock = ("images/cg sushi.jpg")
 image cg skyllahands = ("images/cg skyllahands.png")
-

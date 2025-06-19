@@ -1,4 +1,5 @@
 
+#Click to continue icon
 image ctc_pos:
     "gui/ctc_icon.png"
     xpos 0.78 ypos 0.94
@@ -138,21 +139,22 @@ layeredimage grandpa:
             "grandpa_eye_closed.png" at blink
 ######################################################################
 layeredimage side june:
+    group body:
+        attribute body default:
+            "side_june_base.png"
     group expressions:
+        attribute happy:
+            "side_june_happy.png"
         attribute flustered:
             "side_june_flustered.png"
         attribute huffed:
             "side_june_huffed.png"
         attribute neutral:
-            "side_june_neutral.png"
+            "side_june_happy.png"
         attribute shocked:
             "side_june_shocked.png"
-            #zoom 0.277
-            #xpos -218
-            #ypos 20
-        #xzoom -1
-        #xpos -80
-        #ypos 20
+    zoom 0.3
+    xzoom -1
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
@@ -227,20 +229,33 @@ layeredimage side june fish:
     group expressions:
         attribute neutral:
             "side_june_fish_neutral.png"
-            zoom 0.4
-            xpos 172
-            ypos 250
+            zoom 0.12
+            xpos 138
+            ypos 310
 ######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')
+    group body:
+        attribute body default:
+            "hunter_base.png"
     group expressions:
         attribute neutral:
             "hunter_neutral.png"
-    zoom 0.3
-    ypos 1.46
+        attribute happy:
+            "hunter_happy.png"
+        attribute nervous:
+            "hunter_nervous.png"
+        attribute warmsmile:
+            "hunter_warmsmile.png"
+        attribute raisedeyebrow:
+            "hunter_eyebrowraise.png"
+        attribute 2:
+            "hunter_neutral.png"
     group eyes auto:
         attribute blinking default:
             "hunter_eye_closed.png" at blink
+    zoom 0.15
+    ypos 1.17
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
