@@ -139,25 +139,31 @@ layeredimage grandpa:
             "grandpa_eye_closed.png" at blink
 ######################################################################
 layeredimage side june:
-    group body:
-        attribute body default:
-            "side_june_base.png"
+    # group body: #FOR NEW JUNE SPRITE
+    #     attribute body default:
+    #         "side_june_base.png"
     group expressions:
-        attribute happy:
-            "side_june_happy.png"
+        # attribute happy: #FOR NEW JUNE SPRITE
+        #     "side_june_happy.png"
         attribute flustered:
             "side_june_flustered.png"
         attribute huffed:
             "side_june_huffed.png"
         attribute neutral:
-            "side_june_happy.png"
+            "side_june_neutral.png"
         attribute shocked:
             "side_june_shocked.png"
-    zoom 0.3
-    xzoom -1
+        xzoom -1
+        xpos -80
+        ypos 20
+    # zoom 0.3 #FOR NEW JUNE SPRITE
+    # xzoom -1 #FOR NEW JUNE SPRITE
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink
+        xzoom -1
+        xpos -80
+        ypos 20
 ######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')

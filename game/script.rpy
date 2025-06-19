@@ -35,7 +35,8 @@ label get_name:
     with dissolve
     pause
     hide text with dissolve
-    show side june happy with dissolve:
+    #show side june happy with dissolve: #FOR NEW JUNE SPRITE
+    show side june neutral at farleft with dissolve:
         yalign 0.1
 
 label enter_name:
@@ -395,6 +396,7 @@ label afterknocking:
     with fade
     with Pause(1.75)
     show bg underground market
+    $ config.side_image_tag = "june"
     "It takes a few seconds for my eyes to adjust to the dim lighting as I step out of the elevator."
     "A strange new world greets me.  Creatures I've never seen before are lined up in tanks or hung out on display."
     "Even the people here are mysterious, their features obscured by masks or dark clothing. No one seems keen on being recognized."
@@ -535,7 +537,7 @@ label afterknocking:
     #SCENE CHANGE - Black Market
     scene bg underground market:
         fit "contain"
-
+    $ config.side_image_tag = "june"
     show hunter neutral mask
     with dissolve
 
