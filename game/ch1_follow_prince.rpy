@@ -203,7 +203,7 @@ label ch1_followprince:
     "If only I hadn't been stupid enough to fall overboard for that sea witch's music."
     p "Is there anything you can do about it?"
     c "Yes. Though the curse is rather complex, it won't be a match for me."
-    c "I shall start unraveling the enchantment now. You may want to swim back, Thio."
+    c "I shall start unraveling the enchantment now. You may want to swim back, Thioran."
     "Really? Just like that? I'll finally be free from this nightmare!"
     "Cetus' hands start to glow as he starts to cast his spell."
     "His hands move like the conductor of an orchestra, and strings of magic entwine themselves around my body."
