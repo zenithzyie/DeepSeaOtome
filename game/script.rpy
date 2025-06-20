@@ -63,7 +63,7 @@ label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     play music "audio/music_town.mp3" fadein 1.0
-    play sound "audio/sfx_train.mp3" fadein 2.0 volume 0.07 loop
+    play sound "audio/sfx_train.mp3" fadein 2.0 volume 0.1 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -214,12 +214,9 @@ label chapter1:
             y"…"
             y "Uh...knock knock?"
             "The woman grins toothily, looking pleased with my response."
-            woman "Knock knock!"
+            woman "Gehehehe! The wall!"
             #bolding makes it look weird
             "It doesn't seem like she's trying to tell me a joke at all."
-            "I wonder if I should show her the address on the letter."
-            "Even so, this is really getting nowhere..."
-            "Surely there are others around who can help me find Grandfather?"
             y "Have a good day, ma'am."
             "I quickly walk away from the strange woman, though I can't help but feel like whatever she kept repeating is important somehow."
 
@@ -235,7 +232,7 @@ label chapter1:
             kid "She says it's full of bad people."
             "He gives me a look."
             kid "Are you bad people?"
-            y "No, I'm just looking for someone who lives here."
+            y "No, I'm just looking for someone who lives there."
             y "Thank you for your help."
             "The child nods happily."
             kid "No problem, lady!"
@@ -245,8 +242,7 @@ label chapter1:
             jump talktownsfolk
 
         "Fishmonger":
-            #SPRITE CHANGE (??? Expression)
-            ny shocked "I just hope I'm not expected to buy the fish covered in flies."
+            #ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
             #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
             y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
@@ -261,7 +257,7 @@ label chapter1:
             y neutral "It's [y] Finch."
             fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            fishmonger "The code for that wall's five, three, four. An' remember to pause in between!"
+            fishmonger "The code for that's five, three, four. An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
@@ -269,7 +265,7 @@ label chapter1:
             y "Oh, yes. Thank you so much for the help."
             "That was far from helpful!"
             "But I leave him a fair amount of coin for his trouble anyway."
-            "Perhaps I will have better luck with someone else."
+            #"Perhaps I will have better luck with someone else."
 
             jump talktownsfolk
 
@@ -280,15 +276,10 @@ label chapter1:
 
     "The code was... five, three, four?"
 
-    "That really isn't much to go off of. People have such an odd way of giving directions in Aquantis."
-
-    "Still, it's more than what I started with."
-
     scene bg brickwall with dissolve
     $ config.side_image_tag = "june"
     ny neutral "I make my way past the market area to a narrow alley."
     "Upon reaching the end of the alley, I turn and come across a strange brick wall. The bricks are discolored and eroded compared to the rest."
-    "This must be the wall the fishmonger spoke of."
     "Well."
     "I stare at the wall for a few moments."
     "This is certainly not something I had planned for this trip, but if it's the only way to get to Grandfather..."
@@ -359,10 +350,11 @@ label afterknocking:
     "With cautionary steps, I move inside."
     $ config.side_image_tag = "None"
     #note: this could be somehting like....better
-    "A rattling cage door slides closed the moment I enter."
+    "A rattling door slides closed the moment I enter."
     "It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav" volume 0.1
+    #sounds off
     "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I will find so far down?"
     "..."
     "..."
@@ -453,11 +445,11 @@ label afterknocking:
     if newspaper:
         ny shocked "Morrowe? I saw that name in the newspaper earlier, but the man himself looks unfamiliar."
     menu:
-        "\"That doesn't mean anything to me.\"":
+        "That doesn't mean anything to me.":
             $ hunter_points -= 1
             y neutral "Is that name supposed to mean anything?"
             y "I told you I don't know who you are."
-        "\"I'm sorry?\"":
+        "I'm sorry?":
             y neutral "I'm not sure what you mean, sorry."
             y "I don't think I know anyone by that name."
 
@@ -473,10 +465,6 @@ label afterknocking:
     y "That's right! Hammy!"
     "His shoulders deflate."
     h "Of all the things you could remember me by, it just had to be that nickname…"
-
-    show hunter neutral:
-        xalign 0.5
-        ease 0.2 ypos 1.17 zoom 1
 
     menu:
         "Tease him.":
@@ -496,12 +484,14 @@ label afterknocking:
     show hunter happy with dissolve
     h "...Didn't think I'd ever hear you say my name again."
     y "You look so different now!"
-    show hunter neutral with dissolve
+    show hunter neutral:
+        xalign 0.5
+        ease 0.2 ypos 1.17 zoom 1
     h "Well, it's been about, what... ten years or so since we've last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
     y "I came to see my grandfather, if you still remember him."
     show hunter raisedeyebrow with dissolve
-    h "{i}Remember him?{/i} 'Course I remember him. Always grateful for the old man takin' care of me all these years."
+    h "{i}Remember him?{/i} 'Course I remember him. Always grateful for the old man taking care of me all these years."
     h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking ‘round here instead."
     show hunter happy with dissolve
     h "Feeling nostalgic?"
@@ -531,7 +521,7 @@ label afterknocking:
             $ hunter_points += 1
             h "Sure."
             h "Should keep you from standing out too much."
-            "His cloak is heavy, but it's not a bad weight."
+            "His coat is heavy, but it's not a bad weight."
 
         "\"What are you doing?\"":
             $ hunter_points -= 1
@@ -546,7 +536,7 @@ label afterknocking:
     show hunter neutral mask
     with dissolve
 
-    "I slide the coat down over my shoulders and Hunter pulls his mask back up."
+    "I slide the coat over my shoulders and Hunter pulls his mask back up."
     "He takes my hand, leading me through the crowd. I try my best to keep in step with his long strides."
 
     #SFX - CROWD
@@ -593,7 +583,7 @@ label afterknocking:
         hide cg_sushi_unlock
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     $ config.side_image_tag = "None"
-    "Another mermaid, eerily similar to the one banging on the glass, is on display in front of the tank."
+    "Another mermaid, similar to the one banging on the glass, is on display in front of the tank."
     "Her tail is ripe for the taking."
 
     menu:
@@ -752,9 +742,9 @@ label afterknocking:
     show grandpa happy at left2 with move:
         ease2 0.3
     g "Oh, just how many years has it been since I've seen ye, [y]?"
+    show grandpa neutral with dissolve
     g "And yer mother? Is she with ye?"
     y "I'm sorry, Grandfather. It's just me."
-    show grandpa neutral with dissolve
     g "Oh, Marie..."
     "He lets out a wistful sigh."
     g "Can't be helped, I s'pose."
@@ -768,12 +758,12 @@ label afterknocking:
     y neutral "Thank you, Hunter."
 
     menu:
-        "Will I see you again?":
+        "\"Will I see you again?\"":
             $ hunter_points += 1
             show hunter warmsmile with dissolve
             h "Yeah."
             h "I won't be far."
-        "Goodbye.":
+        "\"Goodbye.\"":
             h "Goodbye, [y]. Don't be a stranger, yeah?"
 
     show hunter neutral with dissolve
@@ -929,7 +919,6 @@ label timeskip1:
     h "So, you're into photography now?"
     #june big happy
     y "Aye, Captain!"
-    show hunter raisedeyebrow with dissolve
     h "Heh. Didn't think you'd have the patience for it."
     #june happy
     y "Perhaps not when I was younger, but I really enjoy it now."
@@ -993,7 +982,7 @@ label timeskip1:
 
         "I can't give up on a picture.":
             "This should be proof that I can handle whatever Grandfather has to say."
-            ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amounts..."
+            ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amount..."
 
 
     $ config.side_image_tag = "june"
@@ -1133,7 +1122,7 @@ label timeskip1:
         pos (-858, -480) zoom 1.61
     window auto show
 
-    "It's dark, and difficult to see in. My new tiny eyes struggle to take in everything all at once."
+    "It's dark, and difficult to see. My new tiny eyes struggle to take in everything all at once."
 
     window auto hide
     camera:
@@ -1146,7 +1135,6 @@ label timeskip1:
     window auto show
 
     "From what I can see, there's only one path forward: deeper into the siren's lair."
-    "The cave is windowless, or whatever the underwater equivalent is."
 
     window auto hide
     camera:
@@ -1158,7 +1146,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the cave walls, but I'm far too small to be able to use them for anything."
+    "Glowing stones line the cave walls, but that's not very helpful."
 
     window auto hide
     camera:
@@ -1194,11 +1182,11 @@ label timeskip1:
         ease 0.02 zoom 1
     "The siren screams as she drops me and flails backward."
     show skylla surprised
-    s "No. No! This-{w} this isn't right."
+    s "No. No! This- this isn't right."
     "Once I blink the white spots out my vision, I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."
     "We stare at each other, frozen in place."
-    ".{w}.{w}."
+    "..."
     "But then, I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
     show skylla angry with vpunch
     s "You little {i}eel!{/i} Get back here!"
@@ -1223,7 +1211,7 @@ label timeskip1:
 
     "I swim as fast as I can. Faster than I've ever ran when I had legs."
     "My heart is thumping madly in my chest as I force my way through the debris. "
-    "The sharper pieces scrape and cut through my fins, but I barely pay them any mind as I keep charging forward with all I have.."
+    "The sharper pieces scrape and cut through my fins, but I barely pay them any mind as I keep charging forward with all I have."
     "I can hear the siren cursing as I swim away."
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
@@ -1248,7 +1236,7 @@ label timeskip1:
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
     novisualjor "I'm very sorry, {i}my prince{/i}, but I was hoping I could skip the judgment part entirely!"
-    novisualjor "Can’t you just ask the Capital to find you something else for dinner? I’m sure they have plenty of food to spare."
+    novisualjor "Can’t you just ask your servants to find you something else for dinner? I’m sure they have plenty of food to spare."
 
     "Oh? A 'prince'?"
     "Curiosity piqued, I push a bit further through the foliage to get a better look."
@@ -1264,7 +1252,7 @@ label timeskip1:
     $ speaking_char = "Jorunn"
     "One of them is carrying a large net stuffed full of fish."
     $ speaking_char = "Prince Thioran"
-    "The other has fins in a striking shade of blue, unlike any mermaid I've seen.{w} He has what appears to be a guard hovering close to his side."
+    "The other has fins in a striking shade of blue, unlike anything I've seen.{w} He has what appears to be a guard hovering close to his side."
 
     $ speaking_char = "all"
     "Prince? Guard? Do mermaids really have those kinds of things?"
