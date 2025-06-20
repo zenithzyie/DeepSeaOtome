@@ -1110,14 +1110,14 @@ label timeskip1:
     camera:
         subpixel True
         parallel:
-            pos (0, 0)
-            linear 0.88 pos (-864, -7)
-            linear 0.80 pos (-12, -475)
-            linear 0.78 pos (-858, -480)
+            ease 0.52 pos (0, 0)
+            ease 0.88 pos (-864, -7)
+            ease 0.80 pos (-12, -475)
+            ease 0.78 pos (-858, -480)
         parallel:
             zoom 1.0
-            linear 0.22 zoom 1.61
-    with Pause(2.56)
+            ease 0.52 zoom 1.61
+    with Pause(2.98)
     camera:
         pos (-858, -480) zoom 1.61
     window auto show
