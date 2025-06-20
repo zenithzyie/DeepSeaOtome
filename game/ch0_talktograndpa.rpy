@@ -25,6 +25,8 @@ label grandpatalk:
     "I sit down at the table and Grandfather joins me."
     "My gaze is quickly drawn to the largest picture on the wall."
 
+    show black:
+        alpha 0.5
     show cg_familyportrait:
         fit "contain"
         xalign 0.5
@@ -41,7 +43,9 @@ label grandpatalk:
     "She had already passed when I was born. I hardly know anything about her."
     "And ever since Mother and I stopped visiting, Grandfather has been all alone."
 
-    hide cg_familyportrait with dissolve
+    hide cg_familyportrait
+    hide black
+    with dissolve
 
     y "Grandfather… What happened between you and Mother? Why was I never allowed to visit again?"
     g "..."

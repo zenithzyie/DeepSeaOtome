@@ -38,6 +38,7 @@ label get_name:
     #show side june happy with dissolve: #FOR NEW JUNE SPRITE
     show side june neutral at farleft with dissolve:
         yalign 0.1
+        #xzoom -1
 
 label enter_name:
     $player_name = renpy.input("What is your name?", default = "June", length=15)
@@ -133,9 +134,9 @@ label chapter1:
 
     #june will be frowing a little in her neutral
     ny neutral "The further I walk down from the top of the city, the more the atmosphere seems to change."
-    "Rather than being ignored, it seems I'm attracting uncomfortable attention."
     "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
     "Now, the street feels gloomy and unwelcoming."
+    "Rather than being ignored, it seems I'm attracting uncomfortable attention."
     "The people's gazes feel heavy on me as I walk by."
     badguy "Tch, Inlanders. What's someone like her out here for?"
     badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
@@ -169,6 +170,10 @@ label chapter1:
             y "Beware of sudden storms..."
             "Deadly sea storms can strike without rhyme or reason. Use caution when traveling without seasoned sailors."
             #Show propaganda poster here
+            t "Those storms aren’t something to mess with. Stay safe if you’re heading out to sea, missy!"
+            y "I will. Thank you!"
+            "The man walks off and I browse over a few more posters before turning away."
+
             #needs a few more lines, include a townsperson
 
         "Children playing in the street":
@@ -358,13 +363,13 @@ label afterknocking:
     "It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav" volume 0.1
-    "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I would find so far down?"
+    "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I will find so far down?"
     "..."
     "..."
     "..."
     #SFX -  Elevator
     play sound "audio/sfx_elevator2.wav" volume 0.1
-    "Until it finally comes to a stop, and the door opens."
+    "The elevator finally comes to a stop, and the door opens."
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.4
@@ -403,7 +408,7 @@ label afterknocking:
     ny shocked "What is this place?"
     "Why did Grandfather's address lead me here? Was I given the wrong directions?"
     "Not to mention the smell of the sewer is rather unpleasant. It's no wonder everyone has their faces covered."
-    ny neutral "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to openS."
+    ny neutral "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to open."
     "It seems I have no choice but to keep moving. There must be another way out somewhere."
     "As I push through the crowd, I can't help but notice what's on display in the stands."
     "Some of the sea creatures are quite beautiful. These are worth remembering."
@@ -412,13 +417,13 @@ label afterknocking:
     show hunter neutral mask with dissolve
     window auto hide
     show hunter neutral:
-        subpixel True 
-        ypos 1.17 zoom 1.0 
-        linear 0.80 ypos 1.75 zoom 1.5 
+        subpixel True
+        ypos 1.17 zoom 1.0
+        linear 0.80 ypos 1.75 zoom 1.5
     with Pause(0.80)
     with dissolve
     show hunter neutral:
-        ypos 1.75 zoom 1.5 
+        ypos 1.75 zoom 1.5
     window auto show
 
     uhunter "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
@@ -441,7 +446,7 @@ label afterknocking:
     #TAKE OFF MASK
     show hunter neutral -mask:
         xalign 0.5
-        ease 0.7 ypos 1.75 zoom 1.5 
+        ease 0.7 ypos 1.75 zoom 1.5
     pause 0.2
     show hunter neutral with dissolve
     uhunter "Hunter. Hunter {w=0.1}Morrowe."
@@ -632,7 +637,7 @@ label afterknocking:
             else:
                 y "I don't quite remember much, to be honest."
                 h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
-        "\"You don't kill them too... do you?\"":
+        "\"You don't {i}kill{/i} them too... do you?\"":
             $ hunter_points -= 1
             h "I do."
             h "My family does a lot of fishing. Some of that is mermaids... if you look under the table."
@@ -1029,7 +1034,7 @@ label timeskip1:
     #SCENE CHANGE - Black Screen
     scene bg black with dissolve
     "..."
-    siren "After all these long years...you've finally returned home to me..."
+    siren "After all these long years... you've finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
@@ -1099,11 +1104,11 @@ label timeskip1:
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this... forever?"
     #stop music fadeout 2.0
-    "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped into the wrong shape."
+    "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped beyond recognition."
     "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
     "Forever? Like this?"
     "Or perhaps...{w}am I going to die after being eaten as a special dinner course?"
-    "Suddenly the memories of the mermaid market come to mind. Their bodies had been taken apart to become a cheap meal."
+    "Suddenly the memories of the mermaid market come to mind. Their bodies had been taken apart, all for a cheap meal."
     "I am no different from them now.{w} Just as helpless."
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
@@ -1176,9 +1181,9 @@ label timeskip1:
         ease 0.5 zoom 1.5
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It's a lie. A burning pain begins to spread across my body as she sings."
-    "I can't even scream as I feel something tugging in me, as if the siren is reaching inside of my body and trying to pull me apart."
-    s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}!"
+    "It's a lie. A burning pain spreads across my body as she sings."
+    "I can't even scream as I feel something tugging inside me, as if the siren is trying to pull me apart from within."
+    s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
     show skylla angry
     "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
 
@@ -1187,12 +1192,14 @@ label timeskip1:
     show skylla angry:
         yalign 0.1
         ease 0.02 zoom 1
-    "The siren screams as she drops me, falling backwards."
+    "The siren screams as she drops me and flails backward."
     show skylla surprised
-    s "No. No! This- this isn't right."
-    "Once I blink the white spots out my vision I look up and find the siren staring at me with a shocked expression on her beautiful face."
+    s "No. No! This-{w} this isn't right."
+    "Once I blink the white spots out my vision, I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."
-    "We both stare at each other, frozen, before I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
+    "We stare at each other, frozen in place."
+    ".{w}.{w}."
+    "But then, I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
     show skylla angry with vpunch
     s "You little {i}eel!{/i} Get back here!"
 
@@ -1204,7 +1211,7 @@ label timeskip1:
     show skylla angryteeth
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
-    "I twist away just in time, and the magic misses me and collides with one of the glowing stones on the wall of the cave." with vpunch
+    "I twist away just in time, and the magic collides with one of the glowing stones on the wall." with vpunch
     hide skylla with dissolve
     stop sound
     "Time seems to slow down."
@@ -1216,22 +1223,21 @@ label timeskip1:
 
     "I swim as fast as I can. Faster than I've ever ran when I had legs."
     "My heart is thumping madly in my chest as I force my way through the debris. "
-    "The sharper pieces scrape and cut through my fins but I barely pay them any mind as I keep swimming.{w} I think that if I had my voice I would be crying."
-    "I can hear the siren cursing as I swim away, but eventually it shrinks into a distant shriek as I keep charging forward with all I have."
+    "The sharper pieces scrape and cut through my fins, but I barely pay them any mind as I keep charging forward with all I have.."
+    "I can hear the siren cursing as I swim away."
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
     scene bg sea with vpunch
     play music "audio/music_underwater.mp3" volume 0.7 fadeout 1.0
     "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
-    y fish neutral "Blub...blub..."
-    "Now that the adrenaline has faded I feel exhausted. My body feels like it's been run over. Everything hurts."
-
-    "Grandfather...Hunter...they must think that I'm dead by now."
+    y fish neutral "Blub...{w}blub..."
+    "Now that the adrenaline has faded, I feel exhausted. My body feels like it's been run over."
+    "Grandfather...{w} Hunter...{w} they must think that I'm dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But...{w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
-    "Before I can dive any further into those thoughts I hear voices approaching from a distance."
+    "Before I can dive any further into those thoughts, I hear voices approaching from a distance."
     "I quickly dart into some foliage to hide."
 
     #THIO AND JOR ENTER THE STAGE
@@ -1239,13 +1245,13 @@ label timeskip1:
     show prince angry at farleft
     show jorunn sweat at right2
     show kelp with vpunch
-    novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Vanguard."
+    novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
-    novisualjor "Well, I am sorry, my prince! But I was hoping I could skip the judgement part entirely!"
-    novisualjor "Maybe you could ask your Vanguard to find you something else for your dinner? They could always go pilfer from other villages."
+    novisualjor "I'm very sorry, {i}my prince{/i}, but I was hoping I could skip the judgment part entirely!"
+    novisualjor "Can’t you just ask the Capital to find you something else for dinner? I’m sure they have plenty of food to spare."
 
-    "A 'prince'?"
-    "Curiosity piqued, I lean over as much as I dare to stare at the new arrivals."
+    "Oh? A 'prince'?"
+    "Curiosity piqued, I push a bit further through the foliage to get a better look."
 
     hide kelp with dissolve
 
@@ -1254,16 +1260,16 @@ label timeskip1:
     with dissolve
 
     $ speaking_char = "all"
-    "Ahead of me, two mer-people are staring each other down."
+    "A pair of merfolk are staring each other down."
     $ speaking_char = "Jorunn"
-    "One of them is a young man carrying a large net stuffed full of fish."
+    "One of them is carrying a large net stuffed full of fish."
     $ speaking_char = "Prince Thioran"
-    "The other one has fins unlike any other I've seen, a striking array of blue.{w} He has what looks to be a bodyguard hovering close to his side."
+    "The other has fins in a striking shade of blue, unlike any mermaid I've seen.{w} He has what appears to be a guard hovering close to his side."
 
     $ speaking_char = "all"
-    "Prince...? Bodyguard? Do mermaids really have that kind of thing?"
+    "Prince? Guard? Do mermaids really have those kinds of things?"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
-    uj "Oh no. No, of course not!"
+    uj "Oh, no. Of course not!"
     show jorunn glee
     uj "...But if the shell fits!"
     up "You thieving little-"
@@ -1272,23 +1278,22 @@ label timeskip1:
     show jorunn sweat at jumpin
     with vpunch
 
-    "Just then, a loud rumble echoes through the area. The waters feel like they're slowly beginning to churn."
+    "Just then, a loud rumble echoes throughout the area. The waters feel like they're slowly beginning to churn."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show prince angry
-    up "Dammit. Why now of all times..!"
+    up "Damn it. Why now, of all times..!"
     show jorunn glee
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
-    "Do I approach the prince? Or perhaps the other fellow? Maybe this is dangerous...but they might be my only shot at getting help right now."
+    "They could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
+    "Do I approach the prince? Or perhaps the other fellow?"
 
     if promermaid >= 1:
         "Anything would be better than returning to the sea witch."
     if antimermaid >= 1:
         "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
-    "Either way, they're both starting to swim away."
+    #"Regardless, they're both starting to swim away."
 
-    #Follow Striking Prince
-    #Follow Scrappy Boy (can't choose this yet, lol)
     $ speaking_char = "all"
     menu:
         "What do I do...?"
@@ -1318,10 +1323,10 @@ label ch1_badend1:
     "I know! I'll try taking shelter in a nearby rock formation!"
     "The problem is, everything is so far away from me."
     "It'll take far too long to reach shelter."
-    "I try swimming anyway, as fast as I can go."
+    "I try swimming anyway, moving as fast as I can."
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It's too late!"
-    "The last thing I see before my eyes close forever is something large, crashing right into me."
+    "The last thing I see before everything goes dark is something large crashing right into me.."
     scene black with vpunch
     "Ravaged by the sea, I die."
     "BAD END 1."

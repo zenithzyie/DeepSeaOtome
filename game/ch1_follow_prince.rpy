@@ -1,14 +1,12 @@
-# follow branches here
 
-#FOLLOW THIORAN
+#BRANCH - FOLLOW THIORAN
 label ch1_followprince:
-    #BRANCH - FOLLOW PRINCE
     hide jorunn glee with moveoutright
     show prince at Position(xpos=0.45)
     with move
     $ config.side_image_tag = "june"
     "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
-    "It's now or never!"
+    "Alright, [y]! It's now or never!"
     "3...2...1!!"
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
@@ -31,7 +29,7 @@ label ch1_followprince:
     "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
     "Then, with a surprising amount of gentleness, his hands come up to cup my body."
     guard "Your Highness?"
-    y "Blub blub blub!!"
+    y "{i}Blub blub blub!!{/i}"
     "Please help me! If I stay out in this storm I'll die!"
     "If only I could speak real words!"
     "Strangely enough, he pauses, as if he can understand what I'm saying."

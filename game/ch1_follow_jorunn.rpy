@@ -1,11 +1,7 @@
 
-
+#BRANCH - FOLLOW JORUNN
 label ch1_followjorunn:
-    #BRANCH - FOLLOW JORUNN
     hide prince angry with moveoutleft
-#    scene bg jorvillage:
-#        zoom 0.34
-#    y neutral "wow"
     show jorunn sweat
 
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
@@ -26,10 +22,9 @@ label ch1_followjorunn:
     uj "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
-
     uj "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
-    y "Blub blub blub!!"
+    y "{i}Blub blub blub!!{/i}"
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
     show jorunn neutral
@@ -207,7 +202,7 @@ label ch1_followjorunn:
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
     $ speaking_char = "all"
-    
+
     #(a flash of grandpa's sprite here)
     show grandpa neutral at left2
     with dissolve
