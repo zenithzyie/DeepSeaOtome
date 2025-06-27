@@ -62,8 +62,8 @@ label enter_name:
 label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
-    play music "audio/music_town.ogg" fadein 1.0 volume 0.8 loop
-    play sound "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.1 loop
+    play music "audio/music_town.ogg" fadein 1.0 volume 0.9 loop
+    play sound "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -799,10 +799,10 @@ label timeskip1:
 
     y "It's been awhile since I last went shopping for fish."
 
-    show grandpa happy
+    show grandpa happy with dissolve
     g "Don't ye worry, little birdie. I know my way around the markets."
 
-    show hunter neutral
+    show hunter neutral with dissolve
     h "There any fish you got in mind?"
 
     y "I have no idea. Whatever tastes good, I suppose."
@@ -811,16 +811,16 @@ label timeskip1:
 
     g "O'course some fish bite back. Ye got to watch out for the mermaids out there."
 
-    show grandpa neutral
+    show grandpa neutral with dissolve
     g "Worst is the sirens."
     y shocked "Sirens?"
     g "Blasted horrible creatures. I only ever saw one in my career, and it damn near got my whole crew!"
-    show hunter happy
+    show hunter happy with dissolve
     h "Yeah, right, old man. They've been dead longer than you've been alive."
     h "All you got was a squealing manatee, not a siren."
     show grandpa happy at jumpin
     g "Har har har!"
-    show grandpa neutral
+    show grandpa neutral with dissolve
     g "If only ye'd visited sooner, [y]. Ye could'a seen me in action."
     #june sad instead of flustered
     y flustered "It's unfortunate. I wish I could've spent more time with you."
@@ -828,16 +828,16 @@ label timeskip1:
     "He's quite proud of his history at sea."
     g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
-    show grandpa neutral
+    show grandpa neutral with dissolve
     g "Aye, but never out too deep. The sea's a dangerous place for a wee lass."
-    show grandpa happy
+    show grandpa happy with dissolve
     g "Shame ye don't remember. I caught ye all kinds of colorful fish."
     "I shouldn't press too hard, but..."
     y "Mother was okay with that?"
-    show grandpa surprised
+    show grandpa surprised with dissolve
     g "[y]...right now? I thought ye were done with that business."
     y "But you still haven't-"
-    show grandpa neutral
+    show grandpa neutral with dissolve
     g "Ah, I've been standin' too long. My back's goin' again."
     g "Go and finish shoppin' without me."
     ny huffed "Oh, not this again!"
@@ -849,23 +849,23 @@ label timeskip1:
     show hunter at centre with move
     "My questions are once again left unanswered as Grandfather hurries away."
     #show hunter at center with move
-    show hunter raisedeyebrow
+    show hunter raisedeyebrow with dissolve
     h "Sure moves fast when he wants to."
     y flustered "Grandfather..."
     "What will it take for him to feel comfortable enough to talk about what happened?"
     "Out of habit, I reach for the camera inside my purse."
     ny neutral "Perhaps there's a way I can prove to him that I'm ready to hear his story."
-    show hunter nervous
+    show hunter nervous with dissolve
     h "Don't know if I like that look in your eyes. What are you plotting, [y]?"
     y "You have a boat, don't you, Hunter?"
-    show hunter neutral
+    show hunter neutral with dissolve
     h "Yeah, I got one."
     y "What if you took me out to sea? Further than Grandfather ever took me?"
     y "If I head out far enough, he'll understand that I'm not a child anymore."
     h "Nope."
     y shocked "No? How come?"
     h "If something happens to you, he'll have my hide."
-    show hunter happy
+    show hunter happy with dissolve
     h "‘Sides, you don't have the sea legs for it."
     y neutral "We don't have to go out that deep. Just enough to bring him back a photo."
 
@@ -874,11 +874,11 @@ label timeskip1:
 
     menu:
         "\"Please, Hammy!\"":
-            show hunter flustered
+            show hunter flustered with dissolve
             h "Ugh."
             #june smile
             y "Come on, you can do a favor for an old friend, right?"
-            show hunter happy
+            show hunter happy with dissolve
             h "Stubborn as ever, [y]."
 
         "\"I would appreciate it.\"":
@@ -887,13 +887,13 @@ label timeskip1:
             show hunter raisedeyebrow
             h "Pulling that card, huh?"
 
-    show hunter neutral
+    show hunter neutral with dissolve
     h "Fine. Though I'm only taking you through the safest waters."
     #june big happy
     y "Thank you! You won't regret it, Hunter."
     #june happy
     y "It'll be fun. We can pretend to be pirates, just like when we were kids!"
-    show hunter happy
+    show hunter happy with dissolve
     h "Sure. But I get to be Captain this time."
 
     #SCENE CHANGE - Sea
@@ -1172,7 +1172,7 @@ label timeskip1:
     "It's a lie. A burning pain spreads across my body as she sings."
     "I can't even scream as I feel something tugging inside me, as if the siren is trying to pull me apart from within."
     s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
-    show skylla angry
+    show skylla angry with dissolve
     "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
 
     #FLASH EFFECT
@@ -1181,7 +1181,7 @@ label timeskip1:
         yalign 0.1
         ease 0.02 zoom 1
     "The siren screams as she drops me and flails backward."
-    show skylla surprised
+    show skylla surprised with dissolve
     s "No. No! This- this isn't right."
     "Once I blink the white spots out my vision, I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."
@@ -1196,7 +1196,7 @@ label timeskip1:
     "As if! Who in their right mind would do that!?"
     "Her tentacles try to grasp me, but I'm too small for them to catch."
     s "Fine! Be like that!"
-    show skylla angryteeth
+    show skylla angryteeth with dissolve
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
     "I twist away just in time, and the magic collides with one of the glowing stones on the wall." with vpunch
