@@ -15,6 +15,7 @@ label grandpatalk:
     play music bgm_portTown fadein 3.0 volume 0.4
     stop sound
     "I step through the door and enter the ship's quarters."
+    #play sound "audio/sfx_boatCreaking.ogg" volume 1.0
     show grandpa happy with dissolve
     g "Har har har...what a sight. Yer really grown up now, ain't ye, [y]?"
     show grandpa neutral with dissolve

@@ -62,7 +62,7 @@ label enter_name:
 label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
-    play music "audio/music_town.ogg" fadein 1.0 volume 0.9 loop
+    play music "audio/music_town.mp3" fadein 1.0 volume 0.9
     play sound "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
@@ -366,7 +366,7 @@ label afterknocking:
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.4
     play sound "audio/sfx_crowd.wav" volume 0.009 loop
-    #play sound "audio/sfx_runningSewer.mp3" volume 0.026 loop
+    play sound "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.1 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -512,7 +512,7 @@ label afterknocking:
     "He throws me his coat."
 
     #SCENE CHANGE - Black Screen
-    play sound "audio/sfx_cloakdrop.mp3"
+    play sound "audio/sfx_cloakdrop.ogg"
     scene bg black with screenShake
     "My nose is filled with the salty smell of the sea."
     h "Keep it for now."
@@ -661,7 +661,7 @@ label afterknocking:
     stop sound fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music music_town fadein 2.0 volume 0.4
+    play music music_town fadein 2.0 volume 0.9
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     scene bg port:
@@ -724,7 +724,7 @@ label afterknocking:
         ypos 1.27 zoom 1.5
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
-    play music music_town fadein 2.0 volume 0.4
+    play music music_town fadein 1.0 volume 0.9
     y neutral "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
@@ -773,6 +773,7 @@ label afterknocking:
     hide hunter with dissolve
     "Hunter heads out, and Grandfather beckons me inside."
     stop music fadeout 1.0
+    stop sound fadeout 1.0
     jump grandpatalk
 
 label timeskip1:
@@ -784,7 +785,7 @@ label timeskip1:
 
     #SCENE CHANGE - Shabby Market
     scene bg shabby market with dissolve
-    play music "audio/music_town.mp3" fadein 1.0
+    play music "audio/music_town.mp3" fadein 1.0 volume 0.9
     show grandpa neutral at left2 with dissolve
     $ speaking_char = "all"
     "Today, Grandfather and I are going out shopping."
@@ -939,8 +940,8 @@ label timeskip1:
     #SCENE CHANGE - view of the sea (stormy)
     play sound "audio/sfx_thunder.ogg" volume 0.9
     scene bg choppywave
-    play music "audio/music_storm.mp3" fadein 2.0 volume 0.4
-    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.4 loop
+    play music "audio/music_storm.ogg" fadein 2.0 volume 0.8
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.2 loop
     show hunter nervous with vpunch
 
     "I can't see a hint of blue in the sky."
@@ -961,10 +962,10 @@ label timeskip1:
 
     #TODO FLASHBACK CG for a second of baby prince and june
     #SFX - loud crash, screen shake
-    play sound "audio/sfx_waveCrash.wav" fadeout 1.0
+    play sound "audio/sfx_waveCrash.ogg" volume 0.3
     show bg choppywave with screenShake
     #SFX - choppy waves
-    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.6 loop
+    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.2 loop
 
     #show hunter neutral with vpunch
     h "Stay away from the edge!"
@@ -985,6 +986,7 @@ label timeskip1:
             ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amount..."
 
 
+    stop sound fadeout 2.0
     $ config.side_image_tag = "june"
     #SPRITE?
     play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
@@ -1012,7 +1014,7 @@ label timeskip1:
     scene bg drowning:
         fit "contain"
     with hpunch
-    play sound "audio/sfx_splash.flac" volume 0.6
+    play sound "audio/sfx_splash.ogg" volume 0.6
 
     "The light of the surface drifts further and further away as my body sinks deeper into the emptiness."
     "The singing stops, but my body remains numb."
@@ -1026,15 +1028,15 @@ label timeskip1:
     siren "After all these long years... you've finally returned home to me..."
     "..."
     "...Where am I?"
-    play sound "audio/sfx_hum.mp3" volume 1.2 fadein 1.0
+    play sound "audio/sfx_hum.mp3" volume 1.0 fadein 1.0
     siren "Hmm, hmm, hmm."
     "A strange voice is humming a familiar song."
     stop sound fadeout 1.0
     siren "Ah! You've woken up, little human."
     y "Blub!"
-    "....Huh."
+    "....Huh?"
     y "Blub blub blub!"
-    siren "Or, shall I say, little fish?"
+    siren "Or, shall I say, {i}little fish.{/i}"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
 
     if not renpy.seen_image("cg skyllahands"):
@@ -1162,6 +1164,7 @@ label timeskip1:
 
     show skylla happy with dissolve
     "Before I can finish the thought, the siren swims back towards me."
+    play sound "audio/sfx_bubblePop.mp3" volume 0.2
     "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
     "My tiny heart thuds rapidly. She could pop me in an instant as well."
     show skylla:
@@ -1201,7 +1204,7 @@ label timeskip1:
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
     "I twist away just in time, and the magic collides with one of the glowing stones on the wall." with vpunch
     hide skylla with dissolve
-    stop sound
+    stop sound fadeout 2.0
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
     play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.2
@@ -1216,7 +1219,7 @@ label timeskip1:
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
     scene bg sea with vpunch
-    play music "audio/music_underwater.mp3" volume 0.7 fadeout 1.0
+    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
     "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
     y fish neutral "Blub...{w}blub..."
@@ -1254,11 +1257,12 @@ label timeskip1:
     $ speaking_char = "Prince Thioran"
     "The other has fins in a striking shade of blue, unlike anything I've ever seen.{w} He has what appears to be a guard hovering close to his side."
 
-    $ speaking_char = "all"
     "Prince? Guard? Do mermaids really have those kinds of things?"
+    $ speaking_char = "Prince Thioran"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
+    $ speaking_char = "Jorunn"
     uj "Oh, no. Of course not!"
-    show jorunn glee
+    show jorunn glee with dissolve
     uj "...But if the shell fits!"
     up "You thieving little-"
 
@@ -1268,9 +1272,9 @@ label timeskip1:
 
     "Just then, a loud rumble echoes throughout the area. The waters feel like they're slowly beginning to churn."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
-    show prince angry
+    show prince angry with dissolve
     up "Damn it. Why now, of all times..!"
-    show jorunn glee
+    show jorunn glee with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
     "The merfolk could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
@@ -1346,7 +1350,7 @@ label endofdemo:
     Pr "There's so much more to see..."
     hide prashadi
     with dissolve
-    play sound "audio/sfx_splash.flac"
+    play sound "audio/sfx_splash.ogg" volume 0.6
     with Pause(1.0)
 
     #END OF DEMO!!!!!!!
