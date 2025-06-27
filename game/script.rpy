@@ -62,8 +62,8 @@ label enter_name:
 label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
-    play music "audio/music_town.mp3" fadein 1.0
-    play sound "audio/sfx_train.mp3" fadein 2.0 volume 0.1 loop
+    play music "audio/music_town.ogg" fadein 1.0 volume 0.8 loop
+    play sound "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.1 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -105,7 +105,7 @@ label chapter1:
     menu:
         "Take a picture of..."
         "The townspeople.":
-            play sound "audio/sfx_cameraShutter.wav"
+            play sound "audio/sfx_cameraShutter.wav" volume 0.3
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
