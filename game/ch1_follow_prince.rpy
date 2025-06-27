@@ -61,6 +61,7 @@ label ch1_followprince:
     "Left alone with my thoughts, my mind races every which way."
     "Am I the first human to experience the sea like this?"
     "I wish I had my camera. {w}But it wouldn't survive the plunge..."
+    "All those memories made with it must be gone now, lost to me just like my own body."
     "I hope it somehow escaped my fate."
 
 #SCENE CHANGE - Capital City (zoomed in)
@@ -102,7 +103,7 @@ label ch1_followprince:
     up "We will be at the palace before long. How did you end up so far away? And alone?"
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
     "I'm not really sure how much he can hear, but I'm willing to try telling him my story."
-    y "Blub...blub?"
+    y "Blub...{w}blub?"
     "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
     up "What are you..."
     show prince sweat
@@ -210,14 +211,14 @@ label ch1_followprince:
     "Cetus begins to chant in a language I do not know, his hypnotic voice droning on and drowning out my thoughts."
     "Wait...{w} what will happen to me if I turn back human underwater?"
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
-    y "Blub! Blub!"
+    y "{i}Blub! Blub!{/i}"
     "No..! I'll drown! I don't want to die like this!"
     show prince sweat
     p "Wait a moment, Uncle! There's something wrong."
     "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
-    "I squeeze my eyes shut, preparing for the worst."
+    "All I can do is prepare for the worst."
     "Grandpa..! Hunter!"
 
     #(brief pause)
@@ -227,7 +228,7 @@ label ch1_followprince:
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
-    "Cetus has stopped chanting, and all I can hear is the rush of water around me."
+    "There is nothing but the pleasant sound of flowing water around me."
     c "Welcome back to your body, my dear."
     "I open my eyes."
 

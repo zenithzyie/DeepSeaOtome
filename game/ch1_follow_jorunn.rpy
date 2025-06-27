@@ -261,7 +261,7 @@ label ch1_followjorunn:
     "I'm being pulled towards the surface of the water."
     "The tingling in my fins grows stronger as the mist gets thicker. I can't see anything."
     "My whole fish body feels like it's being pulled apart then put back together in the same instant."
-    "All I can do is squeeze my eyes shut and hope I'm not about to drown."
+    "All I can do is hope I'm not about to drown."
 
     #BLACK SCENE
     scene bg black with fade

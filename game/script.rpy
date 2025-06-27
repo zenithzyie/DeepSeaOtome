@@ -1252,7 +1252,7 @@ label timeskip1:
     $ speaking_char = "Jorunn"
     "One of them is carrying a large net stuffed full of fish."
     $ speaking_char = "Prince Thioran"
-    "The other has fins in a striking shade of blue, unlike anything I've seen.{w} He has what appears to be a guard hovering close to his side."
+    "The other has fins in a striking shade of blue, unlike anything I've ever seen.{w} He has what appears to be a guard hovering close to his side."
 
     $ speaking_char = "all"
     "Prince? Guard? Do mermaids really have those kinds of things?"
@@ -1273,7 +1273,7 @@ label timeskip1:
     show jorunn glee
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
-    "They could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
+    "The merfolk could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
 
     if promermaid >= 1:
