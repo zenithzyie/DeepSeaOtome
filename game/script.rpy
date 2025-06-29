@@ -674,8 +674,8 @@ label afterknocking:
     with Pause(1.75)
     show bg port
 
-    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
-    play sound "audio/sfx_seagulls.ogg" loop volume 1 fadein 1.0
+    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
+    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     "We make it outside and I can finally see the sky again."
 
     $ config.side_image_tag = "june"
@@ -710,6 +710,7 @@ label afterknocking:
     y shocked "Grandfather?"
     show grandpa surprised with vpunch
     stop music fadeout 1.0
+    stop sound fadeout 1.0
     "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
@@ -725,6 +726,7 @@ label afterknocking:
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
     play music music_town fadein 1.0 volume 0.9
+    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     y neutral "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
