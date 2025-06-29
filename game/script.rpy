@@ -105,7 +105,7 @@ label chapter1:
     menu:
         "Take a picture of..."
         "The townspeople.":
-            play sound "audio/sfx_cameraShutter.wav" volume 0.3
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
@@ -114,7 +114,7 @@ label chapter1:
             y "I'm not Inland anymore, that much is clear."
 
         "The seaside town.":
-            play sound "audio/sfx_cameraShutter.wav"
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
@@ -1164,7 +1164,7 @@ label timeskip1:
 
     show skylla happy with dissolve
     "Before I can finish the thought, the siren swims back towards me."
-    play sound "audio/sfx_bubblePop.mp3" volume 0.2
+    #play sound "audio/sfx_bubblePop.mp3" volume 0.2
     "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
     "My tiny heart thuds rapidly. She could pop me in an instant as well."
     show skylla:
