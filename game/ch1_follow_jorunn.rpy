@@ -3,6 +3,7 @@
 label ch1_followjorunn:
     hide prince angry with moveoutleft
     show jorunn sweat
+    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
 
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
     "It's now or never!"
@@ -27,7 +28,7 @@ label ch1_followjorunn:
     y "{i}Blub blub blub!!{/i}"
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
-    show jorunn neutral
+    show jorunn neutral with dissolve
     "He holds onto me but moves me around, inspecting me."
     uj "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
@@ -85,7 +86,7 @@ label ch1_followjorunn:
             "The foliage is thick here, tall plants towering over the both of us like massive trees."
             "With the storm muffled by the cover of the kelp forest, the world around me feels different. The swim even feels peaceful."
             "Wow..."
-            show jorunn glee
+            show jorunn glee with dissolve
             uj "It's pretty way out here, don't you think?"
             "I nod, even though he can't see it. I really wish I could take a picture of the ocean from here."
             uj "If we go a bit further out, you'll see my home. But that's not as important right now. We gotta get you fixed up!"
@@ -96,26 +97,26 @@ label ch1_followjorunn:
             "It's oddly comforting."
             "It feels quite nice to rest against his soft hair."
 
-    show jorunn neutral
+    show jorunn neutral with dissolve
     "I begin to zone out from exhaustion when he speaks again."
-    show jorunn glee
+    show jorunn glee with dissolve
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
     "Jorunn...what strange names merfolk have."
     j "But you can call me Jor. That's what my family calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"
     "He's a rather talkative fellow, isn't he!"
-    show jorunn neutral
+    show jorunn neutral with dissolve
     j "Right. Can't talk and all that."
     "He sounds almost a bit disappointed that I can't reply."
     j "Don't worry. Miss Prash will know what to do with you. She's the master when it comes to all this magic stuff."
     j "And you look like magic stuff."
     "Miss Prash..?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
-    show jorunn sweat
+    show jorunn sweat with dissolve
     j "Or, uh, unless I'm losing it, and you're just a normal fish."
     j "I hope I'm not just talking to myself right now..."
-    show jorunn neutral
+    show jorunn neutral with dissolve
     y "Blub!!!"
     "Even so, he keeps swimming, content to keep me in his hair for the time being."
     "The storm rumbles on, and he quiets down to focus on the journey."
@@ -128,9 +129,9 @@ label ch1_followjorunn:
 #SCENE CHANGE? - Kelp Forest
 
     "The chatty merman swims onward, and I watch as the kelp forest grows thicker and eventually large rocky formations begin to jut out of the ground."
-    show jorunn glee
+    show jorunn glee with dissolve
     j "Almost there, little fishie! I hope you've been enjoying the ride so far."
-    show jorunn neutral
+    show jorunn neutral with dissolve
     "With that, he takes us both into one of the holes in the rocks, leading to a cave."
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
     scene bg black with dissolve
@@ -189,15 +190,15 @@ label ch1_followjorunn:
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
     "How is this even possible? The sky? Does that mean there's air above us too?"
     "But we definitely swam deeper down to get here."
-    show jorunn sweat
+    show jorunn sweat with dissolve
     j "Hello? Miss Prash?"
     j "..."
     j "Prashadi!! I'm back!" with vpunch
-    show jorunn neutral
+    show jorunn neutral with dissolve
     "I'm not sure what to expect."
     "I think back to the mermaids in the black market with their long hair and shiny scales."
     "Maybe she will be similar to them?"
-    show jorunn glee at right2 with move
+    show jorunn glee at right2 with move 
     u "Ah, you've made it back, Jor! Did you find anything good today?"
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
@@ -218,7 +219,7 @@ label ch1_followjorunn:
     "But Jorunn is still calling him 'Miss Prash.'"
     "What in the world?"
     j "She had some kind of magic shards stuck in her fins."
-    show jorunn neutral
+    show jorunn neutral with dissolve
     j "I tried to take them out, but they crumbled really easily..."
     gpa "Well now, that is interesting!"
 
@@ -237,12 +238,12 @@ label ch1_followjorunn:
     gpa "It seems like she's been cursed as well."
     j "Who would curse a cute little fish like this?"
     gpa "Not fish. This one used to be human!"
-    show jorunn sweat
+    show jorunn sweat with dissolve
     j "Miss Prash, are you saying...?"
     gpa "Your little friend here used to have legs. And a voice. Possibly, even hair."
     gpa "A real human, she was."
     "Yes, that's right! It's [y], your granddaughter!"
-    show jorunn glee
+    show jorunn glee with dissolve
     "Jorunn looks at me with sparkling eyes."
     j "Are you able to turn her back?"
     gpa "Let me get a closer look."
