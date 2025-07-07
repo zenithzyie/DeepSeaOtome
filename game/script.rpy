@@ -82,6 +82,7 @@ label chapter1:
     "I can't really remember why Mother stopped taking me to see Grandfather."
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
+    stop sound fadeout 2.0
     play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
     stop sound fadeout 2.0
@@ -209,11 +210,10 @@ label chapter1:
             y "Pardon?"
             woman "Knock knock."
             y "Oh, I know this one. Who's there?"
-            "Her glazed eyes stare unblinkingly at me."
             woman "Knock knock."
             y"…"
             y "Uh...knock knock?"
-            "The woman grins toothily, looking pleased with my response."
+            "The woman grins toothily."
             woman "Gehehehe! The wall!"
             #bolding makes it look weird
             "It doesn't seem like she's trying to tell me a joke at all."
@@ -225,16 +225,14 @@ label chapter1:
         "Child with toy":
             y "Hey, there! Do you know where I could find this area?"
             "The child is holding a plush octopus tightly. It looks well-loved."
-            "I show him the address on the letter, and he glances at it."
+            "I show him the address on the letter."
             kid "Oh, I know that place!"
-            "His eyes gleam with pride as he hugs the octopus toy tighter against his chest."
             kid "That's near the west alley. My mama says I can't play over there."
             kid "She says it's full of bad people."
             "He gives me a look."
             kid "Are you bad people?"
             y "No, I'm just looking for someone who lives there."
             y "Thank you for your help."
-            "The child nods happily."
             kid "No problem, lady!"
             "He dashes off with a giggle."
             "I have no choice but to find someone else for more information."
@@ -257,7 +255,7 @@ label chapter1:
             y neutral "It's [y] Finch."
             fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            fishmonger "The code for that's five, three, four. An' remember to pause in between!"
+            fishmonger "The code's five, three, four. An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
