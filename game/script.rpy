@@ -82,6 +82,7 @@ label chapter1:
     "I can't really remember why Mother stopped taking me to see Grandfather."
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
+    stop sound fadeout 2.0
     play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
     stop sound fadeout 2.0
@@ -105,7 +106,7 @@ label chapter1:
     menu:
         "Take a picture of..."
         "The townspeople.":
-            play sound "audio/sfx_cameraShutter.wav" volume 0.3
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
@@ -114,7 +115,7 @@ label chapter1:
             y "I'm not Inland anymore, that much is clear."
 
         "The seaside town.":
-            play sound "audio/sfx_cameraShutter.wav"
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
@@ -209,11 +210,10 @@ label chapter1:
             y "Pardon?"
             woman "Knock knock."
             y "Oh, I know this one. Who's there?"
-            "Her glazed eyes stare unblinkingly at me."
             woman "Knock knock."
             y"…"
             y "Uh...knock knock?"
-            "The woman grins toothily, looking pleased with my response."
+            "The woman grins toothily."
             woman "Gehehehe! The wall!"
             #bolding makes it look weird
             "It doesn't seem like she's trying to tell me a joke at all."
@@ -225,16 +225,14 @@ label chapter1:
         "Child with toy":
             y "Hey, there! Do you know where I could find this area?"
             "The child is holding a plush octopus tightly. It looks well-loved."
-            "I show him the address on the letter, and he glances at it."
+            "I show him the address on the letter."
             kid "Oh, I know that place!"
-            "His eyes gleam with pride as he hugs the octopus toy tighter against his chest."
             kid "That's near the west alley. My mama says I can't play over there."
             kid "She says it's full of bad people."
             "He gives me a look."
             kid "Are you bad people?"
             y "No, I'm just looking for someone who lives there."
             y "Thank you for your help."
-            "The child nods happily."
             kid "No problem, lady!"
             "He dashes off with a giggle."
             "I have no choice but to find someone else for more information."
@@ -257,7 +255,7 @@ label chapter1:
             y neutral "It's [y] Finch."
             fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            fishmonger "The code for that's five, three, four. An' remember to pause in between!"
+            fishmonger "The code's five, three, four. An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
@@ -674,8 +672,8 @@ label afterknocking:
     with Pause(1.75)
     show bg port
 
-    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.1 fadein 1.0
-    play sound "audio/sfx_seagulls.ogg" loop volume 1 fadein 1.0
+    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
+    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     "We make it outside and I can finally see the sky again."
 
     $ config.side_image_tag = "june"
@@ -710,6 +708,7 @@ label afterknocking:
     y shocked "Grandfather?"
     show grandpa surprised with vpunch
     stop music fadeout 1.0
+    stop sound fadeout 1.0
     "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
@@ -725,6 +724,7 @@ label afterknocking:
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
     play music music_town fadein 1.0 volume 0.9
+    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     y neutral "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
@@ -1164,7 +1164,7 @@ label timeskip1:
 
     show skylla happy with dissolve
     "Before I can finish the thought, the siren swims back towards me."
-    play sound "audio/sfx_bubblePop.mp3" volume 0.2
+    #play sound "audio/sfx_bubblePop.mp3" volume 0.2
     "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
     "My tiny heart thuds rapidly. She could pop me in an instant as well."
     show skylla:

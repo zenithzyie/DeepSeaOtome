@@ -24,7 +24,7 @@ label ch1_followprince:
     up "!!!"
     up "Who-"
     y "Blub blub!"
-    show prince sweat
+    show prince sweat with dissolve
     up "...?"
     "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
     "Then, with a surprising amount of gentleness, his hands come up to cup my body."
@@ -34,7 +34,7 @@ label ch1_followprince:
     "If only I could speak real words!"
     "Strangely enough, he pauses, as if he can understand what I'm saying."
     guard "Is something the matter? The storm is closing in."
-    show prince frown
+    show prince frown with dissolve
     up "No. It's nothing."
     "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
     up "Let's go."
@@ -91,14 +91,14 @@ label ch1_followprince:
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
     "Away from the threat of the storm, he begins swimming again. This time, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
-    show prince sweat
+    show prince sweat with dissolve
     up "Is something the matter? If you're uncomfortable in my hands, I can try to be less...rough."
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
     y "Blub!"
     "Quickly, I shake myself in protest at the suggestion. He is already very gentle."
     "I'm just glad he isn't finding my staring strange."
-    show prince frown
+    show prince frown with dissolve
     "He nods before returning his gaze back ahead."
     up "We will be at the palace before long. How did you end up so far away? And alone?"
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
@@ -106,9 +106,9 @@ label ch1_followprince:
     y "Blub...{w}blub?"
     "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
     up "What are you..."
-    show prince sweat
+    show prince sweat with dissolve
     up "I apologize. It appears I can't fully understand your meaning."
-    show prince frown
+    show prince frown with dissolve
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
     "...?"
     up "Hold still. There's something in your..."
@@ -187,11 +187,11 @@ label ch1_followprince:
 
         "Hesitate.":
             "I glance back up at Prince Thioran. He gives me the slightest of nods."
-            show prince soft
+            show prince soft with dissolve
             p "Go on, it's alright."
             #(Thio +1)
             "Well, if the prince says it's alright..."
-            show prince frown
+            show prince frown with dissolve
 
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
     c "What an interesting little thing."
@@ -213,7 +213,7 @@ label ch1_followprince:
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
     y "{i}Blub! Blub!{/i}"
     "No..! I'll drown! I don't want to die like this!"
-    show prince sweat
+    show prince sweat with dissolve
     p "Wait a moment, Uncle! There's something wrong."
     "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."
