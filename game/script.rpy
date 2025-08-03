@@ -364,7 +364,7 @@ label afterknocking:
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.4
     play sound "audio/sfx_crowd.wav" volume 0.009 loop
-    play sound "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.1 loop
+    play sound "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.009 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
