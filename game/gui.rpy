@@ -63,7 +63,7 @@ define gui.text_font = gui.preference ("fonts/OpenDyslexic.otf", "fonts/Philosop
 define gui.name_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts/NEWBOROU.ttf")
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts/NEWBOROU.ttf")
+define gui.interface_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts/Philosopher-Regular.ttf")
 
 ## The size of normal dialogue text.
 define gui.text_size = 22

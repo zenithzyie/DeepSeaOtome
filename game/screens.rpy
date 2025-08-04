@@ -287,13 +287,18 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
+#MAIN MENU
 screen navigation():
 
     vbox:
-        style_prefix "navigation"
-
-        xpos gui.navigation_xpos
-        yalign 0.5
+        if renpy.get_screen("main_menu"):
+            style_prefix "main_menu"
+            xalign 0.5
+            yalign 0.88
+        else:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
 
         spacing gui.navigation_spacing
 
@@ -321,12 +326,10 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("Credits") action ShowMenu("template_2a")
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
 
         if renpy.variant("pc"):
 
@@ -345,6 +348,22 @@ style navigation_button:
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
 
+##MAIN MENU ONLY 
+style main_menu:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+
+style main_menu_button:
+    properties gui.text_properties("navigation_button")
+    xalign 0.5
+
+style main_menu_button_text:
+    properties gui.text_properties("navigation_button")
+    xalign 0.5
+    xpos 0.5
+    idle_color "#fff"     
+    hover_color '#66a3e0'
+    #outlines [ (1.5, "#14296c", 0, 0) ]
 
 ## Main Menu screen ############################################################
 ##
@@ -357,7 +376,7 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    add gui.main_menu_background size (1280, 720)
 
     ## This empty frame darkens the main menu.
     frame:
@@ -389,7 +408,7 @@ style main_menu_frame:
     xsize 280
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -825,6 +844,8 @@ screen preferences():
                         textbutton _("Mute All"):
                             action Preference("all mute", "toggle")
                             style "mute_all_button"
+                hbox:
+                    textbutton _("Credits") action ShowMenu("template_2a")
 
 
 style pref_label is gui_label
