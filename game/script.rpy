@@ -90,15 +90,15 @@ label chapter1:
     #"The screeching of the brakes signal the train to a stop."
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
-    show bg shabby town:
+    show bg nice town:
         xalign 0.5
         subpixel True
         zoom 1.05
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-    show bg shabby town:
-        zoom 1.0
+    show bg nice town:
+        fit "contain"
     $ config.side_image_tag = "june"
     y neutral "At last. Hello, Aquantis!"
     "As soon as I exit the train car, I remove my camera from my purse to take a picture."

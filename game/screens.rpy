@@ -219,7 +219,8 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 400
+    yalign 0.5
+    ypos 330
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -309,7 +310,7 @@ screen navigation():
         textbutton _("Load") action ShowMenu("load")
 
         textbutton _("Gallery") action ShowMenu("gallery_B")
-            
+
         textbutton _("Preferences") action ShowMenu("preferences")
 
         if _in_replay:
