@@ -9,10 +9,22 @@ image ctc_pos:
     linear 0.3 alpha 0.0
     pause 0.2
     repeat
-
+######################################################################
+transform logoappear:
+    alpha 0.0
+    xalign 0.5
+    zoom 0.7
+    pause 1.7
+    linear 0.3 alpha 1.0
+    pause 0.2
+#transform that the logo does on main menu
+######################################################################
+#Logo Imagebutton
+#imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction()
 ######################################################################
 #Protagonist + Narrator Names
-define y = Character("[player_name]", image="june", color="#ee701f", ctc="ctc_pos", ctc_position="fixed")
+define y = Character("[player_name]", image="june",color="#ffffff", ctc="ctc_pos", ctc_position="fixed")
+#color="#ee701f",
 define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
 define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
 ######################################################################

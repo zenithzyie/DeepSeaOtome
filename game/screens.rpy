@@ -138,6 +138,7 @@ style window:
 
     background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
+
 style namebox:
     xpos gui.name_xpos
     xanchor gui.name_xalign
@@ -312,7 +313,11 @@ screen navigation():
 
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        imagebutton:
+            auto "gui/button/load_%s.png"
+            hover_foreground Text("Load")
+            idle_foreground Text("Load")
+            action ShowMenu("load")
 
         textbutton _("Gallery") action ShowMenu("gallery_B")
 
@@ -348,7 +353,7 @@ style navigation_button:
 style navigation_button_text:
     properties gui.text_properties("navigation_button")
 
-##MAIN MENU ONLY 
+##MAIN MENU ONLY
 style main_menu:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
@@ -361,7 +366,7 @@ style main_menu_button_text:
     properties gui.text_properties("navigation_button")
     xalign 0.5
     xpos 0.5
-    idle_color "#fff"     
+    idle_color "#fff"
     hover_color '#66a3e0'
     #outlines [ (1.5, "#14296c", 0, 0) ]
 
@@ -377,6 +382,7 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background size (1280, 720)
+    imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction() at logoappear
 
     ## This empty frame darkens the main menu.
     frame:
