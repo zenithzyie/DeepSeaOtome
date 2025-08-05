@@ -288,36 +288,31 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-#MAIN MENU
 screen navigation():
+    if renpy.get_screen("main_menu"):
+        use titleMainMenu
+    else:
+        use gameNavMenu
 
+
+#MAIN MENU
+screen titleMainMenu():
     vbox:
         if renpy.get_screen("main_menu"):
             style_prefix "main_menu"
             xalign 0.5
             yalign 0.88
-        else:
-            style_prefix "navigation"
-            xpos gui.navigation_xpos
-            yalign 0.5
 
         spacing gui.navigation_spacing
 
         if main_menu:
-
             textbutton _("Start") action Start()
 
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        imagebutton:
-            auto "gui/button/load_%s.png"
-            hover_foreground Text("Load")
-            idle_foreground Text("Load")
-            action ShowMenu("load")
+            imagebutton:
+                auto "gui/button/load_%s.png"
+                hover_foreground Text("Load", style ="main_menu_imagebutton_text")
+                idle_foreground Text("Load", style ="main_menu_imagebutton_text")
+                action ShowMenu("load")
 
         textbutton _("Gallery") action ShowMenu("gallery_B")
 
@@ -327,31 +322,11 @@ screen navigation():
 
             textbutton _("End Replay") action EndReplay(confirm=True)
 
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-                ## Help isn't necessary or relevant to mobile devices.
-                textbutton _("Help") action ShowMenu("help")
-
-
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             textbutton _("Quit") action Quit(confirm=not main_menu)
-
-
-style navigation_button is gui_button
-style navigation_button_text is gui_button_text
-
-style navigation_button:
-    size_group "navigation"
-    properties gui.button_properties("navigation_button")
-
-style navigation_button_text:
-    properties gui.text_properties("navigation_button")
 
 ##MAIN MENU ONLY
 style main_menu:
@@ -368,7 +343,63 @@ style main_menu_button_text:
     xpos 0.5
     idle_color "#fff"
     hover_color '#66a3e0'
-    #outlines [ (1.5, "#14296c", 0, 0) ]
+
+style main_menu_imagebutton_text:
+    color "#fff"
+    xalign 0.53
+    yalign 0.49
+    size 42.5
+
+#GAME MENU
+screen gameNavMenu():
+    vbox:
+        if renpy.get_screen("main_menu"):
+            pass
+        else:
+            style_prefix "navigation"
+            xpos gui.navigation_xpos
+            yalign 0.5
+
+            spacing gui.navigation_spacing
+
+            textbutton _("History") action ShowMenu("history")
+
+            textbutton _("Save") action ShowMenu("save")
+
+            textbutton _("Load") action ShowMenu("load")
+
+            textbutton _("Gallery") action ShowMenu("gallery_B")
+
+            textbutton _("Preferences") action ShowMenu("preferences")
+
+            if _in_replay:
+
+                textbutton _("End Replay") action EndReplay(confirm=True)
+
+        if not main_menu:
+
+            textbutton _("Main Menu") action MainMenu()
+
+            if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                ## Help isn't necessary or relevant to mobile devices.
+                textbutton _("Help") action ShowMenu("help")
+
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            textbutton _("Quit") action Quit(confirm=not main_menu)
+
+style navigation_button is gui_button
+style navigation_button_text is gui_button_text
+
+style navigation_button:
+    size_group "navigation"
+    properties gui.button_properties("navigation_button")
+
+style navigation_button_text:
+    properties gui.text_properties("navigation_button")
 
 ## Main Menu screen ############################################################
 ##
