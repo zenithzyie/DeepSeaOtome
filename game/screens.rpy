@@ -343,12 +343,13 @@ style main_menu_button_text:
     xpos 0.5
     idle_color "#fff"
     hover_color '#66a3e0'
+    size 29
 
 style main_menu_imagebutton_text:
     color "#fff"
-    xalign 0.53
+    xalign 0.5
     yalign 0.49
-    size 42.5
+    size 29
 
 #GAME MENU
 screen gameNavMenu():
@@ -478,11 +479,13 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
     style_prefix "game_menu"
 
     if main_menu:
-        add gui.main_menu_background
+        add gui.game_menu_background:
+            alpha 0.9
+            fit "contain"
     else:
         add gui.game_menu_background:
             alpha 0.9
-            fit "contain" 
+            fit "contain"
 
     frame:
         style "game_menu_outer_frame"
@@ -540,7 +543,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
         action Return()
 
-    label title
+    label title:
+        xalign 0.5
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -1241,6 +1245,7 @@ screen confirm(message, yes_action, no_action):
 
             label _(message):
                 style "confirm_prompt"
+                ypos 20
                 xalign 0.5
 
             hbox:
