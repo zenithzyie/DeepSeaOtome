@@ -131,7 +131,7 @@ label chapter1:
     "Were they always this unfriendly when I was younger? {w}I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
-    #scene bg shabby town
+    scene bg shabby town with dissolve
 
     #june will be frowing a little in her neutral
     ny neutral "The further I walk down from the top of the city, the more the atmosphere seems to change."

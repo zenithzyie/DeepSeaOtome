@@ -1,4 +1,4 @@
-#here are the styles and transforms used in both the replay and gallery screens 
+#here are the styles and transforms used in both the replay and gallery screens
 
 # 1280x720 gallery A
 #define sx = 384
@@ -28,13 +28,13 @@ default gy1 = 40 #1280x720
 
 default gx2 = 320 # 322 #1280x720 gallery_B
 default gy2 = 90 #75  #1280x720 gallery_B
- 
+
 #default gx2 = 460 #1920x1080 gallery_B
 #default gy2 = 83 #1920x1080 gallery_B
 
 #style gallery_button: # hover overlay it must be 4 pixels bigger then the images
-    #hover_foreground "images/gallery/hover 1284x724.png" 
-    #hover_foreground "images/gallery/hover 1924x1084.png" 
+    #hover_foreground "images/gallery/hover 1284x724.png"
+    #hover_foreground "images/gallery/hover 1924x1084.png"
 
 style name_text: #text color and outlines please change
     color "#ffffff"
@@ -49,7 +49,7 @@ transform imageMaxSize:
     size (1280, 720) #to resize the big ones
 
 #the locked image for the galleries
-image locked = "images/gallery/locked.png"
+image locked = "images/gallery/locked.jpg"
 
 screen gallery_closeup(images): #shows full sized image as a button on top of everything!
     zorder 10

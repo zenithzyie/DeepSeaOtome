@@ -23,19 +23,19 @@ transform logoappear:
 #imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction()
 ######################################################################
 #Protagonist + Narrator Names
-define y = Character("[player_name]", image="june",color="#ffffff", ctc="ctc_pos", ctc_position="fixed")
+define y = Character("[player_name]", image="june", ctc="ctc_pos", ctc_position="fixed", namebox_background=Frame("gui/namebox_june.png", 0, 0))
 #color="#ee701f",
 define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
 define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
 ######################################################################
 #Main Character Names
-define h = Character("Hunter", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
-define s = Character("Skylla", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
-define c = Character("Cetus", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
-define p = Character("Prince Thioran", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
-define j = Character("Jorunn", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
-define g = Character("Grandfather", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Grandfather")
-define Pr = Character("Prashadi", image="june", color="#d3ffff", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi")
+define h = Character("Hunter", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter", namebox_background=Frame("gui/namebox_hunter.png", 0, 0))
+define s = Character("Skylla", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla", namebox_background=Frame("gui/namebox_skylla.png", 0, 0))
+define c = Character("Cetus", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus", namebox_background=Frame("gui/namebox_cetus.png", 0, 0))
+define p = Character("Prince Thioran", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran", namebox_background=Frame("gui/namebox_thio.png", 0, 0))
+define j = Character("Jorunn", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn", namebox_background=Frame("gui/namebox_jor.png", 0, 0))
+define g = Character("Grandfather", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Grandfather", namebox_background=Frame("gui/namebox_grandpa.png", 0, 0))
+define Pr = Character("Prashadi", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi", namebox_background=Frame("gui/namebox_prashadi.png", 0, 0))
 ######################################################################
 #NPC Names
 define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -49,14 +49,14 @@ define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fix
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
-define novisualthio = Character("Angry Voice", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed")
-define novisualjor = Character("Mischievous Voice", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed")
-define up = Character("Princely Merman", image="june", color="#4e94c9", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
-define uj = Character("Thieving Merman", image="june", color="#cb8b4f", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
-define uhunter = Character("Strange Man", image="june", color="#c6271d", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
-define ucetus = Character("Royal Merman", image="june", color="#70418b", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
-define siren = Character("Melodious Voice", image="june", color="#e9a1d6", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
-define gpa = Character("Grandfather?", image="june", color="#bcc0a3", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi")
+define novisualthio = Character("Angry Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
+define novisualjor = Character("Mischievous Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
+define up = Character("Princely Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
+define uj = Character("Thieving Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
+define uhunter = Character("Strange Man", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
+define ucetus = Character("Royal Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
+define siren = Character("Melodious Voice", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
+define gpa = Character("Grandfather?", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi", namebox_background=Frame("gui/namebox_grandpa.png", 0, 0))
 ######################################################################
 #Various Variables
 default newspaper = False

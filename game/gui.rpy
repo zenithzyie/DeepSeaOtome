@@ -25,7 +25,7 @@ init python:
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#0066cc'
+define gui.accent_color = '#ffffff'
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#888888'
@@ -35,7 +35,7 @@ define gui.idle_color = '#888888'
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#66a3e0'
+define gui.hover_color = '#ffffff'
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
@@ -69,7 +69,7 @@ define gui.interface_text_font = gui.preference ("fonts/OpenDyslexic.otf","fonts
 define gui.text_size = 22
 
 ## The size of character names.
-define gui.name_text_size = 25
+define gui.name_text_size = 23
 
 ## The size of text in the game's user interface.
 define gui.interface_text_size = 29
@@ -112,15 +112,19 @@ define gui.name_ypos = -26
 ## The horizontal alignment of the character's name. This can be 0.0 for left-
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.name_xalign = 0.0
+#define gui.name_yalign = 0.0
 
 ## The width, height, and borders of the box containing the character's name, or
 ## None to automatically size it.
-define gui.namebox_width = 300
-define gui.namebox_height = 42
+define gui.namebox_width = 310
+define gui.namebox_height = 50
 
 ## The borders of the box containing the character's name, in left, top, right,
 ## bottom order.
-define gui.namebox_borders = Borders(35, 20, 14, 20)
+#define gui.namebox_borders = Borders(35, 30, 14, 30)
+define gui.namebox_borders = Borders(0, 0, 0, 0, 40, 15, 0, 12)
+
+
 
 ## If True, the background of the namebox will be tiled, if False, the
 ## background of the namebox will be scaled.

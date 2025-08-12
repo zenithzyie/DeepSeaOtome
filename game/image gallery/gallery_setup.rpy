@@ -24,11 +24,16 @@ init python:
     gallery_items.append(GalleryItem("", ["cg train"],"hoverimgLG" ))
     gallery_items.append(GalleryItem("", ["cg_sushi_unlock"] ,"hoverimgLG"))
     gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
 
-
-
-#gallery background
-image gray = "#777"
+#gallery idle border?
+image idleLG = ("images/gallery/idleLG.png")
 
 #gallery hover images
 image hoverimgSM = ("images/gallery/hover 1284x724.png")

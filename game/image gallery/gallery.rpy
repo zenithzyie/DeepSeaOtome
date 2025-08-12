@@ -7,7 +7,7 @@ screen gallery_A():
 
     tag menu
 
-    add "gray"
+    add "gui/game_menu.jpg"
 
     $ start = gallery_page * maxperpage
     $ end = min(start + maxperpage - 1, len(gallery_items) - 1)
@@ -25,7 +25,7 @@ screen gallery_A():
                     yalign 0.5
                     at imageThumb
             else:
-                imagebutton: 
+                imagebutton:
                     idle gallery_items[i].images
                     style "gallery_button" #delete this line to remove hover
                     action Show("gallery_closeup", dissolve, gallery_items[i].images)
@@ -67,7 +67,7 @@ screen gallery_A():
             yalign 0.98
             #background "#fff8"
     textbutton "{color=#888888}Return{/color}":
-        action Return() 
+        action Return()
         xalign 0.5
         yalign 0.98
         #background "#fff8"
@@ -95,7 +95,8 @@ screen gallery_B():
                     yalign 0.5
                     at imageThumb
             else:
-                imagebutton: 
+                imagebutton:
+                    idle_foreground "idleLG"
                     idle gallery_items[i].images
                     hover_foreground gallery_items[i].hoverimg
                     action Show("gallery_closeup", dissolve, gallery_items[i].images)
@@ -140,4 +141,3 @@ screen gallery_B():
             xalign 0.9
             yalign 0.98
             text_style "prevNext"
-            
