@@ -596,6 +596,7 @@ style game_menu_label_text:
     size gui.title_text_size
     color gui.accent_color
     yalign 0.5
+    font "fonts/NEWBOROU.ttf"
 
 style return_button:
     xpos gui.navigation_xpos
@@ -792,103 +793,147 @@ style slot_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
+style pref_styling_label_text:
+    idle_color "#fff"
+    color "#fff"
+    size 26
+    #font "fonts/NEWBOROU.ttf"
+
+style pref_styling_label:
+    ypadding 10
+
+style pref_styling_button_text:
+    idle_color "#969696"
+    hover_color "#fff"
+    selected_color "#66a3e0"
+    size 18
+
+style pref_styling_button:
+    ypadding 10
+
 screen preferences():
 
     tag menu
 
     use game_menu(_("Preferences"), scroll="viewport"):
 
-        vbox:
-
-            hbox:
+        hbox:
+            #xalign 0.5
+            #xpos 100
+            vbox:
+                # hbox:
                 box_wrap True
 
                 if renpy.variant("pc") or renpy.variant("web"):
 
                     vbox:
-                        style_prefix "radio"
+                        #style_prefix "radio"
+                        style_prefix "pref_styling"
                         label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-                #vbox:
-                    #style_prefix "check"
-                    #label _("Graphic Imagery")
-                    #textbutton _("On") action ToggleVariable("show_gross", true_value=True)
-                    #textbutton _("Off") action ToggleVariable("show_gross", true_value=False)
-                    ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                    ## added here, to add additional creator-defined preferences.
+                        hbox:
+                            textbutton _("Window") action Preference("display", "window")
+                            textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                    
+                    null height (2 * gui.pref_spacing)
+
+                    vbox:
+                        #style_prefix "check"
+                        style_prefix "pref_styling"
+                        label _("Skip")
+                        hbox:
+                            textbutton _("Unseen Text") action Preference("skip", "toggle")
+                            textbutton _("After Choices") action Preference("after choices", "toggle")
+                            textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                            
+                    #vbox:
+                        #style_prefix "check"
+                        #label _("Graphic Imagery")
+                        #textbutton _("On") action ToggleVariable("show_gross", true_value=True)
+                        #textbutton _("Off") action ToggleVariable("show_gross", true_value=False)
+                        ## Additional vboxes of type "radio_pref" or "check_pref" can be
+                        ## added here, to add additional creator-defined preferences.
+
+                null height (2 * gui.pref_spacing)
 
                 vbox:
-                    style_prefix "radio"
-                    textbutton _("Speech Pauses") action ToggleField(persistent,"speech_pauses")
+                    style_prefix "slider"
+                    box_wrap True
 
-                    showif persistent.speech_pauses:
-                        label _("Dialogue has natural pauses.")
-                        #vbox:
-                            #style_prefix "slider"
-                            #label _("Commas")
-                            #bar value FieldValue(persistent, "speech_pause_comma", step=.05, style=u'slider', min=0.05, max=1.0)
-                            #label _("Sentences")
-                            #bar value FieldValue(persistent, "speech_pause_period", step=.05, style=u'slider', min=0.1, max=2.0)
+                    vbox:
+                        style_prefix "pref_styling"
+                        label _("Text")
+                        
+                        vbox:
+                            #style_prefix "radio"
+                            style_prefix "pref_styling"
+                            textbutton _("Speech Pauses") action ToggleField(persistent,"speech_pauses")
+
+                            showif persistent.speech_pauses:
+                                label _("{size=14}Dialogue has natural pauses.{/size}")
+                                #vbox:
+                                    #style_prefix "slider"
+                                    #label _("Commas")
+                                    #bar value FieldValue(persistent, "speech_pause_comma", step=.05, style=u'slider', min=0.05, max=1.0)
+                                    #label _("Sentences")
+                                    #bar value FieldValue(persistent, "speech_pause_period", step=.05, style=u'slider', min=0.1, max=2.0)
 
 
-            null height (4 * gui.pref_spacing)
+                        vbox:
+                            label _("Text Speed")
 
-            hbox:
-                style_prefix "slider"
+                            bar value Preference("text speed")
+
+                            label _("Auto-Forward Time")
+
+                            bar value Preference("auto-forward time")
+
+            #null width (10 * gui.pref_spacing)
+
+            vbox:
                 box_wrap True
 
-                vbox:
-
-                    label _("Text Speed")
-
-                    bar value Preference("text speed")
-
-                    label _("Auto-Forward Time")
-
-                    bar value Preference("auto-forward time")
-
-                vbox:
-
-                    if config.has_music:
+                if config.has_music:
+                    style_prefix "pref_styling"
+                    label _("Audio")
+                    vbox:
                         label _("Music Volume")
 
                         hbox:
                             bar value Preference("music volume")
 
-                    if config.has_sound:
+                if config.has_sound:
 
-                        label _("Sound Volume")
+                    label _("Sound Volume")
 
-                        hbox:
-                            bar value Preference("sound volume")
+                    hbox:
+                        bar value Preference("sound volume")
 
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
+                        if config.sample_sound:
+                            textbutton _("Test") action Play("sound", config.sample_sound)
 
 
-                    if config.has_voice:
-                        label _("Voice Volume")
+                if config.has_voice:
+                    label _("Voice Volume")
 
-                        hbox:
-                            bar value Preference("voice volume")
+                    hbox:
+                        bar value Preference("voice volume")
 
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
+                        if config.sample_voice:
+                            textbutton _("Test") action Play("voice", config.sample_voice)
 
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
+                if config.has_music or config.has_sound or config.has_voice:
+                    style_prefix "pref_styling"
+                    null height gui.pref_spacing
 
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-                hbox:
+                    textbutton _("Mute All"):
+                        action Preference("all mute", "toggle")
+                        #style "mute_all_button"
+                
+                null height (2 * gui.pref_spacing)
+                
+                vbox:
+                    box_wrap True
+                    label _("Credits")
                     textbutton _("Credits") action ShowMenu("template_2a")
 
 
