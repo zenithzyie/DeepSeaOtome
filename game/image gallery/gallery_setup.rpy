@@ -21,16 +21,16 @@ init python:
             self.is_locked = lockme
 
     gallery_items = []
-    gallery_items.append(GalleryItem("", ["cg train"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_sushi_unlock"] ,"hoverimgLG"))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
-    gallery_items.append(GalleryItem("", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Train", ["cg train"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Sushi", ["cg_sushi_unlock"] ,"hoverimgLG"))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Lorem ipsum dolor sit amet", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")

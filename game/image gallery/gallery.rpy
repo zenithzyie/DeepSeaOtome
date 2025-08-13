@@ -82,10 +82,11 @@ screen gallery_B():
 
     #grid for images
     grid maxnumx maxnumy:
+        #for spacing
         pos (gx1, gy1)
         yfill True
-        xspacing 25
-        yspacing - 160
+        xspacing 50
+        yspacing 50
 
         for i in range(start, end + 1):
             $gallery_items[i].refresh_lock()
@@ -110,10 +111,13 @@ screen gallery_B():
 
     #grid for info
     grid maxnumx maxnumy:
+        #for spacing
         pos (gx2, gy2)
         yfill True
-        xspacing 25
-        yspacing - 160
+        xspacing 50
+        yspacing 50
+        xpos 335
+        ypos 225
 
         for i in range(start, end + 1):
             hbox:
