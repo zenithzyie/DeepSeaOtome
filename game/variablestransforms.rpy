@@ -151,25 +151,41 @@ layeredimage grandpa:
             "grandpa_eye_closed.png" at blink
 ######################################################################
 layeredimage side june:
-    # group body: #FOR NEW JUNE SPRITE
-    #     attribute body default:
-    #         "side_june_base.png"
-    group expressions:
-        # attribute happy: #FOR NEW JUNE SPRITE
-        #     "side_june_happy.png"
-        attribute flustered:
-            "side_june_flustered.png"
-        attribute huffed:
-            "side_june_huffed.png"
-        attribute neutral:
-            "side_june_neutral.png"
-        attribute shocked:
-            "side_june_shocked.png"
+    group bordbehind: #FOR NEW JUNE SPRITE
+        attribute border default:
+            "border_behind.png"
         xzoom -1
-        xpos -80
-        ypos 20
-    # zoom 0.3 #FOR NEW JUNE SPRITE
-    # xzoom -1 #FOR NEW JUNE SPRITE
+        xpos 1000
+        ypos 901
+        zoom 0.53
+    group body: #FOR NEW JUNE SPRITE
+        attribute body default:
+            "side_june_base.png"
+        xpos 1000
+        ypos 400
+    group exressions:
+        attribute happy: #FOR NEW JUNE SPRITE
+            "side_june_happy.png"
+        # attribute flustered:
+        #     "side_june_flustered.png"
+        # attribute huffed:
+        #     "side_june_huffed.png"
+        # attribute neutral:
+        #     "side_june_neutral.png"
+        # attribute shocked:
+        #     "side_june_shocked.png"
+        # xzoom -1
+        # xpos -80
+        # ypos 20
+    group bordfront: #FOR NEW JUNE SPRITE
+        attribute border default:
+            "border_front.png"
+        xzoom -1
+        xpos 1000
+        ypos 900
+        zoom 0.53
+    zoom 0.3 #FOR NEW JUNE SPRITE
+    xzoom -1 #FOR NEW JUNE SPRITE
     group eyes auto:
         attribute blinking default:
             "side_june_eye_closed.png" at blink

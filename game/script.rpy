@@ -100,7 +100,7 @@ label chapter1:
     show bg nice town:
         fit "contain"
     $ config.side_image_tag = "june"
-    y neutral "At last. Hello, Aquantis!"
+    y neutral bordfront bordbehind "At last. Hello, Aquantis!"
     "As soon as I exit the train car, I remove my camera from my purse to take a picture."
 
     menu:
