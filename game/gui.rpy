@@ -19,10 +19,9 @@ init python:
 ## GUI Configuration Variables
 ################################################################################
 
-
-## Colors ######################################################################
-##
-## The colors of text in the interface.
+################################################################################
+## Colors - Text in Interface ##################################################
+################################################################################
 
 ## An accent color used throughout the interface to label and highlight text.
 define gui.accent_color = '#ffffff'
@@ -53,8 +52,9 @@ define gui.hover_muted_color = '#003d7a'
 define gui.text_color = '#ffffff'
 define gui.interface_text_color = '#ffffff'
 
-
+################################################################################
 ## Fonts and Font Sizes ########################################################
+################################################################################
 
 ## The font used for in-game text.
 define gui.text_font = gui.preference ("fonts/OpenDyslexic.otf", "fonts/Philosopher-Regular.ttf")
@@ -83,16 +83,17 @@ define gui.notify_text_size = 16
 ## The size of the game's title.
 define gui.title_text_size = 50
 
-
+################################################################################
 ## Main and Game Menus #########################################################
-
+################################################################################
 ## The images used for the main and game menus.
+
 define gui.main_menu_background = "gui/main_menu.jpg"
-define gui.game_menu_background = "gui/game_menu.jpg"
+define gui.game_menu_background = "gui/game_menu.png"
 
-
+################################################################################
 ## Dialogue ####################################################################
-##
+################################################################################
 ## These variables control how dialogue is displayed on the screen one line at a
 ## time.
 
@@ -144,9 +145,9 @@ define gui.dialogue_width = 744
 ## aligned, 0.5 for centered, and 1.0 for right-aligned.
 define gui.dialogue_text_xalign = 0.0
 
-
+################################################################################
 ## Buttons #####################################################################
-##
+################################################################################
 ## These variables, along with the image files in gui/button, control aspects of
 ## how buttons are displayed.
 
@@ -204,9 +205,9 @@ define gui.quick_button_text_yalign = 1
 
 # define gui.navigation_button_width = 250
 
-
+################################################################################
 ## Choice Buttons ##############################################################
-##
+################################################################################
 ## Choice buttons are used in the in-game menus.
 
 define gui.choice_button_width = 790
@@ -222,9 +223,9 @@ define gui.choice_button_text_idle_color = '#888888'
 define gui.choice_button_text_hover_color = "#ffffff"
 define gui.choice_button_text_insensitive_color = '#8888887f'
 
-
+################################################################################
 ## File Slot Buttons ###########################################################
-##
+################################################################################
 ## A file slot button is a special kind of button. It contains a thumbnail
 ## image, and text describing the contents of the save slot. A save slot uses
 ## image files in gui/button, like the other kinds of buttons.
@@ -247,9 +248,9 @@ define config.thumbnail_height = 144
 define gui.file_slot_cols = 1
 define gui.file_slot_rows = 30
 
-
+################################################################################
 ## Positioning and Spacing #####################################################
-##
+################################################################################
 ## These variables control the positioning and spacing of various user interface
 ## elements.
 
@@ -284,9 +285,9 @@ define gui.slot_spacing = 10
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
 
-
+################################################################################
 ## Frames ######################################################################
-##
+################################################################################
 ## These variables control the look of frames that can contain user interface
 ## components when an overlay or window is not present.
 
@@ -305,9 +306,9 @@ define gui.notify_frame_borders = Borders(16, 5, 40, 5)
 ## Should frame backgrounds be tiled?
 define gui.frame_tile = False
 
-
+################################################################################
 ## Bars, Scrollbars, and Sliders ###############################################
-##
+################################################################################
 ## These control the look and size of bars, scrollbars, and sliders.
 ##
 ## The default GUI only uses sliders and vertical scrollbars. All of the other
@@ -338,9 +339,9 @@ define gui.vslider_borders = Borders(4, 4, 4, 4)
 ## None shows them.
 define gui.unscrollable = "hide"
 
-
+################################################################################
 ## History #####################################################################
-##
+################################################################################
 ## The history screen displays dialogue that the player has already dismissed.
 
 ## The number of blocks of dialogue history Ren'Py will keep.
@@ -366,51 +367,6 @@ define gui.history_text_ypos = 2
 define gui.history_text_width = 740
 define gui.history_text_xalign = 0.0
 
-
-## NVL-Mode ####################################################################
-##
-## The NVL-mode screen displays the dialogue spoken by NVL-mode characters.
-
-## The borders of the background of the NVL-mode background window.
-define gui.nvl_borders = Borders(0, 10, 0, 20)
-
-## The maximum number of NVL-mode entries Ren'Py will display. When more entries
-## than this are to be show, the oldest entry will be removed.
-define gui.nvl_list_length = 6
-
-## The height of an NVL-mode entry. Set this to None to have the entries
-## dynamically adjust height.
-define gui.nvl_height = 115
-
-## The spacing between NVL-mode entries when gui.nvl_height is None, and between
-## NVL-mode entries and an NVL-mode menu.
-define gui.nvl_spacing = 10
-
-## The position, width, and alignment of the label giving the name of the
-## speaking character.
-define gui.nvl_name_xpos = 430
-define gui.nvl_name_ypos = 0
-define gui.nvl_name_width = 150
-define gui.nvl_name_xalign = 1.0
-
-## The position, width, and alignment of the dialogue text.
-define gui.nvl_text_xpos = 450
-define gui.nvl_text_ypos = 8
-define gui.nvl_text_width = 590
-define gui.nvl_text_xalign = 0.0
-
-## The position, width, and alignment of nvl_thought text (the text said by the
-## nvl_narrator character.)
-define gui.nvl_thought_xpos = 240
-define gui.nvl_thought_ypos = 0
-define gui.nvl_thought_width = 780
-define gui.nvl_thought_xalign = 0.0
-
-## The position of nvl menu_buttons.
-define gui.nvl_button_xpos = 450
-define gui.nvl_button_xalign = 0.0
-
-
 ## Localization ################################################################
 
 ## This controls where a line break is permitted. The default is suitable
@@ -418,70 +374,3 @@ define gui.nvl_button_xalign = 0.0
 ## www.renpy.org/doc/html/style_properties.html#style-property-language
 
 define gui.language = "unicode"
-
-
-################################################################################
-## Mobile devices
-################################################################################
-
-init python:
-
-    ## This increases the size of the quick buttons to make them easier to touch
-    ## on tablets and phones.
-    @gui.variant
-    def touch():
-
-        gui.quick_button_borders = Borders(40, 14, 40, 0)
-
-    ## This changes the size and spacing of various GUI elements to ensure they
-    ## are easily visible on phones.
-    @gui.variant
-    def small():
-
-        ## Font sizes.
-        gui.text_size = 30
-        gui.name_text_size = 36
-        gui.notify_text_size = 25
-        gui.interface_text_size = 30
-        gui.button_text_size = 30
-        gui.label_text_size = 34
-
-        ## Adjust the location of the textbox.
-        gui.textbox_height = 240
-        gui.name_xpos = 80
-        gui.dialogue_xpos = 90
-        gui.dialogue_width = 1100
-
-        ## Change the size and spacing of various things.
-        gui.slider_size = 36
-
-        gui.choice_button_width = 1240
-        gui.choice_button_text_size = 30
-
-        gui.navigation_spacing = 20
-        gui.pref_button_spacing = 10
-
-        gui.history_height = 190
-        gui.history_text_width = 690
-
-        gui.quick_button_text_size = 20
-
-        ## File button layout.
-        gui.file_slot_cols = 1
-        gui.file_slot_rows = 30
-
-        ## NVL-mode.
-        gui.nvl_height = 170
-
-        gui.nvl_name_width = 305
-        gui.nvl_name_xpos = 325
-
-        gui.nvl_text_width = 915
-        gui.nvl_text_xpos = 345
-        gui.nvl_text_ypos = 5
-
-        gui.nvl_thought_width = 1240
-        gui.nvl_thought_xpos = 20
-
-        gui.nvl_button_width = 1240
-        gui.nvl_button_xpos = 20
