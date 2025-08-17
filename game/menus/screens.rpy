@@ -254,6 +254,7 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
 
     #use navigation
 
+## SOMEHOW, FIGURE OUT HOW TO HIDE RETURN BUTTON ON prefs_menu HERE????
     textbutton _("Return"):
         style "return_button"
         if main_menu:

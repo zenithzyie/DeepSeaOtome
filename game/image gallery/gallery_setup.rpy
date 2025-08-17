@@ -32,13 +32,17 @@ init python:
     gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
     gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"hoverimgLG" ))
 
+#trying to fix border for locked imgs
+#it did not work. alas
+transform fixlock:
+    zoom 0.4
+
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")
 
 #gallery hover images
 image hoverimgSM = ("images/gallery/hover 1284x724.png")
 image hoverimgLG = ("images/gallery/hoverLG.png")
-
 
 #gallery images
 image cg train = ("images/cg_train.jpg")

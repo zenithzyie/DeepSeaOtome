@@ -71,7 +71,7 @@ screen gallery_A():
         xalign 0.5
         yalign 0.98
         #background "#fff8"
-
+################################################################################
 screen gallery_B():
 
     tag menu
@@ -91,7 +91,11 @@ screen gallery_B():
         for i in range(start, end + 1):
             $gallery_items[i].refresh_lock()
             if gallery_items[i].is_locked:
-                add gallery_items[i].locked:
+                imagebutton:
+                    #idle_foreground "idleLG"
+                    idle gallery_items[i].locked
+                    #hover_foreground gallery_items[i].hoverimg
+                    action NullAction()
                     xalign 0.5
                     yalign 0.5
                     at imageThumb
