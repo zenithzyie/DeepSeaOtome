@@ -230,9 +230,9 @@ define gui.choice_button_text_insensitive_color = '#8888887f'
 ## image files in gui/button, like the other kinds of buttons.
 
 ## The save slot button.
-define gui.slot_button_width = 276
-define gui.slot_button_height = 206
-define gui.slot_button_borders = Borders(10, 10, 10, 10)
+define gui.slot_button_width = 810
+define gui.slot_button_height = 114
+#define gui.slot_button_borders = Borders(10, 10, 10, 10)
 define gui.slot_button_text_size = 14
 define gui.slot_button_text_xalign = 0.5
 define gui.slot_button_text_idle_color = gui.idle_small_color
@@ -244,8 +244,8 @@ define config.thumbnail_width = 256
 define config.thumbnail_height = 144
 
 ## The number of columns and rows in the grid of save slots.
-define gui.file_slot_cols = 3
-define gui.file_slot_rows = 2
+define gui.file_slot_cols = 1
+define gui.file_slot_rows = 30
 
 
 ## Positioning and Spacing #####################################################
@@ -467,8 +467,8 @@ init python:
         gui.quick_button_text_size = 20
 
         ## File button layout.
-        gui.file_slot_cols = 2
-        gui.file_slot_rows = 2
+        gui.file_slot_cols = 1
+        gui.file_slot_rows = 30
 
         ## NVL-mode.
         gui.nvl_height = 170
