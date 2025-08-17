@@ -21,7 +21,7 @@ screen titleMainMenu():
 
         textbutton _("Gallery") action ShowMenu("gallery_B")
 
-        textbutton _("Preferences") action ShowMenu("preferences")
+        textbutton _("Preferences") action [ShowMenu("preferences"), ShowMenu("sub_menu_text")]
 
         if _in_replay:
 

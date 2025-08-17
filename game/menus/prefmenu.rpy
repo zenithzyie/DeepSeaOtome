@@ -4,7 +4,7 @@
 screen prefs_menu():
     tag menu
 
-    use game_menu_prefs(_("Preferences"), scroll="viewport"):
+    use game_menu_prefs(_("Menu"), scroll="viewport"):
         vbox:
             if renpy.get_screen("main_menu"):
                 pass
@@ -17,36 +17,67 @@ screen prefs_menu():
 
                 spacing gui.navigation_spacing
 
-                textbutton _("Resume") action Return()
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Resume", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Resume", style ="main_menu_imagebutton_text")
+                    action Return()
+                    at customzoom
 
-                textbutton _("History") action ShowMenu("history")
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("History", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("History", style ="main_menu_imagebutton_text")
+                    action ShowMenu("history")
+                    at customzoom
 
-                textbutton _("Save") action ShowMenu("save")
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Save", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Save", style ="main_menu_imagebutton_text")
+                    action ShowMenu("save")
+                    at customzoom
 
-                textbutton _("Load") action ShowMenu("load")
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Load", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Load", style ="main_menu_imagebutton_text")
+                    action ShowMenu("load")
+                    at customzoom
 
-                textbutton _("Gallery") action ShowMenu("gallery_B")
-
-                textbutton _("Preferences") action ShowMenu("preferences")
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Preferences", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Preferences", style ="main_menu_imagebutton_text")
+                    action [ShowMenu("preferences"),ShowMenu("sub_menu_text")]
+                    at customzoom
 
                 if _in_replay:
-
-                    textbutton _("End Replay") action EndReplay(confirm=True)
+                    imagebutton:
+                        auto "gui/button/mainside_%s.png"
+                        hover_foreground Text("End Replay", style ="main_menu_imagebutton_text")
+                        idle_foreground Text("End Replay", style ="main_menu_imagebutton_text")
+                        action EndReplay(confirm=True)
+                        at customzoom
 
             if not main_menu:
-
-                textbutton _("Main Menu") action MainMenu()
-
-                if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-                    ## Help isn't necessary or relevant to mobile devices.
-                    textbutton _("Help") action ShowMenu("help")
-
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
+                    action MainMenu()
+                    at customzoom
 
             if renpy.variant("pc"):
 
                 ## The quit button is banned on iOS and unnecessary on Android and
                 ## Web.
-                textbutton _("Quit") action Quit(confirm=not main_menu)
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Quit", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Quit", style ="main_menu_imagebutton_text")
+                    action Quit(confirm=not main_menu)
+                    at customzoom
 
 ################################################################################
 ## Preferences Screen ##########################################################
@@ -73,7 +104,6 @@ screen preferences():
     tag menu
 
     use game_menu_prefs(_("Preferences"), scroll="viewport"):
-
         hbox:
             #xalign 1
             #spacing gui.page_spacing
@@ -94,6 +124,22 @@ screen preferences():
                         idle_foreground Text("Audio", style ="main_menu_imagebutton_text")
                         action [ShowMenu("sub_menu_audio"), Hide("sub_menu_text")]
                         at customzoom
+                    if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+                        ## Help isn't necessary or relevant to mobile devices.
+                        imagebutton:
+                            auto "gui/button/mainside_%s.png"
+                            hover_foreground Text("Help", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Help", style ="main_menu_imagebutton_text")
+                            action [ShowMenu("help"), Hide("sub_menu_text"), Hide("sub_menu_audio")]
+                            at customzoom
+                        #textbutton _("Help") action ShowMenu("help")
+                    imagebutton:
+                        auto "gui/button/mainside_%s.png"
+                        hover_foreground Text("Credits", style ="main_menu_imagebutton_text")
+                        idle_foreground Text("Credits", style ="main_menu_imagebutton_text")
+                        action [ShowMenu("template_2a"), Hide("sub_menu_text"), Hide("sub_menu_audio")]
+                        at customzoom
+                    
             null width (10 * gui.pref_spacing)
 
 transform customzoom:
@@ -125,14 +171,14 @@ screen sub_menu_text():
                             hover_foreground Text("Window", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Window", style ="main_menu_imagebutton_text")
                             action Preference("display", "window")
-                            at customzoom
+                            at customzoomsmall
                         #textbutton _("Fullscreen") action Preference("display", "fullscreen")
                         imagebutton:
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
                             action Preference("display", "fullscreen")
-                            at customzoom
+                            at customzoomsmall
 
                 null height (2 * gui.pref_spacing)
 
@@ -146,19 +192,19 @@ screen sub_menu_text():
                             hover_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
                             action Preference("skip", "toggle")
-                            at customzoom
+                            at customzoomsmall
                         imagebutton:
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("After Choices", style ="main_menu_imagebutton_text")
                             idle_foreground Text("After Choices", style ="main_menu_imagebutton_text")
                             action Preference("after choices", "toggle")
-                            at customzoom
+                            at customzoomsmall
                         imagebutton:
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Transitions", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Transitions", style ="main_menu_imagebutton_text")
                             action InvertSelected(Preference("transitions", "toggle"))
-                            at customzoom
+                            at customzoomsmall
                         #textbutton _("Unseen Text") action Preference("skip", "toggle")
                         #textbutton _("After Choices") action Preference("after choices", "toggle")
                         #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
@@ -265,13 +311,6 @@ screen sub_menu_audio():
                     action Preference("all mute", "toggle")
                     at customzoom
                     #style "mute_all_button"
-
-            null height (2 * gui.pref_spacing)
-
-            vbox:
-                box_wrap True
-                label _("Credits")
-                textbutton _("Credits") action ShowMenu("template_2a")
     else:
             pass
 
