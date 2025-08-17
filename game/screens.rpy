@@ -806,80 +806,98 @@ screen file_slots(title):
             order_reverse True
 
             ## The page name, which can be edited by clicking on a button.
-            button:
-                style "page_label"
+            # button:
+            #     #style "page_label"
 
-                key_events True
-                xalign 0.5
-                action page_name_value.Toggle()
+            #     key_events True
+            #     xalign 0.5
+            #     action page_name_value.Toggle()
 
-                input:
-                    style "page_label_text"
-                    value page_name_value
+            #     input:
+            #         style "page_label_text"
+            #         value page_name_value
 
             ## The grid of file slots.
-            grid gui.file_slot_cols gui.file_slot_rows:
+            vpgrid:
+                cols gui.file_slot_cols 
+                rows gui.file_slot_rows
+                spacing gui.slot_spacing 
+                draggable True
+                mousewheel True
+                scrollbars "vertical"
                 style_prefix "slot"
 
                 xalign 0.5
-                yalign 0.5
+                #yalign 0.5
+                xysize (984, 489)
 
-                spacing gui.slot_spacing
+                #spacing gui.slot_spacing
 
                 for i in range(gui.file_slot_cols * gui.file_slot_rows):
 
                     $ slot = i + 1
 
-                    button:
-                        action FileAction(slot)
+                    hbox:
+                        #null width (20 * gui.pref_spacing)
+                        button:
+                            action FileAction(slot)
+                            vbox:
+                                text [str(slot)]:
+                                    style "slot_time_text"
+                                    xpos 30
+                                    ypos 40
+                            vbox:
+                                add FileScreenshot(slot) size (169, 95) ypos 8
+                                xalign 0.5
+                                xpos 150
 
-                        has vbox
+                            vbox:
+                                text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
+                                    style "slot_time_text"
+                                    xpos 325
+                                    ypos 45
 
-                        add FileScreenshot(slot) xalign 0.5
+                                text FileSaveName(slot):
+                                    style "slot_name_text"
 
-                        text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):
-                            style "slot_time_text"
+                                key "save_delete" action FileDelete(slot)
+                        null width (15 * gui.pref_spacing)
 
-                        text FileSaveName(slot):
-                            style "slot_name_text"
+            # ## Buttons to access other pages.
+            # vbox:
+            #     style_prefix "page"
 
-                        key "save_delete" action FileDelete(slot)
+            #     xalign 0.5
+            #     yalign 1.0
 
-            ## Buttons to access other pages.
-            vbox:
-                style_prefix "page"
+            #     hbox:
+            #         xalign 0.5
 
-                xalign 0.5
-                yalign 1.0
+            #         spacing gui.page_spacing
 
-                hbox:
-                    xalign 0.5
+            #         #textbutton _("<") action FilePagePrevious()
 
-                    spacing gui.page_spacing
+            #         if config.has_autosave:
+            #             textbutton _("{#auto_page}A") action FilePage("auto")
 
-                    #textbutton _("<") action FilePagePrevious()
+            #         #if config.has_quicksave:
+            #             #textbutton _("{#quick_page}Q") action FilePage("quick")
 
-                    if config.has_autosave:
-                        textbutton _("{#auto_page}A") action FilePage("auto")
+            #         ## range(1, 10) gives the numbers from 1 to 9.
+            #         for page in range(1, 4):
+            #             textbutton "[page]" action FilePage(page)
 
-                    #if config.has_quicksave:
-                        #textbutton _("{#quick_page}Q") action FilePage("quick")
+            #         #textbutton _(">") action FilePageNext()
 
-                    ## range(1, 10) gives the numbers from 1 to 9.
-                    for page in range(1, 4):
-                        textbutton "[page]" action FilePage(page)
-
-                    #textbutton _(">") action FilePageNext()
-
-                if config.has_sync:
-                    if CurrentScreenName() == "save":
-                        textbutton _("Upload Sync"):
-                            action UploadSync()
-                            xalign 0.5
-                    else:
-                        textbutton _("Download Sync"):
-                            action DownloadSync()
-                            xalign 0.5
+            #     if config.has_sync:
+            #         if CurrentScreenName() == "save":
+            #             textbutton _("Upload Sync"):
+            #                 action UploadSync()
+            #                 xalign 0.5
+            #         else:
+            #             textbutton _("Download Sync"):
+            #                 action DownloadSync()
+            #                 xalign 0.5
 
 
 style page_label is gui_label
@@ -889,7 +907,9 @@ style page_button_text is gui_button_text
 
 style slot_button is gui_button
 style slot_button_text is gui_button_text
-style slot_time_text is slot_button_text
+#style slot_time_text is slot_button_text
+style slot_time_text:
+    size 25
 style slot_name_text is slot_button_text
 
 style page_label:
