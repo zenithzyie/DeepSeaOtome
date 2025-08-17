@@ -957,6 +957,8 @@ screen preferences():
                         action [ShowMenu("sub_menu_audio"), Hide("sub_menu_text")]
             null width (10 * gui.pref_spacing)
 
+transform customzoom:
+        zoom 0.8
 
 screen sub_menu_text():
     if renpy.get_screen("preferences"):
@@ -971,8 +973,20 @@ screen sub_menu_text():
                     style_prefix "pref_styling"
                     label _("Display")
                     hbox:
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        #textbutton _("Window") action Preference("display", "window")
+                        imagebutton:
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("Window", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Window", style ="main_menu_imagebutton_text")
+                            action Preference("display", "window")
+                            at customzoom
+                        #textbutton _("Fullscreen") action Preference("display", "fullscreen")
+                        imagebutton:
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
+                            action Preference("display", "fullscreen")
+                            at customzoom
                 
                 null height (2 * gui.pref_spacing)
 
@@ -981,9 +995,27 @@ screen sub_menu_text():
                     style_prefix "pref_styling"
                     label _("Skip")
                     hbox:
-                        textbutton _("Unseen Text") action Preference("skip", "toggle")
-                        textbutton _("After Choices") action Preference("after choices", "toggle")
-                        textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
+                        imagebutton:
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
+                            action Preference("skip", "toggle")
+                            at customzoom
+                        imagebutton:
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("After Choices", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("After Choices", style ="main_menu_imagebutton_text")
+                            action Preference("after choices", "toggle")
+                            at customzoom
+                        imagebutton:
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("Transitions", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Transitions", style ="main_menu_imagebutton_text")
+                            action InvertSelected(Preference("transitions", "toggle"))
+                            at customzoom
+                        #textbutton _("Unseen Text") action Preference("skip", "toggle")
+                        #textbutton _("After Choices") action Preference("after choices", "toggle")
+                        #textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
                         
                 #vbox:
                     #style_prefix "check"
