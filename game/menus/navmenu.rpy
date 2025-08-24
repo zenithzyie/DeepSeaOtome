@@ -2,14 +2,14 @@
 ##
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
+## WE DON'T USE THIS ANYMORE!!?!?!??! except for screen navigation()
 
 screen navigation():
     if renpy.get_screen("main_menu"):
         use titleMainMenu
     else:
-        use gameNavMenu
-
-#GAME MENU
+        pass
+#GAME MENU (OLD)
 screen gameNavMenu():
     vbox:
         if renpy.get_screen("main_menu"):

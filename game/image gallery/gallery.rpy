@@ -3,8 +3,8 @@ style prevNext:
     hover_color '#66a3e0'
     font "fonts/Philosopher-Regular.ttf"
 
+#we dont use gallery a
 screen gallery_A():
-
     tag menu
 
     add "gui/game_menu.jpg"
@@ -77,10 +77,11 @@ screen gallery_B():
     tag menu
     $ start = gallery_page * maxperpage
     $ end = min(start + maxperpage - 1, len(gallery_items) - 1)
-    use game_menu(_("Gallery"), scroll="viewport"):
+    use game_menu(_("Album"), scroll="viewport"):
         style_prefix "about"
 
     #grid for images
+
     grid maxnumx maxnumy:
         #for spacing
         pos (gx1, gy1)

@@ -4,17 +4,16 @@
 screen prefs_menu():
     tag menu
 
-    use game_menu_prefs(_("Menu"), scroll="viewport"):
-        vbox:
-            if renpy.get_screen("main_menu"):
-                pass
-            else:
-                style_prefix "navigation"
-                #xpos gui.navigation_xpos
-                xalign 0.5
-                yalign 0.5
-                xpos 600
+    use game_menu_noreturn(_("Menu"), scroll="viewport"):
 
+        vbox:
+            #style_prefix "game_menu"
+            #xpos gui.navigation_xpos
+
+            xpos 485
+
+            vbox:
+                xalign 0.5
                 spacing gui.navigation_spacing
 
                 imagebutton:
@@ -47,8 +46,8 @@ screen prefs_menu():
 
                 imagebutton:
                     auto "gui/button/mainside_%s.png"
-                    hover_foreground Text("Preferences", style ="main_menu_imagebutton_text")
-                    idle_foreground Text("Preferences", style ="main_menu_imagebutton_text")
+                    hover_foreground Text("Settings", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Settings", style ="main_menu_imagebutton_text")
                     action [ShowMenu("preferences"),ShowMenu("sub_menu_text")]
                     at customzoom
 
@@ -60,24 +59,24 @@ screen prefs_menu():
                         action EndReplay(confirm=True)
                         at customzoom
 
-            if not main_menu:
-                imagebutton:
-                    auto "gui/button/mainside_%s.png"
-                    hover_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
-                    idle_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
-                    action MainMenu()
-                    at customzoom
+                if not main_menu:
+                    imagebutton:
+                        auto "gui/button/mainside_%s.png"
+                        hover_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
+                        idle_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
+                        action MainMenu()
+                        at customzoom
 
-            if renpy.variant("pc"):
+                if renpy.variant("pc"):
 
-                ## The quit button is banned on iOS and unnecessary on Android and
-                ## Web.
-                imagebutton:
-                    auto "gui/button/mainside_%s.png"
-                    hover_foreground Text("Quit", style ="main_menu_imagebutton_text")
-                    idle_foreground Text("Quit", style ="main_menu_imagebutton_text")
-                    action Quit(confirm=not main_menu)
-                    at customzoom
+                    ## The quit button is banned on iOS and unnecessary on Android and
+                    ## Web.
+                    imagebutton:
+                        auto "gui/button/mainside_%s.png"
+                        hover_foreground Text("Quit", style ="main_menu_imagebutton_text")
+                        idle_foreground Text("Quit", style ="main_menu_imagebutton_text")
+                        action Quit(confirm=not main_menu)
+                        at customzoom
 
 ################################################################################
 ## Preferences Screen ##########################################################

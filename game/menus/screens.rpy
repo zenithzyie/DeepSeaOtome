@@ -189,7 +189,9 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
-
+################################################################################
+## Screen style we use for majority of screens (except album for some reason?)
+################################################################################
 screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
 
     style_prefix "game_menu"
@@ -254,7 +256,6 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
 
     #use navigation
 
-## SOMEHOW, FIGURE OUT HOW TO HIDE RETURN BUTTON ON prefs_menu HERE????
     textbutton _("Return"):
         style "return_button"
         if main_menu:
@@ -272,3 +273,71 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
+################################################################################
+##REMOVED RETURN BUTTON STYLE HERE
+################################################################################
+screen game_menu_noreturn(title, scroll=None, yinitial=0.0, spacing=0):
+
+    style_prefix "game_menu"
+
+    if main_menu:
+        add gui.game_menu_background:
+            alpha 0.9
+            fit "contain"
+    else:
+        add gui.game_menu_background:
+            alpha 0.9
+            fit "contain"
+
+    frame:
+        style "game_menu_outer_frame"
+
+        hbox:
+
+            ## Reserve space for the navigation section.
+            # frame:
+            #     style "game_menu_navigation_frame"
+
+            frame:
+                style "game_menu_content_frame"
+
+                if scroll == "viewport":
+
+                    viewport:
+                        yinitial yinitial
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        vbox:
+                            spacing spacing
+
+                            transclude
+
+                elif scroll == "vpgrid":
+
+                    vpgrid:
+                        cols 1
+                        yinitial yinitial
+
+                        scrollbars "vertical"
+                        mousewheel True
+                        draggable True
+                        pagekeys True
+
+                        side_yfill True
+
+                        spacing spacing
+
+                        transclude
+
+                else:
+
+                    transclude
+
+    #use navigation
+    label title:
+        xalign 0.5
