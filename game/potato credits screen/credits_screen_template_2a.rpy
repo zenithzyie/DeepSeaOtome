@@ -2,15 +2,22 @@
 # I used zoom 0.6 on the original image size, so here they're 150x150. But this is because I didn't want to add another image asset.
 
 # Credits Screen
-screen template_2a():
-    tag menu
+screen credits():
+    #tag menu
 
     ## This use statement includes the game_menu screen inside this one. The
     ## vbox child is then included inside the viewport inside the game_menu
     ## screen.
-    use game_menu(_("Credits"), scroll="viewport"):
 
-        style_prefix "about"
+    if renpy.variant("pc") or renpy.variant("web"):
+
+        hbox:
+            null width 1500
+
+
+    use game_menu_prefs(_("Credits"), scroll="viewport"):
+
+        style_prefix "pref_styling"
 
         #text "Credits:" style "about_header"
         #null height 50 # manual vertical spacing
@@ -21,10 +28,10 @@ screen template_2a():
         # vpgrid is also an option over grid depending on preference.
         # NOTE As fas as I know, you can't give fixed coordinates to grid slots, positions are calculated for slots in relation to each other.
         # Such as having long text strings in first column will push the second column more to the right. Play around with xspacing value for the look you want.
-        grid 2 7:
-            # horizontal spacing
+
+        grid 1 13:
+            xalign 0.5
             xspacing 50
-            # vertical spacing
             yspacing 50
 
             # Credit block: ZENITH

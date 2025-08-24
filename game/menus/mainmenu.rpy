@@ -1,6 +1,13 @@
 ################################################################################
 #MAIN MENU - title screen, when the game starts
 ################################################################################
+
+image startbutton_hover = im.Scale("gui/button/start_hover.png", 116, 28)
+image startbutton_idle = im.Scale("gui/button/start_idle.png", 116, 28)
+
+image loadbutton_hover = im.Scale("gui/button/load_hover.png", 116, 29)
+image loadbutton_idle = im.Scale("gui/button/load_idle.png", 116, 29)
+
 screen titleMainMenu():
     vbox:
         if renpy.get_screen("main_menu"):
@@ -11,17 +18,22 @@ screen titleMainMenu():
         spacing gui.navigation_spacing
 
         if main_menu:
-            textbutton _("Start") action Start()
+            #textbutton _("Start") action Start()
+            imagebutton:
+                auto "startbutton_%s"
+                hover_foreground Text("Start", style ="main_menu_imagebutton_text")
+                idle_foreground Text("Start", style ="main_menu_imagebutton_text")
+                action Start()
 
             imagebutton:
-                auto "gui/button/load_%s.png"
+                auto "loadbutton_%s"
                 hover_foreground Text("Load", style ="main_menu_imagebutton_text")
                 idle_foreground Text("Load", style ="main_menu_imagebutton_text")
                 action ShowMenu("load")
 
-        textbutton _("Gallery") action ShowMenu("gallery_B")
+        textbutton _("Album") action ShowMenu("gallery_B")
 
-        textbutton _("Preferences") action [ShowMenu("preferences"), ShowMenu("sub_menu_text")]
+        textbutton _("Settings") action [ShowMenu("preferences"), ShowMenu("sub_menu_text")]
 
         if _in_replay:
 
@@ -38,7 +50,7 @@ screen main_menu():
     tag menu
 
     add gui.main_menu_background size (1280, 720)
-    imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction() at logoappear
+#    imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction() at logoappear
 
     ## This empty frame darkens the main menu.
     frame:

@@ -101,135 +101,201 @@ style history_label_text:
 ## help.
 
 screen help():
+    if renpy.variant("pc") or renpy.variant("web"):
 
-    tag menu
+        default device = "keyboard"
 
-    default device = "keyboard"
+    hbox:
+        xpos 540
+        ypos 110
+        spacing gui.navigation_spacing
+        imagebutton:
+            auto "gui/button/mainside_%s.png"
+            hover_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
+            idle_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
+            action SetScreenVariable("device", "keyboard")
+            at customzoomsmall
+        imagebutton:
+            auto "gui/button/mainside_%s.png"
+            hover_foreground Text("Mouse", style ="main_menu_imagebutton_text")
+            idle_foreground Text("Mouse", style ="main_menu_imagebutton_text")
+            action SetScreenVariable("device", "mouse")
+            at customzoomsmall
+        #textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+        #textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
-    use game_menu_prefs(_("Help"), scroll="viewport"):
+        if GamepadExists():
+            imagebutton:
+                auto "gui/button/mainside_%s.png"
+                hover_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
+                idle_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
+                action SetScreenVariable("device", "gamepad")
+                at customzoomsmall
+            #textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
-        style_prefix "help"
+    if device == "keyboard":
+        use keyboard_help
+    elif device == "mouse":
+        use mouse_help
+    elif device == "gamepad":
+        use gamepad_help
+
+    null width (10 * gui.pref_spacing)
+
+#sub-menus
+screen keyboard_help():
+    if renpy.get_screen("preferences"):
+        vbox:
+            xpos 400
+            box_wrap True
+            xalign 0.5
+            yalign 0.5
+
+            if renpy.variant("pc") or renpy.variant("web"):
+
+                hbox:
+                    null width 1500
 
         vbox:
-            spacing 15
+            style_prefix "help"
+            box_wrap True
+            ypos 160
+            xpos 310
 
             hbox:
+                label _("Enter")
+                text _("Advances dialogue and activates the interface.")
 
-                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
+            hbox:
+                label _("Space")
+                text _("Advances dialogue without selecting choices.")
 
-                if GamepadExists():
-                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+            hbox:
+                label _("Arrow Keys")
+                text _("Navigate the interface.")
 
-            if device == "keyboard":
-                use keyboard_help
-            elif device == "mouse":
-                use mouse_help
-            elif device == "gamepad":
-                use gamepad_help
+            hbox:
+                label _("Escape")
+                text _("Accesses the game menu.")
 
+            hbox:
+                label _("Ctrl")
+                text _("Skips dialogue while held down.")
 
-screen keyboard_help():
+            hbox:
+                label _("Tab")
+                text _("Toggles dialogue skipping.")
 
-    hbox:
-        label _("Enter")
-        text _("Advances dialogue and activates the interface.")
+            hbox:
+                label _("Page Up")
+                text _("Rolls back to earlier dialogue.")
 
-    hbox:
-        label _("Space")
-        text _("Advances dialogue without selecting choices.")
+            hbox:
+                label _("Page Down")
+                text _("Rolls forward to later dialogue.")
 
-    hbox:
-        label _("Arrow Keys")
-        text _("Navigate the interface.")
+            hbox:
+                label "H"
+                text _("Hides the user interface.")
 
-    hbox:
-        label _("Escape")
-        text _("Accesses the game menu.")
+            hbox:
+                label "S"
+                text _("Takes a screenshot.")
 
-    hbox:
-        label _("Ctrl")
-        text _("Skips dialogue while held down.")
+            hbox:
+                label "V"
+                text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
 
-    hbox:
-        label _("Tab")
-        text _("Toggles dialogue skipping.")
-
-    hbox:
-        label _("Page Up")
-        text _("Rolls back to earlier dialogue.")
-
-    hbox:
-        label _("Page Down")
-        text _("Rolls forward to later dialogue.")
-
-    hbox:
-        label "H"
-        text _("Hides the user interface.")
-
-    hbox:
-        label "S"
-        text _("Takes a screenshot.")
-
-    hbox:
-        label "V"
-        text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.")
-
-    hbox:
-        label "Shift+A"
-        text _("Opens the accessibility menu.")
+            hbox:
+                label "Shift+A"
+                text _("Opens the accessibility menu.")
 
 
 screen mouse_help():
+    if renpy.get_screen("preferences"):
+        vbox:
+            xpos 400
+            box_wrap True
+            xalign 0.5
+            yalign 0.5
 
-    hbox:
-        label _("Left Click")
-        text _("Advances dialogue and activates the interface.")
+            if renpy.variant("pc") or renpy.variant("web"):
 
-    hbox:
-        label _("Middle Click")
-        text _("Hides the user interface.")
+                hbox:
+                    null width 1500
 
-    hbox:
-        label _("Right Click")
-        text _("Accesses the game menu.")
+        vbox:
+            style_prefix "help"
+            box_wrap True
+            ypos 160
+            xpos 310
 
-    hbox:
-        label _("Mouse Wheel Up")
-        text _("Rolls back to earlier dialogue.")
+            hbox:
+                label _("Left Click")
+                text _("Advances dialogue and activates the interface.")
 
-    hbox:
-        label _("Mouse Wheel Down")
-        text _("Rolls forward to later dialogue.")
+            hbox:
+                label _("Middle Click")
+                text _("Hides the user interface.")
+
+            hbox:
+                label _("Right Click")
+                text _("Accesses the game menu.")
+
+            hbox:
+                label _("Mouse Wheel Up")
+                text _("Rolls back to earlier dialogue.")
+
+            hbox:
+                label _("Mouse Wheel Down")
+                text _("Rolls forward to later dialogue.")
 
 
 screen gamepad_help():
+    if renpy.get_screen("preferences"):
+        vbox:
+            xpos 400
+            box_wrap True
+            xalign 0.5
+            yalign 0.5
 
-    hbox:
-        label _("Right Trigger\nA/Bottom Button")
-        text _("Advances dialogue and activates the interface.")
+            if renpy.variant("pc") or renpy.variant("web"):
 
-    hbox:
-        label _("Left Trigger\nLeft Shoulder")
-        text _("Rolls back to earlier dialogue.")
+                hbox:
+                    null width 1500
 
-    hbox:
-        label _("Right Shoulder")
-        text _("Rolls forward to later dialogue.")
+        vbox:
+            style_prefix "help"
+            box_wrap True
+            ypos 160
+            xpos 310
+            hbox:
+                label _("Right Trigger\nA/Bottom Button")
+                text _("Advances dialogue and activates the interface.")
 
-    hbox:
-        label _("D-Pad, Sticks")
-        text _("Navigate the interface.")
+            hbox:
+                label _("Left Trigger\nLeft Shoulder")
+                text _("Rolls back to earlier dialogue.")
 
-    hbox:
-        label _("Start, Guide, B/Right Button")
-        text _("Accesses the game menu.")
+            hbox:
+                label _("Right Shoulder")
+                text _("Rolls forward to later dialogue.")
 
-    hbox:
-        label _("Y/Top Button")
-        text _("Hides the user interface.")
+            hbox:
+                label _("D-Pad, Sticks")
+                text _("Navigate the interface.")
 
-    textbutton _("Calibrate") action GamepadCalibrate()
+            hbox:
+                label _("Start, Guide, B/Right Button")
+                text _("Accesses the game menu.")
+
+            hbox:
+                label _("Y/Top Button")
+                text _("Hides the user interface.")
+
+            vbox:
+                xalign 0.5
+                textbutton _("Calibrate") action GamepadCalibrate()
 
 
 style help_button is gui_button

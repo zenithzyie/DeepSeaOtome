@@ -103,10 +103,8 @@ style pref_styling_button:
 screen preferences():
     tag menu
 
-    use game_menu_prefs(_("Preferences"), scroll="viewport"):
+    use game_menu_prefs(_("Settings"), scroll="viewport"):
         hbox:
-            #xalign 1
-            #spacing gui.page_spacing
             xpos 50
             ypos 30
             vbox:
@@ -116,13 +114,13 @@ screen preferences():
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("System", style ="main_menu_imagebutton_text")
                         idle_foreground Text("System", style ="main_menu_imagebutton_text")
-                        action [ShowMenu("sub_menu_text"), Hide("sub_menu_audio")]
+                        action [ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
                         at customzoom
                     imagebutton:
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("Audio", style ="main_menu_imagebutton_text")
                         idle_foreground Text("Audio", style ="main_menu_imagebutton_text")
-                        action [ShowMenu("sub_menu_audio"), Hide("sub_menu_text")]
+                        action [ShowMenu("sub_menu_audio"), Hide("sub_menu_text"), Hide("help"), Hide("credits")]
                         at customzoom
                     if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
                         ## Help isn't necessary or relevant to mobile devices.
@@ -130,17 +128,16 @@ screen preferences():
                             auto "gui/button/mainside_%s.png"
                             hover_foreground Text("Help", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Help", style ="main_menu_imagebutton_text")
-                            action [ShowMenu("help"), Hide("sub_menu_text"), Hide("sub_menu_audio")]
+                            action [ShowMenu("help"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("credits")]
                             at customzoom
                         #textbutton _("Help") action ShowMenu("help")
                     imagebutton:
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("Credits", style ="main_menu_imagebutton_text")
                         idle_foreground Text("Credits", style ="main_menu_imagebutton_text")
-                        action [ShowMenu("template_2a"), Hide("sub_menu_text"), Hide("sub_menu_audio")]
+                        action [ShowMenu("credits"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("help")]
                         at customzoom
-                    
-            null width (10 * gui.pref_spacing)
+
 
 transform customzoom:
         zoom 0.8
