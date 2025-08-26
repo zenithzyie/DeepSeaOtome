@@ -29,7 +29,7 @@ screen gameNavMenu():
 
             textbutton _("Gallery") action ShowMenu("gallery_B")
 
-            textbutton _("Preferences") action [ShowMenu("preferences"), ShowMenu("sub_menu_text")]
+            textbutton _("Preferences") action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
 
             if _in_replay:
 

@@ -33,7 +33,7 @@ screen titleMainMenu():
 
         textbutton _("Album") action ShowMenu("gallery_B")
 
-        textbutton _("Settings") action [ShowMenu("preferences"), ShowMenu("sub_menu_text")]
+        textbutton _("Settings") action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
 
         if _in_replay:
 

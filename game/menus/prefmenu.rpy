@@ -48,7 +48,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("Settings", style ="main_menu_imagebutton_text")
                     idle_foreground Text("Settings", style ="main_menu_imagebutton_text")
-                    action [ShowMenu("preferences"),ShowMenu("sub_menu_text")]
+                    action [ShowMenu("preferences"),ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
                     at customzoom
 
                 if _in_replay:
@@ -103,6 +103,7 @@ screen preferences():
     tag menu
 
     use game_menu_prefs(_("Settings"), scroll="viewport"):
+        
         hbox:
             xpos 50
             ypos 30

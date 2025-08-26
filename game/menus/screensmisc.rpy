@@ -101,46 +101,47 @@ style history_label_text:
 ## help.
 
 screen help():
-    if renpy.variant("pc") or renpy.variant("web"):
+    if renpy.get_screen("preferences"):
+        if renpy.variant("pc") or renpy.variant("web"):
 
-        default device = "keyboard"
+            default device = "keyboard"
 
-    hbox:
-        xpos 540
-        ypos 110
-        spacing gui.navigation_spacing
-        imagebutton:
-            auto "gui/button/mainside_%s.png"
-            hover_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
-            idle_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
-            action SetScreenVariable("device", "keyboard")
-            at customzoomsmall
-        imagebutton:
-            auto "gui/button/mainside_%s.png"
-            hover_foreground Text("Mouse", style ="main_menu_imagebutton_text")
-            idle_foreground Text("Mouse", style ="main_menu_imagebutton_text")
-            action SetScreenVariable("device", "mouse")
-            at customzoomsmall
-        #textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
-        #textbutton _("Mouse") action SetScreenVariable("device", "mouse")
-
-        if GamepadExists():
+        hbox:
+            xpos 540
+            ypos 110
+            spacing gui.navigation_spacing
             imagebutton:
                 auto "gui/button/mainside_%s.png"
-                hover_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
-                idle_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
-                action SetScreenVariable("device", "gamepad")
+                hover_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
+                idle_foreground Text("Keyboard", style ="main_menu_imagebutton_text")
+                action SetScreenVariable("device", "keyboard")
                 at customzoomsmall
-            #textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
+            imagebutton:
+                auto "gui/button/mainside_%s.png"
+                hover_foreground Text("Mouse", style ="main_menu_imagebutton_text")
+                idle_foreground Text("Mouse", style ="main_menu_imagebutton_text")
+                action SetScreenVariable("device", "mouse")
+                at customzoomsmall
+            #textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+            #textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
-    if device == "keyboard":
-        use keyboard_help
-    elif device == "mouse":
-        use mouse_help
-    elif device == "gamepad":
-        use gamepad_help
+            if GamepadExists():
+                imagebutton:
+                    auto "gui/button/mainside_%s.png"
+                    hover_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
+                    idle_foreground Text("Gamepad", style ="main_menu_imagebutton_text")
+                    action SetScreenVariable("device", "gamepad")
+                    at customzoomsmall
+                #textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
-    null width (10 * gui.pref_spacing)
+        if device == "keyboard":
+            use keyboard_help
+        elif device == "mouse":
+            use mouse_help
+        elif device == "gamepad":
+            use gamepad_help
+
+        null width (10 * gui.pref_spacing)
 
 #sub-menus
 screen keyboard_help():
