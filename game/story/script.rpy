@@ -784,7 +784,9 @@ label timeskip1:
     "Despite my best attempts, Grandfather has not been able to answer my questions."
 
     #SCENE CHANGE - Shabby Market
-    scene bg shabby market with dissolve
+    scene bg shabby market:
+        fit "contain"
+    with dissolve
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
     show grandpa neutral at left2 with dissolve
     $ speaking_char = "all"

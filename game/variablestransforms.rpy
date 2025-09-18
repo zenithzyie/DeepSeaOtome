@@ -342,7 +342,7 @@ transform slightRight:
     xpos 0.6
 
 transform centre:
-    xpos 0.5
+    xpos 0.55
 
 #USE SHIFT + P TO OPEN THE ACTION BUTTON CAMERA THING
 #YOU COULD DO ANYTHING WITH THIS HOLY FUCK
