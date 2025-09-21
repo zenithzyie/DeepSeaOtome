@@ -3,150 +3,69 @@ style prevNext:
     hover_color '#66a3e0'
     font "fonts/Philosopher-Regular.ttf"
 
-#we dont use gallery a
-screen gallery_A():
-    tag menu
-
-    add "gui/game_menu.jpg"
-
-    $ start = gallery_page * maxperpage
-    $ end = min(start + maxperpage - 1, len(gallery_items) - 1)
-
-    #grid for images
-    grid maxnumx maxnumy:
-        xfill True
-        yfill True
-
-        for i in range(start, end + 1):
-            $gallery_items[i].refresh_lock()
-            if gallery_items[i].is_locked:
-                add gallery_items[i].locked:
-                    xalign 0.5
-                    yalign 0.5
-                    at imageThumb
-            else:
-                imagebutton:
-                    idle gallery_items[i].images
-                    style "gallery_button" #delete this line to remove hover
-                    action Show("gallery_closeup", dissolve, gallery_items[i].images)
-                    xalign 0.5
-                    yalign 0.5
-                    at imageThumb
-
-        #required to fill in empty grid items
-        for i in range(end - start + 1, maxperpage):
-            null
-
-    #grid for info
-    grid maxnumx maxnumy:
-        pos (gx2, gy2)
-        xfill True
-        yfill True
-
-        for i in range(start, end + 1):
-            hbox:
-                style_prefix "name"
-                spacing maxthumbx - 20
-                text gallery_items[i].name
-                xysize(sx, sy)
-        #required to fill in empty grid items
-        for i in range(end - start + 1, maxperpage):
-            null
-
-    #previous, next, and return buttons
-    if gallery_page > 0:
-        textbutton "{color=#888888}Previous{/color}":
-            action SetVariable("gallery_page", gallery_page - 1)
-            xalign 0.1
-            yalign 0.98
-            #background "#fff8"
-    if (gallery_page + 1) * maxperpage < len(gallery_items):
-        textbutton "{color=#888888}Next{/color}":
-            action SetVariable("gallery_page", gallery_page + 1)
-            xalign 0.9
-            yalign 0.98
-            #background "#fff8"
-    textbutton "{color=#888888}Return{/color}":
-        action Return()
-        xalign 0.5
-        yalign 0.98
-        #background "#fff8"
-################################################################################
 screen gallery_B():
 
     tag menu
     $ start = gallery_page * maxperpage
-    $ end = min(start + maxperpage - 1, len(gallery_items) - 1)
-    use game_menu(_("Album"), scroll="viewport"):
+    $ end = len(gallery_items) - 1
+    use game_menu("Album"):
         style_prefix "about"
 
-    #grid for images
+        #grid for images
+        hbox:
+            box_wrap True
+            ypos 10
+            xpos -225
+            xsize 1150
+            ysize 450
 
-    grid maxnumx maxnumy:
-        #for spacing
-        pos (gx1, gy1)
-        yfill True
-        xspacing 50
-        yspacing 50
+            vpgrid:
+                cols maxnumy
+                yfill True
+                xspacing 35
+                yspacing 40
+                draggable True
+                mousewheel True
+                scrollbars "vertical"
 
-        for i in range(start, end + 1):
-            $gallery_items[i].refresh_lock()
-            if gallery_items[i].is_locked:
-                imagebutton:
-                    #idle_foreground "idleLG"
-                    idle gallery_items[i].locked
-                    #hover_foreground gallery_items[i].hoverimg
-                    action NullAction()
-                    xalign 0.5
-                    yalign 0.5
-                    at imageThumb
-            else:
-                imagebutton:
-                    idle_foreground "idleLG"
-                    idle gallery_items[i].images
-                    hover_foreground gallery_items[i].hoverimg
-                    action Show("gallery_closeup", dissolve, gallery_items[i].images)
-                    xalign 0.5
-                    yalign 0.5
-                    at imageThumb
+                #TEXT KEEPS CUTTING OFF ??? i'm going insane.
+                for i in range(start, end + 1):
+                    $gallery_items[i].refresh_lock()
+                    if gallery_items[i].is_locked:
+                        #this one is for locked imaged
+                        vbox:
+                            hbox:
+                                #will show "Unlock" + Name of the CG
+                                text "Unlock: " + gallery_items[i].name:
+                                    style_prefix "name"
+                                    xalign 0.5
+                            hbox:
+                                imagebutton:
+                                    idle_foreground "idleLG"
+                                    idle gallery_items[i].locked 
+                                    hover_foreground "hoverimgLG"
+                                    action NullAction()
+                                    at imageThumb
+                            
+                    else:
+                        #this one is for unlocked images
+                        vbox:
+                            hbox:
+                                #show name of CG
+                                text gallery_items[i].name:
+                                    style_prefix "name"
+                                    xalign 0.5
+                            hbox:
+                                imagebutton:
+                                    idle_foreground "idleLG"
+                                    idle "thumb_" + gallery_items[i].thumbname
+                                    hover_foreground "hoverimgLG" 
+                                    action Show("gallery_closeup", dissolve, gallery_items[i].images)
+                                    at imageThumb
+                            
+                                
+                                      
 
-        #required to fill in empty grid items
-        for i in range(end - start + 1, maxperpage):
-            null
-
-    #grid for info
-    grid maxnumx maxnumy:
-        #for spacing
-        pos (gx2, gy2)
-        yfill True
-        xspacing 50
-        yspacing 50
-        xpos 335
-        ypos 225
-
-        for i in range(start, end + 1):
-            hbox:
-                style_prefix "name"
-                spacing maxthumbx - 20
-                xalign 0.0
-                yalign 0.1
-                text gallery_items[i].name
-                xysize(sx, sy)
-
-        #required to fill in empty grid items
-        for i in range(end - start + 1, maxperpage):
-            null
-
-    #previous and next buttons
-    if gallery_page > 0:
-        textbutton "Previous" style "prevNext":
-            action SetVariable("gallery_page", gallery_page - 1)
-            xalign 0.3
-            yalign 0.98
-            text_style "prevNext"
-    if (gallery_page + 1) * maxperpage < len(gallery_items):
-        textbutton "Next" style "prevNext":
-            action SetVariable("gallery_page", gallery_page + 1)
-            xalign 0.9
-            yalign 0.98
-            text_style "prevNext"
+                #required to fill in empty grid items
+                for i in range(end - start + 1, maxperpage):
+                    null
