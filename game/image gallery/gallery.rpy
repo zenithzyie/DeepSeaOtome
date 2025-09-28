@@ -28,40 +28,38 @@ screen gallery_B():
                 mousewheel True
                 scrollbars "vertical"
 
-                #TEXT KEEPS CUTTING OFF ??? i'm going insane.
+                #Instantiates each gallery item
                 for i in range(start, end + 1):
                     $gallery_items[i].refresh_lock()
                     if gallery_items[i].is_locked:
                         #this one is for locked imaged
                         vbox:
-                            hbox:
-                                #will show "Unlock" + Name of the CG
-                                text "Unlock: " + gallery_items[i].name:
-                                    style_prefix "name"
-                                    xalign 0.5
-                            hbox:
-                                imagebutton:
-                                    idle_foreground "idleLG"
-                                    idle gallery_items[i].locked 
-                                    hover_foreground "hoverimgLG"
-                                    action NullAction()
-                                    at imageThumb
+                            imagebutton:
+                                idle_foreground "idleLG"
+                                idle gallery_items[i].locked 
+                                hover_foreground "hoverimgLG"
+                                action NullAction()
+                                at imageThumb
+                            #will show "Unlock" + Name of the CG
+                            text "Unlock: " + gallery_items[i].name:
+                                style_prefix "name"
+                                xalign 0.5
+                                ypos -40
                             
                     else:
                         #this one is for unlocked images
                         vbox:
-                            hbox:
-                                #show name of CG
-                                text gallery_items[i].name:
-                                    style_prefix "name"
-                                    xalign 0.5
-                            hbox:
-                                imagebutton:
-                                    idle_foreground "idleLG"
-                                    idle "thumb_" + gallery_items[i].thumbname
-                                    hover_foreground "hoverimgLG" 
-                                    action Show("gallery_closeup", dissolve, gallery_items[i].images)
-                                    at imageThumb
+                            imagebutton:
+                                idle_foreground "idleLG"
+                                idle "thumb_" + gallery_items[i].thumbname
+                                hover_foreground "hoverimgLG" 
+                                action Show("gallery_closeup", dissolve, gallery_items[i].images)
+                                at imageThumb
+                            #show name of CG
+                            text gallery_items[i].name:
+                                style_prefix "name"
+                                xalign 0.5
+                                ypos -40
                             
                                 
                                       

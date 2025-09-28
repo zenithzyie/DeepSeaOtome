@@ -16,8 +16,7 @@ default gy1 = 50 #1280x720
 #default gy1 = 30 #1920x1080
 
 style name_text: #text color and outlines please change
-    #color "#1A2845" #the actual colour
-    color "#d9ff00" #just for testing
+    color "#1A2845" #the actual colour
     size 20 # 1280x720
     #size 30 #1920x1080
     font gui.name_text_font
