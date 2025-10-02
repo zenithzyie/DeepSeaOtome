@@ -138,7 +138,10 @@ label ch1_followprince:
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
+    scene bg throneroom:
+        fit "contain"
     "Our final destination: a grand throne room."
+    show prince frown at Position(xpos=0.45)
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
     $ speaking_char = "all"
     show cetus neutral at left2:
