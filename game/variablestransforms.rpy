@@ -252,9 +252,9 @@ layeredimage cetus:
     at sprite_highlight('Cetus')
     group expressions:
         attribute neutral:
-            "cetus_neutral.png"
+            "cetus_neutral2.png"
     zoom 0.55
-    ypos 0.07
+    #ypos 0.07
     group eyes auto:
         attribute blinking default:
             "cetus_blink.png" at blink

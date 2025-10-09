@@ -235,6 +235,8 @@ label ch1_followprince:
     c "Welcome back to your body, my dear."
     "I open my eyes."
 
+    jump ch2_followthio
+
     #"The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
 
     scene bg white with hpunch
