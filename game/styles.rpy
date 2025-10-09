@@ -39,9 +39,10 @@ style prompt_text is gui_text:
     properties gui.text_properties("prompt")
 
 style bar:
-    ysize gui.bar_size
-    left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
-    right_bar Frame("gui/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+    xsize gui.bar_size
+    #left_bar Frame("gui/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
+    left_bar "gui/bar/left.png"
+    right_bar "gui/bar/right.png"
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
 
 style vbar:
@@ -58,11 +59,15 @@ style vscrollbar:
     xsize gui.scrollbar_size
     base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb_offset -15
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    left_bar Frame("gui/bar/left.png", 70, 5, 70, 5, tile=False)
+    right_bar Frame("gui/bar/right.png", 70, 5, 70, 5, tile=False)
     thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    yoffset -33
+    thumb_offset -42
 
 style vslider:
     xsize gui.slider_size

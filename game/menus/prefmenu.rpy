@@ -103,7 +103,7 @@ screen preferences():
     tag menu
 
     use game_menu_prefs(_("Settings"), scroll="viewport"):
-        
+
         hbox:
             xpos 50
             ypos 30
@@ -148,6 +148,7 @@ transform customzoomsmall:
 screen sub_menu_text():
     if renpy.get_screen("preferences"):
         vbox:
+            null height 81
             xpos 400
             box_wrap True
             yalign 0.5
@@ -177,7 +178,7 @@ screen sub_menu_text():
                             action Preference("display", "fullscreen")
                             at customzoomsmall
 
-                null height (2 * gui.pref_spacing)
+                #null height (2 * gui.pref_spacing)
 
                 vbox:
                     #style_prefix "check"
@@ -247,15 +248,16 @@ screen sub_menu_text():
                     null height (2 * gui.pref_spacing)
 
                     vbox:
-                        style_prefix "bar"
                         label _("Text Speed")
-                        null height (1.5 * gui.pref_spacing)
-                        bar value Preference("text speed")
+                        null height 25
 
-                        null height (1.5 * gui.pref_spacing)
-
+                        bar value Preference("text speed") style_prefix "slider"
+                    null height -20
+                    vbox:
                         label _("Auto-Forward Time")
-                        bar value Preference("auto-forward time")
+                        null height 25
+
+                        bar value Preference("auto-forward time") style_prefix "slider"
     else:
         pass
 
@@ -264,50 +266,53 @@ screen sub_menu_audio():
         vbox:
             xpos 400
             box_wrap True
-            null height 100
+            null height 128
 
-
-            if config.has_music:
-                style_prefix "pref_styling"
-                label _("Audio")
-                vbox:
-                    style_prefix "slider"
-                    label _("Music Volume")
-
-                    bar value Preference("music volume")
-                        #xsize 500
-
-            if config.has_sound:
-
-                label _("Sound Volume")
-                vbox:
-                    style_prefix "slider"
-                    bar value Preference("sound volume")
-                        #xsize 500
-
-                    if config.sample_sound:
-                        textbutton _("Test") action Play("sound", config.sample_sound)
-
-            if config.has_voice:
-                label _("Voice Volume")
+            if renpy.variant("pc") or renpy.variant("web"):
 
                 hbox:
-                    bar value Preference("voice volume")
+                    null width 1500
+                vbox:
+                    style_prefix "slider"
+                    box_wrap True
 
-                    if config.sample_voice:
-                        textbutton _("Test") action Play("voice", config.sample_voice)
+                    if config.has_music:
+                        vbox:
+                            label _("Music Volume")
+                            null height 25
+                            bar value Preference("music volume") style_prefix "slider"
+                    null height -20
+                    if config.has_sound:
+                        style_prefix "pref_styling"
+                        vbox:
+                            label _("Sound Volume")
+                            null height 25
+                            bar value Preference("sound volume") style_prefix "slider"
 
-            if config.has_music or config.has_sound or config.has_voice:
-                style_prefix "pref_styling"
-                null height gui.pref_spacing
+                            if config.sample_sound:
+                                textbutton _("Test") action Play("sound", config.sample_sound)
 
-                imagebutton:
-                    auto "gui/button/menu_%s_background.png"
-                    hover_foreground Text("Mute All", style ="main_menu_imagebutton_text")
-                    idle_foreground Text("Mute All", style ="main_menu_imagebutton_text")
-                    action Preference("all mute", "toggle")
-                    at customzoom
-                    #style "mute_all_button"
+                    if config.has_voice:
+                        label _("Voice Volume")
+
+                        hbox:
+                            bar value Preference("voice volume") style_prefix "slider"
+
+                            if config.sample_voice:
+                                textbutton _("Test") action Play("voice", config.sample_voice)
+
+                    if config.has_music or config.has_sound or config.has_voice:
+                        style_prefix "pref_styling"
+                        null height (1.5 * gui.pref_spacing)
+
+                        imagebutton:
+                            xalign 0.5
+                            auto "gui/button/menu_%s_background.png"
+                            hover_foreground Text("Mute All", style ="main_menu_imagebutton_text")
+                            idle_foreground Text("Mute All", style ="main_menu_imagebutton_text")
+                            action Preference("all mute", "toggle")
+                            at customzoom
+                            #style "mute_all_button"
     else:
             pass
 
@@ -382,4 +387,4 @@ style slider_button_text:
     properties gui.text_properties("slider_button")
 
 style slider_vbox:
-    xsize 450
+    xsize 500
