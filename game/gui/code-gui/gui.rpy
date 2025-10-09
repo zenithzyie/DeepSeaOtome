@@ -269,7 +269,6 @@ define gui.choice_spacing = -25
 
 ## Buttons in the navigation section of the main and game menus.
 define gui.navigation_spacing = 4
-
 ## Controls the amount of spacing between preferences.
 define gui.pref_spacing = 10
 

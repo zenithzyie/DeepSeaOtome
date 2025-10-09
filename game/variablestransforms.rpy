@@ -12,9 +12,9 @@ image ctc_pos:
 ######################################################################
 transform logoappear:
     alpha 0.0
-    xalign 0.5
+    xpos 40
+    ypos 100
     zoom 0.7
-    pause 1.7
     linear 0.3 alpha 1.0
     pause 0.2
 #transform that the logo does on main menu

@@ -2,38 +2,54 @@
 #MAIN MENU - title screen, when the game starts
 ################################################################################
 
-image startbutton_hover = im.Scale("gui/button/start_hover.png", 116, 28)
-image startbutton_idle = im.Scale("gui/button/start_idle.png", 116, 28)
+image startbutton_hover = Transform("gui/button/start_hover.png", zoom=0.24)
+image startbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 
-image loadbutton_hover = im.Scale("gui/button/load_hover.png", 116, 29)
-image loadbutton_idle = im.Scale("gui/button/load_idle.png", 116, 29)
+image loadbutton_hover = Transform("gui/button/load_hover.png", zoom=0.24)
+image loadbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
+
+image albumbutton_hover = Transform("gui/button/album_hover.png", zoom=0.24)
+image albumbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
+
+image settingsbutton_hover = Transform("gui/button/settings_hover.png", zoom=0.24)
+image settingsbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
+
+image quitbutton_hover = Transform("gui/button/quit_hover.png", zoom=0.24)
+image quitbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 
 screen titleMainMenu():
     vbox:
         if renpy.get_screen("main_menu"):
             style_prefix "main_menu"
-            xalign 0.5
-            yalign 0.88
+            xpos 355
+            ypos 550
 
-        spacing gui.navigation_spacing
+        spacing 12
 
         if main_menu:
-            #textbutton _("Start") action Start()
             imagebutton:
                 auto "startbutton_%s"
-                hover_foreground Text("Start", style ="main_menu_imagebutton_text")
-                idle_foreground Text("Start", style ="main_menu_imagebutton_text")
+                hover_foreground Text("Start", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Start", style ="main_menu_imagebutton_text1")
                 action Start()
 
             imagebutton:
                 auto "loadbutton_%s"
-                hover_foreground Text("Load", style ="main_menu_imagebutton_text")
-                idle_foreground Text("Load", style ="main_menu_imagebutton_text")
+                hover_foreground Text("Load", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Load", style ="main_menu_imagebutton_text1")
                 action ShowMenu("load")
 
-        textbutton _("Album") action ShowMenu("gallery_B")
+            imagebutton:
+                auto "albumbutton_%s"
+                hover_foreground Text("Album", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Album", style ="main_menu_imagebutton_text1")
+                action ShowMenu("gallery_B")
 
-        textbutton _("Settings") action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
+            imagebutton:
+                auto "settingsbutton_%s"
+                hover_foreground Text("Settings", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Settings", style ="main_menu_imagebutton_text1")
+                action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
 
         if _in_replay:
 
@@ -43,14 +59,18 @@ screen titleMainMenu():
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton:
+                auto "quitbutton_%s"
+                hover_foreground Text("Quit", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Quit", style ="main_menu_imagebutton_text1")
+                action Quit(confirm=not main_menu)
 
 screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     add gui.main_menu_background size (1280, 720)
-#    imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction() at logoappear
+    add "gui/logo_idle.png" at logoappear size (550, 264)
 
     ## This empty frame darkens the main menu.
     frame:
@@ -119,8 +139,17 @@ style main_menu_button_text:
     hover_color '#66a3e0'
     size 29
 
+style main_menu_imagebutton_text1:
+    properties gui.text_properties("navigation_button")
+    xalign 0.5
+    yalign 0.49
+    size 29
+
 style main_menu_imagebutton_text:
+    properties gui.text_properties("navigation_button")
     color "#fff"
     xalign 0.5
     yalign 0.49
+    idle_color "#66a3e0"
+    hover_color '#66a3e0'
     size 29
