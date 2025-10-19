@@ -6,15 +6,19 @@ label ch2_followthio:
     show prince frown at Position(xpos=0.45)
     with dissolve
 
-    ny neutral "The Prince stays silent as we swim away."
+    "The Prince stays silent as we swim away."
 
     "What did the Prince’s Uncle mean by drifting too far?"
 
     "Is this mermaid form temporary? Will I eventually turn back into a fish? What if it happens when I’m on land?"
 
-    "My mind is racing, and panic starts to bubble in my chest."
+    p neutral "Hallway dialogue."
 
-    "He takes me through a series of corridors that are so mazelike that I have trouble keeping my bearings."
+    hide prince
+
+    "Bye thio we need to see the bg without you here"
+
+    ny neutral "He takes me through a series of corridors that are so mazelike that I have trouble keeping my bearings."
 
     "This palace is unthinkably massive."
 
