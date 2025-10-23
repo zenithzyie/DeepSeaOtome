@@ -130,6 +130,7 @@ label ch1_followprince:
     "Eventually, we arrive at the grandest structure, which must be the palace."
     "The prince takes me through wide halls, servants greeting him as we pass."
 
+#SCENE CHANGE - Throne Room
     window auto hide
     scene bg throneroom:
         xalign 0.5

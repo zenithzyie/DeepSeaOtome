@@ -24,26 +24,20 @@ init python:
     #ALL GALLERY IMAGES HERE
     #Title, cg image (matches gallery images below), thumbnail name
     gallery_items = []
-    gallery_items.append(GalleryItem("Prologue", ["cg train"], "cg_train" ))
-    gallery_items.append(GalleryItem("Sushi", ["cg_sushi_unlock"] ,"cg_sushi"))
+    gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train" ))
+    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi_unlock"] ,"cg_sushi"))
     gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Lorem ipsum dolor sit amet", ["cg_skyllahands"],"cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Title Here", ["cg_ skyllahands"], "cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"], "cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"], "cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"], "cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"], "cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg train"], "cg_train" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg train"],"cg_train" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg train"], "cg_train" ))  
-    gallery_items.append(GalleryItem("Title Here", ["cg_ skyllahands"], "cg_skyllahands" ))
-    
-
-#trying to fix border for locked imgs
-#it did not work. alas
-transform fixlock:
-    zoom 0.4
+    gallery_items.append(GalleryItem("King Regent", ["cg notyet"],"cg notyet" ))
+    gallery_items.append(GalleryItem("Mermaid", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Negotiation", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"],"cg notyet" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"],"cg notyet" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("Title Here", ["cg notyet"], "cg notyet" ))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")
@@ -55,3 +49,4 @@ image hoverimgLG = ("images/gallery/hoverLG.png")
 image cg train = ("images/cg_train.jpg")
 image cg_sushi_unlock = ("images/cg sushi.jpg")
 image cg skyllahands = ("images/cg skyllahands.png")
+image cg notyet = ("images/cg skyllahands.png")

@@ -36,23 +36,24 @@ screen gallery_B():
                         vbox:
                             imagebutton:
                                 idle_foreground "idleLG"
-                                idle gallery_items[i].locked 
+                                idle gallery_items[i].locked
                                 hover_foreground "hoverimgLG"
                                 action NullAction()
                                 at imageThumb
                             #will show "Unlock" + Name of the CG
-                            text "Unlock: " + gallery_items[i].name:
+                            #text "Unlock: " + gallery_items[i].name
+                            text "Unlock: " + "???":
                                 style_prefix "name"
                                 xalign 0.5
                                 ypos -40
-                            
+
                     else:
                         #this one is for unlocked images
                         vbox:
                             imagebutton:
                                 idle_foreground "idleLG"
                                 idle "thumb_" + gallery_items[i].thumbname
-                                hover_foreground "hoverimgLG" 
+                                hover_foreground "hoverimgLG"
                                 action Show("gallery_closeup", dissolve, gallery_items[i].images)
                                 at imageThumb
                             #show name of CG
@@ -60,9 +61,9 @@ screen gallery_B():
                                 style_prefix "name"
                                 xalign 0.5
                                 ypos -40
-                            
-                                
-                                      
+
+
+
 
                 #required to fill in empty grid items
                 for i in range(end - start + 1, maxperpage):

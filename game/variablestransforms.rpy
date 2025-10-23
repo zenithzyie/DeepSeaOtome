@@ -46,6 +46,8 @@ define conductor = Character("Conductor", image="june", ctc="ctc_pos", ctc_posit
 define badguy = Character("Ne'er-do-well", image="june", ctc="ctc_pos", ctc_position="fixed")
 define paperboy = Character("Paperboy", image="june", ctc="ctc_pos", ctc_position="fixed")
 define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fixed")
+define quietmaid = Character("Quiet Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
+define loudmaid = Character("Loud Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -65,6 +67,13 @@ default seastorm = False
 default promermaid = 0
 default antimermaid = 0
 default knocking = 0
+default hairpin = False
+default coinpurse = False
+default letter = False
+default failescape = 0
+default punchwindow = False
+default bribeguard = False
+default lookedatwindow = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
