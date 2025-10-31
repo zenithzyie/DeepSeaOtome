@@ -35,32 +35,26 @@ label ch2_followthio:
     show prince frown at farleft
     with dissolve
 
-    p neutral "This has to be some kind of trick. Why are you trespassing in our waters?"
+    p neutral "This has to be some kind of trick. Who are you? Are you some kind of spy?"
 
-    c "Save your frustrations, Prince Thioran. She will tell us what happened."
+    p "Did you plan all of this to get inside the castle?"
+    p "What were you hoping to accomplish?"
+    y "I, ah–"
+
+    c "Save your frustrations, Prince Thioran. She knows she must explain herself to us."
 
     "He looks at me expectantly."
-
-    menu:
-        "Agree":
-            #(+1 Cetus)
-            c "YOURE ON MY CLOCK NOW FISH"
-        "Request to return home.":
-            p "That’s not helpful."
-            y "But I don’t know anything about ocean storms."
-            c "Answer questions first, go homey later"
-            y "I…{w} Alright."
-            "Damn I gotta talk I guess :("
 
     c "What is your name?"
 
     y "[y]. [y] Finch."
 
-    c "An unusual name."
-    c "Now then, [y] Finch, what led to your encounter with the prince? How were you transformed?"
+    c "Quite an unusual name."
 
-    c "That’s a rather unusual name, is it not?"
-    c "Regardless. [y] Finch, what led to your encounter with the prince? How were you transformed?"
+    c "Now then, [y] Finch, how did you come across this curse? And what led to your encounter with the prince?"
+
+    "I don’t think I can refuse to answer."
+    "Maybe if I cooperate, they’ll let me go home?"
 
     "From hearing the siren's voice to escaping her cave, I tell them everything–except for the fact that I'm a human."
 
@@ -76,23 +70,17 @@ label ch2_followthio:
 
     p "Damn it. This '[y]' is lucky to have made it here alive."
 
-    c "And some have been using the storms as an excuse to steal from others. If this is all truly caused by a siren, it is our duty to put an end to it."
-
-    #(add bitchiness)
-    p "im so fucking mad about my fishies being GONE or LIES"
+    c "Most certainly. The continuous storms are becoming deadlier, and our people grow weary."
 
     c "Indeed. However, we must exercise caution."
 
-    c "The witness will need to remain here (on this floor of the castle with us yaay)."
-
+    c "For her safety, the witness will need to remain here with us on the upper floors."
     y "Pardon?"
 
     p "Uncle Ce- Lord Uncle, are you quite serious?"
 
     c "Yes, Prince Thioran. She’s the only one who's seen this siren. We need her close to us for the time being."
     #Alt Option:
-    c "I have no reason to jest with you, Prince Thioran. She’s the only one who's seen this siren. We need her close to us for the time being."
-
     p "But here???this is our floor tf"
 
     c "She’ll be safer with us in the guest wing than anywhere else"

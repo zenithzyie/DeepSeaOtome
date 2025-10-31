@@ -45,7 +45,7 @@ init python:
     config.character_id_prefixes.append('namebox')
 
 ################################################################################
-## Input screen ################################################################
+## Input screen ####################This is the generic input screen############
 ################################################################################
 screen input(prompt):
     style_prefix "input"
@@ -60,6 +60,42 @@ screen input(prompt):
 
             text prompt style "input_prompt"
             input id "input"
+
+################################################################################
+## Name Input screen ######################This is the CUSTOM input screen######
+################################################################################
+screen charnameinput():
+    style_prefix "input"
+
+    frame:
+        background Frame("images/bg shabby market.jpg", Borders(25,25,25,25))
+        xalign 0.5
+        yalign 0.5
+        xpadding 30
+        ypadding 30
+        vbox:
+            text "What is your name?":
+                size 20
+                xalign 0.5
+                yalign 0.5
+
+            hbox:
+                input:
+                    yalign 0.5
+                    #pixel_width 160
+                    length 15
+                    default_focus True
+                    value VariableInputValue("player_name")
+                text "Finch"
+            spacing 10
+
+            textbutton "Take Ticket":
+                xalign 0.5
+                yalign 0.5
+                text_size 32
+                keysym('K_RETURN', 'K_KP_ENTER')
+                action Return()
+
 
 ################################################################################
 ## Choice screen ###############################################################

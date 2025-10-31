@@ -12,7 +12,11 @@ label start:
     jump get_name
 
 label get_name:
-    scene bg black
+    scene letter:
+        fit "contain"
+
+    show bg black:
+        alpha 0.6
 
     show text "{i}My dear granddaughter...{/i}{w}":
         align (0.5,0.5)
@@ -41,7 +45,13 @@ label get_name:
         #xzoom -1
 
 label enter_name:
-    $player_name = renpy.input("What is your name?", default = "June", length=15)
+
+    $player_name = "June"
+
+    call screen charnameinput
+
+    #$player_name = renpy.input("What is your name?", default = "June", length=15)
+    #this is the old player name code for reference
 
     $player_name.strip
 
