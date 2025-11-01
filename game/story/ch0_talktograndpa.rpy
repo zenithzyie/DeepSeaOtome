@@ -14,8 +14,10 @@ label grandpatalk:
         fit "contain"
     play music bgm_portTown fadein 3.0 volume 0.4
     stop sound
+    stop ambience
+    stop ambience2
     "I step through the door and enter the ship's quarters."
-    #play sound "audio/sfx_boatCreaking.ogg" volume 1.0
+    #play ambience "audio/sfx_shipCreaking.ogg" volume 1.0 loop fadein 1.0
     show grandpa happy with dissolve
     g "Har har har...what a sight. Yer really grown up now, ain't ye, [y]?"
     show grandpa neutral with dissolve
@@ -81,5 +83,6 @@ label grandpatalk:
     y "That sounds wonderful."
 
     stop music fadeout 1.0
+    stop ambience fadeout 1.0
 
     jump timeskip1

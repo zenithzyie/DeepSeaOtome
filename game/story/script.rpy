@@ -73,7 +73,7 @@ label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
-    play sound "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
+    play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -92,7 +92,7 @@ label chapter1:
     "I can't really remember why Mother stopped taking me to see Grandfather."
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
-    stop sound fadeout 2.0
+    stop ambience fadeout 1.0
     play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
     stop sound fadeout 2.0
@@ -169,7 +169,7 @@ label chapter1:
     with Pause(1.75)
     show bg shabby market:
         fit "contain"
-    #play sound "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
+    #play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
     #make this a more occasional/easygoing market sfx
     ny neutral "In my rush to escape, I find myself at a market."
     "There's more people here. And more to look at, as well."
@@ -371,10 +371,10 @@ label afterknocking:
     play sound "audio/sfx_elevator2.wav" volume 0.1
     "The elevator finally comes to a stop, and the door opens."
 
-    #SCENE CHANGE -  Underground Black Market Faire
-    play music bgm_blackMarket volume 0.4
-    play sound "audio/sfx_crowd.wav" volume 0.009 loop
-    play sound "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.009 loop
+    #SCENE CHANGE -  Underground Black Market Faire 
+    play music bgm_blackMarket volume 0.5
+    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.08 loop
+    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.1 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -546,10 +546,6 @@ label afterknocking:
 
     "I slide the coat over my shoulders and Hunter pulls his mask back up."
     "He takes my hand, leading me through the crowd. I try my best to keep in step with his long strides."
-
-    #SFX - CROWD
-    play sound "audio/sfx_crowd.wav" volume 0.05 loop fadein 2.5
-
     "As we're walking, I see something moving out of the corner of my eye."
     "Without thinking, I glance up. "
 
@@ -574,7 +570,7 @@ label afterknocking:
     "The crowd parts, and I'm able to see the rest of the stand."
 
     #SCENE = CG (Mermaid cut in half)
-    stop sound fadeout 3.5
+    stop ambience fadeout 3.5
     window auto hide
     show cg sushi:
         subpixel True
@@ -608,7 +604,8 @@ label afterknocking:
             "A large chunk has been taken from her tail."
             "What are mermaids even used for? Bait? Food?"
             "Hunter must have noticed I was staring for too long. He pulls on my hand and walks faster through the crowd."
-
+    
+    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.1 loop
     scene bg black with dissolve:
         zoom 2.0
     camera:
@@ -622,7 +619,6 @@ label afterknocking:
     y neutral "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
     h "...Huh. {w}Right."
     h "You get used to seeing them after a while."
-    play sound "audio/sfx_crowd.wav" volume 0.009 loop fadein 2.5
 
     menu:
         "\"Do you hunt them too?\"":
@@ -667,6 +663,8 @@ label afterknocking:
 
 #need transition here
     stop sound fadeout 2.0
+    stop ambience fadeout 2.0
+    stop ambience2 fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
     play music music_town fadein 2.0 volume 0.9
@@ -682,8 +680,8 @@ label afterknocking:
     with Pause(1.75)
     show bg port
 
-    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
-    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
+    play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     "We make it outside and I can finally see the sky again."
 
     $ config.side_image_tag = "june"
@@ -718,7 +716,8 @@ label afterknocking:
     y shocked "Grandfather?"
     show grandpa surprised with vpunch
     stop music fadeout 1.0
-    stop sound fadeout 1.0
+    stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
     "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
@@ -734,7 +733,8 @@ label afterknocking:
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     "I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
     play music music_town fadein 1.0 volume 0.9
-    play sound "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
+    play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     y neutral "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
@@ -783,13 +783,13 @@ label afterknocking:
     hide hunter with dissolve
     "Hunter heads out, and Grandfather beckons me inside."
     stop music fadeout 1.0
-    stop sound fadeout 1.0
+    stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
     jump grandpatalk
 
 label timeskip1:
     #SCENE CHANGE - Black Screen
     scene bg black with dissolve
-    stop sound fadeout 2.0
     "Time goes by quickly, and a few days pass just like that."
     "Despite my best attempts, Grandfather has not been able to answer my questions."
 
@@ -798,6 +798,7 @@ label timeskip1:
         fit "contain"
     with dissolve
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
+    #play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
     show grandpa neutral at left2 with dissolve
     $ speaking_char = "all"
     "Today, Grandfather and I are going out shopping."
@@ -912,8 +913,9 @@ label timeskip1:
     #SCENE CHANGE - Sea
     scene bg calmwave with dissolve
     stop music fadeout 1.0
+    stop ambience fadeout 1.0
     #SFX - waves (calm)
-    play sound "audio/sfx_wavesCalm.ogg" loop volume 0.3
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.3
 
     "We embark on Hunter's boat."
     "The sea is calm, and the sun is shining down on us."
@@ -950,10 +952,11 @@ label timeskip1:
     "I'm about to respond to him, but the ship catches on the waves, and I stumble."
 
     #SCENE CHANGE - view of the sea (stormy)
+    stop ambience
     play sound "audio/sfx_thunder.ogg" volume 0.9
     scene bg choppywave
     play music "audio/music_storm.ogg" fadein 2.0 volume 0.8
-    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.2 loop
+    play ambience "audio/sfx_wavesChoppy.ogg" fadein 2.0 volume 0.2 loop
     show hunter nervous with vpunch
 
     "I can't see a hint of blue in the sky."
@@ -998,13 +1001,13 @@ label timeskip1:
             ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amount..."
 
 
-    stop sound fadeout 2.0
+    stop ambience fadeout 2.0
     $ config.side_image_tag = "june"
     #SPRITE?
-    play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
+    #play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
     $ renpy.music.set_volume(0.3, 2, 'music')
-    queue sound "audio/sfx_wavesChoppy.ogg" volume 0.06 loop
-    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
+    play ambience "audio/sfx_wavesChoppy.ogg" fadein 0.5 volume 0.1 loop
+    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0 loop
 
     u "Come...come with me..."
     y "What...?"
@@ -1022,6 +1025,8 @@ label timeskip1:
     "For a split second, I think I can hear Hunter calling my name before I take the plunge."
 
     stop music fadeout 1.0
+    stop ambience fadeout 1.0
+    stop sound fadeout 1.0
     #SFX - SPLASH
     scene bg drowning:
         fit "contain"
@@ -1113,6 +1118,7 @@ label timeskip1:
     "Or perhaps...{w}am I going to die after being eaten as a special dinner course?"
     "Suddenly the memories of the mermaid market come to mind. Their bodies had been taken apart, all for a cheap meal."
     "I am no different from them now.{w} Just as helpless."
+    play sound "audio/sfx_rummaging.ogg" volume 0.2
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
     "No.{w} No, no, no."
@@ -1220,6 +1226,7 @@ label timeskip1:
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
     play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.2
+    y "Ahh!" with vpunch
     "The force sends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
     stop music
     scene bg black
