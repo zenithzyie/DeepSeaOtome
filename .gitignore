@@ -213,3 +213,4 @@ game/cache/shaders.txt
 
 game/cache/
 game/saves/
+*.rpyc
