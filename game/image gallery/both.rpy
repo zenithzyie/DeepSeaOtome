@@ -27,19 +27,30 @@ transform imageThumb: #images to thumbnail re-sizer
 transform imageMaxSize:
     size (1280, 720) #to resize the big ones
 
+transform cg_fit:
+    #this makes sure that images aren't all stretchy
+    fit "contain"
+    xalign 0.5
+
+transform zoomtest:
+    zoom 0.5
+
 #the locked image for the galleries
 image locked = "images/gallery/thumb_locked.png"
+
+define cg_mermaid = "images/cg_mermaidcetus.jpg"
 
 screen gallery_closeup(images): #shows full sized image as a button on top of everything!
     zorder 10
     imagebutton:
         idle images
         action Hide("gallery_closeup", dissolve)
-        at imageMaxSize
+        at cg_fit
+        #at imageMaxSize
         #maximum (1280, 720)
         xalign 0.5
-        yalign 0.98
-        background "#fff8"
+        yalign 0.0
+        background "#e5e5e5"
 
 init python:
     maxnumx = 4

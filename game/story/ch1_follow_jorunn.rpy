@@ -198,7 +198,7 @@ label ch1_followjorunn:
     "I'm not sure what to expect."
     "I think back to the mermaids in the black market with their long hair and shiny scales."
     "Maybe she will be similar to them?"
-    show jorunn glee at right2 with move 
+    show jorunn glee at right2 with move
     u "Ah, you've made it back, Jor! Did you find anything good today?"
     "The voice speaks, and it sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
@@ -275,10 +275,4 @@ label ch1_followjorunn:
     Pr "Ah... From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 
-    #PRASH CAVE
-
-    #"The mist has dissipated, and all that is left is me and the effects of Prashadi's spell."
-
-    #SCENE CHANGE - fade to black
-
-    jump endofdemo
+    jump ch2_follow_jorunn

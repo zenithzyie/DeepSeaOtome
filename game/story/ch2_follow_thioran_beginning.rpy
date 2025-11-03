@@ -24,9 +24,6 @@ label ch2_followthio:
             pos (0.5, 2.64) zoom 0.34
     window auto show
 
-
-
-
     #zoom 0.25
 
     "I stare down at it, confused for a moment before my eyes trace it upwards and find it connected to my body."
@@ -103,8 +100,6 @@ label ch2_followthio:
     p "Uncle Ce- Lord Uncle, are you quite serious?"
 
     c "Yes, Prince Thioran. She’s the only one who's seen this siren. We need her close to us for the time being."
-    #Alt Option:
-    p "But here???this is our floor tf"
 
     c "She’ll be safer with us in the guest wing than anywhere else"
 
