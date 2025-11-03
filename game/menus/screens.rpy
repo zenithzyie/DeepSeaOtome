@@ -67,34 +67,38 @@ screen input(prompt):
 screen charnameinput():
     style_prefix "input"
 
-    frame:
-        background Frame("images/bg shabby market.jpg", Borders(25,25,25,25))
+    add "images/props/ticket.png":
+        zoom 0.21
         xalign 0.5
         yalign 0.5
-        xpadding 30
-        ypadding 30
-        vbox:
-            text "What is your name?":
-                size 20
-                xalign 0.5
-                yalign 0.5
+    vbox:
+        xpos 640
+        ypos 354
+        xalign 0.5
+        input:
+            xalign 0.5
+            pixel_width 227
+            length 15
+            default_focus True
+            value VariableInputValue("player_name")
 
-            hbox:
-                input:
-                    yalign 0.5
-                    #pixel_width 160
-                    length 15
-                    default_focus True
-                    value VariableInputValue("player_name")
-                text "Finch"
-            spacing 10
 
-            textbutton "Take Ticket":
-                xalign 0.5
-                yalign 0.5
-                text_size 32
-                keysym('K_RETURN', 'K_KP_ENTER')
-                action Return()
+    imagebutton:
+        auto "gui/button/ticket_%s.png"
+        hover_foreground Text("Take Ticket", style ="main_menu_imagebutton_text")
+        idle_foreground Text("Take Ticket", style ="main_menu_imagebutton_text")
+        xalign 0.5
+        ypos 560
+        keysym('K_RETURN', 'K_KP_ENTER')
+        action Return()
+
+
+#    textbutton "Take Ticket":
+#        xalign 0.5
+#        ypos 420
+#        text_size 45
+#        keysym('K_RETURN', 'K_KP_ENTER')
+#        action Return()
 
 
 ################################################################################

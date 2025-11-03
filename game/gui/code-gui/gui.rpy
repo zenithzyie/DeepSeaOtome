@@ -83,6 +83,11 @@ define gui.notify_text_size = 16
 ## The size of the game's title.
 define gui.title_text_size = 50
 
+## input text
+define gui.input_text_size = 33
+define gui.input_text_color = '#35617c'
+define gui.input_text_xalign = 0.0
+
 ################################################################################
 ## Main and Game Menus #########################################################
 ################################################################################

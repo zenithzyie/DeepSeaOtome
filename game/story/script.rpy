@@ -40,8 +40,8 @@ label get_name:
     pause
     hide text with dissolve
     #show side june happy with dissolve: #FOR NEW JUNE SPRITE
-    show side june neutral at farleft with dissolve:
-        yalign 0.1
+#    show side june neutral at farleft with dissolve:
+#        yalign 0.1
         #xzoom -1
 
 label enter_name:
@@ -72,6 +72,10 @@ label enter_name:
 label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
+    with Pause(1.10)
+    #this is driving me crazy it's cutting off for some reason????
+    play sound "audio/sfx_trainhorn.wav" volume 3 fadeout 4
+    with Pause(5.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
     play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
 
@@ -99,6 +103,7 @@ label chapter1:
 
     #"The screeching of the brakes signal the train to a stop."
     #SUBTLE ZOOM IN FROM CENTRE
+    #zoom needs to be fixed
     window auto hide
     show bg nice town:
         xalign 0.5

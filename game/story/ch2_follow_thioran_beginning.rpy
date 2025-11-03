@@ -4,7 +4,30 @@ label ch2_followthio:
 
 #SCENE CHANGE - FADE INTO MERMAID CG
 
+    show cg_mermaidcetus:
+        align (0.5, 1.0)
+        pos (0.5, 1.26)
+        zoom 0.34
+    with dissolve
     "The sight of a tail greets me, long and shimmering against the polished throne room floor."
+
+    window auto hide
+    show cg_mermaidcetus:
+        linear 6 pos (0.5, 2.64) zoom 0.34
+    with Pause(6.10)
+    if not renpy.seen_image("cg_mermaidcetus"):
+        show cg_mermaidcetus:
+            pos (0.5, 2.64) zoom 0.34
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        show cg_mermaidcetus:
+            pos (0.5, 2.64) zoom 0.34
+    window auto show
+
+
+
+
+    #zoom 0.25
 
     "I stare down at it, confused for a moment before my eyes trace it upwards and find it connected to my body."
 
