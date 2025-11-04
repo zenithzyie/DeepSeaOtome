@@ -28,7 +28,7 @@ transform imageMaxSize:
     size (1280, 720) #to resize the big ones
 
 transform cg_fit:
-    #this makes sure that images aren't all stretchy
+    #this makes sure that images aren't all stretchy, better imageMaxSize
     fit "contain"
     xalign 0.5
 
@@ -37,8 +37,6 @@ transform zoomtest:
 
 #the locked image for the galleries
 image locked = "images/gallery/thumb_locked.png"
-
-define cg_mermaid = "images/cg_mermaidcetus.jpg"
 
 screen gallery_closeup(images): #shows full sized image as a button on top of everything!
     zorder 10
@@ -50,7 +48,6 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
         #maximum (1280, 720)
         xalign 0.5
         yalign 0.0
-        background "#e5e5e5"
 
 init python:
     maxnumx = 4

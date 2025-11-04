@@ -214,3 +214,43 @@ game/cache/shaders.txt
 game/cache/
 game/saves/
 *.rpyc
+game/tl/None/common.rpymc
+game/potato credits screen/credits_screen_template_2a.rpyc
+game/potato credits screen/init_credit_objects.rpyc
+game/story/ch2_follow_thioran_escaperoom.rpyc
+game/potato credits screen/credit_styles.rpyc
+game/story/ch2_follow_thioran_beginning.rpyc
+game/potato credits screen/credit_class.rpyc
+game/image gallery/gallery_setup.rpyc
+game/gui/code-gui/custombuttons.rpyc
+game/story/ch1_follow_prince.rpyc
+game/story/ch1_follow_jorunn.rpyc
+game/story/ch0_talktograndpa.rpyc
+game/image gallery/gallery.rpyc
+game/ActionEditor_screens.rpyc
+game/variablestransforms.rpyc
+game/ActionEditor_config.rpyc
+game/menus/saveloadmenu.rpyc
+game/image gallery/both.rpyc
+game/menus/screensmisc.rpyc
+game/gui/code-gui/gui.rpyc
+game/00auto-highlight.rpyc
+game/menus/prefmenu.rpyc
+game/menus/mainmenu.rpyc
+game/speech_pauses.rpyc
+game/menus/screens.rpyc
+game/menus/navmenu.rpyc
+game/ATL_functions.rpyc
+game/story/script.rpyc
+game/sound_viewer.rpyc
+game/image_viewer.rpyc
+game/ActionEditor.rpyc
+game/menu_screen.rpyc
+game/screenfx.rpyc
+game/not-used.rpyc
+game/00warper.rpyc
+game/options.rpyc
+game/styles.rpyc
+game/mobile.rpyc
+game/keymap.rpyc
+traceback.txt

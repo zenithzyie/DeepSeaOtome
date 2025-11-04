@@ -1,30 +1,42 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/options.rpy", line 55, in script
-    init python:
-  File "game/options.rpy", line 57, in <module>
-    renpy.music.register.channel("ambience2", "sound", True)
-    ^^^^^^^^^^^^^^^^^^^^                                    
-AttributeError: module 'renpy.audio.music' has no attribute 'register'
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
 -- Full Traceback ------------------------------------------------------------
 
-Traceback (most recent call last):
-  File "game/options.rpy", line 55, in script
-    init python:
-  File "renpy/ast.py", line 1187, in execute
+Full traceback:
+  File "renpy/common/00start.rpy", line 216, in script call
+    call _load_reload_game from _call__load_reload_game_1
+  File "renpy/common/00keymap.rpy", line 551, in script
+    python hide:
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 834, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1260, in py_exec_bytecode
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1184, in py_exec_bytecode
     exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/options.rpy", line 57, in <module>
-    renpy.music.register.channel("ambience2", "sound", True)
-    ^^^^^^^^^^^^^^^^^^^^                                    
-AttributeError: module 'renpy.audio.music' has no attribute 'register'
+  File "renpy/common/00keymap.rpy", line 551, in <module>
+    python hide:
+  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
+    renpy.load(renpy.session["_reload_slot"])
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\loadsave.py", line 838, in load
+    log.unfreeze(roots, label="_after_load")
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 1135, in unfreeze
+    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 930, in rollback
+    self.load_failed()
+  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 848, in load_failed
+    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
+Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
 
-Windows-11-10.0.26100-SP0 AMD64
-Ren'Py 8.4.1.25072401
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.6.25022803
 HeartsDepthDEMO 3.0
-Sat Nov  1 14:25:48 2025
+Mon Nov  3 00:15:47 2025
