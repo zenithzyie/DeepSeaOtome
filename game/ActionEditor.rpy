@@ -14,8 +14,6 @@ init -1098 python:
     # Added keymap
     config.underlay.append(renpy.Keymap(
         action_editor = renpy.curry(renpy.invoke_in_new_context)(_viewers.open_action_editor),
-        image_viewer = _viewers.open_image_viewer,
-        sound_viewer = _viewers.open_sound_viewer,
         ))
 
 
@@ -31,7 +29,7 @@ init -1600 python in _viewers:
 
 init python in _viewers:
     from renpy.store import RotateMatrix, OffsetMatrix, ScaleMatrix, _MultiplyMatrix
-    from renpy.store import InvertMatrix, ContrastMatrix, SaturationMatrix, BrightnessMatrix, HueMatrix 
+    from renpy.store import InvertMatrix, ContrastMatrix, SaturationMatrix, BrightnessMatrix, HueMatrix
 
     def action_editor_version():
         return "231223_1"
@@ -144,7 +142,7 @@ init -1598 python in _viewers:
             self.transition = transition(old_widget=old, new_widget=new)
             self.st = st
             self.at = at
-        
+
 
         def render(self, width, height, st, at):
             #st, at is 0 allways?
@@ -160,7 +158,7 @@ init -1598 python in _viewers:
             self.d = d
             self.fixed_st = st
             self.fixed_at = at
-        
+
 
         #単純にst, atを上書きしただけでは動作しない accelerator.pyx等とatl.pyを確認する
         #https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=66013&p=557882#p557882
@@ -181,7 +179,7 @@ init -1598 python in _viewers:
             super(RenderToDisplayable, self).__init__(**properties)
 
             self.render = render
-        
+
 
         def render(self, width, height, st, at):
             #st, at is 0 allways?
@@ -721,7 +719,7 @@ init -1598 python in _viewers:
                 all_keyframes[current_scene][key] = [
                     (org, scene_keyframes[current_scene][1], persistent._viewer_warper),
                     (value, time, persistent._viewer_warper)]
-        
+
         if not recursion:
             check_result = check_props_group(key)
             if check_result is not None:
@@ -1082,7 +1080,7 @@ init -1598 python in _viewers:
             #スタートシーン
             child = Transform(function=renpy.curry(camera_transform)(
              camera_check_points=camera_check_points[-len(scene_checkpoints)], image_check_points=image_check_points[-len(scene_checkpoints)],
-             scene_checkpoints=scene_checkpoints, viewer_check_points=viewer_check_points[-len(scene_checkpoints)], 
+             scene_checkpoints=scene_checkpoints, viewer_check_points=viewer_check_points[-len(scene_checkpoints)],
              zorder_list=zorder_list, loop=loop[-len(scene_checkpoints)], spline=spline[-len(scene_checkpoints)], subpixel=subpixel, time=time, scene_num=-len(scene_checkpoints), layer=layer))
         if not persistent._viewer_legacy_gui:
             if aspect_16_9:
@@ -1184,7 +1182,7 @@ init -1598 python in _viewers:
             camera_model = define_camera_model(z11)
 
             camera_model = Transform(function=renpy.curry(transform)(
-                        check_points=viewer_check_points, loop=camera_loop, spline=camera_spline, subpixel=subpixel, time=time, 
+                        check_points=viewer_check_points, loop=camera_loop, spline=camera_spline, subpixel=subpixel, time=time,
                         scene_num=scene_num, scene_checkpoints=scene_checkpoints, camera=True, side_view=True, layer=layer))(camera_model)
 
             sideview_box.add(camera_model)
@@ -1753,7 +1751,7 @@ init -1598 python in _viewers:
                     break
                 if c == "audio":
                     renpy.notify(_("can't include audio channel"))
-                    
+
             else:
                 for c in v:
                     if c not in persistent._viewer_channel_list:
@@ -2540,7 +2538,7 @@ show {imagename}""".format(imagename=child)
                     for t in splines[new_scene_num][k]:
                         knots = splines[new_scene_num][k].pop(t)
                         splines[new_scene_num][k][t - (old - new)] = knots
-        
+
         # if persistent._viewer_legacy_gui:
         #     renpy.show_screen("_action_editor")
         # else:
@@ -3773,7 +3771,7 @@ init python:
             loop["dof_loop"] = False
         return renpy.curry(_viewers.transform)(check_points=check_points, loop=loop, subpixel=None, crop_relative=None)
 
-    
+
     def warper_generator(checkpoints):
         #checkpoints = [(x, y, k), ... (1, 1, k)]
         checkpoints = [(0, 0, None)] + checkpoints

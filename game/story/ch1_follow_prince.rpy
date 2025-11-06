@@ -2,7 +2,7 @@
 #BRANCH - FOLLOW THIORAN
 label ch1_followprince:
     hide jorunn glee with moveoutright
-    show prince at Position(xpos=0.45)
+    show thioran at Position(xpos=0.45)
     with move
     $ config.side_image_tag = "june"
     "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
@@ -11,12 +11,12 @@ label ch1_followprince:
     y neutral fish "BLUBBB!!!!"
     "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
 
-    show prince angry:
+    show thioran angry:
         subpixel True
         pos (0.45, 730) zoom 1.0
         linear 0.36 pos (0.38, 1288) zoom 2.0
     with Pause(0.46)
-    show prince angry:
+    show thioran angry:
         pos (0.38, 1288) zoom 2.0
 
     "I can't stop! I crash into the back of the princely merman's head." with vpunch
@@ -24,7 +24,7 @@ label ch1_followprince:
     up "!!!"
     up "Who-"
     y "Blub blub!"
-    show prince sweat with dissolve
+    show thioran sweat with dissolve
     up "...?"
     "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
     "Then, with a surprising amount of gentleness, his hands come up to cup my body."
@@ -34,7 +34,7 @@ label ch1_followprince:
     "If only I could speak real words!"
     "Strangely enough, he pauses, as if he can understand what I'm saying."
     guard "Is something the matter? The storm is closing in."
-    show prince frown with dissolve
+    show thioran frown with dissolve
     up "No. It's nothing."
     "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
     up "Let's go."
@@ -85,20 +85,20 @@ label ch1_followprince:
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
-    show prince frown at Position(xpos=0.45) with dissolve
+    show thioran frown at Position(xpos=0.45) with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
     "Away from the threat of the storm, he begins swimming again. This time, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
-    show prince sweat with dissolve
+    show thioran sweat with dissolve
     up "Is something the matter? If you're uncomfortable in my hands, I can try to be less...rough."
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
     y "Blub!"
     "Quickly, I shake myself in protest at the suggestion. He is already very gentle."
     "I'm just glad he isn't finding my staring strange."
-    show prince frown with dissolve
+    show thioran frown with dissolve
     "He nods before returning his gaze back ahead."
     up "We will be at the palace before long. How did you end up so far away? And alone?"
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
@@ -106,9 +106,9 @@ label ch1_followprince:
     y "Blub...{w}blub?"
     "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
     up "What are you..."
-    show prince sweat with dissolve
+    show thioran sweat with dissolve
     up "I apologize. It appears I can't fully understand your meaning."
-    show prince frown with dissolve
+    show thioran frown with dissolve
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
     "...?"
     up "Hold still. There's something in your..."
@@ -142,12 +142,12 @@ label ch1_followprince:
     scene bg throneroom:
         fit "contain"
     "Our final destination: a grand throne room."
-    show prince frown at Position(xpos=0.45)
+    show thioran frown at Position(xpos=0.45)
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
     $ speaking_char = "all"
     show cetus neutral at left2:
         xzoom -1
-    show prince frown at farleft
+    show thioran frown at farleft
     with dissolve
 
     ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
@@ -191,11 +191,11 @@ label ch1_followprince:
 
         "Hesitate.":
             "I glance back up at Prince Thioran. He gives me the slightest of nods."
-            show prince soft with dissolve
+            show thioran soft with dissolve
             p "Go on, it's alright."
             #(Thio +1)
             "Well, if the prince says it's alright..."
-            show prince frown with dissolve
+            show thioran frown with dissolve
 
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
     c "What an interesting little thing."
@@ -217,7 +217,7 @@ label ch1_followprince:
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
     y "{i}Blub! Blub!{/i}"
     "No..! I'll drown! I don't want to die like this!"
-    show prince sweat with dissolve
+    show thioran sweat with dissolve
     p "Wait a moment, Uncle! There's something wrong."
     "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."

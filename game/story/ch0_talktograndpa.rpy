@@ -30,10 +30,17 @@ label grandpatalk:
 
     show black:
         alpha 0.5
-    show cg_familyportrait:
-        fit "contain"
-        xalign 0.5
-    with dissolve
+    if not renpy.seen_image("cg_familyportrait"):
+        show cg_familyportrait:
+            fit "contain"
+            xalign 0.5
+        with dissolve
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        show cg_familyportrait:
+            fit "contain"
+            xalign 0.5
+        with dissolve
 
     "Is that Grandfather? He looks so young and happy."
     "That must be Grandmother and Mother next to him."

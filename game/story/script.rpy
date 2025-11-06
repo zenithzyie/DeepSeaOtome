@@ -146,7 +146,9 @@ label chapter1:
     "Were they always this unfriendly when I was younger? {w}I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
-    scene bg shabby town with dissolve
+    scene bg shabby town:
+        fit "contain"
+    with dissolve
 
     #june will be frowing a little in her neutral
     ny neutral "The further I walk down from the top of the city, the more the atmosphere seems to change."
@@ -376,7 +378,7 @@ label afterknocking:
     play sound "audio/sfx_elevator2.wav" volume 0.1
     "The elevator finally comes to a stop, and the door opens."
 
-    #SCENE CHANGE -  Underground Black Market Faire 
+    #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.5
     play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.08 loop
     play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.1 loop
@@ -609,7 +611,7 @@ label afterknocking:
             "A large chunk has been taken from her tail."
             "What are mermaids even used for? Bait? Food?"
             "Hunter must have noticed I was staring for too long. He pulls on my hand and walks faster through the crowd."
-    
+
     play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.1 loop
     scene bg black with dissolve:
         zoom 2.0
@@ -980,7 +982,7 @@ label timeskip1:
     "Something stirs in the back of my memory as I stare into the waves."
     "Is the water... glowing?"
 
-    #TODO FLASHBACK CG for a second of baby prince and june
+    #TODO FLASHBACK CG for a second of baby prince and june?
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.ogg" volume 0.3
     show bg choppywave with screenShake
@@ -1070,7 +1072,7 @@ label timeskip1:
             zoom 0.343
 
 
-    #SCENE CHANGE - underwater cave (skylla's)
+    #SCENE CHANGE - skylla cg
     play music bgm_skyllaCave volume 0.8
     $ config.side_image_tag = "june"
     "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
@@ -1094,7 +1096,7 @@ label timeskip1:
             "Near-invisible, I should say. The walls are shining."
             "A bubble?"
 
-    scene bg underwater cave:
+    scene bg skylla cave:
         zoom 0.5
     show skylla happy
     with dissolve
@@ -1257,7 +1259,7 @@ label timeskip1:
 
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
-    show prince angry at farleft
+    show thioran angry at farleft
     show jorunn sweat at right2
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
@@ -1270,7 +1272,7 @@ label timeskip1:
 
     hide kelp with dissolve
 
-    show prince angry at farleft
+    show thioran angry at farleft
     show jorunn sweat at right2
     with dissolve
 
@@ -1290,13 +1292,13 @@ label timeskip1:
     uj "...But if the shell fits!"
     up "You thieving little-"
 
-    show prince sweat at jumpin2
+    show thioran sweat at jumpin2
     show jorunn sweat at jumpin
     with vpunch
 
     "Just then, a loud rumble echoes throughout the area. The waters feel like they're slowly beginning to churn."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
-    show prince angry with dissolve
+    show thioran angry with dissolve
     up "Damn it. Why now, of all times..!"
     show jorunn glee with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
@@ -1324,7 +1326,7 @@ label timeskip1:
 
 label ch1_badend1:
 
-    hide prince angry
+    hide thioran angry
     hide jorunn glee
     with dissolve
 

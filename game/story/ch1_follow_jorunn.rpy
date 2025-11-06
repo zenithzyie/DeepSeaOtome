@@ -1,7 +1,7 @@
 
 #BRANCH - FOLLOW JORUNN
 label ch1_followjorunn:
-    hide prince angry with moveoutleft
+    hide thioran angry with moveoutleft
     show jorunn sweat
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
 

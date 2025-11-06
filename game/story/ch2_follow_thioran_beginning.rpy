@@ -37,7 +37,9 @@ label ch2_followthio:
 
     p "What is this?"
 
-    c "It appears her true form has been revealed after lifting the curse. The little fish you brought home was never a fish at all, Prince Thioran."
+    c "It appears her true form has been revealed after lifting the curse."
+
+    c "The little fish you brought home was never a fish at all, Prince Thioran."
 
     c "Do you still feel drawn to her, as you previously described?"
 
@@ -47,42 +49,45 @@ label ch2_followthio:
 
     scene bg throneroom:
         fit "contain"
-    show prince frown at Position(xpos=0.45)
+    show thioran frown at Position(xpos=0.45)
     $ speaking_char = "all"
     show cetus neutral at left2:
         xzoom -1
         ypos 70
-    show prince frown at farleft
+    show thioran frown at farleft
     with dissolve
 
     p neutral "This has to be some kind of trick. Who are you? Are you some kind of spy?"
 
-    p "Did you plan all of this to get inside the castle?"
-    p "What were you hoping to accomplish?"
+    p "This has to be some kind of trick. Who are you? Are you some kind of spy?"
+
+    p "Did you plan all of this to get inside the castle? What were you hoping to accomplish?"
+
     y "I, ah–"
 
     c "Save your frustrations, Prince Thioran. She knows she must explain herself to us."
 
-    "He looks at me expectantly."
+    "He pointedly stares at me, waiting."
 
     c "What is your name?"
 
     y "[y]. [y] Finch."
 
-    c "Quite an unusual name."
+    c "Hmm. Quite an unusual name."
 
     c "Now then, [y] Finch, how did you come across this curse? And what led to your encounter with the prince?"
 
     "I don’t think I can refuse to answer."
+
     "Maybe if I cooperate, they’ll let me go home?"
 
-    "From hearing the siren's voice to escaping her cave, I tell them everything–except for the fact that I'm a human."
+    y "Well..."
 
-    "The more that they know, the quicker they will be able to do something about it."
+    "From hearing the siren's voice to escaping her cave, I tell them everything– except for the fact that I'm a human."
 
-    "And the quicker I can hopefully go home."
+    "I’d better keep that part to myself. I don’t know what they’ll do if they find out what I really am."
 
-    p "A siren…"
+    p "A siren..."
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
@@ -90,30 +95,30 @@ label ch2_followthio:
 
     p "Damn it. This '[y]' is lucky to have made it here alive."
 
-    c "Most certainly. The continuous storms are becoming deadlier, and our people grow weary."
+    c "Lucky indeed. The continuous storms are becoming deadlier, and our people grow weary."
 
-    c "Indeed. However, we must exercise caution."
+    c "Some of them have even been using the storms as an excuse to steal from others."
 
-    c "For her safety, the witness will need to remain here with us on the upper floors."
+    #(show thio grumpier face)
+    p "..."
+
+    c "Therefore, for her safety, the witness will need to remain here with us on the upper floors."
+
     y "Pardon?"
 
     p "Uncle Ce- Lord Uncle, are you quite serious?"
 
-    c "Yes, Prince Thioran. She’s the only one who's seen this siren. We need her close to us for the time being."
+    c "Quite so, Prince Thioran. She’s the only one who's seen this siren."
 
-    c "She’ll be safer with us in the guest wing than anywhere else"
+    p "But on the guest floor? Is that wise?"
 
-    c "If word gets out further it’ll be more troublesome."
+    c "There is no harm in it, so long as she stays quiet."
 
     "Cetus turns to me."
 
-    c "u stfu too"
+    c "Do keep in mind that the reason why you’re here matters to no one but us."
 
-    c "Now, might I entrust you with the escort of our guest?"
-
-    c "I believe the (previous guest’s room that is prepared already) will be suitable."
-
-    p "Uncle Ce- Lord Uncle, are you quite serious? A servant could handle this. I am no servant."
+    "It seems like he wants to keep my involvement with the siren a secret."
 
     c "Now, might I entrust you with the escort of our guest?"
 
@@ -121,28 +126,31 @@ label ch2_followthio:
 
     p "Should I not also be searching for this siren?"
 
-    c "I'll look into this matter myself. You have a duty to ensure our only witness does not come to harm."
+    #(show Cetus amused)
+    c "You’re not getting out of this so easily, nephew. Besides, the storm outside has yet to settle. It would be foolish of you to venture out unprepared."
 
-    #(closed eyes thio resignment emote)
+    #(cetus closed eyes thio resigned)
     p "...Very well."
 
     p "Be vigilant, Lord Uncle."
 
-    #(smiling)
+    #(show cetus smiling)
     c "Always, Prince Thioran."
 
-    "Just before we leave, Lord Cetus turns back to me."
+    #hide thio
+    c "Oh, and… take care not to drift too far yourself."
 
-    c "One final thing: take care not to drift too far."
+    "I can feel his eyes boring into me."
 
-    c "I cannot help you if you return to your cursed form outside these palace walls."
+    c "I hear humans have been sailing further from their shores as of late."
 
     "A chill runs down my spine as the throne room doors close behind us."
+
 
 #SCENE CHANGE - PALACE HALLWAY
     scene bg palace hallway:
         fit "contain"
-    show prince frown at Position(xpos=0.45)
+    show thioran frown at Position(xpos=0.45)
     with dissolve
 
     $ speaking_char = "all"
@@ -197,7 +205,7 @@ label ch2_followthio:
             "Maybe I shouldn’t have asked."
             "It seems like this was something I should have known already as a mermaid."
         "\"Are you okay?\"":
-            show prince frown
+            show thioran frown
             p "..."
             y "Those servants were rather rude."
             p "That’s none of your concern."

@@ -24,7 +24,6 @@ transform logoappear:
 ######################################################################
 #Protagonist + Narrator Names
 define y = Character("[player_name]", image="june", ctc="ctc_pos", ctc_position="fixed", namebox_background=Frame("gui/namebox_june.png", 0, 0))
-#color="#ee701f",
 define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
 define narrator = Character(None, what_italic=True, ctc="ctc_pos", ctc_position="fixed") #for pure narration no image
 ######################################################################
@@ -108,7 +107,7 @@ define audio.bgm_jorVilliage = "audio/music/10 Tiny Creatures Along the Way.mp3"
 define audio.bgm_palaceThrone = "audio/music/11 Successful Journey.mp3"
 define audio.bgm_skyllaCave = "audio/music/12 Spectral Phantoms Awake.ogg"
 define audio.bgm_capital = "audio/music/13 Beatiful Reflections.ogg"
-
+######################################################################
 #Character blinking
 transform blink:
     alpha 0.0
@@ -124,57 +123,57 @@ transform blink:
     alpha 0.0
     repeat
 ######################################################################
-layeredimage prince:
+layeredimage thioran:
     at sprite_highlight('Prince Thioran')
     group expressions:
         attribute angry:
-            "prince_angry.png"
+            "images/sprites/thioran/expressions/thioran_angry.png"
         attribute blush:
-            "prince_blush.png"
+            "images/sprites/thioran/expressions/thioran_blush.png"
         attribute neutral:
-            "prince_neutral.png"
+            "images/sprites/thioran/expressions/thioran_neutral.png"
         attribute frown:
-            "prince_frown.png"
+            "images/sprites/thioran/expressions/thioran_frown.png"
         attribute soft:
-            "prince_soft.png"
+            "images/sprites/thioran/expressions/thioran_soft.png"
         attribute sweat:
-            "prince_sweat.png"
+            "images/sprites/thioran/expressions/thioran_sweat.png"
     zoom 0.28
     ypos 730
     group eyes auto:
         attribute blinking default:
-            "prince_eye_closed.png" at blink
+            "images/sprites/thioran/expressions/thioran_blink.png" at blink
 ######################################################################
 layeredimage grandpa:
     at sprite_highlight('Grandfather')
     group expressions:
         attribute happy:
-            "grandpa_happy.png"
+            "images/sprites/grandpa/expressions/grandpa_happy.png"
         attribute surprised:
-            "grandpa_surprised.png"
+            "images/sprites/grandpa/expressions/grandpa_surprised.png"
         attribute neutral:
-            "grandpa_neutral.png"
+            "images/sprites/grandpa/expressions/grandpa_neutral.png"
     zoom 0.124
     group eyes auto:
         attribute blinking default:
-            "grandpa_eye_closed.png" at blink
+            "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
 ######################################################################
 layeredimage side june:
     group bordbehind: #FOR NEW JUNE SPRITE
         attribute border default:
-            "border_behind.png"
+            "images/sprites/june/ui/border_behind.png"
         xzoom -1
         xpos 1000
         ypos 901
         zoom 0.53
     group body: #FOR NEW JUNE SPRITE
         attribute body default:
-            "side_june_base.png"
+            "images/sprites/june/base/side_june_base.png"
         xpos 1000
         ypos 400
     group exressions:
         attribute happy: #FOR NEW JUNE SPRITE
-            "side_june_happy.png"
+            "images/sprites/june/expressions/side_june_happy.png"
         # attribute flustered:
         #     "side_june_flustered.png"
         # attribute huffed:
@@ -188,71 +187,71 @@ layeredimage side june:
         # ypos 20
     group bordfront: #FOR NEW JUNE SPRITE
         attribute border default:
-            "border_front.png"
+            "images/sprites/june/ui/border_front.png"
         xzoom -1
         xpos 1000
         ypos 900
         zoom 0.53
     zoom 0.3 #FOR NEW JUNE SPRITE
     xzoom -1 #FOR NEW JUNE SPRITE
-    group eyes auto:
-        attribute blinking default:
-            "side_june_eye_closed.png" at blink
-        xzoom -1
-        xpos -80
-        ypos 20
+    #group eyes auto:
+        #attribute blinking default:
+            #"side_june_eye_closed.png" at blink
+        #xzoom -1
+        #xpos -80
+        #ypos 20
 ######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')
     group expressions:
         attribute neutral:
-            "skylla_neutral.png"
+            "images/sprites/skylla/expressions/skylla_neutral.png"
         attribute angry:
-            "SKYLLA_ANGRY.png"
+            "images/sprites/skylla/expressions/skylla_angry.png"
         attribute angryteeth:
-            "SKYLLA_ANGRYTEETH.png"
+            "images/sprites/skylla/expressions/skylla_angryteeth.png"
         attribute flustered:
-            "SKYLLA_FLUSTERED.png"
+            "images/sprites/skylla/expressions/skylla_flustered.png"
         attribute happy:
-            "SKYLLA_HAPPY.png"
+            "images/sprites/skylla/expressions/skylla_happy.png"
         attribute nervous:
-            "SKYLLA_NERVOUS.png"
+            "images/sprites/skylla/expressions/skylla_nervous.png"
         attribute sad:
-            "SKYLLA_SAD.png"
+            "images/sprites/skylla/expressions/skylla_sad.png"
         attribute surprised:
-            "SKYLLA_SURPRISED.png"
+            "images/sprites/skylla/expressions/skylla_surprised.png"
     zoom 0.29
     ypos 780
     group eyes auto:
         attribute blinking default:
-            "SKYLLA_BLINK.png" at blink
+            "images/sprites/skylla/expressions/skylla_blink.png" at blink
 ######################################################################
 layeredimage prashadi:
     at sprite_highlight('Prashadi')
     group expressions:
         attribute neutral:
-            "prashgrandpa NUETRAL2.png"
+            "images/sprites/prashadi/expressions/prashgrandpa_neutral.png"
             fit "contain"
             xysize (1100,1100)
         attribute angry:
-            "prashgrandpa ANGRY2.png"
+            "images/sprites/prashadi/expressions/prashgrandpa_angry.png"
             fit "contain"
             xysize (1100,1100)
         attribute happy:
-            "prashgrandpa HAPPY2.png"
+            "images/sprites/prashadi/expressions/prashgrandpa_happy.png"
             fit "contain"
             xysize (1100,1100)
         attribute nervous:
-            "prashgrandpa NERVOUS2.png"
+            "images/sprites/pr`ashadi/expressions/prashgrandpa_nervous.png"
             fit "contain"
             xysize (1100,1100)
         attribute shocked:
-            "prashgrandpa SHOCKED2.png"
+            "images/sprites/prashadi/expressions/prashgrandpa_shocked.png"
             fit "contain"
             xysize (1100,1100)
     group eyes auto:
         attribute blinking default:
-            "prashgrandpa_eye_closed.png" at blink
+            "images/sprites/prashadi/expressions/prashgrandpa_blink.png" at blink
             fit "contain"
             xysize (1100,1100)
     ypos 1190
@@ -261,17 +260,17 @@ layeredimage cetus:
     at sprite_highlight('Cetus')
     group expressions:
         attribute neutral:
-            "cetus_neutral2.png"
+            "images/sprites/cetus/expressions/cetus_neutral2.png"
     zoom 0.55
     #ypos 0.07
     group eyes auto:
         attribute blinking default:
-            "cetus_blink.png" at blink
+            "images/sprites/cetus/expressions/cetus_blink.png" at blink
 ######################################################################
 layeredimage side june fish:
     group expressions:
         attribute neutral:
-            "side_june_fish_neutral.png"
+            "images/sprites/june/base/side_june_fish_neutral.png"
             zoom 0.12
             xpos 138
             ypos 310
@@ -280,34 +279,34 @@ layeredimage hunter:
     at sprite_highlight('Hunter')
     group body:
         attribute body default:
-            "hunter_base.png"
+            "images/sprites/hunter/base/hunter_base.png"
     group expressions:
         attribute neutral:
-            "hunter_neutral.png"
+            "images/sprites/hunter/expressions/hunter_neutral.png"
         attribute angry:
-            "hunter_angry.png"
+            "images/sprites/hunter/expressions/hunter_angry.png"
         attribute raisedeyebrow:
-            "hunter_eyebrowraise.png"
+            "images/sprites/hunter/expressions/hunter_eyebrowraise.png"
         attribute flustered:
-            "hunter_flustered.png"
+            "images/sprites/hunter/expressions/hunter_flustered.png"
         attribute happy:
-            "hunter_happy.png"
+            "images/sprites/hunter/expressions/hunter_happy.png"
         attribute nervous:
-            "hunter_nervous.png"
+            "images/sprites/hunter/expressions/hunter_nervous.png"
         attribute sad:
-            "hunter_sad.png"
+            "images/sprites/hunter/expressions/hunter_sad.png"
         attribute shocked:
-            "hunter_shocked.png"
+            "images/sprites/hunter/expressions/hunter_shocked.png"
         attribute warmsmile:
-            "hunter_warmsmile.png"
+            "images/sprites/hunter/expressions/hunter_warmsmile.png"
         attribute 2:
-            "hunter_neutral.png"
+            "images/sprites/hunter/expressions/hunter_neutral.png"
     group coverings:
         attribute mask:
-            "hunter_mask.png"
+            "images/sprites/hunter/accessories/hunter_mask.png"
     group eyes auto:
         attribute blinking default:
-            "hunter_eye_closed.png" at blink
+            "images/sprites/hunter/expressions/hunter_blink.png" at blink
     zoom 0.15
     ypos 1.17
 ######################################################################
@@ -315,15 +314,15 @@ layeredimage jorunn:
     at sprite_highlight('Jorunn')
     group expressions:
         attribute pissed:
-            "jorunn_pissed.png"
+            "images/sprites/jorunn/expressions/jorunn_pissed.png"
         attribute flustered:
-            "jorunn_flustered.png"
+            "images/sprites/jorunn/expressions/jorunn_flustered.png"
         attribute neutral:
-            "jorunn_neutral.png"
+            "images/sprites/jorunn/expressions/jorunn_neutral.png"
         attribute glee:
-            "jorunn_glee.png"
+            "images/sprites/jorunn/expressions/jorunn_glee.png"
         attribute sweat:
-            "jorunn_sweat.png"
+            "images/sprites/jorunn/expressions/jorunn_sweat.png"
     zoom 0.34
     ypos 1080
 ######################################################################
