@@ -93,7 +93,7 @@ define gui.input_text_xalign = 0.0
 ################################################################################
 ## The images used for the main and game menus.
 
-define gui.main_menu_background = Movie(play="gui/titlescreen.ogv")
+define gui.main_menu_background = Movie(play="gui/titlescreen.webm")
 define gui.game_menu_background = "gui/game_menu.png"
 
 ################################################################################
