@@ -132,8 +132,10 @@ label escapedroom_tohallway:
         fit "contain"
     with dissolve
     "Woah, Cetus, your office is kinda sexy?"
-    show cetus neutral:
-        ypos 70
-        xpos 170
-    c"I know, right? This office is as sexy as me."
+    show cetus neutral
+    #    ypos 70
+    #    xpos 170
+    c "I know, right? This office is as sexy as me."
+    show thioran neutral
+    p "I am also here."
     y neutral "Woag. Man boobs."

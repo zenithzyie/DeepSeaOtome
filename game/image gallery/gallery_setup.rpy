@@ -25,7 +25,7 @@ init python:
     #Title, cg image (matches gallery images below), thumbnail name
     gallery_items = []
     gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train" ))
-    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi_unlock"] ,"cg_sushi"))
+    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi"] ,"cg_sushi"))
     gallery_items.append(GalleryItem("Portrait", ["cg_familyportrait"], "cg_familyportrait" ))
     gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" ))
     gallery_items.append(GalleryItem("Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus" ))
@@ -49,7 +49,7 @@ image hoverimgLG = ("images/gallery/hoverLG.png")
 #gallery images
 image cg_train = ("images/gallery/cg/cg_train.jpg")
 image cg_familyportrait = ("images/gallery/cg/cg_familyportrait.png")
-image cg_sushi_unlock = ("images/gallery/cg/cg_sushi.jpg")
+image cg_sushi = ("images/gallery/cg/cg_sushi.jpg")
 image cg_skyllahands = ("images/gallery/cg/cg_skyllahands.jpg")
 image cg_mermaid_cetus = ("images/gallery/cg/cg_mermaidcetus.jpg")
 image cg_mermaid_prashadi = ("images/gallery/cg/cg_mermaidprashadi.jpg")
@@ -58,7 +58,7 @@ image cg notyet = ("images/gallery/cg/cg_skyllahands.png")
 #background images
 image bg black = ("images/bgs/bg black.jpg")
 image bg brickwall = ("images/bgs/bg brickwall.PNG")
-image bg calmwave = ("images/bgs/bg calmwave.png")
+image bg calmwave = ("images/bgs/bg calmwave.jpg")
 image bg capitalcity = ("images/bgs/bg capitalcity.jpg")
 image bg cetus study = ("images/bgs/bg cetus study.jpg")
 image bg choppywave = ("images/bgs/bg choppywave.png")

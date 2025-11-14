@@ -103,9 +103,9 @@ label chapter1:
 
     #"The screeching of the brakes signal the train to a stop."
     #SUBTLE ZOOM IN FROM CENTRE
-    #zoom needs to be fixed
     window auto hide
     show bg nice town:
+        fit "contain"
         xalign 0.5
         subpixel True
         zoom 1.05
@@ -151,8 +151,8 @@ label chapter1:
     with dissolve
 
     #june will be frowing a little in her neutral
-    ny neutral "The further I walk down from the top of the city, the more the atmosphere seems to change."
-    "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
+    s"The further I walk down from the top of the city, the more the atmosphere seems to change."
+    ny neutral "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
     "Now, the street feels gloomy and unwelcoming."
     "Rather than being ignored, it seems I'm attracting uncomfortable attention."
     "The people's gazes feel heavy on me as I walk by."
@@ -558,7 +558,7 @@ label afterknocking:
 
     #SCENE = CG (Mermaid in Tank [Zoomed])
     scene bg black with dissolve
-    show cg sushi:
+    show cg_sushi:
         subpixel True pos (0,0) zoom 1.0
     with fade
     "There is a pale face behind the glass."
@@ -579,19 +579,19 @@ label afterknocking:
     #SCENE = CG (Mermaid cut in half)
     stop ambience fadeout 3.5
     window auto hide
-    show cg sushi:
+    show cg_sushi:
         subpixel True
         pos (0, 0) xzoom 1.0 zoom 1.0
         ease 3.10 pos (0, 0) xzoom 1.0 zoom 0.3334
     with Pause(3.10)
-    show cg sushi:
+    show cg_sushi:
         fit "contain"
         pos (0, 0) xzoom 1.0 zoom 1.0
     window auto show
     #so you don't unlock it until it zooms out
-    if not renpy.seen_image("cg_sushi_unlock"):
-        show cg_sushi_unlock
-        hide cg_sushi_unlock
+    if not renpy.seen_image("cg_sushi"):
+        show cg_sushi
+        hide cg_sushi
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     $ config.side_image_tag = "None"
     "Another mermaid, similar to the one banging on the glass, is on display in front of the tank."
@@ -918,7 +918,9 @@ label timeskip1:
     h "Sure. But I get to be Captain this time."
 
     #SCENE CHANGE - Sea
-    scene bg calmwave with dissolve
+    scene bg calmwave:
+        fit "contain"
+    with dissolve
     stop music fadeout 1.0
     stop ambience fadeout 1.0
     #SFX - waves (calm)

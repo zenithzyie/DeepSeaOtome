@@ -133,6 +133,7 @@ label ch1_followprince:
 #SCENE CHANGE - Throne Room
     window auto hide
     scene bg throneroom:
+        fit "contain"
         xalign 0.5
         subpixel True
         zoom 1.05
@@ -142,12 +143,15 @@ label ch1_followprince:
     scene bg throneroom:
         fit "contain"
     "Our final destination: a grand throne room."
-    show thioran frown at Position(xpos=0.45)
+    $ speaking_char = "all"
+    show cetus neutral at Position(xpos=0.25):
+        xzoom -1
+    with dissolve
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
     $ speaking_char = "all"
-    show cetus neutral at left2:
+    show cetus neutral at Position(xpos=0.46):
         xzoom -1
-    show thioran frown at farleft
+    show thioran frown at Position(xpos=0.23)
     with dissolve
 
     ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."

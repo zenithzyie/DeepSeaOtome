@@ -52,11 +52,11 @@ define loudmaid = Character("Loud Servant", image="june", ctc="ctc_pos", ctc_pos
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
 define novisualthio = Character("Angry Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
 define novisualjor = Character("Mischievous Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
-define up = Character("Princely Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran")
-define uj = Character("Thieving Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn")
-define uhunter = Character("Strange Man", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter")
-define ucetus = Character("Royal Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus")
-define siren = Character("Melodious Voice", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla")
+define up = Character("Princely Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prince Thioran", namebox_background=Frame("gui/namebox_thio.png", 0, 0))
+define uj = Character("Thieving Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn", namebox_background=Frame("gui/namebox_jor.png", 0, 0))
+define uhunter = Character("Strange Man", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter",namebox_background=Frame("gui/namebox_hunter.png", 0, 0))
+define ucetus = Character("Royal Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus",namebox_background=Frame("gui/namebox_cetus.png", 0, 0))
+define siren = Character("Melodious Voice", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla", namebox_background=Frame("gui/namebox_skylla.png", 0, 0))
 define gpa = Character("Grandfather?", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi", namebox_background=Frame("gui/namebox_grandpa.png", 0, 0))
 ######################################################################
 #Various Variables
@@ -261,11 +261,14 @@ layeredimage cetus:
     group expressions:
         attribute neutral:
             "images/sprites/cetus/expressions/cetus_neutral2.png"
-    zoom 0.55
+            fit "contain"
+            ypos 45
+            zoom 1.17
+    #zoom 0.55
     #ypos 0.07
-    group eyes auto:
-        attribute blinking default:
-            "images/sprites/cetus/expressions/cetus_blink.png" at blink
+    #group eyes auto:
+        #attribute blinking default:
+            #"images/sprites/cetus/expressions/cetus_blink.png" at blink
 ######################################################################
 layeredimage side june fish:
     group expressions:
