@@ -36,7 +36,7 @@ screen credits():
             # Such as having long text strings in first column will push the second column more to the right. Play around with xspacing value for the look you want.
 
             vpgrid:
-                cols 2 
+                cols 2
                 xalign 0.5
                 xspacing 50
                 yspacing 50
@@ -98,7 +98,7 @@ screen credits():
                         null height 5
                         text "Alibun" style "credits_name_small"
                         null height 10
-                        text "Director, Character Art & Writing" style "credits_role_small"
+                        text "Character Art & Writing" style "credits_role_small"
                         null height 10
                         hbox:
                             #add "twitter-original"
@@ -109,13 +109,15 @@ screen credits():
 
                 # Credit block: SOJIN
                 hbox:
-                    add "logos/duck logo.png" zoom 0.6
+                    add "logos/jelly logo.png":
+                        size 250,250
+                        zoom 0.61
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
-                        text "Sojin" style "credits_name_small"
+                        text "Jelly" style "credits_name_small"
                         null height 10
-                        text "Environment Art & Character Art" style "credits_role_small"
+                        text "Environment & Character Art" style "credits_role_small"
                         null height 10
                         hbox:
                             #add "twitter-original"
@@ -225,4 +227,3 @@ screen credits():
 
                 # fill unused grid spot (when amount is uneven) with null
                 null
-    
