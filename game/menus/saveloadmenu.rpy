@@ -70,9 +70,9 @@ screen file_slots(title):
                                     xpos 30
                                     ypos 40
                             vbox:
-                                add FileScreenshot(slot) size (169, 95) ypos 8
-                                xalign 0.5
-                                xpos 150
+                                add FileScreenshot(slot) size (169, 88) ypos 8
+                                #xalign 0.5
+                                xpos 60
 
                             vbox:
                                 text FileTime(slot, format=_("{#file_time}%A, %B %d %Y, %H:%M"), empty=_("empty slot")):

@@ -128,14 +128,151 @@ label ch2_castle_escaperoom:
 
 
 label escapedroom_tohallway:
+    scene bg palace hallway:
+        fit "contain"
+    "I swim outside the window and find myself in an open-windowed hallway."
+    "Here goes nothing…"
+    #(a pause, knocking sfx.)
+    "..."
+    "There's no response."
+    "Maybe he’s not here? {w}Well, there’s only one way to find out."
+    "Taking a deep breath, I open the door."
+    call cetus_office
+
+label cetus_office:
     scene bg cetus study:
         fit "contain"
     with dissolve
-    "Woah, Cetus, your office is kinda sexy?"
-    show cetus neutral
-    #    ypos 70
-    #    xpos 170
-    c "I know, right? This office is as sexy as me."
-    show thioran neutral
-    p "I am also here."
-    y neutral "Woag. Man boobs."
+    "Unlike the rest of the castle, this room is dimly lit."
+    show cetus neutral:
+        ypos 70
+        xpos 50
+    "Cetus is behind a desk covered in scrolls. He seems to be immersed in his paperwork."
+    y neutral "Lord Cetus?"
+    c " Close the door behind you. It can get rather noisy out there."
+    c "Though I’m sure you’ve already seen that firsthand."
+    y "I need to speak with you."
+    "Cetus pauses a moment before finally putting his work down."
+    c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
+    "...At least he’s not sending me away."
+
+    y "I wanted to ask-"
+    c "No, not from there."
+    y "Pardon?"
+    c "Come closer."
+    "Cetus beckons me forward with a wave of his hand."
+    "I swim cautiously towards his desk."
+
+    c "Now then, how did you make it past the guard?"
+
+    menu cetus_ask:
+        "I came through the window.":
+            y "I was able to get it open."
+            "If you break free on the first try +2 cetus (?)"
+            c "Clever girl."
+
+            "If it takes you multiple attempts to break out"
+            c "Though not without causing a commotion, I hear."
+
+            "If you picked option 2 first"
+            c "That wasn’t so bad, was it?"
+
+        "I wanted to ask you something.":
+            c "Well now, was this your office I barged into?"
+            c "There’s plenty of paperwork that needs your attention, my lady."
+            c "Perhaps I should take my leave before you call the guards to lock me away."
+            y "Please don’t call the guards!"
+            c "Oh? What was that?"
+
+            jump cetus_ask
+
+    y "Lord Cetus, are you aware of what I really am?"
+    c "You are a very long way from your shore, human."
+    "...!"
+    y "Earlier in the throne room, you acted as if you didn’t know."
+    c "And you did as well, did you not? A prudent choice."
+
+    c "Some things are better left unsaid. Particularly in…unfriendly company."
+    c "Merfolk are not very fond of your kind."
+    y "..."
+    "I think of the mermaid in the market again, and shudder."
+    "I can only imagine what Prince Thioran would have done."
+    c "Yet here you still are, unharmed."
+
+    "He looks at me with interest."
+    "Cetus has every reason to threaten me."
+    "But it also seems like he’s giving me room to speak."
+    "I need to take this chance."
+
+    y "Lord Cetus, how can I become human again?"
+    c "Ah, but what use would a human be in the search for a sea witch?"
+    c "Allow me to remind you of your situation, [y] Finch: you are our witness first before you are a human."
+    c "And shirking your duties as a witness would be quite the offense."
+    "Being back on land would make that difficult."
+    y "If I help you find her, will you help me return home to my family? To be human again?"
+    y "What do I need to do?"
+    c "You simply need to stay here until my knights locate the sea witch."
+    y "But- that could take weeks! Months, even!"
+    "(insert concerned alarm about time, family thinking she’s dead etc)"
+
+    c "I have a duty to my nephew and to my people to fulfill."
+    c "Keeping you here is simply part of fulfilling it."
+    "He really isn’t budging."
+    "I knew it wouldn’t be easy, but… I can’t give up."
+    "There must be something I can do to get him to agree."
+    "I run my fingers over the purse at my side."
+
+    y "What if I could return the favor?"
+    y "If you help me, I could bring you things from the surface."
+    c "I have no interest in your human toys."
+    y "But we have a lot of wonderful things up there!"
+    "I pull out the camera from my purse and present it to him."
+    "Hopefully it’ll get his attention. I don’t know how else to bargain with him."
+    y "Like this camera, for instance. It lets me keep records of memories that last forever."
+    "Cetus focuses on the camera for only a moment before he shakes his head."
+    c "There is no memory that can truly last forever, no matter how much you may want it to."
+    "He may be right… {w} but that’s not the point right now."
+    "I can’t stay here forever!"
+    c "Though…"
+    c "To think, your precious human toy found its way back to you after being transformed. How very curious."
+    "Cetus leans in closer."
+
+    y "...!"
+    c "I’ll make a different deal with you, [y] Finch, if you wish to gain your legs back."
+    y "A different deal?"
+    c "Locating the siren is one task, but stopping her is another."
+    c "A siren powerful enough to cause these storms won't go down without a fight."
+
+    c "There is a spell that can subdue her, but it will require certain magical artifacts."
+    c "With a nudge in the right direction, you should have no trouble finding them."
+    y "And this will help me become human again?"
+    c "Retrieve them for me and I shall honor our bargain."
+
+    c "That is all your little mortal heart desires, is it not?"
+    y "Yes, but…"
+
+    menu:
+        "I have so many questions."
+
+        "Don’t you need me to stay here?":
+            c "Arrangements will need to be made. You will require an escort, of course."
+            c "I certainly can’t have you swimming off before we’ve found the siren."
+
+        "Will it be dangerous?":
+            c "Perhaps. It would be no more dangerous than trying to figure it out yourself."
+            "Alt Version 1:"
+            c "Perhaps. But what is reward without risk?"
+            "Alt Version 2:"
+            c "Perhaps."
+
+        "Why me?":
+            c "Did you not wish for an alternative solution?"
+            c "It is simply a task that needs to be done."
+            c "Locating magical objects is a task best left to those blessed by luck."
+
+    c "But I suppose if it’s too difficult for you, it cannot be helped."
+    y "No. I’ll do it."
+    c "In that case, I shall tell you where to begin."
+
+    scene bg black
+    "CLIFFHANGER ENDING!!!"

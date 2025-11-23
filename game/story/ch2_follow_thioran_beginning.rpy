@@ -26,14 +26,24 @@ label ch2_followthio:
 
     #zoom 0.25
 
-    "I stare down at it, confused for a moment before my eyes trace it upwards and find it connected to my body."
+    "I stare down at it, confused, before my eyes trace it upward and find that it’s connected to me."
 
-    y "Oh! I'm a mermaid!"
+    y "Oh! I'm... a mermaid?"
 
     "And my voice is back!"
 
+    scene bg throneroom:
+        fit "contain"
+    show thioran frown at Position(xpos=0.45)
+    $ speaking_char = "all"
+    show cetus neutral at left2:
+        xzoom -1
+        ypos 70
+    show thioran frown at farleft
+    with dissolve
+
     #(surprised cetus)
-    c "So it would seem."
+    c neutral "So it would seem."
 
     p "What is this?"
 
@@ -47,27 +57,13 @@ label ch2_followthio:
 
     c "I see. How curious."
 
-    scene bg throneroom:
-        fit "contain"
-    show thioran frown at Position(xpos=0.45)
-    $ speaking_char = "all"
-    show cetus neutral at left2:
-        xzoom -1
-        ypos 70
-    show thioran frown at farleft
-    with dissolve
-
-    p neutral "This has to be some kind of trick. Who are you? Are you some kind of spy?"
-
-    p "This has to be some kind of trick. Who are you? Are you some kind of spy?"
-
-    p "Did you plan all of this to get inside the castle? What were you hoping to accomplish?"
+    p "This has to be some kind of trick. Did you plan all of this to get inside the castle? Were you sent here as a spy?"
 
     y "I, ah–"
 
-    c "Save your frustrations, Prince Thioran. She knows she must explain herself to us."
+    c "Save your frustrations, Prince Thioran. She knows she must explain herself."
 
-    "He pointedly stares at me, waiting."
+    "He stares pointedly at me."
 
     c "What is your name?"
 
@@ -77,13 +73,11 @@ label ch2_followthio:
 
     c "Now then, [y] Finch, how did you come across this curse? And what led to your encounter with the prince?"
 
-    "I don’t think I can refuse to answer."
-
     "Maybe if I cooperate, they’ll let me go home?"
 
     y "Well..."
 
-    "From hearing the siren's voice to escaping her cave, I tell them everything– except for the fact that I'm a human."
+    "From hearing the siren's voice to escaping her cave, I tell them everything – except for the fact that I'm human."
 
     "I’d better keep that part to myself. I don’t know what they’ll do if they find out what I really am."
 
@@ -93,16 +87,16 @@ label ch2_followthio:
 
     "A student? Are they referring to Skylla?"
 
-    p "Damn it. This '[y]' is lucky to have made it here alive."
+    p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
-    c "Lucky indeed. The continuous storms are becoming deadlier, and our people grow weary."
+    c "She is quite lucky, indeed. These continuous storms are becoming deadlier, and our people grow weary."
 
-    c "Some of them have even been using the storms as an excuse to steal from others."
+    c "Some have even resorted to theft."
 
     #(show thio grumpier face)
     p "..."
 
-    c "Therefore, for her safety, the witness will need to remain here with us on the upper floors."
+    c "Therefore, for her safety, the witness will need to remain in the guest wing of the castle."
 
     y "Pardon?"
 
@@ -110,17 +104,17 @@ label ch2_followthio:
 
     c "Quite so, Prince Thioran. She’s the only one who's seen this siren."
 
-    p "But on the guest floor? Is that wise?"
+    p "But on the upper floors with us? Is that wise?"
 
-    c "There is no harm in it, so long as she stays quiet."
+    c "No one will question the appearance of a young lady visiting this time of year."
 
-    "Cetus turns to me."
+    c "...So long as she knows to stay quiet."
 
-    c "Do keep in mind that the reason why you’re here matters to no one but us."
+    "I guess he wants to keep my involvement with the siren a secret."
 
-    "It seems like he wants to keep my involvement with the siren a secret."
+    y "I understand."
 
-    c "Now, might I entrust you with the escort of our guest?"
+    c "Now, might I entrust you with the task of escorting her, Prince Thioran?"
 
     p "Right now?"
 
@@ -128,6 +122,8 @@ label ch2_followthio:
 
     #(show Cetus amused)
     c "You’re not getting out of this so easily, nephew. Besides, the storm outside has yet to settle. It would be foolish of you to venture out unprepared."
+
+    c "I’ll look into this matter on my own for now."
 
     #(cetus closed eyes thio resigned)
     p "...Very well."
@@ -137,10 +133,9 @@ label ch2_followthio:
     #(show cetus smiling)
     c "Always, Prince Thioran."
 
-    #hide thio
-    c "Oh, and… take care not to drift too far yourself."
+    c "And take care not to drift too far yourself."
 
-    "I can feel his eyes boring into me."
+    "For just a moment, his eyes meet mine."
 
     c "I hear humans have been sailing further from their shores as of late."
 
@@ -154,24 +149,33 @@ label ch2_followthio:
     with dissolve
 
     $ speaking_char = "all"
-    ny neutral "The Prince stays silent as we swim away."
+    ny neutral "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
 
-    "What did the Prince’s Uncle mean by drifting too far? Is this mermaid form temporary?"
-    "I can’t help but feel Cetus’ warning was a bit more than just a precaution on exploring."
+    "I can still feel Cetus’s eyes on my back."
 
-    "After several turns, we pass by a hallway with a solitary door."
+    "Could he sense that I’m actually human?"
 
-    "It looks like a good spot for someplace quiet, like a library or an office."
+    "..."
 
     p "Keep moving. I don’t have all day."
 
-    y "Right…"
+    y "Yes, of course..."
 
-    "We turn {color=#f2b950}left twice, then right…{/color}"
+    "The prince's attitude sure has shifted."
+
+    "He was so much nicer when I was a fish."
+
+    "After several turns, we pass by a hallway with a particularly elegant door."
+
+    "It looks like it could lead to someplace quiet, like a library or an office."
+
+    "I wonder if it’s a room used by the royal family?"
+
+    "We move past it, turning {color=#f2b950}left twice, then right{/color}..."
 
     "There’s a pair of voices talking up ahead."
 
-    "Two maids are hanging up elaborate decorations in the hallway."
+    "Two servants are hanging up elaborate decorations in the hallway."
 
     "They don’t seem to notice our approach."
 
@@ -189,13 +193,13 @@ label ch2_followthio:
 
     "As they frantically bow, I look over at the Prince and can’t help but shiver at his expression."
 
-    p "The lips of the palace maids are loose indeed to speak so carelessly of the King Regent."
+    p "The lips of the palace servants are loose indeed to speak so carelessly of the King Regent."
 
     loudmaid "Forgive us! We were only just-"
 
     "The prince shoulders his way past them without a second glance."
 
-    "Somehow, he’s moving faster than before. I hurry after him as best as I can."
+    "He’s moving faster than before. I hurry after him as best as I can."
 
     menu:
         "\"Is there a festival happening soon?\"":
@@ -203,21 +207,68 @@ label ch2_followthio:
             y flustered "Oh, right."
             y "I’m sorry. It must have slipped my mind."
             "Maybe I shouldn’t have asked."
-            "It seems like this was something I should have known already as a mermaid."
+            "It seems like this was something I should have known already."
         "\"Are you okay?\"":
             show thioran frown
             p "..."
             y "Those servants were rather rude."
             p "That’s none of your concern."
+            "Maybe I shouldn’t have asked."
         "...":
             "I shouldn’t make the situation any worse."
 
     "The Prince suddenly stops before a closed door."
     p "Your room."
-    "I open the door to the room and turn to thank him, but the Prince is already swimming away."
-    y "Oh…"
-    "I’m too exhausted to think much of it."
-    "I head into the room, eager for some quiet."
+    "I quickly move to open the door."
+
+    "I should go inside. The prince doesn’t seem too happy with me right now."
+
+    y "Thank yo–"
+
+    scene cg_thiokabedon:
+        fit "contain"
+    with dissolve
+
+    "He suddenly leans over me, trapping me between his body and the door."
+    "He’s leaning in so close!"
+
+    p "What are you really hiding?"
+    p "I know there’s more to you than you let on."
+    p "Whatever trick you’re trying to pull here isn’t going to work on me."
+
+
+    menu:
+        "\"I’m not trying to pull anything!\"":
+            p "Do you expect me to believe that? Play me the fool?"
+            y "I already told you everything I know."
+            y "You saw it yourself- I was cursed!"
+            y "I COULDA DIED DAMMIT FUCK YOU!!!!!!"
+            p "..."
+
+        "\"I don’t need to tell you anything else.\"":
+            y "I told you everything you need to know."
+            p "Do you expect me to believe that? You already tricked me once."
+            y  "I wasn’t trying to trick you-  I was cursed."
+            y "And you were the one who brought me here."
+
+    "Prince Thioran stares at me for a moment longer, then turns away."
+    p "I’ll find out what you’re doing here, and I will put a stop to it."
+    p "I’ll be keeping my eye on you, [y] Finch."
+    "He closes the door behind me before I can respond."
+
+    #show thioran:
+    #    subpixel True
+    #    pos (0.45, 730) zoom 1.0
+    #    linear 0.36 pos (0.38, 1288) zoom 2.0
+    with Pause(0.46)
+    #"He suddenly leans over me, trapping me between his body and the door."
+    #show thioran angry:
+    #    pos (0.38, 1288) zoom 2.0
+
+    #p "I've got my eye on you, [y] Finch."
+
+    #"The door closes as soon as I enter the room."
+
 
 ##SCENE CHANGE - GUEST ROOM
 
@@ -272,7 +323,7 @@ label ch2_followthio:
 
     "Earlier, Prince Thioran called him the King Regent, and he’s magic. Send help my sexy boob magic man"
 
-    "If Cetus’ spell really is temporary, I have to find him before I get turned back into a fish again or worse."
+    "If Cetus’s spell really is temporary, I have to find him before I get turned back into a fish again or worse."
 
     "He could be my only chance at getting out of this mess."
 
