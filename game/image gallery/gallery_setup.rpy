@@ -3,10 +3,11 @@
 init python:
 
     class GalleryItem:
-        def __init__(self, name, images, thumbname, locked="locked"):
+        def __init__(self, name, images, thumbname, sizing, locked="locked"):
             self.name = name #title of the CG, shown in text
             self.images = images #the image of the CG itself
             self.thumbname = thumbname #the name of the thumbnail after thumb_
+            self.sizing = sizing #how big the cg is; "wide" or "tall",
             self.locked = locked
             self.refresh_lock()
 
@@ -24,21 +25,21 @@ init python:
     #ALL GALLERY IMAGES HERE
     #Title, cg image (matches gallery images below), thumbnail name
     gallery_items = []
-    gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train" ))
-    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi"] ,"cg_sushi"))
-    gallery_items.append(GalleryItem("Portrait", ["cg_familyportrait"], "cg_familyportrait" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" ))
-    gallery_items.append(GalleryItem("Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus" ))
-    gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi" ))
-    gallery_items.append(GalleryItem("King Regent", ["cg notyet"],"cg notyet" ))
-    gallery_items.append(GalleryItem("Negotiation", ["cg notyet"], "cg notyet" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"],"cg notyet" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"],"cg notyet" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet" ))
-    gallery_items.append(GalleryItem("Title Here", ["cg notyet"], "cg notyet" ))
+    gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train", "wide"))
+    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi"] ,"cg_sushi", "wide"))
+    gallery_items.append(GalleryItem("Portrait", ["cg_familyportrait"], "cg_familyportrait", "wide" ))
+    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" , "wide"))
+    gallery_items.append(GalleryItem("Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus", "tall" ))
+    gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
+    gallery_items.append(GalleryItem("King Regent", ["cg notyet"],"cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Negotiation", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"],"cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"],"cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Title Here", ["cg notyet"], "cg notyet", "wide" ))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")

@@ -35,19 +35,48 @@ transform cg_fit:
 transform zoomtest:
     zoom 0.5
 
+transform zoomtest2:
+    zoom 1.0
+
+default zoomnum = 1.0
+default zoom_max = 2.0
+define zoom_min = 1.0
+
+default zoom_current = 1.0
+
+default x_bar = ui.adjustment()
+default y_bar = ui.adjustment()
+
+transform cg_zoomable:
+    #this makes sure that images aren't all stretchy, better imageMaxSize
+    fit "contain"
+    #linear zoom_current zoom zoomnum 
+    zoom zoomnum 
+
 #the locked image for the galleries
 image locked = "images/gallery/thumb_locked.png"
+
 
 screen gallery_closeup(images): #shows full sized image as a button on top of everything!
     zorder 10
     imagebutton:
-        idle images
+        idle ("gui/game_menu.png")
         action Hide("gallery_closeup", dissolve)
         at cg_fit
-        #at imageMaxSize
-        #maximum (1280, 720)
-        xalign 0.5
-        yalign 0.0
+    viewport id "vp":
+            mousewheel True
+            draggable True
+            xadjustment x_bar
+            yadjustment y_bar
+            scrollbars  None
+            hbox:
+                imagebutton:
+                    idle images.images
+                    action (Hide("gallery_closeup", dissolve))
+                    at cg_zoomable
+
+    key "mousedown_4" action (Function(zoom_in), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomin, images))
+    key "mousedown_5" action (Function(zoom_out), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomout, images))
 
 init python:
     maxnumx = 4
@@ -56,3 +85,34 @@ init python:
     maxthumby = config.screen_height / (maxnumy + 1)
     maxperpage = maxnumx * maxnumy
     gallery_page = 0
+    global zoomnum
+    global zoom_current
+
+    def zoom_in(): 
+        if (store.zoomnum < store.zoom_max):
+            store.zoom_current = store.zoomnum
+            store.zoomnum += 0.1
+        elif(store.zoomnum >= store.zoom_max):
+            store.zoom_current = store.zoom_max
+        
+
+    def zoom_out():
+        if (store.zoomnum > zoom_min):
+            store.zoom_current = store.zoomnum
+            store.zoomnum -= 0.1
+        elif(store.zoomnum <= store.zoom_max):
+            store.zoom_current = zoom_min
+
+    def reset_zoom():
+        global zoomnum
+        zoomnum = 1.0
+
+    def set_zoom(sz):
+        global zoom_max
+
+        if sz == "wide":
+            zoom_max= 2.0
+        elif sz == "tall":     
+            zoom_max = 4.0
+        else :
+            zoom_max = 2.0

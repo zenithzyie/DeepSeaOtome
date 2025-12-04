@@ -54,7 +54,7 @@ screen gallery_B():
                                 idle_foreground "idleLG"
                                 idle "thumb_" + gallery_items[i].thumbname
                                 hover_foreground "hoverimgLG"
-                                action Show("gallery_closeup", dissolve, gallery_items[i].images)
+                                action (Show("gallery_closeup", dissolve, gallery_items[i]), Function(reset_zoom), Function(set_zoom, gallery_items[i].sizing))
                                 at imageThumb
                             #show name of CG
                             text gallery_items[i].name:
