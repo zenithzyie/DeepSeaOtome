@@ -233,99 +233,119 @@ label ch2_followthio:
     "He’s leaning in so close!"
 
     p "What are you really hiding?"
-    p "I know there’s more to you than you let on."
     p "Whatever trick you’re trying to pull here isn’t going to work on me."
 
 
     menu:
-        "\"I’m not trying to pull anything!\"":
+        "\"You can trust me.\"":
             p "Do you expect me to believe that? Play me the fool?"
-            y "I already told you everything I know."
-            y "You saw it yourself- I was cursed!"
-            y "I COULDA DIED DAMMIT FUCK YOU!!!!!!"
+            y "We’re on the same side! I want to be free from the siren too."
+            y "I don’t want to hurt anyone. I just want to go home."
             p "..."
+            y "I promise, I’m not hiding anything from you."
+            "...except for the part that would get me turned into fish food."
 
-        "\"I don’t need to tell you anything else.\"":
-            y "I told you everything you need to know."
+
+        "\"I already told you everything.\"":
             p "Do you expect me to believe that? You already tricked me once."
             y  "I wasn’t trying to trick you-  I was cursed."
-            y "And you were the one who brought me here."
+            y "And you {i}were{/i} the one who brought me here."
+            p "A silver tongue won’t save you. I’ll figure out what you’re planning."
+            y "I don’t know what you’re talking about."
 
-    "Prince Thioran stares at me for a moment longer, then turns away."
-    p "I’ll find out what you’re doing here, and I will put a stop to it."
+
+    "Prince Thioran scoffs at me."
     p "I’ll be keeping my eye on you, [y] Finch."
-    "He closes the door behind me before I can respond."
-
-    #show thioran:
-    #    subpixel True
-    #    pos (0.45, 730) zoom 1.0
-    #    linear 0.36 pos (0.38, 1288) zoom 2.0
-    with Pause(0.46)
-    #"He suddenly leans over me, trapping me between his body and the door."
-    #show thioran angry:
-    #    pos (0.38, 1288) zoom 2.0
-
-    #p "I've got my eye on you, [y] Finch."
-
-    #"The door closes as soon as I enter the room."
-
+    "He opens the door behind me and I fall in with it."
+    y "Ah! {w=0.3}{nw}" with screenShake
 
 ##SCENE CHANGE - GUEST ROOM
 
     scene bg palace guestroom:
         fit "contain"
+    with fade
+    "The door closes before I can get another word in."
+
+    #show june surprised
+    ny happy "What was that?"
+
+    "He was so much kinder when I was a fish..."
+    #show june worried
+    "Now he doesn’t seem to trust me at all. I’d better be more careful."
+
+    "It’s really starting to sink in that I don’t know anything about this world and its people."
+
+    "Even the architecture of this room looks different from what I'm used to."
+
+    "Am I really a guest here?"
+
+    "...I feel more alone than ever."
+
+    "I can’t believe a simple boat trip ended up like this. I feel exhausted just thinking about it."
+
+    "There’s what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
+
+    "Ack!" with vpunch
+    "Did I lay on something?"
+    "Looking down, I find a purse attached to my waist."
+    "Oh, right. This must have been created by the magic spell too. I hadn’t really had the time to think about it."
+    "Opening it reveals..."
+    show camera_mermaid:
+        zoom 0.2
+        subpixel True pos (474, 168)
+    extend " a camera."
+    y "Wait, is this...? {w}But how is that possible?"
+    "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
+    "It couldn’t possibly work underwater, could it?"
+    "Well, there’s only one way to find out."
+    hide camera_mermaid
+    play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+    show camera with irisin
+    hide camera with dissolve
+    show photo_guestroom:
+        zoom 0.09
+        subpixel True pos (474, 168)
     with dissolve
-    ny neutral "A large sea glass window reflects the bright water outside."
+    "The camera automatically develops a photo, just like always."
+    "Somehow, the colors don't bleed."
+    hide photo_guestroom with dissolve
+    "I was certain I’d lost the camera when the siren captured me. How did it survive all this water anyway?"
+    "Whatever the reason, I’m glad to see it."
+    "Something familiar at last."
+    "I’d better keep this safe."
+    "As I tuck the camera back into my bag, I can feel my eyes start to grow heavy."
+    "I guess everything is finally catching up to me."
+    "I can figure out what to do after some rest."
+    scene bg black with Dissolve(2.0)
+    "..."
 
-    "My gaze drifts to the bed in the center of the room."
-
-    "Beddddd"
-
-    "I collapse onto the bed and drift off into a dreamless sleep."
-
-    "Some time later, I wake up."
+#(transition here for dream)
+    #music change/stopped
+    scene bg drowning:
+        fit "contain"
+    with dissolve
+    "There’s light above me, but it’s drifting further and further away."
+    "I try to reach for it, but my body won’t respond."
+    "What’s happening to me?"
+    "I open my mouth to call out for help, but saltwater floods my lungs."
+    "No! It can’t end like this!"
+#vignette effect, increase
+    "I think I glimpse a faint glowing in my chest... {w}before it all fades to nothingness."
 
 #(transition here)
+    scene bg palace guestroom:
+        fit "contain"
+    ny happy "I sit up in bed with a gasp." with vpunch
+    "The water flows naturally through me as I catch my breath."
+    "I’m… not drowning."
+    "Was that really just a dream? It felt way too real."
+    "Could it mean anything? I don’t know how long this spell will last, after all."
+    "Who’s to say the magic won’t start falling apart?"
+    "I have to figure out a way to make it back to the surface as a human before it does."
+    "Cetus mentioned something about humans earlier… could that mean he knows what I am?"
+    "Either way, with his magic, he might be my only chance at getting out of this mess."
+    "I need to go find him."
 
-    "This room is lovely. I’m already learning more than I ever could about mermaids from the decor alone."
-
-    "Would that I had my camera to capture it…"
-
-    "My hand moves to my side out of habit."
-
-    y "Huh?"
-
-    "There’s a bag hanging there that I hadn’t noticed before. Opening it reveals a camera inside."
-
-    y "Wait, is this...? {w}But how is that possible?"
-
-    "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
-
-    "It couldn’t possibly work underwater, could it?"
-
-    "Well, there’s only one way to find out..."
-
-    menu:
-        "Take a picture of the…"
-        "Bed":
-            pass
-
-        "Window":
-            pass
-
-    "The camera automatically develops a photo, just like always. Somehow, the ink doesn’t bleed."
-
-    y "Wow. That’s incredible."
-
-    "But how did it survive all this water? I was certain I’d lost it when the siren captured me."
-
-    "It seems the longer I stay here the more my questions seem to grow."
-
-    "Earlier, Prince Thioran called him the King Regent, and he’s magic. Send help my sexy boob magic man"
-
-    "If Cetus’s spell really is temporary, I have to find him before I get turned back into a fish again or worse."
-
-    "He could be my only chance at getting out of this mess."
 
     "I open the door and start to swim forward, but a guard suddenly blocks my way."
 

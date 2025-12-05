@@ -50,8 +50,8 @@ default y_bar = ui.adjustment()
 transform cg_zoomable:
     #this makes sure that images aren't all stretchy, better imageMaxSize
     fit "contain"
-    #linear zoom_current zoom zoomnum 
-    zoom zoomnum 
+    #linear zoom_current zoom zoomnum
+    zoom zoomnum
 
 #the locked image for the galleries
 image locked = "images/gallery/thumb_locked.png"
@@ -88,13 +88,13 @@ init python:
     global zoomnum
     global zoom_current
 
-    def zoom_in(): 
+    def zoom_in():
         if (store.zoomnum < store.zoom_max):
             store.zoom_current = store.zoomnum
             store.zoomnum += 0.1
         elif(store.zoomnum >= store.zoom_max):
             store.zoom_current = store.zoom_max
-        
+
 
     def zoom_out():
         if (store.zoomnum > zoom_min):
@@ -112,7 +112,7 @@ init python:
 
         if sz == "wide":
             zoom_max= 2.0
-        elif sz == "tall":     
+        elif sz == "tall":
             zoom_max = 4.0
         else :
             zoom_max = 2.0

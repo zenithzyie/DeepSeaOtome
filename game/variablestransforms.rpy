@@ -162,18 +162,27 @@ layeredimage side june:
     group bordbehind: #FOR NEW JUNE SPRITE
         attribute border default:
             "images/sprites/june/ui/border_behind.png"
-        xzoom -1
-        xpos 1000
-        ypos 901
-        zoom 0.53
+        #xzoom -1
+        #xpos 1000
+        #ypos 901
+            zoom 0.53
     group body: #FOR NEW JUNE SPRITE
         attribute body default:
             "images/sprites/june/base/side_june_base.png"
-        xpos 1000
-        ypos 400
+            xpos 800
+            ypos 800
+            zoom 0.53
     group exressions:
-        attribute happy: #FOR NEW JUNE SPRITE
+        attribute happy:
             "images/sprites/june/expressions/side_june_happy.png"
+            xpos 800
+            ypos 800
+            zoom 0.53
+        attribute neutral:
+            "images/sprites/june/expressions/side_june_happy.png"
+            xpos 800
+            ypos 800
+            zoom 0.53
         # attribute flustered:
         #     "side_june_flustered.png"
         # attribute huffed:
@@ -188,12 +197,12 @@ layeredimage side june:
     group bordfront: #FOR NEW JUNE SPRITE
         attribute border default:
             "images/sprites/june/ui/border_front.png"
-        xzoom -1
-        xpos 1000
-        ypos 900
-        zoom 0.53
-    zoom 0.3 #FOR NEW JUNE SPRITE
-    xzoom -1 #FOR NEW JUNE SPRITE
+        #xzoom -1
+        #xpos 1000
+        #ypos 900
+            zoom 0.53
+    #FOR NEW JUNE SPRITE
+    #xzoom -1 #FOR NEW JUNE SPRITE
     #group eyes auto:
         #attribute blinking default:
             #"side_june_eye_closed.png" at blink

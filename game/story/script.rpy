@@ -115,7 +115,7 @@ label chapter1:
     show bg nice town:
         fit "contain"
     $ config.side_image_tag = "june"
-    y neutral bordfront bordbehind "At last. Hello, Aquantis!"
+    y neutral "At last. Hello, Aquantis!"
     "As soon as I exit the train car, I remove my camera from my purse to take a picture."
 
     menu:
@@ -125,9 +125,12 @@ label chapter1:
             show camera with irisin
             hide camera with dissolve
             y "Let's see how it turned out!"
-            # Image of picture here
+            show photo_aquantis:
+                zoom 0.09
+                subpixel True pos (474, 168)
             y "Everyone's dress is so lightweight."
             y "I'm not Inland anymore, that much is clear."
+            hide photo_aquantis with dissolve
 
         "The seaside town.":
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8

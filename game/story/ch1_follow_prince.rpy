@@ -237,7 +237,6 @@ label ch1_followprince:
     "I gasp for breath, relieved to find that I'm not drowning."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
     "There is nothing but the pleasant sound of flowing water around me."
-    c "Welcome back to your body, my dear."
     "I open my eyes."
 
     jump ch2_followthio
