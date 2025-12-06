@@ -264,6 +264,7 @@ label ch2_followthio:
     scene bg palace guestroom:
         fit "contain"
     with fade
+    play sound "audio/sfx_stoneDoorClose.ogg" volume 0.5
     "The door closes before I can get another word in."
 
     #show june surprised
@@ -284,6 +285,8 @@ label ch2_followthio:
     "I can’t believe a simple boat trip ended up like this. I feel exhausted just thinking about it."
 
     "There’s what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
+
+    play sound "audio/sfx_bedFlop.ogg" volume 0.5
 
     "Ack!" with vpunch
     "Did I lay on something?"
@@ -317,10 +320,11 @@ label ch2_followthio:
     "I guess everything is finally catching up to me."
     "I can figure out what to do after some rest."
     scene bg black with Dissolve(2.0)
+    stop music fadeout 1.0
     "..."
 
 #(transition here for dream)
-    #music change/stopped
+    play music bgm_skyllaCave volume 0.8
     scene bg drowning:
         fit "contain"
     with dissolve
@@ -331,10 +335,12 @@ label ch2_followthio:
     "No! It can’t end like this!"
 #vignette effect, increase
     "I think I glimpse a faint glowing in my chest... {w}before it all fades to nothingness."
+    stop music fadeout 0.5
 
 #(transition here)
     scene bg palace guestroom:
         fit "contain"
+    play music bgm_capital volume 0.8 fadein 1.0
     ny happy "I sit up in bed with a gasp." with vpunch
     "The water flows naturally through me as I catch my breath."
     "I’m… not drowning."
@@ -359,6 +365,8 @@ label ch2_followthio:
 
     guard "I'm under direct orders to not let you leave. Please stay inside your room."
 
+    play sound "audio/sfx_stoneDoorClose.ogg"
+    queue sound "audio/sfx_doorLockClick.ogg"
     "I’m forced back in, and the door is quickly shut with the click of a lock."
 
 #    show June worried
@@ -368,8 +376,6 @@ label ch2_followthio:
 
     "I guess they mean to keep me under house arrest here as a witness."
 
-    "Still, I have to find a way out of here."
-
-    y "I don’t have a fish brain anymore. Getting out of here can’t be that difficult."
+    "There has to find a way out of here."
 
     jump ch2_castle_escaperoom

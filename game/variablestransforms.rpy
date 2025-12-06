@@ -344,12 +344,12 @@ init python:
     config.emphasize_audio_channels = [ 'voice' ]
 
 transform jumpin:
-    ease2 0.2 yoffset -18
-    ease2 0.2 yoffset 0
+    ease 0.2 yoffset -18
+    ease 0.2 yoffset 0
 
 transform jumpin2:
-    ease2 0.2 ypos 700
-    ease2 0.2 ypos 730
+    ease 0.2 ypos 700
+    ease 0.2 ypos 730
 
 transform jump_up:
     pause .15

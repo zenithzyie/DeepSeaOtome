@@ -1,42 +1,57 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+Compiling ATL code at game/story/script.rpy:764
+  File "game/story/script.rpy", line 763, in script
+    show grandpa happy at left2 with move:
+Exception: Expression '0.3' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "renpy/common/00start.rpy", line 216, in script call
-    call _load_reload_game from _call__load_reload_game_1
-  File "renpy/common/00keymap.rpy", line 551, in script
-    python hide:
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\ast.py", line 834, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\python.py", line 1184, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/00keymap.rpy", line 551, in <module>
-    python hide:
-  File "renpy/common/00keymap.rpy", line 565, in _execute_python_hide
-    renpy.load(renpy.session["_reload_slot"])
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\loadsave.py", line 838, in load
-    log.unfreeze(roots, label="_after_load")
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 1135, in unfreeze
-    self.rollback(0, force=True, label=label, greedy=greedy, on_load=True)
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 930, in rollback
-    self.load_failed()
-  File "C:\Users\kansa\Desktop\renpy-8.1.3-sdk\renpy\rollback.py", line 848, in load_failed
-    raise Exception("Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?")
-Exception: Couldn't find a place to stop rolling back. Perhaps the script changed in an incompatible way?
+Traceback (most recent call last):
+  File "game/story/script.rpy", line 763, in script
+    show grandpa happy at left2 with move:
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 513, in show
+    sls.add(
+    ~~~~~~~^
+        layer,
+        ^^^^^^
+    ...<8 lines>...
+        transient=transient,
+        ^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/display/scenelists.py", line 464, in add
+    thing.visit_all(lambda d: None)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 448, in visit_all
+    for d in self.visit():
+             ~~~~~~~~~~^^ 
+  File "renpy/atl.py", line 739, in visit
+    block = self.compile()
+            ~~~~~~~~~~~~^^
+  File "renpy/atl.py", line 650, in compile
+    block = self.atl.compile(self.context)
+            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/atl.py", line 844, in compile
+    statements = [i.compile(ctx) for i in self.statements]
+                  ~~~~~~~~~^^^^^                          
+  File "renpy/atl.py", line 1206, in compile
+    raise Exception(
+        "Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr
+    )
+Exception: Expression '0.3' is not an ATL transform, and so cannot be included in an ATL interpolation.
 
-Windows-10-10.0.19045 AMD64
-Ren'Py 8.3.6.25022803
+Windows-11-10.0.26100-SP0 AMD64
+Ren'Py 8.5.0.25111603
 HeartsDepthDEMO 3.0
-Mon Nov  3 00:15:47 2025
+Sat Dec  6 13:47:06 2025

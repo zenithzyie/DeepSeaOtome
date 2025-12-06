@@ -718,6 +718,7 @@ label afterknocking:
     "Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
     "I want to hear his side of it, regardless."
     "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
+    play sound "audio/sfx_shipDoorKnock.ogg" 
     "Hunter gives a few strong knocks with the back of his hand."
     "..."
     g "Aye, I hear ye-"
@@ -760,7 +761,7 @@ label afterknocking:
     "Hunter is barely able to respond before Grandfather traps him in his arms too. Hunter groans in response and I can't help but laugh." with vpunch
     "Once Grandfather has squeezed the daylights out of us, he lets go."
     show grandpa happy at left2 with move:
-        ease2 0.3
+        ease 0.3
     g "Oh, just how many years has it been since I've seen ye, [y]?"
     show grandpa neutral with dissolve
     g "And yer mother? Is she with ye?"

@@ -6,12 +6,11 @@ label ch2_castle_escaperoom:
         "Examine the window.":
             if not lookedatwindow:
                 $ lookedatwindow = True
-                "There isn’t much of a view from here. This room must be at the back of the palace. The stained glass makes it difficult to see outside."
-                "The glass looks thick. It might be difficult to break."
-                "It has no handle or latch, but there is a small gap between the glass and the wall."
-                "I push with all my might."
+                "It’s difficult to see through the stained glass. Does it lead outside of the castle?"
+                "The window is missing a handle, but there’s a small gap between the glass and the wall."
+                "I lean against the window and push with all my might."
                 "The window doesn’t even budge."
-                "If I had something thin like a lockpick, maybe I could open it."
+                "If I had something thin like a letter opener, maybe I could pry it open."
             if lookedatwindow:
                 pass
 
@@ -21,6 +20,7 @@ label ch2_castle_escaperoom:
                     if hairpin:
                         "The hairpin slips easily into the small gap."
                         "After a fair bit of moving it around, I hear a faint click."
+                        play sound "audio/sfx_windowSlideOpen.ogg"
                         "The window slides open. There’s just enough room for me to swim through."
                         "Now I just need to find Lord Cetus!"
                         jump escapedroom_tohallway
@@ -30,8 +30,9 @@ label ch2_castle_escaperoom:
                             jump escapebegin
                         $ failescape += 1
                         $ punchwindow = True
+                        play sound "audio/sfx_fistAgainstWindow.ogg"
                         "In a surge of desperation, I slam a fist against the glass."
-                        "The thunk is loud enough that I soon hear knocking against the door."
+                        "Ouch!"
                         guard "Everything alright in there?"
                         y "Everything’s fine!"
                         "My hand is rather sore though…"
@@ -43,8 +44,8 @@ label ch2_castle_escaperoom:
                     jump escapebegin
 
         "Search the room.":
+            "There’s a dresser beside the bed and a mirror on the wall."
             menu searchroom:
-                "There’s a small cabinet beside the bed and a mirror on the wall."
                 "Check the mirror.":
                     #(show full cg of Mermaid June)?
                     if promermaid > antimermaid:
@@ -58,17 +59,22 @@ label ch2_castle_escaperoom:
                         jump searchroom
 
                 "Check the dresser.":
+                    "I open the dresser."
                     if coinpurse and hairpin:
                         "It seems like I've searched through everything here."
                         jump escapebegin
                     menu checkdresser:
                         set menuset
                         "Letter.":
-                            "{i}My Dearest Lord Cetus. {/i}"
-                            "{i}Ever since I glimpsed your elegant complexion at the festival last year, my head has been filled with nothing but thoughts of you. You shine even brighter than the late king himself. Your graceful poise, your slender hands, your tender tentacles…It is enough to drive a lady to madness. If you would allow me the opportunity, I could show you where to put all of those tentacles of yours-{/i}"
+                            play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
+                            "{i}My Dearest Lord Cetus.{/i}"
+                            "{i}Ever since I glimpsed your elegant complexion at the festival last year, my head has been filled with nothing but thoughts of you. You shine even brighter than the late king himself.{/i}"
+                            "{i}Your graceful poise, your slender hands, your tender tentacles…It is enough to drive a lady to madness.{/i}"
+                            "{i}If you would allow me the opportunity, I could show you where to put all of those tentacles of yours-{/i}"
                             y flustered "Oh!"
                             "The rest of the letter is filled with the fantasies of a young noble woman."
-                            y "I'll just… put this back."
+                            play sound "audio/sfx_stoneDrawerClose.ogg" volume 0.8
+                            y "I think I’ll leave this here…"
                             jump checkdresser
 
                         "Hairpin.":
@@ -82,9 +88,10 @@ label ch2_castle_escaperoom:
                         "Small bag.":
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
-                            "It clinks faintly and I discover several gold coins inside."
+                            play sound "audio/sfx_coinJingle.ogg"
+                            "It clinks faintly and I discover gold and silver coins inside."
                             "Do they use this as currency?"
-                            "I place the coinpurse into my bag. I’m sure I can find a use for this later."
+                            "I place the coinpurse into my bag."
                             jump checkdresser
 
                         "Return." if coinpurse and hairpin:
@@ -97,6 +104,7 @@ label ch2_castle_escaperoom:
             "The guard isn’t willing to tell me anything."
             "Should I really be bothering him again?"
             if coinpurse:
+                play sound "audio/sfx_coinJingle.ogg"
                 "The coinpurse jingles faintly in my bag."
                 "That fishmonger in Aquantis wasn’t too helpful either until I offered him money."
                 "I have to try everything I can here. It’s the only way to get home."
@@ -104,10 +112,12 @@ label ch2_castle_escaperoom:
                     "Bribe the guard.":
                         $ bribeguard = True
                         $ failescape += 1
+                        play sound "audio/sfx_guestDoorKnock.ogg"
                         "I knock on the door."
                         y "Excuse me. Sir Guard?"
                         guard "What is it now?"
                         y "Could you please take me to Lord Cetus? I can pay you."
+                        play sound "audio/sfx_longerCoinJingle.ogg"
                         "I jingle the coinpurse in hopes of getting his attention."
                         guard "So desperate as to resort to bribery? Try that again and your new room might become the palace dungeons."
                         "My cheeks burn with embarrassment as I swim away from the door."
@@ -119,6 +129,7 @@ label ch2_castle_escaperoom:
                         jump escapebegin
 
             else:
+                play sound "audio/sfx_guestDoorKnock.ogg"
                 "I knock on the door."
                 y "Excuse me. Sir Guard?"
                 guard "Keep it down in there."
