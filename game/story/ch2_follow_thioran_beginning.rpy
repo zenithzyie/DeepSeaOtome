@@ -299,24 +299,44 @@ label ch2_followthio:
     extend " a camera."
     y "Wait, is this...? {w}But how is that possible?"
     "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
-    "It couldn’t possibly work underwater, could it?"
+    "It couldn’t work underwater, could it?"
     "Well, there’s only one way to find out."
-    hide camera_mermaid
-    play sound "audio/sfx_cameraShutter.ogg" volume 0.8
-    show camera with irisin
-    hide camera with dissolve
-    show photo_guestroom:
-        zoom 0.09
-        subpixel True pos (474, 168)
-    with dissolve
-    "The camera automatically develops a photo, just like always."
-    "Somehow, the colors don't bleed."
-    hide photo_guestroom with dissolve
+    hide camera_mermaid with dissolve
+    menu:
+        "Take a picture of..."
+        "The lamp?":
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            show camera with irisin
+            hide camera with dissolve
+            show photo_guestroom1:
+                zoom 0.09
+                subpixel True pos (474, 168)
+            with dissolve
+            "The camera automatically develops a photo, just like always."
+            "Somehow, the colors don't bleed."
+            y "This can’t be powered by fire or electricity, but seems to be giving off light, so I’m pretty sure it’s a lamp."
+            y "I wonder if it's magic?"
+            hide photo_guestroom1 with dissolve
+
+
+        "The window.":
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            show camera with irisin
+            hide camera with dissolve
+            show photo_guestroom2:
+                zoom 0.09
+                subpixel True pos (474, 168)
+            "The camera automatically develops a photo, just like always."
+            "Somehow, the colors don't bleed."
+            y "There’s a star in the center."
+            y "I remember seeing the same shape earlier too. I wonder what it means?"
+            hide photo_guestroom2 with dissolve
+
+    "For a moment I sit there, not quite believing the thing in my hand is real."
     "I was certain I’d lost the camera when the siren captured me. How did it survive all this water anyway?"
     "Whatever the reason, I’m glad to see it."
-    "Something familiar at last."
     "I’d better keep this safe."
-    "As I tuck the camera back into my bag, I can feel my eyes start to grow heavy."
+    "As I tuck the camera and photo into my bag, I can feel my eyes start to grow heavy."
     "I guess everything is finally catching up to me."
     "I can figure out what to do after some rest."
     scene bg black with Dissolve(2.0)
@@ -325,16 +345,29 @@ label ch2_followthio:
 
 #(transition here for dream)
     play music bgm_skyllaCave volume 0.8
-    scene bg drowning:
+    show bg drowning:
         fit "contain"
     with dissolve
+    "..."
     "There’s light above me, but it’s drifting further and further away."
+    "..."
     "I try to reach for it, but my body won’t respond."
+    "..."
     "What’s happening to me?"
+
+    menu:
+        "Something.":
+            "I think I came here to do something…"
+            "But what..?"
+        "Someone.":
+            "I think I came here with someone…"
+            "But who?"
+
+    "..."
+    "..."
+    "..."
     "I open my mouth to call out for help, but saltwater floods my lungs."
     "No! It can’t end like this!"
-#vignette effect, increase
-    "I think I glimpse a faint glowing in my chest... {w}before it all fades to nothingness."
     stop music fadeout 0.5
 
 #(transition here)

@@ -101,41 +101,45 @@ label ch2_castle_escaperoom:
                     jump escapebegin
 
         "Talk to the guard.":
-            "The guard isn’t willing to tell me anything."
-            "Should I really be bothering him again?"
-            if coinpurse:
-                play sound "audio/sfx_coinJingle.ogg"
-                "The coinpurse jingles faintly in my bag."
-                "That fishmonger in Aquantis wasn’t too helpful either until I offered him money."
-                "I have to try everything I can here. It’s the only way to get home."
-                menu:
-                    "Bribe the guard.":
-                        $ bribeguard = True
-                        $ failescape += 1
-                        play sound "audio/sfx_guestDoorKnock.ogg"
-                        "I knock on the door."
-                        y "Excuse me. Sir Guard?"
-                        guard "What is it now?"
-                        y "Could you please take me to Lord Cetus? I can pay you."
-                        play sound "audio/sfx_longerCoinJingle.ogg"
-                        "I jingle the coinpurse in hopes of getting his attention."
-                        guard "So desperate as to resort to bribery? Try that again and your new room might become the palace dungeons."
-                        "My cheeks burn with embarrassment as I swim away from the door."
-                        "That didn’t go as well as I’d hoped."
-                        jump escapebegin
-                    "Don’t bother.":
-                        "This still won’t get me anywhere."
-                        "I should take a closer look around the room."
-                        jump escapebegin
-
-            else:
-                play sound "audio/sfx_guestDoorKnock.ogg"
-                "I knock on the door."
-                y "Excuse me. Sir Guard?"
-                guard "Keep it down in there."
-                "This still won’t get me anywhere."
-                "I should take a closer look around the room."
+            if bribeguard:
+                "No...I really shouldn't talk to him again."
                 jump escapebegin
+            else:
+                "The guard isn’t willing to tell me anything."
+                "Should I really be bothering him again?"
+                if coinpurse:
+                    play sound "audio/sfx_coinJingle.ogg"
+                    "The coinpurse jingles faintly in my bag."
+                    "That fishmonger in Aquantis wasn’t too helpful either until I offered him money."
+                    "I have to try everything I can here. It’s the only way to get home."
+                    menu:
+                        "Bribe the guard.":
+                            $ bribeguard = True
+                            $ failescape += 1
+                            play sound "audio/sfx_guestDoorKnock.ogg"
+                            "I knock on the door."
+                            y "Excuse me. Sir Guard?"
+                            guard "What is it now?"
+                            y "Could you please take me to Lord Cetus? I can pay you."
+                            play sound "audio/sfx_longerCoinJingle.ogg"
+                            "I jingle the coinpurse in hopes of getting his attention."
+                            guard "So desperate as to resort to bribery? Try that again and your new room might become the palace dungeons."
+                            "My cheeks burn with embarrassment as I swim away from the door."
+                            "That didn’t go as well as I’d hoped."
+                            jump escapebegin
+                        "Don’t bother.":
+                            "This still won’t get me anywhere."
+                            "I should take a closer look around the room."
+                            jump escapebegin
+
+                else:
+                    play sound "audio/sfx_guestDoorKnock.ogg"
+                    "I knock on the door."
+                    y "Excuse me. Sir Guard?"
+                    guard "Keep it down in there."
+                    "This still won’t get me anywhere."
+                    "I should take a closer look around the room."
+                    jump escapebegin
 
 
 label escapedroom_tohallway:

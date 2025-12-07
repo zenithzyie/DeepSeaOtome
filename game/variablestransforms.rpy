@@ -159,30 +159,29 @@ layeredimage grandpa:
             "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
 ######################################################################
 layeredimage side june:
-    group bordbehind: #FOR NEW JUNE SPRITE
-        attribute border default:
-            "images/sprites/june/ui/border_behind.png"
+#    group bordbehind: #FOR NEW JUNE SPRITE
+        #attribute border default:
+        #    "images/sprites/june/ui/border_behind.png"
         #xzoom -1
         #xpos 1000
         #ypos 901
-            zoom 0.53
+        #    zoom 0.53
     group body: #FOR NEW JUNE SPRITE
         attribute body default:
             "images/sprites/june/base/side_june_base.png"
-            xpos 800
-            ypos 800
-            zoom 0.53
-    group exressions:
+            xpos -100
+            ypos 125
+    group expressions:
         attribute happy:
             "images/sprites/june/expressions/side_june_happy.png"
-            xpos 800
-            ypos 800
-            zoom 0.53
+        #    xpos -340
+            #ypos 125
+            #zoom 0.13
         attribute neutral:
             "images/sprites/june/expressions/side_june_happy.png"
-            xpos 800
-            ypos 800
-            zoom 0.53
+        #    xpos -340
+            #ypos 125
+            #zoom 0.13
         # attribute flustered:
         #     "side_june_flustered.png"
         # attribute huffed:
@@ -194,13 +193,14 @@ layeredimage side june:
         # xzoom -1
         # xpos -80
         # ypos 20
-    group bordfront: #FOR NEW JUNE SPRITE
-        attribute border default:
-            "images/sprites/june/ui/border_front.png"
+    zoom 0.13
+    #group bordfront: #FOR NEW JUNE SPRITE
+        #attribute border default:
+            #"images/sprites/june/ui/border_front.png"
         #xzoom -1
         #xpos 1000
         #ypos 900
-            zoom 0.53
+        #    zoom 0.53
     #FOR NEW JUNE SPRITE
     #xzoom -1 #FOR NEW JUNE SPRITE
     #group eyes auto:
