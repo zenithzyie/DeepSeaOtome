@@ -20,7 +20,8 @@ label ch2_castle_escaperoom:
                     if hairpin:
                         "The hairpin slips easily into the small gap."
                         "After a fair bit of moving it around, I hear a faint click."
-                        play sound "audio/sfx_windowSlideOpen.ogg"
+                        play sound "audio/sfx_windowClick.ogg" volume 0.6
+                        queue sound "audio/sfx_windowSlideOpen.ogg" volume 0.6
                         "The window slides open. There’s just enough room for me to swim through."
                         "Now I just need to find Lord Cetus!"
                         jump escapedroom_tohallway

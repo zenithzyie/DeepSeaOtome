@@ -139,6 +139,7 @@ label ch2_followthio:
 
     c "I hear humans have been sailing further from their shores as of late."
 
+    play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.4
     "A chill runs down my spine as the throne room doors close behind us."
 
 
