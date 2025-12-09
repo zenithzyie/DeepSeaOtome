@@ -46,7 +46,11 @@ screen credits():
 
                 # Credit block: ZENITH
                 hbox:
-                    add "logos/logo.png" zoom 0.6 #-> if images are not resized properly you can do it with zoom
+                    add "logos/zenith logo.png":
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
@@ -79,7 +83,11 @@ screen credits():
 
                 # Credit block: EM
                 hbox:
-                    add "logos/em logo.png" zoom 0.59
+                    add "logos/em logo.png":
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
@@ -107,11 +115,13 @@ screen credits():
                             #add "twitter-original"
                             textbutton _("Artstation") action OpenURL("https://www.artstation.com/alibunn") style "credits_url_button" text_style "credits_url_text_small"
 
-                # Credit block: SOJIN
+                # Credit block: JELLY
                 hbox:
                     add "logos/jelly logo.png":
-                        size 250,250
-                        zoom 0.61
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5

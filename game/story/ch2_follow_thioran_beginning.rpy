@@ -24,8 +24,6 @@ label ch2_followthio:
             pos (0.5, 2.64) zoom 0.34
     window auto show
 
-    #zoom 0.25
-
     "I stare down at it, confused, before my eyes trace it upward and find that it’s connected to me."
 
     y "Oh! I'm... a mermaid?"
@@ -34,12 +32,11 @@ label ch2_followthio:
 
     scene bg throneroom:
         fit "contain"
-    show thioran frown at Position(xpos=0.45)
-    $ speaking_char = "all"
-    show cetus neutral at left2:
+    $ speaking_char = "Cetus"
+    show cetus neutral at cetus_right:
+        ypos 60
         xzoom -1
-        ypos 70
-    show thioran frown at farleft
+    show thioran frown at thioran_left
     with dissolve
 
     #(surprised cetus)

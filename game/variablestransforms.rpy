@@ -129,6 +129,10 @@ transform atcamera:
     pos (422, 115)
 
 ######################################################################
+## Thioran Sprite ####################################################
+######################################################################
+define thioran_left = Position(xpos=0.23)
+######################################################################
 layeredimage thioran:
     at sprite_highlight('Prince Thioran')
     group expressions:
@@ -150,6 +154,8 @@ layeredimage thioran:
         attribute blinking default:
             "images/sprites/thioran/expressions/thioran_blink.png" at blink
 ######################################################################
+## Grandpa Sprite ####################################################
+######################################################################
 layeredimage grandpa:
     at sprite_highlight('Grandfather')
     group expressions:
@@ -164,15 +170,8 @@ layeredimage grandpa:
         attribute blinking default:
             "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
 ######################################################################
-image june_masked = LayeredImageMask("side june",
-    Transform("june_masked_smaller", crop=(100, 100, 225, 263)),
-    background="images/sprites/june/ui/border_behind.png",
-    mask="images/sprites/june/ui/border_mask.png",
-    foreground="images/sprites/june/ui/border_front.png")
-
-image june_masked_smaller = LayeredImageProxy("side june", Transform("side june"))
-
-
+##June - Mermaid and Human Sprites ###################################
+######################################################################
 layeredimage side june:
     group bordbehind: #FOR NEW JUNE SPRITE
         attribute border default:
@@ -197,47 +196,61 @@ layeredimage side june:
             "images/sprites/june/expressions/side_june_happy.png"
             zoom 0.12
             pos (159, 153)
-        attribute veryhappy:
-            "images/sprites/june/expressions/side_june_veryhappy.png"
-            zoom 0.12
-            pos (159, 153)
         attribute annoyed:
             "images/sprites/june/expressions/side_june_annoyed.png"
             zoom 0.12
             pos (159, 153)
         attribute shocked:
-            "images/sprites/june/expressions/side_june_neutral.png"
+            "images/sprites/june/expressions/side_june_shocked.png"
             zoom 0.12
             pos (159, 153)
-        # attribute huffed:
-        #     "side_june_huffed.png"
-        # attribute neutral:
-        #     "side_june_neutral.png"
-        # attribute shocked:
-        #     "side_june_shocked.png"
-        # xzoom -1
-        # xpos -80
-        # ypos 20
+        attribute nervous:
+            "images/sprites/june/expressions/side_june_nervous.png"
+            zoom 0.12
+            pos (159, 153)
+        attribute sad:
+            "images/sprites/june/expressions/side_june_sad.png"
+            zoom 0.12
+            pos (159, 153)
+        attribute flustered:
+            "images/sprites/june/expressions/side_june_flustered.png"
+            zoom 0.12
+            pos (159, 153)
+        attribute veryhappy:
+            "images/sprites/june/expressions/side_june_veryhappy.png"
+            zoom 0.12
+            pos (159, 153)
+    group eyes auto:
+        attribute blinking default:
+            "images/sprites/june/expressions/side_june_blink.png" at blink
+            zoom 0.12
+            pos (159, 153)
+        attribute veryhappy:
+            zoom 0.12
+            pos (159, 153)
+    group hairbrow:
+        attribute hairbrow default:
+            "images/sprites/june/base/side_june_hairbrow.png"
+            zoom 0.12
+            pos (159, 153)
     group frontborder:
         attribute frontborder default:
             "images/sprites/june/ui/border_front.png"
             fit "contain"
             xsize 320
             pos (157, 130)
-            #pos (-110, 153)
-            #alpha 0.0
-        #zoom 0.17
-        #xpos -120
-        #    ypos 257
-        #    zoom 0.53
-    #FOR NEW JUNE SPRITE
-    #xzoom -1 #FOR NEW JUNE SPRITE
-#    group eyes auto:
-        #attribute blinking default:
-        #    "images/sprites/june/expressions/side_june_veryhappy.png" at blink
-        #    zoom 0.13
-        #    xpos 40
-        #    ypos 125
+######################################################################
+## June Fish Sprite ##################################################
+######################################################################
+layeredimage side june fish:
+    group expressions:
+        attribute neutral:
+            "images/sprites/june/base/side_june_fish_neutral.png"
+            zoom 0.12
+            xpos 138
+            ypos 310
+######################################################################
+## Skylla Sprite #####################################################
 ######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')
@@ -263,6 +276,8 @@ layeredimage skylla:
     group eyes auto:
         attribute blinking default:
             "images/sprites/skylla/expressions/skylla_blink.png" at blink
+######################################################################
+## Prashadi Sprite ###################################################
 ######################################################################
 layeredimage prashadi:
     at sprite_highlight('Prashadi')
@@ -294,27 +309,30 @@ layeredimage prashadi:
             xysize (1100,1100)
     ypos 1190
 ######################################################################
+##Cetus Sprite #######################################################
+######################################################################
+define cetus_right = Position(xpos=0.46)
+define cetus_center = Position(xpos=0.29)
+######################################################################
 layeredimage cetus:
     at sprite_highlight('Cetus')
+    group body:
+        attribute body default:
+            "images/sprites/cetus/base/cetus_base.png"
     group expressions:
         attribute neutral:
-            "images/sprites/cetus/expressions/cetus_neutral2.png"
-            fit "contain"
-            ypos 45
-            zoom 1.17
-    #zoom 0.55
-    #ypos 0.07
-    #group eyes auto:
-        #attribute blinking default:
-            #"images/sprites/cetus/expressions/cetus_blink.png" at blink
-######################################################################
-layeredimage side june fish:
-    group expressions:
-        attribute neutral:
-            "images/sprites/june/base/side_june_fish_neutral.png"
-            zoom 0.12
-            xpos 138
-            ypos 310
+            "images/sprites/cetus/expressions/cetus_neutral.png"
+        attribute surprised:
+            "images/sprites/cetus/expressions/cetus_surprised.png"
+        attribute smirk:
+            "images/sprites/cetus/expressions/cetus_smirk.png"
+        attribute smile:
+            "images/sprites/cetus/expressions/cetus_smile.png"
+    zoom 0.16
+    ypos 60
+    group eyes auto:
+        attribute blinking default:
+            "images/sprites/cetus/expressions/cetus_blink.png" at blink
 ######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')

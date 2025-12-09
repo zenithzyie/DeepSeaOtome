@@ -144,18 +144,19 @@ label ch1_followprince:
         fit "contain"
     "Our final destination: a grand throne room."
     $ speaking_char = "all"
-    show cetus neutral at Position(xpos=0.25):
+    show cetus neutral at cetus_center:
         xzoom -1
     with dissolve
     "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
     $ speaking_char = "all"
-    show cetus neutral at Position(xpos=0.46):
+    show cetus neutral at cetus_right:
         xzoom -1
-    show thioran frown at Position(xpos=0.23)
+    show thioran frown at thioran_left
     with dissolve
 
     ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
     "He holds himself like a royal."
+    show cetus surprised
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
     ucetus "Thioran! Where have you been?"
@@ -168,6 +169,7 @@ label ch1_followprince:
     c "Now, you look troubled. Whatever is the matter?"
     p "It's just-{w} here. I found her near the storm."
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
+    show cetus neutral
     "Cetus's eyes catch on me, and I freeze at the sudden attention."
     "Any thoughts I may have had halt to a stop."
     c "Oh? What's this? Find another pet for yourself out there, Thioran?"
@@ -180,6 +182,7 @@ label ch1_followprince:
     p "She shouldn't have any arcane connections. She appears to be just a normal fish."
     y "Blub!"
     "I definitely am not!"
+    $ speaking_char = "Cetus"
     "Cetus begins to approach, brows furrowing."
     "His gaze is piercing."
     "It almost feels like he's staring right through me, right at something I can't see."

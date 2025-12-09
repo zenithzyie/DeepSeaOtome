@@ -102,6 +102,7 @@ style pref_styling_button:
 screen preferences():
     tag menu
 
+    
     use game_menu_prefs(_("Settings"), scroll="viewport"):
 
         hbox:
