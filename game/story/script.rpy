@@ -116,8 +116,6 @@ label chapter1:
         fit "contain"
     $ config.side_image_tag = "june"
     y happy "At last. Hello, Aquantis!"
-    show june_masked at center
-    "wow test"
     show black:
         alpha 0.35
     show camera_human at atcamera:
@@ -166,7 +164,7 @@ label chapter1:
     with dissolve
 
     #june will be frowing a little in her neutral
-    s"The further I walk down from the top of the city, the more the atmosphere seems to change."
+    "The further I walk down from the top of the city, the more the atmosphere seems to change."
     ny neutral "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
     "Now, the street feels gloomy and unwelcoming."
     "Rather than being ignored, it seems I'm attracting uncomfortable attention."
@@ -194,17 +192,17 @@ label chapter1:
     #play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
     #make this a more occasional/easygoing market sfx
     ny neutral "In my rush to escape, I find myself at a market."
-    "There's more people here. And more to look at, as well."
+    ny happy "There's more people here. And more to look at, as well."
     menu:
         "My eyes are drawn to..."
         "The newsboard":
             $ seastorm = True
             "There's a board filled with notices and posters here."
-            y "Beware of sudden storms..."
+            y neutral "Beware of sudden storms..."
             "Deadly sea storms can strike without rhyme or reason. Use caution when traveling without seasoned sailors."
             #Show propaganda poster here
             t "Those storms aren’t something to mess with. Stay safe if you’re heading out to sea, missy!"
-            y "I will. Thank you!"
+            y happy "I will. Thank you!"
             "The man walks off and I browse over a few more posters before turning away."
 
             #needs a few more lines, include a townsperson
@@ -237,7 +235,7 @@ label chapter1:
         "Talk to..."
         "Elderly woman":
             y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
-            "The woman turns to me. She has a crazed look on her face."
+            "The woman turns to me. She has a strange look on her face."
             woman "Knock knock."
             y "Pardon?"
             woman "Knock knock."
@@ -287,7 +285,7 @@ label chapter1:
             y neutral "It's [y] Finch."
             fishmonger "Finch, ya say..."
             "He scratches his chin and sighs."
-            fishmonger "The code's five, three, four. An' remember to pause in between!"
+            fishmonger "The code's {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
@@ -295,16 +293,16 @@ label chapter1:
             y "Oh, yes. Thank you so much for the help."
             "That was far from helpful!"
             "But I leave him a fair amount of coin for his trouble anyway."
-            #"Perhaps I will have better luck with someone else."
 
             jump talktownsfolk
 
     #SCENE CHANGE - Brick Wall
     "It seems I have spoken to everyone I can in the area."
 
+    #possible choice?
     "According to what I've been told, I need to go to the west alley and knock on the wall."
 
-    "The code was... five, three, four?"
+    "The code was... {color=#f2b950}five, three, four{/color}?"
 
     scene bg brickwall with dissolve
     $ config.side_image_tag = "june"

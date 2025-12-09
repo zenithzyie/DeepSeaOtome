@@ -177,41 +177,38 @@ layeredimage side june:
     group bordbehind: #FOR NEW JUNE SPRITE
         attribute border default:
             "images/sprites/june/ui/border_behind.png"
-            zoom 0.17
-            xpos -120
-            ypos 134
+            fit "contain"
+            xsize 320
+            pos (157, 130)
+            #same as:
+            # xpos -120
+            # ypos 134
     group body: #FOR NEW JUNE SPRITE
         attribute body default:
             "images/sprites/june/base/side_june_base.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
     group expressions:
         attribute neutral:
             "images/sprites/june/expressions/side_june_neutral.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
         attribute happy:
             "images/sprites/june/expressions/side_june_happy.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
         attribute veryhappy:
             "images/sprites/june/expressions/side_june_veryhappy.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
         attribute annoyed:
             "images/sprites/june/expressions/side_june_annoyed.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
         attribute shocked:
             "images/sprites/june/expressions/side_june_neutral.png"
             zoom 0.12
-            xpos -110
-            ypos 153
+            pos (159, 153)
         # attribute huffed:
         #     "side_june_huffed.png"
         # attribute neutral:
@@ -224,7 +221,11 @@ layeredimage side june:
     group frontborder:
         attribute frontborder default:
             "images/sprites/june/ui/border_front.png"
-            alpha 0.0
+            fit "contain"
+            xsize 320
+            pos (157, 130)
+            #pos (-110, 153)
+            #alpha 0.0
         #zoom 0.17
         #xpos -120
         #    ypos 257
