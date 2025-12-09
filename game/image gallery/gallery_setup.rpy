@@ -23,7 +23,7 @@ init python:
 
 
     #ALL GALLERY IMAGES HERE
-    #Title, cg image (matches gallery images below), thumbnail name
+    #Title, cg image (matches gallery images below), thumbnail name, size of cg "wide/tall"
     gallery_items = []
     gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train", "wide"))
     gallery_items.append(GalleryItem("Deep Market", ["cg_sushi"] ,"cg_sushi", "wide"))

@@ -41,7 +41,6 @@ screen gallery_B():
                                 action NullAction()
                                 at imageThumb
                             #will show "Unlock" + Name of the CG
-                            #text "Unlock: " + gallery_items[i].name
                             text "Unlock: " + "???":
                                 style_prefix "name"
                                 xalign 0.5
@@ -61,8 +60,6 @@ screen gallery_B():
                                 style_prefix "name"
                                 xalign 0.5
                                 ypos -40
-
-
 
 
                 #required to fill in empty grid items
