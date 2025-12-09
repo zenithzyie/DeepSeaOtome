@@ -122,6 +122,12 @@ transform blink:
     0.15
     alpha 0.0
     repeat
+
+######################################################################
+#FOR PROPS
+transform atcamera:
+    pos (422, 115)
+
 ######################################################################
 layeredimage thioran:
     at sprite_highlight('Prince Thioran')
@@ -158,32 +164,54 @@ layeredimage grandpa:
         attribute blinking default:
             "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
 ######################################################################
+image june_masked = LayeredImageMask("side june",
+    Transform("june_masked_smaller", crop=(100, 100, 225, 263)),
+    background="images/sprites/june/ui/border_behind.png",
+    mask="images/sprites/june/ui/border_mask.png",
+    foreground="images/sprites/june/ui/border_front.png")
+
+image june_masked_smaller = LayeredImageProxy("side june", Transform("side june"))
+
+
 layeredimage side june:
-#    group bordbehind: #FOR NEW JUNE SPRITE
-        #attribute border default:
-        #    "images/sprites/june/ui/border_behind.png"
-        #xzoom -1
-        #xpos 1000
-        #ypos 901
-        #    zoom 0.53
+    group bordbehind: #FOR NEW JUNE SPRITE
+        attribute border default:
+            "images/sprites/june/ui/border_behind.png"
+            zoom 0.17
+            xpos -120
+            ypos 134
     group body: #FOR NEW JUNE SPRITE
         attribute body default:
             "images/sprites/june/base/side_june_base.png"
-            xpos -100
-            ypos 125
+            zoom 0.12
+            xpos -110
+            ypos 153
     group expressions:
+        attribute neutral:
+            "images/sprites/june/expressions/side_june_neutral.png"
+            zoom 0.12
+            xpos -110
+            ypos 153
         attribute happy:
             "images/sprites/june/expressions/side_june_happy.png"
-        #    xpos -340
-            #ypos 125
-            #zoom 0.13
-        attribute neutral:
-            "images/sprites/june/expressions/side_june_happy.png"
-        #    xpos -340
-            #ypos 125
-            #zoom 0.13
-        # attribute flustered:
-        #     "side_june_flustered.png"
+            zoom 0.12
+            xpos -110
+            ypos 153
+        attribute veryhappy:
+            "images/sprites/june/expressions/side_june_veryhappy.png"
+            zoom 0.12
+            xpos -110
+            ypos 153
+        attribute annoyed:
+            "images/sprites/june/expressions/side_june_annoyed.png"
+            zoom 0.12
+            xpos -110
+            ypos 153
+        attribute shocked:
+            "images/sprites/june/expressions/side_june_neutral.png"
+            zoom 0.12
+            xpos -110
+            ypos 153
         # attribute huffed:
         #     "side_june_huffed.png"
         # attribute neutral:
@@ -193,22 +221,22 @@ layeredimage side june:
         # xzoom -1
         # xpos -80
         # ypos 20
-    zoom 0.13
-    #group bordfront: #FOR NEW JUNE SPRITE
-        #attribute border default:
-            #"images/sprites/june/ui/border_front.png"
-        #xzoom -1
-        #xpos 1000
-        #ypos 900
+    group frontborder:
+        attribute frontborder default:
+            "images/sprites/june/ui/border_front.png"
+            alpha 0.0
+        #zoom 0.17
+        #xpos -120
+        #    ypos 257
         #    zoom 0.53
     #FOR NEW JUNE SPRITE
     #xzoom -1 #FOR NEW JUNE SPRITE
-    #group eyes auto:
+#    group eyes auto:
         #attribute blinking default:
-            #"side_june_eye_closed.png" at blink
-        #xzoom -1
-        #xpos -80
-        #ypos 20
+        #    "images/sprites/june/expressions/side_june_veryhappy.png" at blink
+        #    zoom 0.13
+        #    xpos 40
+        #    ypos 125
 ######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')

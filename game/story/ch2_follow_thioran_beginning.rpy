@@ -294,9 +294,11 @@ label ch2_followthio:
     "Looking down, I find a purse attached to my waist."
     "Oh, right. This must have been created by the magic spell too. I hadn’t really had the time to think about it."
     "Opening it reveals..."
-    show camera_mermaid:
-        zoom 0.2
-        subpixel True pos (474, 168)
+    show black:
+        alpha 0.35
+    show camera_mermaid at atcamera:
+        zoom 0.18
+    with dissolve
     extend " a camera."
     y "Wait, is this...? {w}But how is that possible?"
     "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."

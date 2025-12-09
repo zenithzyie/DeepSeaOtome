@@ -17,6 +17,9 @@ image settingsbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 image quitbutton_hover = Transform("gui/button/quit_hover.png", zoom=0.24)
 image quitbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 
+image newsbutton_hover = Transform("gui/button/ticket_hover.png", zoom=0.24)
+image newsbutton_idle = Transform("gui/button/ticket_idle.png", zoom=0.24)
+
 screen titleMainMenu():
     vbox:
         if renpy.get_screen("main_menu"):
@@ -71,6 +74,12 @@ screen main_menu():
 
     add gui.main_menu_background size (1280, 720)
     add "gui/logo_idle.png" at logoappear size (550, 264)
+
+#    imagebutton:
+#        auto "newsbutton_%s"
+#        hover_foreground Text("News", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+#        idle_foreground Text("News", style ="main_menu_imagebutton_text1")
+#        action [ShowMenu("gameNews")]
 
     ## This empty frame darkens the main menu.
     frame:

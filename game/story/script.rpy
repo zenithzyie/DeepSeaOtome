@@ -115,11 +115,23 @@ label chapter1:
     show bg nice town:
         fit "contain"
     $ config.side_image_tag = "june"
-    y neutral "At last. Hello, Aquantis!"
-    "As soon as I exit the train car, I remove my camera from my purse to take a picture."
+    y happy "At last. Hello, Aquantis!"
+    show june_masked at center
+    "wow test"
+    show black:
+        alpha 0.35
+    show camera_human at atcamera:
+        zoom 0.18
+    with dissolve
+    #"As soon as I exit the train car, I remove my camera from my purse to take a picture."
+    "As soon as I exit the train car, I take my camera out of my purse."
+    y veryhappy "This is a great place for a picture!"
+    hide black
+    hide camera_human
+    with dissolve
 
     menu:
-        "Take a picture of..."
+        ny happy "Take a picture of..."
         "The townspeople.":
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
@@ -718,7 +730,7 @@ label afterknocking:
     "Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
     "I want to hear his side of it, regardless."
     "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
-    play sound "audio/sfx_shipDoorKnock.ogg" 
+    play sound "audio/sfx_shipDoorKnock.ogg"
     "Hunter gives a few strong knocks with the back of his hand."
     "..."
     g "Aye, I hear ye-"
