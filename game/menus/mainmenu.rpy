@@ -75,6 +75,16 @@ screen main_menu():
     add gui.main_menu_background size (1280, 720)
     add "gui/logo_idle.png" at logoappear size (550, 264)
 
+    if main_menu:
+        imagebutton:
+            auto "gui/button/mainside_%s.png"
+            hover_foreground Text("News", style ="main_menu_imagebutton_text")
+            idle_foreground Text("News", style ="main_menu_imagebutton_text")
+            action OpenURL("https://zenithzyie.itch.io/hearts-depth/devlog")
+            xalign 0.105
+            yalign 0.95
+            at customzoomsmall
+
 #    imagebutton:
 #        auto "newsbutton_%s"
 #        hover_foreground Text("News", style ="main_menu_imagebutton_text1", color ="#66a3e0")
