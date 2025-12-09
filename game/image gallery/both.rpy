@@ -24,33 +24,27 @@ style name_text: #text color and outlines please change
 transform imageThumb: #images to thumbnail re-sizer
     size (sx, sy) #for 1920x1080 and 1280x720 DO NOT CHANGE
 
-transform imageMaxSize:
-    size (1280, 720) #to resize the big ones
-
 transform cg_fit:
-    #this makes sure that images aren't all stretchy, better imageMaxSize
+    #this makes sure that images aren't all stretchy
     fit "contain"
     xalign 0.5
 
-transform zoomtest:
-    zoom 0.5
-
-transform zoomtest2:
-    zoom 1.0
-
-default zoomnum = 1.0
-default zoom_max = 2.0
-define zoom_min = 1.0
+default zoomnum = 1.0 #current zoom
+default zoom_max = 2.0 #zoom maximum
+define zoom_min = 1.0 #zoom minimum
 
 default zoom_current = 1.0
 
 default x_bar = ui.adjustment()
 default y_bar = ui.adjustment()
 
+style gal_styling:
+    ypadding 10
+    xsize 350
+
 transform cg_zoomable:
-    #this makes sure that images aren't all stretchy, better imageMaxSize
+    #this makes sure that images aren't all stretchy
     fit "contain"
-    #linear zoom_current zoom zoomnum
     zoom zoomnum
 
 #the locked image for the galleries
@@ -70,11 +64,14 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
             yadjustment y_bar
             scrollbars  None
             hbox:
+                xsize 1280
                 imagebutton:
+                    xalign 0.5
                     idle images.images
                     action (Hide("gallery_closeup", dissolve))
                     at cg_zoomable
 
+    #on mousewheel, zoom in/out and refresh to show changes
     key "mousedown_4" action (Function(zoom_in), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomin, images))
     key "mousedown_5" action (Function(zoom_out), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomout, images))
 
@@ -87,11 +84,12 @@ init python:
     gallery_page = 0
     global zoomnum
     global zoom_current
+    zoom_increment = 0.1 #amount you zoom in/out
 
     def zoom_in():
         if (store.zoomnum < store.zoom_max):
             store.zoom_current = store.zoomnum
-            store.zoomnum += 0.1
+            store.zoomnum += zoom_increment
         elif(store.zoomnum >= store.zoom_max):
             store.zoom_current = store.zoom_max
 
@@ -99,7 +97,7 @@ init python:
     def zoom_out():
         if (store.zoomnum > zoom_min):
             store.zoom_current = store.zoomnum
-            store.zoomnum -= 0.1
+            store.zoomnum -= zoom_increment
         elif(store.zoomnum <= store.zoom_max):
             store.zoom_current = zoom_min
 
@@ -110,6 +108,7 @@ init python:
     def set_zoom(sz):
         global zoom_max
 
+        #set zoom maximum based on image sizing. wide for fullscreen/landscape images, tall for vertical.
         if sz == "wide":
             zoom_max= 2.0
         elif sz == "tall":
