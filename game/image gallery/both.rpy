@@ -47,10 +47,13 @@ default zoom_current = 1.0
 default x_bar = ui.adjustment()
 default y_bar = ui.adjustment()
 
+style gal_styling:
+    ypadding 10
+    xsize 350
+
 transform cg_zoomable:
     #this makes sure that images aren't all stretchy, better imageMaxSize
     fit "contain"
-    #linear zoom_current zoom zoomnum
     zoom zoomnum
 
 #the locked image for the galleries
@@ -70,7 +73,9 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
             yadjustment y_bar
             scrollbars  None
             hbox:
+                xsize 1280
                 imagebutton:
+                    xalign 0.5
                     idle images.images
                     action (Hide("gallery_closeup", dissolve))
                     at cg_zoomable
