@@ -166,23 +166,12 @@ label ch1_followjorunn:
     j "And...here we are!"
     "The tight tunnel walls give away into an open clearing."
     "...!"
-    scene bg prashadi cave with dissolve:
-        zoom 0.2667
+    scene bg prashadi cave:
+        fit "contain"
+    with dissolve
     ny neutral fish "It's a large cavern."
 
     $ config.side_image_tag = "june"
-
-#    show prashadi neutral:
-#        zoom 2
-#        ypos 2610
-
-#    show prashadi neutral:
-#        subpixel True
-#        pos (0.5, 1410) zpos 0.0 xzoom 1.0 zoom 1.0
-#        linear 3.08 pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
-
-#    show prashadi neutral:
-#        pos (0.5, 1110) zpos 0.0 xzoom 1.0 zoom 0.79
 
     "And are those...stars above us?"
     show jorunn glee with dissolve
