@@ -1,5 +1,11 @@
-#a very simple gallery
-
+################################################################################
+## Gallery Setup ############################################################
+################################################################################
+## Setup for list that holds all gallery images.
+## Images must be added here first to show up in gallery.rpy.
+##
+## Also includes references to background images.
+################################################################################
 init python:
 
     class GalleryItem:
@@ -33,13 +39,6 @@ init python:
     gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
     gallery_items.append(GalleryItem("King Regent", ["cg notyet"],"cg notyet", "wide" ))
     gallery_items.append(GalleryItem("Negotiation", ["cg notyet"], "cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"],"cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Fish", ["cg notyet"], "cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"],"cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Prologue", ["cg notyet"], "cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Title Here", ["cg notyet"], "cg notyet", "wide" ))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")

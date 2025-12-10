@@ -1,3 +1,11 @@
+################################################################################
+## Gallery screen ############################################################
+################################################################################
+## The main layout of the gallery album. 
+## Reads all gallery image from list and displays clickable-thumbnail.
+## Interacts with both.rpy when clicked. 
+################################################################################
+
 style prevNext:
     idle_color '#888888'
     hover_color '#66a3e0'
@@ -6,6 +14,7 @@ style prevNext:
 screen gallery_B():
 
     tag menu
+    $ maxperpage = len(gallery_items) #max is the total gallery
     $ start = gallery_page * maxperpage
     $ end = len(gallery_items) - 1
     use game_menu("Album"):
@@ -26,7 +35,9 @@ screen gallery_B():
                 yspacing 40
                 draggable True
                 mousewheel True
-                scrollbars "vertical"
+                #if more than 8 pages (all you can see on screen at a time), show scrollbar
+                if maxperpage > 8:
+                    scrollbars "vertical"
 
                 #Instantiates each gallery item
                 for i in range(start, end + 1):
