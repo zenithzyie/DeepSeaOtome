@@ -367,13 +367,14 @@ label ch2_followthio:
     "..."
     "..."
     "I open my mouth to call out for help, but saltwater floods my lungs."
+    scene bg white with Dissolve(2.0)
+    stop music fadeout 2.5
     "No! It can’t end like this!"
-    stop music fadeout 0.5
 
 #(transition here)
     scene bg palace guestroom:
         fit "contain"
-    play music bgm_capital volume 0.8 fadein 1.0
+    play music bgm_capital volume 0.8
     ny happy "I sit up in bed with a gasp." with vpunch
     "The water flows naturally through me as I catch my breath."
     "I’m… not drowning."
