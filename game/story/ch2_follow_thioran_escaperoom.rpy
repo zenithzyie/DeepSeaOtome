@@ -8,8 +8,6 @@ label ch2_castle_escaperoom:
                 $ lookedatwindow = True
                 "It’s difficult to see through the stained glass. Does it lead outside of the castle?"
                 "The window is missing a handle, but there’s a small gap between the glass and the wall."
-                "I lean against the window and push with all my might."
-                "The window doesn’t even budge."
                 "If I had something thin like a letter opener, maybe I could pry it open."
             if lookedatwindow:
                 pass

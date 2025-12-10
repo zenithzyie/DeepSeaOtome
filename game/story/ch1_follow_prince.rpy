@@ -154,9 +154,11 @@ label ch1_followprince:
     show thioran frown at thioran_left
     with dissolve
 
+    #this section needs edited
+
     ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
     "He holds himself like a royal."
-    show cetus surprised
+    show cetus shocked
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
     ucetus "Thioran! Where have you been?"
@@ -231,10 +233,6 @@ label ch1_followprince:
     scene bg black with dissolve
     "All I can do is prepare for the worst."
     "Grandpa..! Hunter!"
-
-    #(brief pause)
-    #(fade to white)
-    #(next update, fade to cg of june)
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."

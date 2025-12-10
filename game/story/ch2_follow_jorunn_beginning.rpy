@@ -8,7 +8,7 @@ label ch2_follow_jorunn:
         pos (0.5, 1.26)
         zoom 0.34
     with dissolve
-    "The sight of a tail greets me, long and shimmering against the polished throne room floor."
+    "The sight of a tail greets me, long and shimmering."
 
     window auto hide
     show cg_mermaidprashadi:

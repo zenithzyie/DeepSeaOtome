@@ -1,4 +1,4 @@
-
+######################################################################
 #Click to continue icon
 image ctc_pos:
     "gui/ctc_icon.png"
@@ -73,6 +73,8 @@ default failescape = 0
 default punchwindow = False
 default bribeguard = False
 default lookedatwindow = False
+default pickedsomeone = False
+default pickedsomething = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
@@ -161,8 +163,8 @@ layeredimage grandpa:
     group expressions:
         attribute happy:
             "images/sprites/grandpa/expressions/grandpa_happy.png"
-        attribute surprised:
-            "images/sprites/grandpa/expressions/grandpa_surprised.png"
+        attribute shocked:
+            "images/sprites/grandpa/expressions/grandpa_shocked.png"
         attribute neutral:
             "images/sprites/grandpa/expressions/grandpa_neutral.png"
     zoom 0.124
@@ -173,7 +175,7 @@ layeredimage grandpa:
 ##June - Mermaid and Human Sprites ###################################
 ######################################################################
 layeredimage side june:
-    group bordbehind: #FOR NEW JUNE SPRITE
+    group bordbehind:
         attribute border default:
             "images/sprites/june/ui/border_behind.png"
             fit "contain"
@@ -182,8 +184,8 @@ layeredimage side june:
             #same as:
             # xpos -120
             # ypos 134
-    group body: #FOR NEW JUNE SPRITE
-        attribute body default:
+    group body: #FOR HUMAN JUNE
+        attribute human default:
             "images/sprites/june/base/side_june_base.png"
             zoom 0.12
             pos (159, 153)
@@ -196,8 +198,8 @@ layeredimage side june:
             "images/sprites/june/expressions/side_june_happy.png"
             zoom 0.12
             pos (159, 153)
-        attribute annoyed:
-            "images/sprites/june/expressions/side_june_annoyed.png"
+        attribute frustrated:
+            "images/sprites/june/expressions/side_june_frustrated.png"
             zoom 0.12
             pos (159, 153)
         attribute shocked:
@@ -269,8 +271,8 @@ layeredimage skylla:
             "images/sprites/skylla/expressions/skylla_nervous.png"
         attribute sad:
             "images/sprites/skylla/expressions/skylla_sad.png"
-        attribute surprised:
-            "images/sprites/skylla/expressions/skylla_surprised.png"
+        attribute shocked:
+            "images/sprites/skylla/expressions/skylla_shocked.png"
     zoom 0.29
     ypos 780
     group eyes auto:
@@ -322,8 +324,8 @@ layeredimage cetus:
     group expressions:
         attribute neutral:
             "images/sprites/cetus/expressions/cetus_neutral.png"
-        attribute surprised:
-            "images/sprites/cetus/expressions/cetus_surprised.png"
+        attribute shocked:
+            "images/sprites/cetus/expressions/cetus_shocked.png"
         attribute smirk:
             "images/sprites/cetus/expressions/cetus_smirk.png"
         attribute smile:

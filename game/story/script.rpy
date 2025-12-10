@@ -157,7 +157,7 @@ label chapter1:
     y "Excuse me- sir! Hello?"
     "He ignores me and walks away from the station without a glance."
     "I try to ask a few more people for help, but no one wants to even give me the time of day."
-    ny annoyed "Trying to grab anyone's attention around here is impossible!"
+    ny frustrated "Trying to grab anyone's attention around here is impossible!"
     "Were they always this unfriendly when I was younger? {w}I can't remember."
 
     #SCENE CHANGE - (Shabbier part of Town)
@@ -180,9 +180,7 @@ label chapter1:
     badguy "Tch, Inlanders. What's someone like her out here for?"
     badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
 
-    #SPRITE CHANGE (Annoyed Expression)
-    $ config.side_image_tag = "june"
-    ny annoyed "They're hardly being secretive about wanting to rob me!"
+    ny frustrated "They're hardly being secretive about wanting to rob me!"
     "I quickly walk away from the men watching me, holding my bag closer to my side."
 
     #SCENE CHANGE - (Shabby Market [Zoomed In])
@@ -284,7 +282,7 @@ label chapter1:
             fishmonger "Bass or tilapia?" with vpunch
             y shocked "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then ya leave, ya get it?"
-            y annoyed "I will pay you for the help! I'm just looking for this address."
+            y frustrated "I will pay you for the help! I'm just looking for this address."
             fishmonger "I ain't gonna be telling any airsick Inlandler how to get—"
             "Before he can deny me again, I show him the bottom half of the letter where the address is clearly written."
             "He squints at the paper."
@@ -328,12 +326,12 @@ label knocking:
     menu knockknock:
         "What was the code..?"
         "3":
-            ny annoyed "No, that doesn't seem right..."
+            ny frustrated "No, that doesn't seem right..."
             ny neutral "Let me try again."
             $ knocking += 1
             jump knocking
         "4":
-            ny annoyed "No, that doesn't seem right..."
+            ny frustrated "No, that doesn't seem right..."
             ny neutral "Let me try again."
             $ knocking += 1
             jump knocking
@@ -344,24 +342,24 @@ label knocking:
                     menu:
                         "And finally..."
                         "3":
-                            ny annoyed "Was that it? Nothing is happening."
+                            ny frustrated "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
                             $ knocking += 1
                             jump knocking
                         "4":
                             jump afterknocking
                         "5":
-                            ny annoyed "Was that it? Nothing is happening."
+                            ny frustrated "Was that it? Nothing is happening."
                             ny neutral "Let me try again."
                             $ knocking += 1
                             jump knocking
                 "4":
-                    ny annoyed "No, that doesn't seem right..."
+                    ny frustrated "No, that doesn't seem right..."
                     ny neutral "Let me try again."
                     $ knocking += 1
                     jump knocking
                 "5":
-                    ny annoyed "No, that doesn't seem right..."
+                    ny frustrated "No, that doesn't seem right..."
                     ny neutral "Let me try again."
                     $ knocking += 1
                     jump knocking
@@ -369,7 +367,7 @@ label knocking:
 label knockwhatever:
     ny nervous "After a few attempts, I'm fairly certain I've forgotten the code."
     y "..."
-    ny annoyed "Whatever!"
+    ny frustrated "Whatever!"
     "I knock on the wall repeatedly in frustration, with no rhyme or reason!"
     "..."
 
@@ -433,7 +431,7 @@ label afterknocking:
     "Even the people here are mysterious, their features obscured by masks or dark clothing. No one seems keen on being recognized."
     "What is this place?"
     "Why did Grandfather's address lead me here? Was I given the wrong directions?"
-    ny annoyed "Not to mention the smell of the sewer is rather unpleasant. It's no wonder everyone has their faces covered."
+    ny frustrated "Not to mention the smell of the sewer is rather unpleasant. It's no wonder everyone has their faces covered."
     ny nervous "Feeling uneasy, I turn to see if I can take the elevator back up, but the door refuses to open."
     ny neutral "It seems I have no choice but to keep moving. There must be another way out somewhere."
     "As I push through the crowd, I can't help but notice what's on display in the stands."
@@ -538,7 +536,7 @@ label afterknocking:
     y shocked "Pardon?"
     show hunter happy with dissolve
     h "Heh, lost your way again, [y]? Some things never change."
-    y annoyed "I'm not that bad with directions! I was misled..."
+    y frustrated "I'm not that bad with directions! I was misled..."
     show hunter neutral with dissolve
     h "Yeah, yeah. Follow me. I'll take you to the old man's place."
     y shocked "Really? You would do that?"
@@ -743,7 +741,7 @@ label afterknocking:
     show grandpa neutral at Position(xpos=0.32) with dissolve
     "The door opens and an old man steps out."
     y shocked "Grandfather?"
-    show grandpa surprised with vpunch
+    show grandpa shocked with vpunch
     stop music fadeout 1.0
     stop ambience fadeout 1.0
     stop ambience2 fadeout 1.0
@@ -877,13 +875,13 @@ label timeskip1:
     g "Shame ye don't remember. I caught ye all kinds of colorful fish."
     "I shouldn't press too hard, but..."
     y "Mother was okay with that?"
-    show grandpa surprised with dissolve
+    show grandpa shocked with dissolve
     g "[y]...right now? I thought ye were done with that business."
     y nervous "But you still haven't-"
     show grandpa neutral with dissolve
     g "Ah, I've been standin' too long. My back's goin' again."
     g "Go and finish shoppin' without me."
-    ny annoyed "Oh, not this again!"
+    ny frustrated "Oh, not this again!"
     y "Grandfather, {i}please{/i}."
     g "Ye ain't gonna want this old man with his bad back slowin' ye down."
     g "I'll see ye later tonight, aye!"
@@ -924,7 +922,6 @@ label timeskip1:
             h "Stubborn as ever, [y]."
 
         "\"I would appreciate it.\"":
-            #june smile
             y happy "Old friends help each other out, yes?"
             show hunter raisedeyebrow
             h "Pulling that card, huh?"
@@ -948,7 +945,6 @@ label timeskip1:
     "We embark on Hunter's boat."
     "The sea is calm, and the sun is shining down on us."
 
-    #show hunter smile instead
     $ config.side_image_tag = "june"
     show hunter happy with dissolve
     h "Might be able to spot a 'maid going onto the rocks for a sunbathe."
@@ -1037,7 +1033,6 @@ label timeskip1:
 
     stop ambience fadeout 2.0
     $ config.side_image_tag = "june"
-    #SPRITE?
     #play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
     $ renpy.music.set_volume(0.3, 2, 'music')
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 0.5 volume 0.1 loop
@@ -1199,8 +1194,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-#    "Glowing stones line the cave walls, but that's not very helpful."
-    "Glowing stones line the cave walls, but I don't know how that could help me."
+    "Glowing stones line the cave walls, but I don't see how that could help me."
 
     window auto hide
     camera:
@@ -1236,7 +1230,7 @@ label timeskip1:
         yalign 0.1
         ease 0.02 zoom 1
     "The siren screams as she drops me and flails backward."
-    show skylla surprised with dissolve
+    show skylla shocked with dissolve
     s "No. No! This- this isn't right."
     "Once I blink the white spots out my vision, I look up and find the siren staring at me with a shocked expression on her beautiful face."
     "Her hands are bleeding."

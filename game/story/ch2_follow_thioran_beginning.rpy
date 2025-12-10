@@ -39,8 +39,7 @@ label ch2_followthio:
     show thioran frown at thioran_left
     with dissolve
 
-    #(surprised cetus)
-    c neutral "So it would seem."
+    c shocked "So it would seem."
 
     p "What is this?"
 
@@ -265,8 +264,7 @@ label ch2_followthio:
     play sound "audio/sfx_stoneDoorClose.ogg" volume 0.5
     "The door closes before I can get another word in."
 
-    #show june surprised
-    ny happy "What was that?"
+    ny shocked "What was that?"
 
     "He was so much kinder when I was a fish..."
     #show june worried
@@ -314,8 +312,9 @@ label ch2_followthio:
             with dissolve
             "The camera automatically develops a photo, just like always."
             "Somehow, the colors don't bleed."
-            y "This can’t be powered by fire or electricity, but seems to be giving off light, so I’m pretty sure it’s a lamp."
-            y "I wonder if it's magic?"
+            y "This can’t be using fire or electricity, but seems to be giving off light, so I’m pretty sure it’s a lamp."
+            y "I wonder if it's powered by magic?"
+
             hide photo_guestroom1 with dissolve
 
 
@@ -328,8 +327,9 @@ label ch2_followthio:
                 subpixel True pos (474, 168)
             "The camera automatically develops a photo, just like always."
             "Somehow, the colors don't bleed."
-            y "There’s a star in the center."
-            y "I remember seeing the same shape earlier too. I wonder what it means?"
+            y "The star in the center is so eye-catching."
+            y "I remember seeing the same shape earlier too. Does it mean something?"
+
             hide photo_guestroom2 with dissolve
 
     "For a moment I sit there, not quite believing the thing in my hand is real."
@@ -357,9 +357,11 @@ label ch2_followthio:
 
     menu:
         "Something.":
+            $ pickedsomething = True
             "I think I came here to do something…"
             "But what..?"
         "Someone.":
+            $ pickedsomeone = True
             "I think I came here with someone…"
             "But who?"
 
@@ -368,32 +370,34 @@ label ch2_followthio:
     "..."
     "I open my mouth to call out for help, but saltwater floods my lungs."
     scene bg white with Dissolve(2.0)
+    "No! It can’t end like this!{w=1}{nw}"
     stop music fadeout 2.5
-    "No! It can’t end like this!"
 
 #(transition here)
     scene bg palace guestroom:
         fit "contain"
     play music bgm_capital volume 0.8
-    ny happy "I sit up in bed with a gasp." with vpunch
+    ny shocked "I sit up in bed with a gasp." with vpunch
     "The water flows naturally through me as I catch my breath."
-    "I’m… not drowning."
-    "Was that really just a dream? It felt way too real."
-    "Could it mean anything? I don’t know how long this spell will last, after all."
+    y "I’m… not drowning."
+    if pickedsomething:
+        "What was I doing in that dream? It felt way too real."
+    if pickedsomeone:
+        "Who was I with in that dream? It felt way too real."
+    ny nervous "Could it mean anything? I don’t know how long this spell will last, after all."
     "Who’s to say the magic won’t start falling apart?"
     "I have to figure out a way to make it back to the surface as a human before it does."
     "Cetus mentioned something about humans earlier… could that mean he knows what I am?"
     "Either way, with his magic, he might be my only chance at getting out of this mess."
     "I need to go find him."
 
-
-    "I open the door and start to swim forward, but a guard suddenly blocks my way."
+    "I open the door to swim forward, but a guard suddenly blocks my way."
 
     guard "For your own safety, please do not wander off."
 
-    y "I need to speak to Lord Cetus. Have you seen him?"
+    y "I need to speak to Cetus- er, Sir Cetus. Have you seen him?"
 
-    guard "Lord Cetus is in his study, and he’s not to be disturbed."
+    guard "{i}Lord Cetus{/i} is in his study, and he’s not to be disturbed."
 
     y "It’s very urgent. I–"
 
@@ -401,15 +405,14 @@ label ch2_followthio:
 
     play sound "audio/sfx_stoneDoorClose.ogg"
     queue sound "audio/sfx_doorLockClick.ogg"
-    "I’m forced back in, and the door is quickly shut with the click of a lock."
+    "I’m forced back inside and the door is quickly shut."
+    "The sharp click of a lock soon follows."
 
 #    show June worried
     y "Oh, dear. I don’t like the sound of that…"
 
     "Do they intend to keep me trapped in this room?"
 
-    "I guess they mean to keep me under house arrest here as a witness."
-
-    "There has to find a way out of here."
+    "There has to be a way out of here."
 
     jump ch2_castle_escaperoom
