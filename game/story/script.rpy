@@ -39,16 +39,12 @@ label get_name:
     with dissolve
     pause
     hide text with dissolve
-    #show side june happy with dissolve: #FOR NEW JUNE SPRITE
-#    show side june neutral at farleft with dissolve:
-#        yalign 0.1
-        #xzoom -1
 
 label enter_name:
 
     $player_name = "June"
 
-    call screen charnameinput
+    call screen charnameinput with dissolve
 
     #$player_name = renpy.input("What is your name?", default = "June", length=15)
     #this is the old player name code for reference
@@ -507,7 +503,7 @@ label afterknocking:
             $ hunter_points += 1
             y "Well, Hammy, it's hard to forget a nickname like that!"
             h "Please, really, just Hunter is fine."
-            y veryhappy"But your face is so funny when I say it!"
+            y veryhappy "But your face is so funny when I say it!"
             h "You..."
             show hunter flustered with dissolve
             "He looks away from me. I believe he is thoroughly embarrassed now."
@@ -714,8 +710,9 @@ label afterknocking:
 
     $ config.side_image_tag = "june"
     y neutral "It's afternoon already?"
-    show hunter neutral with dissolve
+    show hunter neutral mask with dissolve
     h "Wandering does that to you."
+    show hunter -mask with dissolve
     "He pulls the mask off his face and I hand him back his coat."
     h "When did your train get here?"
     y "Early morning. My legs are aching to sit."
@@ -864,10 +861,11 @@ label timeskip1:
     g "Har har har!"
     show grandpa neutral with dissolve
     g "If only ye'd visited sooner, [y]. Ye could'a seen me in action."
-    #june sad instead of flustered
-    y flustered "It's unfortunate. I wish I could've spent more time with you."
-    "I've learned some things from Grandfather in my time here."
+    y nervous "It's unfortunate. I wish I could've spent more time with you."
+    ny neutral "I've learned some things from Grandfather in my time here."
     "He's quite proud of his history at sea."
+    if promermaid >= 1:
+        extend ny nervous " I don't know I feel about it."
     g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral with dissolve
@@ -878,7 +876,7 @@ label timeskip1:
     y "Mother was okay with that?"
     show grandpa surprised with dissolve
     g "[y]...right now? I thought ye were done with that business."
-    y "But you still haven't-"
+    y nervous "But you still haven't-"
     show grandpa neutral with dissolve
     g "Ah, I've been standin' too long. My back's goin' again."
     g "Go and finish shoppin' without me."
@@ -918,22 +916,20 @@ label timeskip1:
         "\"Please, Hammy!\"":
             show hunter flustered
             h "Ugh."
-            y "Come on, you can do a favor for an old friend, right?"
+            y happy "Come on, you can do a favor for an old friend, right?"
             show hunter happy with dissolve
             h "Stubborn as ever, [y]."
 
         "\"I would appreciate it.\"":
             #june smile
-            y "Old friends help each other out, yes?"
+            y happy "Old friends help each other out, yes?"
             show hunter raisedeyebrow
             h "Pulling that card, huh?"
 
     show hunter neutral with dissolve
     h "Fine. Though I'm only taking you through the safest waters."
-    #june big happy
-    y "Thank you! You won't regret it, Hunter."
-    #june happy
-    y "It'll be fun. We can pretend to be pirates, just like when we were kids!"
+    y veryhappy "Thank you! You won't regret it, Hunter."
+    y happy "It'll be fun. We can pretend to be pirates, just like when we were kids!"
     show hunter happy with dissolve
     h "Sure. But I get to be Captain this time."
 
@@ -957,15 +953,21 @@ label timeskip1:
     show hunter neutral with dissolve
     h "Yep. But if they spot my little skiff, the show's over."
     "I take my camera out of my purse."
+    show black:
+        alpha 0.35
+    show camera_human at atcamera:
+        zoom 0.18
+    with dissolve
     ny neutral "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
+    hide black
+    hide camera_human
+    with dissolve
     show hunter happy with dissolve
     h "So, you're into photography now?"
-    #june big happy
-    y "Aye, Captain!"
+    y veryhappy "Aye, Captain!"
     h "Heh. Didn't think you'd have the patience for it."
-    #june happy
-    y "Perhaps not when I was younger, but I really enjoy it now."
+    y happy "Perhaps not when I was younger, but I really enjoy it now."
     y "It's like making physical copies of memories. Even if you forget something, the photo lasts forever."
     y neutral "Do you keep any records as a mermaid hunter? Photos?"
     show hunter neutral with dissolve
@@ -1015,7 +1017,7 @@ label timeskip1:
     h "Stay away from the edge!"
     y shocked "I'll try! I can hardly stand straight!"
     #hide hunter neutral with dissolve
-    ny flustered "I want to listen to him, but in that moment, I recall Grandfather's face from earlier today."
+    ny nervous "I want to listen to him, but in that moment, I recall Grandfather's face from earlier today."
     "I didn't get to take a photo yet to bring back to him."
     menu:
         "..."
@@ -1038,7 +1040,7 @@ label timeskip1:
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 0.5 volume 0.1 loop
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0 loop
 
-    u "Come...come with me..."
+    u shocked "Come...come with me..."
     y "What...?"
     u "O' ye of land to the queen of sea..."
     "A haze clouds my thoughts and my legs start to move on their own."
@@ -1085,7 +1087,7 @@ label timeskip1:
     siren "Or, shall I say, {i}little fish.{/i}"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
 
-    if not renpy.seen_image("cg skyllahands"):
+    if not renpy.seen_image("cg_skyllahands"):
         scene cg_skyllahands with dissolve:
             zoom 0.343
         $ renpy.notify("A new CG has been unlocked in the gallery.")
@@ -1096,11 +1098,10 @@ label timeskip1:
 
     #SCENE CHANGE - skylla cg
     play music bgm_skyllaCave volume 0.8
-    $ config.side_image_tag = "june"
-    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
-    y fish neutral "BLUB BLUB BLUB!!!"
-    siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     $ config.side_image_tag = "None"
+    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
+    y "BLUB BLUB BLUB!!!"
+    siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "Try as I might, none of my words come out right."
     "I've... been turned into a fish by this siren?"
     menu:
@@ -1195,7 +1196,8 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the cave walls, but that's not very helpful."
+#    "Glowing stones line the cave walls, but that's not very helpful."
+    "Glowing stones line the cave walls, but I don't know how that could help me."
 
     window auto hide
     camera:
@@ -1324,6 +1326,7 @@ label timeskip1:
     up "Damn it. Why now, of all times..!"
     show jorunn glee with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
+    $ speaking_char = "None"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
     "The merfolk could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
