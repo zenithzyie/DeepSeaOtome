@@ -1,3 +1,6 @@
+init python:
+    _game_menu_screen = "prefs_menu"
+
 
 label start:
     $ hunter_points = 0
