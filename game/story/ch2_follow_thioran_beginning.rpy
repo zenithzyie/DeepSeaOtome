@@ -23,7 +23,6 @@ label ch2_followthio:
         show cg_mermaidcetus:
             pos (0.5, 2.64) zoom 0.34
     window auto show
-
     "I stare down at it, confused, before my eyes trace it upward and find that it’s connected to me."
 
     y "Oh! I'm... a mermaid?"
@@ -39,7 +38,7 @@ label ch2_followthio:
     show thioran frown at thioran_left
     with dissolve
 
-    c shocked "So it would seem."
+    c mermaid shocked "So it would seem."
 
     p "What is this?"
 
@@ -63,7 +62,7 @@ label ch2_followthio:
 
     c "What is your name?"
 
-    y "[y]. [y] Finch."
+    y neutral "[y]. [y] Finch."
 
     c "Hmm. Quite an unusual name."
 
@@ -146,7 +145,7 @@ label ch2_followthio:
     with dissolve
 
     $ speaking_char = "all"
-    ny neutral "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
+    ny mermaid neutral "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
 
     "I can still feel Cetus’s eyes on my back."
 
@@ -222,9 +221,13 @@ label ch2_followthio:
 
     y "Thank yo–"
 
-    scene cg_thiokabedon:
-        fit "contain"
-    with dissolve
+    if not renpy.seen_image("cg_thiokabedon"):
+        scene cg_thiokabedon with dissolve:
+            fit "contain"
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg_thiokabedon with dissolve:
+            fit "contain"
 
     "He suddenly leans over me, trapping me between his body and the door."
     "He’s leaning in so close!"
@@ -264,7 +267,7 @@ label ch2_followthio:
     play sound "audio/sfx_stoneDoorClose.ogg" volume 0.5
     "The door closes before I can get another word in."
 
-    ny shocked "What was that?"
+    ny mermaid shocked "What was that?"
 
     "He was so much kinder when I was a fish..."
     #show june worried
@@ -377,7 +380,7 @@ label ch2_followthio:
     scene bg palace guestroom:
         fit "contain"
     play music bgm_capital volume 0.8
-    ny shocked "I sit up in bed with a gasp." with vpunch
+    ny mermaid shocked "I sit up in bed with a gasp." with vpunch
     "The water flows naturally through me as I catch my breath."
     y "I’m… not drowning."
     if pickedsomething:
@@ -415,4 +418,4 @@ label ch2_followthio:
 
     "There has to be a way out of here."
 
-    jump ch2_castle_escaperoom
+    call ch2_castle_escaperoom

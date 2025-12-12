@@ -158,7 +158,7 @@ label ch1_followprince:
 
     ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
     "He holds himself like a royal."
-    show cetus shocked
+    show cetus shocked with dissolve
     "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
     "Concern is wrought all over his face, and I know this has to be the uncle."
     ucetus "Thioran! Where have you been?"
@@ -171,7 +171,7 @@ label ch1_followprince:
     c "Now, you look troubled. Whatever is the matter?"
     p "It's just-{w} here. I found her near the storm."
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
-    show cetus neutral
+    show cetus neutral with dissolve
     "Cetus's eyes catch on me, and I freeze at the sudden attention."
     "Any thoughts I may have had halt to a stop."
     c "Oh? What's this? Find another pet for yourself out there, Thioran?"
@@ -240,7 +240,7 @@ label ch1_followprince:
     "There is nothing but the pleasant sound of flowing water around me."
     "I open my eyes."
 
-    jump ch2_followthio
+    call ch2_followthio
 
     #"The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
 

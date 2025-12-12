@@ -158,11 +158,10 @@ label cetus_office:
         fit "contain"
     with dissolve
     "Unlike the rest of the castle, this room is dimly lit."
-    show cetus neutral:
-        ypos 70
-        xpos 50
+    show cetus neutral at cetus_center:
+        ypos 60
     "Cetus is behind a desk covered in scrolls. He seems to be immersed in his paperwork."
-    y neutral "Lord Cetus?"
+    y mermaid neutral "Lord Cetus?"
     c " Close the door behind you. It can get rather noisy out there."
     c "Though I’m sure you’ve already seen that firsthand."
     y "I need to speak with you."
@@ -173,9 +172,17 @@ label cetus_office:
     y "I wanted to ask-"
     c "No, not from there."
     y "Pardon?"
-    c "Come closer."
+    c nervous "Come closer."
     "Cetus beckons me forward with a wave of his hand."
     "I swim cautiously towards his desk."
+
+    camera:
+        subpixel True
+        xpos 0 zoom 1.0
+        ease 1.00 xpos -192 ypos -60 zoom 1.30
+    with Pause(1.25)
+    camera:
+        xpos -192 ypos -60 zoom 1.30
 
     c "Now then, how did you make it past the guard?"
 
@@ -189,6 +196,7 @@ label cetus_office:
             c "Though not without causing a commotion, I hear."
 
             "If you picked option 2 first"
+            show cetus smirk
             c "That wasn’t so bad, was it?"
 
         "I wanted to ask you something.":

@@ -19,9 +19,6 @@ transform logoappear:
     pause 0.2
 #transform that the logo does on main menu
 ######################################################################
-#Logo Imagebutton
-#imagebutton auto ("gui/logo_%s.png") focus_mask True action NullAction()
-######################################################################
 #Protagonist + Narrator Names
 define y = Character("[player_name]", image="june", ctc="ctc_pos", ctc_position="fixed", namebox_background=Frame("gui/namebox_june.png", 0, 0))
 define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration
@@ -142,8 +139,8 @@ layeredimage thioran:
             "images/sprites/thioran/expressions/thioran_angry.png"
         attribute blush:
             "images/sprites/thioran/expressions/thioran_blush.png"
-        attribute neutral:
-            "images/sprites/thioran/expressions/thioran_neutral.png"
+#        attribute neutral:
+#            "images/sprites/thioran/expressions/thioran_neutral.png"
         attribute frown:
             "images/sprites/thioran/expressions/thioran_frown.png"
         attribute soft:
@@ -173,6 +170,11 @@ layeredimage grandpa:
             "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
 ######################################################################
 ##June - Mermaid and Human Sprites ###################################
+##The expressions automatically swap to mermaid w/ body mermaid ######
+######################################################################
+transform june_location:
+    zoom 0.12
+    pos (169, 151)
 ######################################################################
 layeredimage side june:
     group bordbehind:
@@ -181,60 +183,63 @@ layeredimage side june:
             fit "contain"
             xsize 320
             pos (157, 130)
-            #same as:
-            # xpos -120
-            # ypos 134
-    group body: #FOR HUMAN JUNE
+    group body:
         attribute human default:
             "images/sprites/june/base/side_june_base.png"
-            zoom 0.12
-            pos (159, 153)
-    group expressions:
+        attribute mermaid:
+            "images/sprites/june/base/side_merjune_base.png"
+        at june_location
+    group expressions if_any["human"]:
         attribute neutral:
             "images/sprites/june/expressions/side_june_neutral.png"
-            zoom 0.12
-            pos (159, 153)
         attribute happy:
             "images/sprites/june/expressions/side_june_happy.png"
-            zoom 0.12
-            pos (159, 153)
         attribute frustrated:
             "images/sprites/june/expressions/side_june_frustrated.png"
-            zoom 0.12
-            pos (159, 153)
         attribute shocked:
             "images/sprites/june/expressions/side_june_shocked.png"
-            zoom 0.12
-            pos (159, 153)
         attribute nervous:
             "images/sprites/june/expressions/side_june_nervous.png"
-            zoom 0.12
-            pos (159, 153)
         attribute sad:
             "images/sprites/june/expressions/side_june_sad.png"
-            zoom 0.12
-            pos (159, 153)
         attribute flustered:
             "images/sprites/june/expressions/side_june_flustered.png"
-            zoom 0.12
-            pos (159, 153)
         attribute veryhappy:
             "images/sprites/june/expressions/side_june_veryhappy.png"
-            zoom 0.12
-            pos (159, 153)
+        at june_location
+    group expressions if_any["mermaid"]:
+        attribute neutral:
+            "images/sprites/june/expressions/side_merjune_neutral.png"
+        attribute happy:
+            "images/sprites/june/expressions/side_merjune_happy.png"
+        attribute frustrated:
+            "images/sprites/june/expressions/side_merjune_frustrated.png"
+        attribute shocked:
+            "images/sprites/june/expressions/side_merjune_shocked.png"
+        attribute nervous:
+            "images/sprites/june/expressions/side_merjune_nervous.png"
+        attribute sad:
+            "images/sprites/june/expressions/side_merjune_sad.png"
+        attribute flustered:
+            "images/sprites/june/expressions/side_merjune_flustered.png"
+        attribute veryhappy:
+            "images/sprites/june/expressions/side_merjune_veryhappy.png"
+        at june_location
     group eyes auto:
         attribute blinking default:
             "images/sprites/june/expressions/side_june_blink.png" at blink
             zoom 0.12
-            pos (159, 153)
+            pos (169, 153)
         attribute veryhappy:
-            zoom 0.12
-            pos (159, 153)
-    group hairbrow:
+            Null()
+    group hairbrow if_any["human"]:
         attribute hairbrow default:
             "images/sprites/june/base/side_june_hairbrow.png"
-            zoom 0.12
-            pos (159, 153)
+        at june_location
+    group hairbrow if_not["human"]:
+        attribute hairbrow default:
+            "images/sprites/june/base/side_merjune_hairbrow.png"
+        at june_location
     group frontborder:
         attribute frontborder default:
             "images/sprites/june/ui/border_front.png"
@@ -330,11 +335,18 @@ layeredimage cetus:
             "images/sprites/cetus/expressions/cetus_smirk.png"
         attribute smile:
             "images/sprites/cetus/expressions/cetus_smile.png"
+    group closedeyes:
+        attribute closedeyes:
+            "images/sprites/cetus/expressions/cetus_blink.png"
     zoom 0.16
     ypos 60
     group eyes auto:
         attribute blinking default:
             "images/sprites/cetus/expressions/cetus_blink.png" at blink
+        attribute closedeyes:
+            Null()
+######################################################################
+##Hunter Sprite ######################################################
 ######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')
@@ -370,6 +382,8 @@ layeredimage hunter:
             "images/sprites/hunter/expressions/hunter_blink.png" at blink
     zoom 0.15
     ypos 1.17
+######################################################################
+## Jorunn Sprite #####################################################
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')

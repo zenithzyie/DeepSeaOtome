@@ -61,9 +61,7 @@ label enter_name:
     menu:
         "Is [y] correct?"
         "Yes":
-            jump chapter1
-            hide side june neutral with dissolve
-
+            call chapter1
         "No":
             jump enter_name
 
@@ -866,7 +864,7 @@ label timeskip1:
     ny neutral "I've learned some things from Grandfather in my time here."
     "He's quite proud of his history at sea."
     if promermaid >= 1:
-        extend ny nervous " I don't know I feel about it."
+        ny nervous " I don't know I feel about it."
     g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral with dissolve
@@ -1339,12 +1337,12 @@ label timeskip1:
         "What do I do...?"
         "Follow Striking Prince":
             $ prince_points += 1
-            jump ch1_followprince
+            call ch1_followprince
         "Follow Thieving Merman":
             $ jorunn_points += 1
-            jump ch1_followjorunn
+            call ch1_followjorunn
         "Find another way" if antimermaid >= 1:
-            jump ch1_badend1
+            call ch1_badend1
 
 label ch1_badend1:
 
@@ -1379,28 +1377,7 @@ label endofdemo:
     "Thank you for playing Heart's Depth! Follow our game page for updates..."
 
     return
-    #past this is unused for now
-    stop music fadeout 2.0
-    scene bg prashadi cave:
-        fit "contain"
-    show prashadi neutral
-    with dissolve
-
-    "..........."
-
-    Pr "Hello there!"
-    Pr "You've reached the end of the demo for Heart's Depth!"
-    Pr "With this update, we've completely overhauled the game jam demo."
-    show prashadi at jumpin
-    Pr "From here on, expect updates to come in chapters!"
-    Pr "Look forward to seeing the rest of our story, heh heh heh."
-    Pr "Thank you so much for playing! Follow our game page for updates."
-    Pr "There's so much more to see..."
-    hide prashadi
-    with dissolve
-    play sound "audio/sfx_splash.ogg" volume 0.6
-    with Pause(1.0)
-
+    #SHOW IMAGES TO GET HYPE FOR FINAL DEMO COMPLETION
     #END OF DEMO!!!!!!!
 
     return

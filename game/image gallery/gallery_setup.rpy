@@ -31,14 +31,14 @@ init python:
     #ALL GALLERY IMAGES HERE
     #Title, cg image (matches gallery images below), thumbnail name, size of cg "wide/tall"
     gallery_items = []
-    gallery_items.append(GalleryItem("On the Train", ["cg_train"], "cg_train", "wide"))
-    gallery_items.append(GalleryItem("Deep Market", ["cg_sushi"] ,"cg_sushi", "wide"))
-    gallery_items.append(GalleryItem("Portrait", ["cg_familyportrait"], "cg_familyportrait", "wide" ))
-    gallery_items.append(GalleryItem("Fish", ["cg_skyllahands"],"cg_skyllahands" , "wide"))
-    gallery_items.append(GalleryItem("Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus", "tall" ))
+    gallery_items.append(GalleryItem("Train to Aquantis", ["cg_train"], "cg_train", "wide"))
+    gallery_items.append(GalleryItem("The Deep Market", ["cg_sushi"] ,"cg_sushi", "wide"))
+    gallery_items.append(GalleryItem("Family Portrait", ["cg_familyportrait"], "cg_familyportrait", "wide" ))
+    gallery_items.append(GalleryItem("The Curse", ["cg_skyllahands"],"cg_skyllahands" , "wide"))
+    gallery_items.append(GalleryItem("The Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus", "tall" ))
     gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
-    gallery_items.append(GalleryItem("King Regent", ["cg notyet"],"cg notyet", "wide" ))
-    gallery_items.append(GalleryItem("Negotiation", ["cg notyet"], "cg notyet", "wide" ))
+    gallery_items.append(GalleryItem("Suspicion", ["cg_thiokabedon"],"cg_thiokabedon", "wide" ))
+    gallery_items.append(GalleryItem("The Negotiation", ["cg notyet"], "cg notyet", "wide"))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")
@@ -53,6 +53,7 @@ image cg_sushi = ("images/gallery/cg/cg_sushi.jpg")
 image cg_skyllahands = ("images/gallery/cg/cg_skyllahands.jpg")
 image cg_mermaid_cetus = ("images/gallery/cg/cg_mermaidcetus.jpg")
 image cg_mermaid_prashadi = ("images/gallery/cg/cg_mermaidprashadi.jpg")
+image cg_thiokabedon = ("images/gallery/cg/cg_thiokabedon.jpg")
 image cg notyet = ("images/gallery/cg/cg_skyllahands.png")
 
 #background images
