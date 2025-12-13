@@ -297,6 +297,7 @@ label ch2_followthio:
     scene bg palace guestroom:
         fit "contain"
     with fade
+
     play sound "audio/sfx_stoneDoorClose.ogg" volume 0.5
     "The door closes before I can get another word in."
 
@@ -307,6 +308,8 @@ label ch2_followthio:
     ny nervous "Now he doesn’t seem to trust me at all. I’d better be more careful."
 
     "It’s really starting to sink in that I don’t know anything about this world and its people."
+
+#some kinda zoom to show off the room here?
 
     "Even the architecture of this room looks different from what I'm used to."
 
@@ -346,8 +349,8 @@ label ch2_followthio:
                 zoom 0.09
                 subpixel True pos (474, 168)
             with dissolve
-            "A photo pops out from the top of the camera."
-            y "It’s lit up like a lamp, but surely it can’t be using fire or electricity."
+            ny shocked "A photo pops out from the top of the camera."
+            y neutral "It’s lit up like a lamp, but surely it can’t be using fire or electricity."
             y "I wonder if it's powered by magic?"
             hide photo_guestroom1 with dissolve
 
@@ -359,9 +362,9 @@ label ch2_followthio:
             show photo_guestroom2:
                 zoom 0.09
                 subpixel True pos (474, 168)
-            "A photo pops out from the top of the camera."
+            ny shocked "A photo pops out from the top of the camera."
             y "The star in the center is so eye-catching."
-            y "I remember seeing the same shape earlier too. Does it mean something?"
+            y neutral "I remember seeing the same shape earlier too. Does it mean something?"
 
             hide photo_guestroom2 with dissolve
 
@@ -418,41 +421,54 @@ label ch2_followthio:
         fit "contain"
     play music bgm_capital volume 0.8
     ny mermaid shocked "I sit up in bed with a gasp." with vpunch
-    "The water flows naturally through me as I catch my breath."
-    y "I’m… not drowning."
+    y "I’m... not drowning."
+    "What was with that dream?"
     if pickedsomething:
-        "What was I doing in that dream? It felt way too real."
+        "I can’t shake the feeling that I was trying to do something important. It all seemed way too real."
     if pickedsomeone:
-        "Who was I with in that dream? It felt way too real."
-    ny nervous "Could it mean anything? I don’t know how long this spell will last, after all."
-    "Who’s to say the magic won’t start falling apart?"
-    "I have to figure out a way to make it back to the surface as a human before it does."
-    "Cetus mentioned something about humans earlier… could that mean he knows what I am?"
-    "Either way, with his magic, he might be my only chance at getting out of this mess."
-    "I need to go find him."
+        "I can’t shake the feeling that I was with someone important. It felt far too real."
 
-    "I open the door to swim forward, but a guard suddenly blocks my way."
+    ny nervous "Could it mean anything?"
+
+    "What if the magic is only temporary? If it starts to fall apart..."
+
+    "No. I have to find a way back home before that happens."
+
+    c "{i}I hear humans have been sailing further from their shores as of late.{\i}"
+
+    "He was looking at me when he said that…"
+
+    "Whether he intended it as a favor or not, his magic was able to remove part of the siren's curse on me."
+
+    "Cetus might be my only chance to get out of this mess."
+
+    "I don't know how long I was asleep. Could he still be in the throne room?"
+
+    "I need to find him."
+
+    "I open the door to swim out, but a guard suddenly blocks my way."
 
     guard "For your own safety, please do not wander off."
 
-    y "I need to speak to Cetus- er, Sir Cetus. Have you seen him?"
+    y neutral "I need to speak with Cetus- er, Sir Cetus. Have you seen him?"
 
     guard "{i}Lord Cetus{/i} is in his study, and he’s not to be disturbed."
 
-    y "It’s very urgent. I–"
+    y nervous "Please, it’s very urgent. I–"
 
-    guard "I'm under direct orders to not let you leave. Please stay inside your room."
+    guard "When your presence is required, you will know. Please stay inside your room."
 
     play sound "audio/sfx_stoneDoorClose.ogg"
     queue sound "audio/sfx_doorLockClick.ogg"
-    "I’m forced back inside and the door is quickly shut."
-    "The sharp click of a lock soon follows."
+    ny shocked "I’m forced to move back as the door is quickly shut in my face."
+    "But unlike last time, the sharp click of a lock soon follows."
 
-#    show June worried
-    y "Oh, dear. I don’t like the sound of that…"
+    y nervous "Oh, dear. I don’t like the sound of that…"
 
-    "Do they intend to keep me trapped in this room?"
+    "Am I not allowed to leave because I’m a witness?"
+    "But I can’t just sit around waiting for them to summon me. Who knows how long that’ll take!"
 
-    "There has to be a way out of here."
+    ny frustrated "There has to be another way out of here."
+    #sfx jingle here?
 
     call ch2_castle_escaperoom

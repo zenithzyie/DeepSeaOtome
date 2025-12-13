@@ -1,9 +1,21 @@
 
 label ch2_castle_escaperoom:
 
+# to see room at full/proper zooms
+#            show bg palace guestroom:
+#                subpixel True zoom 0.34
     menu escapebegin:
-        "What should I do?"
+        ny neutral "What should I do?"
         "Examine the window.":
+
+#            camera:
+#                subpixel True
+#                xpos 0 zoom 1.0
+#                linear 1.17 xpos -630 ypos -100 zoom 1.49
+#            with Pause(1.27)
+#            camera:
+#                xpos -630 ypos -100 zoom 1.49
+
             if not lookedatwindow:
                 $ lookedatwindow = True
                 "It’s difficult to see through the stained glass. Does it lead outside of the castle?"
@@ -13,7 +25,7 @@ label ch2_castle_escaperoom:
                 pass
 
             menu:
-                "Should I try to open it?"
+                ny neutral "Should I try to open it?"
                 "Try to open it.":
                     if hairpin:
                         "The hairpin slips easily into the small gap."
@@ -21,7 +33,7 @@ label ch2_castle_escaperoom:
                         play sound "audio/sfx_windowClick.ogg" volume 0.6
                         queue sound "audio/sfx_windowSlideOpen.ogg" volume 0.6
                         "The window slides open. There’s just enough room for me to swim through."
-                        "Now I just need to find Lord Cetus!"
+                        ny happy "Now I just need to find Cetus!"
                         jump escapedroom_tohallway
                     if not hairpin:
                         if punchwindow:
@@ -30,13 +42,15 @@ label ch2_castle_escaperoom:
                         $ failescape += 1
                         $ punchwindow = True
                         play sound "audio/sfx_fistAgainstWindow.ogg"
-                        "In a surge of desperation, I slam a fist against the glass."
-                        "Ouch!"
+                        "I lean against the window and push with all my might."
+                        "The window doesn’t even budge."
+                        ny frustrated "In a surge of desperation, I slam a fist against the glass." with vpunch
+                        y shocked "Ouch!"
                         guard "Everything alright in there?"
                         y "Everything’s fine!"
-                        "My hand is rather sore though…"
-                        "I’m certain the guard would try to stop me if I make any further noise."
-                        "I should find a quieter method to open the window."
+                        ny sad "My hand is rather sore though…"
+                        "Sir Guard would probably stop me if I tried to do that again."
+                        "I should find a quieter way to open the window."
                         jump escapebegin
                 "Not yet...":
                     "I shouldn’t be too reckless. I only have one chance at escaping."
