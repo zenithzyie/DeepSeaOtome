@@ -32,22 +32,25 @@ label ch2_followthio:
     scene bg throneroom:
         fit "contain"
     $ speaking_char = "Cetus"
-    show cetus neutral at cetus_right:
+    show cetus shocked at cetus_right:
         ypos 60
         xzoom -1
-    show thioran frown at thioran_left
+    show thioran shocked at thioran_left
     with dissolve
 
     c mermaid shocked "So it would seem."
 
     p "What is this?"
 
+    show cetus neutral with dissolve
     c "It appears her true form has been revealed after lifting the curse."
 
     c "The little fish you brought home was never a fish at all, Prince Thioran."
 
     c "Do you still feel drawn to her, as you previously described?"
 
+
+    show thioran frown with dissolve
     p "...No."
 
     c "I see. How curious."
@@ -72,15 +75,15 @@ label ch2_followthio:
 
     y "Well..."
 
-    "From hearing the siren's voice to escaping her cave, I tell them everything – except for the fact that I'm human."
+    "From waking up trapped in a bubble to escaping the siren’s cave, I tell them everything – except for the fact that I'm human."
 
-    "I’d better keep that part to myself. I don’t know what they’ll do if they find out what I really am."
+    ny nervous "I’d better keep that part to myself. I don’t know what they’ll do if they find out what I really am."
 
     p "A siren..."
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
-    "A student? Are they referring to Skylla?"
+    ny neutral "A student? Are they referring to Skylla?"
 
     p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
@@ -89,12 +92,15 @@ label ch2_followthio:
     c "Some have even resorted to theft."
 
     #(show thio grumpier face)
+#    show thioran with dissolve
     p "..."
 
+#    show thioran with dissolve
     c "Therefore, for her safety, the witness will need to remain in the guest wing of the castle."
 
-    y "Pardon?"
+    y shocked "Pardon?"
 
+    show thioran shocked with dissolve
     p "Uncle Ce- Lord Uncle, are you quite serious?"
 
     c "Quite so, Prince Thioran. She’s the only one who's seen this siren."
@@ -105,19 +111,22 @@ label ch2_followthio:
 
     c "...So long as she knows to stay quiet."
 
-    "I guess he wants to keep my involvement with the siren a secret."
+    ny nervous "I guess he wants to keep my involvement with the siren a secret."
 
-    y "I understand."
+    y neutral "I understand."
 
     c "Now, might I entrust you with the task of escorting her, Prince Thioran?"
 
+    show thioran frown with dissolve
     p "Right now?"
 
     p "Should I not also be searching for this siren?"
 
     #(show Cetus amused)
+    show cetus smile with dissolve
     c "You’re not getting out of this so easily, nephew. Besides, the storm outside has yet to settle. It would be foolish of you to venture out unprepared."
 
+    show cetus neutral with dissolve
     c "I’ll look into this matter on my own for now."
 
     #(cetus closed eyes thio resigned)
@@ -135,41 +144,55 @@ label ch2_followthio:
     c "I hear humans have been sailing further from their shores as of late."
 
     play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.4
-    "A chill runs down my spine as the throne room doors close behind us."
+    ny shocked "A chill runs down my spine as the throne room doors close behind us."
 
 
 #SCENE CHANGE - PALACE HALLWAY
     scene bg palace hallway:
         fit "contain"
-    show thioran frown at Position(xpos=0.45)
+    show thioran frown at thioran_center
     with dissolve
 
     $ speaking_char = "all"
-    ny mermaid neutral "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
+    ny mermaid shocked "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
 
-    "I can still feel Cetus’s eyes on my back."
+    ny nervous "I can still feel Cetus’s eyes on my back."
 
     "Could he sense that I’m actually human?"
 
-    "..."
+    y "..."
 
     p "Keep moving. I don’t have all day."
 
     y "Yes, of course..."
 
-    "The prince's attitude sure has shifted."
+    ny frustrated "And the prince isn’t really princely at all."
 
-    "He was so much nicer when I was a fish."
+    "No, I’ve got to stay calm. {w} Just keep swimming, [y]."
 
-    "After several turns, we pass by a hallway with a particularly elegant door."
+    scene bg palace hallway:
+        fit "contain"
+    show thioran frown at thioran_center
+    with fade
+
+    "..."
+    "..."
+
+    ny mermaid neutral "After several turns, we pass by a hallway with a particularly elegant door."
 
     "It looks like it could lead to someplace quiet, like a library or an office."
 
-    "I wonder if it’s a room used by the royal family?"
+    ny shocked "I wonder if it’s a room used by the royal family?"
+    ny neutral "The mysterious room lingers in my mind as we move past it in silence."
+    scene bg palace hallway:
+        fit "contain"
+    show thioran frown at thioran_center
+    with fade
 
-    "We move past it, turning {color=#f2b950}left twice, then right{/color}..."
+    "..."
+    "..."
 
-    "There’s a pair of voices talking up ahead."
+    ny mermaid neutral "There’s a pair of voices talking up ahead."
 
     "Two servants are hanging up elaborate decorations in the hallway."
 
@@ -177,19 +200,20 @@ label ch2_followthio:
 
     quietmaid "…and Lord Cetus will be lighting the statue at the festival again this year."
 
-    loudmaid "Of course he will be. The prince hasn’t been near it since he was a child. I don’t see that changing anytime soon."
+    loudmaid "Of course he will. The prince hasn’t been near it since he was a child. I don’t see that changing anytime soon."
 
-    quietmaid "It’s a shame, isn’t it? If only he were a bit more like his late father."
+    quietmaid nervous "It’s a shame, isn’t it? If only he were a bit more like his late father."
 
     loudmaid "Or more like his uncle. He’s the very essence of a noble, even if–"
 
     p "That’s enough."
 
-    quietmaid "Your Highness!"
+    quietmaid "Your Highness!" with vpunch
 
-    "As they frantically bow, I look over at the Prince and can’t help but shiver at his expression."
+    #"As they frantically bow, I look over at the Prince and can’t help but shiver at his expression."
 
-    p "The lips of the palace servants are loose indeed to speak so carelessly of the King Regent."
+    show thioran angry with dissolve
+    p shocked "The lips of the palace servants are loose indeed to speak so carelessly of the King Regent."
 
     loudmaid "Forgive us! We were only just-"
 
@@ -197,23 +221,32 @@ label ch2_followthio:
 
     "He’s moving faster than before. I hurry after him as best as I can."
 
+    scene bg palace hallway:
+        fit "contain"
+    show thioran frown at thioran_center
+    with fade
+
+    ny mermaid neutral "..."
+
     menu:
+        "Should I say something...?"
         "\"Is there a festival happening soon?\"":
             p "Of course there is. Do not make a mockery of me."
             y flustered "Oh, right."
             y "I’m sorry. It must have slipped my mind."
-            "Maybe I shouldn’t have asked."
+            ny nervous "Maybe I shouldn’t have asked."
             "It seems like this was something I should have known already."
         "\"Are you okay?\"":
             show thioran frown
             p "..."
-            y "Those servants were rather rude."
+            y sad "Those servants were rather rude."
             p "That’s none of your concern."
-            "Maybe I shouldn’t have asked."
-        "...":
+            ny nervous "Maybe I shouldn’t have asked."
+        "\"...\"":
+            ny nervous "...No, I better not."
             "I shouldn’t make the situation any worse."
 
-    "The Prince suddenly stops before a closed door."
+    ny neutral "The Prince suddenly stops before a closed door."
     p "Your room."
     "I quickly move to open the door."
 
@@ -229,7 +262,7 @@ label ch2_followthio:
         scene cg_thiokabedon with dissolve:
             fit "contain"
 
-    "He suddenly leans over me, trapping me between his body and the door."
+    "Prince Thioran suddenly leans over me, trapping me between his body and the door."
     "He’s leaning in so close!"
 
     p "What are you really hiding?"
@@ -271,26 +304,26 @@ label ch2_followthio:
 
     "He was so much kinder when I was a fish..."
     #show june worried
-    "Now he doesn’t seem to trust me at all. I’d better be more careful."
+    ny nervous "Now he doesn’t seem to trust me at all. I’d better be more careful."
 
     "It’s really starting to sink in that I don’t know anything about this world and its people."
 
     "Even the architecture of this room looks different from what I'm used to."
 
-    "Am I really a guest here?"
+    ny sad "...I feel more alone than ever."
 
-    "...I feel more alone than ever."
+    "Am I really a guest here?"
 
     "I can’t believe a simple boat trip ended up like this. I feel exhausted just thinking about it."
 
-    "There’s what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
+    ny neutral "There’s what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
 
     play sound "audio/sfx_bedFlop.ogg" volume 0.5
 
-    "Ack!" with vpunch
+    ny shocked "Ack!" with vpunch
     "Did I lay on something?"
     "Looking down, I find a purse attached to my waist."
-    "Oh, right. This must have been created by the magic spell too. I hadn’t really had the time to think about it."
+    ny neutral "Oh, right. This must have been created by the magic spell too. I hadn’t really had the time to think about it."
     "Opening it reveals..."
     show black:
         alpha 0.35
@@ -298,10 +331,10 @@ label ch2_followthio:
         zoom 0.18
     with dissolve
     extend " a camera."
-    y "Wait, is this...? {w}But how is that possible?"
+    y shocked "Wait, is this...? {w}But how is that possible?"
     "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
     "It couldn’t work underwater, could it?"
-    "Well, there’s only one way to find out."
+    ny neutral "Well, there’s only one way to find out."
     hide camera_mermaid with dissolve
     menu:
         "Take a picture of..."
@@ -313,11 +346,9 @@ label ch2_followthio:
                 zoom 0.09
                 subpixel True pos (474, 168)
             with dissolve
-            "The camera automatically develops a photo, just like always."
-            "Somehow, the colors don't bleed."
-            y "This can’t be using fire or electricity, but seems to be giving off light, so I’m pretty sure it’s a lamp."
+            "A photo pops out from the top of the camera."
+            y "It’s lit up like a lamp, but surely it can’t be using fire or electricity."
             y "I wonder if it's powered by magic?"
-
             hide photo_guestroom1 with dissolve
 
 
@@ -328,20 +359,26 @@ label ch2_followthio:
             show photo_guestroom2:
                 zoom 0.09
                 subpixel True pos (474, 168)
-            "The camera automatically develops a photo, just like always."
-            "Somehow, the colors don't bleed."
+            "A photo pops out from the top of the camera."
             y "The star in the center is so eye-catching."
             y "I remember seeing the same shape earlier too. Does it mean something?"
 
             hide photo_guestroom2 with dissolve
 
-    "For a moment I sit there, not quite believing the thing in my hand is real."
-    "I was certain I’d lost the camera when the siren captured me. How did it survive all this water anyway?"
-    "Whatever the reason, I’m glad to see it."
-    "I’d better keep this safe."
+    show camera_mermaid at atcamera:
+        zoom 0.18
+    with dissolve
+    y shocked "Wow…"
+    "It really worked. And the colors don’t even bleed."
+    "This is incredible! I never thought I’d be taking photos underwater."
+    "I was certain I’d lost my camera for good when I fell overboard. How did it survive, anyway?"
+
+    ny happy "Regardless, I’m glad to see it. I’d better keep it safe."
+    hide camera_mermaid with dissolve
     "As I tuck the camera and photo into my bag, I can feel my eyes start to grow heavy."
     "I guess everything is finally catching up to me."
-    "I can figure out what to do after some rest."
+
+    ny neutral "Well, I’m already on the bed. I can figure out what to do after some rest."
     scene bg black with Dissolve(2.0)
     stop music fadeout 1.0
     "..."

@@ -24,7 +24,7 @@ label ch1_followprince:
     up "!!!"
     up "Who-"
     y "Blub blub!"
-    show thioran sweat with dissolve
+    show thioran shocked with dissolve
     up "...?"
     "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
     "Then, with a surprising amount of gentleness, his hands come up to cup my body."
@@ -91,7 +91,7 @@ label ch1_followprince:
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
     "Away from the threat of the storm, he begins swimming again. This time, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
-    show thioran sweat with dissolve
+    show thioran shocked with dissolve
     up "Is something the matter? If you're uncomfortable in my hands, I can try to be less...rough."
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
@@ -106,7 +106,7 @@ label ch1_followprince:
     y "Blub...{w}blub?"
     "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
     up "What are you..."
-    show thioran sweat with dissolve
+    show thioran shocked with dissolve
     up "I apologize. It appears I can't fully understand your meaning."
     show thioran frown with dissolve
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
@@ -226,7 +226,7 @@ label ch1_followprince:
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
     y "{i}Blub! Blub!{/i}"
     "No..! I'll drown! I don't want to die like this!"
-    show thioran sweat with dissolve
+    show thioran shocked with dissolve
     p "Wait a moment, Uncle! There's something wrong."
     "But Cetus does not stop his chanting."
     "The magic crescendos, and the tightness around me grows in kind."

@@ -131,6 +131,7 @@ transform atcamera:
 ## Thioran Sprite ####################################################
 ######################################################################
 define thioran_left = Position(xpos=0.23)
+define thioran_center = Position(xpos=0.45)
 ######################################################################
 layeredimage thioran:
     at sprite_highlight('Prince Thioran')
@@ -145,13 +146,18 @@ layeredimage thioran:
             "images/sprites/thioran/expressions/thioran_frown.png"
         attribute soft:
             "images/sprites/thioran/expressions/thioran_soft.png"
-        attribute sweat:
-            "images/sprites/thioran/expressions/thioran_sweat.png"
+        attribute shocked:
+            "images/sprites/thioran/expressions/thioran_shocked.png"
+    group closedeyes:
+        attribute closedeyes:
+            "images/sprites/thioran/expressions/thioran_blink.png"
     zoom 0.28
     ypos 730
     group eyes auto:
         attribute blinking default:
             "images/sprites/thioran/expressions/thioran_blink.png" at blink
+        attribute closedeyes:
+            Null()
 ######################################################################
 ## Grandpa Sprite ####################################################
 ######################################################################
@@ -225,6 +231,16 @@ layeredimage side june:
         attribute veryhappy:
             "images/sprites/june/expressions/side_merjune_veryhappy.png"
         at june_location
+    group closedeyes if_any["human"]:
+        attribute closedeyes:
+            "images/sprites/june/expressions/side_june_blink.png"
+            zoom 0.12
+            pos (169, 153)
+    group closedeyes if_any["mermaid"]:
+        attribute closedeyes:
+            "images/sprites/june/expressions/side_merjune_blink.png"
+            zoom 0.12
+            pos (169, 153)
     group eyes auto:
         attribute blinking default:
             "images/sprites/june/expressions/side_june_blink.png" at blink
@@ -232,11 +248,13 @@ layeredimage side june:
             pos (169, 153)
         attribute veryhappy:
             Null()
+        attribute closedeyes:
+            Null()
     group hairbrow if_any["human"]:
         attribute hairbrow default:
             "images/sprites/june/base/side_june_hairbrow.png"
         at june_location
-    group hairbrow if_not["human"]:
+    group hairbrow if_any["mermaid"]:
         attribute hairbrow default:
             "images/sprites/june/base/side_merjune_hairbrow.png"
         at june_location
