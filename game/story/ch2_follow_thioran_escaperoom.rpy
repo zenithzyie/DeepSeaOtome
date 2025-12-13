@@ -8,13 +8,13 @@ label ch2_castle_escaperoom:
         ny neutral "What should I do?"
         "Examine the window.":
 
-#            camera:
-#                subpixel True
-#                xpos 0 zoom 1.0
-#                linear 1.17 xpos -630 ypos -100 zoom 1.49
-#            with Pause(1.27)
-#            camera:
-#                xpos -630 ypos -100 zoom 1.49
+            camera:  #zoom in window
+                subpixel True
+                xpos 0 zoom 1.0
+                linear 1.17 xpos -630 ypos -100 zoom 1.49
+            with Pause(1.27)
+            camera:
+                xpos -630 ypos -100 zoom 1.49
 
             if not lookedatwindow:
                 $ lookedatwindow = True
@@ -54,6 +54,13 @@ label ch2_castle_escaperoom:
                         jump escapebegin
                 "Not yet...":
                     "I shouldn’t be too reckless. I only have one chance at escaping."
+                    camera: #zoom out window
+                        subpixel True
+                        pos (-630, -100) zoom 1.49
+                        linear 1.17 pos (0, 0) zoom 1.0
+                    with Pause(1.27)
+                    camera:
+                        pos (0, 0) zoom 1.0
                     jump escapebegin
 
         "Search the room.":
@@ -61,20 +68,56 @@ label ch2_castle_escaperoom:
             menu searchroom:
                 "Check the mirror.":
                     #(show full cg of Mermaid June)?
+                    camera: #zoom in mirror
+                        subpixel True
+                        xpos 0 zoom 1.0
+                        linear 0.88 pos (-800,-550) zoom 2.5
+                    with Pause(0.88)
+                    camera:
+                        pos (-800,-550) zoom 2.5
                     if promermaid > antimermaid:
+
                         "Wow, I look so different!"
                         "The colors and fabrics are pretty, but I miss my coat a bit as well."
                         "Without it, I feel a little exposed…"
+                        camera: #zoom out mirror
+                            subpixel True
+                            pos (-800,-550) zoom 2.5
+                            linear 0.88 pos (0, 0) zoom 1.0
+                        with Pause(0.88)
+                        camera:
+                            pos (0, 0) zoom 1.0
                         jump searchroom
                     if antimermaid > promermaid:
                         "I… hardly recognize myself."
                         "I doubt Hunter or Grandfather would either."
+                        camera: #zoom out mirror
+                            subpixel True
+                            pos (-800,-550) zoom 2.5 zoom 2.5
+                            linear 0.88 pos (0, 0) zoom 1.0
+                        with Pause(0.88)
+                        camera:
+                            pos (0, 0) zoom 1.0
                         jump searchroom
 
                 "Check the dresser.":
+                    camera: #zoom in dresser
+                        subpixel True
+                        xpos 0 zoom 1.0
+                        linear 0.97 pos (-1680,-770) zoom 2.35
+                    with Pause(0.97)
+                    camera:
+                        pos (-1680,-770) zoom 2.35
                     "I open the dresser."
                     if coinpurse and hairpin:
                         "It seems like I've searched through everything here."
+                        camera: #zoom out dresser
+                            subpixel True
+                            pos (-1680,-770) zoom 2.35
+                            linear 0.97 pos (0, 0) zoom 1.0
+                        with Pause(0.97)
+                        camera:
+                            pos (0, 0) zoom 1.0
                         jump escapebegin
                     menu checkdresser:
                         set menuset
@@ -109,6 +152,13 @@ label ch2_castle_escaperoom:
 
                         "Return." if coinpurse and hairpin:
                             "It seems like I've searched through everything here."
+                            camera: #zoom out dresser
+                                subpixel True
+                                pos (-1680,-770) zoom 2.35
+                                linear 0.97 xpos 0 ypos 0 zoom 1.0
+                            with Pause(0.97)
+                            camera:
+                                pos (0, 0) zoom 1.0
                             jump escapebegin
                 "Return.":
                     jump escapebegin

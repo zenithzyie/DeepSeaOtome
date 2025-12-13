@@ -310,8 +310,24 @@ label ch2_followthio:
     "It’s really starting to sink in that I don’t know anything about this world and its people."
 
 #some kinda zoom to show off the room here?
+    window auto hide
+    camera:
+        subpixel True
+        linear 1.0 pos (-50 , -125) zoom 1.35
+        linear 1.5 pos (-420 , -125) zoom 1.35
+    with Pause(2.5)
+    camera:
+        pos (-420 , -125) zoom 1.35
+    window auto show
 
     "Even the architecture of this room looks different from what I'm used to."
+    camera:
+        subpixel True
+        pos (-420 , -125) zoom 1.35
+        linear 0.5 pos (0,0) zoom 1.0
+    with Pause(0.5)
+    camera:
+        pos (0,0) zoom 1.0
 
     ny sad "...I feel more alone than ever."
 
