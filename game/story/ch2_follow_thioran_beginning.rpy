@@ -385,9 +385,9 @@ label ch2_followthio:
     hide black
     with dissolve
     "As I tuck the camera and photo into my bag, I can feel my eyes start to grow heavy."
-    "I guess everything is finally catching up to me."
+    ny neutral "I guess everything is finally catching up to me."
 
-    ny neutral "Well, I’m already on the bed. I can figure out what to do after some rest."
+    "Well, I’m already on the bed. I can figure out what to do after some rest."
     scene bg black with Dissolve(2.0)
     stop music fadeout 1.0
     "..."

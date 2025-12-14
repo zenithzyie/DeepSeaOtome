@@ -42,9 +42,9 @@ label ch2_castle_escaperoom:
                             jump escapebegin
                         $ failescape += 1
                         $ punchwindow = True
-                        play sound "audio/sfx_fistAgainstWindow.ogg"
                         "I lean against the window and push with all my might."
                         "The window doesn’t even budge."
+                        play sound "audio/sfx_fistAgainstWindow.ogg"
                         ny frustrated "In a surge of desperation, I slam a fist against the glass." with vpunch
                         y shocked "Ouch!"
                         guard "Everything alright in there?"
@@ -317,7 +317,7 @@ label cetus_office:
 
     menu cetus_ask:
         "\"I was able to slip away.\"":
-            "If you break free on the first try +2 cetus (?)"
+            #"If you break free on the first try +2 cetus (?)"
             c "Clever girl."
             "Somehow, his praise only makes me feel more nervous."
             "Shouldn’t he be upset instead?"
