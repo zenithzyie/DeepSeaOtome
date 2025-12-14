@@ -268,7 +268,7 @@ label escapedroom_tohallway:
     y "...and hang another left here..."
     "..."
     ny shocked "Oh! There’s the decorations the servants were hanging up!"
-    ny happy "The door is right here, just like I thought."
+    ny happy "The door is right here, just like I remembered."
 
     y "..."
     "Here goes nothing..."
@@ -293,6 +293,7 @@ label cetus_office:
     "Cetus is here! It looks like he’s busy writing something at his desk."
     c " Close the door behind you. It can get rather noisy out there."
     c "Though I’m sure you’ve already seen that firsthand."
+    #play sound "audio/sfx_stoneDoorClose.ogg"
     "...At least he’s not sending me away."
     y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
