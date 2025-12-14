@@ -4,16 +4,17 @@ label ch2_castle_escaperoom:
 # to see room at full/proper zooms
 #            show bg palace guestroom:
 #                subpixel True zoom 0.34
+
     menu escapebegin:
         ny neutral "What should I do?"
         "Examine the window.":
 
-            camera:  #zoom in window
+            show bg palace guestroom:  #zoom in window
                 subpixel True
                 xpos 0 zoom 1.0
                 linear 1.17 xpos -630 ypos -100 zoom 1.49
             with Pause(1.27)
-            camera:
+            show bg palace guestroom:
                 xpos -630 ypos -100 zoom 1.49
 
             if not lookedatwindow:
@@ -32,8 +33,8 @@ label ch2_castle_escaperoom:
                         "After a fair bit of moving it around, I hear a faint click."
                         play sound "audio/sfx_windowClick.ogg" volume 0.6
                         queue sound "audio/sfx_windowSlideOpen.ogg" volume 0.6
-                        "The window slides open. There’s just enough room for me to swim through."
-                        ny happy "Now I just need to find Cetus!"
+                        ny happy "The window slides open. There’s just enough room for me to swim through."
+                        ny veryhappy "Now I just need to find Cetus!"
                         jump escapedroom_tohallway
                     if not hairpin:
                         if punchwindow:
@@ -54,20 +55,35 @@ label ch2_castle_escaperoom:
                         jump escapebegin
                 "Not yet...":
                     "I shouldn’t be too reckless. I only have one chance at escaping."
-                    camera: #zoom out window
+                    show bg palace guestroom: #zoom out window
                         subpixel True
                         pos (-630, -100) zoom 1.49
                         linear 1.17 pos (0, 0) zoom 1.0
                     with Pause(1.27)
-                    camera:
+                    show bg palace guestroom:
                         pos (0, 0) zoom 1.0
                     jump escapebegin
 
         "Search the room.":
-            "There’s a dresser beside the bed and a mirror on the wall."
+            window auto hide
+            camera:
+                subpixel True
+                linear 1.0 pos (-50 , -125) zoom 1.35
+                linear 1.5 pos (-420 , -125) zoom 1.35
+            with Pause(2.5)
+            camera:
+                pos (-420 , -125) zoom 1.35
+            window auto show
+            camera:
+                subpixel True
+                pos (-420 , -125) zoom 1.35
+                linear 0.5 pos (0,0) zoom 1.0
+            with Pause(0.5)
+            camera:
+                pos (0,0) zoom 1.0
             menu searchroom:
+                ny neutral "Hmm..."
                 "Check the mirror.":
-                    #(show full cg of Mermaid June)?
                     camera: #zoom in mirror
                         subpixel True
                         xpos 0 zoom 1.0
@@ -75,22 +91,23 @@ label ch2_castle_escaperoom:
                     with Pause(0.88)
                     camera:
                         pos (-800,-550) zoom 2.5
-                    if promermaid > antimermaid:
 
-                        "Wow, I look so different!"
+                    if promermaid > antimermaid:
+                        ny shocked "Wow, I look so different!"
                         "The colors and fabrics are pretty, but I miss my coat a bit as well."
-                        "Without it, I feel a little exposed…"
+                        ny flustered "Without it, I feel a little exposed…"
                         camera: #zoom out mirror
                             subpixel True
-                            pos (-800,-550) zoom 2.5
+                            pos (-800,-550) zoom 2.5 zoom 2.5
                             linear 0.88 pos (0, 0) zoom 1.0
                         with Pause(0.88)
                         camera:
                             pos (0, 0) zoom 1.0
                         jump searchroom
+
                     if antimermaid > promermaid:
-                        "I… hardly recognize myself."
-                        "I doubt Hunter or Grandfather would either."
+                        ny shocked "I… hardly recognize myself."
+                        ny sad "I doubt Hunter or Grandfather would either."
                         camera: #zoom out mirror
                             subpixel True
                             pos (-800,-550) zoom 2.5 zoom 2.5
@@ -101,32 +118,52 @@ label ch2_castle_escaperoom:
                         jump searchroom
 
                 "Check the dresser.":
-                    camera: #zoom in dresser
+                    show bg palace guestroom: #zoom in dresser
                         subpixel True
                         xpos 0 zoom 1.0
                         linear 0.97 pos (-1680,-770) zoom 2.35
                     with Pause(0.97)
-                    camera:
+                    show bg palace guestroom:
                         pos (-1680,-770) zoom 2.35
                     "I open the dresser."
                     if coinpurse and hairpin:
                         "It seems like I've searched through everything here."
-                        camera: #zoom out dresser
+                        show bg palace guestroom: #zoom out dresser
                             subpixel True
                             pos (-1680,-770) zoom 2.35
                             linear 0.97 pos (0, 0) zoom 1.0
                         with Pause(0.97)
-                        camera:
+                        show bg palace guestroom:
                             pos (0, 0) zoom 1.0
                         jump escapebegin
                     menu checkdresser:
                         set menuset
+                        "Let's see..."
                         "Letter.":
+                            $ letter = True
+                            show black:
+                                alpha 0.5
                             play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
-                            "{i}My Dearest Lord Cetus.{/i}"
-                            "{i}Ever since I glimpsed your elegant complexion at the festival last year, my head has been filled with nothing but thoughts of you. You shine even brighter than the late king himself.{/i}"
-                            "{i}Your graceful poise, your slender hands, your tender tentacles…It is enough to drive a lady to madness.{/i}"
-                            "{i}If you would allow me the opportunity, I could show you where to put all of those tentacles of yours-{/i}"
+                            show text "{i}My Dearest Lord Cetus.{/i}{w}":
+                                align (0.5,0.5)
+                            with dissolve
+                            pause
+                            show text "{i}Ever since I glimpsed your elegant complexion at the festival last year,{p}{w}my head has been filled with nothing but thoughts of you.{p}{w}{/i}":
+                                align (0.5,0.5)
+                            with dissolve
+                            pause
+                            show text "{i}You shine even brighter than the late king himself.{/i}{w}":
+                                align (0.5,0.5)
+                            with dissolve
+                            pause
+                            show text "{i}Your graceful poise, your slender hands, your tender tentacles...{p}{w}It is enough to drive a lady to madness.{/i}{w}":
+                                align (0.5,0.5)
+                            with dissolve
+                            pause
+                            hide text
+                            hide black
+                            with dissolve
+                            ny neutral "{i}If you would allow me the opportunity, I could show you where to put all of those tentacles of yours-{/i}"
                             y flustered "Oh!"
                             "The rest of the letter is filled with the fantasies of a young noble woman."
                             play sound "audio/sfx_stoneDrawerClose.ogg" volume 0.8
@@ -135,9 +172,9 @@ label ch2_castle_escaperoom:
 
                         "Hairpin.":
                             $ hairpin = True
-                            "There’s what appears to be an ornate hairpin resting inside the dresser."
-                            y "How beautiful. Did it belong to the last person who stayed here?"
-                            "The pointy end is rather thin. Maybe I can use this for something?"
+                            ny neutral "There’s what appears to be an ornate hairpin resting inside the dresser."
+                            y happy "How beautiful. Did it belong to the last person who stayed here?"
+                            ny neutral "The pointy end is rather thin. Maybe I can use this for something?"
                             "I'll keep it in my bag for now."
                             jump checkdresser
 
@@ -145,19 +182,20 @@ label ch2_castle_escaperoom:
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
                             play sound "audio/sfx_coinJingle.ogg"
-                            "It clinks faintly and I discover gold and silver coins inside."
-                            "Do they use this as currency?"
-                            "I place the coinpurse into my bag."
+                            "There’s some gold and silver shells inside. This looks like somebody’s coinpurse."
+                            "Do mermaids barter the same way humans do?"
+                            "I'll hold onto this for now."
+                            ny shocked "I hope the previous guest doesn’t come looking for it…"
                             jump checkdresser
 
                         "Return." if coinpurse and hairpin:
-                            "It seems like I've searched through everything here."
-                            camera: #zoom out dresser
+                            ny neutral"It seems like I've searched through everything here."
+                            show bg palace guestroom: #zoom out dresser
                                 subpixel True
                                 pos (-1680,-770) zoom 2.35
                                 linear 0.97 xpos 0 ypos 0 zoom 1.0
                             with Pause(0.97)
-                            camera:
+                            show bg palace guestroom:
                                 pos (0, 0) zoom 1.0
                             jump escapebegin
                 "Return.":
@@ -165,33 +203,35 @@ label ch2_castle_escaperoom:
 
         "Talk to the guard.":
             if bribeguard:
-                "No...I really shouldn't talk to him again."
+                ny nervous "Er... I really shouldn’t."
+                "I think I’ve bothered him enough."
+
                 jump escapebegin
             else:
-                "The guard isn’t willing to tell me anything."
-                "Should I really be bothering him again?"
                 if coinpurse:
                     play sound "audio/sfx_coinJingle.ogg"
                     "The coinpurse jingles faintly in my bag."
                     "That fishmonger in Aquantis wasn’t too helpful either until I offered him money."
-                    "I have to try everything I can here. It’s the only way to get home."
+                    ny frustrated "I have to try everything I can here. It’s the only way to get home."
                     menu:
                         "Bribe the guard.":
                             $ bribeguard = True
                             $ failescape += 1
                             play sound "audio/sfx_guestDoorKnock.ogg"
                             "I knock on the door."
-                            y "Excuse me. Sir Guard?"
+                            y neutral "Excuse me. Sir Guard?"
                             guard "What is it now?"
                             y "Could you please take me to Lord Cetus? I can pay you."
                             play sound "audio/sfx_longerCoinJingle.ogg"
-                            "I jingle the coinpurse in hopes of getting his attention."
-                            guard "So desperate as to resort to bribery? Try that again and your new room might become the palace dungeons."
-                            "My cheeks burn with embarrassment as I swim away from the door."
-                            "That didn’t go as well as I’d hoped."
+                            ny happy "I jingle the coinpurse in hopes of getting his attention."
+                            guard "So desperate as to resort to bribery?"
+                            guard "Try that again and your new room might become the castle dungeons."
+                            y flustered "S-sorry to bother you!" with vpunch
+                            "I swim away from the door."
+                            ny sad "That didn’t go as well as I’d hoped."
                             jump escapebegin
                         "Don’t bother.":
-                            "This still won’t get me anywhere."
+                            "This won’t get me anywhere."
                             "I should take a closer look around the room."
                             jump escapebegin
 
@@ -199,21 +239,45 @@ label ch2_castle_escaperoom:
                     play sound "audio/sfx_guestDoorKnock.ogg"
                     "I knock on the door."
                     y "Excuse me. Sir Guard?"
-                    guard "Keep it down in there."
-                    "This still won’t get me anywhere."
-                    "I should take a closer look around the room."
+                    guard "Take some time to rest. Someone will come fetch you when you’re needed."
+                    ny frustrated "I’ve already rested plenty!"
+                    ny neutral "I guess I'll take a closer look around the room."
                     jump escapebegin
 
 
 label escapedroom_tohallway:
     scene bg palace hallway:
         fit "contain"
-    "I swim outside the window and find myself in an open-windowed hallway."
-    "Here goes nothing…"
-    #(a pause, knocking sfx.)
+    with fade
+    ny mermaid neutral "I find myself in another hallway."
+    ny shocked "Huh. I suppose this is better than having to find my way back inside the castle."
+
+    "That guard’s probably just around the corner. I don’t think he’s moved all day."
+    "He said that Cetus was in his study."
+    ny neutral "I need to find him before Sir Guard realizes I’m gone."
+    "But… I have no idea where to start."
+
+    "{i}After several turns, we pass by a hallway with a particularly elegant door.{/i}"
+    "{i}It looks like it could lead to someplace quiet, like a library or an office.{/i}"
+
+    "Well, it’s not like I have any other ideas."
+    "The way to get back there is very clear in my mind."
+    y frustrated "I will {i}not{\i} get lost again."
+
+    ny neutral "..."
+    y "...and hang another left here..."
     "..."
-    "There's no response."
-    "Maybe he’s not here? {w}Well, there’s only one way to find out."
+    ny shocked "Oh! There’s the decorations the servants were hanging up!"
+    ny happy "The door is right here, just like I thought."
+
+    y "..."
+    "Here goes nothing..."
+    play sound "audio/sfx_guestDoorKnock.ogg"
+    "..."
+    "..."
+    "..."
+    ny nervous "There's no response."
+    "There’s no guarantee he’ll actually be here, but let’s give it a shot."
     "Taking a deep breath, I open the door."
     call cetus_office
 
@@ -224,14 +288,15 @@ label cetus_office:
     "Unlike the rest of the castle, this room is dimly lit."
     show cetus neutral at cetus_center:
         ypos 60
-    "Cetus is behind a desk covered in scrolls. He seems to be immersed in his paperwork."
-    y mermaid neutral "Lord Cetus?"
+    with dissolve
+    y mermaid shocked "Lord Cetus?"
+    "Cetus is here! It looks like he’s busy writing something at his desk."
     c " Close the door behind you. It can get rather noisy out there."
     c "Though I’m sure you’ve already seen that firsthand."
-    y "I need to speak with you."
+    "...At least he’s not sending me away."
+    y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
     c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
-    "...At least he’s not sending me away."
 
     y "I wanted to ask-"
     c "No, not from there."
@@ -240,32 +305,34 @@ label cetus_office:
     "Cetus beckons me forward with a wave of his hand."
     "I swim cautiously towards his desk."
 
-    camera:
-        subpixel True
-        xpos 0 zoom 1.0
-        ease 1.00 xpos -192 ypos -60 zoom 1.30
-    with Pause(1.25)
-    camera:
-        xpos -192 ypos -60 zoom 1.30
-
+#    camera:
+#        subpixel True
+#        xpos 0 zoom 1.0
+#        ease 1.00 xpos -192 ypos -60 zoom 1.30
+#    with Pause(1.25)
+#    camera:
+#        xpos -192 ypos -60 zoom 1.30
+#
     c "Now then, how did you make it past the guard?"
 
     menu cetus_ask:
-        "I came through the window.":
-            y "I was able to get it open."
+        "\"I was able to slip away.\"":
             "If you break free on the first try +2 cetus (?)"
             c "Clever girl."
+            "Somehow, his praise only makes me feel more nervous."
+            "Shouldn’t he be upset instead?"
 
             "If it takes you multiple attempts to break out"
             c "Though not without causing a commotion, I hear."
-
+            "How did he know about that?"
             "If you picked option 2 first"
             show cetus smirk
             c "That wasn’t so bad, was it?"
 
-        "I wanted to ask you something.":
-            c "Well now, was this your office I barged into?"
-            c "There’s plenty of paperwork that needs your attention, my lady."
+        "\"I wanted to ask you something.\"":
+            #removed after you pick it first
+            c "Well now, was this {i}your{/i} office I barged into?"
+            c "In that case, there’s plenty of paperwork that needs your attention, {i}my lady.{/i}"
             c "Perhaps I should take my leave before you call the guards to lock me away."
             y "Please don’t call the guards!"
             c "Oh? What was that?"
@@ -323,6 +390,9 @@ label cetus_office:
     c "To think, your precious human toy found its way back to you after being transformed. How very curious."
     "Cetus leans in closer."
 
+    scene cg_cetusoffice:
+        fit "contain"
+    $ config.side_image_tag = "None"
     y "...!"
     c "I’ll make a different deal with you, [y] Finch, if you wish to gain your legs back."
     y "A different deal?"

@@ -166,7 +166,7 @@ label ch2_followthio:
 
     y "Yes, of course..."
 
-    ny frustrated "And the prince isn’t really princely at all."
+#    ny frustrated "And the prince isn’t really princely at all."
 
     "No, I’ve got to stay calm. {w} Just keep swimming, [y]."
 
@@ -183,16 +183,16 @@ label ch2_followthio:
     "It looks like it could lead to someplace quiet, like a library or an office."
 
     ny shocked "I wonder if it’s a room used by the royal family?"
-    ny neutral "The mysterious room lingers in my mind as we move past it in silence."
+#    ny neutral "The mysterious room lingers in my mind as we move past it in silence."
     scene bg palace hallway:
         fit "contain"
     show thioran frown at thioran_center
     with fade
 
-    "..."
+    ny mermaid neutral "..."
     "..."
 
-    ny mermaid neutral "There’s a pair of voices talking up ahead."
+    "There’s a pair of voices talking up ahead."
 
     "Two servants are hanging up elaborate decorations in the hallway."
 
@@ -213,7 +213,7 @@ label ch2_followthio:
     #"As they frantically bow, I look over at the Prince and can’t help but shiver at his expression."
 
     show thioran angry with dissolve
-    p shocked "The lips of the palace servants are loose indeed to speak so carelessly of the King Regent."
+    p shocked "The lips of the servants are loose indeed to speak so carelessly of the King Regent."
 
     loudmaid "Forgive us! We were only just-"
 
@@ -255,11 +255,11 @@ label ch2_followthio:
     y "Thank yo–"
 
     if not renpy.seen_image("cg_thiokabedon"):
-        scene cg_thiokabedon with dissolve:
+        scene cg_thiokabedon with vpunch:
             fit "contain"
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
-        scene cg_thiokabedon with dissolve:
+        scene cg_thiokabedon with vpunch:
             fit "contain"
 
     "Prince Thioran suddenly leans over me, trapping me between his body and the door."
@@ -304,30 +304,12 @@ label ch2_followthio:
     ny mermaid shocked "What was that?"
 
     "He was so much kinder when I was a fish..."
-    #show june worried
+
     ny nervous "Now he doesn’t seem to trust me at all. I’d better be more careful."
 
     "It’s really starting to sink in that I don’t know anything about this world and its people."
 
-#some kinda zoom to show off the room here?
-    window auto hide
-    camera:
-        subpixel True
-        linear 1.0 pos (-50 , -125) zoom 1.35
-        linear 1.5 pos (-420 , -125) zoom 1.35
-    with Pause(2.5)
-    camera:
-        pos (-420 , -125) zoom 1.35
-    window auto show
-
-    "Even the architecture of this room looks different from what I'm used to."
-    camera:
-        subpixel True
-        pos (-420 , -125) zoom 1.35
-        linear 0.5 pos (0,0) zoom 1.0
-    with Pause(0.5)
-    camera:
-        pos (0,0) zoom 1.0
+    "Even this room looks different from what I'm used to."
 
     ny sad "...I feel more alone than ever."
 
@@ -354,13 +336,17 @@ label ch2_followthio:
     "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
     "It couldn’t work underwater, could it?"
     ny neutral "Well, there’s only one way to find out."
-    hide camera_mermaid with dissolve
+    hide camera_mermaid
+    hide black
+    with dissolve
     menu:
         "Take a picture of..."
         "The lamp?":
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
+            show black:
+                alpha 0.35
             show photo_guestroom1:
                 zoom 0.09
                 subpixel True pos (474, 168)
@@ -375,6 +361,8 @@ label ch2_followthio:
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
+            show black:
+                alpha 0.35
             show photo_guestroom2:
                 zoom 0.09
                 subpixel True pos (474, 168)
@@ -393,7 +381,9 @@ label ch2_followthio:
     "I was certain I’d lost my camera for good when I fell overboard. How did it survive, anyway?"
 
     ny happy "Regardless, I’m glad to see it. I’d better keep it safe."
-    hide camera_mermaid with dissolve
+    hide camera_mermaid
+    hide black
+    with dissolve
     "As I tuck the camera and photo into my bag, I can feel my eyes start to grow heavy."
     "I guess everything is finally catching up to me."
 
@@ -436,6 +426,7 @@ label ch2_followthio:
     scene bg palace guestroom:
         fit "contain"
     play music bgm_capital volume 0.8
+    $ config.side_image_tag = "june"
     ny mermaid shocked "I sit up in bed with a gasp." with vpunch
     y "I’m... not drowning."
     "What was with that dream?"
@@ -450,7 +441,21 @@ label ch2_followthio:
 
     "No. I have to find a way back home before that happens."
 
+    $ speaking_char = "all"
+    $ config.side_image_tag = "None"
+    show bg throneroom
+    show cetus neutral at cetus_center:
+        ypos 60
+    show black:
+        alpha 0.45
+    with fade
     c "{i}I hear humans have been sailing further from their shores as of late.{\i}"
+
+    hide cetus
+    hide black
+    show bg palace guestroom
+    with fade
+    $ config.side_image_tag = "june"
 
     "He was looking at me when he said that…"
 
@@ -462,7 +467,7 @@ label ch2_followthio:
 
     "I need to find him."
 
-    "I open the door to swim out, but a guard suddenly blocks my way."
+    ny shocked "I open the door to swim out, but a guard suddenly blocks my way."
 
     guard "For your own safety, please do not wander off."
 
