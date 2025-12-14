@@ -1,3 +1,6 @@
+init python:
+    _game_menu_screen = "prefs_menu"
+
 ######################################################################
 #Click to continue icon
 image ctc_pos:
