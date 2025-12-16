@@ -458,7 +458,7 @@ screen notify(message):
     style_prefix "notify"
 
     frame at notify_appear:
-        text "[message!tq]"
+        text "         [message!tq]    "
 
     timer 3.25 action Hide('notify')
 
@@ -482,3 +482,35 @@ style notify_frame:
 
 style notify_text:
     properties gui.text_properties("notify")
+
+## Notify2 screen ###############################################################
+screen notify2(message):
+
+    zorder 100
+    style_prefix "notify2"
+
+    frame at notify2_appear:
+        text "         [message!tq]  "
+
+    timer 5.25 action Hide('notify2')
+
+
+transform notify2_appear:
+    on show:
+        alpha 0
+        linear .25 alpha 1.0
+    on hide:
+        linear .5 alpha 0.0
+
+
+style notify2_frame is empty
+style notify2_text is gui_text
+
+style notify2_frame:
+    ypos gui.notify_ypos
+
+    background Frame("gui/notify2.png", gui.notify2_frame_borders, tile=gui.frame_tile)
+    padding gui.notify2_frame_borders.padding
+
+style notify2_text:
+    properties gui.text_properties("notify2")

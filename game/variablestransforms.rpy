@@ -39,6 +39,8 @@ define Pr = Character("Prashadi", image="june", ctc="ctc_pos", ctc_position="fix
 #NPC Names
 define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
 define kid = Character("Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
+define energetickid = Character("Energetic Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
+define playfulkid = Character("Playful Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
 define woman = Character("Elderly Woman", image="june", ctc="ctc_pos", ctc_position="fixed")
 define fishmonger = Character("Fishmonger", image="june", ctc="ctc_pos", ctc_position="fixed")
 define conductor = Character("Conductor", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -75,6 +77,7 @@ default bribeguard = False
 default lookedatwindow = False
 default pickedsomeone = False
 default pickedsomething = False
+default sillyjune = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
@@ -129,6 +132,9 @@ transform blink:
 #FOR PROPS
 transform atcamera:
     pos (422, 115)
+transform atphoto:
+    zoom 0.09
+    subpixel True pos (510, 148)
 
 ######################################################################
 ## Thioran Sprite ####################################################
@@ -154,7 +160,7 @@ layeredimage thioran:
     group closedeyes:
         attribute closedeyes:
             "images/sprites/thioran/expressions/thioran_blink.png"
-    zoom 0.28
+    zoom 0.27
     ypos 730
     group eyes auto:
         attribute blinking default:
@@ -354,8 +360,12 @@ layeredimage cetus:
             "images/sprites/cetus/expressions/cetus_shocked.png"
         attribute smirk:
             "images/sprites/cetus/expressions/cetus_smirk.png"
+        attribute displeased:
+            "images/sprites/cetus/expressions/cetus_displeased.png"
         attribute smile:
             "images/sprites/cetus/expressions/cetus_smile.png"
+        attribute bittersmile:
+            "images/sprites/cetus/expressions/cetus_bittersmile.png"
     group closedeyes:
         attribute closedeyes:
             "images/sprites/cetus/expressions/cetus_blink.png"
@@ -368,6 +378,8 @@ layeredimage cetus:
             Null()
 ######################################################################
 ##Hunter Sprite ######################################################
+######################################################################
+define hunter_center = Position(xpos=0.53)
 ######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')
@@ -396,11 +408,13 @@ layeredimage hunter:
         attribute 2:
             "images/sprites/hunter/expressions/hunter_neutral.png"
     group coverings:
-        attribute mask:
+        attribute facemask:
             "images/sprites/hunter/accessories/hunter_mask.png"
     group eyes auto:
         attribute blinking default:
             "images/sprites/hunter/expressions/hunter_blink.png" at blink
+        attribute flustered:
+            Null()
     zoom 0.15
     ypos 1.17
 ######################################################################

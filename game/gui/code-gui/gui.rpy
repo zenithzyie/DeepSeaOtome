@@ -79,6 +79,7 @@ define gui.label_text_size = 24
 
 ## The size of text on the notify screen.
 define gui.notify_text_size = 16
+define gui.notify2_text_size = 16
 
 ## The size of the game's title.
 define gui.title_text_size = 50
@@ -268,7 +269,7 @@ define gui.skip_ypos = 10
 
 ## The vertical position of the notify screen.
 define gui.notify_ypos = 45
-
+define gui.notify2_ypos = 45
 ## The spacing between menu choices.
 define gui.choice_spacing = -25
 
@@ -305,7 +306,8 @@ define gui.confirm_frame_borders = Borders(40, 40, 40, 40)
 define gui.skip_frame_borders = Borders(16, 5, 50, 5)
 
 ## The frame that is used as part of the notify screen.
-define gui.notify_frame_borders = Borders(16, 5, 40, 5)
+define gui.notify_frame_borders = Borders(5, 1, 2, 1)
+define gui.notify2_frame_borders = Borders(5, 1, 2, 1)
 
 ## Should frame backgrounds be tiled?
 define gui.frame_tile = False

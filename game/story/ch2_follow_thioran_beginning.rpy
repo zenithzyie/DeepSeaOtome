@@ -347,9 +347,7 @@ label ch2_followthio:
             hide camera with dissolve
             show black:
                 alpha 0.35
-            show photo_guestroom1:
-                zoom 0.09
-                subpixel True pos (474, 168)
+            show photo_guestroom1 at atphoto
             with dissolve
             ny shocked "A photo pops out from the top of the camera."
             y neutral "It’s lit up like a lamp, but surely it can’t be using fire or electricity."
@@ -363,12 +361,10 @@ label ch2_followthio:
             hide camera with dissolve
             show black:
                 alpha 0.35
-            show photo_guestroom2:
-                zoom 0.09
-                subpixel True pos (474, 168)
+            show photo_guestroom2 at atphoto
             ny shocked "A photo pops out from the top of the camera."
-            y "The star in the center is so eye-catching."
-            y neutral "I remember seeing the same shape earlier too. Does it mean something?"
+            y neutral "The star in the center is so eye-catching."
+            y "I remember seeing the same shape earlier too. Does it mean something?"
 
             hide photo_guestroom2 with dissolve
 

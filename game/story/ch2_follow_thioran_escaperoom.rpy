@@ -251,12 +251,12 @@ label escapedroom_tohallway:
     with fade
     ny mermaid neutral "I find myself in another hallway."
     ny shocked "Huh. I suppose this is better than having to find my way back inside the castle."
-
-    "That guard’s probably just around the corner. I don’t think he’s moved all day."
-    "He said that Cetus was in his study."
+    ny nervous "That guard’s probably just around the corner. I doubt he’s moved all day."
+    "He said that Cetus was in his study. But... I have no idea where to start."
     ny neutral "I need to find him before Sir Guard realizes I’m gone."
-    "But… I have no idea where to start."
+    "Hmm..."
 
+    #flashback with thioran in hallway here
     "{i}After several turns, we pass by a hallway with a particularly elegant door.{/i}"
     "{i}It looks like it could lead to someplace quiet, like a library or an office.{/i}"
 
@@ -264,6 +264,7 @@ label escapedroom_tohallway:
     "The way to get back there is very clear in my mind."
     y frustrated "I will {i}not{\i} get lost again."
 
+    #change scenes with each ellipses
     ny neutral "..."
     y "...and hang another left here..."
     "..."
@@ -276,10 +277,9 @@ label escapedroom_tohallway:
     "..."
     "..."
     "..."
-    ny nervous "There's no response."
+    ny nervous "No response."
     "There’s no guarantee he’ll actually be here, but let’s give it a shot."
     "Taking a deep breath, I open the door."
-    call cetus_office
 
 label cetus_office:
     scene bg cetus study:
@@ -291,145 +291,254 @@ label cetus_office:
     with dissolve
     y mermaid shocked "Lord Cetus?"
     "Cetus is here! It looks like he’s busy writing something at his desk."
-    c " Close the door behind you. It can get rather noisy out there."
+    c "Close the door behind you. It can get rather noisy out there."
     c "Though I’m sure you’ve already seen that firsthand."
-    #play sound "audio/sfx_stoneDoorClose.ogg"
-    "...At least he’s not sending me away."
+    play sound "audio/sfx_stoneDoorClose.ogg"
+    ny nervous "...At least he’s not sending me away."
     y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
     c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
 
     y "I wanted to ask-"
     c "No, not from there."
-    y "Pardon?"
+    y shocked "Pardon?"
     c nervous "Come closer."
     "Cetus beckons me forward with a wave of his hand."
     "I swim cautiously towards his desk."
 
-#    camera:
-#        subpixel True
-#        xpos 0 zoom 1.0
-#        ease 1.00 xpos -192 ypos -60 zoom 1.30
-#    with Pause(1.25)
-#    camera:
-#        xpos -192 ypos -60 zoom 1.30
-#
+    camera:
+        subpixel True
+        xpos 0 zoom 1.0
+        ease 1.00 xpos -192 ypos -60 zoom 1.30
+    with Pause(1.25)
+    camera:
+        xpos -192 ypos -60 zoom 1.30
+
     c "Now then, how did you make it past the guard?"
 
     menu cetus_ask:
+        set menuset
+        ny frustrated "..."
         "\"I was able to slip away.\"":
+            y "...Through the window. With a hairpin."
             #"If you break free on the first try +2 cetus (?)"
-            c "Clever girl."
-            "Somehow, his praise only makes me feel more nervous."
-            "Shouldn’t he be upset instead?"
+            if failescape == 0:
+                c "Clever girl."
+                ny nervous "Somehow, his praise only makes me feel more nervous."
+                "Shouldn’t he be upset instead?"
 
-            "If it takes you multiple attempts to break out"
-            c "Though not without causing a commotion, I hear."
-            "How did he know about that?"
-            "If you picked option 2 first"
-            show cetus smirk
-            c "That wasn’t so bad, was it?"
+            #"If it takes you multiple attempts to break out"
+            if failescape > 0:
+                c "Though not without causing a commotion, I hear."
+                ny shocked "How did he know about that?"
+            pass
 
         "\"I wanted to ask you something.\"":
             #removed after you pick it first
+            $ sillyjune = True
             c "Well now, was this {i}your{/i} office I barged into?"
             c "In that case, there’s plenty of paperwork that needs your attention, {i}my lady.{/i}"
             c "Perhaps I should take my leave before you call the guards to lock me away."
-            y "Please don’t call the guards!"
+            y shocked "Please don’t call the guards!"
             c "Oh? What was that?"
+            y "..."
 
             jump cetus_ask
 
-    y "Lord Cetus, are you aware of what I really am?"
-    c "You are a very long way from your shore, human."
-    "...!"
-    y "Earlier in the throne room, you acted as if you didn’t know."
-    c "And you did as well, did you not? A prudent choice."
+    if sillyjune:
+        #"If you picked option 2 first"
+        show cetus smirk with dissolve
+        c "That wasn’t so bad, was it?"
 
-    c "Some things are better left unsaid. Particularly in…unfriendly company."
-    c "Merfolk are not very fond of your kind."
-    y "..."
-    "I think of the mermaid in the market again, and shudder."
-    "I can only imagine what Prince Thioran would have done."
-    c "Yet here you still are, unharmed."
+    show cetus neutral with dissolve
+    c "Go on, then. I’ll reward you with my time."
 
-    "He looks at me with interest."
-    "Cetus has every reason to threaten me."
-    "But it also seems like he’s giving me room to speak."
-    "I need to take this chance."
+    y "Lord Cetus, you mentioned humans in the throne room earlier."
 
-    y "Lord Cetus, how can I become human again?"
-    c "Ah, but what use would a human be in the search for a sea witch?"
-    c "Allow me to remind you of your situation, [y] Finch: you are our witness first before you are a human."
-    c "And shirking your duties as a witness would be quite the offense."
-    "Being back on land would make that difficult."
-    y "If I help you find her, will you help me return home to my family? To be human again?"
-    y "What do I need to do?"
-    c "You simply need to stay here until my knights locate the sea witch."
-    y "But- that could take weeks! Months, even!"
-    "(insert concerned alarm about time, family thinking she’s dead etc)"
+    c "And?"
 
-    c "I have a duty to my nephew and to my people to fulfill."
-    c "Keeping you here is simply part of fulfilling it."
-    "He really isn’t budging."
-    "I knew it wouldn’t be easy, but… I can’t give up."
-    "There must be something I can do to get him to agree."
-    "I run my fingers over the purse at my side."
+    y "Well… you were looking at me when you said it."
 
-    y "What if I could return the favor?"
-    y "If you help me, I could bring you things from the surface."
-    c "I have no interest in your human toys."
-    y "But we have a lot of wonderful things up there!"
-    "I pull out the camera from my purse and present it to him."
-    "Hopefully it’ll get his attention. I don’t know how else to bargain with him."
-    y "Like this camera, for instance. It lets me keep records of memories that last forever."
-    "Cetus focuses on the camera for only a moment before he shakes his head."
-    c "There is no memory that can truly last forever, no matter how much you may want it to."
-    "He may be right… {w} but that’s not the point right now."
-    "I can’t stay here forever!"
-    c "Though…"
-    c "To think, your precious human toy found its way back to you after being transformed. How very curious."
-    "Cetus leans in closer."
+    y "Did you… mean anything by it?"
 
-    scene cg_cetusoffice:
-        fit "contain"
-    $ config.side_image_tag = "None"
-    y "...!"
-    c "I’ll make a different deal with you, [y] Finch, if you wish to gain your legs back."
-    y "A different deal?"
-    c "Locating the siren is one task, but stopping her is another."
-    c "A siren powerful enough to cause these storms won't go down without a fight."
+    show cetus smirk with dissolve
+    c "You’re aiming quite high, little fish."
 
-    c "There is a spell that can subdue her, but it will require certain magical artifacts."
-    c "With a nudge in the right direction, you should have no trouble finding them."
-    y "And this will help me become human again?"
-    c "Retrieve them for me and I shall honor our bargain."
+    c "While I applaud your boldness, you’ll have better luck looking for a partner elsewhere."
 
-    c "That is all your little mortal heart desires, is it not?"
-    y "Yes, but…"
+    y flustered "{i}Oh!{/i} I didn’t mean it like that!"
+
+    y nervous "It’s just that-"
+
+    show cetus neutral with dissolve
+    c "Get to the point."
+
+    "I hope I’m right about this..."
+
+    y frustrated "Do you know… what I really am?"
+
+    c "..."
+
+    ny nervous "...Or not. {w}Did I make a mistake?"
+
+    c "Not many have eyes to see what’s right in front of them. But I am not so easily misled."
+
+    c "You’re quite a distance from your shores, {i}human.{/i}"
+
+    ny shocked "...!"
+
+    y "You didn’t say anything about it before."
+
+    c "And neither did you. A prudent choice."
+
+    c "I’m sure you must have seen for yourself on land - how our kin treat one another."
+
+    #(add flashback image of the mermaid trapped in the glass cage)
+    if promermaid > antimermaid:
+        y sad "I have…"
+    if antimermaid > promermaid:
+        y frustrated "I have."
+
+    c "Then I suggest you continue to keep this to yourself. It’ll only get more troublesome if word gets out."
+
+    y nervous "But… for how long? How long is this spell on me going to last?"
+
+    c "Did you think my magic to be temporary?"
+
+    c "I don’t work in halves."
+
+    "Oh, thank goodness. That’s one less thing to worry about."
+
+    y "Then, will you turn me back into a human after you’ve dealt with the siren?"
+
+    y "So I can return home?"
+
+    c "Return home?"
+
+    c "I have been very lenient with you, [y] Finch, but you forget your place."
+
+    c "What comes {i}after{/i} is of no concern to me."
 
     menu:
-        "I have so many questions."
+        "But…"
+        "My family and friends think I’m dead!":
+            c sad "A pity."
+            pass
+        "There are people waiting for me.":
+            c frustrated "A pity."
+            pass
 
-        "Don’t you need me to stay here?":
-            c "Arrangements will need to be made. You will require an escort, of course."
-            c "I certainly can’t have you swimming off before we’ve found the siren."
+    "He’s really serious. But… that would mean I’d be stuck like this forever."
 
-        "Will it be dangerous?":
-            c "Perhaps. It would be no more dangerous than trying to figure it out yourself."
-            "Alt Version 1:"
-            c "Perhaps. But what is reward without risk?"
-            "Alt Version 2:"
-            c "Perhaps."
+    "And what would happen to me once the siren is caught?"
 
-        "Why me?":
-            c "Did you not wish for an alternative solution?"
-            c "It is simply a task that needs to be done."
-            c "Locating magical objects is a task best left to those blessed by luck."
+    "I won’t be needed in the castle anymore."
 
-    c "But I suppose if it’s too difficult for you, it cannot be helped."
-    y "No. I’ll do it."
-    c "In that case, I shall tell you where to begin."
+    "No. There must be something I can say to change his mind."
+
+    y "Would you turn me back into a human if I could return the favor?"
+
+    menu changehismind:
+        set menuset
+        ny nervous "There must be something I can say to change his mind."
+        "I could go out and help you hunt the siren!":
+            y neutral "I’ve seen her lair, after all."
+            y happy "If we work together, I’m sure we’ll have a better chance!"
+            c "If nothing else, your sheer recklessness should be applauded."
+            pass
+
+        "I could bring you back things from the surface.":
+            c "I have no interest in your human toys."
+            c "And even if I did, why should I believe that you’d keep your word?"
+            y shocked "..."
+            c "Try again."
+            jump changehismind
+
+        "Also, just consider: Please!!!":
+            y shocked "Lord Cetus, please reconsider! You’d have my gratitude for life."
+            c "..."
+            y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}" with vpunch
+            y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
+            y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
+            y "Please...Pretty please..?"
+            c "................"
+            y "Please..."
+            c  "Are you quite finished?"
+            y sad "...Yes."
+            jump changehismind
+
+
+    c nervous "Do you have any idea what it would take to bring down a siren?"
+
+    c "Maris Lumina may be protected by old magic, but it would not be able to shield us out there."
+
+    c "What do you suppose would happen were we to fight her head-on?"
+
+    y neutral "Couldn’t you fight magic with more magic? Aren’t there other magic users that could help us?"
+
+    show cetus bittersmile with dissolve
+    c "Perhaps that would have been possible in another lifetime. {w}But I am all that remains now."
+
+    y sad "...Oh."
+
+    show cetus neutral with dissolve
+    c "That is why we must find a different way."
+
+    c "Though the Students may be gone, the relics they’ve left behind remain."
+
+    y neutral "Relics?"
+
+    c "Items, imbued with the magic of their creators."
+
+    ny shocked "Cetus suddenly leans in closer."
+
+    if not renpy.seen_image("cg_cetusoffice"):
+        scene cg_cetusoffice with vpunch:
+            fit "contain"
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg_cetusoffice with vpunch:
+            fit "contain"
+
+    camera:
+        xpos 0 ypos 0 zoom 1.0
+    with dissolve
+    $ config.side_image_tag = "None"
+    y "...!"
+
+    c "They may be of use to me, were you to go out and find them."
+
+    y  "If I were to find these relics for you, would you turn me back into a human?"
+
+    c "That will depend on how well you perform."
+
+    "He’s willing to make a deal? Thank goodness!"
+
+    y "..."
+
+    "But something doesn’t feel right…"
+
+    y "Why ask me? Why not just send out your guards?"
+
+
+    c "I don’t believe you're in any position to be questioning me."
+
+    y "Then how can I trust that you’ll keep your word?"
+
+    c "Because you don’t have a choice. I believe your desperation outweighs your uncertainty."
+
+    "Well… he isn’t wrong."
+
+    "This might be my only chance of getting home."
+
+    y "..."
+
+    y "Alright. I’ll do it. It’s a deal."
+
+    c "An excellent choice. Now, here is what you must do…"
 
     scene bg black
+    with dissolve
     "CLIFFHANGER ENDING!!!"
+    $ MainMenu(confirm=False)()
+    return

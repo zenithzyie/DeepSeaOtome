@@ -1,57 +1,112 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/story/script.rpy:764
-  File "game/story/script.rpy", line 763, in script
-    show grandpa happy at left2 with move:
-Exception: Expression '0.3' is not an ATL transform, and so cannot be included in an ATL interpolation.
+While running game code:
+  File "game/story/script.rpy", line 60, in script call
+    call chapter1
+  File "game/story/script.rpy", line 1153, in script
+    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
+  File "game/menus/screensmisc.rpy", line 455, in execute
+    screen notify(message):
+  File "game/menus/screensmisc.rpy", line 455, in execute
+    screen notify(message):
+  File "game/menus/screensmisc.rpy", line 460, in execute
+    frame at notify_appear:
+  File "game/menus/screensmisc.rpy", line 461, in execute
+    text "[         message!tq  ]  "
+ValueError: invalid conversion ' '
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/story/script.rpy", line 763, in script
-    show grandpa happy at left2 with move:
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/story/script.rpy", line 60, in script call
+    call chapter1
+  File "game/story/script.rpy", line 1153, in script
+    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
+  File "renpy/ast.py", line 2915, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 965, in execute
+    statement_name(stmt_name)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 547, in statement_name
+    i(name)
+    ~^^^^^^
+  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
+    _window_show(auto=True)
+    ~~~~~~~~~~~~^^^^^^^^^^^
+  File "renpy/common/000window.rpy", line 75, in _window_show
+    renpy.with_statement(trans)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/exports/statementexports.py", line 260, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 1579, in do_with
+    return self.interact(
+           ~~~~~~~~~~~~~^
+        trans_pause=True, suppress_overlay=not renpy.config.overlay_during_with, mouse="with", clear=clear
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "renpy/exports/displayexports.py", line 513, in show
-    sls.add(
-    ~~~~~~~^
-        layer,
-        ^^^^^^
-    ...<8 lines>...
-        transient=transient,
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/display/scenelists.py", line 464, in add
-    thing.visit_all(lambda d: None)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 448, in visit_all
-    for d in self.visit():
-             ~~~~~~~~~~^^ 
-  File "renpy/atl.py", line 739, in visit
-    block = self.compile()
-            ~~~~~~~~~~~~^^
-  File "renpy/atl.py", line 650, in compile
-    block = self.atl.compile(self.context)
-            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/atl.py", line 844, in compile
-    statements = [i.compile(ctx) for i in self.statements]
-                  ~~~~~~~~~^^^^^                          
-  File "renpy/atl.py", line 1206, in compile
-    raise Exception(
-        "Expression %r is not an ATL transform, and so cannot be included in an ATL interpolation." % expr
-    )
-Exception: Expression '0.3' is not an ATL transform, and so cannot be included in an ATL interpolation.
+  File "renpy/display/core.py", line 2219, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )  # type: ignore
+    ^                
+  File "renpy/display/core.py", line 2757, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 432, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+[Previous line repeated 1 more time]
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2757, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/menus/screensmisc.rpy", line 455, in execute
+    screen notify(message):
+  File "game/menus/screensmisc.rpy", line 455, in execute
+    screen notify(message):
+  File "game/menus/screensmisc.rpy", line 460, in execute
+    frame at notify_appear:
+  File "game/menus/screensmisc.rpy", line 461, in execute
+    text "[         message!tq  ]  "
+  File "renpy/text/text.py", line 2195, in __init__
+    self.set_text(text, scope, substitute)  # type: ignore
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
+  File "renpy/text/text.py", line 2329, in set_text
+    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
+  File "renpy/substitutions.py", line 355, in substitute
+    s = interpolate(s, variables)  # type: ignore
+        ~~~~~~~~~~~^^^^^^^^^^^^^^                
+  File "renpy/substitutions.py", line 52, in interpolate
+    for lit, expr, conv, fmt in parse(s):
+                                ~~~~~^^^ 
+  File "renpy/substitutions.py", line 233, in parse
+    raise ValueError("invalid conversion {!r}".format(c))
+ValueError: invalid conversion ' '
 
-Windows-11-10.0.26100-SP0 AMD64
-Ren'Py 8.5.0.25111603
+Windows-10-10.0.19045-SP0 AMD64
+Ren'Py 8.4.1.25072401
 HeartsDepthDEMO 3.0
-Sat Dec  6 13:47:06 2025
+Tue Dec 16 05:58:18 2025

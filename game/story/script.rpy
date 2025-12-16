@@ -114,7 +114,6 @@ label chapter1:
     show camera_human at atcamera:
         zoom 0.18
     with dissolve
-    #"As soon as I exit the train car, I remove my camera from my purse to take a picture."
     "As soon as I exit the train car, I take my camera out of my purse."
     y veryhappy "This is a great place for a picture!"
     hide black
@@ -123,33 +122,33 @@ label chapter1:
 
     menu:
         ny happy "Take a picture of..."
-        "The townspeople.":
+        "The seaside view.":
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
-            y "Let's see how it turned out!"
-            show photo_aquantis:
-                zoom 0.09
-                subpixel True pos (474, 168)
-            y "Everyone's dress is so lightweight."
-            y "I'm not Inland anymore, that much is clear."
-            hide photo_aquantis with dissolve
+            y veryhappy "Let's see how it turned out!"
+            show photo_aquantis1 at atphoto
+            with dissolve
+            y happy "This part of town has a great view of the sea."
+            y veryhappy "I can’t wait to head to the beach again."
 
-        "The seaside town.":
+            hide photo_aquantis1 with dissolve
+
+        "The town buildings.":
             play sound "audio/sfx_cameraShutter.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
-            y "Let's see how it turned out!"
-            show photo_aquantis:
-                zoom 0.09
-                subpixel True pos (474, 168)
-            "A quaint assortment of homes and shops descend down the hill that leads to the harbor."
-            y "This part of town has a great view of the sea."
-            hide photo_aquantis with dissolve
+            y veryhappy "Let's see how it turned out!"
+            show photo_aquantis2 at atphoto
+            with dissolve
+            y shocked "The buildings are so different from back home."
+            y happy "I'm not Inland anymore, that much is clear."
 
-    "Grandfather's address is on the letter I have, but it would be helpful to ask for some directions. The harbor city is huge."
+            hide photo_aquantis2 with dissolve
+
+    ny happy "Grandfather's address is on the letter I have, but it would be helpful to ask for some directions. The harbor city is huge."
     y "Excuse me- sir! Hello?"
-    "He ignores me and walks away from the station without a glance."
+    ny neutral "He ignores me and walks away from the station without a glance."
     "I try to ask a few more people for help, but no one wants to even give me the time of day."
     ny frustrated "Trying to grab anyone's attention around here is impossible!"
     "Were they always this unfriendly when I was younger? {w}I can't remember."
@@ -170,7 +169,6 @@ label chapter1:
     ny neutral "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
     "Now, the street feels gloomy and unwelcoming."
     "Rather than being ignored, it seems I'm attracting uncomfortable attention."
-    "The people's gazes feel heavy on me as I walk by."
     badguy "Tch, Inlanders. What's someone like her out here for?"
     badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
 
@@ -199,40 +197,54 @@ label chapter1:
             $ seastorm = True
             "There's a board filled with notices and posters here."
             y neutral "Beware of sudden storms..."
-            "Deadly sea storms can strike without rhyme or reason. Use caution when traveling without seasoned sailors."
-            #Show propaganda poster here
+            show black:
+                alpha 0.5
+            show text "{i}Deadly sea storms can strike without rhyme or reason. {p}{w}Use caution when traveling without seasoned sailors.{p}{w}{/i}":
+                align (0.5,0.5)
+            with dissolve
+            pause
             t "Those storms aren’t something to mess with. Stay safe if you’re heading out to sea, missy!"
+            hide black
+            hide text
+            with dissolve
             y happy "I will. Thank you!"
             "The man walks off and I browse over a few more posters before turning away."
 
-            #needs a few more lines, include a townsperson
 
         "Children playing in the street":
             $ childrenplaying = True
             "The children are playing some kind of game."
-            kid "I want to be the mermaid hunter this time!"
-            kid "No way, it's my turn!"
-            y "How cute."
-            kid "I don't wanna be no stinkin' fish! I'ma be a hunter!"
-            "I wonder if I ever played like that as a kid here."
+            energetickid "I want to be the mermaid hunter this time!"
+            playfulkid "No way, it's my turn!"
+            y veryhappy "How cute."
+            energetickid "I don't wanna be no stinkin' fish! I'ma be a hunter!"
+            ny neutral "I wonder if I ever played like that as a kid here."
 
         "The paperboy":
             $ newspaper = True
             paperboy "Extra, extra! Read all about it!"
             "I purchase a copy of the weekly news."
-            "Several Fishing Companies Absorbed by Morrowe Family: What Will They Do Now?"
+            show black:
+                alpha 0.5
+            show text "{i}Several Fishing Companies Absorbed by Morrowe Family:{p}{w} What Will They Do Now?{p}{w}{/i}":
+                align (0.5,0.5)
+            with dissolve
+            pause
+            #"Several Fishing Companies Absorbed by Morrowe Family: What Will They Do Now?"
             y "Morrowe...that name sounds familiar."
-            y "But where have I heard it from?"
+            y neutral "But where have I heard it from?"
+            hide black
+            hide text
+            with dissolve
             "I tuck the newspaper in my coat for later."
 
-    "After looking around, it seems like the townsfolk are friendlier here."
+    ny happy "After looking around, it seems like the townsfolk are friendlier here."
 
     "Perhaps they can help me find Grandfather's address."
 
-    "Where do I start...?"
     menu talktownsfolk:
         set menuset
-        "Talk to..."
+        ny happy "Talk to..."
         "Elderly woman":
             y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
             "The woman turns to me. She has a strange look on her face."
@@ -241,11 +253,11 @@ label chapter1:
             woman "Knock knock."
             y "Oh, I know this one. Who's there?"
             woman "Knock knock."
-            y"…"
+            y neutral "…"
             y "Uh...knock knock?"
             "The woman grins toothily."
             woman "Gehehehe! The wall!"
-            "It doesn't seem like she's trying to tell me a joke at all."
+            ny nervous "It doesn't seem like she's trying to tell me a joke at all."
             y "Have a good day, ma'am."
             "I quickly walk away from the strange woman, though I can't help but feel like whatever she kept repeating is important somehow."
 
@@ -264,7 +276,7 @@ label chapter1:
             y "Thank you for your help."
             kid "No problem, lady!"
             "He dashes off with a giggle."
-            "I have no choice but to find someone else for more information."
+            ny nervous "I have no choice but to find someone else for more information."
 
             jump talktownsfolk
 
@@ -272,8 +284,8 @@ label chapter1:
             #ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
             #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
-            y neutral "Good day to you sir. I'm sorry for disrupting you, but-"
-            fishmonger "Bass or tilapia?" with vpunch
+            y happy "Good day to you sir. I'm sorry for disrupting you, but-"
+            fishmonger shocked "Bass or tilapia?" with vpunch
             y shocked "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
             fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then ya leave, ya get it?"
             y frustrated "I will pay you for the help! I'm just looking for this address."
@@ -288,9 +300,9 @@ label chapter1:
             fishmonger "That's all I know, and all I'll say."
             "He stares at me with a glimmer of greed in his eyes."
             fishmonger "Payment?"
-            "Clearly, the only language merchants speak is money..."
+            ny nervous "Clearly, the only language merchants speak is money..."
             y "Oh, yes. Thank you so much for the help."
-            "That was far from helpful!"
+            ny frustrated "That was far from helpful!"
             "But I leave him a fair amount of coin for his trouble anyway."
 
             jump talktownsfolk
@@ -361,9 +373,9 @@ label knocking:
 label knockwhatever:
     ny nervous "After a few attempts, I'm fairly certain I've forgotten the code."
     y "..."
-    ny frustrated "Whatever!"
-    "I knock on the wall repeatedly in frustration, with no rhyme or reason!"
-    "..."
+    y frustrated "Whatever!"
+    "I knock on the wall repeatedly in frustration, with no rhyme or reason!" with screenShake
+    y "..."
 
 label afterknocking:
     "There is no response at first, but..."
@@ -371,7 +383,8 @@ label afterknocking:
 
     play sound "audio/sfx_brickWallMoving.mp3" volume 0.44
     #SCENE CHANGE - Black Screen
-    scene bg black with slideawayright
+    scene bg black
+    with slideawayright
     ny shocked "The brick wall suddenly pulls back."
     "With cautionary steps, I move inside."
     $ config.side_image_tag = "None"
@@ -381,9 +394,10 @@ label afterknocking:
     #SFX -  Elevator
     play sound "audio/sfx_elevator.wav" volume 0.1
     #sounds off
-    "The rickety elevator descends down for a while. I start to regret stepping inside - who knows what I will find so far down?"
+    "The rickety elevator descends down for a while."
     "..."
     "..."
+    "I start to regret stepping inside - who knows what I will find so far down?"
     "..."
     #SFX -  Elevator
     play sound "audio/sfx_elevator2.wav" volume 0.1
@@ -418,7 +432,8 @@ label afterknocking:
         linear 1.75 zoom 1.0
     with fade
     with Pause(1.75)
-    show bg underground market
+    show bg underground market:
+        fit "contain"
     $ config.side_image_tag = "june"
     ny nervous "It takes a few seconds for my eyes to adjust to the dim lighting as I step out of the elevator."
     ny shocked "A strange new world greets me.  Creatures I've never seen before are lined up in tanks or hung out on display."
@@ -433,16 +448,24 @@ label afterknocking:
     "Surely a picture wouldn't hurt?"
     "I reach for my camera."
     $ speaking_char = "Hunter"
-    show hunter neutral mask with dissolve
+
+
+#    show hunter neutral facemask at hunter_center:
+#        zoom 1.35
+#    with dissolve
+
+    show hunter neutral facemask
+
 #    window auto hide
-    show hunter neutral:
+    show hunter neutral facemask:
         subpixel True
         ypos 1.17 zoom 1.0
-        linear 0.80 ypos 1.75 zoom 1.5
-    with Pause(0.80)
+        ease 0.60 ypos 1.75 zoom 1.5
     with dissolve
-    show hunter neutral:
+    with Pause(0.30)
+    show hunter neutral facemask:
         ypos 1.75 zoom 1.5
+#    with dissolve
 #    window auto show
 
     uhunter shocked "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
@@ -452,7 +475,7 @@ label afterknocking:
         xalign 0.5
         ease 0.2 ypos 1.17 zoom 1
     with vpunch
-    ny shocked "I turn to see who the man is behind me. How does he know my name?"
+    ny shocked "How does he know my name?"
     "I quickly yank my hand away."
     y "Who are you, exactly?"
     show hunter happy with dissolve
@@ -461,13 +484,14 @@ label afterknocking:
     y neutral "I'm sorry sir, you've got the wrong person. I haven't been in this part of Aquantis before."
     show hunter raisedeyebrow with dissolve
     uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger either, though I s'pose it's been awhile."
-    "He pulls down his mask to reveal a handsome face."
     #TAKE OFF MASK
-    show hunter neutral -mask:
+    show hunter neutral:
         xalign 0.5
         ease 0.7 ypos 1.75 zoom 1.5
-    pause 0.2
-    show hunter neutral with dissolve
+    pause 0.4
+    with dissolve
+    show hunter neutral -facemask with dissolve
+    "He pulls down his mask to reveal a handsome face."
     uhunter "Hunter. Hunter {w=0.1}Morrowe."
     if newspaper:
         ny shocked "Morrowe? I saw that name in the newspaper earlier, but the man himself looks unfamiliar."
@@ -490,17 +514,19 @@ label afterknocking:
     "I remember his smile when he was showing me the shells or bugs he found."
     "If there was anyone I'd recall from my time here, it'd be him."
     y happy "That's right! Hammy!"
+    show hunter sad with dissolve
     "His shoulders deflate."
     h "Of all the things you could remember me by, it just had to be that nickname…"
 
     menu:
         "Tease him.":
             $ hunter_points += 1
+            show hunter nervous with dissolve
             y "Well, Hammy, it's hard to forget a nickname like that!"
             h "Please, really, just Hunter is fine."
             y veryhappy "But your face is so funny when I say it!"
-            h "You..."
             show hunter flustered with dissolve
+            h "You..."
             "He looks away from me. I believe he is thoroughly embarrassed now."
             y "Of course, I'll call you Hunter. I'm just having my fun."
 
@@ -511,9 +537,7 @@ label afterknocking:
     show hunter happy with dissolve
     h "...Didn't think I'd ever hear you say my name again."
     y happy "You look so different now!"
-    show hunter neutral:
-        xalign 0.5
-        ease 0.2 ypos 1.17 zoom 1
+    show hunter neutral with dissolve
     h "Well, it's been about, what... ten years or so since we've last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
     y "I came to see my grandfather, if you still remember him."
@@ -522,7 +546,6 @@ label afterknocking:
     h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking ‘round here instead."
     show hunter happy with dissolve
     h "Feeling nostalgic?"
-
     y "Well... I was following the address on this letter he sent me. The townspeople pointed me here."
     show hunter neutral with dissolve
     "I show him Grandfather's letter."
@@ -560,7 +583,7 @@ label afterknocking:
     scene bg underground market:
         fit "contain"
     $ config.side_image_tag = "june"
-    show hunter neutral mask
+    show hunter neutral facemask
     with dissolve
 
     "I slide the coat over my shoulders and Hunter pulls his mask back up."
@@ -625,18 +648,25 @@ label afterknocking:
             "Hunter must have noticed I was staring for too long. He pulls on my hand and walks faster through the crowd."
 
     play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.1 loop
-    scene bg black with dissolve:
-        zoom 2.0
-    camera:
-        zoom 1.0
+#    camera:
+#        zoom 1.0
     scene bg underground market:
         fit "contain"
     with fade
-    show hunter neutral mask with dissolve
-    h "Try to keep your eyes down, or people might see your face."
+    show hunter neutral facemask with dissolve
     $ config.side_image_tag = "june"
-    y neutral "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
+
+    if promermaid >= 1:
+        h nervous "Looking a bit pale, [y]. You okay?"
+        y "Sorry. It's just... I haven't seen a mermaid before. It's rather shocking."
+
+    if antimermaid >= 1:
+        h neutral "Try to keep your eyes down, or people might see your face."
+        y "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
+
+    show hunter raisedeyebrow with dissolve
     h "...Huh. {w}Right."
+    show hunter neutral with dissolve
     h "You get used to seeing them after a while."
 
     menu:
@@ -644,8 +674,10 @@ label afterknocking:
             $ hunter_points += 1
             h "Yeah, I do. Family business, remember?"
             if newspaper:
-                y "I thought it was a fishing company?"
+                y shocked "I thought it was a fishing company?"
+                show hunter raisedeyebrow with dissolve
                 h "On the surface, sure."
+                show hunter neutral with dissolve
                 h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
             else:
                 y "I don't quite remember much, to be honest."
@@ -658,7 +690,7 @@ label afterknocking:
             y "..."
             h "Don't be fooled, [y]. They're more dangerous than they look."
 
-    "A lot has changed since I last saw him."
+    ny neutral "A lot has changed since I last saw him."
     h "Y'know, the old man used to hunt mermaids, too."
     y shocked "Really? {i}Grandfather{/i} did?"
     h "Yep- the best of us. Then he retired and sold most of his ships to my mother."
@@ -697,18 +729,20 @@ label afterknocking:
         linear 1.75 zoom 1.0
     with dissolve
     with Pause(1.75)
-    show bg port
+    show bg port:
+        fit "contain"
 
     play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
     play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
     "We make it outside and I can finally see the sky again."
 
     $ config.side_image_tag = "june"
-    y neutral "It's afternoon already?"
-    show hunter neutral mask with dissolve
+    y shocked "It's afternoon already?"
+    show hunter neutral facemask at hunter_center
+    with dissolve
     h "Wandering does that to you."
-    show hunter -mask with dissolve
-    "He pulls the mask off his face and I hand him back his coat."
+    show hunter -facemask with dissolve
+    ny neutral "He pulls the mask off his face and I hand him back his coat."
     h "When did your train get here?"
     y "Early morning. My legs are aching to sit."
     show hunter happy with dissolve
@@ -720,14 +754,13 @@ label afterknocking:
     show hunter neutral at farright with move
     h "The ole girl over there, can't miss her."
     "Out on the furthest side of the docks is a large wooden ship. It sticks out compared to the rest, towering proudly over the harbor."
-    y "So that's his home..."
+    y shocked "So that's his home..."
 
     #show hunter neutral at centre with move
-    #june sad
-    "All these years apart are finally coming to an end."
+    ny nervous "All these years apart are finally coming to an end."
     "Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
-    "I want to hear his side of it, regardless."
-    "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
+    ny frustrated "I want to hear his side of it, regardless."
+    ny neutral "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
     play sound "audio/sfx_shipDoorKnock.ogg"
     "Hunter gives a few strong knocks with the back of his hand."
     "..."
@@ -743,7 +776,6 @@ label afterknocking:
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
     g "Oh, bless the stars... Yer really here! My dear, sweet [y]!"
-    #$ config.side_image_tag = "none"
     show grandpa happy:
         subpixel True
         zoom 1.0
@@ -752,11 +784,11 @@ label afterknocking:
     show grandpa happy:
         ypos 1.27 zoom 1.5
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
-    "I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
+    ny veryhappy"I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
     play music music_town fadein 1.0 volume 0.9
     play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
     play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
-    y veryhappy "It's been too long, Grandfather!"
+    y "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
         ypos 1.27 zoom 1.5
@@ -770,6 +802,7 @@ label afterknocking:
     show grandpa happy at Position(xpos=0.64) with move
     ny veryhappy "Hunter is barely able to respond before Grandfather traps him in his arms too. Hunter groans in response and I can't help but laugh." with vpunch
     ny happy "Once Grandfather has squeezed the daylights out of us, he lets go."
+    show hunter neutral
     show grandpa happy at left2 with move:
         ease 0.3
     g "Oh, just how many years has it been since I've seen ye, [y]?"
@@ -826,7 +859,7 @@ label timeskip1:
     show hunter neutral at right2 with dissolve
     "Along with Hunter, who just happened to be free."
 
-    y neutral "Thanks for joining us, Hunter."
+    y happy "Thanks for joining us, Hunter."
 
     show hunter happy with dissolve
     h "Sure. Had some time today."
@@ -839,9 +872,9 @@ label timeskip1:
     show hunter neutral with dissolve
     h "There any fish you got in mind?"
 
-    y "I have no idea. Whatever tastes good, I suppose."
+    y veryhappy "I have no idea. Whatever tastes good, I suppose."
 
-    g "Ye ain't really tasted fish till yer out at sea. There's all kinds."
+    g happy "Ye ain't really tasted fish till yer out at sea. There's all kinds."
 
     g "O'course some fish bite back. Ye got to watch out for the mermaids out there."
 
@@ -881,7 +914,7 @@ label timeskip1:
     g "I'll see ye later tonight, aye!"
     hide grandpa with dissolve
     $ speaking_char = "Hunter"
-    show hunter at centre with move
+    show hunter at hunter_center with move
     "My questions are once again left unanswered as Grandfather hurries away."
     #show hunter at center with move
     show hunter raisedeyebrow with dissolve
@@ -904,12 +937,12 @@ label timeskip1:
     h "‘Sides, you don't have the sea legs for it."
     y neutral "We don't have to go out that deep. Just enough to bring him back a photo."
 
-    show hunter raisedeyebrow
+    show hunter raisedeyebrow with dissolve
     h happy "..."
 
     menu:
         "\"Please, Hammy!\"":
-            show hunter flustered
+            show hunter flustered with vpunch
             h "Ugh."
             y happy "Come on, you can do a favor for an old friend, right?"
             show hunter happy with dissolve
@@ -928,9 +961,11 @@ label timeskip1:
     h "Sure. But I get to be Captain this time."
 
     #SCENE CHANGE - Sea
+    scene black
+    with Dissolve(1.5)
     scene bg calmwave:
         fit "contain"
-    with dissolve
+    with fade
     stop music fadeout 1.0
     stop ambience fadeout 1.0
     #SFX - waves (calm)
@@ -945,18 +980,18 @@ label timeskip1:
     y shocked "Mermaids sunbathe? Really?"
     show hunter neutral with dissolve
     h "Yep. But if they spot my little skiff, the show's over."
-    "I take my camera out of my purse."
+    ny neutral "I take my camera out of my purse."
     show black:
         alpha 0.35
     show camera_human at atcamera:
         zoom 0.18
     with dissolve
-    ny neutral "I wonder if I'll be able to catch a picture of a mermaid?"
+    "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
     hide black
     hide camera_human
+    show hunter happy
     with dissolve
-    show hunter happy with dissolve
     h "So, you're into photography now?"
     y veryhappy "Aye, Captain!"
     h "Heh. Didn't think you'd have the patience for it."
@@ -968,7 +1003,7 @@ label timeskip1:
     h "Don't like being near them any more than we have to."
     y shocked "Oh. They're really that dangerous?"
     h "Yeah. It's the pretty ones you gotta watch out for."
-    h "Nothing for you to worry about though. You'll be-"
+    h neutral "Nothing for you to worry about though. You'll be-"
     h "..."
 
     show hunter nervous with dissolve
@@ -1015,14 +1050,19 @@ label timeskip1:
     menu:
         "..."
         "Listen to Hunter.":
-            # +Hunter points
+            $ hunter_points += 1
             "I shouldn't take unnecessary risks."
-            "My life isn't worth a photo."
-            ny neutral "I tuck my camera back into my purse and move away from the edge."
+            "My life isn't worth a blurry storm photo."
+            ny neutral "I keep my purse closed and move away from the edge."
 
         "I can't give up on a picture.":
-            "This should be proof that I can handle whatever Grandfather has to say."
-            ny neutral "I hold my camera up, adjusting the shutter speed and exposure to the perfect amount..."
+            show black:
+                alpha 0.35
+            show camera_human at atcamera:
+                zoom 0.18
+            with dissolve
+            ny frustrated "Enduring a storm at sea should be proof enough that I can handle whatever Grandfather has to say."
+            ny neutral "I hold my camera steady, adjusting the shutter speed and exposure to the perfect amount..."
 
 
     stop ambience fadeout 2.0
@@ -1033,19 +1073,38 @@ label timeskip1:
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0 loop
 
     u shocked "Come...come with me..."
+    hide black
+    hide camera_human
+    with dissolve
     y "What...?"
     u "O' ye of land to the queen of sea..."
+    show bg:
+        blur 4.00
+    with dissolve
     "A haze clouds my thoughts and my legs start to move on their own."
+
+    show bg choppywave:
+        subpixel True
+        ypos 1.0 zoom 1.0
+        ease 1.00 ypos 1.13 zoom 1.25
+    with Pause(1.10)
+    show bg choppywave:
+        ypos 1.13 zoom 1.25
+
     "I lean over the side of the boat, searching for the source of the singing, but all I can see are the churning waves below."
     h "[y], what are you doing?!"
     u "Come with me..."
     u "...to the depths below..."
     "The alluring voice seems like it's singing for my ears alone."
-    show hunter nervous with vpunch
+    show hunter nervous
+    with vpunch
     h "Shit, it's a siren! Cover your ears, [y]!"
     "Hunter abandons his position at the helm and races towards me, but I can't imagine why."
     "My hands tightly grip the slippery rail that's keeping me from falling in, and yet the rest of my body is going against my will to stay put."
     "For a split second, I think I can hear Hunter calling my name before I take the plunge."
+
+    scene black
+    with Dissolve(1.0)
 
     stop music fadeout 1.0
     stop ambience fadeout 1.0
@@ -1053,7 +1112,7 @@ label timeskip1:
     #SFX - SPLASH
     scene bg drowning:
         fit "contain"
-    with hpunch
+    with vpunch
     play sound "audio/sfx_splash.ogg" volume 0.6
 
     "The light of the surface drifts further and further away as my body sinks deeper into the emptiness."
@@ -1094,7 +1153,7 @@ label timeskip1:
     "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
     y "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
-    "Try as I might, none of my words come out right."
+    "No matter what I try to say, none of my words come out right."
     "I've... been turned into a fish by this siren?"
     menu:
         "Stay very, very still.":
@@ -1113,23 +1172,33 @@ label timeskip1:
 
     scene bg skylla cave:
         zoom 0.5
+    #keep this at a 0.5 zoom until new bg
     show skylla happy
     with dissolve
     $ config.side_image_tag = "june"
-    siren neutral fish "Aw. You're hurting my feelings! Aren't you happy to see me?"
+    siren "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
-    "Skylla..? Is that the name of this siren?"
+    ny neutral fish "Skylla..? Is that the name of this siren?"
+
     show skylla neutral:
-        yalign 0.1
-        ease 0.5 zoom 1.5
+        subpixel True
+        ypos 780 zoom 1.0
+        ease 0.30 ypos 1050 zoom 1.5
+    with Pause(0.40)
+    show skylla neutral:
+        ypos 1050 zoom 1.5
+
     "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
     s "There's no need to rush. We have all the time in the world together. And you'll give me what I want."
     show skylla happy:
-        yalign 0.1
-        ease 0.7 zoom 1
+        subpixel True
+        ypos 1050 zoom 1.5
+        ease 0.30 ypos 780 zoom 1.0
+    with Pause(0.40)
+    show skylla happy:
+        ypos 780 zoom 1.0
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    pause 0.5
     "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this... forever?"
@@ -1202,18 +1271,22 @@ label timeskip1:
 
     "Come on, [y]! You can do better than this! What else is there?"
 
-    show skylla happy with dissolve
+    show skylla neutral with dissolve
     "Before I can finish the thought, the siren swims back towards me."
     #play sound "audio/sfx_bubblePop.mp3" volume 0.2
     "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
     "My tiny heart thuds rapidly. She could pop me in an instant as well."
-    show skylla:
-        yalign 0.1
-        ease 0.5 zoom 1.5
+    show skylla happy:
+        subpixel True
+        ypos 780 zoom 1.0
+        ease 0.30 ypos 1050 zoom 1.5
+    with Pause(0.40)
+    show skylla happy:
+        ypos 1050 zoom 1.5
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "It's a lie. A burning pain spreads across my body as she sings."
-    "I can't even scream as I feel something tugging inside me, as if the siren is trying to pull me apart from within."
+    "I can't even scream as I feel something tugging inside me, as if the siren is trying to pull me apart from within." with vpunch
     s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
     show skylla angry with dissolve
     "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
@@ -1221,8 +1294,12 @@ label timeskip1:
     #FLASH EFFECT
     stop sound
     show skylla angry:
-        yalign 0.1
-        ease 0.02 zoom 1
+        subpixel True
+        ypos 1050 zoom 1.5
+        ease 0.30 ypos 780 zoom 1.0
+    with Pause(0.40)
+    show skylla angry:
+        ypos 780 zoom 1.0
     "The siren screams as she drops me and flails backward."
     show skylla shocked with dissolve
     s "No. No! This- this isn't right."
@@ -1248,10 +1325,11 @@ label timeskip1:
     "Time seems to slow down."
     "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
     play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.2
-    y "Ahh!" with vpunch
+    y "..!" with vpunch
     "The force sends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
     stop music
     scene bg black
+    with fade
 
     "I swim as fast as I can. Faster than I've ever ran when I had legs."
     "My heart is thumping madly in my chest as I force my way through the debris. "
@@ -1274,7 +1352,7 @@ label timeskip1:
 
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
-    show thioran angry at farleft
+    show thioran angry at thioran_left
     show jorunn sweat at right2
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
@@ -1287,9 +1365,9 @@ label timeskip1:
 
     hide kelp with dissolve
 
-    show thioran angry at farleft
-    show jorunn sweat at right2
-    with dissolve
+#    show thioran angry at thioran_left
+#    show jorunn sweat at right2
+#    with dissolve
 
     $ speaking_char = "all"
     "A pair of merfolk are staring each other down."
@@ -1307,7 +1385,7 @@ label timeskip1:
     uj "...But if the shell fits!"
     up "You thieving little-"
 
-    show thioran sweat at jumpin2
+    show thioran shocked at jumpin2
     show jorunn sweat at jumpin
     with vpunch
 
@@ -1326,9 +1404,12 @@ label timeskip1:
         "Anything would be better than returning to the sea witch."
     if antimermaid >= 1:
         "Should I even be trusting any of them? Chasing mermaids is how I became stuck like this."
-    #"Regardless, they're both starting to swim away."
 
     $ speaking_char = "all"
+
+
+    show screen notify2("This is a significant choice. Choose wisely.")
+
     menu:
         "What do I do...?"
         "Follow Striking Prince":

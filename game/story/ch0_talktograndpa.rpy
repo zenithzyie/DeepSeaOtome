@@ -1,6 +1,5 @@
 
 label grandpatalk:
-    #ZOOOM NEEDS FIXED HELP
     window auto hide
     scene bg gpa:
         fit "contain"
@@ -42,16 +41,16 @@ label grandpatalk:
             xalign 0.5
         with dissolve
 
-    "Is that Grandfather? He looks so young and happy."
-    "That must be Grandmother and Mother next to him."
+    ny shocked "Is that Grandfather? He looks so young and happy."
+    ny happy "That must be Grandmother and Mother next to him."
     g "Yer so much like her. A fine young woman ye have grown into."
     y "Like Mother?"
     g "Ye have Marie's eyes, aye, but yer a spittin' image of yer grandmother."
 
     #zoom on grandma
 
-    "She had already passed when I was born. I hardly know anything about her."
-    "And ever since Mother and I stopped visiting, Grandfather has been all alone."
+    ny neutral "She had already passed when I was born. I hardly know anything about her."
+    ny sad "And ever since Mother and I stopped visiting, Grandfather has been all alone."
 
     hide cg_familyportrait
     hide black
@@ -62,6 +61,7 @@ label grandpatalk:
     y "Grandfather?"
     show grandpa happy with dissolve
     g "Why don't I get ye some coffee, little birdie."
+    show grandpa at left with move
     "He moves over to a small kettle brewing on the stove."
     y shocked "Huh? I'd love some, but that's not-"
     g "Yer old enough to have some now. It was yer grandmother's favorite."
@@ -69,25 +69,28 @@ label grandpatalk:
     y neutral "But I really wanted to ask you-"
     show grandpa neutral with dissolve
     g "...Later, little birdie. I'll tell ye later."
+    show grandpa:
+        xalign 0.5
+    with move
     g "How long are ye stayin' in Aquantis for?"
     y "Well... {w}I didn't give it much thought. I just wanted to come see you."
     g "Aye? Then we have plenty of time."
     g "Here ye are, [y]."
     "He hands me one of the steaming mugs of coffee and sits back down."
-    y "But Grandfather-"
+    y nervous "But Grandfather-"
     g "Ye will stay, won't ye? It'll be just like when ye was little."
-    y "I... {w}Of course. If you'll have me?"
+    y shocked "I... {w}Of course. If you'll have me?"
     show grandpa happy with dissolve
     g "There's always room for ye here."
 
-    "It looks like I won't be getting anything out of Grandfather today…"
+    ny neutral "It looks like I won't be getting anything out of Grandfather today…"
 
     "Perhaps he just needs time."
 
-    "Well, I'm not planning on leaving soon. I can wait a little longer for him."
+    ny happy "Well, I'm not planning on leaving soon. I can wait a little longer for him."
 
     g "Why don't I make ye some stew for dinner. Yer favorite."
-    y "That sounds wonderful."
+    y veryhappy"That sounds wonderful."
 
     stop music fadeout 1.0
     stop ambience fadeout 1.0
