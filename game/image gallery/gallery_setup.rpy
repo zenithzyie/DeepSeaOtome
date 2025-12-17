@@ -77,3 +77,7 @@ image bg skylla cave = ("images/bgs/bg skylla cave.png")
 image bg throneroom = ("images/bgs/bg throneroom.jpg")
 image bg underground market = ("images/bgs/bg underground market.jpg")
 image bg white = ("images/bgs/bg white.jpg")
+
+#other images
+image chibi_merjune = ("gui/ach/chibi_merjune.png")
+image chibi_thio = ("gui/ach/chibi_thio.png")

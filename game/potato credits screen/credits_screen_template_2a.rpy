@@ -68,7 +68,11 @@ screen credits():
                 # Credit block
                 ## Default content that came with Ren'Py's About screen
                 hbox:
-                    add "gui/window_icon.png" zoom 0.59
+                    add "props/camera_human.png":
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -81,9 +85,9 @@ screen credits():
                         hbox:
                             textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
 
-                # Credit block: EM
+                # Credit block: CRABY
                 hbox:
-                    add "logos/em logo.png":
+                    add "logos/craby logo.png":
                         xsize 150
                         ysize 150
                         fit "contain"
@@ -91,16 +95,20 @@ screen credits():
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
-                        text "Em" style "credits_name_small"
+                        text "Craby" style "credits_name_small"
                         null height 10  # manual vertical spacing
                         text "Director, Lead Character Art, Writing & Production" style "credits_role_small"
                         null height 10
                         hbox:
                             #add "twitter-original"
-                            textbutton _("Instagram") action OpenURL("https://www.instagram.com/e.ggily") style "credits_url_button" text_style "credits_url_text_small"
+                            textbutton _("Bluesky") action OpenURL("https://bsky.app/profile/crabbily.bsky.social") style "credits_url_button" text_style "credits_url_text_small"
                 # Credit block: ALI
                 hbox:
-                    add "gui/window_icon.png" zoom 0.59
+                    add "gui/window_icon.png":
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -127,7 +135,7 @@ screen credits():
                         null height 5
                         text "Jelly" style "credits_name_small"
                         null height 10
-                        text "Environment & Character Art" style "credits_role_small"
+                        text "Environment, Character & UI Art" style "credits_role_small"
                         null height 10
                         hbox:
                             #add "twitter-original"
@@ -136,7 +144,11 @@ screen credits():
 
                 # Credit block: ALYSSA
                 hbox:
-                    add "gui/window_icon.png" zoom 0.59
+                    add "gui/window_icon.png":
+                        xsize 150
+                        ysize 150
+                        fit "contain"
+                        yalign 0.5
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -148,6 +160,20 @@ screen credits():
                             #add "twitter-original"
                             textbutton _("itch.io") action OpenURL("https://araetzel.itch.io/") style "credits_url_button" text_style "credits_url_text_small"
 
+                # Credit block: LU
+                hbox:
+                    add "logos/lu logo.png" zoom 0.6
+                    null width 25 # manual horizontal spacing
+                    vbox:
+                        null height 5
+                        text "Lu" style "credits_name_small"
+                        null height 10
+                        text "Coding" style "credits_role_small"
+                        null height 10
+                        hbox:
+                            #add "twitter-original"
+                            textbutton _("itch.io") action OpenURL("https://itch.io/profile/flrmstr") style "credits_url_button" text_style "credits_url_text_small"
+
                 # Credit block: YUJA
                 hbox:
                     add "gui/window_icon.png" zoom 0.59
@@ -156,7 +182,7 @@ screen credits():
                         null height 5
                         text "Yuja" style "credits_name_small"
                         null height 10
-                        text "Environment Art & UI Design" style "credits_role_small"
+                        text "Environment Art & UI Concepts" style "credits_role_small"
                         null height 10
                         hbox:
                             #add "twitter-original"
@@ -193,20 +219,6 @@ screen credits():
                             #add "twitter-original"
                             textbutton _("Twitter/X") action OpenURL("https://x.com/waweii") style "credits_url_button" text_style "credits_url_text_small"
 
-                # Credit block: LU
-                hbox:
-                    add "logos/lu logo.png" zoom 0.6
-                    null width 25 # manual horizontal spacing
-                    vbox:
-                        null height 5
-                        text "Lu" style "credits_name_small"
-                        null height 10
-                        text "Coding" style "credits_role_small"
-                        null height 10
-                        hbox:
-                            #add "twitter-original"
-                            textbutton _("itch.io") action OpenURL("https://itch.io/profile/flrmstr") style "credits_url_button" text_style "credits_url_text_small"
-
                 # Credit block: LEMNISCATE
                 hbox:
                     add "logos/lem logo.png" zoom 0.6
@@ -236,4 +248,37 @@ screen credits():
                             textbutton _("itch.io") action OpenURL("https://itch.io/profile/vylphix") style "credits_url_button" text_style "credits_url_text_small"
 
                 # fill unused grid spot (when amount is uneven) with null
+                    # Credit block: Additional Attributions
+                hbox:
+                    #add "gui/window_icon.png" zoom 0.59
+                    #null width 25 # manual horizontal spacing
+                    vbox:
+                        null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
+                        text "Additional Attributions" style "credits_name_small"
+                        null height 10  # manual vertical spacing
+                        textbutton _("Gaming Variety Potato - Credits Template") action OpenURL("https://gaming-variety-potato.itch.io/renpy-credits-screen-ui-templates") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                        textbutton _("Ren'py Action Editor 3") action OpenURL("https://github.com/kyouryuukunn/renpy-ActionEditor3") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                        textbutton _("Kigyo - Speech Pauses") action OpenURL("https://kigyo.itch.io/speech-pauses-for-renpy") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                        textbutton _("Feniks - Various Tools, Plugins, Etc.") action OpenURL("https://feniksdev.itch.io/") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                        textbutton _("Wattson - Ren'py Auto Highlight") action OpenURL("https://wattson.itch.io/renpy-auto-highlight") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                hbox:
+                    #add "gui/window_icon.png" zoom 0.59
+                    #null width 25 # manual horizontal spacing
+                    vbox:
+                        xalign 0.0
+                        null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
+                        text "   " style "credits_name_small"
+                        null height 10  # manual vertical spacing
+                        text "Orcinus - Playtesting" color "#fff" style "credits_url_text_small"
+                        null height 10
+                        textbutton _("Joel Sanderson - Music") action OpenURL("https://www.demolitionkitchen.com/hosted_sites/index.htm") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+
                 null
+
+                null height 100

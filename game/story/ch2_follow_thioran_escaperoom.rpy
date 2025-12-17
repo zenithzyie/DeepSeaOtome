@@ -35,6 +35,8 @@ label ch2_castle_escaperoom:
                         queue sound "audio/sfx_windowSlideOpen.ogg" volume 0.6
                         ny happy "The window slides open. There’s just enough room for me to swim through."
                         ny veryhappy "Now I just need to find Cetus!"
+                        if failescape == 0:
+                            $ perfectescaperoom.grant()
                         jump escapedroom_tohallway
                     if not hairpin:
                         if punchwindow:
@@ -249,6 +251,7 @@ label escapedroom_tohallway:
     scene bg palace hallway:
         fit "contain"
     with fade
+    $ config.side_image_tag = "june"
     ny mermaid neutral "I find myself in another hallway."
     ny shocked "Huh. I suppose this is better than having to find my way back inside the castle."
     ny nervous "That guard’s probably just around the corner. I doubt he’s moved all day."
@@ -256,19 +259,38 @@ label escapedroom_tohallway:
     ny neutral "I need to find him before Sir Guard realizes I’m gone."
     "Hmm..."
 
-    #flashback with thioran in hallway here
+    $ speaking_char = "all"
+    $ config.side_image_tag = "None"
+    show bg palace hallway:
+        fit "contain"
+    show thioran frown
+    show black:
+        alpha 0.45
+    with fade
+
     "{i}After several turns, we pass by a hallway with a particularly elegant door.{/i}"
     "{i}It looks like it could lead to someplace quiet, like a library or an office.{/i}"
 
-    "Well, it’s not like I have any other ideas."
+    hide black
+    hide thioran
+    with fade
+
+    $ config.side_image_tag = "june"
+    ny mermaid neutral "Well, it’s not like I have any other ideas."
     "The way to get back there is very clear in my mind."
     y frustrated "I will {i}not{\i} get lost again."
 
     #change scenes with each ellipses
-    ny neutral "..."
-    y "...and hang another left here..."
+    scene bg palace hallway:
+        fit "contain"
+    with fade
     "..."
-    ny shocked "Oh! There’s the decorations the servants were hanging up!"
+    y mermaid neutral "...and hang another left here..."
+    scene bg palace hallway:
+        fit "contain"
+    with fade
+    "..."
+    ny mermaid shocked "Oh! There’s the decorations the servants were hanging up!"
     ny happy "The door is right here, just like I remembered."
 
     y "..."
@@ -297,11 +319,14 @@ label cetus_office:
     ny nervous "...At least he’s not sending me away."
     y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
+    show cetus smile with dissolve
     c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
 
     y "I wanted to ask-"
+    show cetus neutral with dissolve
     c "No, not from there."
     y shocked "Pardon?"
+    show cetus smirk with dissolve
     c nervous "Come closer."
     "Cetus beckons me forward with a wave of his hand."
     "I swim cautiously towards his desk."
@@ -314,6 +339,7 @@ label cetus_office:
     camera:
         xpos -192 ypos -60 zoom 1.30
 
+    show cetus neutral with dissolve
     c "Now then, how did you make it past the guard?"
 
     menu cetus_ask:
@@ -323,6 +349,7 @@ label cetus_office:
             y "...Through the window. With a hairpin."
             #"If you break free on the first try +2 cetus (?)"
             if failescape == 0:
+                show cetus smirk with dissolve
                 c "Clever girl."
                 ny nervous "Somehow, his praise only makes me feel more nervous."
                 "Shouldn’t he be upset instead?"
@@ -336,13 +363,16 @@ label cetus_office:
         "\"I wanted to ask you something.\"":
             #removed after you pick it first
             $ sillyjune = True
+            show cetus shocked with dissolve
             c "Well now, was this {i}your{/i} office I barged into?"
+            show cetus displeased with dissolve
             c "In that case, there’s plenty of paperwork that needs your attention, {i}my lady.{/i}"
             c "Perhaps I should take my leave before you call the guards to lock me away."
             y shocked "Please don’t call the guards!"
+            show cetus smirk with dissolve
             c "Oh? What was that?"
             y "..."
-
+            show cetus neutral with dissolve
             jump cetus_ask
 
     if sillyjune:
@@ -355,6 +385,7 @@ label cetus_office:
 
     y "Lord Cetus, you mentioned humans in the throne room earlier."
 
+    show cetus displeased with dissolve
     c "And?"
 
     y "Well… you were looking at me when you said it."
@@ -370,22 +401,24 @@ label cetus_office:
 
     y nervous "It’s just that-"
 
-    show cetus neutral with dissolve
+    show cetus displeased with dissolve
     c "Get to the point."
 
     "I hope I’m right about this..."
 
-    y frustrated "Do you know… what I really am?"
+    y frustrated "Do you know… {w}what I really am?"
 
     c "..."
 
     ny nervous "...Or not. {w}Did I make a mistake?"
 
+    show cetus neutral with dissolve
+
     c "Not many have eyes to see what’s right in front of them. But I am not so easily misled."
 
     c "You’re quite a distance from your shores, {i}human.{/i}"
 
-    ny shocked "...!"
+    y shocked "...!" with vpunch
 
     y "You didn’t say anything about it before."
 
@@ -403,8 +436,10 @@ label cetus_office:
 
     y nervous "But… for how long? How long is this spell on me going to last?"
 
+    show cetus smirk with dissolve
     c "Did you think my magic to be temporary?"
 
+    show cetus neutral with dissolve
     c "I don’t work in halves."
 
     "Oh, thank goodness. That’s one less thing to worry about."
@@ -414,6 +449,7 @@ label cetus_office:
     y "So I can return home?"
 
     c "Return home?"
+    show cetus displeased with dissolve
 
     c "I have been very lenient with you, [y] Finch, but you forget your place."
 
@@ -444,6 +480,7 @@ label cetus_office:
         "I could go out and help you hunt the siren!":
             y neutral "I’ve seen her lair, after all."
             y happy "If we work together, I’m sure we’ll have a better chance!"
+            show cetus neutral with dissolve
             c "If nothing else, your sheer recklessness should be applauded."
             pass
 
@@ -451,6 +488,7 @@ label cetus_office:
             c "I have no interest in your human toys."
             c "And even if I did, why should I believe that you’d keep your word?"
             y shocked "..."
+            show cetus neutral with dissolve
             c "Try again."
             jump changehismind
 
@@ -458,9 +496,11 @@ label cetus_office:
             y shocked "Lord Cetus, please reconsider! You’d have my gratitude for life."
             c "..."
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}" with vpunch
+            show cetus shocked
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
             y "Please...Pretty please..?"
+            show cetus displeased with dissolve
             c "................"
             y "Please..."
             c  "Are you quite finished?"
@@ -488,21 +528,25 @@ label cetus_office:
 
     y neutral "Relics?"
 
+    show cetus smirk with dissolve
     c "Items, imbued with the magic of their creators."
 
     ny shocked "Cetus suddenly leans in closer."
 
     if not renpy.seen_image("cg_cetusoffice"):
-        scene cg_cetusoffice with vpunch:
+        scene cg_cetusoffice:
             fit "contain"
+        camera:
+            xpos 0 ypos 0 zoom 1.0
+        with vpunch
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
-        scene cg_cetusoffice with vpunch:
+        scene cg_cetusoffice:
             fit "contain"
+        camera:
+            xpos 0 ypos 0 zoom 1.0
+        with vpunch
 
-    camera:
-        xpos 0 ypos 0 zoom 1.0
-    with dissolve
     $ config.side_image_tag = "None"
     y "...!"
 
@@ -512,14 +556,13 @@ label cetus_office:
 
     c "That will depend on how well you perform."
 
-    "He’s willing to make a deal? Thank goodness!"
+    "He’s willing to make a deal?"
 
     y "..."
 
     "But something doesn’t feel right…"
 
     y "Why ask me? Why not just send out your guards?"
-
 
     c "I don’t believe you're in any position to be questioning me."
 
@@ -537,8 +580,6 @@ label cetus_office:
 
     c "An excellent choice. Now, here is what you must do…"
 
-    scene bg black
-    with dissolve
-    "CLIFFHANGER ENDING!!!"
-    $ MainMenu(confirm=False)()
-    return
+    $ finished_demo_thio.grant()
+
+    jump endofdemo

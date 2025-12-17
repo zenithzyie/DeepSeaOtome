@@ -483,7 +483,8 @@ style notify_frame:
 style notify_text:
     properties gui.text_properties("notify")
 
-## Notify2 screen ###############################################################
+## Notify2 screen ##############################################################
+## For special choice notify ###################################################
 screen notify2(message):
 
     zorder 100
@@ -492,7 +493,7 @@ screen notify2(message):
     frame at notify2_appear:
         text "         [message!tq]  "
 
-    timer 5.25 action Hide('notify2')
+    #timer 5.25 action Hide('notify2')
 
 
 transform notify2_appear:

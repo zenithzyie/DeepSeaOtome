@@ -85,6 +85,8 @@ screen main_menu():
             yalign 0.95
             at customzoomsmall
 
+
+
 #    imagebutton:
 #        auto "newsbutton_%s"
 #        hover_foreground Text("News", style ="main_menu_imagebutton_text1", color ="#66a3e0")

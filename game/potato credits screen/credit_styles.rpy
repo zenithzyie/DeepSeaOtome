@@ -42,3 +42,4 @@ style credits_role_small:
 style credits_url_text_small is hyperlink_text
 style credits_url_text_small:
     size 20
+    color "#97c9e6"

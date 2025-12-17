@@ -376,6 +376,7 @@ label knockwhatever:
     y frustrated "Whatever!"
     "I knock on the wall repeatedly in frustration, with no rhyme or reason!" with screenShake
     y "..."
+    $ knockknock.grant()
 
 label afterknocking:
     "There is no response at first, but..."
@@ -1419,10 +1420,10 @@ label timeskip1:
             $ jorunn_points += 1
             call ch1_followjorunn
         "Find another way" if antimermaid >= 1:
-            call ch1_badend1
+            jump ch1_badend1
 
 label ch1_badend1:
-
+    hide screen notify2
     hide thioran angry
     hide jorunn glee
     with dissolve
@@ -1444,17 +1445,12 @@ label ch1_badend1:
     "The last thing I see before everything goes dark is something large crashing right into me.."
     scene black with vpunch
     "Ravaged by the sea, I die."
-    "BAD END 1."
+    scene black with dissolve
+    $ badend1.grant()
+    show text "{i}BAD END 1{/i}{w}":
+        align (0.5,0.5)
+    with dissolve
+    pause
+    hide text with dissolve
 
     jump endofdemo
-
-#Change this
-label endofdemo:
-
-    "Thank you for playing Heart's Depth! Follow our game page for updates..."
-
-    return
-    #SHOW IMAGES TO GET HYPE FOR FINAL DEMO COMPLETION
-    #END OF DEMO!!!!!!!
-
-    return

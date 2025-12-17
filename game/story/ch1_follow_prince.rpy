@@ -1,6 +1,8 @@
 
 #BRANCH - FOLLOW THIORAN
 label ch1_followprince:
+    $ followprince.grant()
+    hide screen notify2
     hide jorunn glee with moveoutright
     show thioran at Position(xpos=0.45)
     with move
@@ -46,14 +48,12 @@ label ch1_followprince:
         "Look through.":
             "My curiosity wins over, and I swim forward a little to try to peer through the space between the prince's fingers."
             "It looks as though we're swimming somewhere deeper into the depths of the ocean. Foliage and sand whip past us. We are going quite fast!"
-            "I can catch glimpses of merpeople appearing to be farmers, tending to their fields of kelp and other sea plants I do not recognize."
-            "Some wave to the prince as we pass."
-            "Despite this, he keeps swimming, his hands acting as a shield."
+            "His hands continue to shield me as he keeps swimming onward."
 
         "Settle back.":
             #+1 Thio
             "My exhaustion wins over and I lean back against the merman's skin, desperate for a minute of rest."
-            "I must be held somewhere against his chest because from here I can feel his heartbeat, going strong and steady."
+            "I must be held somewhere against his chest. I can feel his heartbeat, going strong and steady."
             "It's warm and comforting."
             "The storm rumbles on, and I have no need to fear it any longer."
             "The prince swims on in silence."
@@ -89,14 +89,14 @@ label ch1_followprince:
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
-    "Away from the threat of the storm, he begins swimming again. This time, it is at a more leisurely pace."
+    "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace.”"
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
     show thioran shocked with dissolve
-    up "Is something the matter? If you're uncomfortable in my hands, I can try to be less...rough."
+    up "Is something the matter?"
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
     y "Blub!"
-    "Quickly, I shake myself in protest at the suggestion. He is already very gentle."
+    "I shake myself in response. I’m already quite comfortable."
     "I'm just glad he isn't finding my staring strange."
     show thioran frown with dissolve
     "He nods before returning his gaze back ahead."
@@ -104,9 +104,9 @@ label ch1_followprince:
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
     "I'm not really sure how much he can hear, but I'm willing to try telling him my story."
     y "Blub...{w}blub?"
-    "From Skylla's cave, to me escaping and seeing him and the thief, I tell him all of it."
-    up "What are you..."
+    y "Blub..."
     show thioran shocked with dissolve
+    up "What are you..."
     up "I apologize. It appears I can't fully understand your meaning."
     show thioran frown with dissolve
     "I barely notice his hands shift out of the corner of my eyes. One moves closer to me, his fingertips gently brushing against my tailfins."
@@ -118,17 +118,14 @@ label ch1_followprince:
     up "This is no ordinary rubble. There's traces of magic all over it...and all over {i}you{/i}."
     "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
     up "Hmm..."
-    "The hands around me shift closer as he swims faster with newfound purpose, gliding effortlessly through the crowd of merfolk. They bow as he passes by."
+    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of merfolk. They bow as he passes by, but he doesn’t acknowledge them."
     "All I can do is stay between his hands."
     up "I must take you to my uncle."
     up "Perhaps he can explain this strange connection I feel with you."
-    "He must be another member of the royal family."
-    "Does he know more about magic?"
+    "Does his uncle know more about magic?"
     "...Can he turn me back into a human?"
-    "I suppose all I can do is wait for the prince to take us there."
-    "We go through the city quickly, passing all sorts of things I wish I could take a closer look at."
-    "Eventually, we arrive at the grandest structure, which must be the palace."
-    "The prince takes me through wide halls, servants greeting him as we pass."
+    "Eventually, we arrive at the grandest structure, which must be the castle."
+    "The prince takes me through wide halls, filled with busy servants and expensive decor."
 
 #SCENE CHANGE - Throne Room
     window auto hide
@@ -147,7 +144,7 @@ label ch1_followprince:
     show cetus neutral at cetus_center:
         xzoom -1
     with dissolve
-    "There is a merman waiting on the throne at the end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
+    "A merman is waiting on the throne at the far end. Somehow, light is pouring through the open windows, bathing him in an ethereal glow."
     $ speaking_char = "all"
     show cetus neutral at cetus_right:
         xzoom -1
@@ -156,53 +153,50 @@ label ch1_followprince:
 
     #this section needs edited
 
-    ny neutral fish "Instead of a single tail like the prince, he has several tentacles instead, like an octopus."
+    ny neutral fish "Instead of a single tail like the prince, he has several tentacles, like an octopus."
     "He holds himself like a royal."
     show cetus shocked with dissolve
-    "But he abandons this as soon as he sees the prince, and he quickly rushes forward."
-    "Concern is wrought all over his face, and I know this has to be the uncle."
-    ucetus "Thioran! Where have you been?"
-    ucetus "I've been looking all over for you. It's not safe to be out wandering while the sea storms rage on."
+    "But he abandons this as soon as he notices the prince."
+    "“Concern is wrought all over his face as he rushes forward, and I know this has to be the uncle."
+    ucetus "Prince Thioran! Where have you been?"
+    ucetus "It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
-    "Ah! The prince is named Thioran?"
-    "Thioran and Cetus...such strange names merpeople have."
+    "Oh! The prince is named Thioran?"
+    "Thioran and Cetus... such strange names merpeople have."
     "Cetus shakes his head and sighs."
-    c "No matter. As long as you're safe..."
+    c "No matter. As long as you're safe."
     c "Now, you look troubled. Whatever is the matter?"
     p "It's just-{w} here. I found her near the storm."
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
     show cetus neutral with dissolve
     "Cetus's eyes catch on me, and I freeze at the sudden attention."
-    "Any thoughts I may have had halt to a stop."
-    c "Oh? What's this? Find another pet for yourself out there, Thioran?"
+    c "Oh? What's this? Find another pet for yourself out there, nephew?"
     c "You know you don't need my permission to keep her."
-    p "I wanted to ask you to examine her."
-    p "She is rather strange. I've never seen a fish like her, and despite being incapable of speech, I seem to be able to understand her intentions."
+    p "I've never seen a fish like her, and despite being incapable of speech, I seem to be able to understand her intentions."
     p "I feel this..."
     p  "I feel something drawing me in. I can't quite explain it."
     "...?"
-    p "She shouldn't have any arcane connections. She appears to be just a normal fish."
+    p "It is rather strange. She appears to be just a normal fish."
     y "Blub!"
     "I definitely am not!"
     $ speaking_char = "Cetus"
-    "Cetus begins to approach, brows furrowing."
-    "His gaze is piercing."
+    "Cetus slowly approaches me, brows furrowing."
     "It almost feels like he's staring right through me, right at something I can't see."
     c "Hmm?"
     "I feel oddly flustered as he inspects my body."
-    "This would be a rather inappropriate gaze were I still human."
-    c "May I touch your fins, little fish?"
+    "This would be a rather inappropriate gaze if I were still a human."
+    c "Let me take a closer look."
     menu:
-        "Agree.":
+        "Move forward.":
             #(+1 cetus)
-            "If he can help me return to normal, I'll do anything!"
+            "I'll do anything if he can help me return to normal!"
             "I swim closer to him, indicating my agreement."
 
-        "Hesitate.":
+        "Look back.":
             "I glance back up at Prince Thioran. He gives me the slightest of nods."
             show thioran soft with dissolve
             p "Go on, it's alright."
-            #(Thio +1)
+            #(+1 thio)
             "Well, if the prince says it's alright..."
             show thioran frown with dissolve
 
@@ -210,25 +204,24 @@ label ch1_followprince:
     c "What an interesting little thing."
     "The prince moves closer to us with a troubled look."
     p "What do you see, Uncle?"
-    c "Hmm...well she's not from these waters, that I can tell. However, that's a tale for another time."
+    c "Hmm... she's not from these waters, that I can tell."
     c "More importantly, she's been cursed. By something rather skilled, no less."
     p "Cursed?"
-    "That's right! It's a relief that he can tell."
-    "If only I hadn't been stupid enough to fall overboard for that sea witch's music."
-    p "Is there anything you can do about it?"
-    c "Yes. Though the curse is rather complex, it won't be a match for me."
-    c "I shall start unraveling the enchantment now. You may want to swim back, Thioran."
+    "That's right! Thank goodness he can tell."
+    "If only I hadn't been stupid enough to fall for that sea witch's music..."
+    p "Is there anything you can do?"
+    c "Though the curse is rather complex, it won't be a match for me."
+    c "I shall start unraveling the enchantment. You may wish to swim back, Prince Thioran."
     "Really? Just like that? I'll finally be free from this nightmare!"
-    "Cetus's hands start to glow as he starts to cast his spell."
+    "Cetus's hands begin to glow."
     "His hands move like the conductor of an orchestra, and strings of magic entwine themselves around my body."
-    "Cetus begins to chant in a language I do not know, his hypnotic voice droning on and drowning out my thoughts."
-    "Wait...{w} what will happen to me if I turn back human underwater?"
+    "Wait...{w} what will happen if I turn back into a human underwater?"
     "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
     y "{i}Blub! Blub!{/i}"
-    "No..! I'll drown! I don't want to die like this!"
+    "No! I'll drown! I don't want to die like this!"
     show thioran shocked with dissolve
     p "Wait a moment, Uncle! There's something wrong."
-    "But Cetus does not stop his chanting."
+    "But Cetus does not stop his spell."
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
     "All I can do is prepare for the worst."
@@ -237,7 +230,7 @@ label ch1_followprince:
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
-    "There is nothing but the pleasant sound of flowing water around me."
+    "There is nothing but the sound of flowing water around me."
     "I open my eyes."
 
     call ch2_followthio

@@ -1,10 +1,12 @@
 
 #BRANCH - FOLLOW JORUNN
 label ch1_followjorunn:
+    $ followthief.grant()
+    hide screen notify2
     hide thioran angry with moveoutleft
-    show jorunn shocked
+    show jorunn
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
-
+    $ config.side_image_tag = "june"
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
     "It's now or never!"
     "3...2...1!!"
@@ -20,9 +22,11 @@ label ch1_followjorunn:
         pos (0.45, 1914) zoom 2.0
 
     "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
+    show jorunn sweat with dissolve
     uj "Huh?"
     y "Blub!!"
     "Immediately, a deft hand snatches me up."
+    show jorunn glee with dissolve
     uj "Oh, well this is new! Never had a fish come swimming up to my net before."
     "Wait, hang on now! Please don't eat me!"
     y "{i}Blub blub blub!!{/i}"
@@ -113,7 +117,7 @@ label ch1_followjorunn:
     j "And you look like magic stuff."
     "Miss Prash..?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
-    show jorunn shocked with dissolve
+    show jorunn sweat with dissolve
     j "Or, uh, unless I'm losing it, and you're just a normal fish."
     j "I hope I'm not just talking to myself right now..."
     show jorunn neutral with dissolve
@@ -179,7 +183,7 @@ label ch1_followjorunn:
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
     "How is this even possible? The sky? Does that mean there's air above us too?"
     "But we definitely swam deeper down to get here."
-    show jorunn shocked with dissolve
+    show jorunn sweat with dissolve
     j "Hello? Miss Prash?"
     j "..."
     j "Prashadi!! I'm back!" with vpunch
@@ -227,7 +231,7 @@ label ch1_followjorunn:
     gpa "It seems like she's been cursed as well."
     j "Who would curse a cute little fish like this?"
     gpa "Not fish. This one used to be human!"
-    show jorunn shocked with dissolve
+    show jorunn sweat with dissolve
     j "Miss Prash, are you saying...?"
     gpa "Your little friend here used to have legs. And a voice. Possibly, even hair."
     gpa "A real human, she was."

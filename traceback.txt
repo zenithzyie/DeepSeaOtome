@@ -1,52 +1,56 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/script.rpy", line 60, in script call
-    call chapter1
-  File "game/story/script.rpy", line 1153, in script
-    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
-  File "game/menus/screensmisc.rpy", line 455, in execute
-    screen notify(message):
-  File "game/menus/screensmisc.rpy", line 455, in execute
-    screen notify(message):
-  File "game/menus/screensmisc.rpy", line 460, in execute
-    frame at notify_appear:
-  File "game/menus/screensmisc.rpy", line 461, in execute
-    text "[         message!tq  ]  "
-ValueError: invalid conversion ' '
+  File "game/menus/mainmenu.rpy", line 77, in execute
+    screen main_menu():
+  File "game/menus/mainmenu.rpy", line 77, in execute
+    screen main_menu():
+  File "game/menus/mainmenu.rpy", line 108, in execute
+    use navigation
+  File "game/menus/navmenu.rpy", line 7, in execute
+    screen navigation():
+  File "game/menus/navmenu.rpy", line 7, in execute
+    screen navigation():
+  File "game/menus/navmenu.rpy", line 8, in execute
+    if renpy.get_screen("main_menu"):
+  File "game/menus/navmenu.rpy", line 9, in execute
+    use titleMainMenu
+  File "game/menus/mainmenu.rpy", line 23, in execute
+    screen titleMainMenu():
+  File "game/menus/mainmenu.rpy", line 23, in execute
+    screen titleMainMenu():
+  File "game/menus/mainmenu.rpy", line 24, in execute
+    vbox:
+  File "game/menus/mainmenu.rpy", line 32, in execute
+    if main_menu:
+  File "game/menus/mainmenu.rpy", line 57, in execute
+    imagebutton:
+  File "game/menus/mainmenu.rpy", line 57, in keywords
+    imagebutton:
+  File "game/menus/mainmenu.rpy", line 61, in <module>
+    action a.oohshiny.grant()
+           ^                 
+NameError: name 'a' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/story/script.rpy", line 60, in script call
-    call chapter1
-  File "game/story/script.rpy", line 1153, in script
-    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
-  File "renpy/ast.py", line 2915, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 965, in execute
-    statement_name(stmt_name)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 547, in statement_name
-    i(name)
-    ~^^^^^^
-  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
-    _window_show(auto=True)
-    ~~~~~~~~~~~~^^^^^^^^^^^
-  File "renpy/common/000window.rpy", line 75, in _window_show
-    renpy.with_statement(trans)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "renpy/exports/statementexports.py", line 260, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 1579, in do_with
-    return self.interact(
-           ~~~~~~~~~~~~~^
-        trans_pause=True, suppress_overlay=not renpy.config.overlay_during_with, mouse="with", clear=clear
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+    ~~~~~~~~~~~^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/core.py", line 2219, in interact
     repeat, rv = self.interact_core(
                  ~~~~~~~~~~~~~~~~~~^
@@ -69,7 +73,6 @@ Traceback (most recent call last):
   File "renpy/display/displayable.py", line 432, in visit_all
     d.visit_all(callback, seen)
     ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-[Previous line repeated 1 more time]
   File "renpy/display/screen.py", line 503, in visit_all
     callback(self)
     ~~~~~~~~^^^^^^
@@ -82,31 +85,44 @@ Traceback (most recent call last):
   File "renpy/display/screen.py", line 715, in update
     self.screen.function(**self.scope)
     ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/menus/screensmisc.rpy", line 455, in execute
-    screen notify(message):
-  File "game/menus/screensmisc.rpy", line 455, in execute
-    screen notify(message):
-  File "game/menus/screensmisc.rpy", line 460, in execute
-    frame at notify_appear:
-  File "game/menus/screensmisc.rpy", line 461, in execute
-    text "[         message!tq  ]  "
-  File "renpy/text/text.py", line 2195, in __init__
-    self.set_text(text, scope, substitute)  # type: ignore
-    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/text/text.py", line 2329, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)  # type: ignore
-                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 355, in substitute
-    s = interpolate(s, variables)  # type: ignore
-        ~~~~~~~~~~~^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 52, in interpolate
-    for lit, expr, conv, fmt in parse(s):
-                                ~~~~~^^^ 
-  File "renpy/substitutions.py", line 233, in parse
-    raise ValueError("invalid conversion {!r}".format(c))
-ValueError: invalid conversion ' '
+  File "game/menus/mainmenu.rpy", line 77, in execute
+    screen main_menu():
+  File "game/menus/mainmenu.rpy", line 77, in execute
+    screen main_menu():
+  File "game/menus/mainmenu.rpy", line 108, in execute
+    use navigation
+  File "game/menus/navmenu.rpy", line 7, in execute
+    screen navigation():
+  File "game/menus/navmenu.rpy", line 7, in execute
+    screen navigation():
+  File "game/menus/navmenu.rpy", line 8, in execute
+    if renpy.get_screen("main_menu"):
+  File "game/menus/navmenu.rpy", line 9, in execute
+    use titleMainMenu
+  File "game/menus/mainmenu.rpy", line 23, in execute
+    screen titleMainMenu():
+  File "game/menus/mainmenu.rpy", line 23, in execute
+    screen titleMainMenu():
+  File "game/menus/mainmenu.rpy", line 24, in execute
+    vbox:
+  File "game/menus/mainmenu.rpy", line 32, in execute
+    if main_menu:
+  File "game/menus/mainmenu.rpy", line 57, in execute
+    imagebutton:
+  File "game/menus/mainmenu.rpy", line 57, in keywords
+    imagebutton:
+  File "renpy/python.py", line 1292, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1285, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/menus/mainmenu.rpy", line 61, in <module>
+    action a.oohshiny.grant()
+           ^                 
+NameError: name 'a' is not defined
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.4.1.25072401
 HeartsDepthDEMO 3.0
-Tue Dec 16 05:58:18 2025
+Wed Dec 17 03:49:07 2025
