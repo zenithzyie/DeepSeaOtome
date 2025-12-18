@@ -20,6 +20,7 @@ label get_name:
     show text "{i}My dear granddaughter...{/i}{w}":
         align (0.5,0.5)
     with dissolve
+    play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
     pause
     show text "{i}It's getting warmer here. Summer already.{/i}{w}":
         align (0.5,0.5)
@@ -1097,7 +1098,7 @@ label timeskip1:
     u "Come with me..."
     u "...to the depths below..."
     "The alluring voice seems like it's singing for my ears alone."
-    show hunter nervous
+    show hunter shocked
     with vpunch
     h "Shit, it's a siren! Cover your ears, [y]!"
     "Hunter abandons his position at the helm and races towards me, but I can't imagine why."

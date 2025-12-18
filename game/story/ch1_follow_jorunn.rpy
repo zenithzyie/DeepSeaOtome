@@ -126,7 +126,7 @@ label ch1_followjorunn:
     "The storm rumbles on, and he quiets down to focus on the journey."
     "Left alone with my thoughts, my mind races every which way."
     "Am I the first human to experience the sea like this?"
-    "I wish I had my camera. {w}But it wouldn't survive the plunge..."
+    "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
     "All those memories made with it must be gone now, lost to me just like my own body."
     "I hope it somehow escaped my fate..."
 

@@ -60,7 +60,7 @@ label ch1_followprince:
 
     "Left alone with my thoughts, my mind races every which way."
     "Am I the first human to experience the sea like this?"
-    "I wish I had my camera. {w}But it wouldn't survive the plunge..."
+    "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
     "All those memories made with it must be gone now, lost to me just like my own body."
     "I hope it somehow escaped my fate."
 
@@ -89,7 +89,7 @@ label ch1_followprince:
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
-    "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace.”"
+    "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
     show thioran shocked with dissolve
     up "Is something the matter?"
@@ -157,7 +157,7 @@ label ch1_followprince:
     "He holds himself like a royal."
     show cetus shocked with dissolve
     "But he abandons this as soon as he notices the prince."
-    "“Concern is wrought all over his face as he rushes forward, and I know this has to be the uncle."
+    "Concern is wrought all over his face as he rushes forward, and I know this has to be the uncle."
     ucetus "Prince Thioran! Where have you been?"
     ucetus "It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
