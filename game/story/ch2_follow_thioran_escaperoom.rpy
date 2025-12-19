@@ -20,8 +20,8 @@ label ch2_castle_escaperoom:
             if not lookedatwindow:
                 $ lookedatwindow = True
                 "It’s difficult to see through the stained glass. Does it lead outside of the castle?"
-                "The window is missing a handle, but there’s a small gap between the glass and the wall."
-                "If I had something thin like a letter opener, maybe I could pry it open."
+                "There's no handle on the window, but there’s a small gap between the glass and the wall."
+                "If I had something thin, maybe I could pry it open."
             if lookedatwindow:
                 pass
 
@@ -140,11 +140,11 @@ label ch2_castle_escaperoom:
                         jump escapebegin
                     menu checkdresser:
                         set menuset
-                        "Let's see..."
+                        ny neutral "Let's see..."
                         "Letter.":
                             $ letter = True
                             show black:
-                                alpha 0.5
+                                alpha 0.7
                             play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
                             show text "{i}My Dearest Lord Cetus.{/i}{w}":
                                 align (0.5,0.5)
@@ -319,14 +319,13 @@ label cetus_office:
     ny nervous "...At least he’s not sending me away."
     y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
-    show cetus smile with dissolve
+    show cetus displeased with dissolve
     c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
 
     y "I wanted to ask-"
-    show cetus neutral with dissolve
     c "No, not from there."
     y shocked "Pardon?"
-    show cetus smirk with dissolve
+#    show cetus smirk with dissolve
     c nervous "Come closer."
     "Cetus beckons me forward with a wave of his hand."
     "I swim cautiously towards his desk."
@@ -388,9 +387,9 @@ label cetus_office:
     show cetus displeased with dissolve
     c "And?"
 
-    y "Well… you were looking at me when you said it."
+    y "Well...you were looking at me when you said it."
 
-    y "Did you… mean anything by it?"
+    y "Did you...mean anything by it?"
 
     show cetus smirk with dissolve
     c "You’re aiming quite high, little fish."
@@ -406,7 +405,7 @@ label cetus_office:
 
     "I hope I’m right about this..."
 
-    y frustrated "Do you know… {w}what I really am?"
+    y frustrated "Do you know...{w}what I really am?"
 
     c "..."
 
@@ -428,13 +427,13 @@ label cetus_office:
 
     #(add flashback image of the mermaid trapped in the glass cage)
     if promermaid > antimermaid:
-        y sad "I have…"
+        y sad "I have..."
     if antimermaid > promermaid:
         y frustrated "I have."
 
     c "Then I suggest you continue to keep this to yourself. It’ll only get more troublesome if word gets out."
 
-    y nervous "But… for how long? How long is this spell on me going to last?"
+    y nervous "But...for how long? How long is this spell on me going to last?"
 
     show cetus smirk with dissolve
     c "Did you think my magic to be temporary?"

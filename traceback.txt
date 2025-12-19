@@ -1,128 +1,30 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/menus/mainmenu.rpy", line 77, in execute
-    screen main_menu():
-  File "game/menus/mainmenu.rpy", line 77, in execute
-    screen main_menu():
-  File "game/menus/mainmenu.rpy", line 108, in execute
-    use navigation
-  File "game/menus/navmenu.rpy", line 7, in execute
-    screen navigation():
-  File "game/menus/navmenu.rpy", line 7, in execute
-    screen navigation():
-  File "game/menus/navmenu.rpy", line 8, in execute
-    if renpy.get_screen("main_menu"):
-  File "game/menus/navmenu.rpy", line 9, in execute
-    use titleMainMenu
-  File "game/menus/mainmenu.rpy", line 23, in execute
-    screen titleMainMenu():
-  File "game/menus/mainmenu.rpy", line 23, in execute
-    screen titleMainMenu():
-  File "game/menus/mainmenu.rpy", line 24, in execute
-    vbox:
-  File "game/menus/mainmenu.rpy", line 32, in execute
-    if main_menu:
-  File "game/menus/mainmenu.rpy", line 57, in execute
-    imagebutton:
-  File "game/menus/mainmenu.rpy", line 57, in keywords
-    imagebutton:
-  File "game/menus/mainmenu.rpy", line 61, in <module>
-    action a.oohshiny.grant()
-           ^                 
-NameError: name 'a' is not defined
+  File "game/options.rpy", line 55, in script
+    init python:
+  File "game/options.rpy", line 56, in <module>
+    renpy.sf.register_channel("ambience", "sound", True)
+    ^^^^^^^^                                            
+AttributeError: module 'renpy.exports' has no attribute 'sf'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "game/options.rpy", line 55, in script
+    init python:
   File "renpy/ast.py", line 1187, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1260, in py_exec_bytecode
     exec(bytecode, globals, locals)
     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-    ~~~~~~~~~~~^^
-  File "renpy/ui.py", line 304, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2219, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )  # type: ignore
-    ^                
-  File "renpy/display/core.py", line 2757, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 432, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2757, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
-    ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/menus/mainmenu.rpy", line 77, in execute
-    screen main_menu():
-  File "game/menus/mainmenu.rpy", line 77, in execute
-    screen main_menu():
-  File "game/menus/mainmenu.rpy", line 108, in execute
-    use navigation
-  File "game/menus/navmenu.rpy", line 7, in execute
-    screen navigation():
-  File "game/menus/navmenu.rpy", line 7, in execute
-    screen navigation():
-  File "game/menus/navmenu.rpy", line 8, in execute
-    if renpy.get_screen("main_menu"):
-  File "game/menus/navmenu.rpy", line 9, in execute
-    use titleMainMenu
-  File "game/menus/mainmenu.rpy", line 23, in execute
-    screen titleMainMenu():
-  File "game/menus/mainmenu.rpy", line 23, in execute
-    screen titleMainMenu():
-  File "game/menus/mainmenu.rpy", line 24, in execute
-    vbox:
-  File "game/menus/mainmenu.rpy", line 32, in execute
-    if main_menu:
-  File "game/menus/mainmenu.rpy", line 57, in execute
-    imagebutton:
-  File "game/menus/mainmenu.rpy", line 57, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1292, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/menus/mainmenu.rpy", line 61, in <module>
-    action a.oohshiny.grant()
-           ^                 
-NameError: name 'a' is not defined
+  File "game/options.rpy", line 56, in <module>
+    renpy.sf.register_channel("ambience", "sound", True)
+    ^^^^^^^^                                            
+AttributeError: module 'renpy.exports' has no attribute 'sf'
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.4.1.25072401
 HeartsDepthDEMO 3.0
-Wed Dec 17 03:49:07 2025
+Fri Dec 19 01:01:08 2025

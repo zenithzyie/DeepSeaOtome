@@ -162,7 +162,7 @@ label ch1_followprince:
     ucetus "It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
     "Oh! The prince is named Thioran?"
-    "Thioran and Cetus... such strange names merpeople have."
+    "Thioran and Cetus...such strange names merpeople have."
     "Cetus shakes his head and sighs."
     c "No matter. As long as you're safe."
     c "Now, you look troubled. Whatever is the matter?"
@@ -233,7 +233,7 @@ label ch1_followprince:
     "There is nothing but the sound of flowing water around me."
     "I open my eyes."
 
-    call ch2_followthio
+    call ch2_followthio from _call_ch2_followthio
 
     #"The strings have disappeared, and all that is left is me and the effects of Cetus' spell."
 

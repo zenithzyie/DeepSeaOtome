@@ -18,7 +18,7 @@ define config.name = _("HeartsDepthDEMO")
 ## Determines if the title given above is shown on the main menu screen. Set
 ## this to False to hide the title.
 
-define gui.show_name = False
+define gui.show_name = True
 
 
 ## The version of the game.
@@ -50,11 +50,11 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
 
-## Additional Sound Channels below 
+## Additional Sound Channels below
 
 init python:
-    renpy.music.register_channel("ambience", "sound", True)
-    renpy.music.register_channel("ambience2", "sound", True)
+    renpy.music.register_channel("ambience", "sfx", True)
+    renpy.music.register_channel("ambience2", "sfx", True)
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.
@@ -67,7 +67,8 @@ init python:
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "audio/sfx_wavesCalm.ogg"
+define config.main_menu_music = "audio/music/02 Magic in the Meadow.mp3"
+#define config.main_menu_sound = "audio/sfx_wavesCalm.ogg"
 
 
 ## Transitions #################################################################
@@ -132,6 +133,10 @@ default preferences.text_cps = 100
 ## to 30 being the valid range.
 
 default preferences.afm_time = 15
+
+## Default sound prefs
+default preferences.volume.music = 0.75
+default preferences.volume.sfx = 0.5
 
 
 ## Save directory ##############################################################

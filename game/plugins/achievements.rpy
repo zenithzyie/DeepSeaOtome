@@ -94,6 +94,7 @@ define achievement.steam_position = None
 ## for a locked achievement.
 image locked_achievement = "gui/ach/ach_icon.png"
 
+image blackmask = "gui/ach/blackmask.png"
 ################################################################################
 ## Start of example achievement declarations and in-game examples.
 ## You may remove this code down to the "End of example achievement declarations"
@@ -112,7 +113,7 @@ define knockknock = Achievement(
     ## Description.
     description=_("At least you got in, right?"),
     unlocked_image="gui/ach/chibi_june.png",
-    locked_image="locked_achievement",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
     hide_name=True,
     hide_description=True,
 )
@@ -123,7 +124,7 @@ define followprince = Achievement(
     ## Description.
     description=_("Chose to follow the Striking Prince."),
     unlocked_image="gui/ach/chibi_thio.png",
-    locked_image="locked_achievement",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_thio.png")),
     hide_name=False,
     hide_description=False,
 )
@@ -133,8 +134,8 @@ define perfectescaperoom = Achievement(
     id="escaped-room",
     ## Description.
     description=_("Escaped the guest room on your first try."),
-    unlocked_image="gui/ach/chibi_merjune.png",
-    locked_image="locked_achievement",
+    unlocked_image="gui/ach/chibi_cetus.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_cetus.png")),
     hide_name=False,
     hide_description=True,
 )
@@ -145,7 +146,7 @@ define followthief = Achievement(
     ## Description.
     description=_("Chose to follow the Thieving Merman."),
     unlocked_image="gui/ach/chibi_jor.png",
-    locked_image="locked_achievement",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
     hide_name=False,
     hide_description=False,
 )
@@ -156,7 +157,7 @@ define finished_demo_thio = Achievement(
     ## Description.
     description=_("Thank you for playing the demo! (Thioran Side)"),
     unlocked_image="gui/ach/chibi_merjune.png",
-    locked_image="locked_achievement",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_merjune.png")),
     hide_name=True,
     hide_description=True,
 )
@@ -167,7 +168,7 @@ define badend1 = Achievement(
     ## Description.
     description=_("Small fish caught in a big storm."),
     unlocked_image="gui/ach/chibi_hunter.png",
-    locked_image="locked_achievement",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_hunter.png")),
     hide_name=False,
     hide_description=True,
 )
@@ -205,10 +206,13 @@ screen achievement_popup(a, tag, num):
             ## often popups are smaller than the full gallery image.
             ## In this case it will not exceed 95 pixels tall but will retain
             ## its dimensions.
-            fit "contain" ysize 65 align (0.5, 0.5)
+            fit "contain" ysize 95
+            xalign 0.5
+            ypos -15
         vbox:
             text a.name
-            text a.description size 25
+            null height 3
+            text a.description size 16
 
     ## Hide the screen after 5 seconds. You can change the time but shouldn't
     ## change the action.
@@ -224,6 +228,8 @@ style achieve_popup_vbox:
     spacing 2
 style achieve_popup_text:
     is text
+    size 19
+
 
 ## A transform that pops the achievement out from the left side of
 ## the screen and bounces it slightly into place, then does the
@@ -267,7 +273,7 @@ screen achievement_gallery():
 #        fit "contain"
 #        xpos -425
 
-    add Solid("#1d2847", xysize = (742,100))
+#    add Solid("#1d2847", xysize = (742,100))
 
     ############################################################################
     ## Version 1 ###############################################################
@@ -324,7 +330,7 @@ screen achievement_gallery():
                         fixed:
                             align (0.5, 0.5)
                             xysize (155, 155)
-                            add a.idle_img fit "scale-down" ysize 125 align (0.5, 0.5)
+                            add a.idle_img fit "scale-down" ysize 145 align (0.5, 0.5)
                     else:
                         null width -10
                     null width -6

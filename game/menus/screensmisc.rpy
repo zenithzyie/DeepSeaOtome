@@ -478,7 +478,7 @@ style notify_frame:
     ypos gui.notify_ypos
 
     background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
-    padding gui.notify_frame_borders.padding
+    padding (8, 5, 2, 5)
 
 style notify_text:
     properties gui.text_properties("notify")
@@ -504,14 +504,15 @@ transform notify2_appear:
         linear .5 alpha 0.0
 
 
-style notify2_frame is empty
+#style notify2_frame is empty
 style notify2_text is gui_text
 
 style notify2_frame:
     ypos gui.notify_ypos
 
     background Frame("gui/notify2.png", gui.notify2_frame_borders, tile=gui.frame_tile)
-    padding gui.notify2_frame_borders.padding
+    padding (8, 5, 2, 5)
+    #padding gui.notify2_frame_borders.padding
 
 style notify2_text:
     properties gui.text_properties("notify2")

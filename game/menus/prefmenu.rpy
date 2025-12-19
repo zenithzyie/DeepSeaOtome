@@ -102,7 +102,7 @@ style pref_styling_button:
 screen preferences():
     tag menu
 
-    
+
     use game_menu_prefs(_("Settings"), scroll="viewport"):
 
         hbox:
@@ -233,18 +233,18 @@ screen sub_menu_text():
                                 idle_foreground Text("Speech Pauses", style ="main_menu_imagebutton_text")
                                 action ToggleField(persistent,"speech_pauses")
                                 at customzoomsmall
-
+                            null width 10
                             #WHY IS THIS BEING DUMB???????
                             showif persistent.speech_pauses:
-                                label _("{size=14}Dialogue will pause naturally at commas and periods.{/size}"):
-                                    yalign 0.5
+                                label _("  {size=14}Dialogue will pause naturally{p}      at commas and periods.{/size}"):
+                                    xalign 0.5
+                                    ypos -10
                                 #vbox:
                                     #style_prefix "slider"
                                     #label _("Commas")
                                     #bar value FieldValue(persistent, "speech_pause_comma", step=.05, style=u'slider', min=0.05, max=1.0)
                                     #label _("Sentences")
                                     #bar value FieldValue(persistent, "speech_pause_period", step=.05, style=u'slider', min=0.1, max=2.0)
-
 
                     null height (2 * gui.pref_spacing)
 

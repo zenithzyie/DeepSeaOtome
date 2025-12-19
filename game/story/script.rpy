@@ -11,6 +11,7 @@ label start:
     jump get_name
 
 label get_name:
+    stop music fadeout 3.0
     scene letter:
         fit "contain"
 
@@ -58,7 +59,7 @@ label enter_name:
     menu:
         "Is [y] correct?"
         "Yes":
-            call chapter1
+            call chapter1 from _call_chapter1
         "No":
             jump enter_name
 
@@ -68,10 +69,10 @@ label chapter1:
     scene bg black with dissolve
     with Pause(1.10)
     #this is driving me crazy it's cutting off for some reason????
-    play sound "audio/sfx_trainhorn.wav" volume 3 fadeout 4
-    with Pause(5.00)
+#    play sound "audio/sfx_trainhorn.wav" volume 3 fadeout 4
+#    with Pause(5.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
-    play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.15 loop
+    play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.6 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -199,7 +200,7 @@ label chapter1:
             "There's a board filled with notices and posters here."
             y neutral "Beware of sudden storms..."
             show black:
-                alpha 0.5
+                alpha 0.7
             show text "{i}Deadly sea storms can strike without rhyme or reason. {p}{w}Use caution when traveling without seasoned sailors.{p}{w}{/i}":
                 align (0.5,0.5)
             with dissolve
@@ -209,7 +210,7 @@ label chapter1:
             hide text
             with dissolve
             y happy "I will. Thank you!"
-            "The man walks off and I browse over a few more posters before turning away."
+            "The man walks off, and I browse over a few more posters before turning away."
 
 
         "Children playing in the street":
@@ -226,7 +227,7 @@ label chapter1:
             paperboy "Extra, extra! Read all about it!"
             "I purchase a copy of the weekly news."
             show black:
-                alpha 0.5
+                alpha 0.7
             show text "{i}Several Fishing Companies Absorbed by Morrowe Family:{p}{w} What Will They Do Now?{p}{w}{/i}":
                 align (0.5,0.5)
             with dissolve
@@ -473,11 +474,7 @@ label afterknocking:
     uhunter shocked "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
     "I freeze as a stranger's hand reaches over to cover my own ."
     uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
-    show hunter neutral:
-        xalign 0.5
-        ease 0.2 ypos 1.17 zoom 1
-    with vpunch
-    ny shocked "How does he know my name?"
+    ny shocked "How does he know my name?" with vpunch
     "I quickly yank my hand away."
     y "Who are you, exactly?"
     show hunter happy with dissolve
@@ -487,12 +484,7 @@ label afterknocking:
     show hunter raisedeyebrow with dissolve
     uhunter "Ha- this isn't your first time here. Don't appreciate being treated like a stranger either, though I s'pose it's been awhile."
     #TAKE OFF MASK
-    show hunter neutral:
-        xalign 0.5
-        ease 0.7 ypos 1.75 zoom 1.5
-    pause 0.4
-    with dissolve
-    show hunter neutral -facemask with dissolve
+    show hunter -facemask with dissolve
     "He pulls down his mask to reveal a handsome face."
     uhunter "Hunter. Hunter {w=0.1}Morrowe."
     if newspaper:
@@ -517,7 +509,6 @@ label afterknocking:
     "If there was anyone I'd recall from my time here, it'd be him."
     y happy "That's right! Hammy!"
     show hunter sad with dissolve
-    "His shoulders deflate."
     h "Of all the things you could remember me by, it just had to be that nickname…"
 
     menu:
@@ -750,7 +741,7 @@ label afterknocking:
     show hunter happy with dissolve
     h  "Don't keel over just yet."
     y happy "I wouldn't dream of it."
-    "We're at the portside now; the edge of the country. The ocean looks so vast and endless."
+    "We're at the portside now, the edge of the country. The ocean looks so vast and endless."
     "Sailors are carrying supplies to and from the ships at the dock."
     y "Does Grandfather live on one of these?"
     show hunter neutral at farright with move
@@ -1203,7 +1194,7 @@ label timeskip1:
     hide skylla neutral with dissolve
     "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
-    "Am I cursed to stay like this... forever?"
+    "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0
     "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped beyond recognition."
     "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
@@ -1345,7 +1336,7 @@ label timeskip1:
     $ config.side_image_tag = "june"
     y fish neutral "Blub...{w}blub..."
     "Now that the adrenaline has faded, I feel exhausted. My body feels like it's been run over."
-    "Grandfather...{w} Hunter...{w} they must think that I'm dead by now."
+    "Grandfather...{w}Hunter...{w}they must think that I'm dead by now."
     "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
     "But...{w}how am I supposed to make it back to land?"
     "The only one that might be able to change me back is that siren, but there's no way I can go back there."
@@ -1416,10 +1407,10 @@ label timeskip1:
         "What do I do...?"
         "Follow Striking Prince":
             $ prince_points += 1
-            call ch1_followprince
+            call ch1_followprince from _call_ch1_followprince
         "Follow Thieving Merman":
             $ jorunn_points += 1
-            call ch1_followjorunn
+            call ch1_followjorunn from _call_ch1_followjorunn
         "Find another way" if antimermaid >= 1:
             jump ch1_badend1
 

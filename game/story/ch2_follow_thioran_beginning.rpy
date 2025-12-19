@@ -83,7 +83,7 @@ label ch2_followthio:
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
-    ny neutral "A student? Are they referring to Skylla?"
+    ny neutral "A student? Are they referring to the siren?"
 
     p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
@@ -180,10 +180,10 @@ label ch2_followthio:
 
     ny mermaid neutral "After several turns, we pass by a hallway with a particularly elegant door."
 
-    "It looks like it could lead to someplace quiet, like a library or an office."
+    "It looks like it could lead to someplace important."
 
     ny shocked "I wonder if it’s a room used by the royal family?"
-#    ny neutral "The mysterious room lingers in my mind as we move past it in silence."
+
     scene bg palace hallway:
         fit "contain"
     show thioran frown at thioran_center
@@ -202,7 +202,7 @@ label ch2_followthio:
 
     loudmaid "Of course he will. The prince hasn’t been near it since he was a child. I don’t see that changing anytime soon."
 
-    quietmaid nervous "It’s a shame, isn’t it? If only he were a bit more like his late father."
+    quietmaid nervous "It’s a shame, isn’t it? If only he were a bit more like his father."
 
     loudmaid "Or more like his uncle. He’s the very essence of a noble, even if–"
 
@@ -313,8 +313,6 @@ label ch2_followthio:
 
     ny sad "...I feel more alone than ever."
 
-    "Am I really a guest here?"
-
     "I can’t believe a simple boat trip ended up like this. I feel exhausted just thinking about it."
 
     ny neutral "There’s what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
@@ -331,7 +329,7 @@ label ch2_followthio:
     show camera_mermaid at atcamera:
         zoom 0.18
     with dissolve
-    extend " a camera."
+    "...a camera."
     y shocked "Wait, is this...? {w}But how is that possible?"
     "It looks a little different but the weight of it feels familiar in my hands. It’s definitely my camera."
     "It couldn’t work underwater, could it?"
@@ -433,7 +431,7 @@ label ch2_followthio:
 
     ny nervous "Could it mean anything?"
 
-    "What if the magic is only temporary? If it starts to fall apart..."
+    "What if the magic is only temporary? If it starts to fall apart, I'll drown."
 
     "No. I have to find a way back home before that happens."
 
@@ -488,4 +486,4 @@ label ch2_followthio:
     ny frustrated "There has to be another way out of here."
     #sfx jingle here?
 
-    call ch2_castle_escaperoom
+    call ch2_castle_escaperoom from _call_ch2_castle_escaperoom

@@ -81,6 +81,7 @@ screen charnameinput():
             length 15
             default_focus True
             value VariableInputValue("player_name")
+            color "#0f2140"
 
 
     imagebutton:

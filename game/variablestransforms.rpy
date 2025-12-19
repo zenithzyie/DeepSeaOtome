@@ -5,7 +5,7 @@ init python:
 #Click to continue icon
 image ctc_pos:
     "gui/ctc_icon.png"
-    xpos 0.78 ypos 0.94
+    xpos 0.88 ypos 0.94
     xanchor 1.0 yanchor 1.0
     linear 0.3 alpha 1.0
     pause 1.7

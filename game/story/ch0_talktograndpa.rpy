@@ -61,7 +61,6 @@ label grandpatalk:
     y "Grandfather?"
     show grandpa happy with dissolve
     g "Why don't I get ye some coffee, little birdie."
-    show grandpa at left with move
     "He moves over to a small kettle brewing on the stove."
     y shocked "Huh? I'd love some, but that's not-"
     g "Yer old enough to have some now. It was yer grandmother's favorite."
@@ -69,9 +68,6 @@ label grandpatalk:
     y neutral "But I really wanted to ask you-"
     show grandpa neutral with dissolve
     g "...Later, little birdie. I'll tell ye later."
-    show grandpa:
-        xalign 0.5
-    with move
     g "How long are ye stayin' in Aquantis for?"
     y "Well... {w}I didn't give it much thought. I just wanted to come see you."
     g "Aye? Then we have plenty of time."

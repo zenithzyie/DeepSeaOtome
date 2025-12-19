@@ -65,26 +65,6 @@ screen credits():
                             #add "twitter-original"
                             textbutton _("Website") action OpenURL("https://zenithzyie.carrd.co/") style "credits_url_button" text_style "credits_url_text_small"
 
-                # Credit block
-                ## Default content that came with Ren'Py's About screen
-                hbox:
-                    add "props/camera_human.png":
-                        xsize 150
-                        ysize 150
-                        fit "contain"
-                        yalign 0.5
-                    null width 25 # manual horizontal spacing
-                    vbox:
-                        null height 5
-                        label "[config.name!t]" style "credits_name_small"
-                        null height 10
-                        text _("Version [config.version!t]") style "credits_role_small"
-                        null height 10
-                        hbox:
-                            textbutton _("itch.io") action OpenURL("https://zenithzyie.itch.io/hearts-depth") style "credits_url_button" text_style "credits_url_text_small"
-                        hbox:
-                            textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
-
                 # Credit block: CRABY
                 hbox:
                     add "logos/craby logo.png":
@@ -247,6 +227,7 @@ screen credits():
                             #add "twitter-original"
                             textbutton _("itch.io") action OpenURL("https://itch.io/profile/vylphix") style "credits_url_button" text_style "credits_url_text_small"
 
+                null
                 # fill unused grid spot (when amount is uneven) with null
                     # Credit block: Additional Attributions
                 hbox:
@@ -256,6 +237,8 @@ screen credits():
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                         text "Additional Attributions" style "credits_name_small"
                         null height 10  # manual vertical spacing
+                        textbutton _("Made with Ren'Py") action OpenURL("https://www.renpy.org/") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
                         textbutton _("Gaming Variety Potato - Credits Template") action OpenURL("https://gaming-variety-potato.itch.io/renpy-credits-screen-ui-templates") style "credits_url_button" text_style "credits_url_text_small"
                         null height 10
                         textbutton _("Ren'py Action Editor 3") action OpenURL("https://github.com/kyouryuukunn/renpy-ActionEditor3") style "credits_url_button" text_style "credits_url_text_small"
@@ -274,7 +257,7 @@ screen credits():
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                         text "   " style "credits_name_small"
                         null height 10  # manual vertical spacing
-                        text "Orcinus - Playtesting" color "#fff" style "credits_url_text_small"
+                        text "Orcinus - Playtesting & Editing" color "#fff" style "credits_url_text_small"
                         null height 10
                         textbutton _("Joel Sanderson - Music") action OpenURL("https://www.demolitionkitchen.com/hosted_sites/index.htm") style "credits_url_button" text_style "credits_url_text_small"
                         null height 10
