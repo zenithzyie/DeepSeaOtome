@@ -278,7 +278,7 @@ label escapedroom_tohallway:
     $ config.side_image_tag = "june"
     ny mermaid neutral "Well, it’s not like I have any other ideas."
     "The way to get back there is very clear in my mind."
-    y frustrated "I will {i}not{\i} get lost again."
+    y frustrated "I will {i}not{/i} get lost again."
 
     #change scenes with each ellipses
     scene bg palace hallway:

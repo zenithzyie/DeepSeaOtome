@@ -443,7 +443,7 @@ label ch2_followthio:
     show black:
         alpha 0.45
     with fade
-    c "{i}I hear humans have been sailing further from their shores as of late.{\i}"
+    c "{i}I hear humans have been sailing further from their shores as of late.{/i}"
 
     hide cetus
     hide black
