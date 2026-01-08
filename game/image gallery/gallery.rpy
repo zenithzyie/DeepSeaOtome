@@ -75,9 +75,3 @@ screen gallery_B():
                 #required to fill in empty grid items
                 for i in range(end - start + 1, maxperpage):
                     null
-    hbox:
-        textbutton _("Achievements") action ShowMenu("achievement_gallery"):
-            ypos 680
-            xpos 1010
-            xoffset 47
-            yoffset -30

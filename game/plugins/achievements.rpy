@@ -284,7 +284,7 @@ screen achievement_gallery():
     ## Version 2 ###############################################################
     ## Otherwise, if you'd like this to be independent of the game menu,
     ## use the following:
-    textbutton _("Return") action [ShowMenu("gallery_B"), Hide("achievement_gallery")]:
+    textbutton _("Return") action [ShowMenu("main_menu"), Hide("achievement_gallery")]:
         style 'return_button'
     viewport:
         mousewheel True draggable True pagekeys True

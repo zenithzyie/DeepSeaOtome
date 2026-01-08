@@ -52,7 +52,7 @@ screen titleMainMenu():
                 auto "settingsbutton_%s"
                 hover_foreground Text("Achievements", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Achievements", style ="main_menu_imagebutton_text1")
-                action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
+                action ShowMenu("achievement_gallery")
 
 
             imagebutton:

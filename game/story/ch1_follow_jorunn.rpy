@@ -140,7 +140,8 @@ label ch1_followjorunn:
 #SCENE CHANGE - fade to black... or maybe it goes suddenly black?
     scene bg black with dissolve
     stop music fadeout 5.0
-    ny neutral fish "The deeper we go, the darker it gets."
+    y "...!"
+    "The deeper we go, the darker it gets."
     "Grandfather told me stories of how dangerous it could be when all light leaves the world."
     "Sometimes the storms would roll in at night, stealing away the moon and turning the world pitch black."
     "I think this is what he must have meant."
@@ -153,16 +154,15 @@ label ch1_followjorunn:
         "I'm sure it will be alright.":
             $ promermaid += 1
             "No... I came this far already. I can't lose hope here."
-            "At the end of his stories, Grandpa always came back home safe."
+            "At the end of his stories, Grandfather always came back home safe."
             "I have to trust that I can do the same."
 
         "I'm regretting trusting him.":
             $ antimermaid += 1
             "Maybe I made the wrong decision following him..."
             "What was I thinking, trusting a merman? His kind is the reason why I fell off Hunter's boat in the first place."
-            "Anything could be in here, and I'm just letting him lead me into my doom."
-
-    "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
+            "Anything could be in here, and I'm just letting him lead me to my doom."
+            "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
 #SCENE CHANGE - Prashadi's Cave
     play music bgm_prashCave
@@ -181,7 +181,7 @@ label ch1_followjorunn:
     show jorunn glee with dissolve
     j "Miss Prash! Are you in here?"
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
-    "How is this even possible? The sky? Does that mean there's air above us too?"
+    "The sky? How is this even possible? Does that mean there's air above us too?"
     "But we definitely swam deeper down to get here."
     show jorunn sweat with dissolve
     j "Hello? Miss Prash?"
@@ -260,7 +260,7 @@ label ch1_followjorunn:
     #BLACK SCENE
     scene bg black with fade
 
-    "Grandpa...Hunter..."
+    "Grandfather...Hunter..."
     "Will they spend the rest of their years never knowing what happened to me after the storm?"
     "My face suddenly breaks the surface of the water, startling me from my thoughts, and I take a big gulp of air."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me afloat."
