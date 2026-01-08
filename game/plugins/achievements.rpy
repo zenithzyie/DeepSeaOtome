@@ -170,7 +170,7 @@ define badend1 = Achievement(
     unlocked_image="gui/ach/chibi_hunter.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_hunter.png")),
     hide_name=False,
-    hide_description=True,
+    hide_description=False,
 )
 ## You can grant an achievement in-game with `$ sample_achievement.grant()`
 ################################################################################

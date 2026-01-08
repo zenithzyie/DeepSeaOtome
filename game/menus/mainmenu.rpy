@@ -50,6 +50,13 @@ screen titleMainMenu():
 
             imagebutton:
                 auto "settingsbutton_%s"
+                hover_foreground Text("Achievements", style ="main_menu_imagebutton_text1", color ="#66a3e0")
+                idle_foreground Text("Achievements", style ="main_menu_imagebutton_text1")
+                action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
+
+
+            imagebutton:
+                auto "settingsbutton_%s"
                 hover_foreground Text("Settings", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Settings", style ="main_menu_imagebutton_text1")
                 action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
