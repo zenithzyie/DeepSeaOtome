@@ -132,7 +132,7 @@ label chapter1:
             show photo_aquantis1 at atphoto
             with dissolve
             y happy "This part of town has a great view of the sea."
-            y veryhappy "I can’t wait to head to the beach again."
+            y veryhappy "I can't wait to head to the beach again."
 
             hide photo_aquantis1 with dissolve
 
@@ -172,7 +172,7 @@ label chapter1:
     "Now, the street feels gloomy and unwelcoming."
     "Rather than being ignored, it seems I'm attracting uncomfortable attention."
     badguy "Tch, Inlanders. What's someone like her out here for?"
-    badguy "Oy, you don't see many of them ‘ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
+    badguy "Oy, you don't see many of them 'ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
 
     ny frustrated "They're hardly being secretive about wanting to rob me!"
     "I quickly walk away from the men watching me, holding my bag closer to my side."
@@ -205,7 +205,7 @@ label chapter1:
                 align (0.5,0.5)
             with dissolve
             pause
-            t "Those storms aren’t something to mess with. Stay safe if you’re heading out to sea, missy!"
+            t "Those storms aren't something to mess with. Stay safe if you're heading out to sea, missy!"
             hide black
             hide text
             with dissolve
@@ -471,7 +471,7 @@ label afterknocking:
 #    with dissolve
 #    window auto show
 
-    uhunter shocked "Careful where you point that thing. I wouldn't take your camera out here ‘less you want to leave in a barrel."
+    uhunter shocked "Careful where you point that thing. I wouldn't take your camera out here 'less you want to leave in a barrel."
     "I freeze as a stranger's hand reaches over to cover my own ."
     uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
     ny shocked "How does he know my name?" with vpunch
@@ -536,7 +536,7 @@ label afterknocking:
     y "I came to see my grandfather, if you still remember him."
     show hunter raisedeyebrow with dissolve
     h "{i}Remember him?{/i} 'Course I remember him. Always grateful for the old man taking care of me all these years."
-    h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking ‘round here instead."
+    h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking 'round here instead."
     show hunter happy with dissolve
     h "Feeling nostalgic?"
     y "Well... I was following the address on this letter he sent me. The townspeople pointed me here."
@@ -927,7 +927,7 @@ label timeskip1:
     y shocked "No? How come?"
     h "If something happens to you, he'll have my hide."
     show hunter happy with dissolve
-    h "‘Sides, you don't have the sea legs for it."
+    h "'Sides, you don't have the sea legs for it."
     y neutral "We don't have to go out that deep. Just enough to bring him back a photo."
 
     show hunter raisedeyebrow with dissolve
@@ -1351,7 +1351,7 @@ label timeskip1:
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
     novisualjor "I'm very sorry, {i}my prince{/i}, but I was hoping I could skip the judgment part entirely!"
-    novisualjor "Can’t you just ask your servants to find you something else for dinner? I’m sure they have plenty of food to spare."
+    novisualjor "Can't you just ask your servants to find you something else for dinner? I'm sure they have plenty of food to spare."
 
     "Oh? A 'prince'?"
     "Curiosity piqued, I push a bit further through the foliage to get a better look."

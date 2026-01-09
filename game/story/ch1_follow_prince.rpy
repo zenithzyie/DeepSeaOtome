@@ -10,8 +10,8 @@ label ch1_followprince:
     "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
     "Alright, [y]! It's now or never!"
     "3...2...1!!"
-    y neutral fish "BLUBBB!!!!"
-    "With all the might I can muster, I push my way through the current, leaving a trail of bubbles behind me."
+    y "BLUBBB!!!!" with vpunch
+    "With all the might I can muster, I push my way through the current."
 
     show thioran angry:
         subpixel True
@@ -62,7 +62,6 @@ label ch1_followprince:
     "Am I the first human to experience the sea like this?"
     "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
     "All those memories made with it must be gone now, lost to me just like my own body."
-    "I hope it somehow escaped my fate."
 
 #SCENE CHANGE - Capital City (zoomed in)
     $ config.side_image_tag = "june"
@@ -96,7 +95,7 @@ label ch1_followprince:
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
     y "Blub!"
-    "I shake myself in response. I’m already quite comfortable."
+    "I shake myself in response. I'm already quite comfortable."
     "I'm just glad he isn't finding my staring strange."
     show thioran frown with dissolve
     "He nods before returning his gaze back ahead."
@@ -114,7 +113,7 @@ label ch1_followprince:
     up "Hold still. There's something in your..."
     "I feel the tiniest prick and then his hand lifts away from me to examine what he found."
     "It takes me a moment to recognize it myself."
-    "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
+    "It looks like a shard of the glowing stones back from the siren's cave."
     up "This is no ordinary rubble. There's traces of magic all over it...and all over {i}you{/i}."
     "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
     up "Hmm..."
@@ -225,7 +224,7 @@ label ch1_followprince:
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
     "All I can do is prepare for the worst."
-    "Grandpa..! Hunter!"
+    "Grandfather..! Hunter!"
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."

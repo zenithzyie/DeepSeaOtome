@@ -8,10 +8,10 @@ label ch1_followjorunn:
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
     $ config.side_image_tag = "june"
     "The thief seems to know his way around. Maybe he can get me out of this mess. "
-    "It's now or never!"
+    "Alright, [y]! It's now or never!"
     "3...2...1!!"
     y "BLUBBB!!!!" with vpunch
-    "With all the might I can muster I push my way through the current, leaving a trail of bubbles behind me."
+    "With all the might I can muster I push my way through the current."
 
     show jorunn glee:
         subpixel True
@@ -33,14 +33,14 @@ label ch1_followjorunn:
     "If only I could speak real words!"
     "I wriggle around in an attempt to catch his attention."
     show jorunn neutral with dissolve
-    "He holds onto me but moves me around, inspecting me."
+    "He squints at me for a moment."
     uj "Huh? What's this?"
     "His other hand comes close and plucks something from my fins."
     "Ouch!"
     "The thief holds whatever he plucked from me close to his face, inspecting it with a rather curious expression."
     uj "...!"
     "It takes me a moment to recognize it myself."
-    "It looks like a shard of the glowing stones back from the siren's cave. It must have gotten caught in my fins during my escape. I hadn't even noticed."
+    "It looks like a shard of the glowing stones back from the siren's cave."
     "As he crushes the tiny shards between his fingers, thin trails of glowing light flow towards the growing storm."
     uj "Weird. This thing stinks of magic."
 
@@ -82,7 +82,7 @@ label ch1_followjorunn:
     ny neutral fish "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
 
     menu:
-        "I'm nested in the thieving merman's hair..."
+        "I'm nested in the merman's hair..."
         "Try to look through.":
             #+1 jor
             "My curiosity wins over, and I swim forward a little to try to peer through the hair into the sea around us."
@@ -112,7 +112,7 @@ label ch1_followjorunn:
     "He's a rather talkative fellow, isn't he!"
     show jorunn neutral with dissolve
     j "Right. Can't talk and all that."
-    "He sounds almost a bit disappointed that I can't reply."
+    "He sounds a bit disappointed that I can't reply."
     j "Don't worry. Miss Prash will know what to do with you. She's the master when it comes to all this magic stuff."
     j "And you look like magic stuff."
     "Miss Prash..?"
@@ -128,11 +128,10 @@ label ch1_followjorunn:
     "Am I the first human to experience the sea like this?"
     "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
     "All those memories made with it must be gone now, lost to me just like my own body."
-    "I hope it somehow escaped my fate..."
+    "..."
 
 #SCENE CHANGE? - Kelp Forest
 
-    "The chatty merman swims onward, and I watch as the kelp forest grows thicker and eventually large rocky formations begin to jut out of the ground."
     show jorunn glee with dissolve
     j "Almost there, little fishie! I hope you've been enjoying the ride so far."
     show jorunn neutral with dissolve
