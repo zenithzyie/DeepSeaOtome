@@ -56,7 +56,7 @@ label grandpatalk:
     hide black
     with dissolve
 
-    y "Grandfather… What happened between you and Mother? Why was I never allowed to visit again?"
+    y "Grandfather... What happened between you and Mother? Why was I never allowed to visit again?"
     g "..."
     y "Grandfather?"
     show grandpa happy with dissolve
@@ -79,7 +79,7 @@ label grandpatalk:
     show grandpa happy with dissolve
     g "There's always room for ye here."
 
-    ny neutral "It looks like I won't be getting anything out of Grandfather today…"
+    ny neutral "It looks like I won't be getting anything out of Grandfather today..."
 
     "Perhaps he just needs time."
 
