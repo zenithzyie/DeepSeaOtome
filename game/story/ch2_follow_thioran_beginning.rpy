@@ -25,7 +25,7 @@ label ch2_followthio:
     window auto show
     "I stare down at it, confused, before my eyes trace it upward and find that it's connected to me."
 
-    y "Oh! I'm... a mermaid?"
+    y "Oh! I'm...a mermaid?"
 
     "And my voice is back!"
 

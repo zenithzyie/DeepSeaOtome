@@ -272,7 +272,7 @@ label ch1_followjorunn:
     "My face suddenly breaks the surface of the water, startling me from my thoughts, and I take a big gulp of air."
     "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me afloat."
     "All I can hear is the water lapping around my body."
-    Pr "Ah... From the depths, your true form emerges! Well, only partially."
+    Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 
     jump ch2_follow_jorunn

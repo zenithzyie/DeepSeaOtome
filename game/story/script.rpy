@@ -255,7 +255,7 @@ label chapter1:
             woman "Knock knock."
             y "Oh, I know this one. Who's there?"
             woman "Knock knock."
-            y neutral "…"
+            y neutral "..."
             y "Uh...knock knock?"
             "The woman grins toothily."
             woman "Gehehehe! The wall!"
@@ -314,7 +314,7 @@ label chapter1:
     #possible choice?
     "According to what I've been told, I need to go to the west alley and knock on the wall."
 
-    "The code was... {color=#f2b950}five, three, four{/color}?"
+    "The code was...{color=#f2b950}five, three, four{/color}?"
 
     scene bg brickwall with dissolve
     $ config.side_image_tag = "june"
@@ -500,7 +500,7 @@ label afterknocking:
 
     show hunter flustered
     with dissolve
-    h "Ha... you're really going to make me say it then?"
+    h "Ha...you're really going to make me say it then?"
     h "..."
     h "It's Hammy."
     h "We used to play together as kids."
@@ -509,7 +509,7 @@ label afterknocking:
     "If there was anyone I'd recall from my time here, it'd be him."
     y happy "That's right! Hammy!"
     show hunter sad with dissolve
-    h "Of all the things you could remember me by, it just had to be that nickname…"
+    h "Of all the things you could remember me by, it just had to be that nickname..."
 
     menu:
         "Tease him.":
@@ -531,7 +531,7 @@ label afterknocking:
     h "...Didn't think I'd ever hear you say my name again."
     y happy "You look so different now!"
     show hunter neutral with dissolve
-    h "Well, it's been about, what... ten years or so since we've last seen each other? Would hope I look different."
+    h "Well, it's been about, what...ten years or so since we've last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
     y "I came to see my grandfather, if you still remember him."
     show hunter raisedeyebrow with dissolve
@@ -539,7 +539,7 @@ label afterknocking:
     h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking 'round here instead."
     show hunter happy with dissolve
     h "Feeling nostalgic?"
-    y "Well... I was following the address on this letter he sent me. The townspeople pointed me here."
+    y "Well...I was following the address on this letter he sent me. The townspeople pointed me here."
     show hunter neutral with dissolve
     "I show him Grandfather's letter."
     h "Looks like it was sent from his old shop down here, but that's been closed since he retired."
@@ -651,11 +651,11 @@ label afterknocking:
 
     if promermaid >= 1:
         h nervous "Looking a bit pale, [y]. You okay?"
-        y "Sorry. It's just... I haven't seen a mermaid before. It's rather shocking."
+        y "Sorry. It's just...I haven't seen a mermaid before. It's rather shocking."
 
     if antimermaid >= 1:
         h neutral "Try to keep your eyes down, or people might see your face."
-        y "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
+        y "Sorry. It's just...I haven't seen a mermaid before. It's all a bit surprising."
 
     show hunter raisedeyebrow with dissolve
     h "...Huh. {w}Right."
@@ -671,14 +671,14 @@ label afterknocking:
                 show hunter raisedeyebrow with dissolve
                 h "On the surface, sure."
                 show hunter neutral with dissolve
-                h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
             else:
                 y "I don't quite remember much, to be honest."
-                h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
-        "\"You don't {i}kill{/i} them too... do you?\"":
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
+        "\"You don't {i}kill{/i} them too...do you?\"":
             $ hunter_points -= 1
             h "I do."
-            h "My family does a lot of fishing. Some of that is mermaids... if you look under the table."
+            h "My family does a lot of fishing. Some of that is mermaids...if you look under the table."
             h "Either they die or our sailors do."
             y "..."
             h "Don't be fooled, [y]. They're more dangerous than they look."
@@ -768,7 +768,7 @@ label afterknocking:
     "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
-    g "Oh, bless the stars... Yer really here! My dear, sweet [y]!"
+    g "Oh, bless the stars...Yer really here! My dear, sweet [y]!"
     show grandpa happy:
         subpixel True
         zoom 1.0
@@ -1025,7 +1025,7 @@ label timeskip1:
     $ config.side_image_tag = "june"
     y shocked "Ah...!" with screenShake
     "Something stirs in the back of my memory as I stare into the waves."
-    "Is the water... glowing?"
+    "Is the water...glowing?"
 
     #TODO FLASHBACK CG for a second of baby prince and june?
     #SFX - loud crash, screen shake
@@ -1117,7 +1117,7 @@ label timeskip1:
     #SCENE CHANGE - Black Screen
     scene bg black with dissolve
     "..."
-    siren "After all these long years... you've finally returned home to me..."
+    siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.0 fadein 1.0
@@ -1147,7 +1147,7 @@ label timeskip1:
     y "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "No matter what I try to say, none of my words come out right."
-    "I've... been turned into a fish by this siren?"
+    "I've...been turned into a fish by this siren?"
     menu:
         "Stay very, very still.":
             $ cetus_points += 1
@@ -1192,7 +1192,7 @@ label timeskip1:
         ypos 780 zoom 1.0
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
+    "No matter how hard I press my hands - well, {i}fins{/i} -} against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0

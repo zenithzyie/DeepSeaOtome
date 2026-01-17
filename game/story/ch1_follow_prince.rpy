@@ -203,7 +203,7 @@ label ch1_followprince:
     c "What an interesting little thing."
     "The prince moves closer to us with a troubled look."
     p "What do you see, Uncle?"
-    c "Hmm... she's not from these waters, that I can tell."
+    c "Hmm...She's not from these waters, that I can tell."
     c "More importantly, she's been cursed. By something rather skilled, no less."
     p "Cursed?"
     "That's right! Thank goodness he can tell."

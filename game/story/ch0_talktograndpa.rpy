@@ -56,7 +56,7 @@ label grandpatalk:
     hide black
     with dissolve
 
-    y "Grandfather... What happened between you and Mother? Why was I never allowed to visit again?"
+    y "Grandfather...What happened between you and Mother? Why was I never allowed to visit again?"
     g "..."
     y "Grandfather?"
     show grandpa happy with dissolve
