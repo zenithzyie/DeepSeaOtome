@@ -58,7 +58,7 @@ label ch1_followjorunn:
     uj "You're no normal fish, are you?"
 
     "A rumble echoes through the water as the currents become stronger." with screenShake
-    "It feels like the seastorm is picking up even more!"
+    "It feels like the sea storm is picking up even more!"
 
     #show jorunn glee:
         #subpixel True
@@ -79,7 +79,7 @@ label ch1_followjorunn:
     #show jorunn neutral
     #with dissolve
     hide jorunn with dissolve
-    ny neutral fish "The thief swims forward at a steady pace, seemingly unbothered by the growing seastorm."
+    ny neutral fish "The thief swims forward at a steady pace, seemingly unbothered by the growing sea storm."
 
     menu:
         "I'm nested in the merman's hair..."
@@ -262,7 +262,7 @@ label ch1_followjorunn:
     "I'm being pulled towards the surface of the water."
     "The tingling in my fins grows stronger as the mist gets thicker. I can't see anything."
     "My whole fish body feels like it's being pulled apart then put back together in the same instant."
-    "All I can do is hope I'm not about to drown."
+    "I squeeze my eyes shut. All I can do is hope I'm not about to drown."
 
     #BLACK SCENE
     scene bg black with fade

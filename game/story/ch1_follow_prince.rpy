@@ -34,13 +34,13 @@ label ch1_followprince:
     y "{i}Blub blub blub!!{/i}"
     "Please help me! If I stay out in this storm I'll die!"
     "If only I could speak real words!"
-    "Strangely enough, he pauses, as if he can understand what I'm saying."
+    "Strangely enough, he pauses as if he can understand what I'm saying."
     guard "Is something the matter? The storm is closing in."
     show thioran frown with dissolve
     up "No. It's nothing."
     "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
     up "Let's go."
-    "The relief I feel is so strong that I feel my fins go weak. Thank goodness. Looks like I made the right choice after all."
+    "Thank goodness. Looks like I made the right choice after all."
     "I can feel the merman begin to swim. I'm exhausted but curious about where we're going."
 
     menu:
@@ -117,7 +117,7 @@ label ch1_followprince:
     up "This is no ordinary rubble. There's traces of magic all over it...and all over {i}you{/i}."
     "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
     up "Hmm..."
-    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of merfolk. They bow as he passes by, but he doesn’t acknowledge them."
+    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of merfolk. They bow as he passes by, but he doesn't acknowledge them."
     "All I can do is stay between his hands."
     up "I must take you to my uncle."
     up "Perhaps he can explain this strange connection I feel with you."
@@ -152,7 +152,7 @@ label ch1_followprince:
 
     #this section needs edited
 
-    ny neutral fish "Instead of a single tail like the prince, he has several tentacles, like an octopus."
+    ny neutral fish "Instead of a single tail like the prince, he has several tentacles like an octopus."
     "He holds himself like a royal."
     show cetus shocked with dissolve
     "But he abandons this as soon as he notices the prince."
@@ -220,11 +220,10 @@ label ch1_followprince:
     "No! I'll drown! I don't want to die like this!"
     show thioran shocked with dissolve
     p "Wait a moment, Uncle! There's something wrong."
-    "But Cetus does not stop his spell."
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
-    "All I can do is prepare for the worst."
-    "Grandfather..! Hunter!"
+    "I squeeze my eyes shut. All I can do is prepare for the worst."
+    "Grandfather...! Hunter!"
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."

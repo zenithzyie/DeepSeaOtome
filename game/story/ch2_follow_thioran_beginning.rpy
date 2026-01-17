@@ -83,7 +83,7 @@ label ch2_followthio:
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
-    ny neutral "A student? Are they referring to the siren?"
+    ny neutral "A student? Are they referring to Skylla?"
 
     p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
@@ -189,7 +189,9 @@ label ch2_followthio:
     show thioran frown at thioran_center
     with fade
 
-    ny mermaid neutral "..."
+    ny mermaid neutral "The mysterious room lingers in my mind as we move past it in silence."
+    
+    "..."
     "..."
 
     "There's a pair of voices talking up ahead."
@@ -198,19 +200,17 @@ label ch2_followthio:
 
     "They don't seem to notice our approach."
 
-    quietmaid "…and Lord Cetus will be lighting the statue at the festival again this year."
+    quietmaid "...and Lord Cetus will be lighting the statue at the festival again this year."
 
     loudmaid "Of course he will. The prince hasn't been near it since he was a child. I don't see that changing anytime soon."
 
-    quietmaid nervous "It's a shame, isn't it? If only he were a bit more like his father."
+    quietmaid nervous "It's a shame, isn't it? If only he were a bit more like his late father."
 
     loudmaid "Or more like his uncle. He's the very essence of a noble, even if-"
 
     p "That's enough."
 
     quietmaid "Your Highness!" with vpunch
-
-    #"As they frantically bow, I look over at the Prince and can’t help but shiver at his expression."
 
     show thioran angry with dissolve
     p shocked "The lips of the servants are loose indeed to speak so carelessly of the King Regent."
@@ -252,7 +252,7 @@ label ch2_followthio:
 
     "I should go inside. The prince doesn't seem too happy with me right now."
 
-    y "Thank yo–"
+    y "Thank yo-"
 
     if not renpy.seen_image("cg_thiokabedon"):
         scene cg_thiokabedon with vpunch:
@@ -281,7 +281,7 @@ label ch2_followthio:
 
         "\"I already told you everything.\"":
             p "Do you expect me to believe that? You already tricked me once."
-            y  "I wasn't trying to trick you-  I was cursed."
+            y  "I wasn't trying to trick you- I was cursed."
             y "And you {i}were{/i} the one who brought me here."
             p "A silver tongue won't save you. I'll figure out what you're planning."
             y "I don't know what you're talking about."
@@ -369,7 +369,7 @@ label ch2_followthio:
     show camera_mermaid at atcamera:
         zoom 0.18
     with dissolve
-    y shocked "Wow…"
+    y shocked "Wow..."
     "It really worked. And the colors don't even bleed."
     "This is incredible! I never thought I'd be taking photos underwater."
     "I was certain I'd lost my camera for good when I fell overboard. How did it survive, anyway?"
@@ -401,11 +401,11 @@ label ch2_followthio:
     menu:
         "Something.":
             $ pickedsomething = True
-            "I think I came here to do something…"
-            "But what..?"
+            "I think I came here to do something..."
+            "But what?"
         "Someone.":
             $ pickedsomeone = True
-            "I think I came here with someone…"
+            "I think I came here with someone..."
             "But who?"
 
     "..."
@@ -422,7 +422,7 @@ label ch2_followthio:
     play music bgm_capital volume 0.8
     $ config.side_image_tag = "june"
     ny mermaid shocked "I sit up in bed with a gasp." with vpunch
-    y "I'm... not drowning."
+    y "I'm...not drowning."
     "What was with that dream?"
     if pickedsomething:
         "I can't shake the feeling that I was trying to do something important. It all seemed way too real."
@@ -451,7 +451,7 @@ label ch2_followthio:
     with fade
     $ config.side_image_tag = "june"
 
-    "He was looking at me when he said that…"
+    "He was looking at me when he said that..."
 
     "Whether he intended it as a favor or not, his magic was able to remove part of the siren's curse on me."
 
@@ -467,7 +467,7 @@ label ch2_followthio:
 
     y neutral "I need to speak with Cetus- er, Sir Cetus. Have you seen him?"
 
-    guard "{i}Lord Cetus{/i} is in his study, and he's not to be disturbed."
+    guard "{i}Lord{/i} Cetus is in his study, and he's not to be disturbed."
 
     y nervous "Please, it's very urgent. I-"
 
@@ -478,7 +478,7 @@ label ch2_followthio:
     ny shocked "I'm forced to move back as the door is quickly shut in my face."
     "But unlike last time, the sharp click of a lock soon follows."
 
-    y nervous "Oh, dear. I don't like the sound of that…"
+    y nervous "Oh, dear. I don't like the sound of that..."
 
     "Am I not allowed to leave because I'm a witness?"
     "But I can't just sit around waiting for them to summon me. Who knows how long that'll take!"
