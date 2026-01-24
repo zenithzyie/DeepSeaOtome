@@ -80,14 +80,14 @@ label ch1_followprince:
 
     play music bgm_capital volume 0.8
     show bg capitalcity
-    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
+    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more mermaids than I could ever count."
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
     show thioran frown at Position(xpos=0.45) with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
-    "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
+    "I glimpse the guard that had been following him bow and swim away, leaving me alone with the prince in this strange but beautiful city."
     "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
     show thioran shocked with dissolve
@@ -115,9 +115,9 @@ label ch1_followprince:
     "It takes me a moment to recognize it myself."
     "It looks like a shard of the glowing stones back from the siren's cave."
     up "This is no ordinary rubble. There's traces of magic all over it...and all over {i}you{/i}."
-    "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
+    "The shard he is holding suddenly crumbles to pieces."
     up "Hmm..."
-    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of merfolk. They bow as he passes by, but he doesn't acknowledge them."
+    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of mermaids. They bow as he passes by, but he doesn't acknowledge them."
     "All I can do is stay between his hands."
     up "I must take you to my uncle."
     up "Perhaps he can explain this strange connection I feel with you."
@@ -161,7 +161,7 @@ label ch1_followprince:
     ucetus "It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
     "Oh! The prince is named Thioran?"
-    "Thioran and Cetus...such strange names merpeople have."
+    "Thioran and Cetus...such strange names mermaids have."
     "Cetus shakes his head and sighs."
     c "No matter. As long as you're safe."
     c "Now, you look troubled. Whatever is the matter?"

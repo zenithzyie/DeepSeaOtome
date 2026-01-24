@@ -332,7 +332,7 @@ label knocking:
         jump knockknock
 
     menu knockknock:
-        "What was the code..?"
+        "What was the code...?"
         "3":
             ny frustrated "No, that doesn't seem right..."
             ny neutral "Let me try again."
@@ -1126,7 +1126,7 @@ label timeskip1:
     stop sound fadeout 1.0
     siren "Ah! You've woken up, little human."
     y "Blub!"
-    "....Huh?"
+    "...Huh?"
     y "Blub blub blub!"
     siren "Or, shall I say, {i}little fish.{/i}"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
@@ -1171,7 +1171,7 @@ label timeskip1:
     $ config.side_image_tag = "june"
     siren "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
-    ny neutral fish "Skylla..? Is that the name of this siren?"
+    ny neutral fish "Skylla...? Is that the name of this siren?"
 
     show skylla neutral:
         subpixel True
@@ -1205,7 +1205,7 @@ label timeskip1:
     play sound "audio/sfx_rummaging.ogg" volume 0.2
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
-    "No.{w} No, no, no."
+    "No.{w} No, no, {i}no.{/i}"
     "Think, [y], think! There has to be a way out of here!"
     "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into a human, right?"
     "I glance around the cave."
@@ -1250,7 +1250,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the cave walls, but I don't see how that could help me."
+    "Glowing stones line the walls, but I don't see how that could help me."
 
     window auto hide
     camera:
@@ -1363,7 +1363,7 @@ label timeskip1:
 #    with dissolve
 
     $ speaking_char = "all"
-    "A pair of merfolk are staring each other down."
+    "A pair of mermaids are staring each other down."
     $ speaking_char = "Jorunn"
     "One of them is carrying a large net stuffed full of fish."
     $ speaking_char = "Prince Thioran"
@@ -1422,19 +1422,19 @@ label ch1_badend1:
 
     "There has to be another way out of this."
     "I can't trust either of them!"
-    "Both merpeople swim away, and I'm alone."
+    "Both mermaids swim away, and I'm alone."
     "Sort of..."
     "The other fish are swimming in a frenzy trying to get away from the vortex of water."
-    "The seastorm gets louder and louder."
+    "The sea storm gets louder and louder."
     "What if I hid in the seaweed again?"
-    "The seastorm is getting closer with every moment I hesitate."
+    "The sea storm is getting closer with every moment I hesitate."
     "I know! I'll try taking shelter in a nearby rock formation!"
     "The problem is, everything is so far away from me."
     "It'll take far too long to reach shelter."
     "I try swimming anyway, moving as fast as I can."
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It's too late!"
-    "The last thing I see before everything goes dark is something large crashing right into me.."
+    "The last thing I see before everything goes dark is something large crashing right into me."
     scene black with vpunch
     "Ravaged by the sea, I die."
     scene black with dissolve
