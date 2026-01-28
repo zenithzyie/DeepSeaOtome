@@ -103,7 +103,7 @@ label ch1_followjorunn:
 
     show jorunn glee with dissolve
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
-    "Jorunn...what strange names mermaids have."
+    "Jorunn...such strange names mermaids have."
     j "But you can call me Jor. That's what everyone else calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"

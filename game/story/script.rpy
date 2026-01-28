@@ -1390,7 +1390,7 @@ label timeskip1:
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
-    "The merfolk could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
+    "The mermaids could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
 
     if promermaid >= 1:
