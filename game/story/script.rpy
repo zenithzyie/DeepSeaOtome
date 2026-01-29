@@ -699,7 +699,7 @@ label afterknocking:
 
     if antimermaid >= 1:
         ny neutral "Grandfather and Hunter make their living in a world like this."
-        "That's the way it is. I'd rather the people be safe."
+        "That's the way it is."
         y "How much further do we have to go?"
 
     h "Exit's right this way. C'mon, [y]."
