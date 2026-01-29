@@ -33,13 +33,13 @@ label ch1_followprince:
     y "{i}Blub blub blub!!{/i}"
     "Please help me! If I stay out in this storm I'll die!"
     "If only I could speak real words!"
-    "Strangely enough, he pauses, as if he can understand what I'm saying."
+    "Strangely enough, he pauses as if he can understand what I'm saying."
     guard "Is something the matter? The storm is closing in."
     show thioran frown with dissolve
     up "No. It's nothing."
     "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
     up "Let's go."
-    "The relief I feel is so strong that I feel my fins go weak. Thank goodness. Looks like I made the right choice after all."
+    "Thank goodness. Looks like I made the right choice after all."
     "I can feel the merman begin to swim. I'm exhausted but curious about where we're going."
 
     menu:
@@ -79,14 +79,14 @@ label ch1_followprince:
 
     play music bgm_capital volume 0.8
     show bg capitalcity
-    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more merfolk than I could ever count."
+    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more mermaids than I could ever count."
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
     show thioran frown at Position(xpos=0.45) with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
-    "I glimpse the guard that had been following him bow and swim away, leaving me alone with a prince in this strange but beautiful city."
+    "I glimpse the guard that had been following him bow and swim away, leaving me alone with the prince in this strange but beautiful city."
     "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."
     show thioran shocked with dissolve
@@ -114,9 +114,9 @@ label ch1_followprince:
     "It takes me a moment to recognize it myself."
     "It looks like a shard of the glowing stones back from the siren's cave."
     up "This is no ordinary rubble. There's traces of magic all over it...and all over {i}you{/i}."
-    "The shard he is holding suddenly crumbles to pieces and a glimmer of freed magic is whisked away by the ocean current."
+    "The shard he is holding suddenly crumbles to pieces."
     up "Hmm..."
-    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of merfolk. They bow as he passes by, but he doesn’t acknowledge them."
+    "The hands around me shift closer as he swims faster with newfound purpose, gliding through the crowd of mermaids. They bow as he passes by, but he doesn't acknowledge them."
     "All I can do is stay between his hands."
     up "I must take you to my uncle."
     up "Perhaps he can explain this strange connection I feel with you."
@@ -151,7 +151,7 @@ label ch1_followprince:
 
     #this section needs edited
 
-    ny neutral fish "Instead of a single tail like the prince, he has several tentacles, like an octopus."
+    ny neutral fish "Instead of a single tail like the prince, he has several tentacles like an octopus."
     "He holds himself like a royal."
     show cetus shocked with dissolve
     "But he abandons this as soon as he notices the prince."
@@ -160,7 +160,7 @@ label ch1_followprince:
     ucetus "It's not safe to be out wandering while the sea storms rage on."
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
     "Oh! The prince is named Thioran?"
-    "Thioran and Cetus...such strange names merpeople have."
+    "Thioran and Cetus...such strange names mermaids have."
     "Cetus shakes his head and sighs."
     c "No matter. As long as you're safe."
     c "Now, you look troubled. Whatever is the matter?"
@@ -202,7 +202,7 @@ label ch1_followprince:
     c "What an interesting little thing."
     "The prince moves closer to us with a troubled look."
     p "What do you see, Uncle?"
-    c "Hmm... she's not from these waters, that I can tell."
+    c "Hmm...She's not from these waters, that I can tell."
     c "More importantly, she's been cursed. By something rather skilled, no less."
     p "Cursed?"
     "That's right! Thank goodness he can tell."
@@ -219,11 +219,10 @@ label ch1_followprince:
     "No! I'll drown! I don't want to die like this!"
     show thioran shocked with dissolve
     p "Wait a moment, Uncle! There's something wrong."
-    "But Cetus does not stop his spell."
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
-    "All I can do is prepare for the worst."
-    "Grandfather..! Hunter!"
+    "I squeeze my eyes shut. All I can do is prepare for the worst."
+    "Grandfather...! Hunter!"
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
     "I gasp for breath, relieved to find that I'm not drowning."

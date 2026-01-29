@@ -19,8 +19,8 @@ label ch2_castle_escaperoom:
 
             if not lookedatwindow:
                 $ lookedatwindow = True
-                "It’s difficult to see through the stained glass. Does it lead outside of the castle?"
-                "There's no handle on the window, but there’s a small gap between the glass and the wall."
+                "It's difficult to see through the stained glass. Does it lead outside of the castle?"
+                "There's no handle on the window, but there's a small gap between the glass and the wall."
                 "If I had something thin, maybe I could pry it open."
             if lookedatwindow:
                 pass
@@ -33,30 +33,30 @@ label ch2_castle_escaperoom:
                         "After a fair bit of moving it around, I hear a faint click."
                         play sound "audio/sfx_windowClick.ogg" volume 0.6
                         queue sound "audio/sfx_windowSlideOpen.ogg" volume 0.6
-                        ny happy "The window slides open. There’s just enough room for me to swim through."
+                        ny happy "The window slides open. There's just enough room for me to swim through."
                         ny veryhappy "Now I just need to find Cetus!"
                         if failescape == 0:
                             $ perfectescaperoom.grant()
                         jump escapedroom_tohallway
                     if not hairpin:
                         if punchwindow:
-                            "I already tried that. I need something to help me open this window…"
+                            "I already tried that. I need something to help me open this window..."
                             jump escapebegin
                         $ failescape += 1
                         $ punchwindow = True
                         "I lean against the window and push with all my might."
-                        "The window doesn’t even budge."
+                        "The window doesn't even budge."
                         play sound "audio/sfx_fistAgainstWindow.ogg"
                         ny frustrated "In a surge of desperation, I slam a fist against the glass." with vpunch
                         y shocked "Ouch!"
                         guard "Everything alright in there?"
-                        y "Everything’s fine!"
+                        y "Everything's fine!"
                         ny sad "My hand is rather sore though…"
                         "Sir Guard would probably stop me if I tried to do that again."
                         "I should find a quieter way to open the window."
                         jump escapebegin
                 "Not yet...":
-                    "I shouldn’t be too reckless. I only have one chance at escaping."
+                    "I shouldn't be too reckless. I only have one chance at escaping."
                     show bg palace guestroom: #zoom out window
                         subpixel True
                         pos (-630, -100) zoom 1.49
@@ -108,7 +108,7 @@ label ch2_castle_escaperoom:
                         jump searchroom
 
                     if antimermaid > promermaid:
-                        ny shocked "I… hardly recognize myself."
+                        ny shocked "I...hardly recognize myself."
                         ny sad "I doubt Hunter or Grandfather would either."
                         camera: #zoom out mirror
                             subpixel True
@@ -169,12 +169,12 @@ label ch2_castle_escaperoom:
                             y flustered "Oh!"
                             "The rest of the letter is filled with the fantasies of a young noble woman."
                             play sound "audio/sfx_stoneDrawerClose.ogg" volume 0.8
-                            y "I think I’ll leave this here…"
+                            y "I think I'll leave this here..."
                             jump checkdresser
 
                         "Hairpin.":
                             $ hairpin = True
-                            ny neutral "There’s what appears to be an ornate hairpin resting inside the dresser."
+                            ny neutral "There's what appears to be an ornate hairpin resting inside the dresser."
                             y happy "How beautiful. Did it belong to the last person who stayed here?"
                             ny neutral "The pointy end is rather thin. Maybe I can use this for something?"
                             "I'll keep it in my bag for now."
@@ -184,10 +184,10 @@ label ch2_castle_escaperoom:
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
                             play sound "audio/sfx_coinJingle.ogg"
-                            "There’s some gold and silver shells inside. This looks like somebody’s coinpurse."
+                            "There's some gold and silver shells inside. This looks like somebody's coinpurse."
                             "Do mermaids barter the same way humans do?"
                             "I'll hold onto this for now."
-                            ny shocked "I hope the previous guest doesn’t come looking for it…"
+                            ny shocked "I hope the previous guest doesn't come looking for it..."
                             jump checkdresser
 
                         "Return." if coinpurse and hairpin:
@@ -205,16 +205,16 @@ label ch2_castle_escaperoom:
 
         "Talk to the guard.":
             if bribeguard:
-                ny nervous "Er... I really shouldn’t."
-                "I think I’ve bothered him enough."
+                ny nervous "Er...I really shouldn't."
+                "I think I've bothered him enough."
 
                 jump escapebegin
             else:
                 if coinpurse:
                     play sound "audio/sfx_coinJingle.ogg"
                     "The coinpurse jingles faintly in my bag."
-                    "That fishmonger in Aquantis wasn’t too helpful either until I offered him money."
-                    ny frustrated "I have to try everything I can here. It’s the only way to get home."
+                    "That fishmonger in Aquantis wasn't too helpful either until I offered him money."
+                    ny frustrated "I have to try everything I can here. It's the only way to get home."
                     menu:
                         "Bribe the guard.":
                             $ bribeguard = True
@@ -230,10 +230,10 @@ label ch2_castle_escaperoom:
                             guard "Try that again and your new room might become the castle dungeons."
                             y flustered "S-sorry to bother you!" with vpunch
                             "I swim away from the door."
-                            ny sad "That didn’t go as well as I’d hoped."
+                            ny sad "That didn't go as well as I'd hoped."
                             jump escapebegin
-                        "Don’t bother.":
-                            "This won’t get me anywhere."
+                        "Don't bother.":
+                            "This won't get me anywhere."
                             "I should take a closer look around the room."
                             jump escapebegin
 
@@ -241,8 +241,8 @@ label ch2_castle_escaperoom:
                     play sound "audio/sfx_guestDoorKnock.ogg"
                     "I knock on the door."
                     y "Excuse me. Sir Guard?"
-                    guard "Take some time to rest. Someone will come fetch you when you’re needed."
-                    ny frustrated "I’ve already rested plenty!"
+                    guard "Take some time to rest. Someone will come fetch you when you're needed."
+                    ny frustrated "I've already rested plenty!"
                     ny neutral "I guess I'll take a closer look around the room."
                     jump escapebegin
 
@@ -254,9 +254,9 @@ label escapedroom_tohallway:
     $ config.side_image_tag = "june"
     ny mermaid neutral "I find myself in another hallway."
     ny shocked "Huh. I suppose this is better than having to find my way back inside the castle."
-    ny nervous "That guard’s probably just around the corner. I doubt he’s moved all day."
-    "He said that Cetus was in his study. But... I have no idea where to start."
-    ny neutral "I need to find him before Sir Guard realizes I’m gone."
+    ny nervous "That guard's probably just around the corner. I doubt he's moved all day."
+    "He said that Cetus was in his study. But...I have no idea where to start."
+    ny neutral "I need to find him before Sir Guard realizes I'm gone."
     "Hmm..."
 
     $ speaking_char = "all"
@@ -269,14 +269,14 @@ label escapedroom_tohallway:
     with fade
 
     "{i}After several turns, we pass by a hallway with a particularly elegant door.{/i}"
-    "{i}It looks like it could lead to someplace quiet, like a library or an office.{/i}"
+    "{i}It looks like it could lead to someplace important.{/i}"
 
     hide black
     hide thioran
     with fade
 
     $ config.side_image_tag = "june"
-    ny mermaid neutral "Well, it’s not like I have any other ideas."
+    ny mermaid neutral "Well, it's not like I have any other ideas."
     "The way to get back there is very clear in my mind."
     y frustrated "I will {i}not{/i} get lost again."
 
@@ -290,7 +290,7 @@ label escapedroom_tohallway:
         fit "contain"
     with fade
     "..."
-    ny mermaid shocked "Oh! There’s the decorations the servants were hanging up!"
+    ny mermaid shocked "Oh! There's the decorations the servants were hanging up!"
     ny happy "The door is right here, just like I remembered."
 
     y "..."
@@ -300,7 +300,7 @@ label escapedroom_tohallway:
     "..."
     "..."
     ny nervous "No response."
-    "There’s no guarantee he’ll actually be here, but let’s give it a shot."
+    "There's no guarantee he'll actually be here, but let's give it a shot."
     "Taking a deep breath, I open the door."
 
 label cetus_office:
@@ -312,15 +312,15 @@ label cetus_office:
         ypos 60
     with dissolve
     y mermaid shocked "Lord Cetus?"
-    "Cetus is here! It looks like he’s busy writing something at his desk."
+    "Cetus is here! It looks like he's busy writing something at his desk."
     c "Close the door behind you. It can get rather noisy out there."
-    c "Though I’m sure you’ve already seen that firsthand."
+    c "Though I'm sure you've already seen that firsthand."
     play sound "audio/sfx_stoneDoorClose.ogg"
-    ny nervous "...At least he’s not sending me away."
+    ny nervous "...At least he's not sending me away."
     y neutral "I need to speak with you."
     "Cetus pauses a moment before finally putting his work down."
     show cetus displeased with dissolve
-    c "Yes. Quite urgently too, it seems, seeing as you’ve broken out of your room to come all the way here."
+    c "Yes. Quite urgently too, it seems, seeing as you've broken out of your room to come all the way here."
 
     y "I wanted to ask-"
     c "No, not from there."
@@ -351,7 +351,7 @@ label cetus_office:
                 show cetus smirk with dissolve
                 c "Clever girl."
                 ny nervous "Somehow, his praise only makes me feel more nervous."
-                "Shouldn’t he be upset instead?"
+                "Shouldn't he be upset instead?"
 
             #"If it takes you multiple attempts to break out"
             if failescape > 0:
@@ -365,9 +365,9 @@ label cetus_office:
             show cetus shocked with dissolve
             c "Well now, was this {i}your{/i} office I barged into?"
             show cetus displeased with dissolve
-            c "In that case, there’s plenty of paperwork that needs your attention, {i}my lady.{/i}"
+            c "In that case, there's plenty of paperwork that needs your attention, {i}my lady.{/i}"
             c "Perhaps I should take my leave before you call the guards to lock me away."
-            y shocked "Please don’t call the guards!"
+            y shocked "Please don't call the guards!"
             show cetus smirk with dissolve
             c "Oh? What was that?"
             y "..."
@@ -377,10 +377,10 @@ label cetus_office:
     if sillyjune:
         #"If you picked option 2 first"
         show cetus smirk with dissolve
-        c "That wasn’t so bad, was it?"
+        c "That wasn't so bad, was it?"
 
     show cetus neutral with dissolve
-    c "Go on, then. I’ll reward you with my time."
+    c "Go on, then. I'll reward you with my time."
 
     y "Lord Cetus, you mentioned humans in the throne room earlier."
 
@@ -392,18 +392,18 @@ label cetus_office:
     y "Did you...mean anything by it?"
 
     show cetus smirk with dissolve
-    c "You’re aiming quite high, little fish."
+    c "You're aiming quite high, little fish."
 
-    c "While I applaud your boldness, you’ll have better luck looking for a partner elsewhere."
+    c "While I applaud your boldness, you'll have better luck looking for a partner elsewhere."
 
-    y flustered "{i}Oh!{/i} I didn’t mean it like that!"
+    y flustered "{i}Oh!{/i} I didn't mean it like that!"
 
-    y nervous "It’s just that-"
+    y nervous "It's just that-"
 
     show cetus displeased with dissolve
     c "Get to the point."
 
-    "I hope I’m right about this..."
+    "I hope I'm right about this..."
 
     y frustrated "Do you know...{w}what I really am?"
 
@@ -413,17 +413,17 @@ label cetus_office:
 
     show cetus neutral with dissolve
 
-    c "Not many have eyes to see what’s right in front of them. But I am not so easily misled."
+    c "Not many have eyes to see what's right in front of them. But I am not so easily misled."
 
-    c "You’re quite a distance from your shores, {i}human.{/i}"
+    c "You're quite a distance from your shores, {i}human.{/i}"
 
     y shocked "...!" with vpunch
 
-    y "You didn’t say anything about it before."
+    y "You didn't say anything about it before."
 
     c "And neither did you. A prudent choice."
 
-    c "I’m sure you must have seen for yourself on land - how our kin treat one another."
+    c "I'm sure you must have seen for yourself on land - how our kin treat one another."
 
     #(add flashback image of the mermaid trapped in the glass cage)
     if promermaid > antimermaid:
@@ -431,7 +431,7 @@ label cetus_office:
     if antimermaid > promermaid:
         y frustrated "I have."
 
-    c "Then I suggest you continue to keep this to yourself. It’ll only get more troublesome if word gets out."
+    c "Then I suggest you continue to keep this to yourself. It'll only get more troublesome if word gets out."
 
     y nervous "But...for how long? How long is this spell on me going to last?"
 
@@ -439,11 +439,11 @@ label cetus_office:
     c "Did you think my magic to be temporary?"
 
     show cetus neutral with dissolve
-    c "I don’t work in halves."
+    c "I don't work in halves."
 
-    "Oh, thank goodness. That’s one less thing to worry about."
+    "Oh, thank goodness. That's one less thing to worry about."
 
-    y "Then, will you turn me back into a human after you’ve dealt with the siren?"
+    y "Then, will you turn me back into a human after you've dealt with the siren?"
 
     y "So I can return home?"
 
@@ -455,19 +455,19 @@ label cetus_office:
     c "What comes {i}after{/i} is of no concern to me."
 
     menu:
-        "But…"
-        "My family and friends think I’m dead!":
+        "But..."
+        "My family and friends think I'm dead!":
             c sad "A pity."
             pass
         "There are people waiting for me.":
             c frustrated "A pity."
             pass
 
-    "He’s really serious. But… that would mean I’d be stuck like this forever."
+    "He's really serious. But...that would mean I'd be stuck like this forever."
 
     "And what would happen to me once the siren is caught?"
 
-    "I won’t be needed in the castle anymore."
+    "I won't be needed in the castle anymore."
 
     "No. There must be something I can say to change his mind."
 
@@ -477,28 +477,28 @@ label cetus_office:
         set menuset
         ny nervous "There must be something I can say to change his mind."
         "I could go out and help you hunt the siren!":
-            y neutral "I’ve seen her lair, after all."
-            y happy "If we work together, I’m sure we’ll have a better chance!"
+            y neutral "I've seen her lair, after all."
+            y happy "If we work together, I'm sure we'll have a better chance!"
             show cetus neutral with dissolve
             c "If nothing else, your sheer recklessness should be applauded."
             pass
 
         "I could bring you back things from the surface.":
             c "I have no interest in your human toys."
-            c "And even if I did, why should I believe that you’d keep your word?"
+            c "And even if I did, why should I believe that you'd keep your word?"
             y shocked "..."
             show cetus neutral with dissolve
             c "Try again."
             jump changehismind
 
         "Also, just consider: Please!!!":
-            y shocked "Lord Cetus, please reconsider! You’d have my gratitude for life."
+            y shocked "Lord Cetus, please reconsider! You'd have my gratitude for life."
             c "..."
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}" with vpunch
             show cetus shocked
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
             y "Please, please, please, please, please, please, please, please, please-{nw}{w=0.1}"
-            y "Please...Pretty please..?"
+            y "Please...Pretty please...?"
             show cetus displeased with dissolve
             c "................"
             y "Please..."
@@ -513,7 +513,7 @@ label cetus_office:
 
     c "What do you suppose would happen were we to fight her head-on?"
 
-    y neutral "Couldn’t you fight magic with more magic? Aren’t there other magic users that could help us?"
+    y neutral "Couldn't you fight magic with more magic? Aren't there other magic users that could help us?"
 
     show cetus bittersmile with dissolve
     c "Perhaps that would have been possible in another lifetime. {w}But I am all that remains now."
@@ -523,7 +523,7 @@ label cetus_office:
     show cetus neutral with dissolve
     c "That is why we must find a different way."
 
-    c "Though the Students may be gone, the relics they’ve left behind remain."
+    c "Though the Students may be gone, the {i}relics{/i} they've left behind remain."
 
     y neutral "Relics?"
 
@@ -555,29 +555,29 @@ label cetus_office:
 
     c "That will depend on how well you perform."
 
-    "He’s willing to make a deal?"
+    "He's willing to make a deal?"
 
     y "..."
 
-    "But something doesn’t feel right…"
+    "But something doesn't feel right..."
 
     y "Why ask me? Why not just send out your guards?"
 
-    c "I don’t believe you're in any position to be questioning me."
+    c "I don't believe you're in any position to be questioning me."
 
-    y "Then how can I trust that you’ll keep your word?"
+    y "Then how can I trust that you'll keep your word?"
 
-    c "Because you don’t have a choice. I believe your desperation outweighs your uncertainty."
+    c "Because you don't have a choice. I believe your desperation outweighs your uncertainty."
 
-    "Well… he isn’t wrong."
+    "Well...he isn't wrong."
 
     "This might be my only chance of getting home."
 
     y "..."
 
-    y "Alright. I’ll do it. It’s a deal."
+    y "Alright. I'll do it. It's a deal."
 
-    c "An excellent choice. Now, here is what you must do…"
+    c "An excellent choice. Now, here is what you must do..."
 
     $ finished_demo_thio.grant()
 

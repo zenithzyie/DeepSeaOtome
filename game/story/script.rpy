@@ -255,7 +255,7 @@ label chapter1:
             woman "Knock knock."
             y "Oh, I know this one. Who's there?"
             woman "Knock knock."
-            y neutral "…"
+            y neutral "..."
             y "Uh...knock knock?"
             "The woman grins toothily."
             woman "Gehehehe! The wall!"
@@ -314,7 +314,7 @@ label chapter1:
     #possible choice?
     "According to what I've been told, I need to go to the west alley and knock on the wall."
 
-    "The code was... {color=#f2b950}five, three, four{/color}?"
+    "The code was...{color=#f2b950}five, three, four{/color}?"
 
     scene bg brickwall with dissolve
     $ config.side_image_tag = "june"
@@ -332,7 +332,7 @@ label knocking:
         jump knockknock
 
     menu knockknock:
-        "What was the code..?"
+        "What was the code...?"
         "3":
             ny frustrated "No, that doesn't seem right..."
             ny neutral "Let me try again."
@@ -500,7 +500,7 @@ label afterknocking:
 
     show hunter flustered
     with dissolve
-    h "Ha... you're really going to make me say it then?"
+    h "Ha...you're really going to make me say it then?"
     h "..."
     h "It's Hammy."
     h "We used to play together as kids."
@@ -509,7 +509,7 @@ label afterknocking:
     "If there was anyone I'd recall from my time here, it'd be him."
     y happy "That's right! Hammy!"
     show hunter sad with dissolve
-    h "Of all the things you could remember me by, it just had to be that nickname…"
+    h "Of all the things you could remember me by, it just had to be that nickname..."
 
     menu:
         "Tease him.":
@@ -531,7 +531,7 @@ label afterknocking:
     h "...Didn't think I'd ever hear you say my name again."
     y happy "You look so different now!"
     show hunter neutral with dissolve
-    h "Well, it's been about, what... ten years or so since we've last seen each other? Would hope I look different."
+    h "Well, it's been about, what...ten years or so since we've last seen each other? Would hope I look different."
     h "I'll be honest, never expected you to come back."
     y "I came to see my grandfather, if you still remember him."
     show hunter raisedeyebrow with dissolve
@@ -539,7 +539,7 @@ label afterknocking:
     h "Figured you'd rather rush off to see him first thing. Didn't think you'd be sneaking 'round here instead."
     show hunter happy with dissolve
     h "Feeling nostalgic?"
-    y "Well... I was following the address on this letter he sent me. The townspeople pointed me here."
+    y "Well...I was following the address on this letter he sent me. The townspeople pointed me here."
     show hunter neutral with dissolve
     "I show him Grandfather's letter."
     h "Looks like it was sent from his old shop down here, but that's been closed since he retired."
@@ -651,11 +651,11 @@ label afterknocking:
 
     if promermaid >= 1:
         h nervous "Looking a bit pale, [y]. You okay?"
-        y "Sorry. It's just... I haven't seen a mermaid before. It's rather shocking."
+        y "Sorry. It's just...I haven't seen a mermaid before. It's rather shocking."
 
     if antimermaid >= 1:
         h neutral "Try to keep your eyes down, or people might see your face."
-        y "Sorry. It's just... I haven't seen a mermaid before. It's all a bit surprising."
+        y "Sorry. It's just...I haven't seen a mermaid before. It's all a bit surprising."
 
     show hunter raisedeyebrow with dissolve
     h "...Huh. {w}Right."
@@ -671,14 +671,14 @@ label afterknocking:
                 show hunter raisedeyebrow with dissolve
                 h "On the surface, sure."
                 show hunter neutral with dissolve
-                h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
             else:
                 y "I don't quite remember much, to be honest."
-                h "We do a lot of fishing. Some of that is mermaids... if you look under the table."
-        "\"You don't {i}kill{/i} them too... do you?\"":
+                h "We do a lot of fishing. Some of that is mermaids...if you look under the table."
+        "\"You don't {i}kill{/i} them too...do you?\"":
             $ hunter_points -= 1
             h "I do."
-            h "My family does a lot of fishing. Some of that is mermaids... if you look under the table."
+            h "My family does a lot of fishing. Some of that is mermaids...if you look under the table."
             h "Either they die or our sailors do."
             y "..."
             h "Don't be fooled, [y]. They're more dangerous than they look."
@@ -768,7 +768,7 @@ label afterknocking:
     "He staggers back as though he's seen a ghost."
     g "Could it really be...? Little birdie?"
     show grandpa happy at jumpin
-    g "Oh, bless the stars... Yer really here! My dear, sweet [y]!"
+    g "Oh, bless the stars...Yer really here! My dear, sweet [y]!"
     show grandpa happy:
         subpixel True
         zoom 1.0
@@ -1025,7 +1025,7 @@ label timeskip1:
     $ config.side_image_tag = "june"
     y shocked "Ah...!" with screenShake
     "Something stirs in the back of my memory as I stare into the waves."
-    "Is the water... glowing?"
+    "Is the water...glowing?"
 
     #TODO FLASHBACK CG for a second of baby prince and june?
     #SFX - loud crash, screen shake
@@ -1117,7 +1117,7 @@ label timeskip1:
     #SCENE CHANGE - Black Screen
     scene bg black with dissolve
     "..."
-    siren "After all these long years... you've finally returned home to me..."
+    siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
     play sound "audio/sfx_hum.mp3" volume 1.0 fadein 1.0
@@ -1126,7 +1126,7 @@ label timeskip1:
     stop sound fadeout 1.0
     siren "Ah! You've woken up, little human."
     y "Blub!"
-    "....Huh?"
+    "...Huh?"
     y "Blub blub blub!"
     siren "Or, shall I say, {i}little fish.{/i}"
     "Hands, impossibly large and glowing strangely, come down to cradle me."
@@ -1147,7 +1147,7 @@ label timeskip1:
     y "BLUB BLUB BLUB!!!"
     siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "No matter what I try to say, none of my words come out right."
-    "I've... been turned into a fish by this siren?"
+    "I've...been turned into a fish by this siren?"
     menu:
         "Stay very, very still.":
             $ cetus_points += 1
@@ -1171,7 +1171,7 @@ label timeskip1:
     $ config.side_image_tag = "june"
     siren "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren "When Skylla calls, little mers are meant to follow."
-    ny neutral fish "Skylla..? Is that the name of this siren?"
+    ny neutral fish "Skylla...? Is that the name of this siren?"
 
     show skylla neutral:
         subpixel True
@@ -1192,7 +1192,7 @@ label timeskip1:
         ypos 780 zoom 1.0
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
+    "No matter how hard I press my hands - well, {i}fins{/i} -} against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0
@@ -1205,7 +1205,7 @@ label timeskip1:
     play sound "audio/sfx_rummaging.ogg" volume 0.2
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
-    "No.{w} No, no, no."
+    "No.{w} No, no, {i}no.{/i}"
     "Think, [y], think! There has to be a way out of here!"
     "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into a human, right?"
     "I glance around the cave."
@@ -1250,7 +1250,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the cave walls, but I don't see how that could help me."
+    "Glowing stones line the walls, but I don't see how that could help me."
 
     window auto hide
     camera:
@@ -1363,7 +1363,7 @@ label timeskip1:
 #    with dissolve
 
     $ speaking_char = "all"
-    "A pair of merfolk are staring each other down."
+    "A pair of mermaids are staring each other down."
     $ speaking_char = "Jorunn"
     "One of them is carrying a large net stuffed full of fish."
     $ speaking_char = "Prince Thioran"
@@ -1390,7 +1390,7 @@ label timeskip1:
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
     "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
-    "The merfolk could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
+    "The mermaids could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
 
     if promermaid >= 1:
@@ -1422,19 +1422,19 @@ label ch1_badend1:
 
     "There has to be another way out of this."
     "I can't trust either of them!"
-    "Both merpeople swim away, and I'm alone."
+    "Both mermaids swim away, and I'm alone."
     "Sort of..."
     "The other fish are swimming in a frenzy trying to get away from the vortex of water."
-    "The seastorm gets louder and louder."
+    "The sea storm gets louder and louder."
     "What if I hid in the seaweed again?"
-    "The seastorm is getting closer with every moment I hesitate."
+    "The sea storm is getting closer with every moment I hesitate."
     "I know! I'll try taking shelter in a nearby rock formation!"
     "The problem is, everything is so far away from me."
     "It'll take far too long to reach shelter."
     "I try swimming anyway, moving as fast as I can."
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It's too late!"
-    "The last thing I see before everything goes dark is something large crashing right into me.."
+    "The last thing I see before everything goes dark is something large crashing right into me."
     scene black with vpunch
     "Ravaged by the sea, I die."
     scene black with dissolve
