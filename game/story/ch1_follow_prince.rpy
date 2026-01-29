@@ -1,7 +1,6 @@
 
 #BRANCH - FOLLOW THIORAN
 label ch1_followprince:
-    $ followprince.grant()
     hide screen notify2
     hide jorunn glee with moveoutright
     show thioran at Position(xpos=0.45)

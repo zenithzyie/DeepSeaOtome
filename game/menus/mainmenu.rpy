@@ -29,6 +29,7 @@ screen titleMainMenu():
 
         spacing 12
 
+
         if main_menu:
             imagebutton:
                 auto "startbutton_%s"

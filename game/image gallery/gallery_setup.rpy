@@ -36,7 +36,7 @@ init python:
     gallery_items.append(GalleryItem("Family Portrait", ["cg_familyportrait"], "cg_familyportrait", "wide" ))
     gallery_items.append(GalleryItem("The Curse", ["cg_skyllahands"],"cg_skyllahands" , "wide"))
     gallery_items.append(GalleryItem("The Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus", "tall" ))
-#    gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
+    gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
     gallery_items.append(GalleryItem("Suspicion", ["cg_thiokabedon"],"cg_thiokabedon", "wide" ))
     gallery_items.append(GalleryItem("The Negotiation", ["cg_cetusoffice"], "cg_cetusoffice", "wide"))
 

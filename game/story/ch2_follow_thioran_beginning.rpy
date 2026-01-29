@@ -1,5 +1,4 @@
 label ch2_followthio:
-
 ##This is the beginning of the Throne Room continuation, after June is transformed into a mermaid.
 
 #SCENE CHANGE - FADE INTO MERMAID CG
@@ -23,6 +22,7 @@ label ch2_followthio:
         show cg_mermaidcetus:
             pos (0.5, 2.64) zoom 0.34
     window auto show
+
     "I stare down at it, confused, before my eyes trace it upward and find that it's connected to me."
 
     y "Oh! I'm... a mermaid?"
@@ -37,6 +37,8 @@ label ch2_followthio:
         xzoom -1
     show thioran shocked at thioran_left
     with dissolve
+
+    $ followprince.grant()
 
     c mermaid shocked "So it would seem."
 

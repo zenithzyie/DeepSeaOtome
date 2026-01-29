@@ -46,7 +46,7 @@ screen credits():
 
                 # Credit block: ZENITH
                 hbox:
-                    add "logos/zenith logo.png":
+                    add "logos/zenith.png":
                         xsize 150
                         ysize 150
                         fit "contain"
@@ -67,7 +67,7 @@ screen credits():
 
                 # Credit block: CRABY
                 hbox:
-                    add "logos/craby logo.png":
+                    add "logos/craby.png":
                         xsize 150
                         ysize 150
                         fit "contain"
@@ -105,7 +105,7 @@ screen credits():
 
                 # Credit block: JELLY
                 hbox:
-                    add "logos/jelly logo.png":
+                    add "logos/jelly.png":
                         xsize 150
                         ysize 150
                         fit "contain"
@@ -124,7 +124,7 @@ screen credits():
 
                 # Credit block: ALYSSA
                 hbox:
-                    add "gui/window_icon.png":
+                    add "logos/alyssa.png":
                         xsize 150
                         ysize 150
                         fit "contain"
@@ -142,7 +142,7 @@ screen credits():
 
                 # Credit block: LU
                 hbox:
-                    add "logos/lu logo.png" zoom 0.6
+                    add "logos/lu.png" zoom 0.6
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -170,7 +170,7 @@ screen credits():
 
                 # Credit block: MANGO
                 hbox:
-                    add "logos/mango logo.png" zoom 0.6
+                    add "logos/mango.png" zoom 0.6
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -201,7 +201,7 @@ screen credits():
 
                 # Credit block: LEMNISCATE
                 hbox:
-                    add "logos/lem logo.png" zoom 0.6
+                    add "logos/lem.png" zoom 0.6
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -215,7 +215,7 @@ screen credits():
 
                 # Credit block: JUSTIN
                 hbox:
-                    add "logos/justin logo.png" zoom 0.59
+                    add "logos/justin.png" zoom 0.59
                     null width 25 # manual horizontal spacing
                     vbox:
                         null height 5
@@ -257,9 +257,9 @@ screen credits():
                         null height 5 # yalign 0.5 is an alternative option, but yalign is more suited when there is equal amount of elements in this vbox
                         text "   " style "credits_name_small"
                         null height 10  # manual vertical spacing
-                        text "Orcinus - Playtesting & Editing" color "#fff" style "credits_url_text_small"
-                        null height 10
                         textbutton _("Joel Sanderson - Music") action OpenURL("https://www.demolitionkitchen.com/hosted_sites/index.htm") style "credits_url_button" text_style "credits_url_text_small"
+                        null height 10
+                        text "Orcinus - Playtesting & Editing" color "#fff" style "credits_url_text_small"
                         null height 10
 
                 null
