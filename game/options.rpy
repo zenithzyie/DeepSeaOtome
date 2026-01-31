@@ -53,8 +53,8 @@ define config.has_voice = False
 ## Additional Sound Channels below
 
 init python:
-    renpy.music.register_channel("ambience", "sfx", True)
-    renpy.music.register_channel("ambience2", "sfx", True)
+    renpy.music.register_channel("ambience", "ambience", True)
+    renpy.music.register_channel("ambience2", "ambience", True)
 
 ## To allow the user to play a test sound on the sound or voice channel,
 ## uncomment a line below and use it to set a sample sound to play.

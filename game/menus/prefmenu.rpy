@@ -283,6 +283,7 @@ screen sub_menu_audio():
                             null height 25
                             bar value Preference("music volume") style_prefix "slider"
                     null height -20
+
                     if config.has_sound:
                         style_prefix "pref_styling"
                         vbox:
@@ -292,6 +293,14 @@ screen sub_menu_audio():
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
+                    null height -20
+                    
+                    if config.has_music:
+                        vbox:
+                            label _("Ambient Volume")
+                            null height 25
+                            bar value Preference("ambience volume") style_prefix "slider"
+                    null height -20
 
                     if config.has_voice:
                         label _("Voice Volume")
