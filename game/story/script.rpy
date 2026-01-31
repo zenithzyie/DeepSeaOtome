@@ -272,7 +272,6 @@ label chapter1:
             kid "Oh, I know that place!"
             kid "That's near the west alley. My mama says I can't play over there."
             kid "She says it's full of bad people."
-            "He gives me a look."
             kid "Are you bad people?"
             y "No, I'm just looking for someone who lives there."
             y "Thank you for your help."
@@ -1385,7 +1384,7 @@ label timeskip1:
     "Just then, a loud rumble echoes throughout the area. The waters feel like they're slowly beginning to churn."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show thioran angry with dissolve
-    up "Damn it. Why now, of all times..!"
+    up "Damn it. Why now, of all times...!"
     show jorunn glee with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"

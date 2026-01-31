@@ -22,7 +22,7 @@ label grandpatalk:
     show grandpa neutral with dissolve
     g "And I've missed everythin'."
     y neutral "Not everything. We can make up for the lost time now, right?"
-    g "Aye... Truth be told, I wasn't sure I'd ever see ye again."
+    g "Aye...Truth be told, I wasn't sure I'd ever see ye again."
     g "But now that yer here, pull up a chair and anchor in, little birdie."
     "I sit down at the table and Grandfather joins me."
     "My gaze is quickly drawn to the largest picture on the wall."
