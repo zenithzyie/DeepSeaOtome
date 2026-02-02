@@ -150,17 +150,17 @@ define followthief = Achievement(
     hide_name=False,
     hide_description=False,
 )
-define datingspeedrun = Achievement(
+#define datingspeedrun = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
-    name=_("THE FASTEST DATING SIM"),
-    id="follow-thief",
+#    name=_("THE FASTEST DATING SIM"),
+#    id="follow-thief",
     ## Description.
-    description=_("Jorunn had to cover for you."),
-    unlocked_image="gui/ach/chibi_jor.png",
-    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
-    hide_name=False,
-    hide_description=False,
-)
+#    description=_("Jorunn had to cover for you."),
+#    unlocked_image="gui/ach/chibi_jor.png",
+#    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
+#    hide_name=False,
+#    hide_description=False,
+#)
 define finished_demo_thio = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
     name=_("Part Of Your World"),
@@ -282,12 +282,13 @@ screen achievement_gallery():
 
 #    add VBox(Transform("#1d2847", ysize=110), "#131b31") # Background
 #    add "images/bgs/bg drowning.jpg" size (1280, 720)
-    add gui.main_menu_background:
+    add "bgs/bg drowning.jpg":
         fit "contain"
+        alpha 0.7
 #    add HBox(Transform("#1d2847", xsize=800)):
 #        alpha 0.5
-    add Solid("#1d2847", xysize = (742,800)):
-        alpha 0.5
+#    add Solid("#1d2847"):
+#        alpha 1
 
 #    add "gui/game_menu.png":
 #        alpha 0.8
@@ -313,8 +314,9 @@ screen achievement_gallery():
         scrollbars "vertical"
         #xpos 40
         yalign 0.5
-        xsize int(config.screen_width*0.6) ysize int(config.screen_height*0.73)
-        xfill False yfill False
+        xalign 0.5
+        xsize int(config.screen_width*0.9) ysize int(config.screen_height*0.73)
+        xfill True yfill True
         has vbox
         #spacing 20
 
@@ -325,10 +327,10 @@ screen achievement_gallery():
         for a in Achievement.all_achievements:
             frame:
                 if a.has():
-                    #background "#26325e"
-                    background "gui/textbox.png"
+                    background "#1d2847"
+                    #background "gui/textbox.png"
                     #xsize 700
-                    #xfill True
+                    xfill True
                     ysize 155
                 #    padding (15,8)
                 else:
@@ -381,7 +383,7 @@ screen achievement_gallery():
     ## or relocate this.
     label __("Achievements: ") + "{earned}/{total}".format(
             earned=Achievement.num_earned(), total=Achievement.num_total()):
-        text_size 52 xpos 155 ypos 10 text_color "#fff" top_padding 15
+        text_size 52 xalign 0.5 ypos 10 text_color "#fff" top_padding 15
 
     ## This is an example of a button you might have during development which
     ## will reset all achievement progress at once. It can also be provided

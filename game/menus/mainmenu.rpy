@@ -14,6 +14,9 @@ image albumbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 image settingsbutton_hover = Transform("gui/button/settings_hover.png", zoom=0.24)
 image settingsbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 
+image achievementsbutton_hover = Transform("gui/button/achievements_hover.png", zoom=0.24)
+image achievementsbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
+
 image quitbutton_hover = Transform("gui/button/quit_hover.png", zoom=0.24)
 image quitbutton_idle = Transform("gui/button/mm_idle.png", zoom=0.24)
 
@@ -50,7 +53,7 @@ screen titleMainMenu():
                 action ShowMenu("gallery_B")
 
             imagebutton:
-                auto "settingsbutton_%s"
+                auto "achievementsbutton_%s"
                 hover_foreground Text("Achievements", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Achievements", style ="main_menu_imagebutton_text1")
                 action ShowMenu("achievement_gallery")
