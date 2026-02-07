@@ -28,7 +28,7 @@ screen titleMainMenu():
         if renpy.get_screen("main_menu"):
             style_prefix "main_menu"
             xpos 355
-            ypos 550
+            ypos 580
 
         spacing 12
 

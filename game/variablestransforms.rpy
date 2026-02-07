@@ -433,6 +433,8 @@ layeredimage jorunn:
             "images/sprites/jorunn/expressions/jorunn_glee.png"
         attribute sweat:
             "images/sprites/jorunn/expressions/jorunn_sweat.png"
+        attribute shocked:
+            "images/sprites/jorunn/expressions/jorunn_shocked.png"
     zoom 0.34
     ypos 1080
 ######################################################################
