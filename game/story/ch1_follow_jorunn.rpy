@@ -22,7 +22,7 @@ label ch1_followjorunn:
         pos (0.45, 1914) zoom 2.0
 
     "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
-    show jorunn sweat with dissolve
+    show jorunn shocked with dissolve
     uj "Huh?"
     y "Blub!!"
     "A deft hand snatches me up."
