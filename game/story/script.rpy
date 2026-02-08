@@ -955,7 +955,7 @@ label timeskip1:
     #SCENE CHANGE - Sea
     scene black
     with Dissolve(1.5)
-    scene bg calmwave:
+    scene bg hunterboat:
         fit "contain"
     with fade
     stop music fadeout 1.0
