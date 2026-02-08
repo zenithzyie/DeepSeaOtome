@@ -16,7 +16,6 @@ label grandpatalk:
     stop ambience
     stop ambience2
     "I step through the door and enter the ship's quarters."
-    #play ambience "audio/sfx_shipCreaking.ogg" volume 1.0 loop fadein 1.0
     show grandpa happy with dissolve
     g "Har har har...what a sight. Yer really grown up now, ain't ye, [y]?"
     show grandpa neutral with dissolve
@@ -89,6 +88,5 @@ label grandpatalk:
     y veryhappy"That sounds wonderful."
 
     stop music fadeout 1.0
-    stop ambience fadeout 1.0
 
     jump timeskip1
