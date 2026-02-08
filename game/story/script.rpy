@@ -68,11 +68,11 @@ label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     with Pause(1.10)
-    #this is driving me crazy it's cutting off for some reason????
-#    play sound "audio/sfx_trainhorn.wav" volume 3 fadeout 4
-#    with Pause(5.00)
+    play sound "audio/sfx_trainHorn.ogg" volume 3 fadeout 4
+    with Pause(4.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
     play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.6 loop
+    play ambience2 "audio/sfx_trainInterior.ogg" fadein 2.0 volume 0.5 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -92,6 +92,7 @@ label chapter1:
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
     stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
     play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
     stop sound fadeout 2.0
@@ -962,6 +963,7 @@ label timeskip1:
     stop ambience fadeout 1.0
     #SFX - waves (calm)
     play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.3
+    play ambience2 "audio/sfx_metalBoat.ogg" loop volume 0.7
 
     "We embark on Hunter's boat."
     "The sea is calm, and the sun is shining down on us."
@@ -1004,11 +1006,13 @@ label timeskip1:
 
     #SCENE CHANGE - view of the sea (stormy)
     stop ambience
+    stop ambience2
     play sound "audio/sfx_thunder.ogg" volume 0.9
     scene bg choppywave
     play music "audio/music_storm.ogg" fadein 2.0 volume 0.8
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 2.0 volume 0.2 loop
     show hunter nervous with vpunch
+    #use Hunter's shocked sprite here instead?? It does look kinda silly...
 
     "I can't see a hint of blue in the sky."
     y shocked "It was sunny only moments ago! What is this?"
