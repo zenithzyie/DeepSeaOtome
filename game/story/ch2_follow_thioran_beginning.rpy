@@ -192,7 +192,7 @@ label ch2_followthio:
     with fade
 
     ny mermaid neutral "The mysterious room lingers in my mind as we move past it in silence."
-    
+
     "..."
     "..."
 
@@ -462,6 +462,8 @@ label ch2_followthio:
     "I don't know how long I was asleep. Could he still be in the throne room?"
 
     "I need to find him."
+
+    play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.4
 
     ny shocked "I open the door to swim out, but a guard suddenly blocks my way."
 

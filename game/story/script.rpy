@@ -21,7 +21,7 @@ label get_name:
     show text "{i}My dear granddaughter...{/i}{w}":
         align (0.5,0.5)
     with dissolve
-    play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
+    play sound "audio/sfx_grandpaPaperRustle.ogg" volume 0.8
     pause
     show text "{i}It's getting warmer here. Summer already.{/i}{w}":
         align (0.5,0.5)
@@ -72,7 +72,7 @@ label chapter1:
 #    play sound "audio/sfx_trainhorn.wav" volume 3 fadeout 4
 #    with Pause(5.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
-    play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.6 loop
+    play ambience "audio/sfx_trainLoop.mp3" fadein 2.0 volume 0.6 loop
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
     if not renpy.seen_image("cg_train"):
@@ -189,7 +189,7 @@ label chapter1:
     with Pause(1.75)
     show bg shabby market:
         fit "contain"
-    #play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
+    play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
     #make this a more occasional/easygoing market sfx
     ny neutral "In my rush to escape, I find myself at a market."
     ny happy "There's more people here. And more to look at, as well."
@@ -303,6 +303,7 @@ label chapter1:
             fishmonger "Payment?"
             ny nervous "Clearly, the only language merchants speak is money..."
             y "Oh, yes. Thank you so much for the help."
+            #PUT GOLD CLINK SFX HERE
             ny frustrated "That was far from helpful!"
             "But I leave him a fair amount of coin for his trouble anyway."
 
@@ -316,6 +317,8 @@ label chapter1:
     "The code was...{color=#f2b950}five, three, four{/color}?"
 
     scene bg brickwall with dissolve
+    stop ambience fadeout 5.0
+    #should we stop the music here/play something else?
     $ config.side_image_tag = "june"
     ny neutral "I make my way past the market area to a narrow alley."
     "Upon reaching the end of the alley, I turn and come across a strange brick wall. The bricks are discolored and eroded compared to the rest."
@@ -407,8 +410,8 @@ label afterknocking:
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.5
-    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.08 loop
-    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.1 loop
+    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.04 loop
+    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.2 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -1026,7 +1029,6 @@ label timeskip1:
     "Something stirs in the back of my memory as I stare into the waves."
     "Is the water...glowing?"
 
-    #TODO FLASHBACK CG for a second of baby prince and june?
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.ogg" volume 0.3
     show bg choppywave with screenShake
@@ -1191,7 +1193,7 @@ label timeskip1:
         ypos 780 zoom 1.0
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    "No matter how hard I press my hands - well, {i}fins{/i} -} against the bubble, I can't push through."
+    "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0
@@ -1204,7 +1206,7 @@ label timeskip1:
     play sound "audio/sfx_rummaging.ogg" volume 0.2
     "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
     s "One piece at a time..."
-    "No.{w} No, no, {i}no.{/i}"
+    "No.{w} No, no, no."
     "Think, [y], think! There has to be a way out of here!"
     "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into a human, right?"
     "I glance around the cave."
@@ -1265,7 +1267,7 @@ label timeskip1:
 
     show skylla neutral with dissolve
     "Before I can finish the thought, the siren swims back towards me."
-    #play sound "audio/sfx_bubblePop.mp3" volume 0.2
+    play sound "audio/sfx_bubblePop.mp3" volume 0.2
     "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
     "My tiny heart thuds rapidly. She could pop me in an instant as well."
     show skylla happy:
