@@ -51,7 +51,7 @@ label ch2_castle_escaperoom:
                         y shocked "Ouch!"
                         guard "Everything alright in there?"
                         y "Everything's fine!"
-                        ny sad "My hand is rather sore though…"
+                        ny sad "My hand is rather sore though..."
                         "Sir Guard would probably stop me if I tried to do that again."
                         "I should find a quieter way to open the window."
                         jump escapebegin
@@ -97,7 +97,7 @@ label ch2_castle_escaperoom:
                     if promermaid > antimermaid:
                         ny shocked "Wow, I look so different!"
                         "The colors and fabrics are pretty, but I miss my coat a bit as well."
-                        ny flustered "Without it, I feel a little exposed…"
+                        ny flustered "Without it, I feel a little exposed..."
                         camera: #zoom out mirror
                             subpixel True
                             pos (-800,-550) zoom 2.5 zoom 2.5

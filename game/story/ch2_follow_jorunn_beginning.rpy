@@ -110,7 +110,7 @@ label ch2_follow_jorunn:
 
     j "A siren?"
 
-    Pr "How curious…How curious indeed. Do you remember anything else about this siren?"
+    Pr "How curious...How curious indeed. Do you remember anything else about this siren?"
 
     "I explain everything in clear detail, right up to the point where Jorunn saved me from the storm."
 
@@ -123,27 +123,40 @@ label ch2_follow_jorunn:
 
     j "Do you think she could be the same mermaid, Miss Prash?"
 
-    Pr "Hmm…"
+    Pr "Hmm..."
 
-    #Pr "Whoever she is, she's cursed our human pretty good!"
+    Pr "Whoever she is, she's certainly done a number on our human friend!"
 
-    #y "A curse?"
+    y "Prashadi, is it possible for you to turn me back into a human? I'm very grateful for your help but...I need to return home."
 
-    y "Let me outttt"
+    Pr "If it were simply a spell, I would have already sent you on your way home."
 
-    Pr "I'm afraid it's not so simple."
+    Pr "Curses are not so easily undone."
 
-    Pr "The curse intended to tie you down to the sea for the rest of your life."
+    y frustrated "A curse?"
 
-    Pr "No matter where you go, it will always pull you back."
+    #Pr "Unless it's broken - no matter where you go - the sea will always pull you back.
 
-    y "Please, is there no other way? I have family and friends up on land."
+    "No...there has to be a way, right?"
+
+    "But that would mean...I'll be trapped here forever."
+
+    menu:
+    show y frustrated	
+        "\"I don't want to be a mermaid forever!\"":
+            #+racism
+            pass
+        
+        "\"But I have family waiting for me.\"":
+            #+jor
+            pass
 
     Pr "It's dangerous, child, to meddle with your curse any further."
 
-    Pr "It doesn't feel right to let you swim headfirst into danger."
+    #y "Is there really no other way, if it means staying down here forever? I'll have to try something!"
 
-    y "I don't want them to think I'm dead!"
+    y "What am I going to do...?"
+    #AHHHHH
 
     j "Hey, it's alright. We'll figure this out together."
 
@@ -166,7 +179,7 @@ label ch2_follow_jorunn:
     "Now that I think about it, those posters in Aquantis had warned about sea storms suddenly appearing."
     "Just how long has this been going on?"
 
-    Pr "Sea storms have always been a natural occurrence, but those created from magic have a tendency to be rather…volatile."
+    Pr "Sea storms have always been a natural occurrence, but those created from magic have a tendency to be rather...volatile."
 
 
     jump endofdemo
