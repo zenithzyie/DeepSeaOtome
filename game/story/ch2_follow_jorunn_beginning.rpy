@@ -96,14 +96,16 @@ label ch2_follow_jorunn:
     j "Didn't think you'd be human, though. Must've been a long day, huh?"
 
     # Pro mermaid:
-    y "Tell me about it!"
-    "He's still as talkative as ever."
-    "I'm glad he doesn't seem to mind that I'm human."
+    if promermaid >= 1:
+        y "Tell me about it!"
+        "He's still as talkative as ever."
+        "I'm glad he doesn't seem to mind that I'm human."
 
     #Anti mermaid:
-    y "Very long."
-    "He's still as talkative as ever."
-    "I hope he'll remain friendly."
+    if antimermaid >= 1:
+        y "Very long."
+        "He's still as talkative as ever."
+        "I hope he'll remain friendly."
 
     y nervous "Everything was going fine until I was lured into the sea by a siren's song."
 
@@ -120,7 +122,9 @@ label ch2_follow_jorunn:
     Pr "I certainly knew a 'Skylla', but it was many years ago now. And the Skylla I knew was certainly no siren."
 
     #Anti mermaid
-    #"Of course suspicious people know suspicious people!!!!"
+    if antimermaid >= 1:
+        #placeholder
+        "Of course suspicious people know suspicious people!!!!"
 
     j "Do you think she could be the same mermaid, Miss Prash?"
 
@@ -136,7 +140,7 @@ label ch2_follow_jorunn:
 
     y frustrated "A curse?"
 
-    #Pr "Unless it's broken - no matter where you go - the sea will always pull you back.
+    Pr "Yes. This form is the best l can do for you right now. Unless it's broken - no matter where you go - the sea will always pull you back."
 
     "No...there has to be a way, right?"
 
@@ -144,11 +148,11 @@ label ch2_follow_jorunn:
 
     menu:
         "\"I don't want to be a mermaid forever!\"":
-            #+racism
+            $ antimermaid += 1
             pass
 
         "\"But I have family waiting for me.\"":
-            #$ jorunn_points += 1
+            $ jorunn_points += 1
             pass
 
     Pr "It's dangerous, child, to meddle with your curse any further."
@@ -163,38 +167,47 @@ label ch2_follow_jorunn:
 
     Pr "Now, boy..."
 
+    show jorunn sweat with dissolve
     j "The siren must be the one causing all these storms here."
 
-    j "If we let things be, it'll be trouble for all of us."
-
-    "Jorunn discreetly elbows me."
-
-    menu:
-        "\"UM RUDE!\"":
-            "Lines go here."
-
-        "\"Jor is right.\"":
-            #$ jorunn_points += 1
-            "Lines go here."
-
+    #If newsboard
+    if seastorm:
+        y "There's been storms above water, too."
+        "Now that I think about it, those posters in Aquantis had warned about sea storms suddenly appearing."
+        "Just how long has this been going on?"
 
     #If not newsboard
     "I recall how powerful the building storm felt when I was a tiny fish and try not to shudder."
     y "There's been other sea storms before?"
     j "Yeah. For a long time."
 
-    #if newsboard
-    y "There's been storms above water, too."
-    "Now that I think about it, those posters in Aquantis had warned about sea storms suddenly appearing."
-    "Just how long has this been going on?"
-
     Pr "Sea storms have always been a natural occurrence, but those created from magic have a tendency to be rather...volatile."
 
-    Pr "There appears to be a rather unusual mystery here. And with a human involved..."
+    j "If we let things be, it'll be trouble for all of us."
 
-    Pr "Hmm! I'll tell you what! Perhaps I can help you after all!"
+    show jorunn glee with dissolve
+    j "Plus it's not every day we get to team up with a human."
 
-    y "What? Really?"
+    "Jorunn discreetly elbows me."
+
+    menu:
+        "\"UM RUDE!\"":
+            show jorunn pissed with dissolve
+            j "..."
+            show jorunn glee with dissolve
+            j "Work with me here, [y]. I'm trying to help you out."
+            y shocked "You'll really help me?"
+
+        "\"Jor is right.\"":
+            #$ jorunn_points += 1
+            y veryhappy "We can totally do it! I can't give up yet!"
+
+    
+    Pr "Hmm! There appears to be a rather unusual mystery here. And with a human involved..."
+
+    Pr "I'll tell you what! Perhaps I can help you after all!"
+
+    y shocked "What? Really?"
 
     Pr "Yes. It certainly won't be easy to break a curse this strong though, so I'm afraid you must run some errands for me."
 
@@ -202,7 +215,7 @@ label ch2_follow_jorunn:
 
     Pr "I need you to collect a few relics."
 
-    y "Relics...?"
+    y nervous "Relics...?"
 
     Pr "Small things, imbued with the power of magic. Though there are very few magic users left, the relics they've created remain. I will need three of them to undo your curse."
     

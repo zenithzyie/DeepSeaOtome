@@ -159,8 +159,8 @@ label ch1_followjorunn:
             $ antimermaid += 1
             "Maybe I made the wrong decision..."
             "What was I thinking, trusting a merman?" 
-            #show only if antimermaid:
-            "His kind is the reason why I fell off Hunter's boat in the first place."
+            if antimermaid >= 1:
+                "His kind is the reason why I fell off Hunter's boat in the first place."
             
             "Anything could be in here, and I'm just letting him lead me to my doom."
             "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
