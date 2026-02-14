@@ -49,10 +49,10 @@ label ch2_follow_jorunn:
             "It reminds me a bit of a bathing suit, but it's unlike anything I've seen before."
 
         "I'm practically naked!":
-            "I've never worn such a revealing outfit before!"
+            ny flustered "I've never worn such a revealing outfit before!"
 
     show jorunn flustered at right2 with dissolve
-    "Joruun stares at me in surprise."
+    ny nervous "Joruun stares at me in surprise."
 
     show jorunn glee with dissolve
     "But when our eyes meet, he quickly schools his expression back into a smile."
@@ -65,7 +65,7 @@ label ch2_follow_jorunn:
 
     menu:
         "\"Who are you?\"":
-            y "You look just like my grandfather. But he's human like me."
+            "You look just like my grandfather. But he's human like me."
             Pr "Oho, is that who you see?"
             Pr "Well, I am certainly old enough to be your grandfather."
             "Right...of course it couldn't be him."
@@ -148,26 +148,35 @@ label ch2_follow_jorunn:
             pass
 
         "\"But I have family waiting for me.\"":
-            #+jor
+            #$ jorunn_points += 1
             pass
 
     Pr "It's dangerous, child, to meddle with your curse any further."
 
-    #y "Is there really no other way, if it means staying down here forever? I'll have to try something!"
-
     y "What am I going to do...?"
-    #AHHHHH
+
+    #AHHHHH moment
 
     j "Hey, it's alright. We'll figure this out together."
 
-    j "Miss Prash, is there really no other way?"
+    j "It's dangerous, but not impossible, right?"
 
-    Pr "You as well, Jorunn?"
+    Pr "Now, boy..."
 
     j "The siren must be the one causing all these storms here."
-    j "With how powerful the siren is, she must be the one causing all the sea storms."
 
     j "If we let things be, it'll be trouble for all of us."
+
+    "Jorunn discreetly elbows me."
+
+    menu:
+        "\"UM RUDE!\"":
+            "Lines go here."
+
+        "\"Jor is right.\"":
+            #$ jorunn_points += 1
+            "Lines go here."
+
 
     #If not newsboard
     "I recall how powerful the building storm felt when I was a tiny fish and try not to shudder."
@@ -181,6 +190,132 @@ label ch2_follow_jorunn:
 
     Pr "Sea storms have always been a natural occurrence, but those created from magic have a tendency to be rather...volatile."
 
+    Pr "There appears to be a rather unusual mystery here. And with a human involved..."
+
+    Pr "Hmm! I'll tell you what! Perhaps I can help you after all!"
+
+    y "What? Really?"
+
+    Pr "Yes. It certainly won't be easy to break a curse this strong though, so I'm afraid you must run some errands for me."
+
+    y "Anything!"
+
+    Pr "I need you to collect a few relics."
+
+    y "Relics...?"
+
+    Pr "Small things, imbued with the power of magic. Though there are very few magic users left, the relics they've created remain. I will need three of them to undo your curse."
+    
+    y "Three relics...where do I look for them?"
+
+    Pr "..."
+
+    "Prashadi's smile begins to turn slightly crooked."
+
+    Pr "Where indeed! Not to worry. The first one can be found somewhere you know very well."
+
+    j "Huh? Miss Prash? You can't mean-"
+
+    Pr "That's right! It's up on land!"
+
+    y "What?"
+
+    "Up on land? How would I even go get a relic back from there if I'm a mermaid?"
+
+    Pr "Now, now, no need to look so confused! Prashadi's will always has a way."
+
+    Pr "I can cast a temporary spell on you to give you back your legs. It won't last longer than a day, I must warn you. Like I said before, your curse is designed to pull you back to the sea." 
+
+    Pr "Until it's fully broken, you'll always return here."
+
+    y "So I'll have my legs back for a day?"
+
+    Pr "I knew you were a smart little fry."
+
+    "The thought is dizzying. But with it comes a hope that sends my heart beating faster. I could see grandfather and Hunter again. Let them know that I'm alive."
+
+    "But..."
+
+    y "Once I'm up on land, how will I know where the relic is? What does it look like?"
+
+    j "I'll go with you."
+
+    y "...!"
+
+    Pr "Now here's a twist! Are you sure, my boy?"
+    
+    j "I'm good at sensing magic stuff. If I go with [y], finding these relics should be a piece of fish! Plus, having legs for a day sounds super cool!"
+
+    Pr "Well...it's surely possible."
+
+    menu:
+        "\"Thank you.\"":
+            y "Thank you...I'd really appreciate that."
+            "I feel overwhelming gratitude towards Jorunn. Despite the fact that I've just met him, he seems willing to go up to land with me."
+            j "Of course! How could I let my new friend go back up there all alone?"
+            "I find myself smiling back at him. His cheer is infectious."
+
+        "\"Why would you help me?\"":
+            #$ jorunn_points += 1
+            y "Wouldn't it be dangerous to go up on land for you? Why would you want to help me? We've only just met."
+            j "Aw, how could I let my new friend go back up there all alone?"
+            j "Besides, I have a feeling the siren that came after you is bad news for me too. Whatever she's planning to do with you can't be good."
+            "Right. If that witch is plotting something, it can't be good for the mermaids living here either."
+            y "I see. I'd be grateful then if you joined me."
+
+    Pr "Then it's settled!"
+
+    "Prashahi's hands clap together."
+
+    Pr "Are you ready?"
+
+    y "Yes!"
+
+    Pr "Wonderful. Now, come back tomorrow!"
+
+    y "..."
+    
+    y "Pardon?"
+
+    Pr "A spell to give the two of you legs will take some time to prepare. Don't be so greedy! Didn't I even help you get out of that awful fishy body? I do need my rest as well."
+
+    "I feel flustered at being called out like that."
+
+    y "Right. I'm sorry."
+
+    "What am I even supposed to do until tomorrow? It's not as though I have a home underwater to return to."
+
+    j "Why don't you come stay at my village for the night, [y]? We're not the capital city or anything, but it'll beat having to sleep out in the sand."
+
+    y "Oh! If you're sure...Thank you."
+
+    j "Thanks, Miss Prash. We'll see you tomorrow then."
+
+    Pr "Tomorrow, my boy."
+
+    j "Here."
+
+    "Jorunn offers me his hand."
+
+    menu:
+        "Take it.":
+            #$ jorunn_points += 1
+            y "Thank you."
+            "I hadn't really noticed it as a fish, but his hand feels surprisingly calloused when it slips around my own."
+            j "Sure thing. Hold tight, okay?"
+
+        "Decline.":
+            j "You sure? No need to be shy. It's pretty dark out there. We wouldn't want you getting lost."
+            y "I'll manage."
+            j "If you say so!"
+
+    "I turn back to say farewell to Prashadi a final time, but they are nowhere to be found. The cave is entirely empty, as if no one had been there in the first place."
+
+    "What a strange sort."
+
+    "We swim back through the tunnels. It's just as dark as my first trip through them, but I feel a bit more courageous knowing that I have a plan now."
+
+    #JUMP TO JOR VILLAGE
 
     jump endofdemo
 
