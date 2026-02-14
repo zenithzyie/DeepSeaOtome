@@ -1,7 +1,7 @@
 label ch2_follow_jorunn:
 ##This is the beginning of the Prashadi Cave continuation, after June is transformed into a mermaid.
 
-#SCENE CHANGE - FADE INTO MERMAID CG    
+#SCENE CHANGE - FADE INTO MERMAID CG
 
     show cg_mermaidprashadi:
         align (0.5, 1.0)
@@ -33,11 +33,12 @@ label ch2_follow_jorunn:
         fit "contain"
     $ speaking_char = "Prashadi"
     show prashadi neutral at left2
+    show jorunn flustered at right2
     with dissolve
 
     $ followthief.grant()
 
-    Pr "What a lovely form, is it not?"
+    Pr mermaid shocked "What a lovely form, is it not?"
 
     Pr "Now, no need to thank me. I daresay this is one of my finest works yet."
 
@@ -49,7 +50,7 @@ label ch2_follow_jorunn:
 
         "I'm practically naked!":
             "I've never worn such a revealing outfit before!"
-    
+
     show jorunn flustered at right2 with dissolve
     "Joruun stares at me in surprise."
 
@@ -75,8 +76,8 @@ label ch2_follow_jorunn:
             y "But how is it that you look like my grandfather?"
             Pr "How indeed. A true master never reveals their secrets!"
             y shocked "..."
-    
-    Pr "My name is Prashadi, child. Though you can call me whatever you'd like." 
+
+    Pr "My name is Prashadi, child. Though you can call me whatever you'd like."
 
     Pr "My magic simply allows you to see the face of whoever is dear to your heart."
 
@@ -84,7 +85,7 @@ label ch2_follow_jorunn:
 
     y happy "I see. Thank you - both of you - for helping me out."
 
-    y "My name is [y]. As you said, I'm a human." 
+    y "My name is [y]. As you said, I'm a human."
 
     "What a relief to be able to introduce myself. I'll never take my voice for granted again!"
 
@@ -104,7 +105,7 @@ label ch2_follow_jorunn:
     "He's still as talkative as ever."
     "I hope he'll remain friendly."
 
-    y nervous "Everything was going fine until I was lured into the sea by a siren's song."  
+    y nervous "Everything was going fine until I was lured into the sea by a siren's song."
 
     y "She's the reason why I got turned into a fish in the first place."
 
@@ -118,8 +119,8 @@ label ch2_follow_jorunn:
 
     Pr "I certainly knew a 'Skylla', but it was many years ago now. And the Skylla I knew was certainly no siren."
 
-    #Anti mermaid 
-    #"Of course suspicious people know suspicious people!!!!"  
+    #Anti mermaid
+    #"Of course suspicious people know suspicious people!!!!"
 
     j "Do you think she could be the same mermaid, Miss Prash?"
 
@@ -139,14 +140,13 @@ label ch2_follow_jorunn:
 
     "No...there has to be a way, right?"
 
-    "But that would mean...I'll be trapped here forever."
+    ny frustrated "But that would mean...I'll be trapped here forever."
 
     menu:
-    show y frustrated	
         "\"I don't want to be a mermaid forever!\"":
             #+racism
             pass
-        
+
         "\"But I have family waiting for me.\"":
             #+jor
             pass
