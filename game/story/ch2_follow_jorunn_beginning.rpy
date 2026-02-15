@@ -210,7 +210,6 @@ label ch2_follow_jorunn:
                     "\"What?\"":
                         $ sadjune = True
                         j "{i}Come on, [y] work with me here. I'm trying to help you out!{/i}"
-                        y "..."
                     "\"Oh...!\"":
                         y sad "Yes! That's right!"
                         y sad "I AM BIG SAD."
@@ -229,6 +228,7 @@ label ch2_follow_jorunn:
 
     #if player doesn't pick 'Jor is right" option the first time    
     if sadjune:
+        y "Oh!"
         y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
         y "The waterworks could happen any minute."
         "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
@@ -283,6 +283,11 @@ label ch2_follow_jorunn:
 
     Pr "Don't be foolish."
 
+    j "I'll leave it up to you. Whether you want us to be going in unprepared or not."
+
+    Pr "CHILDREN THE LOT OF YOU! CHILDREN!"
+
+    Pr "..."
     
     show prashadi happy with dissolve
     Pr "Hmm! There appears to be a rather unusual mystery here. And with a human involved..."
