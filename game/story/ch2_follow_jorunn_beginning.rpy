@@ -63,6 +63,8 @@ label ch2_follow_jorunn:
 
     Pr "You did the right thing bringing her to me."
 
+    #June inner thought here?
+
     menu:
         "\"Who are you?\"":
             "You look just like my grandfather. But he's human like me."
@@ -123,7 +125,7 @@ label ch2_follow_jorunn:
 
     #Anti mermaid
     if antimermaid >= 1:
-        #placeholder
+        #placeholder below
         "Of course suspicious people know suspicious people!!!!"
 
     j "Do you think she could be the same mermaid, Miss Prash?"
@@ -168,44 +170,110 @@ label ch2_follow_jorunn:
     Pr "Now, boy..."
 
     show jorunn sweat with dissolve
-    j "The siren must be the one causing all these storms here."
+    j "I don't think whatever the siren is planning will stop with [y]'s curse."
+
+    j "The storms here have been getting worse, haven't they? If we let things be, it'll be trouble for all of us."
+
+    y "This isn't something new, then?"
+
+    j "Yeah. They've been around for a while now."
 
     #If newsboard
     if seastorm:
-        y "There's been storms above water, too."
-        "Now that I think about it, those posters in Aquantis had warned about sea storms suddenly appearing."
-        "Just how long has this been going on?"
+        "Those posters in Aquantis had warned about storms suddenly appearing."
+        "So, they've been affecting the mermaids underwater too..."
 
-    #If not newsboard
-    "I recall how powerful the building storm felt when I was a tiny fish and try not to shudder."
-    y "There's been other sea storms before?"
-    j "Yeah. For a long time."
+    Pr "All the more of a reason to not get involved then."
 
-    Pr "Sea storms have always been a natural occurrence, but those created from magic have a tendency to be rather...volatile."
+    "They're as stubborn as grandfather...face and all."
 
-    j "If we let things be, it'll be trouble for all of us."
+    j "Even if it's dangerous, [y] should get the choice."
 
-    show jorunn glee with dissolve
-    j "Plus it's not every day we get to team up with a human."
+    j "It's her life, after all, isn't it?"
 
-    "Jorunn discreetly elbows me."
+    "Jorunn discreetly nudges me with his elbow."
 
-    menu:
-        "\"UM RUDE!\"":
-            show jorunn pissed with dissolve
-            j "..."
-            show jorunn glee with dissolve
-            j "Work with me here, [y]. I'm trying to help you out."
-            y shocked "You'll really help me?"
+    menu jor_elbow:
+        "Does he want me to say something?"
+        "\"Excuse me?\"":
+            if not excuseme:
+                $ excuseme = True
+                show jorunn pissed with dissolve
+                j "...{nw}{w=0.8}"
+                show jorunn glee with dissolve
+                jump jor_elbow
+            if excuseme:
+                j "See, look at how upset she is about not being able to go home!"
+                "Jorunn nudges me yet again."
+                menu:
+                    "\"What?\"":
+                        j "{i}Come on, [y] work with me here. I'm trying to help you out!{/i}"
+                        y "..."
+                    "\"Jor is right.\"":
+                        jump jor_right
 
-        "\"Jor is right.\"":
+        "\"Jorunn is right.\"":
+            $ sadjune = True
             #$ jorunn_points += 1
-            y veryhappy "We can totally do it! I can't give up yet!"
+            y "Oh...! {nw}{w=0.5}"
+            y sad "Yes! That's right!"
+            y sad "I AM BIG SAD."
+            y sad "OBSERVE MY DESPAIR."
+            Pr "Do you even know what that word means?"
+            y frustrated "..."
+            #need crying june emotion here
+            y "LOOKINTOMYEYESANDSEEHOWSADIAM."
+            jump jor_elbow
+        
+    label jor_right:
+        y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
+        y "The waterworks could happen any minute."
+        "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
+        y "Ugh. Ah!! I'm already crying but you just can't see it since we're underwater."
+        show prashadi happy with dissolve
+        Pr "..."
+        "Is it working?"
+        show jorunn sweat with dissolve
+        j "..."
+        j "Ugh. Ah!!!! I'M SO SAD TOO."
+        j "Oh Lumina,  it's contagious."
+        y "Please Prashadi!"
+        j "Please!"
+        y "Please!"
+        j "Please!"
+        show prashadi angry
+        Pr "That's enough!" with screenShake
+
+
+    y "..."
+
+    show prashadi angry with dissolve
+    
+    Pr "Do you have any idea what you're asking? This is not a matter to be taken lightly."
+
+    y "Even if it means risking my life, I have to get back home. My family is waiting for me."
+
+    Pr "There's worse things out there than dying, girl."
+
+    y frustrated "Still...!"
+
+    j "Prashadi, if you really won't help us, then we'll just have to figure it out ourselves."
+
+    j "You can't stop us from doing that now, can you?"
+
+    show prashadi shocked with dissolve
+
+    Pr "Jorunn..."
+
+    show prashadi angry with dissolve
+
+    Pr "Don't be foolish."
 
     
+    show prashadi happy with dissolve
     Pr "Hmm! There appears to be a rather unusual mystery here. And with a human involved..."
 
-    Pr "I'll tell you what! Perhaps I can help you after all!"
+    Pr "Perhaps I can help you after all!"
 
     y shocked "What? Really?"
 

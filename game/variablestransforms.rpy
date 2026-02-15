@@ -78,6 +78,8 @@ default lookedatwindow = False
 default pickedsomeone = False
 default pickedsomething = False
 default sillyjune = False
+default excuseme = False
+default sadjune = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
