@@ -206,48 +206,62 @@ label ch2_follow_jorunn:
                 j "See, look at how upset she is about not being able to go home!"
                 "Jorunn nudges me yet again."
                 menu:
+                    "..."
                     "\"What?\"":
+                        $ sadjune = True
                         j "{i}Come on, [y] work with me here. I'm trying to help you out!{/i}"
                         y "..."
-                    "\"Jor is right.\"":
-                        jump jor_right
+                    "\"Oh...!\"":
+                        y sad "Yes! That's right!"
+                        y sad "I AM BIG SAD."
+                        y sad "OBSERVE MY DESPAIR."
+                        Pr "Do you even know what that word means?"
+                        y frustrated "..."
+                        #need crying june emotion here
+                        y "LOOKINTOMYEYESANDSEEHOWSADIAM."
+                        pass
+        "\"Jor is right.\"":
+            $ jorunn_points += 1
+            y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
+            y "The waterworks could happen any minute."
+            "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
+            y "Ugh. Ah!! I'm already crying but you just can't see it since we're underwater."
 
-        "\"Jorunn is right.\"":
-            $ sadjune = True
-            #$ jorunn_points += 1
-            y "Oh...! {nw}{w=0.5}"
-            y sad "Yes! That's right!"
-            y sad "I AM BIG SAD."
-            y sad "OBSERVE MY DESPAIR."
-            Pr "Do you even know what that word means?"
-            y frustrated "..."
-            #need crying june emotion here
-            y "LOOKINTOMYEYESANDSEEHOWSADIAM."
-            jump jor_elbow
-        
-    label jor_right:
+    #if player doesn't pick 'Jor is right" option the first time    
+    if sadjune:
         y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
         y "The waterworks could happen any minute."
         "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
         y "Ugh. Ah!! I'm already crying but you just can't see it since we're underwater."
-        show prashadi happy with dissolve
-        Pr "..."
-        "Is it working?"
-        show jorunn sweat with dissolve
-        j "..."
-        j "Ugh. Ah!!!! I'M SO SAD TOO."
-        j "Oh Lumina,  it's contagious."
-        y "Please Prashadi!"
-        j "Please!"
-        y "Please!"
-        j "Please!"
-        show prashadi angry
-        Pr "That's enough!" with screenShake
+    
+    #regular script continues after player choice
+    show prashadi happy with dissolve
 
+    Pr "..."
+
+    ny "Is it working?"
+    show jorunn sweat with dissolve
+
+    j "..."
+
+    j "Ugh. Ah!!!! I'M SO SAD TOO."
+
+    j "Oh Lumina,  it's contagious."
+
+    y "Please Prashadi!"
+
+    j "Please!"
+
+    y "Please!"
+
+    j "Please!"
+
+    show prashadi angry
+    Pr "That's enough!" with screenShake
 
     y "..."
 
-    show prashadi angry with dissolve
+    j "..."
     
     Pr "Do you have any idea what you're asking? This is not a matter to be taken lightly."
 

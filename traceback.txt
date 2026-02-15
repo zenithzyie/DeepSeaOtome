@@ -5,12 +5,9 @@ While running game code:
     call chapter1 from _call_chapter1
   File "game/story/script.rpy", line 1420, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 199, in script
-    if not excuseme:
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 199, in <module>
-    if not excuseme:
-           ^^^^^^^^ 
-NameError: name 'excuseme' is not defined
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 212, in script
+    jump jorunn_right
+renpy.script.LabelNotFound: could not find label 'jorunn_right'.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -19,23 +16,16 @@ Traceback (most recent call last):
     call chapter1 from _call_chapter1
   File "game/story/script.rpy", line 1420, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 199, in script
-    if not excuseme:
-  File "renpy/ast.py", line 2079, in execute
-    if renpy.python.py_eval(condition):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 199, in <module>
-    if not excuseme:
-           ^^^^^^^^ 
-NameError: name 'excuseme' is not defined
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 212, in script
+    jump jorunn_right
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'jorunn_right'.
 
 Windows-11-10.0.26100-SP0 AMD64
 Ren'Py 8.5.2.26010301
 HeartsDepthDEMO 3.0
-Sun Feb 15 10:50:58 2026
+Sun Feb 15 11:23:57 2026
