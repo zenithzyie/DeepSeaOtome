@@ -795,7 +795,7 @@ label afterknocking:
     show grandpa happy:
         ypos 1.0 zoom 1.0
     g happy "An' I see the lad brought ye here. Thank ye, my boy."
-    h "‘Course."
+    h "'Course."
     $ speaking_char = "all"
     show grandpa happy at Position(xpos=0.64) with move
     ny veryhappy "Hunter is barely able to respond before Grandfather traps him in his arms too. Hunter groans in response and I can't help but laugh." with vpunch
