@@ -21,7 +21,7 @@ label get_name:
     show text "{i}My dear granddaughter...{/i}{w}":
         align (0.5,0.5)
     with dissolve
-    play sound "audio/sfx_grandpaPaperRustle.ogg" volume 0.8
+    play sound "audio/sfx_grandpaPaperRustle.ogg" volume 1.0
     pause
     show text "{i}It's getting warmer here. Summer already.{/i}{w}":
         align (0.5,0.5)
@@ -68,12 +68,12 @@ label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     with Pause(1.10)
-    play sound "audio/sfx_trainHorn.ogg" volume 3 fadeout 4
+    play sound "audio/sfx_trainHorn.ogg" volume 4.0 fadeout 4.0
     with Pause(4.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
 
-    play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.6 loop
-    play ambience2 "audio/sfx_trainInterior.ogg" fadein 2.0 volume 0.5 loop
+    #play ambience "audio/sfx_train-loop.ogg" fadein 2.0 volume 0.6 loop
+    play ambience2 "audio/sfx_trainInterior.ogg" fadein 2.0 volume 1.0 loop
 
 
     "Salty air...I remember how I would try to stick out my tongue to taste it."
@@ -93,7 +93,7 @@ label chapter1:
     "I can't really remember why Mother stopped taking me to see Grandfather."
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
-    stop ambience fadeout 1.0
+    #stop ambience fadeout 1.0
     stop ambience2 fadeout 1.0
     play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
@@ -128,7 +128,7 @@ label chapter1:
     menu:
         ny happy "Take a picture of..."
         "The seaside view.":
-            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            play sound "audio/sfx_cameraShutter.ogg" volume 1.0
             show camera with irisin
             hide camera with dissolve
             y veryhappy "Let's see how it turned out!"
@@ -140,7 +140,7 @@ label chapter1:
             hide photo_aquantis1 with dissolve
 
         "The town buildings.":
-            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            play sound "audio/sfx_cameraShutter.ogg" volume 1.0
             show camera with irisin
             hide camera with dissolve
             y veryhappy "Let's see how it turned out!"
