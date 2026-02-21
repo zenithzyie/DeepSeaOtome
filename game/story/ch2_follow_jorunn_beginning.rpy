@@ -219,8 +219,9 @@ label ch2_follow_jorunn:
                         #need crying june emotion here
                         y "LOOKINTOMYEYESANDSEEHOWSADIAM."
                         pass
-        "\"Jor is right.\"":
+        "\"Jorunn is right.\"":
             $ jorunn_points += 1
+            $ jorright = True
             y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
             y "The waterworks could happen any minute."
             "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
@@ -285,22 +286,36 @@ label ch2_follow_jorunn:
 
     j "I'll leave it up to you. Whether you want us to be going in unprepared or not."
 
-    Pr "CHILDREN THE LOT OF YOU! CHILDREN!"
+    j "But I'm not going to be sitting by doing nothing."
 
-    Pr "..."
-    
+    Pr "I should've known you were going to be stubborn about this..."
+
+    Pr "I will not be responsible for your deaths, you hear?"
+
+    #June line
+
+    j "'Course not! I'm not dying anytime soon."
+
+    j "Besides, I know you don't want this to continue any more than we do."
+
+    "Prashadi lets out a long sigh."
+
     show prashadi happy with dissolve
-    Pr "Hmm! There appears to be a rather unusual mystery here. And with a human involved..."
+    Pr "...I suppose I'm in the mood for some entertainment. I'll help you after all."
 
-    Pr "Perhaps I can help you after all!"
+    y happy "Really? Thank you!"
 
-    y shocked "What? Really?"
+    if jorright:
+        "Jorunn gives me a wink and a big ol thumbs up."
 
-    Pr "Yes. It certainly won't be easy to break a curse this strong though, so I'm afraid you must run some errands for me."
+    "I hope this means I'll be home soon if all goes well."
+    
+    Pr "Don't thank me just yet. It certainly won't be easy to break a curse this strong, so I'm afraid you must run some errands for me."
 
     y "Anything!"
 
-    Pr "I need you to collect a few relics."
+    show prashadi neutral with dissolve
+    Pr "I need the two of you to collect some relics."
 
     y nervous "Relics...?"
 

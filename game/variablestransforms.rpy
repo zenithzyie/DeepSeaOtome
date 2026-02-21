@@ -80,6 +80,7 @@ default pickedsomething = False
 default sillyjune = False
 default excuseme = False
 default sadjune = False
+default jorright = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
