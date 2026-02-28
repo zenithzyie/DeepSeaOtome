@@ -266,7 +266,7 @@ label ch2_follow_jorunn:
     
     Pr "Do you have any idea what you're asking? This is not a matter to be taken lightly."
 
-    y "Even if it means risking my life, I have to get back home. My family is waiting for me."
+    y "Even if it means risking my life, I have to get back home."
 
     Pr "There's worse things out there than dying, girl."
 
@@ -292,9 +292,10 @@ label ch2_follow_jorunn:
 
     Pr "I will not be responsible for your deaths, you hear?"
 
-    #June line
-
+    show jorunn glee with dissolve
     j "'Course not! I'm not dying anytime soon."
+
+    y "We'll be careful!"
 
     j "Besides, I know you don't want this to continue any more than we do."
 
@@ -319,15 +320,48 @@ label ch2_follow_jorunn:
 
     y nervous "Relics...?"
 
-    Pr "Small things, imbued with the power of magic. Though there are very few magic users left, the relics they've created remain. I will need three of them to undo your curse."
+    j "Done!"
     
-    y "Three relics...where do I look for them?"
+    y "Like...{w}antiques?"
 
-    Pr "..."
+    #june inner thought
+    "I'm picturing a fancy vase imbued with mermaid magic. Somehow I doubt that's what a relic is, though."
 
-    "Prashadi's smile begins to turn slightly crooked."
+    Pr "Small things, imbued with the power of magic. Though there are very few magic users left, the relics they've created remain. I will need three of them to undo your curse."
 
-    Pr "Where indeed! Not to worry. The first one can be found somewhere you know very well."
+    menu whatisrelic:
+        set menuset
+        "I have so many questions..."
+        "\"What do they look like?\"":
+            Pr "Anything. They can look as different as you can me."
+            y "Then how will I know if it's a relic?"
+            show jorunn pissed with dissolve
+            j "beep beep metal/relic detector."
+            show jorunn glee with dissolve
+            Pr "...Pretty much like ordinary objects. Magic people left them, very special cool stuff."
+            y "How do old mementos carry magic?"
+            Pr "What am I, a dictionary? Hakuna matata."
+            jump whatisrelic
+        "\"How do we find these relics?\"":
+            "Prashadi's smile begins to turn slightly crooked."
+            Pr "That depends entirely on your luck."
+            y nervous "..."
+            y "How long could that take? I don't have any time to waste!"
+            Pr "They'll come to you. You just gotta keep an eye out."
+            jump whatisrelic
+        "\"Will this undo my curse?\"":
+            Pr "Thats a good ole prashadi secret :)"
+            jump whatisrelic
+    
+    "If these relics are so hard to find, how am I ever supposed to find them? I'm just human!"
+
+    Pr "It's precisely why I think you'll be the best at finding them! Haha"
+
+    y "Oh brother..."
+
+    Pr "Not to worry. The first one can be found somewhere you know very well."
+
+
 
     j "Huh? Miss Prash? You can't mean-"
 
@@ -337,31 +371,32 @@ label ch2_follow_jorunn:
 
     "Up on land? How would I even go get a relic back from there if I'm a mermaid?"
 
-    Pr "Now, now, no need to look so confused! Prashadi's will always has a way."
 
-    Pr "I can cast a temporary spell on you to give you back your legs. It won't last longer than a day, I must warn you. Like I said before, your curse is designed to pull you back to the sea." 
 
-    Pr "Until it's fully broken, you'll always return here."
+    "Come to think of it, how does a mermaid relic end up on land?"
+
+    "...Same way that mermaids end up on land, I suppose."
+
+    Pr "Now, now, no need to look so confused! Prashadi will always have a way."
+
+    Pr "I can cast a temporary spell on you to give you back your legs. You would have three days before you return to the sea."
 
     y "So I'll have my legs back for a day?"
 
     Pr "I knew you were a smart little fry."
 
-    "The thought is dizzying. But with it comes a hope that sends my heart beating faster. I could see grandfather and Hunter again. Let them know that I'm alive."
+    "The thought is dizzying. But with it comes a hope that sends my heart beating faster."
+
+    "I could see Grandfather and Hunter again. Let them know that I'm alive."
 
     "But..."
 
-    y "Once I'm up on land, how will I know where the relic is? What does it look like?"
+    "I wouldn't be able to stay with them. I'd only be human for three days."
 
-    j "I'll go with you."
+    y "This...This is a lot. Are you sure you still want to help me, Jorunn?"
 
-    y "...!"
+    j "Of course I still wanna help you. And how could I pass up the chance at being human? Sounds pretty neat!"
 
-    Pr "Now here's a twist! Are you sure, my boy?"
-    
-    j "I'm good at sensing magic stuff. If I go with [y], finding these relics should be a piece of fish! Plus, having legs for a day sounds super cool!"
-
-    Pr "Well...it's surely possible."
 
     menu:
         "\"Thank you.\"":
@@ -392,21 +427,21 @@ label ch2_follow_jorunn:
     
     y "Pardon?"
 
-    Pr "A spell to give the two of you legs will take some time to prepare. Don't be so greedy! Didn't I even help you get out of that awful fishy body? I do need my rest as well."
+    Pr "Ha! You humans are still so impatient! First and foremost, take some time to rest and enjoy being out of that awful fishy body."
 
-    "I feel flustered at being called out like that."
+    y "Oh. Right. I could do with a good rest."
 
-    y "Right. I'm sorry."
+    Pr "Ah, almost forgot the most important part-Once you're ready, you'll get your legs by breaking the surface at dawn."
+    
+    Pr "I recommend being close to land when you do. Swimming without a tail is tough work!"
 
-    "What am I even supposed to do until tomorrow? It's not as though I have a home underwater to return to."
+    "Dawn? That feels like a lifetime away! What am I supposed to do until then? Where am I even supposed to sleep?"
 
-    j "Why don't you come stay at my village for the night, [y]? We're not the capital city or anything, but it'll beat having to sleep out in the sand."
+    j "Why don't you come stay at my village for the night, [y]?"
 
-    y "Oh! If you're sure...Thank you."
+    j "We're not the capital city or anything, but it'll beat having to sleep out on the sand."
 
-    j "Thanks, Miss Prash. We'll see you tomorrow then."
-
-    Pr "Tomorrow, my boy."
+    y happy "Oh! If you're sure...That would be wonderful."
 
     j "Here."
 
@@ -420,15 +455,31 @@ label ch2_follow_jorunn:
             j "Sure thing. Hold tight, okay?"
 
         "Decline.":
-            j "You sure? No need to be shy. It's pretty dark out there. We wouldn't want you getting lost."
+            j "You sure? No need to be shy. It's pretty dark in those tunnels. We wouldn't want you getting lost."
             y "I'll manage."
-            j "If you say so!"
+            j "If you say so! Just say close, alright?"
 
-    "I turn back to say farewell to Prashadi a final time, but they are nowhere to be found. The cave is entirely empty, as if no one had been there in the first place."
+    hide prashadi with dissolve
+    hide jorunn with dissolve 
+    "With that, we start to leave."
+
+    j "Thanks, Miss Prash!"
+
+    Pr "It's still too early to thank me yet, boy..."
+
+    "I turn back to say farewell to Prashadi a final time as well, but they are nowhere to be found."
+
+    ny nervous "The cave is entirely empty, as if no one had been there in the first place."
+
+    "..."
 
     "What a strange sort."
 
+    #BLACK SCENE
+    scene bg black with fade
+
     "We swim back through the tunnels. It's just as dark as my first trip through them, but I feel a bit more courageous knowing that I have a plan now."
+
 
     #JUMP TO JOR VILLAGE
 
