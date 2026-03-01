@@ -79,13 +79,12 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
             xsize 1280     
             ysize 720
             imagebutton:
-                auto "gui/button/mainside_%s.png"
+                style "return_button"
+                auto "gui/button/blue_%s.png"
                 hover_foreground Text("Return", style ="main_menu_imagebutton_text")
                 idle_foreground Text("Return", style ="main_menu_imagebutton_text")
                 action (Hide("gallery_closeup", dissolve))
-                xalign 0.02
-                yalign 0.98
-                at customzoom
+                at customzoomsmall
 
     #on mousewheel, zoom in/out and refresh to show changes
     key "mousedown_4" action (Function(zoom_in), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomin, images))

@@ -220,10 +220,18 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
     use navigation
 
-    textbutton _("Return"):
+    imagebutton:
         style "return_button"
-
+        auto "gui/button/blue_%s.png"
+        hover_foreground Text("Return", style ="main_menu_imagebutton_text")
+        idle_foreground Text("Return", style ="main_menu_imagebutton_text")
         action Return()
+        at customzoomsmall
+
+    # textbutton _("Return"):
+    #     style "return_button"
+
+    #     action Return()
 
     label title:
         xalign 0.5
@@ -297,8 +305,11 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
 
     #use navigation
 
-    textbutton _("Return"):
+    imagebutton:
         style "return_button"
+        auto "gui/button/blue_%s.png"
+        hover_foreground Text("Return", style ="main_menu_imagebutton_text")
+        idle_foreground Text("Return", style ="main_menu_imagebutton_text")
         if main_menu:
                 action ShowMenu("main_menu")
         else:
@@ -307,6 +318,18 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
                     action Return()
             else:
                 action ShowMenu("prefs_menu")
+        at customzoomsmall
+
+    # textbutton _("Return"):
+    #     style "return_button"
+    #     if main_menu:
+    #             action ShowMenu("main_menu")
+    #     else:
+    #         if renpy.get_screen("prefs_menu"):
+    #             if renpy.get_screen("main_menu"):
+    #                 action Return()
+    #         else:
+    #             action ShowMenu("prefs_menu")
         #action Return()
 
     label title:
