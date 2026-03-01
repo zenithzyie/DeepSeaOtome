@@ -307,8 +307,15 @@ screen achievement_gallery():
     ## Version 2 ###############################################################
     ## Otherwise, if you'd like this to be independent of the game menu,
     ## use the following:
-    textbutton _("Return") action [ShowMenu("main_menu"), Hide("achievement_gallery")]:
-        style 'return_button'
+    imagebutton:
+        style "return_button"
+        auto "gui/button/blue_%s.png"
+        hover_foreground Text("Return", style ="main_menu_imagebutton_text")
+        idle_foreground Text("Return", style ="main_menu_imagebutton_text")
+        action [ShowMenu("main_menu"), Hide("achievement_gallery")]
+        at customzoomsmall
+    # textbutton _("Return") action [ShowMenu("main_menu"), Hide("achievement_gallery")]:
+    #     style 'return_button'
     viewport:
         mousewheel True draggable True pagekeys True
         scrollbars "vertical"
