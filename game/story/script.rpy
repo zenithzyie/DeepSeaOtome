@@ -94,8 +94,8 @@ label chapter1:
     "Even though I'm a grown woman now, she still refuses to say why."
     "...And Grandfather is the only other one with answers."
     #stop ambience fadeout 1.0
-    stop ambience2 fadeout 1.0
-    play sound "audio/sfx_steam.mp3" volume 0.3 fadeout 0.5
+    stop ambience2 fadeout 5.0
+    play sound "audio/sfx_steam.ogg" volume 0.5
     conductor "Please gather all personal belongings! We are arriving at Aquantis Station!"
     stop sound fadeout 2.0
 
@@ -192,7 +192,7 @@ label chapter1:
     with Pause(1.75)
     show bg shabby market:
         fit "contain"
-    play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
+    play ambience "audio/sfx_crowdAquantis.ogg" volume 0.9 loop
     #make this a more occasional/easygoing market sfx
     ny neutral "In my rush to escape, I find myself at a market."
     ny happy "There's more people here. And more to look at, as well."
@@ -849,7 +849,7 @@ label timeskip1:
         fit "contain"
     with dissolve
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
-    #play ambience "audio/sfx_shabbycrowd.mp3" volume 0.5 loop
+    play ambience "audio/sfx_crowdAquantis.ogg" volume 0.9 loop
     show grandpa neutral at left2 with dissolve
     $ speaking_char = "all"
     "Today, Grandfather and I are going out shopping."
