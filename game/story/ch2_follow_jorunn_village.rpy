@@ -42,9 +42,9 @@ label ch2_jorunn_village:
 
     y shocked "Wow...!"
 
-    ny neutral "So this is what a mermaid village looks like! I've never seen so many mermaids in one place before."
+    ny "So this is what a mermaid village looks like! I've never seen so many mermaids in one place before."
 
-    "A few mermaids pause when they see me. One of the guards at the entrance swims up to us."
+    ny neutral"A few mermaids pause when they see me. One of the guards at the entrance swims up to us."
 
     show jorunn sweat
     j "Aw, barnacles. It just had to be this guy on watch duty."
@@ -66,10 +66,95 @@ label ch2_jorunn_village:
 
     V "You don't look like you're from these waters. What are you doing all the way out here?"
 
-    #Choice things go here
+    #CONVINCE THE GUARD PUZZLE START
+    menu convincestart:
+        "I'm a traveling trader.":
+            V "Trading what? I don't see any wares on you."
+            menu trader:
+                "I just traded everything away.": #fail
+                    y "Yeah! Turns out everyone really loves discounts."
+                    j "Like me!"
+                    V "But like...what did you get in return?"
+                    y "Er..."
+                    j "Customer satisfaction, great reviews...!"
+                    y "Exactly. I traded the currency!"
+                    V "Hmm."
+                    "Oh no, I don't think he bought it."
+                    jump trader
 
+                "I lost my wares in the storm": #success
+                    V "Is that so? Well, you're not the first one to have that kind of trouble around here."
+                    y "Yes. I'm not sure how I'll survive without any supplies."
+                    j "Hey, here's an idea! Why don't you stay here with us until the storm passes!"
+                    y "Really? That's very kind of you. Who knows, maybe I'll visit here again once I've got stuff to trade with." 
+                    V "Hmm..."
 
+                "I want to explore the whole ocean!": #fail
+                    y "A heavy backpack would just slow me down."
+                    V "Right. A trader traveling light."
+                    V "What kind of fool do you think I am?"
+                    y "Er..."
+                    jump trader
 
+        "I'm visiting from far away.":
+            V "How far, exactly?"
+            menu faraway:
+                "From the Capital!": #fail
+                    V "Oh neat. Rich as fuck. Why are you here?"
+                    y "Is that...not normal?"
+                    j "No. It's not..."
+                    jump faraway
+
+                "Really far far away. You wouldn't have heard of it.": #fail
+                    V "Try me."
+                    y "It's like...twenty blue whales and a giant squid length away?"
+                    V "What are you even...Restrain this imposter!"
+                    jump faraway
+
+                "Alaska": #success
+                    V "A'lass Ka? Never heard of her."
+                    y "Yeah. Exactly. It's {i}really{/i} far away."
+                    j "Some other traders talked about it once! It's way up north. [y] got caught up in the storm on the way there."
+
+        "No clue. I have amnesia.":
+            V "..."
+            menu headinjury:
+                "I don't remember anything.": #fail
+                    V "That's too convenient. Come up with a better story next time."
+                    y "But it's true! All of my memories are gone."
+                    j "She's right! I helped her come up with a fake name and everything."
+                    V "...!"
+                    jump headinjury
+
+                "I hit my head real bad in the storm.": #success
+                    j "It's true! I found her passed out on a rock."
+                    V "Oh. A head trauma victim. Now this all makes sense."
+                    y "I have proof! There's a bump on my head!!"
+                    y "You're stupid. I don't remember island i don't care if u don't believe me fuck u"
+                    y "Wait, who are you again?"
+                
+                "I'm trying to find out who i was by going around places": #fail
+                    V "well it won't help here. We dunno u lady. gtfo"
+                    y "aw man"
+                    j "wait chill i got this"
+                    jump headinjury
+                
+    # JOR FAIL SAVE
+    j "Ok fine. Everyone...this was all a farce."
+    "Jorunn suddenly reaches over and grabs my hand."
+    j "...[y] and I are lovers!!!" with screenShake
+    V "WTF"
+    "WTF"
+    j  "We didn't want to cause a fuss or anything but we've been seeing each other for awhile.!"
+    V "Jesus. Okay. fine. Wtf" 
+    "Random villager swims away."
+    "The villagers swim away, whispering."
+    "Only one villager is left, staring slack jawed at us."
+
+    
+    #AFTER SUCCESSFUL CONVO (FINALLY)
+    V "Whatever. Just don't cause any trouble."
+    "Grumpypants swims away."
 
 
 
