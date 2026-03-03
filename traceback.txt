@@ -5,9 +5,14 @@ While running game code:
     call chapter1 from _call_chapter1
   File "game/story/script.rpy", line 1420, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 212, in script
-    jump jorunn_right
-renpy.script.LabelNotFound: could not find label 'jorunn_right'.
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 483, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 39, in script
+    show jorunn glee at moveoutleft
+  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
+    return OG_SHOW(name, at_list, layer, *args, **kwargs)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Exception: MoveTransition can only be applied to one or all layers, not ImageReference.
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -16,16 +21,33 @@ Traceback (most recent call last):
     call chapter1 from _call_chapter1
   File "game/story/script.rpy", line 1420, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 212, in script
-    jump jorunn_right
-  File "renpy/ast.py", line 1928, in execute
-    rv = renpy.game.script.lookup(target)
-         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "renpy/script.py", line 1201, in lookup
-    raise LabelNotFound(original)
-renpy.script.LabelNotFound: could not find label 'jorunn_right'.
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 483, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 39, in script
+    show jorunn glee at moveoutleft
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
+    return OG_SHOW(name, at_list, layer, *args, **kwargs)
+           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/displayexports.py", line 498, in show
+    img = i(img)  # type: ignore
+          ~^^^^^                
+  File "renpy/display/movetransition.py", line 555, in MoveTransition
+    raise Exception(
+        "MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__
+    )
+Exception: MoveTransition can only be applied to one or all layers, not ImageReference.
 
-Windows-11-10.0.26100-SP0 AMD64
+Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 HeartsDepthDEMO 3.0
-Sun Feb 15 11:23:57 2026
+Mon Mar  2 20:36:42 2026

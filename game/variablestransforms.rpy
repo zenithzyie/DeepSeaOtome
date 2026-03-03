@@ -82,6 +82,10 @@ default sillyjune = False
 default excuseme = False
 default sadjune = False
 default jorright = False
+default failconvince = 0
+default traderpick = False
+default amnesiapick = False
+default alaskapick = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
