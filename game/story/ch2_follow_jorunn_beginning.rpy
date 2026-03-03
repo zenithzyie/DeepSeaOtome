@@ -480,9 +480,4 @@ label ch2_follow_jorunn:
 
     "We swim back through the tunnels. It's just as dark as my first trip through them, but I feel a bit more courageous knowing that I have a plan now."
 
-
-    #JUMP TO JOR VILLAGE
-
-    jump endofdemo
-
-    #SCENE CHANGE - fade to black
+    call ch2_jorunn_village from _call_ch2_jorunn_village
