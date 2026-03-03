@@ -203,47 +203,30 @@ label ch2_castle_escaperoom:
                 "Return.":
                     jump escapebegin
 
-        "Talk to the guard.":
-            if bribeguard:
-                ny nervous "Er...I really shouldn't."
-                "I think I've bothered him enough."
-
-                jump escapebegin
-            else:
-                if coinpurse:
+        "Bribe the guard" if coinpurse == True:
+                if not bribeguard:
                     play sound "audio/sfx_coinJingle.ogg"
                     "The coinpurse jingles faintly in my bag."
                     "That fishmonger in Aquantis wasn't too helpful either until I offered him money."
                     ny frustrated "I have to try everything I can here. It's the only way to get home."
-                    menu:
-                        "Bribe the guard.":
-                            $ bribeguard = True
-                            $ failescape += 1
-                            play sound "audio/sfx_guestDoorKnock.ogg"
-                            "I knock on the door."
-                            y neutral "Excuse me. Sir Guard?"
-                            guard "What is it now?"
-                            y "Could you please take me to Lord Cetus? I can pay you."
-                            play sound "audio/sfx_longerCoinJingle.ogg"
-                            ny happy "I jingle the coinpurse in hopes of getting his attention."
-                            guard "So desperate as to resort to bribery?"
-                            guard "Try that again and your new room might become the castle dungeons."
-                            y flustered "S-sorry to bother you!" with vpunch
-                            "I swim away from the door."
-                            ny sad "That didn't go as well as I'd hoped."
-                            jump escapebegin
-                        "Don't bother.":
-                            "This won't get me anywhere."
-                            "I should take a closer look around the room."
-                            jump escapebegin
-
-                else:
+                    $ bribeguard = True
+                    $ failescape += 1
                     play sound "audio/sfx_guestDoorKnock.ogg"
                     "I knock on the door."
-                    y "Excuse me. Sir Guard?"
-                    guard "Take some time to rest. Someone will come fetch you when you're needed."
-                    ny frustrated "I've already rested plenty!"
-                    ny neutral "I guess I'll take a closer look around the room."
+                    y neutral "Excuse me. Sir Guard?"
+                    guard "What is it now?"
+                    y "Could you please take me to Lord Cetus? I can pay you."
+                    play sound "audio/sfx_longerCoinJingle.ogg"
+                    ny happy "I jingle the coinpurse in hopes of getting his attention."
+                    guard "So desperate as to resort to bribery?"
+                    guard "Try that again and your new room might become the castle dungeons."
+                    y flustered "S-sorry to bother you!" with vpunch
+                    "I swim away from the door."
+                    ny sad "That didn't go as well as I'd hoped."
+                    jump escapebegin
+                else:
+                    ny nervous "Er...I really shouldn't."
+                    "I think I've bothered him enough."
                     jump escapebegin
 
 
