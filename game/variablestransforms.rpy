@@ -84,6 +84,7 @@ default sadjune = False
 default jorright = False
 default failconvince = 0
 default traderpick = False
+default capitalpick = False
 default amnesiapick = False
 default alaskapick = False
 ######################################################################

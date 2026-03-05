@@ -106,6 +106,7 @@ label ch2_jorunn_village:
             menu faraway:
                 set menuset
                 "From the Capital!": #fail
+                    $ capitalpick = True
                     $ failconvince += 1
                     V "Oh neat. Rich as fuck. Why are you here?"
                     y "Is that...not normal?"
@@ -178,6 +179,12 @@ label ch2_jorunn_village:
         j "Glad u took my suggestion heehee"
         y "Ty for the save king appreciate it"
         show jorunn flustered with dissolve
+        "Now I just have to remember my story."
+
+    if capitalpick == True:
+        j "Whew we got away with it. Good job june!"
+        y "Yay jor praise"
+        "Now I just have to remember my story."
 
     # pass Amnesia check
     if amnesiapick == True:
@@ -190,11 +197,6 @@ label ch2_jorunn_village:
         j "by the way what is alaska anyway"
         y "oh its the name of a fictional place in a story my grandpapapapa told me as a kid"
         j "sure sounds weird no wonder its not real."
-
-    else:
-        j "Whew we got away with it. Good job june!"
-        y "Yay jor praise"
-        "Whew now I just have to remember my story."
 
     j "Alrighty time to go home yay"
 
