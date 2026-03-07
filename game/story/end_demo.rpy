@@ -24,7 +24,7 @@ label endofdemo:
         align (0.5,0.5)
     with dissolve
     pause
-    
+
     hide chibi_thio
     hide text
     with dissolve

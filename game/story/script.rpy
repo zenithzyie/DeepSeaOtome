@@ -1136,7 +1136,7 @@ label timeskip1:
     "...Huh?"
     y "Blub blub blub!"
     siren "Or, shall I say, {i}little fish.{/i}"
-    "Hands, impossibly large and glowing strangely, come down to cradle me."
+    "Hands, impossibly large, come down to cradle me."
 
     if not renpy.seen_image("cg_skyllahands"):
         scene cg_skyllahands with dissolve:
@@ -1150,11 +1150,11 @@ label timeskip1:
     #SCENE CHANGE - skylla cg
     play music bgm_skyllaCave volume 0.8
     $ config.side_image_tag = "None"
-    "All at once I recognize her, or her voice at least. She's the one that caused me to go overboard."
+    "That voice..! She must be the siren that lured me overboard!"
     y "BLUB BLUB BLUB!!!"
-    siren "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
+    siren2 "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "No matter what I try to say, none of my words come out right."
-    "I've...been turned into a fish by this siren?"
+    "Was she the one that turned me into a fish?"
     menu:
         "Stay very, very still.":
             $ cetus_points += 1
@@ -1166,29 +1166,23 @@ label timeskip1:
         "Get her!":
             $ prince_points += 1
             $ cetus_points -= 1
-            "I try to swim at her, but an invisible wall stops me before I can get close enough." with vpunch
-            "Near-invisible, I should say. The walls are shining."
+            "I try to swim at her, but something blocks me before I can get close enough." with vpunch
             "A bubble?"
 
     scene bg skylla cave:
         zoom 0.5
     #keep this at a 0.5 zoom until new bg
     show skylla happy
+    show skylla happy:
+        ypos 1050 zoom 1.5
     with dissolve
     $ config.side_image_tag = "june"
-    siren "Aw. You're hurting my feelings! Aren't you happy to see me?"
-    siren "When Skylla calls, little mers are meant to follow."
+    siren2 "Aw. You're hurting my feelings! Aren't you happy to see me?"
+    siren2 "When Skylla calls, little mers are meant to follow."
     ny neutral fish "Skylla...? Is that the name of this siren?"
 
-    show skylla neutral:
-        subpixel True
-        ypos 780 zoom 1.0
-        ease 0.30 ypos 1050 zoom 1.5
-    with Pause(0.40)
-    show skylla neutral:
-        ypos 1050 zoom 1.5
+    show skylla neutral
 
-    "Suddenly she leans in closer. The look in her beautiful eyes turns dark and ravenous. A cold and instinctive fear shoots through my gut."
     s "There's no need to rush. We have all the time in the world together. And you'll give me what I want."
     show skylla happy:
         subpixel True
@@ -1199,23 +1193,33 @@ label timeskip1:
         ypos 780 zoom 1.0
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
-    "No matter how hard I press my hands - well, fins - against the bubble, I can't push through."
+    "I need to get out of here!"
+    "But no matter how hard I press my hands - well, fins - against the bubble, I can't push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0
-    "At the thought, horror rolls through me like a wave. My body is all wrong, somehow warped beyond recognition."
-    "I have no hands to take pictures with.{w} No legs to run back home with.{w} No words to cry out with."
+    "My body is all wrong, somehow warped beyond recognition."
+    "I have no hands to take pictures with.{w} No legs to run home with.{w} No voice to cry out with."
     "Forever? Like this?"
-    "Or perhaps...{w}am I going to die after being eaten as a special dinner course?"
-    "Suddenly the memories of the mermaid market come to mind. Their bodies had been taken apart, all for a cheap meal."
+    "Or...{w}am I going to be eaten?"
+    $ speaking_char = "all"
+    $ config.side_image_tag = "None"
+    show cg_sushi:
+        fit "contain"
+    show black:
+        alpha 0.45
+    with fade
+    "Suddenly the underground market comes to mind. The mermaids there had been butchered for a cheap meal."
+    hide cg_sushi
+    hide black
+    with fade
+    $ config.side_image_tag = "june"
     "I am no different from them now.{w} Just as helpless."
     play sound "audio/sfx_rummaging.ogg" volume 0.2
-    "From the distance I can hear the siren humming to herself as she swims to and fro around the cave."
+    "I can hear the siren humming to herself as she swims around the cave."
     s "One piece at a time..."
     "No.{w} No, no, no."
     "Think, [y], think! There has to be a way out of here!"
-    "If there's a way to turn a human into a fish, surely there's a way to turn a fish back into a human, right?"
-    "I glance around the cave."
 
     window auto hide
     camera:
@@ -1231,11 +1235,7 @@ label timeskip1:
     with Pause(2.98)
     camera:
         pos (-858, -480) zoom 1.61
-    window auto show
-
-    "It's dark, and difficult to see. My new tiny eyes struggle to take in everything all at once."
-
-    window auto hide
+    with Pause(0.4)
     camera:
         subpixel True
         pos (-858, -480)
@@ -1257,7 +1257,7 @@ label timeskip1:
         pos (-108, -102) zoom 2.04
     window auto show
 
-    "Glowing stones line the walls, but I don't see how that could help me."
+    "Glowing crystals line the walls, but I don't see how that could help me."
 
     window auto hide
     camera:
@@ -1269,13 +1269,11 @@ label timeskip1:
         pos (0, 0) zoom 1.0
     window auto show
 
-    "Come on, [y]! You can do better than this! What else is there?"
+    "Come on, you can do better than this! What else is there?"
 
     show skylla neutral with dissolve
-    "Before I can finish the thought, the siren swims back towards me."
+    "Before I can finish the thought, the siren swims back to me."
     play sound "audio/sfx_bubblePop.mp3" volume 0.2
-    "Her clawed fingers gracefully pop the bubble, and then just as swiftly close around my body."
-    "My tiny heart thuds rapidly. She could pop me in an instant as well."
     show skylla happy:
         subpixel True
         ypos 780 zoom 1.0
@@ -1283,12 +1281,13 @@ label timeskip1:
     with Pause(0.40)
     show skylla happy:
         ypos 1050 zoom 1.5
+    "Her clawed fingers pop the bubble, then close around my body."
+    "She could pop me in an instant as well."
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It's a lie. A burning pain spreads across my body as she sings."
-    "I can't even scream as I feel something tugging inside me, as if the siren is trying to pull me apart from within." with vpunch
+    "It's a lie.{w} A burning pain spreads through my body as if the siren is trying to pull me apart from within." with vpunch
     s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
-    show skylla angry with dissolve
+    show skylla angry
     "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
 
     #FLASH EFFECT
@@ -1302,52 +1301,52 @@ label timeskip1:
         ypos 780 zoom 1.0
     "The siren screams as she drops me and flails backward."
     show skylla shocked with dissolve
-    s "No. No! This- this isn't right."
-    "Once I blink the white spots out my vision, I look up and find the siren staring at me with a shocked expression on her beautiful face."
+    s "No.{w=0.2} No!{w=0.3} This-{w=0.5} this isn't right."
     "Her hands are bleeding."
     "We stare at each other, frozen in place."
-    "..."
-    "But then, I remember myself and swim away from her, pushing my tiny fins as hard as they can go."
+    ".{w=0.3}.{w=0.3}.{w=0.3}"
+    "Ah!{w=0.2} There’s no time for this!"
+    "I swim away from her, pushing my fins as fast as they can go."
     show skylla angry with vpunch
     s "You little {i}eel!{/i} Get back here!"
 
     y "Blub blub!!"
 
-    "As if! Who in their right mind would do that!?"
-    "Her tentacles try to grasp me, but I'm too small for them to catch."
+    "Her tentacles try to grab me, but I'm too small for them to catch."
     s "Fine! Be like that!"
     show skylla angryteeth with dissolve
     play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
-    "I twist away just in time, and the magic collides with one of the glowing stones on the wall." with vpunch
+    "I twist away just in time, and the magic collides with one of the glowing crystals on the wall." with vpunch
     hide skylla with dissolve
     stop sound fadeout 2.0
     "Time seems to slow down."
-    "I hear a whirring coming from the stones like the sound of a shrill kettle, and in the next second the stones explode." with flash
-    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.2
+    "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
+    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.3
+    extend "and in the next second the crystals explode."
     y "..!" with vpunch
-    "The force sends me sprawling backwards in pain, but I don't have time to linger on it because the explosion has created a hole just big enough to squeeze through."
+    "The explosion has created a hole just big enough for me to squeeze through."
+    "This is my chance!"
     stop music
     scene bg black
     with fade
 
-    "I swim as fast as I can. Faster than I've ever ran when I had legs."
     "My heart is thumping madly in my chest as I force my way through the debris. "
-    "The sharper pieces scrape and cut through my fins, but I barely pay them any mind as I keep charging forward with all I have."
     "I can hear the siren cursing as I swim away."
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
     scene bg sea with vpunch
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
-    "I stop to catch my breath after what feels like a lifetime."
     $ config.side_image_tag = "june"
-    y fish neutral "Blub...{w}blub..."
+    y fish neutral "Blub...{w=0.2}blub..."
     "Now that the adrenaline has faded, I feel exhausted. My body feels like it's been run over."
-    "Grandfather...{w}Hunter...{w}they must think that I'm dead by now."
-    "At the thought of them, I suddenly feel overwhelmingly homesick. I need to tell them I'm alive!"
-    "But...{w}how am I supposed to make it back to land?"
-    "The only one that might be able to change me back is that siren, but there's no way I can go back there."
-    "Before I can dive any further into those thoughts, I hear voices approaching from a distance."
+    "Grandfather...{w=0.2}Hunter...{w=0.2}they must think that I'm dead by now."
+    "I need to tell them I'm alive!{w=0.3} But...{w=0.2}how am I supposed to make it back to land?"
+    "That siren might be able to change me back, but there’s no way I’m going back there."
+
+    novisualthio "Stop right there!"
+
+    "What was that? Is there another mermaid here?"
     "I quickly dart into some foliage to hide."
 
     #THIO AND JOR ENTER THE STAGE
@@ -1389,14 +1388,15 @@ label timeskip1:
     show jorunn sweat at jumpin
     with vpunch
 
-    "Just then, a loud rumble echoes throughout the area. The waters feel like they're slowly beginning to churn."
+    "Just then, a loud rumble echoes throughout the area."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show thioran angry with dissolve
     up "Damn it. Why now, of all times...!"
     show jorunn glee with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
-    "The rumble comes again, a bit louder this time. My heart sinks as I realize I might not survive whatever storm is coming." with vpunch
+    "The rumble comes again, louder this time." with vpunch
+    "What should I do? I don’t think I can survive a storm on my own!"
     "The mermaids could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
 
@@ -1443,7 +1443,6 @@ label ch1_badend1:
     "It's too late!"
     "The last thing I see before everything goes dark is something large crashing right into me."
     scene black with vpunch
-    "Ravaged by the sea, I die."
     scene black with dissolve
     $ badend1.grant()
     show text "{i}BAD END 1{/i}{w}":
