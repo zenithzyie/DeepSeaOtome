@@ -90,7 +90,7 @@ label ch1_followjorunn:
             "With the storm muffled by the cover of the kelp forest, the swim almost feels...{w} peaceful."
             show jorunn glee with dissolve
             uj "It's pretty way out here, don't you think?"
-            y "Blub!" 
+            y "Blub!"
             "I really wish I could take a picture of the ocean."
             uj "If we go a bit further out, you'll see my home."
             uj "But that's not important right now. We gotta get you fixed up first!"
@@ -158,10 +158,10 @@ label ch1_followjorunn:
         "I regret trusting him.":
             $ antimermaid += 1
             "Maybe I made the wrong decision..."
-            "What was I thinking, trusting a merman?" 
+            "What was I thinking, trusting a merman?"
             if antimermaid >= 1:
                 "His kind is the reason why I fell off Hunter's boat in the first place."
-            
+
             "Anything could be in here, and I'm just letting him lead me to my doom."
             "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
@@ -177,7 +177,7 @@ label ch1_followjorunn:
     with dissolve
 
     $ config.side_image_tag = "june"
-    "Are those...stars above us?"
+    ny neutral fish "Are those...stars above us?"
 
     show jorunn glee with dissolve
     j "Miss Prash! Are you in here?"
@@ -209,9 +209,9 @@ label ch1_followjorunn:
 
     u "Now here's a face you don't see very often!"
     u "What brings you all the way down here, boy?"
-    j "Did you miss me? I found something I think you'd like to see." 
+    j "Did you miss me? I found something I think you'd like to see."
     j "Take a look, Miss Prash!"
-   
+
     "Jorunn pushes me towards 'Miss Prash', and I can only stare, dumbfounded."
     "That's Grandfather. That's him."
     "What in the world?"
@@ -274,4 +274,6 @@ label ch1_followjorunn:
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 
-    jump ch2_follow_jorunn
+    jump endofdemo
+
+#    jump ch2_follow_jorunn
