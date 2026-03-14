@@ -1150,7 +1150,7 @@ label timeskip1:
     #SCENE CHANGE - skylla cg
     play music bgm_skyllaCave volume 0.8
     $ config.side_image_tag = "None"
-    "That voice..! She must be the siren that lured me overboard!"
+    "That voice...! She must be the siren that lured me overboard!"
     y "BLUB BLUB BLUB!!!"
     siren2 "Ahaha! Oh, you cute thing. That's no way to speak to a lady!"
     "No matter what I try to say, none of my words come out right."
@@ -1305,7 +1305,7 @@ label timeskip1:
     "Her hands are bleeding."
     "We stare at each other, frozen in place."
     ".{w=0.3}.{w=0.3}.{w=0.3}"
-    "Ah!{w=0.2} There’s no time for this!"
+    "Ah!{w=0.2} There's no time for this!"
     "I swim away from her, pushing my fins as fast as they can go."
     show skylla angry with vpunch
     s "You little {i}eel!{/i} Get back here!"
@@ -1324,7 +1324,7 @@ label timeskip1:
     "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
     play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.3
     extend "and in the next second the crystals explode."
-    y "..!" with vpunch
+    y "...!" with vpunch
     "The explosion has created a hole just big enough for me to squeeze through."
     "This is my chance!"
     stop music
@@ -1342,7 +1342,7 @@ label timeskip1:
     "Now that the adrenaline has faded, I feel exhausted. My body feels like it's been run over."
     "Grandfather...{w=0.2}Hunter...{w=0.2}they must think that I'm dead by now."
     "I need to tell them I'm alive!{w=0.3} But...{w=0.2}how am I supposed to make it back to land?"
-    "That siren might be able to change me back, but there’s no way I’m going back there."
+    "That siren might be able to change me back, but there's no way I'm going back there."
 
     novisualthio "Stop right there!"
 
@@ -1396,7 +1396,7 @@ label timeskip1:
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
     "The rumble comes again, louder this time." with vpunch
-    "What should I do? I don’t think I can survive a storm on my own!"
+    "What should I do? I don't think I can survive a storm on my own!"
     "The mermaids could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
     "Do I approach the prince? Or perhaps the other fellow?"
 
