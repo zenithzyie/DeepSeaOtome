@@ -413,8 +413,8 @@ label afterknocking:
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.5
-    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.04 loop
-    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.2 loop
+    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.02 loop
+    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.4 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -560,7 +560,7 @@ label afterknocking:
     "He throws me his coat."
 
     #SCENE CHANGE - Black Screen
-    play sound "audio/sfx_cloakdrop.ogg"
+    play sound "audio/sfx_cloakdrop.ogg" volume 0.3
     scene bg black with screenShake
     "My nose is filled with the salty smell of the sea."
     h "Keep it for now."
@@ -716,7 +716,7 @@ label afterknocking:
     stop ambience2 fadeout 2.0
 
     #SCENE CHANGE - Port w/ Boats
-    play music music_town fadein 2.0 volume 0.9
+    play music music_town fadein 2.0 volume 0.8
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
     scene bg port:
@@ -730,8 +730,8 @@ label afterknocking:
     show bg port:
         fit "contain"
 
-    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
-    play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.2 fadein 1.0
+    play ambience2 "audio/sfx_seagulls.ogg" loop volume 0.1 fadein 1.0
     "We make it outside and I can finally see the sky again."
 
     $ config.side_image_tag = "june"
@@ -783,9 +783,9 @@ label afterknocking:
         ypos 1.27 zoom 1.5
     "Suddenly, I'm caught in his embrace. He may be older, but his strength certainly has not faded." with vpunch
     ny veryhappy"I hug him tightly in return. The anxious anticipation I had moments before seems to vanish entirely."
-    play music music_town fadein 1.0 volume 0.9
-    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.5 fadein 1.0
-    play ambience2 "audio/sfx_seagulls.ogg" loop volume 1.0 fadein 1.0
+    play music music_town fadein 1.0 volume 0.8
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.2 fadein 1.0
+    play ambience2 "audio/sfx_seagulls.ogg" loop volume 0.1 fadein 1.0
     y "It's been too long, Grandfather!"
     show grandpa happy:
         subpixel True
@@ -967,8 +967,8 @@ label timeskip1:
     stop music fadeout 1.0
     stop ambience fadeout 1.0
     #SFX - waves (calm)
-    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.3
-    play ambience2 "audio/sfx_metalBoat.ogg" loop volume 0.7
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 0.2
+    play ambience2 "audio/sfx_metalBoat.ogg" loop volume 0.2
 
     "We embark on Hunter's boat."
     "The sea is calm, and the sun is shining down on us."
