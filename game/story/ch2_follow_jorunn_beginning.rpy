@@ -73,9 +73,8 @@ label ch2_follow_jorunn:
             "Right...of course it couldn't be him."
 
         "\"How did you do that?\"":
-            Pr "Oh, you know. With a little bit of this and that."
             Pr "I've picked up a few tricks over the years."
-            y "But how is it that you look like my grandfather?"
+            y "And how is it that you look like my grandfather?"
             Pr "How indeed. A true master never reveals their secrets!"
             y shocked "..."
 
@@ -89,7 +88,7 @@ label ch2_follow_jorunn:
 
     y "My name is [y]. As you said, I'm a human."
 
-    "What a relief to be able to introduce myself. I'll never take my voice for granted again!"
+    "What a relief to have my voice back!"
 
     j "So you {i}do{/i} have a name!"
 
@@ -109,9 +108,7 @@ label ch2_follow_jorunn:
         "He's still as talkative as ever."
         "I hope he'll remain friendly."
 
-    y nervous "Everything was going fine until I was lured into the sea by a siren's song."
-
-    y "She's the reason why I got turned into a fish in the first place."
+    y nervous "It was because of a siren. She's the one who lured me into the sea."
 
     j "A siren?"
 
@@ -121,156 +118,62 @@ label ch2_follow_jorunn:
 
     y "She called herself Skylla. Is that anyone you might know?"
 
-    Pr "I certainly knew a 'Skylla', but it was many years ago now. And the Skylla I knew was certainly no siren."
-
-    #Anti mermaid
-    if antimermaid >= 1:
-        #placeholder below
-        "Of course suspicious people know suspicious people!!!!"
+    Pr "I knew of a 'Skylla', but that was some time ago. And she was certainly no siren."
 
     j "Do you think she could be the same mermaid, Miss Prash?"
 
     Pr "Hmm..."
 
-    Pr "Whoever she is, she's certainly done a number on our human friend!"
+    Pr "Whoever she is, she's certainly done a number on our human friend."
 
-    y "Prashadi, is it possible for you to turn me back into a human? I'm very grateful for your help but...I need to return home."
+    y "Prashadi, is it possible for you to turn me back into a human?" 
 
-    Pr "If it were simply a spell, I would have already sent you on your way home."
+    y "I'm very grateful for all you've done, but...I need to return home."
 
-    Pr "Curses are not so easily undone."
+    Pr "If it were that simple, I would have sent you on your way already."
 
-    y frustrated "A curse?"
+    Pr "But I'm afraid the curse on you is not so easily undone."
 
-    Pr "Yes. This form is the best l can do for you right now. Unless it's broken - no matter where you go - the sea will always pull you back."
+    y shocked "A curse?"
 
-    "No...there has to be a way, right?"
+    Pr "Yes. No matter where you go, the sea will always pull you back. Your form now is all I can do for you."
 
-    ny frustrated "But that would mean...I'll be trapped here forever."
-
-    menu:
-        "\"I don't want to be a mermaid forever!\"":
-            $ antimermaid += 1
-            pass
-
-        "\"But I have family waiting for me.\"":
-            $ jorunn_points += 1
-            pass
+    y "Is there any way to remove it completely?"
 
     Pr "It's dangerous, child, to meddle with your curse any further."
 
-    y "What am I going to do...?"
-
-    #AHHHHH moment
-
-    j "Hey, it's alright. We'll figure this out together."
-
-    j "It's dangerous, but not impossible, right?"
+    j "Dangerous, but not impossible, right?"
 
     Pr "Now, boy..."
 
     show jorunn sweat with dissolve
-    j "I don't think whatever the siren is planning will stop with [y]'s curse."
+    j "I know you're trying to look out for us, but I don't think whatever the siren is planning will stop with [y]'s curse."
 
     j "The storms here have been getting worse, haven't they? If we let things be, it'll be trouble for all of us."
 
-    y "This isn't something new, then?"
-
-    j "Yeah. They've been around for a while now."
-
-    #If newsboard
+    #if newsboard
     if seastorm:
-        "Those posters in Aquantis had warned about storms suddenly appearing."
+        "Now that I think about it, those posters in Aquantis had warned about storms suddenly appearing."
         "So, they've been affecting the mermaids underwater too..."
 
-    Pr "All the more of a reason to not get involved then."
+    else:
+        "Just how long have these storms been going on for?"
 
-    "They're as stubborn as grandfather...face and all."
-
-    j "Even if it's dangerous, [y] should get the choice."
+    j "Besides, even if it's dangerous, she should get the choice."
 
     j "It's her life, after all, isn't it?"
 
-    "Jorunn discreetly nudges me with his elbow."
-
-    menu jor_elbow:
-        "Does he want me to say something?"
-        "\"Excuse me?\"":
-            if not excuseme:
-                $ excuseme = True
-                show jorunn pissed with dissolve
-                j "...{nw}{w=0.8}"
-                show jorunn glee with dissolve
-                jump jor_elbow
-            if excuseme:
-                j "See, look at how upset she is about not being able to go home!"
-                "Jorunn nudges me yet again."
-                menu:
-                    "..."
-                    "\"What?\"":
-                        $ sadjune = True
-                        j "{i}Come on, [y] work with me here. I'm trying to help you out!{/i}"
-                    "\"Oh...!\"":
-                        y sad "Yes! That's right!"
-                        y sad "I AM BIG SAD."
-                        y sad "OBSERVE MY DESPAIR."
-                        Pr "Do you even know what that word means?"
-                        y frustrated "..."
-                        #need crying june emotion here
-                        y "LOOKINTOMYEYESANDSEEHOWSADIAM."
-                        pass
-        "\"Jorunn is right.\"":
-            $ jorunn_points += 1
-            $ jorright = True
-            y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
-            y "The waterworks could happen any minute."
-            "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
-            y "Ugh. Ah!! I'm already crying but you just can't see it since we're underwater."
-
-    #if player doesn't pick 'Jor is right" option the first time    
-    if sadjune:
-        y "Oh!"
-        y sad "Yeah...! That's right! Please, Prashadi? Can't you at least tell us why?"
-        y "The waterworks could happen any minute."
-        "Wait, do mermaids even cry? Ah, whatever. Here goes nothing!" 
-        y "Ugh. Ah!! I'm already crying but you just can't see it since we're underwater."
-    
-    #regular script continues after player choice
-    show prashadi happy with dissolve
-
-    Pr "..."
-
-    ny "Is it working?"
-    show jorunn sweat with dissolve
-
-    j "..."
-
-    j "Ugh. Ah!!!! I'M SO SAD TOO."
-
-    j "Oh Lumina,  it's contagious."
-
-    y "Please Prashadi!"
-
-    j "Please!"
-
-    y "Please!"
-
-    j "Please!"
-
-    show prashadi angry
-    Pr "That's enough!" with screenShake
-
-    y "..."
-
-    j "..."
-    
-    Pr "Do you have any idea what you're asking? This is not a matter to be taken lightly."
+    y "Right!"
 
     y "Even if it means risking my life, I have to get back home."
 
     Pr "There's worse things out there than dying, girl."
 
-    y frustrated "Still...!"
+    y "Even so, I want to try."
+
+    Pr "..."
+
+    "They're just like grandfather...stubborness and all."
 
     j "Prashadi, if you really won't help us, then we'll just have to figure it out ourselves."
 
@@ -278,33 +181,38 @@ label ch2_follow_jorunn:
 
     show prashadi shocked with dissolve
 
-    Pr "Jorunn..."
-
-    show prashadi angry with dissolve
-
-    Pr "Don't be foolish."
+    Pr "Jorunn. Don't be foolish."
+    
+    j "Well, you're not giving us much of a choice."
 
     j "I'll leave it up to you. Whether you want us to be going in unprepared or not."
 
-    j "But I'm not going to be sitting by doing nothing."
 
-    Pr "I should've known you were going to be stubborn about this..."
+    j "But I'm not going to be sitting around doing nothing."
 
-    Pr "I will not be responsible for your deaths, you hear?"
+    Pr "Of all the times to be so bullheaded..."
 
-    show jorunn glee with dissolve
-    j "'Course not! I'm not dying anytime soon."
+    menu:
+        y frustrated "..."
+        "\"I don't want to be a mermaid for the rest of my life!\"":
+            y "Please. I don't belong here."
+            pass
 
-    y "We'll be careful!"
+        "\"I have family waiting for me.\"":
+            y "Please. Wouldn't you want to get back to your family too?"
+            pass
 
-    j "Besides, I know you don't want this to continue any more than we do."
+    show prashadi neutral with dissolve
+    Pr "...Very well."
 
-    "Prashadi lets out a long sigh."
+    show prashadi angry with dissolve
+    Pr "But I will not be responsible for your deaths, you hear?"
 
-    show prashadi happy with dissolve
-    Pr "...I suppose I'm in the mood for some entertainment. I'll help you after all."
+    j "Course not. We're not dying anytime soon."
 
-    y happy "Really? Thank you!"
+    y "You'll help us?"
+
+
 
     if jorright:
         "Jorunn gives me a wink and a big ol thumbs up."
