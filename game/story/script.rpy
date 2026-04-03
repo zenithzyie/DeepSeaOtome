@@ -891,7 +891,7 @@ label timeskip1:
     ny neutral "I've learned some things from Grandfather in my time here."
     "He's quite proud of his history at sea."
     if promermaid >= 1:
-        ny nervous " I don't know I feel about it."
+        ny nervous " I don't know how I feel about it."
     g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral with dissolve

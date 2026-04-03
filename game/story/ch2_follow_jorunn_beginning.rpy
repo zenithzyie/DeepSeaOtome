@@ -208,64 +208,52 @@ label ch2_follow_jorunn:
     show prashadi angry with dissolve
     Pr "But I will not be responsible for your deaths, you hear?"
 
-    j "Course not. We're not dying anytime soon."
+    show jorunn glee with dissolve
+    j "Course not. I'm not planning on dying anytime soon."
 
-    y "You'll help us?"
+    y happy "Thank you, Prashadi!"
 
+    "What a relief."
 
+    Pr "Don't thank me just yet. You will need to complete some tasks for me first."
 
-    if jorright:
-        "Jorunn gives me a wink and a big ol thumbs up."
+    y "Just tell me what to do."
 
-    "I hope this means I'll be home soon if all goes well."
-    
-    Pr "Don't thank me just yet. It certainly won't be easy to break a curse this strong, so I'm afraid you must run some errands for me."
-
-    y "Anything!"
-
-    show prashadi neutral with dissolve
     Pr "I need the two of you to collect some relics."
 
-    y nervous "Relics...?"
+    y neutral "Relics? Like...antiques?" 
 
-    j "Done!"
-    
-    y "Like...{w}antiques?"
-
-    #june inner thought
-    "I'm picturing a fancy vase imbued with mermaid magic. Somehow I doubt that's what a relic is, though."
-
-    Pr "Small things, imbued with the power of magic. Though there are very few magic users left, the relics they've created remain. I will need three of them to undo your curse."
+    show jorunn neutral with dissolve
+    j "Magic items, basically. They show up in a lot of children's tales."
 
     menu whatisrelic:
         set menuset
         "I have so many questions..."
         "\"What do they look like?\"":
-            Pr "Anything. They can look as different as you can me."
-            y "Then how will I know if it's a relic?"
-            show jorunn pissed with dissolve
-            j "beep beep metal/relic detector."
-            show jorunn glee with dissolve
-            Pr "...Pretty much like ordinary objects. Magic people left them, very special cool stuff."
-            y "How do old mementos carry magic?"
-            Pr "What am I, a dictionary? Hakuna matata."
+            show prashadi neutral with dissolve
+            Pr "Anything. They can look as different as you and me."
+            "A fleeting look of nostalgia passes over Prashadi's face."
+            Pr "A scroll, a trident, or perhaps a ring..."
+            Pr "Just to name a few, you might say."
             jump whatisrelic
+
         "\"How do we find these relics?\"":
-            "Prashadi's smile begins to turn slightly crooked."
-            Pr "That depends entirely on your luck."
-            y nervous "..."
-            y "How long could that take? I don't have any time to waste!"
-            Pr "They'll come to you. You just gotta keep an eye out."
+            Pr "As scattered as they are, I can point you in the right direction."
+            y "What happens next? How will I know when I've found one?"
+            Pr "That is where you're fortunate Jorunn has offered his help."
+            show jorunn glee with dissolve
+            "Jorunn gives me a confident smile."
+            j "I've got a good eye for magic!"
+            "Now that I think about it, he was able to sense there was something different about me as a fish."
+            y "I see. Thank you, Jorunn."
             jump whatisrelic
-        "\"Will this undo my curse?\"":
-            Pr "Thats a good ole prashadi secret :)"
+
+        "\"Will these relics undo my curse?\"":
+            Pr "They will play a part in it, yes."
+            y "Just 'a part'? Is there something else we need to do?"
+            Pr "In due time, little fry. Bring me a relic first, then we'll talk."
+            y "..."
             jump whatisrelic
-    
-    "If these relics are so hard to find, how am I ever supposed to find them? I'm just human!"
-
-    Pr "It's precisely why I think you'll be the best at finding them! Haha"
-
-    y "Oh brother..."
 
     Pr "Not to worry. The first one can be found somewhere you know very well."
 
