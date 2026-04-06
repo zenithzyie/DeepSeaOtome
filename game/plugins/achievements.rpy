@@ -125,8 +125,8 @@ define followprince = Achievement(
     description=_("Chose to follow the Striking Prince."),
     unlocked_image="gui/ach/chibi_thio.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_thio.png")),
-    hide_name=False,
-    hide_description=False,
+    hide_name=True,
+    hide_description=True,
 )
 define perfectescaperoom = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
@@ -136,7 +136,7 @@ define perfectescaperoom = Achievement(
     description=_("Escaped the guest room on your first try."),
     unlocked_image="gui/ach/chibi_cetus.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_cetus.png")),
-    hide_name=False,
+    hide_name=True,
     hide_description=True,
 )
 define followthief = Achievement(
@@ -147,8 +147,8 @@ define followthief = Achievement(
     description=_("Chose to follow the Thieving Merman."),
     unlocked_image="gui/ach/chibi_jor.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
-    hide_name=False,
-    hide_description=False,
+    hide_name=True,
+    hide_description=True,
 )
 #define datingspeedrun = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
@@ -191,8 +191,8 @@ define badend1 = Achievement(
     description=_("Small fish caught in a big storm."),
     unlocked_image="gui/ach/chibi_hunter.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_hunter.png")),
-    hide_name=False,
-    hide_description=False,
+    hide_name=True,
+    hide_description=True,
 )
 ## You can grant an achievement in-game with `$ sample_achievement.grant()`
 ################################################################################

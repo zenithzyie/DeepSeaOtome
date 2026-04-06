@@ -132,12 +132,12 @@ screen preferences():
                             action [ShowMenu("help"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("credits")]
                             at customzoom
                         #textbutton _("Help") action ShowMenu("help")
-                    imagebutton:
-                        auto "gui/button/mainside_%s.png"
-                        hover_foreground Text("Credits", style ="main_menu_imagebutton_text")
-                        idle_foreground Text("Credits", style ="main_menu_imagebutton_text")
-                        action [ShowMenu("credits"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("help")]
-                        at customzoom
+                    #imagebutton:
+                    #    auto "gui/button/mainside_%s.png"
+                    #    hover_foreground Text("Credits", style ="main_menu_imagebutton_text")
+                    #    idle_foreground Text("Credits", style ="main_menu_imagebutton_text")
+                    #    action [ShowMenu("credits"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("help")]
+                    #    at customzoom
 
 
 transform customzoom:
@@ -294,7 +294,7 @@ screen sub_menu_audio():
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
                     null height -20
-                    
+
                     if config.has_music:
                         vbox:
                             label _("Ambient Volume")
