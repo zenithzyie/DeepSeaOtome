@@ -974,7 +974,9 @@ label timeskip1:
     "The sea is calm, and the sun is shining down on us."
 
     $ config.side_image_tag = "june"
-    show hunter happy with dissolve
+    #hunter is SLIGHTLY right for this
+    show hunter happy at Position(xpos=0.55)
+    with dissolve
     h "Might be able to spot a 'maid going onto the rocks for a sunbathe."
     y shocked "Mermaids sunbathe? Really?"
     show hunter neutral with dissolve
@@ -1012,11 +1014,28 @@ label timeskip1:
     #SCENE CHANGE - view of the sea (stormy)
     stop ambience
     stop ambience2
+    scene bg white
+    with Dissolve(0.2)
+#    pause 0.2
     play sound "audio/sfx_thunder.ogg" volume 0.9
-    scene bg choppywave
+    scene bg_hunterboat_stormy:
+        fit "contain"
+    show background_rain_example:
+        yalign 0.5
+        xalign 0.0
+        rotate 30
+    show midground_rain_example:
+        yalign 0.5
+        xalign 0.0
+        rotate 30
     play music "audio/music_storm.ogg" fadein 2.0 volume 0.8
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 2.0 volume 0.2 loop
-    show hunter nervous with vpunch
+    show hunter nervous at Position(xpos=0.55) with vpunch
+    with Dissolve(0.2)
+    show foreground_rain_example:
+        yalign 0.5
+        xalign 0.5
+        rotate 30
     #use Hunter's shocked sprite here instead?? It does look kinda silly...
 
     "I can't see a hint of blue in the sky."
@@ -1033,13 +1052,15 @@ label timeskip1:
     $ config.side_image_tag = "june"
     y shocked "Ah...!" with screenShake
     "Something stirs in the back of my memory as I stare into the waves."
-    "Is the water...glowing?"
 
     #SFX - loud crash, screen shake
     play sound "audio/sfx_waveCrash.ogg" volume 0.3
-    show bg choppywave with screenShake
+    show bg_hunterboat_stormy glowybuddy
+    with fade
     #SFX - choppy waves
     queue sound "audio/sfx_wavesChoppy.ogg" volume 0.2 loop
+
+    "Is the water...glowing?"
 
     #show hunter neutral with vpunch
     h "Stay away from the edge!"
@@ -1078,17 +1099,17 @@ label timeskip1:
     with dissolve
     y "What...?"
     u "O' ye of land to the queen of sea..."
-    show bg:
+    show bg_hunterboat_stormy:
         blur 4.00
     with dissolve
     "A haze clouds my thoughts and my legs start to move on their own."
 
-    show bg choppywave:
+    show bg_hunterboat_stormy:
         subpixel True
         ypos 1.0 zoom 1.0
         ease 1.00 ypos 1.13 zoom 1.25
     with Pause(1.10)
-    show bg choppywave:
+    show bg_hunterboat_stormy:
         ypos 1.13 zoom 1.25
 
     "I lean over the side of the boat, searching for the source of the singing, but all I can see are the churning waves below."

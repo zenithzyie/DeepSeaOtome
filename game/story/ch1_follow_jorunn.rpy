@@ -4,11 +4,15 @@ label ch1_followjorunn:
     $ followthief.grant()
     hide screen notify2
     hide thioran angry with moveoutleft
+    #testing beach bg
+    #scene bg beach:
+    #    fit "contain"
+    #show jorunn neutral
     show jorunn
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
     $ config.side_image_tag = "june"
     "The thief seems to know his way around. Maybe he can get me out of this mess."
-    "Alright, [y]! It's now or never!"
+    ny neutral "Alright, [y]! It's now or never!"
     "3...2...1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster, I push my way through the current."
