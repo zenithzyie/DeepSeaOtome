@@ -185,8 +185,7 @@ label ch2_follow_jorunn:
     
     j "Well, you're not giving us much of a choice."
 
-    j "I'll leave it up to you. Whether you want us to be going in unprepared or not."
-
+    j "I'll leave it up to you-whether you want us to be going in unprepared or not."
 
     j "But I'm not going to be sitting around doing nothing."
 
@@ -235,63 +234,69 @@ label ch2_follow_jorunn:
             "A fleeting look of nostalgia passes over Prashadi's face."
             Pr "A scroll, a trident, or perhaps a ring..."
             Pr "Just to name a few, you might say."
+            "That isn't very specific, but I think I get the idea."
             jump whatisrelic
 
         "\"How do we find these relics?\"":
             Pr "As scattered as they are, I can point you in the right direction."
-            y "What happens next? How will I know when I've found one?"
+            y "And after that? How will I know when I've found one?"
             Pr "That is where you're fortunate Jorunn has offered his help."
             show jorunn glee with dissolve
             "Jorunn gives me a confident smile."
             j "I've got a good eye for magic!"
-            "Now that I think about it, he was able to sense there was something different about me as a fish."
-            y "I see. Thank you, Jorunn."
+            y "Oh! I'll be grateful for your help, then."
+            "Now that I think about it, he was able to sense there was something different about me as a fish too."
             jump whatisrelic
 
         "\"Will these relics undo my curse?\"":
             Pr "They will play a part in it, yes."
             y "Just 'a part'? Is there something else we need to do?"
             Pr "In due time, little fry. Bring me a relic first, then we'll talk."
-            y "..."
-            jump whatisrelic
+            menu:
+                "\"Alright.\"":
+                    "I want to know more, but..."
+                    "I'd better not press any further."
+                    "I don't want them to change their mind about helping me."
+                    jump whatisrelic
 
-    Pr "Not to worry. The first one can be found somewhere you know very well."
+                "\"Isn't there anything else you can tell us?\"":
+                    $ jorunn_points += 1
+                    Pr "I've already warned you that breaking this curse will be no simple matter. Prove to me that you can handle this task."
+                    Pr "Only then will I trust you with what comes next."
+                    y frustrated  "..."
+                    "That seems to be as far as I can push."
+                    "It's frustrating, but let's just leave it at this for now."
+                    jump whatisrelic
 
+    y "So, where should we start looking?"
 
+    Pr "Hmm...yes, the closest one will do."
 
-    j "Huh? Miss Prash? You can't mean-"
+    y "...?"
+ 
+    Pr "You will find it on land."
 
-    Pr "That's right! It's up on land!"
+    y "Pardon?"
 
-    y "What?"
+    show jorunn sweat with dissolve
+    j "Land? You want us to find a relic up there?"
 
-    "Up on land? How would I even go get a relic back from there if I'm a mermaid?"
+    Pr "When dawn arrives, swim up to the shore. You'll find yourself able to walk without much trouble at all."
 
+    y "To walk...? I thought you said you couldn't break the curse."
 
+    Pr "This spell I cast for you will only be an illusion.  Your true body will remain as it is. "
 
-    "Come to think of it, how does a mermaid relic end up on land?"
+    Pr "You will not have much time before you will need to return to the sea."
 
-    "...Same way that mermaids end up on land, I suppose."
+    y "Oh."
 
-    Pr "Now, now, no need to look so confused! Prashadi will always have a way."
+    "I could see Grandfather and Hunter again...but what could I even say? They're both mermaid hunters."
 
-    Pr "I can cast a temporary spell on you to give you back your legs. You would have three days before you return to the sea."
+    "I could never tell them the truth."
 
-    y "So I'll have my legs back for a day?"
+    "Perhaps I could find a way to leave them a letter..."
 
-    Pr "I knew you were a smart little fry."
-
-    "The thought is dizzying. But with it comes a hope that sends my heart beating faster."
-
-    "I could see Grandfather and Hunter again. Let them know that I'm alive."
-
-    "But..."
-
-    "I wouldn't be able to stay with them. I'd only be human for three days."
-
-    y "This...This is a lot. Are you sure you still want to help me, Jorunn?"
-
-    j "Of course I still wanna help you. And how could I pass up the chance at being human? Sounds pretty neat!"
 
 
     menu:
