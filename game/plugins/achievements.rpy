@@ -309,35 +309,17 @@ screen achievement_gallery():
     ## Otherwise, if you'd like this to be independent of the game menu,
     ## use the following:
 
-        # viewport:
-        #     mousewheel True draggable True pagekeys True
-        #     scrollbars "vertical"
-        #     #xpos 40
-        #     yalign 0.5
-        #     xalign 0.5
-        #     xsize int(config.screen_width*1) ysize int(config.screen_height*0.67)
-        #     xpos 335
-        #     ypos 235
-        #     xfill True yfill True
-        #     has vbox
-        #     spacing 8
-
         vpgrid:
             cols 2
-            #rows len(Achievement.all_achievements)
             spacing 8
-            draggable True
-            mousewheel True
+            mousewheel True draggable True pagekeys True
             scrollbars "vertical"
-            xsize int(config.screen_width*1) ysize int(config.screen_height*0.68)
-            xpos 335
+            xysize (984, 489)
+            xpos 345
             ypos 235
             yalign 0.5
             xalign 0.5
             xfill True  yfill True
-            # xalign 0.5
-            # yalign 0.5
-            #xsize int(config.screen_width*1.2) ysize int(config.screen_height*0.67)
 
         ############################################################################
             ## This list contains every achievement you declared. You can also
@@ -346,21 +328,11 @@ screen achievement_gallery():
             for a in Achievement.all_achievements:
                 frame:
                     if a.has():
-                        #background "#1d2847"
                         background Frame("gui/button/achievements_unlocked.png", 1, 1)
-                        #xsize 700
-                        #xfill True
-                        #ysize 155
                         xysize (450, 115)
-                    #    padding (15,8)
                     else:
-                        #background "#141c38"
                         background Frame("gui/button/achievements_locked.png", 1, 1)
-                        #xsize 700
                         xysize (450, 115)
-                        #xfill True
-                        #ysize 155
-                    #    padding (15,8)
                     button:
                         style_prefix 'achievement'
                         ## During development, you can click on achievements in the
@@ -399,7 +371,6 @@ screen achievement_gallery():
                                         style 'achievement_bar'
                                     text "[a.stat_progress]/[a.stat_max]":
                                         style_suffix "progress_text"
-                #null width (15 * gui.pref_spacing)
             ## So there's a bit of space at the bottom after scrolling all the way.
             #null height 10
 
