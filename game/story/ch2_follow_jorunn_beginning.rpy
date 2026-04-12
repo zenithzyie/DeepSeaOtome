@@ -138,8 +138,9 @@ label ch2_follow_jorunn:
 
     Pr "Yes. No matter where you go, the sea will always pull you back. Your form now is all I can do for you."
 
-    y "Is there any way to remove it completely?"
+    y nervous "There must be some way to remove it?"
 
+    show prashadi angry with dissolve
     Pr "It's dangerous, child, to meddle with your curse any further."
 
     j "Dangerous, but not impossible, right?"
@@ -147,9 +148,9 @@ label ch2_follow_jorunn:
     Pr "Now, boy..."
 
     show jorunn sweat with dissolve
-    j "I know you're trying to look out for us, but I don't think whatever the siren is planning will stop with [y]'s curse."
+    j "This siren who cursed [y]...she must be the same one who's causing all these storms here, isn't she?"
 
-    j "The storms here have been getting worse, haven't they? If we let things be, it'll be trouble for all of us."
+    Pr "It's likely, yes."
 
     #if newsboard
     if seastorm:
@@ -159,11 +160,15 @@ label ch2_follow_jorunn:
     else:
         "Just how long have these storms been going on for?"
 
+    j "I know you're trying to look out for us, but I don't think whatever she's planning to do with [y] will stop with the curse."
+
+    j "If we let things be, it'll be trouble for all of us."
+
     j "Besides, even if it's dangerous, she should get the choice."
 
     j "It's her life, after all, isn't it?"
 
-    y "Right!"
+    y neutral "Right!"
 
     y "Even if it means risking my life, I have to get back home."
 
@@ -173,7 +178,7 @@ label ch2_follow_jorunn:
 
     Pr "..."
 
-    "They're just like grandfather...stubborness and all."
+    ny frustrated "They're just like grandfather...stubborness and all."
 
     j "Prashadi, if you really won't help us, then we'll just have to figure it out ourselves."
 
@@ -281,68 +286,57 @@ label ch2_follow_jorunn:
     show jorunn sweat with dissolve
     j "Land? You want us to find a relic up there?"
 
-    Pr "When dawn arrives, swim up to the shore. You'll find yourself able to walk without much trouble at all."
+    Pr "When morning comes, swim up to the shore. You'll find yourself able to walk without much trouble at all."
 
     y "To walk...? I thought you said you couldn't break the curse."
 
-    Pr "This spell I cast for you will only be an illusion.  Your true body will remain as it is. "
+    Pr "This spell I cast for you will only be an illusion. Your true body will remain as it is."
 
     Pr "You will not have much time before you will need to return to the sea."
 
     y "Oh."
 
-    "I could see Grandfather and Hunter again...but what could I even say? They're both mermaid hunters."
+    "I could see Grandfather and Hunter again...but what would I even say? They're both mermaid hunters."
 
-    "I could never tell them the truth."
+    "..."
 
-    "Perhaps I could find a way to leave them a letter..."
+    "Perhaps I could find a way to leave them a letter? Just to let them know I'm alive..."
 
+    show jorunn glee with dissolve
+    j "...Well, I can't say I've been up on land before. I guess I'll be in your care, [y]!"
 
+    y happy "Yes, of course."
+
+    "Right. I'm not in this alone. We'll find the relic together."
 
     menu:
-        "\"Thank you.\"":
-            y "Thank you...I'd really appreciate that."
-            "I feel overwhelming gratitude towards Jorunn. Despite the fact that I've just met him, he seems willing to go up to land with me."
-            j "Of course! How could I let my new friend go back up there all alone?"
+        "\"Thank you for agreeing to help.\"":
+            y "I know it must be a lot to go up on land like this."
+            j "Course! We'll make the most out of it, yeah?"
+            "He doesn't seem nervous at all."
             "I find myself smiling back at him. His cheer is infectious."
 
-        "\"Why would you help me?\"":
-            #$ jorunn_points += 1
+        "\"But are you sure you're okay with going up on land?\"":
+            $ jorunn_points += 1
             y "Wouldn't it be dangerous to go up on land for you? Why would you want to help me? We've only just met."
             j "Aw, how could I let my new friend go back up there all alone?"
             j "Besides, I have a feeling the siren that came after you is bad news for me too. Whatever she's planning to do with you can't be good."
             "Right. If that witch is plotting something, it can't be good for the mermaids living here either."
             y "I see. I'd be grateful then if you joined me."
 
-    Pr "Then it's settled!"
+    Pr "Well, it seems you've both made your choice."
 
-    "Prashahi's hands clap together."
+    Pr "I suggest you take some time to rest until morning arrives."
 
-    Pr "Are you ready?"
+    y flustered "Oh. Right. I could do with a good rest."
 
-    y "Yes!"
-
-    Pr "Wonderful. Now, come back tomorrow!"
-
-    y "..."
-    
-    y "Pardon?"
-
-    Pr "Ha! You humans are still so impatient! First and foremost, take some time to rest and enjoy being out of that awful fishy body."
-
-    y "Oh. Right. I could do with a good rest."
-
-    Pr "Ah, almost forgot the most important part-Once you're ready, you'll get your legs by breaking the surface at dawn."
-    
-    Pr "I recommend being close to land when you do. Swimming without a tail is tough work!"
-
-    "Dawn? That feels like a lifetime away! What am I supposed to do until then? Where am I even supposed to sleep?"
+    "But what am I supposed to do until then? Where am I going to sleep...?"
 
     j "Why don't you come stay at my village for the night, [y]?"
 
     j "We're not the capital city or anything, but it'll beat having to sleep out on the sand."
 
-    y happy "Oh! If you're sure...That would be wonderful."
+    y happy "If you're sure...That would be wonderful."
 
     j "Here."
 
