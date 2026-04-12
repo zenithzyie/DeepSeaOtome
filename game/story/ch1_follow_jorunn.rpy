@@ -5,14 +5,25 @@ label ch1_followjorunn:
     hide screen notify2
     hide thioran angry with moveoutleft
     #testing beach bg
-    #scene bg beach:
-    #    fit "contain"
-    #show jorunn neutral
-    show jorunn
-    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
+    scene bg beach:
+        fit "contain"
+    show jorunn neutral
+    "jor is lonely..."
     $ config.side_image_tag = "june"
+    ny neutral "now june is here"
+#    scene bg beach:
+#        fit "contain"
+    show jorunn neutral at Position(xpos=0.30)
+    show hunter neutral at Position(xpos=0.7)
+    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
+    $ config.side_image_tag = "None"
+    "Beach episode time?!"
+    $ config.side_image_tag = "june"
+    ny neutral "Wow I never knew you could swim on land, Jor!"
+    h "I am also here"
+    #end of testing
     "The thief seems to know his way around. Maybe he can get me out of this mess."
-    ny neutral "Alright, [y]! It's now or never!"
+    "Alright, [y]! It's now or never!"
     "3...2...1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster, I push my way through the current."
