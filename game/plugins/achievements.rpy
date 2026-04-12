@@ -282,9 +282,9 @@ screen achievement_gallery():
 
 #    add VBox(Transform("#1d2847", ysize=110), "#131b31") # Background
 #    add "images/bgs/bg drowning.jpg" size (1280, 720)
-    add "bgs/bg drowning.jpg":
-        fit "contain"
-        alpha 0.7
+    # add "bgs/bg drowning.jpg":
+    #     fit "contain"
+    #     alpha 0.7
 #    add HBox(Transform("#1d2847", xsize=800)):
 #        alpha 0.5
 #    add Solid("#1d2847"):
@@ -297,7 +297,8 @@ screen achievement_gallery():
 #        xpos -425
 
 #    add Solid("#1d2847", xysize = (742,100))
-
+    use game_menu(("Achievements: ") + "{earned}/{total}".format(
+                earned=Achievement.num_earned(), total=Achievement.num_total())):
     ############################################################################
     ## Version 1 ###############################################################
     ## If you're using a default template/typical Ren'Py layout, uncomment
@@ -307,96 +308,113 @@ screen achievement_gallery():
     ## Version 2 ###############################################################
     ## Otherwise, if you'd like this to be independent of the game menu,
     ## use the following:
-    imagebutton:
-        style "return_button"
-        auto "gui/button/blue_%s.png"
-        hover_foreground Text("Return", style ="main_menu_imagebutton_text")
-        idle_foreground Text("Return", style ="main_menu_imagebutton_text")
-        action [ShowMenu("main_menu"), Hide("achievement_gallery")]
-        at customzoomsmall
-    # textbutton _("Return") action [ShowMenu("main_menu"), Hide("achievement_gallery")]:
-    #     style 'return_button'
-    viewport:
-        mousewheel True draggable True pagekeys True
-        scrollbars "vertical"
-        #xpos 40
-        yalign 0.5
-        xalign 0.5
-        xsize int(config.screen_width*0.9) ysize int(config.screen_height*0.73)
-        xfill True yfill True
-        has vbox
-        #spacing 20
 
-    ############################################################################
-        ## This list contains every achievement you declared. You can also
-        ## create your own lists to iterate over, if desired. That would be
-        ## useful if you wanted to group achievements by category, for example.
-        for a in Achievement.all_achievements:
-            frame:
-                if a.has():
-                    background "#1d2847"
-                    #background "gui/textbox.png"
-                    #xsize 700
-                    xfill True
-                    ysize 155
-                #    padding (15,8)
-                else:
-                    background "#141c38"
-                    #xsize 700
-                    xfill True
-                    ysize 155
-                #    padding (15,8)
-                button:
-                    style_prefix 'achievement'
-                    ## During development, you can click on achievements in the
-                    ## gallery and they will toggle on/off.
-                    if config.developer:
-                        action a.Toggle()
+        # viewport:
+        #     mousewheel True draggable True pagekeys True
+        #     scrollbars "vertical"
+        #     #xpos 40
+        #     yalign 0.5
+        #     xalign 0.5
+        #     xsize int(config.screen_width*1) ysize int(config.screen_height*0.67)
+        #     xpos 335
+        #     ypos 235
+        #     xfill True yfill True
+        #     has vbox
+        #     spacing 8
+
+        vpgrid:
+            cols 2
+            #rows len(Achievement.all_achievements)
+            spacing 8
+            draggable True
+            mousewheel True
+            scrollbars "vertical"
+            xsize int(config.screen_width*1) ysize int(config.screen_height*0.68)
+            xpos 335
+            ypos 235
+            yalign 0.5
+            xalign 0.5
+            xfill True  yfill True
+            # xalign 0.5
+            # yalign 0.5
+            #xsize int(config.screen_width*1.2) ysize int(config.screen_height*0.67)
+
+        ############################################################################
+            ## This list contains every achievement you declared. You can also
+            ## create your own lists to iterate over, if desired. That would be
+            ## useful if you wanted to group achievements by category, for example.
+            for a in Achievement.all_achievements:
+                frame:
+                    if a.has():
+                        #background "#1d2847"
+                        background Frame("gui/button/achievements_unlocked.png", 1, 1)
+                        #xsize 700
+                        #xfill True
+                        #ysize 155
+                        xysize (450, 115)
+                    #    padding (15,8)
                     else:
-                        ## This prevents the button from changing style when not
-                        ## in development mode.
-                        action NullAction()
-                    has hbox
-                    if a.idle_img:
-                        fixed:
-                            align (0.5, 0.5)
-                            xysize (155, 155)
-                            add a.idle_img fit "scale-down" ysize 145 align (0.5, 0.5)
-                    else:
-                        null width -10
-                    null width -6
-                    vbox:
-                        null height 10
-                        label a.name:
-                            xalign 0.0
-                        null height 6
-                        text a.description:
-                            xalign 0.0
-                        if a.has():
-                            text a.timestamp size 18 color "#8c8c8c"
-                        elif a.stat_max and a.show_progress_bar:
-                            # Has a bar to show stat progress.
+                        #background "#141c38"
+                        background Frame("gui/button/achievements_locked.png", 1, 1)
+                        #xsize 700
+                        xysize (450, 115)
+                        #xfill True
+                        #ysize 155
+                    #    padding (15,8)
+                    button:
+                        style_prefix 'achievement'
+                        ## During development, you can click on achievements in the
+                        ## gallery and they will toggle on/off.
+                        if config.developer:
+                            action a.Toggle()
+                        else:
+                            ## This prevents the button from changing style when not
+                            ## in development mode.
+                            action NullAction()
+                        has hbox
+                        if a.idle_img:
                             fixed:
-                                fit_first True
-                                bar value a.stat_progress range a.stat_max:
-                                    style 'achievement_bar'
-                                text "[a.stat_progress]/[a.stat_max]":
-                                    style_suffix "progress_text"
-        ## So there's a bit of space at the bottom after scrolling all the way.
-        null height 100
+                                align (0.5, 0.5)
+                                xysize (115, 115)
+                                add a.idle_img fit "scale-down" ysize 110 align (0.5, 0.5) ypos 50
+                        else:
+                            null width -10
+                        null width -16
+                        vbox:
+                            null height 2
+                            label a.name:
+                                #style_suffix "a_name"
+                                xalign 0.0
+                            null height -6
+                            text a.description:
+                                xalign 0.0
+                                size 18
+                            if a.has():
+                                text a.timestamp size 14 color "#97c9e6"
+                            elif a.stat_max and a.show_progress_bar:
+                                # Has a bar to show stat progress.
+                                fixed:
+                                    fit_first True
+                                    bar value a.stat_progress range a.stat_max:
+                                        style 'achievement_bar'
+                                    text "[a.stat_progress]/[a.stat_max]":
+                                        style_suffix "progress_text"
+                #null width (15 * gui.pref_spacing)
+            ## So there's a bit of space at the bottom after scrolling all the way.
+            #null height 10
 
-    ## A header that shows how many achievements you've earned, out of
-    ## the total number of achievements in the game. Feel free to remove
-    ## or relocate this.
-    label __("Achievements: ") + "{earned}/{total}".format(
-            earned=Achievement.num_earned(), total=Achievement.num_total()):
-        text_size 52 xalign 0.5 ypos 10 text_color "#fff" top_padding 15
+        ## A header that shows how many achievements you've earned, out of
+        ## the total number of achievements in the game. Feel free to remove
+        ## or relocate this.
+        # label __("Achievements: ") + "{earned}/{total}".format(
+        #         earned=Achievement.num_earned(), total=Achievement.num_total()):
+        #     text_size 52 xalign 0.5 ypos 10 text_color "#fff" top_padding 15
 
-    ## This is an example of a button you might have during development which
-    ## will reset all achievement progress at once. It can also be provided
-    ## to players if you'd like them to be able to reset their achievement
-    ## progress.
-    # textbutton "Reset All" action Achievement.Reset() align (1.0, 0.0)
+        ## This is an example of a button you might have during development which
+        ## will reset all achievement progress at once. It can also be provided
+        ## to players if you'd like them to be able to reset their achievement
+        ## progress.
+        # textbutton "Reset All" action Achievement.Reset() align (1.0, 0.0)
 
 style achievement_button:
     size_group 'achievement'
@@ -404,7 +422,8 @@ style achievement_button:
 style achievement_label:
     padding (2, 2)
 style achievement_label_text:
-    size 40 color "#97c9e6"
+    #font "fonts/NEWBOROU.ttf" 
+    size 24 color "#97c9e6"  
 style achievement_hbox:
     spacing 10
 style achievement_vbox:
