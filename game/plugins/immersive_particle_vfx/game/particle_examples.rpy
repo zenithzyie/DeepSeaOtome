@@ -541,168 +541,6 @@ label test_perspective_particles():
 
 
 
-
-image example_snow_background = CreateFlutterParticles(
-    ## For the backmost particles, which are the smallest, I'm using only
-    ## one image, with no animations/ATL. It's also the most transparent.
-    image=Transform("snow1", xsize=7, fit="contain", alpha=0.4), particle_size=7,
-    ## It also generally has the highest particle number
-    amount=500, fast=True,
-    ## To give the illusion of depth, the backmost particles won't reach the
-    ## bottom of the screen, as if they're hitting the ground further back.
-    xysize=(config.screen_width, 650), mask_borders=(0, 0, 0, 100),
-    ## For more natural movement, it's good to provide ranges for speed
-    xspeed=(-10, 10), yspeed=(60, 100),
-    ## And some fluttering! These particles also flutter the slowest.
-    flutter_width=50, flutter_xtime=(6, 10)
-)
-image example_snow_midground = CreateFlutterParticles(
-    image=Transform("snow1", xsize=10, fit="contain", alpha=0.5), particle_size=10,
-    amount=300, fast=True,
-    ## These particles are a bit bigger, and fall a bit farther before they
-    ## disappear
-    xysize=(config.screen_width, 800), mask_borders=(0, 0, 0, 100),
-    ## They can also move a bit faster
-    xspeed=(-20, 20), yspeed=(100, 200),
-    flutter_width=100, flutter_xtime=(6, 10),
-)
-image example_snow_midground2 = CreateFlutterParticles(
-    image=Transform("snow1", xsize=15, fit="contain", alpha=0.6), particle_size=15,
-    ## Fewer particles
-    amount=200, fast=True,
-    ## These particles can fall all the way past the screen
-    xysize=(config.screen_width, config.screen_height),
-    ## They can also move a bit faster
-    xspeed=(-25, 25), yspeed=(180, 280),
-    flutter_width=120, flutter_xtime=(6, 10),
-)
-image example_snow_foreground = CreateFlutterParticles(
-    image=[rotate_leaf("snow1", zoom=0.1, alpha=0.5),
-    rotate_leaf("snow2", zoom=0.1, alpha=0.5),
-    rotate_leaf("npckc_snow_3", zoom=0.08, alpha=0.5),
-    rotate_leaf("snow3", zoom=0.1, alpha=0.5)],
-    particle_size=50,
-    amount=4, fast=True, delay=(0.0, 1.5),
-    xspeed=(-30, 30), yspeed=(300, 400),
-)
-label test_particles_snow():
-    scene example_bg
-    show example_snow_background:
-        yalign 0.0
-    show example_snow_midground:
-        yalign 0.0
-    show example_snow_midground2:
-        yalign 0.0
-    show example_snow_foreground:
-        yalign 0.0
-    "Here is a snow example. It's made up of multiple layers that we'll look at one by one."
-    "Adding some flutter_width will help the snow movement look more natural."
-    scene example_bg
-    show example_snow_background:
-        yalign 0.0
-    "First, the background layer. This should be made up of the smallest particles, falling at the slowest speeds."
-    "It's also good if you use the masking tools or foreground elements to prevent the snow from falling all the way to the bottom of the screen."
-    "This is to give the impression that it's positioned farther back, and hitting the ground off in the distance."
-    show example_snow_midground:
-        yalign 0.0
-    "Next is the midground layer. These particles fall a bit faster, and disappear a bit later than the background particles."
-    show example_snow_midground2:
-        yalign 0.0
-    "Next is a second midground layer, with the fastest particles yet."
-    show example_snow_foreground:
-        yalign 0.0
-    "And finally, the foreground. This layer only has a few particles, with start times on a delay."
-    "Its particles are the biggest and closest to the camera, and they have some ATL applied to them for added interest."
-    return
-
-image faux_campfire = Fixed(
-    Transform(create_radius_mask(Transform("#ec660c", xysize=(180, 180), alpha=0.7),
-        width=60, xysize=(180, 180)), matrixcolor=TintMatrix("#da3908"), align=(0.5, 0.5)),
-    Transform(create_radius_mask(Transform("#ec660c", xysize=(130, 130), alpha=0.7),
-        width=60, xysize=(130, 130)), matrixcolor=TintMatrix("#ec660c"), align=(0.5, 0.5)),
-    Transform(create_radius_mask(Transform("#ec660c", xysize=(90, 90), alpha=0.7),
-        width=60, xysize=(90, 90)), matrixcolor=TintMatrix("#f1a61a"), align=(0.5, 0.5)),
-xysize=(180, 180))
-image glowing_campfire_example:
-    'faux_campfire'
-    block:
-        block:
-            choice:
-                easein 0.2 matrixcolor HueMatrix(12)*BrightnessMatrix(0.03)
-            choice:
-                easein 0.3 matrixcolor HueMatrix(12)*BrightnessMatrix(0.03)
-            choice:
-                easein 0.1 matrixcolor HueMatrix(12)*BrightnessMatrix(0.03)
-            choice:
-                easein 0.4 matrixcolor HueMatrix(12)*BrightnessMatrix(0.03)
-        block:
-            choice:
-                easeout 0.2 matrixcolor HueMatrix(0)*BrightnessMatrix(0.0)
-            choice:
-                easeout 0.1 matrixcolor HueMatrix(0)*BrightnessMatrix(0.0)
-            choice:
-                easeout 0.5 matrixcolor HueMatrix(0)*BrightnessMatrix(0.0)
-        repeat
-
-image fire_sparks_example = CreateFlutterParticles(
-    image=[
-        Transform("dust2", matrixcolor=ColorizeMatrix("#ffcc26", "#ffa126")),
-        Transform("dust2", matrixcolor=ColorizeMatrix("#ffcc26", "#ff5926")),
-        Transform("dust2", matrixcolor=ColorizeMatrix("#ffcc26", "#f8e263")),
-    ],
-    amount=5, fast=True,
-    xspeed=(-70, 70), yspeed=(-100, -30),
-    yacceleration=(40, 100),
-    flutter_width=(40, 300),
-    flutter_xtime=(2, 4),
-    damp_xflutter=-1.0,
-    origin_points=[(300, 390)],
-    xysize=(600, 500),
-)
-image campfire_smoke_example = ImmersiveParticles(
-    image=Transform("snow4", alpha=0.02, xzoom=0.3, yzoom=0.5, matrixcolor=BrightnessMatrix(-0.2)),
-    particle_size=296,
-    amount=500,
-    slow_start=None, fast=True,
-    xysize=(600, config.screen_height),
-    velocity=120, angle=(-5, 5),
-    yacceleration=-5000,
-    origin_points=[(260, 800), (290, 790), (320, 810)],
-)
-
-label test_particles_campfire():
-    scene example_bg
-    show campfire_smoke_example:
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    show fire_sparks_example:
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    show glowing_campfire_example:
-        xanchor 0.5 yanchor 1.0 pos (520, 1010-300)
-    "Here we have a mock campfire."
-    scene example_bg
-    show campfire_smoke_example:
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    "It uses three different effects. First, there's the smoke. It's actually made up of the snow particles! Just really, really transparent."
-    scene example_bg
-    show expression CreateFlutterParticles(kind="campfire_smoke_example",
-        image=Transform("snow4", alpha=0.1, xzoom=0.3, yzoom=0.5, matrixcolor=BrightnessMatrix(-0.2))):
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    "If we turn up the opacity, you can see what's happening a bit more clearly."
-    "There are 500 particles, in fact. Because they're so transparent, when they stack up, they create interesting shapes."
-    scene example_bg
-    show campfire_smoke_example:
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    "In particular, these particles have a very low yacceleration so that they slow down as they rise. They also have three origin points behind the campfire image."
-    show fire_sparks_example:
-        yalign 1.0 yoffset -300 xanchor 0.0 xpos 200 crop (0.0, 0.0, 1.0, 1.0)
-    "Next are the sparks. These are fast moving flutter particles that come in shades of yellow and orange - recoloured from the included dust particles."
-    "It has a single origin point behind the campfire and includes some fluttering motion that's undampened over time. They have positive yacceleration to move faster over time."
-    show glowing_campfire_example:
-        xanchor 0.5 yanchor 1.0 pos (520, 1010-300)
-    "Finally, the glowing campfire uses matrixcolor to tint the colour between reds and yellows in a flickering cycle."
-    "You can make a mask of your fire asset to achieve this effect and put the particles behind the flames."
-    return
-
 ## A transform that rotates and slightly skews the image
 transform rotate_and_flip(child=None, zoom=1.0, speed_mult=1.0):
     child
@@ -749,95 +587,7 @@ transform rotate_and_flip(child=None, zoom=1.0, speed_mult=1.0):
             ease 3.9*speed_mult yzoom 1.0
             ease 2.8*speed_mult yzoom 0.5
             repeat
-image example_bg_leaves = CreateFlutterParticles(
-    ## Use a few different bg leaf images, but no animation
-    [Transform("kigyodev_leaf{}".format(i), zoom=0.05) for i in ("2d", "6h", "9g", "11g")],
-    particle_size=352*0.05, amount=20,
-    ## Slowest leaf speed
-    xspeed=(-10, 10), yspeed=(30, 70),
-    xysize=(config.screen_width, 340), mask_borders=(0, 0, 0, 40),
-    ## Speed up slightly as they fall
-    yacceleration=(0, 10),
-    ## Fluttering motion
-    flutter_xtime=(4, 5), flutter_width=(100, 250),
-    ## Leaves flutter more as they fall
-    damp_xflutter=(-1, -0.5),
-)
-image example_mg_leaves = CreateFlutterParticles(
-    ## A few different leaves for the midground
-    [Transform("kigyodev_leaf{}".format(i), zoom=0.1) for i in ("1a", "3a", "7d", "8g", "10f")],
-    amount=9, particle_size=352*0.1,
-    ## A bit faster
-    xspeed=(-20, 20), yspeed=(80, 150),
-    xysize=(config.screen_width, 450), mask_borders=(0, 0, 0, 60),
-    ## Speed up slightly as they fall
-    yacceleration=(0, 10),
-    flutter_xtime=(4, 5), flutter_width=(120, 270),
-    damp_xflutter=(-1, -0.5),
-)
-image example_m2_leaves = CreateFlutterParticles(
-    ## These leaves rotate and flip as they fall. There aren't many of them.
-    [rotate_and_flip("kigyodev_leaf{}".format(i), zoom=0.22) for i in ("1a", "1d", "2a", "2d", "3a", )] + [
-    rotate_leaf("kigyodev_leaf{}".format(i), zoom=0.22) for i in ("6h", "7d", "8g", "9g", "10f", "11g", )],
-    amount=3, particle_size=352*0.2,
-    xspeed=(-20, 20), yspeed=(110, 170),
-    xysize=(config.screen_width, 620), mask_borders=(0, 0, 0, 80),
-    flutter_xtime=(4, 5), flutter_width=(200, 400),
-    damp_xflutter=(-1, -0.5),
-)
-image example_fg_leaves = CreateFlutterParticles(
-    [rotate_and_flip("kigyodev_leaf{}".format(i), zoom=0.3) for i in ("1a", "1d", "2a", "2d", "3a", )] + [
-    rotate_leaf("kigyodev_leaf{}".format(i), zoom=0.3) for i in ("6h", "7d", "8g", "9g", "10f", "11g", )],
-    amount=2, particle_size=352*0.3,
-    xspeed=(-20, 20), yspeed=(170, 250),
-    yacceleration=(0, 10), delay=(0.0, 1.5),
-    flutter_xtime=(4, 5), flutter_width=(200, 400),
-    damp_xflutter=(-1, -0.5),
-)
-image faux_tree = Fixed(
-    Transform("#5c340f", xysize=(60, 520), xalign=0.5, yalign=1.0),
-    Transform(create_radius_mask(Transform("#ec660c", xysize=(500, 500)),
-        width=60, xysize=(500, 500)), matrixcolor=TintMatrix("#e97304"), alpha=0.9, align=(0.0, 0.0)),
-    xysize=(500, 520+500-60)
-)
-image faux_tree_back = HBox(*['faux_tree' for x in range(10)], spacing=-155)
-label test_particles_leaves():
-    scene example_bg
-    show example_bg_leaves:
-        ypos 300
-    show faux_tree_back:
-        zoom 0.6 ypos 50 xpos -200
-    show example_mg_leaves:
-        ypos 400
-    show faux_tree_back as mg_trees:
-        zoom 0.8 xzoom 1.0 ypos 60 xpos -120 matrixcolor HueMatrix(-10)
-    show example_m2_leaves:
-        ypos 400
-    show faux_tree_back as mg_trees2:
-        zoom 1.4 xzoom 1.0 ypos -320 xpos -100 matrixcolor HueMatrix(-20)
-    show example_fg_leaves:
-        yalign 0.0
-    "Leaves benefit greatly from fluttering motion. I also suggest adding some rotation and or x/yzoom adjustments to the largest leaf images."
-    "What will also elevate this effect is layering, particularly if you're able to mask out your trees to put the farthest back leaves behind some of them."
-    scene example_bg
-    show example_bg_leaves:
-        ypos 300
-    show faux_tree_back:
-        zoom 0.6 ypos 50 xpos -200
-    "This backmost layer has the most leaves, falling the slowest. They disappear earlier, at the 'horizon line.'"
-    show example_mg_leaves:
-        ypos 400
-    show faux_tree_back as mg_trees:
-        zoom 0.8 xzoom 1.0 ypos 60 xpos -120 matrixcolor HueMatrix(-10)
-    show example_m2_leaves:
-        ypos 300
-    "These two middle layers have more leaves, falling faster."
-    show faux_tree_back as mg_trees2:
-        zoom 1.4 xzoom 1.0 ypos -320 xpos -100 matrixcolor HueMatrix(-20)
-    show example_fg_leaves:
-        yalign 0.0
-    "And finally, the full-screen leaves cover the whole screen height."
-    return
+
 
 ## An animation that fades in over fade_time and then fades out for a total
 ## animation time of visible_time.
@@ -853,7 +603,7 @@ transform firefly_blink(child=None, fade_time=0.2, visible_time=1.0, zoom=1.0):
 
 image firefly_background_example = CreateFlutterParticles(
     ## The background fireflies are the smallest and most plentiful!
-    image=firefly_blink("firefly2", zoom=0.2), particle_size=10, fast=False,
+    image=firefly_blink("firefly2", zoom=0.2), particle_size=60, fast=False,
     ## For these fireflies, we'll only make them move by fluttering, so
     ## they aren't moving in straight lines.
     amount=35, xspeed=0, yspeed=0,
@@ -866,7 +616,7 @@ image firefly_background_example = CreateFlutterParticles(
     flutter_ytime=(4, 7), flutter_height=(40, 90),
     ## These two properties are key for the effect. They'll start anywhere,
     ## and disappear after the animation is done.
-    start_anywhere=True, lifetime=1.0,
+    start_anywhere=True, lifetime=2.0,
     ## This means that if a particle goes offscreen from the fluttering motion,
     ## it is immediately removed and a new one spawned.
     strict_offscreen=True,
@@ -874,24 +624,24 @@ image firefly_background_example = CreateFlutterParticles(
     ## show actual fireflies rather than the fade in/out period
     animation=False, frame_time_range=(0.2, 0.8))
 image firefly_midground_example = CreateFlutterParticles(
-    image=firefly_blink("firefly2", zoom=0.5), particle_size=20, fast=False,
+    image=firefly_blink("firefly2", zoom=0.5), particle_size=70, fast=False,
     ## Not quite as many fireflies in the midground
     amount=15, xspeed=0, yspeed=0, distribute_fast_start=0.5,
     ## These fireflies have a bigger flutter width and height
-    flutter_xtime=(4, 7), flutter_ytime=(4, 7),
+    flutter_xtime=(40, 90), flutter_ytime=(40, 90),
     flutter_width=(40, 200), flutter_height=(40, 200),
-    start_anywhere=True, lifetime=1.0, strict_offscreen=True,
+    start_anywhere=True, lifetime=3.0, strict_offscreen=True,
     animation=False, frame_time_range=(0.2, 0.8))
 image firefly_foreground_example = CreateFlutterParticles(
-    image=firefly_blink("firefly2", zoom=1.0), particle_size=40, fast=False,
+    image=firefly_blink("firefly2", zoom=1.0), particle_size=90, fast=False,
     ## These are the biggest fireflies, closest to the camera. There's only two
     ## of them, so there's a delay for when they reappear.
     amount=2, xspeed=0, yspeed=0, distribute_fast_start=0.5,
     delay=(0.0, 0.5),
     ## They also have the largest flutter distance
-    flutter_xtime=(4, 7), flutter_ytime=(4, 7),
+    flutter_xtime=(40, 70), flutter_ytime=(40, 70),
     flutter_width=(120, 300), flutter_height=(120, 300),
-    start_anywhere=True, lifetime=1.0, strict_offscreen=True,
+    start_anywhere=True, lifetime=3.0, strict_offscreen=True,
     animation=False, frame_time_range=(0.2, 0.8))
 label test_particles_fireflies():
     scene example_bg

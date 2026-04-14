@@ -983,7 +983,7 @@ label timeskip1:
     h "Yep. But if they spot my little skiff, the show's over."
     ny neutral "I take my camera out of my purse."
     show black:
-        alpha 0.35
+        alpha 0.55
     show camera_human at atcamera:
         zoom 0.18
     with dissolve
@@ -1104,21 +1104,45 @@ label timeskip1:
     with dissolve
     "A haze clouds my thoughts and my legs start to move on their own."
 
+#    show bg_hunterboat_stormy:
+#        subpixel True
+#        ypos 1.0 zoom 1.0
+#        ease 1.00 ypos 1.13 zoom 1.25
+#    with Pause(1.10)
+#    show bg_hunterboat_stormy:
+#        ypos 1.13 zoom 1.25
+
+
+
+#    window auto hide
     show bg_hunterboat_stormy:
         subpixel True
-        ypos 1.0 zoom 1.0
-        ease 1.00 ypos 1.13 zoom 1.25
-    with Pause(1.10)
+        pos (0, 0) zoom 1.0
+        ease 1.54 pos (-420, -144) zoom 1.33
+    with Pause(1.97)
     show bg_hunterboat_stormy:
-        ypos 1.13 zoom 1.25
+        pos (-420, -144) zoom 1.33
+#    window auto show
+
+
+
 
     "I lean over the side of the boat, searching for the source of the singing, but all I can see are the churning waves below."
     h "[y], what are you doing?!"
     u "Come with me..."
     u "...to the depths below..."
     "The alluring voice seems like it's singing for my ears alone."
-    show hunter shocked
+    #show hunter shocked:
+
+    show hunter shocked:
+        subpixel True blur 3.0
+        xpos 0.29
+        ypos -0.07
     with vpunch
+    show foreground_rain_example:
+#        yalign 0.5
+#        xalign 0.5
+        rotate 30
     h "Shit, it's a siren! Cover your ears, [y]!"
     "Hunter abandons his position at the helm and races towards me, but I can't imagine why."
     "My hands tightly grip the slippery rail that's keeping me from falling in, and yet the rest of my body is going against my will to stay put."
@@ -1133,7 +1157,7 @@ label timeskip1:
     #SFX - SPLASH
     scene bg drowning:
         fit "contain"
-    with vpunch
+    with screenShake
     play sound "audio/sfx_splash.ogg" volume 0.6
 
     "The light of the surface drifts further and further away as my body sinks deeper into the emptiness."

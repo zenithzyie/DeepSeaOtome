@@ -287,9 +287,14 @@ label escapedroom_tohallway:
     "Taking a deep breath, I open the door."
 
 label cetus_office:
-    scene bg cetus study:
+    scene bg_cetusoffice1:
         fit "contain"
+#    show test_firefly at firefly_blink
+    show firefly_background_example at firefly_blink
+    show firefly_midground_example
+    show firefly_foreground_example
     with dissolve
+
     "Unlike the rest of the castle, this room is dimly lit."
     show cetus neutral at cetus_center:
         ypos 60

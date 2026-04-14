@@ -319,7 +319,7 @@ screen achievement_gallery():
             ypos 235
             yalign 0.5
             xalign 0.5
-            xfill True  yfill True
+            xfill True yfill True
 
         ############################################################################
             ## This list contains every achievement you declared. You can also
@@ -361,6 +361,7 @@ screen achievement_gallery():
                             text a.description:
                                 xalign 0.0
                                 size 18
+                                xysize (300, 115)
                             if a.has():
                                 text a.timestamp size 14 color "#97c9e6"
                             elif a.stat_max and a.show_progress_bar:
@@ -393,8 +394,8 @@ style achievement_button:
 style achievement_label:
     padding (2, 2)
 style achievement_label_text:
-    #font "fonts/NEWBOROU.ttf" 
-    size 24 color "#97c9e6"  
+    #font "fonts/NEWBOROU.ttf"
+    size 24 color "#97c9e6"
 style achievement_hbox:
     spacing 10
 style achievement_vbox:

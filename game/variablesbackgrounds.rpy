@@ -50,5 +50,25 @@ layeredimage bg_hunterboat_stormy:
         attribute huntersboat default:
             "images/bgs/hunterstormyboat/stormy2.png"
             #alpha 0.2
-
 ############
+#testing cetus image
+transform firefly_blink(child=None, fade_time=0.2, visible_time=1.0, zoom=1.0):
+    child
+    zoom zoom
+    alpha 0.0
+    linear fade_time alpha 1.0
+    pause visible_time-fade_time*2
+    linear fade_time alpha 0.0
+    repeat
+image test_firefly = ImmersiveParticles(
+    Transform("firefly1", xsize=20, fit="contain"),
+    amount=30, particle_size=20,
+    velocity=200, angle=(-30, 30),
+    xysize=(1000, 700), fast=True, animation=True
+)
+
+layeredimage bg_cetusoffice1:
+#    attribute fireflies default:
+#        "test_firefly" at firefly_blink
+    attribute bg_cetus default:
+        "images/bgs/bg cetus study.jpg"

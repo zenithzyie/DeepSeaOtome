@@ -7,6 +7,7 @@ label ch1_followjorunn:
     #testing beach bg
     scene bg beach:
         fit "contain"
+    "omg bg"
     show jorunn neutral
     "jor is lonely..."
     $ config.side_image_tag = "june"
