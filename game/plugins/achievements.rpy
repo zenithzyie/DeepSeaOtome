@@ -354,9 +354,12 @@ screen achievement_gallery():
                         null width -16
                         vbox:
                             null height 2
+                            null width -50
                             label a.name:
                                 #style_suffix "a_name"
-                                xalign 0.0
+                                #xalign 0.0
+                                xpos -4
+                                #align (0.0, 0.0)
                             null height -6
                             text a.description:
                                 xalign 0.0

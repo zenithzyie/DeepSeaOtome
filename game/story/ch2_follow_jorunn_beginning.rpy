@@ -97,13 +97,12 @@ label ch2_follow_jorunn:
     j "Didn't think you'd be human, though. Must've been a long day, huh?"
 
     # Pro mermaid:
-    if promermaid >= 1:
+    if promermaid >= antimermaid:
         y "Tell me about it!"
         "He's still as talkative as ever."
         "I'm glad he doesn't seem to mind that I'm human."
-
     #Anti mermaid:
-    if antimermaid >= 1:
+    elif antimermaid > promermaid:
         y "Very long."
         "He's still as talkative as ever."
         "I hope he'll remain friendly."
@@ -126,7 +125,7 @@ label ch2_follow_jorunn:
 
     Pr "Whoever she is, she's certainly done a number on our human friend."
 
-    y "Prashadi, is it possible for you to turn me back into a human?" 
+    y "Prashadi, is it possible for you to turn me back into a human?"
 
     y "I'm very grateful for all you've done, but...I need to return home."
 
@@ -187,7 +186,7 @@ label ch2_follow_jorunn:
     show prashadi shocked with dissolve
 
     Pr "Jorunn. Don't be foolish."
-    
+
     j "Well, you're not giving us much of a choice."
 
     j "I'll leave it up to you-whether you want us to be going in unprepared or not."
@@ -225,7 +224,7 @@ label ch2_follow_jorunn:
 
     Pr "I need the two of you to collect some relics."
 
-    y neutral "Relics? Like...antiques?" 
+    y neutral "Relics? Like...antiques?"
 
     show jorunn neutral with dissolve
     j "Magic items, basically. They show up in a lot of children's tales."
@@ -234,6 +233,7 @@ label ch2_follow_jorunn:
         set menuset
         "I have so many questions..."
         "\"What do they look like?\"":
+            $ pr_questions += 1
             show prashadi neutral with dissolve
             Pr "Anything. They can look as different as you and me."
             "A fleeting look of nostalgia passes over Prashadi's face."
@@ -243,6 +243,7 @@ label ch2_follow_jorunn:
             jump whatisrelic
 
         "\"How do we find these relics?\"":
+            $ pr_questions += 1
             Pr "As scattered as they are, I can point you in the right direction."
             y "And after that? How will I know when I've found one?"
             Pr "That is where you're fortunate Jorunn has offered his help."
@@ -254,6 +255,7 @@ label ch2_follow_jorunn:
             jump whatisrelic
 
         "\"Will these relics undo my curse?\"":
+            $ pr_questions += 1
             Pr "They will play a part in it, yes."
             y "Just 'a part'? Is there something else we need to do?"
             Pr "In due time, little fry. Bring me a relic first, then we'll talk."
@@ -272,16 +274,17 @@ label ch2_follow_jorunn:
                     "That seems to be as far as I can push."
                     "It's frustrating, but let's just leave it at this for now."
                     jump whatisrelic
-
-    y "So, where should we start looking?"
+        "That's all." if pr_questions >= 1:
+            pass
+    y neutral "So, where should we start looking?"
 
     Pr "Hmm...yes, the closest one will do."
 
     y "...?"
- 
+
     Pr "You will find it on land."
 
-    y "Pardon?"
+    y shocked "Pardon?"
 
     show jorunn sweat with dissolve
     j "Land? You want us to find a relic up there?"
@@ -294,7 +297,7 @@ label ch2_follow_jorunn:
 
     Pr "You will not have much time before you will need to return to the sea."
 
-    y "Oh."
+    y sad "Oh."
 
     "I could see Grandfather and Hunter again...but what would I even say? They're both mermaid hunters."
 
@@ -317,11 +320,14 @@ label ch2_follow_jorunn:
             "I find myself smiling back at him. His cheer is infectious."
 
         "\"But are you sure you're okay with going up on land?\"":
+            $ jorunn_points += 1
             j "Course! Said we'd figure this out together, didn't I?"
             y "Still, we've only just met. You're taking a big risk by going up there."
             j "Well, Guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
             y "I think I can work with that."
             "He doesn't seem nervous at all. It seems I was worried for nothing."
+
+
 
     Pr "Well, it seems you've both made your choice."
 
@@ -365,18 +371,18 @@ label ch2_follow_jorunn:
             y happy "It's alright. I can follow you on my own."
             j "You sure? It's easy to get lost in those tunnels."
             # Pro mermaid:
-            if promermaid >= 1:
+            if promermaid >= antimermaid:
                 y "I'll manage, don't worry."
                 j "If you say so! Just stay close, alright?"
-
             #Anti mermaid:
-            if antimermaid >= 1:
+            if antimermaid > promermaid:
                 ny nervous "I feel nervous about holding hands with a mermaid."
                 y "I'll manage."
 
+    hide prashadi with dissolve
+    hide jorunn with dissolve
+    "With that, we start to leave."
 
-    
-    
     "I turn back to say farewell to Prashadi a final time as well, but they are nowhere to be found."
 
     ny nervous "The cave is entirely empty, as if no one had been there in the first place."

@@ -12,13 +12,13 @@ label ch2_jorunn_village:
     j mermaid neutral "I should probably mention that the village doesn't get too many visitors these days. They might have some questions for you."
 
     y "Oh, right. What should I say?"
- 
+
     y nervous "I need to be careful. They can't know I'm human."
-    
+
     #Anti mermaid:
     if antimermaid >= 1:
         "Who knows what they could do to me?"
-    
+
     # Pro mermaid:
     if promermaid >= 1:
         "I don't want to make them uncomfortable."
@@ -26,7 +26,7 @@ label ch2_jorunn_village:
     j "How about this - we could say you're a traveling trader! They used to come by pretty often before the storms got worse."
 
     y happy "Do you think that would work?"
-    
+
     y nervous "But...{w} I don't have anything I could trade."
 
     j "Just say you lost your goods in the storm, easy. I'll back you up!"
@@ -50,7 +50,7 @@ label ch2_jorunn_village:
     j "Aw, barnacles. It just had to be this guy on watch duty."
 
     show jorunn glee
-    j "Hey <nickname>! It's good to see you. I'm back!"
+    j "Hey mossyhead! It's good to see you. I'm back!"
 
     V "Ugh. Don't call me that. I have an actual name."
 
@@ -89,7 +89,7 @@ label ch2_jorunn_village:
                     V "Is that so? Well, you're not the first one to have that kind of trouble around here."
                     y "Yes. I'm not sure how I'll survive without any supplies."
                     j "Hey, here's an idea! Why don't you stay here with us until the storm passes!"
-                    y "Really? That's very kind of you. Who knows, maybe I'll visit here again once I've got stuff to trade with." 
+                    y "Really? That's very kind of you. Who knows, maybe I'll visit here again once I've got stuff to trade with."
                     V "Hmm..."
                     pass
 
@@ -147,14 +147,14 @@ label ch2_jorunn_village:
                     y "You're stupid. I don't remember island i don't care if u don't believe me fuck u"
                     y "Wait, who are you again?"
                     pass
-                
+
                 "I'm trying to find out who i was by going around places": #fail
                     $ failconvince += 1
                     V "well it won't help here. We dunno u lady. gtfo"
                     y "aw man"
                     j "wait chill i got this"
                     jump headinjury
-                
+
     # JOR FAIL SAVE
     if failconvince > 0:
         j "Ok fine. Everyone...this was all a farce."
@@ -163,12 +163,12 @@ label ch2_jorunn_village:
         V "WTF"
         "WTF"
         j  "We didn't want to cause a fuss or anything but we've been seeing each other for awhile.!"
-        V "Jesus. Okay. fine. Wtf" 
+        V "Jesus. Okay. fine. Wtf"
         "Random villager swims away."
         "The rest of the villagers swim away, whispering."
         pass
 
-    
+
     #AFTER SUCCESSFUL CONVO (FINALLY)
     V "Whatever. Just don't cause any trouble."
     "Grumpypants swims away."
