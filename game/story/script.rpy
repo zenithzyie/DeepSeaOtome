@@ -6,6 +6,9 @@ label start:
     $ promermaid = 0
     $ antimermaid = 0
 
+#potential promermaid count: 1 or 0
+#potential antimermaid count: 1 or 0
+#exclusive with each other, only one choice affects this here
     #lower music when voice line is playing
     default preferences.emphasize_audio = True
     jump get_name

@@ -4,7 +4,7 @@ label ch2_castle_escaperoom:
 # to see room at full/proper zooms
 #            show bg palace guestroom:
 #                subpixel True zoom 0.34
-
+#antimermaid or promermaid is a yes/no check, none added
     menu escapebegin:
         ny neutral "What should I do?"
         "Examine the window.":

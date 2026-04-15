@@ -1,6 +1,7 @@
 
 #BRANCH - FOLLOW THIORAN
 label ch1_followprince:
+    #pro and anti mermaid don't matter here
     hide screen notify2
     hide jorunn glee with moveoutright
     show thioran at Position(xpos=0.45)

@@ -88,6 +88,7 @@ default traderpick = False
 default capitalpick = False
 default amnesiapick = False
 default alaskapick = False
+default pr_questions = 0
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
