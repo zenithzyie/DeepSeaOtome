@@ -4,7 +4,29 @@ label ch1_followjorunn:
     $ followthief.grant()
     hide screen notify2
     hide thioran angry with moveoutleft
+#potential promermaid count: 2 or 1
+#potential antimermaid count: 2 or 1
     #testing beach bg
+#    scene bg jorvillage:
+#        fit "contain"
+    scene bg jorvillage:
+        align (0.5, 1.0)
+        pos (0.5, 1.64)
+        zoom 0.34
+    with dissolve
+
+    window auto hide
+    show bg jorvillage:
+        linear 6 pos (0.5, 1.0) zoom 0.34
+    with Pause(6.10)
+
+    show bg jorvillage:
+        pos (0.5, 1.0) zoom 0.34
+
+    window auto show
+    "test"
+    show jorunn neutral
+    ny mermaid neutral "wow"
     scene bg beach:
         fit "contain"
     "omg bg"
@@ -175,7 +197,7 @@ label ch1_followjorunn:
             $ antimermaid += 1
             "Maybe I made the wrong decision..."
             "What was I thinking, trusting a merman?"
-            if antimermaid >= 1:
+            if antimermaid >= 2:
                 "His kind is the reason why I fell off Hunter's boat in the first place."
 
             "Anything could be in here, and I'm just letting him lead me to my doom."
@@ -290,6 +312,6 @@ label ch1_followjorunn:
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 
-    jump endofdemo
+#    jump endofdemo
 
-#    jump ch2_follow_jorunn
+    call ch2_follow_jorunn
