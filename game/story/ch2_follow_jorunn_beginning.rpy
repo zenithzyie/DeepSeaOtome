@@ -317,12 +317,11 @@ label ch2_follow_jorunn:
             "I find myself smiling back at him. His cheer is infectious."
 
         "\"But are you sure you're okay with going up on land?\"":
-            $ jorunn_points += 1
-            y "Wouldn't it be dangerous to go up on land for you? Why would you want to help me? We've only just met."
-            j "Aw, how could I let my new friend go back up there all alone?"
-            j "Besides, I have a feeling the siren that came after you is bad news for me too. Whatever she's planning to do with you can't be good."
-            "Right. If that witch is plotting something, it can't be good for the mermaids living here either."
-            y "I see. I'd be grateful then if you joined me."
+            j "Course! Said we'd figure this out together, didn't I?"
+            y "Still, we've only just met. You're taking a big risk by going up there."
+            j "Well, Guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
+            y "I think I can work with that."
+            "He doesn't seem nervous at all. It seems I was worried for nothing."
 
     Pr "Well, it seems you've both made your choice."
 
@@ -330,38 +329,54 @@ label ch2_follow_jorunn:
 
     y flustered "Oh. Right. I could do with a good rest."
 
-    "But what am I supposed to do until then? Where am I going to sleep...?"
+    "But...it's not like I have a place to stay."
 
-    j "Why don't you come stay at my village for the night, [y]?"
+    "Would Prashadi let me spend the night? I wouldn't want to impose any more than I already have."
 
-    j "We're not the capital city or anything, but it'll beat having to sleep out on the sand."
+    j "Why don't you stay over at my village for the night, [y]?"
 
-    y happy "If you're sure...That would be wonderful."
+    j "I've gotta pop in before we head out tomorrow, anyways."
 
-    j "Here."
+    y "That would be wonderful, thank you."
+
+    j "Okay!"
+
+    j "Should we come see you before we head out to shore, Miss Prash?"
+
+    Pr "There's no need."
+
+    #new stuff goes here
 
     "Jorunn offers me his hand."
 
+    j "Here. Don't want to lose you on the way back out, yeah?"
+
+    "Right, It was pretty dark on our way in..."
+
     menu:
-        "Take it.":
-            #$ jorunn_points += 1
-            y "Thank you."
+        "Take his hand.":
+            $ jorunn_points += 1
+            y "Alright. I'll follow your lead, then."
+            j "Hold tight, okay?"
+            j "It'd be terrible to lose such a pretty girl here!"
             "I hadn't really noticed it as a fish, but his hand feels surprisingly calloused when it slips around my own."
-            j "Sure thing. Hold tight, okay?"
 
         "Decline.":
-            j "You sure? No need to be shy. It's pretty dark in those tunnels. We wouldn't want you getting lost."
-            y "I'll manage."
-            j "If you say so! Just say close, alright?"
+            y happy "It's alright. I can follow you on my own."
+            j "You sure? It's easy to get lost in those tunnels."
+            # Pro mermaid:
+            if promermaid >= 1:
+                y "I'll manage, don't worry."
+                j "If you say so! Just stay close, alright?"
 
-    hide prashadi with dissolve
-    hide jorunn with dissolve 
-    "With that, we start to leave."
+            #Anti mermaid:
+            if antimermaid >= 1:
+                ny nervous "I feel nervous about holding hands with a mermaid."
+                y "I'll manage."
 
-    j "Thanks, Miss Prash!"
 
-    Pr "It's still too early to thank me yet, boy..."
-
+    
+    
     "I turn back to say farewell to Prashadi a final time as well, but they are nowhere to be found."
 
     ny nervous "The cave is entirely empty, as if no one had been there in the first place."
