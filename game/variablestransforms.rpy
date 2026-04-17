@@ -49,7 +49,7 @@ define paperboy = Character("Paperboy", image="june", ctc="ctc_pos", ctc_positio
 define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fixed")
 define quietmaid = Character("Quiet Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 define loudmaid = Character("Loud Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
-define V = Character("Villager", image="june", ctc="ctc_pos", ctc_position="fixed")
+define moss = Character("Moss", image="june", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
