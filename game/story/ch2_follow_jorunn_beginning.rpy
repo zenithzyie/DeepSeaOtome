@@ -84,7 +84,9 @@ label ch2_follow_jorunn:
 
     "No wonder Jorunn has been calling Prashadi 'Miss.' He must be seeing a different mermaid."
 
-    y happy "I see. Thank you - both of you - for helping me out."
+    "It seems that Prashadi is someone who exists outside of the gender we see."
+
+    y happy "So that's how it is...Thank you - both of you - for helping me out."
 
     y "My name is [y]. As you said, I'm a human."
 
@@ -216,8 +218,6 @@ label ch2_follow_jorunn:
 
     y happy "Thank you, Prashadi!"
 
-    "What a relief."
-
     Pr "Don't thank me just yet. You will need to complete some tasks for me first."
 
     y "Just tell me what to do."
@@ -289,11 +289,11 @@ label ch2_follow_jorunn:
     show jorunn sweat with dissolve
     j "Land? You want us to find a relic up there?"
 
-    Pr "When morning comes, swim up to the shore. You'll find yourself able to walk without much trouble at all."
+    Pr "Yes, I will grant you the means to do so."
 
-    y "To walk...? I thought you said you couldn't break the curse."
+    y "I thought you said you couldn't break the curse?"
 
-    Pr "This spell I cast for you will only be an illusion. Your true body will remain as it is."
+    Pr "This spell will only be an illusion. Your true body will remain as it is."
 
     Pr "You will not have much time before you will need to return to the sea."
 
@@ -325,33 +325,38 @@ label ch2_follow_jorunn:
             y "Still, we've only just met. You're taking a big risk by going up there."
             j "Well, Guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
             y "I think I can work with that."
-            "He doesn't seem nervous at all. It seems I was worried for nothing."
+            "He doesn't look nervous at all. It seems I was worried for nothing."
 
+    show jorunn neutral with dissolve
+    j "So, how will the illusion work? Are you going to cast the spell on us now?"
 
+    show prashadi neutral with dissolve
+    Pr "...It has been a very long time since I've last done this." 
 
-    Pr "Well, it seems you've both made your choice."
+    "A gentle coolness passes over me as Prashadi casts their spell."
 
-    Pr "I suggest you take some time to rest until morning arrives."
+    Pr "When morning comes, swim up to the shore. You'll find yourself able to walk without much trouble at all."
+
+    y "Morning? And not now?"
+
+    show prashadi happy with dissolve
+    Pr "You will want the morning sun for what comes after. And I suggest the two of you get some rest until then."
 
     y flustered "Oh. Right. I could do with a good rest."
 
-    "But...it's not like I have a place to stay."
+    ny nervous "But it's not like I have a place to stay."
 
-    "Would Prashadi let me spend the night? I wouldn't want to impose any more than I already have."
+    ny "Would either of them let me spend the night? I wouldn't want to impose any more than I already have."
 
-    j "Why don't you stay over at my village for the night, [y]?"
+    "Jorunn seems to catch my eye."
+
+    j "...Why don't you stay over at my village for the night, [y]?"
 
     j "I've gotta pop in before we head out tomorrow, anyways."
 
     y "That would be wonderful, thank you."
 
     j "Okay!"
-
-    j "Should we come see you before we head out to shore, Miss Prash?"
-
-    Pr "There's no need."
-
-    #new stuff goes here
 
     "Jorunn offers me his hand."
 
@@ -379,21 +384,20 @@ label ch2_follow_jorunn:
                 ny nervous "I feel nervous about holding hands with a mermaid."
                 y "I'll manage."
 
-    hide prashadi with dissolve
+    j  "Thanks, Miss Prash. We'll be back before you know it."
+
+    Pr "It's still too early to thank me yet, boy..."
+
+    Pr "Mind your time wisely on land. The illusion will dissolve once you return to the sea."
+
+    y "We'll be careful!"
+
+    "Prashadi's warning echoes in my mind as I exit the cave with Jorunn."
+
     hide jorunn with dissolve
-    "With that, we start to leave."
-
-    "I turn back to say farewell to Prashadi a final time as well, but they are nowhere to be found."
-
-    ny nervous "The cave is entirely empty, as if no one had been there in the first place."
-
-    "..."
-
-    "What a strange sort."
+    hide prashadi with dissolve
 
     #BLACK SCENE
     scene bg black with fade
-
-    "We swim back through the tunnels. It's just as dark as my first trip through them, but I feel a bit more courageous knowing that I have a plan now."
 
     call ch2_jorunn_village from _call_ch2_jorunn_village
