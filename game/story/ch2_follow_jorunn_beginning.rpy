@@ -252,6 +252,7 @@ label ch2_follow_jorunn:
             j "I've got a good eye for magic!"
             y "Oh! I'll be grateful for your help, then."
             "Now that I think about it, he was able to sense there was something different about me as a fish too."
+            "I wonder how he learned to do that. Is it a mermaid thing?"
             jump whatisrelic
 
         "\"Will these relics undo my curse?\"":
