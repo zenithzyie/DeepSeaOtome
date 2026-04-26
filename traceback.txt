@@ -1,61 +1,62 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/script.rpy", line 62, in script call
+NameError: name 'parvy' is not defined. Did you mean: 'Parvy'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/story/script.rpy", line 65, in script call
     call chapter1 from _call_chapter1
-  File "game/story/end_demo.rpy", line 9, in script
-    show text narrator "Thank you for playing the demo for {p}Heart's Depth!{w}":
-  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
-    return OG_SHOW(name, at_list, layer, *args, **kwargs)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1
-    narrator"Thank you for playing the demo for {p}Heart's Depth!{w}"
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax
+  File "game/story/script.rpy", line 1468, in script call
+    call ch1_followjorunn from _call_ch1_followjorunn
+  File "game/story/ch1_follow_jorunn.rpy", line 317, in script call
+    call ch2_follow_jorunn
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 406, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 354, in script
+    parvy "Ew! Gross!"
+Exception: Sayer 'parvy' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/story/script.rpy", line 62, in script call
+  File "renpy/ast.py", line 625, in eval_who
+    return renpy.python.py_eval(who)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'parvy' is not defined. Did you mean: 'Parvy'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/story/script.rpy", line 65, in script call
     call chapter1 from _call_chapter1
-  File "game/story/end_demo.rpy", line 9, in script
-    show text narrator "Thank you for playing the demo for {p}Heart's Depth!{w}":
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
-    return OG_SHOW(name, at_list, layer, *args, **kwargs)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/displayexports.py", line 486, in show
-    if not base.find_target() and renpy.config.missing_show:
-           ~~~~~~~~~~~~~~~~^^                               
-  File "renpy/display/image.py", line 444, in find_target
-    self.target = target._duplicate(a)
-                  ~~~~~~~~~~~~~~~~~^^^
-  File "renpy/text/extras.py", line 267, in _duplicate
-    string = renpy.python.py_eval(param)
-             ~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "renpy/python.py", line 1290, in py_eval
-    code = py_compile(code, "eval")
-           ~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1247, in py_compile
-    raise e
-  File "renpy/python.py", line 1177, in py_compile
-    tree = compile(source, filename, py_mode, ast.PyCF_ONLY_AST | flags, True)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1
-    narrator"Thank you for playing the demo for {p}Heart's Depth!{w}"
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-SyntaxError: invalid syntax
+  File "game/story/script.rpy", line 1468, in script call
+    call ch1_followjorunn from _call_ch1_followjorunn
+  File "game/story/ch1_follow_jorunn.rpy", line 317, in script call
+    call ch2_follow_jorunn
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 406, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 354, in script
+    parvy "Ew! Gross!"
+  File "renpy/ast.py", line 2925, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 956, in execute
+    who = eval_who(self.who, self.who_fast)
+          ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 627, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'parvy' is not defined.
 
 Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.4.1.25072401
-HeartsDepthDEMO 3.0
-Wed Mar 11 21:20:48 2026
+Ren'Py 8.5.2.26010301
+HeartsDepthDEMO 3.0.1
+Sun Apr 26 15:56:23 2026

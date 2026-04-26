@@ -50,6 +50,8 @@ define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fix
 define quietmaid = Character("Quiet Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 define loudmaid = Character("Loud Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 define moss = Character("Moss", image="june", ctc="ctc_pos", ctc_position="fixed")
+define unna = Character("Unna", image="june", ctc="ctc_pos", ctc_position="fixed")
+define parvy = Character("Parvy", image="june", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -85,7 +87,6 @@ default sadjune = False
 default jorright = False
 default failconvince = 0
 default traderpick = False
-default capitalpick = False
 default amnesiapick = False
 default alaskapick = False
 default pr_questions = 0

@@ -70,7 +70,7 @@ label ch2_follow_jorunn:
             "You look just like my grandfather. But he's human like me."
             Pr "Oho, is that who you see?"
             Pr "Well, I am certainly old enough to be your grandfather."
-            "Right...of course it couldn't be him."
+            "Right, of course it couldn't be him."
 
         "\"How did you do that?\"":
             Pr "I've picked up a few tricks over the years."
@@ -259,7 +259,7 @@ label ch2_follow_jorunn:
             $ pr_questions += 1
             Pr "They will play a part in it, yes."
             y "Just 'a part'? Is there something else we need to do?"
-            Pr "In due time, little fry. Bring me a relic first, then we'll talk."
+            Pr "In due time, little fry. Bring me a relic first, then we'll see."
             menu:
                 "\"Alright.\"":
                     "I want to know more, but..."
@@ -275,7 +275,7 @@ label ch2_follow_jorunn:
                     "That seems to be as far as I can push."
                     "It's frustrating, but let's just leave it at this for now."
                     jump whatisrelic
-        "That's all." if pr_questions >= 1:
+        "That's all I wanted to ask." if pr_questions >= 1:
             pass
     y neutral "So, where should we start looking?"
 
@@ -324,7 +324,7 @@ label ch2_follow_jorunn:
             $ jorunn_points += 1
             j "Course! Said we'd figure this out together, didn't I?"
             y "Still, we've only just met. You're taking a big risk by going up there."
-            j "Well, Guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
+            j "Well, guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
             y "I think I can work with that."
             "He doesn't look nervous at all. It seems I was worried for nothing."
 
@@ -338,24 +338,25 @@ label ch2_follow_jorunn:
 
     Pr "When morning comes, swim up to the shore. You'll find yourself able to walk without much trouble at all."
 
-    y "Morning? And not now?"
+    y shocked "Morning? And not now?"
 
     show prashadi happy with dissolve
     Pr "You will want the morning sun for what comes after. And I suggest the two of you get some rest until then."
 
-    y flustered "Oh. Right. I could do with a good rest."
+    y neutral "Well...I could do with a good rest."
 
     ny nervous "But it's not like I have a place to stay."
 
     ny "Would either of them let me spend the night? I wouldn't want to impose any more than I already have."
 
+    show jorunn glee with dissolve
     "Jorunn seems to catch my eye."
 
-    j "...Why don't you stay over at my village for the night, [y]?"
+    j "Why don't you stay over at my village for the night, [y]?"
 
     j "I've gotta pop in before we head out tomorrow, anyways."
 
-    y "That would be wonderful, thank you."
+    y happy "That would be wonderful, thank you."
 
     j "Okay!"
 
@@ -363,7 +364,7 @@ label ch2_follow_jorunn:
 
     j "Here. Don't want to lose you on the way back out, yeah?"
 
-    "Right, It was pretty dark on our way in..."
+    ny nervous "Right, It was pretty dark on our way in..."
 
     menu:
         "Take his hand.":
@@ -378,12 +379,13 @@ label ch2_follow_jorunn:
             j "You sure? It's easy to get lost in those tunnels."
             # Pro mermaid:
             if promermaid >= antimermaid:
-                y "I'll manage, don't worry."
+                y neutral "I'll manage, don't worry."
                 j "If you say so! Just stay close, alright?"
             #Anti mermaid:
             if antimermaid > promermaid:
                 ny nervous "I feel nervous about holding hands with a mermaid."
-                y "I'll manage."
+                y neutral "I'll manage."
+                j "If you say so! Just stay close, alright?"
 
     j  "Thanks, Miss Prash. We'll be back before you know it."
 
@@ -391,7 +393,7 @@ label ch2_follow_jorunn:
 
     Pr "Mind your time wisely on land. The illusion will dissolve once you return to the sea."
 
-    y "We'll be careful!"
+    y happy "We'll be careful!"
 
     "Prashadi's warning echoes in my mind as I exit the cave with Jorunn."
 
