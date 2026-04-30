@@ -20,7 +20,7 @@ label ch2_jorunn_village:
 
     #hand check
     "I let go of Jorunn's hand and follow him through the water."
-    
+
     j "I should probably mention that the village doesn't get too many visitors these days. They might have some questions for you."
 
     y mermaid neutral "Oh, right. What should I say?"
@@ -113,7 +113,6 @@ label ch2_jorunn_village:
             $ traderpick = True
             moss "Trading what? I don't see any wares on you."
             menu trader:
-                set menuset
                 "\"I just traded everything away.\"": #fail
                     $ failconvince += 1
                     moss "Everything? With whom?"
@@ -121,7 +120,7 @@ label ch2_jorunn_village:
                     y "Uh, from farther away."
                     "Mr. Mossyhead's frown deepens."
                     ny nervous "Oh dear, I don't think he bought it."
-                    jump trader
+                    jump failedconvincemoss
 
                 "\"I lost my wares in the storm.\"": #success
                     y "The currents took everything away before I could blink."
@@ -132,21 +131,20 @@ label ch2_jorunn_village:
                     j "He made a big fuss about how he'd make the best trades, then came back empty-handed after losing everything! Haha."
                     y "Oh no...I guess that makes two of us."
                     moss "Ugh..."
-                    pass
+                    jump succeedconvincemoss
 
                 "\"I wanted to travel light.\"": #fail
                     $ failconvince += 1
                     y "A heavy pack would just slow me down."
                     moss "Right. A trader traveling light."
-                    moss "What stupid do you think I am?"
+                    moss "How stupid do you think I am?"
                     y nervous "Er..."
                     "That sounded better in my head."
-                    jump trader
+                    jump failedconvincemoss
 
         "\"I'm visiting from far away.\"":
             moss "How far, exactly?"
             menu faraway:
-                set menuset
                 "\"From the...mermaid capital?\"": #fail
                     $ failconvince += 1
                     moss "Visiting...{i}here?{/i} {w}   From the capital?"
@@ -155,7 +153,7 @@ label ch2_jorunn_village:
                     y "I guess I really didn't think it through...haha..."
                     moss "Clearly. I've seen children lie better than you."
                     "Well, that's embarrassing."
-                    jump faraway
+                    jump failedconvincemoss
 
                 "\"Really really far away.\"": #fail
                     $ failconvince += 1
@@ -166,7 +164,7 @@ label ch2_jorunn_village:
                     moss "If you can't give a proper answer, you should just leave."
                     moss "Take your nonsense elsewhere."
                     "That could've gone better..."
-                    jump faraway
+                    jump failedconvincemoss
 
                 "\"Alaska.\"": #success
                     $ alaskapick = True
@@ -178,20 +176,19 @@ label ch2_jorunn_village:
                     y "It's just been a really long trip. I don't think I can keep traveling in the storm."
                     j "You're not going to turn her away, are you, Mossy?"
                     moss "..."
-                    pass
+                    jump succeedconvincemoss
 
         "\"No clue. I have amnesia.\"":
             $ amnesiapick = True
             moss "You...what?"
             menu headinjury:
-                set menuset
                 "\"I just don't remember anything.\"": #fail
                     $ failconvince += 1
                     moss "...?"
                     y "It's true! All of my memories are gone."
                     moss "Do you think I have fish for brains? If you're going to talk nonsense, you can leave."
                     "I was so sure that would work!"
-                    jump headinjury
+                    jump failedconvincemoss
 
                 "\"I hit my head real bad in the storm.\"": #success
                     j "It's true! I found her passed out on a rock."
@@ -201,7 +198,7 @@ label ch2_jorunn_village:
                     j "It's a nasty bump! I thought she was dead when I found her!"
                     y sad "Ouch...it hurts just thinking about it."
                     moss "Ugh..."
-                    pass
+                    jump succeedconvincemoss
 
                 "\"I'm trying to remember who I was by visiting lots of different places.\"": #fail
                     $ failconvince += 1
@@ -210,41 +207,55 @@ label ch2_jorunn_village:
                     moss "You haven't."
                     moss "We would remember someone using such a terrible excuse."
                     "That usually goes better in the movies..."
-                    jump headinjury
+                    jump failedconvincemoss
 
     # JOR FAIL SAVE
-    if failconvince > 1:
-        show jorunn neutral with dissolve
-        j "Okay, fine. You're right. That isn't why she's here."
-        j "The real reason is..."
-        "Jorunn suddenly reaches over and grabs my hand."
-        j "...[y] and I are lovers!!!" with screenShake
-        moss "What?"
-        ny shocked "What is he doing??"
-        j "We didn't want to cause a fuss or anything, but we've been seeing each other for a while!"
-        show jorunn flustered with dissolve
-        moss "{i}What?{/i}"
-        j "You're not gonna tell anyone, are you Mossy? We're not ready to tell my family yet!"
-        moss "I...uh..."
-        moss "L-lover or not, I'll kick you out the moment you cause any trouble, you hear?"
-        y "Pardon? I won't cause any trouble."
-        moss "Damnit...!! Whatever! You owe me for this!"
-        "He swims away from us in a hurry."
-        "But...isn't he supposed to be watching the gate?"
-        "..."
-        "Following Jorunn's lead, we swim further into the village."
-        pass
+
+label failedconvincemoss:
+    show jorunn neutral with dissolve
+    j "Okay, fine. You're right. That isn't why she's here."
+    j "The real reason is..."
+    "Jorunn suddenly reaches over and grabs my hand."
+    j "...[y] and I are lovers!!!" with screenShake
+    moss "What?"
+    ny shocked "What is he doing??"
+    j "We didn't want to cause a fuss or anything, but we've been seeing each other for a while!"
+    show jorunn flustered with dissolve
+    moss "{i}What?{/i}"
+    j "You're not gonna tell anyone, are you Mossy? We're not ready to tell my family yet!"
+    moss "I...uh..."
+    moss "L-lover or not, I'll kick you out the moment you cause any trouble, you hear?"
+    y "Pardon? I won't cause any trouble."
+    moss "Damnit...!! Whatever! You owe me for this!"
+    "He swims away from us in a hurry."
+    "But...isn't he supposed to be watching the gate?"
+    "..."
+    "Following Jorunn's lead, we swim further into the village."
+    j neutral "Whew. Guess you're the type who likes to do things her own way, huh?"
+
+    menu:
+        "\"Sorry, I panicked.\"":
+            j "Well, it happens to the best of us."
+            j "Let's try to work together from now on though, yeah?"
+            y "Right..."
+
+        "\"I wasn't sure your idea was going to work.\"":
+            j "..."
+            j "Let's try to work together from now on, yeah?"
+            y "Right..."
+
+    jump jorshouse
 
     #AFTER SUCCESSFUL CONVO (FINALLY)
-    if failconvince < 1:
-        moss "Whatever. Just don't cause any trouble."
-        j "Yep! Thanks, Mossy!"
-        ny happy "I can't believe that worked."
-        "Following Jorunn's lead, we swim further into the village."
+label succeedconvincemoss:
+    moss "Whatever. Just don't cause any trouble."
+    j "Yep! Thanks, Mossy!"
+    ny happy "I can't believe that worked."
+    "Following Jorunn's lead, we swim further into the village."
 
 
     # picked Jor's suggestion (Trader)
-    if traderpick == True:
+    if traderpick:
         show jorunn glee with dissolve
         j "Hehe. Nice job, [y]. You've got a knack for this kind of stuff, huh?"
         menu:
@@ -253,13 +264,13 @@ label ch2_jorunn_village:
 
             "\"Haha, maybe I do.\"":
                 $ jorunn_points += 2
-                y "You could say I was made for the stage!" 
+                y "You could say I was made for the stage!"
                 "Jorunn gives me a playful bow."
-                j "Our star of the sea! It was an honor to share the stage with you." 
+                j "Our star of the sea! It was an honor to share the stage with you."
                 y "Hehe."
 
     # pass Amnesia check
-    if amnesiapick == True:
+    if amnesiapick:
         show jorunn glee with dissolve
         j "Well, that's not exactly what I had in mind, but it worked out pretty well!"
         y "Thank you for backing me up, Jorunn."
@@ -268,7 +279,7 @@ label ch2_jorunn_village:
 
 
     #pass Alaska check
-    if alaskapick == True:
+    if alaskapick:
         show jorunn glee with dissolve
         j "Well, that's not exactly what I had in mind, but it worked out pretty well!"
         y "Thank you for backing me up, Jorunn."
@@ -280,26 +291,17 @@ label ch2_jorunn_village:
         y "My grandfather used to tell me stories about it as a child."
         j "Really? The name sounds pretty interesting. Too bad it's not real."
 
-    #fails the check
-    #HELP WHAT VARIABLE GOES HERE
-        j neutral "Whew. Guess you're the type who likes to do things her own way, huh?"
-
-        menu:
-            "\"Sorry, I panicked.\"":
-                j "Well, it happens to the best of us."
-                j "Let's try to work together from now on though, yeah?"
-                y "Right..."
-
-            "\"I wasn't sure your idea was going to work.\"":
-                j "..."
-                j "Let's try to work together from now on, yeah?"
-                y "Right..."
-
     #SCENE CHANGE - Jorunn's House
 
+label jorshouse:
+
+#    scene bg jorbedroom:
+#        fit "contain"
     "We stop at the entrance to one of the homes."
 
-    j "Home sweet home heehee."
+    show jorunn neutral
+
+    j mermaid neutral "Home sweet home heehee."
 
     y happy "Your home is so pretty."
 
@@ -349,7 +351,7 @@ label ch2_jorunn_village:
             j "Hmm? Oh, sure are! Carried them in my belly and everything."
             y shocked  "Really?"
             parvy "Ew! Gross!"
-            j "Haha! No, just messing with you. These are my younger siblings." 
+            j "Haha! No, just messing with you. These are my younger siblings."
 
     j "Anyways, [y] is gonna stay with us for the night."
 
