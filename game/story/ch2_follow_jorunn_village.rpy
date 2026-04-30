@@ -295,11 +295,11 @@ label succeedconvincemoss:
 
 label jorshouse:
 
-#    scene bg jorbedroom:
-#        fit "contain"
+    scene bg jorbedroom:
+        fit "contain"
     "We stop at the entrance to one of the homes."
 
-    show jorunn neutral
+    show jorunn neutral at jorunn_center
 
     j mermaid neutral "Home sweet home heehee."
 
