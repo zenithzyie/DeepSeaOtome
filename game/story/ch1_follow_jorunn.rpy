@@ -7,26 +7,27 @@ label ch1_followjorunn:
 #potential promermaid count: 2 or 1
 #potential antimermaid count: 2 or 1
     #testing beach bg
-#    scene bg jorvillage:
-#        fit "contain"
-    scene bg jorvillage:
+
+#TESTING MORNIGN BG
+    scene bg jorvillage morning:
         align (0.5, 1.0)
         pos (0.5, 1.64)
         zoom 0.34
     with dissolve
 
     window auto hide
-    show bg jorvillage:
+    show bg jorvillage morning:
         linear 6 pos (0.5, 1.0) zoom 0.34
     with Pause(6.10)
 
-    show bg jorvillage:
+    show bg jorvillage morning:
         pos (0.5, 1.0) zoom 0.34
 
     window auto show
-    "test"
+    "test: MORNING EDITION"
     show jorunn neutral
-    ny mermaid neutral "wow"
+    ny mermaid neutral "wow its morning"
+
     scene bg beach:
         fit "contain"
     "omg bg"

@@ -55,24 +55,21 @@ label ch2_jorunn_village:
 
     "We keep swimming until the kelp gives way to a clearing."
 
-    scene bg jorvillage:
+    scene bg jorvillage afternoon:
         align (0.5, 1.0)
         pos (0.5, 1.64)
         zoom 0.34
     with dissolve
 
     window auto hide
-    show bg jorvillage:
+    show bg jorvillage afternoon:
         linear 6 pos (0.5, 1.0) zoom 0.34
     with Pause(6.10)
 
-    show bg jorvillage:
+    show bg jorvillage afternoon:
         pos (0.5, 1.0) zoom 0.34
 
     window auto show
-    "test"
-    show jorunn neutral at jorunn_center
-    ny mermaid shocked "WOW"
 
     $ speaking_char = "Jorunn"
     show jorunn glee with dissolve
