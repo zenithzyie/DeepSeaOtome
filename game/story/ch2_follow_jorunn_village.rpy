@@ -117,7 +117,7 @@ label ch2_jorunn_village:
                     $ failconvince += 1
                     moss "Everything? With whom?"
                     moss "We're the only village around here for days."
-                    y "Uh, from farther away."
+                    y "Uh, from further away."
                     "Mr. Mossyhead's frown deepens."
                     ny nervous "Oh dear, I don't think he bought it."
                     jump failedconvincemoss
@@ -163,7 +163,7 @@ label ch2_jorunn_village:
                     y "It's like...twenty blue whales and a giant squid length...{w}away?"
                     moss "If you can't give a proper answer, you should just leave."
                     moss "Take your nonsense elsewhere."
-                    "That could've gone better..."
+                    ny nervous "That could've gone better..."
                     jump failedconvincemoss
 
                 "\"Alaska.\"": #success
@@ -187,7 +187,7 @@ label ch2_jorunn_village:
                     moss "...?"
                     y "It's true! All of my memories are gone."
                     moss "Do you think I have fish for brains? If you're going to talk nonsense, you can leave."
-                    "I was so sure that would work!"
+                    ny nervous "I was so sure that would work!"
                     jump failedconvincemoss
 
                 "\"I hit my head real bad in the storm.\"": #success
@@ -215,23 +215,25 @@ label failedconvincemoss:
     show jorunn neutral with dissolve
     j "Okay, fine. You're right. That isn't why she's here."
     j "The real reason is..."
+    show jorunn flustered with dissolve
     "Jorunn suddenly reaches over and grabs my hand."
     j "...[y] and I are lovers!!!" with screenShake
     moss "What?"
-    ny shocked "What is he doing??"
+    ny flustered "What is he doing??"
     j "We didn't want to cause a fuss or anything, but we've been seeing each other for a while!"
     show jorunn flustered with dissolve
     moss "{i}What?{/i}"
     j "You're not gonna tell anyone, are you Mossy? We're not ready to tell my family yet!"
     moss "I...uh..."
     moss "L-lover or not, I'll kick you out the moment you cause any trouble, you hear?"
-    y "Pardon? I won't cause any trouble."
+    y nervous "Pardon? I won't cause any trouble."
     moss "Damnit...!! Whatever! You owe me for this!"
     "He swims away from us in a hurry."
     "But...isn't he supposed to be watching the gate?"
     "..."
+    show jorunn neutral with dissolve
     "Following Jorunn's lead, we swim further into the village."
-    j neutral "Whew. Guess you're the type who likes to do things her own way, huh?"
+    j "Whew. Guess you're the type who likes to do things her own way, huh?"
 
     menu:
         "\"Sorry, I panicked.\"":
@@ -249,6 +251,7 @@ label failedconvincemoss:
     #AFTER SUCCESSFUL CONVO (FINALLY)
 label succeedconvincemoss:
     moss "Whatever. Just don't cause any trouble."
+    show jorunn glee with dissolve
     j "Yep! Thanks, Mossy!"
     ny happy "I can't believe that worked."
     "Following Jorunn's lead, we swim further into the village."
@@ -295,53 +298,60 @@ label succeedconvincemoss:
 
 label jorshouse:
 
-    scene bg jorbedroom:
+    scene bg jorbedroom with fade:
         fit "contain"
     "We stop at the entrance to one of the homes."
 
-    show jorunn neutral at jorunn_center
+    show jorunn glee at jorunn_center
 
-    j mermaid neutral "Home sweet home heehee."
-
-    y happy "Your home is so pretty."
-
-    "A younger mermaid is arranging items on a shelf nearby. She quickly looks up at our approach."
+    j mermaid neutral "Well, here we are!"
 
     u "Jor?"
 
+    "A younger mermaid swims up to us from the inside. She looks relieved to see Jorunn."
+
+    u "There you are."
+
     j "Hey, Unna! I'm back!"
 
-    unna "Oh! And who's this with you?"
+    unna "I wasn't sure if you were going to make it back in time with the storm."
+
+    j "Aw, come on, as if a little current like that could stop me."
+
+    unna "And- oh, hello! Who's this with you?"
 
     j "This is [y]. Found her all caught up in the storm outside. She'll be staying the night 'til it passes over."
 
     y "It's nice to meet you- Unna, is it?"
 
-    unna "You got it! It's nice to meet you too, [y]."
+    unna "I haven't seen clothes like yours around here before. The storm must have thrown you a long way, huh?"
 
-    unna "I'm glad you got out of that storm. They can get really nasty."
+    y "Haha…you could say that. Thank you for having me."
 
-    unna "It's not much, but welcome to (JOR VILLAGE)."
+    "She seems much friendlier than Mr. Mossyhead."
 
-    y "Thank you for having me."
+    j "Where's Parvy? Have you two eaten yet?"
 
-    "She seems quite friendly, just like Jorunn. They must be family."
+    unna "Not yet. We were hoping to eat together with you."
 
-    j "Where's Parvy? We DINNER. NOOWWW."
+    "As if on cue, a small figure swims out of the undergrowth to greet us."
 
-    "A small figure suddenly shuffles over to us, lingering close to Jorunn."
+    parvy "...Hi, Jor."
 
-    u "...hi, Jor."
+    j "There she is!" 
 
-    "She clings against Jorunn in a tight hug and his face lights up at the sight of her."
+    if childrenplaying:
+        # Pro mermaid:
+        if promermaid >= 1:
+            "I can't help but smile. I've never seen a mermaid so small before." 
+            "She reminds me of the children I saw in Aquantis."
 
-    u "I missed you."
-
-    j "Hey there, Parvy! Lookit you!! Did you get taller while I was away?"
-
-    "With everyone together, I realize that Unna and Parvy look strikingly similar to Jorunn."
+    else:
+        "I've never seen a mermaid so small before."
+    
 
     menu:
+        ny neutral "The three of them all look so much alike."
         "\"Are they your siblings?\"":
             j "Nope, they just dyed their hair and painted their tails to look like me!"
             y "Wait, really?"
@@ -353,15 +363,21 @@ label jorshouse:
             parvy "Ew! Gross!"
             j "Haha! No, just messing with you. These are my younger siblings."
 
-    j "Anyways, [y] is gonna stay with us for the night."
+    unna "There's two more of us but they're out right now doing trades."
 
-    j "She can have my room, and I'll share with Unna and Parvy."
+    unna "...Though that might be a good thing right now since we have an extra room to spare."
 
-    unna "But your room is-"
+    "June thought. Oh boy room. Me sure am tired. God i am so tired. "
 
-    j "It'll be fine. She's a guest, after all."
+    parvy "Wow, is this all fish?"
 
-    unna "...Alright. If you say so."
+    "The small mermaid is staring at the fishnet bag in amazement."
+
+    unna "Yes, and there's plenty to go around!"
+
+    parvy "Yay!"
+
+    "I follow the sisters into the kitchen and watch them start emptying the bag."
 
 
 
