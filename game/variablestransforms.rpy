@@ -90,6 +90,10 @@ default traderpick = False
 default amnesiapick = False
 default alaskapick = False
 default pr_questions = 0
+default kelp = 0
+default veggie = 0
+default fish = 0
+default fooddone = 0
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()

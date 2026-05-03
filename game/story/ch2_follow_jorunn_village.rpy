@@ -322,11 +322,11 @@ label jorshouse:
 
     j "This is [y]. Found her all caught up in the storm outside. She'll be staying the night 'til it passes over."
 
-    y "It's nice to meet you- Unna, is it?"
+    y happy "It's nice to meet you- Unna, is it?"
 
-    unna "I haven't seen clothes like yours around here before. The storm must have thrown you a long way, huh?"
+    unna "Yeah, you got it! I haven't seen clothes like yours around here before. The storm must have thrown you a long way, huh?"
 
-    y "Haha…you could say that. Thank you for having me."
+    y "Haha...you could say that. Thank you for having me."
 
     "She seems much friendlier than Mr. Mossyhead."
 
@@ -345,39 +345,222 @@ label jorshouse:
         if promermaid >= 1:
             "I can't help but smile. I've never seen a mermaid so small before." 
             "She reminds me of the children I saw in Aquantis."
-
-    else:
-        "I've never seen a mermaid so small before."
     
+    "The three of them all look so much alike."
 
     menu:
-        ny neutral "The three of them all look so much alike."
-        "\"Are they your siblings?\"":
-            j "Nope, they just dyed their hair and painted their tails to look like me!"
-            y "Wait, really?"
-            j "Haha, I'm just kidding-yeah, they're my sisters!"
+        ny neutral "I wonder..."
+        "\"Are they your siblings, Jorunn?\"":
+            j "Nope, found them in a basket one day when I was out for a swim!"
+            y "Oh, really? What a coincidence! They look just like you."
+            j "Don't they though? Haha, I'm just kidding. They're my sisters."
+            y "Of course."
 
-        "\"Are they your children?\"":
+        "\"Are they your children, Jorunn?\"":
+            $ jorunn_points += 1
             j "Hmm? Oh, sure are! Carried them in my belly and everything."
             y shocked  "Really?"
             parvy "Ew! Gross!"
             j "Haha! No, just messing with you. These are my younger siblings."
 
-    unna "There's two more of us but they're out right now doing trades."
+    parvy "...what kind of mer are you?"
 
-    unna "...Though that might be a good thing right now since we have an extra room to spare."
+    "She circles me with a surprising amount of intensity."
 
-    "June thought. Oh boy room. Me sure am tired. God i am so tired. "
+    ny nervous "She can't tell I'm not actually a mermaid, can she?"
 
-    parvy "Wow, is this all fish?"
+    y neutral "Oh, well, my name is-"
 
-    "The small mermaid is staring at the fishnet bag in amazement."
+    parvy "Are you from the capital? Is that the kind of clothes they wear there? I heard they live in houses made from rocks!"
 
-    unna "Yes, and there's plenty to go around!"
+    j "Alright you busybug, let's give our guest some space. She's had a long day."
 
-    parvy "Yay!"
+    parvy "Guh..."
 
-    "I follow the sisters into the kitchen and watch them start emptying the bag."
+    j "You must be pretty hungry too, huh, [y]? Let's go get some food, yeah?" 
+
+    y happy "That sounds wonderful."
+
+    scene bg jorvillage afternoon:
+        fit "contain"
+    with dissolve
+
+    "I follow the family upwards towards a platform on top of the homes."
+
+    "Even high up, the foliage is thick. Is that what's protecting us from the storm?"
+
+    "They quickly get to work preparing the fish Jorunn brought back." 
+
+    y mermaid neutral "Is there anything I can help with?"
+
+    unna "Ah, can you grab me the big basket there?" 
+
+    menu basketpick:
+        set menuset
+        ny "There's several baskets she gestured to."
+        "\"This short one?\"":
+            "I pick up one of the baskets near the center of the platform."
+            "It's full of seagrass. Some of the pieces inside have been woven together."
+            unna "Oh, not that one. Should have a bigger handle."
+            y "Ah, my bad. I'll put this one back."
+            jump basketpick
+
+        "\"Maybe that tall one?\"": #correct choice
+            "I pick up one of the baskets near the center of the platform."
+            "It's filled with some kind of sea plant. They look like small fruits."
+            unna "That's the one! Thank you, [y]."
+
+        "\"Or is it this wide one?\"":
+            "I pick up one of the baskets near the center of the platform."
+            "It's full of colorful seashells."
+            unna "Oh, not that one. It'll be smaller than that."
+            y "Oops. I'll just put this back..."
+            jump basketpick
+
+    "Unna hands half of its contents over to Jorunn, who starts sorting through them."
+
+    "It's obvious this is something they've done together many times."
+
+    "..."
+
+    # Pro mermaid:
+    if promermaid >= 1:
+        "Did the mermaids in the underground market have families like this? Did they eat like this too?"
+
+    #Anti mermaid:
+    if antimermaid >= 1:
+        "It's curious to see mermaids acting like this. It makes them feel so...human."
+
+    "..."
+
+    parvy "Here."
+
+    "Parvy hands me a bowl. She seems quite intent on sticking by my side."
+
+    y "Oh, thank you!"
+
+    j "I'm sure it's not what you're used to, but help yourself to what you want!"
+
+    "There's a lot of things I don't recognize on the table."
+   
+    "Well, here goes nothing."
+
+    menu makefood:
+        ny happy "What should I eat?"
+        "Kelp.":
+            $ kelp += 1
+            if kelp == 1:
+                "I add some kelp to the wrap. It looks like it's been seasoned with a bright orange spice."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if kelp == 2:
+                "I add some more kelp to the wrap. My meal is starting to look like a salad."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if kelp == 3:
+                "I add even more kelp to the wrap. The village must have really made me crave some greens."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if kelp == 4:
+                ny nervous "Er...I think that's enough kelp."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+
+        "Sea Vegetable":
+            $veggie += 1
+            if veggie == 1:
+                "I add some of those blue roots to the wrap. I bet these will be pretty crunchy."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if veggie == 2:    
+                "I add another kind of sea vegetable to the wrap. They're dark red and shaped like radishes, but strangely squishy."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if veggie == 3:
+                "I add one last bit of sea vegetables to the wrap. At least, I assume these pickle-like things are vegetables."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if veggie == 4:
+                ny nervous "Er...I think that's enough vegetables."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+
+        "Fish":
+            $fish += 1
+            if fish == 1:
+                "I add some fish to the wrap. The little slices of meat are a pretty orange color."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if fish == 2:
+                "I add some more fish to the wrap. This is starting to look rather fishy."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if fish == 3:
+                "I finish off the wrap with even more fish. I'm still not sure what kind of fish this is, but it looks rather tasty. Mmm. Protein."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+            if fish == 4:
+                ny nervous "Er...I think that's enough fish."
+                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                jump makefood
+        
+        "I've added enough.":
+            jump fooddone
+    
+    label fooddone:
+        "With our wraps finished, we all dig in."
+
+    #Wrap Outcomes
+
+    #One of each
+    if kelp == 1 and veggie == 1 and fish == 1:
+        "This is a nice, well-rounded meal."
+        "It seems Parvy chose the same as me. She seems to have relaxed a lot since Jorunn arrived home."
+
+    #Two kelp
+    if kelp == 2 and veggie == 0 and fish == 0:
+        "I made a wrap filled with greens."
+        "It seems Unna chose the same as me. "
+  
+    #Three kelp
+    if kelp == 3 and veggie == 0 and fish == 0:
+        "There could not be more green in this meal. This is a salad wrap to end all salad wraps."
+
+    #Two veggie
+    if kelp == 0 and veggie == 2 and fish == 0:
+        "This wrap has a nice medley of vegetables."
+
+    #Three veggie
+    if kelp == 0 and veggie == 3 and fish == 0:
+        "The vegetables are singing a three-part harmony in my mouth!"
+        "It seems Jorunn chose the same as me. He adds some light blue seasoning to his wrap."
+
+    #Two fish
+    if kelp == 0 and veggie == 0 and fish == 2:
+        "I made a wrap with lots of fish. The savory taste is just what I needed."
+
+    #Three fish
+    if kelp == 0 and veggie == 0 and fish == 3:
+        "All of the fish stares at me from inside the wrap. I try not to think about what might have happened if Prashadi hadn't turned me into a mermaid."
+
+    #No fish
+    if fish == 0:
+        $ jorunn_points += 1
+        "I notice Jorunn watching Unna and Parvy as he eats."
+        "He must really care for them."
+
+    
+    #WRAP MEAL END
+    hide text
+    "Time passes, and we finish eating."
+
+    y "Thank you for the meal. That was delicious."
+
+    j "Right? Unna is such an amazing cook, aren't you?"
+    
+    "He rubs Unna's hair affectionately."
+
+    unna blushing "..."
 
 
 

@@ -273,7 +273,7 @@ label ch2_follow_jorunn:
                     Pr "Only then will I trust you with what comes next."
                     y frustrated  "..."
                     "That seems to be as far as I can push."
-                    "It's frustrating, but let's just leave it at this for now."
+                    "I suppose I'll have to leave it at that..."
                     jump whatisrelic
         "That's all I wanted to ask." if pr_questions >= 1:
             pass
