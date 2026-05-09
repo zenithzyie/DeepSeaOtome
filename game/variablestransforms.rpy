@@ -90,8 +90,8 @@ default traderpick = False
 default amnesiapick = False
 default alaskapick = False
 default pr_questions = 0
-default kelp = 0
-default veggie = 0
+default greens = 0
+default fruit = 0
 default fish = 0
 default fooddone = 0
 ######################################################################

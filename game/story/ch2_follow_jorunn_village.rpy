@@ -324,7 +324,7 @@ label jorshouse:
 
     y happy "It's nice to meet you- Unna, is it?"
 
-    unna "Yeah, you got it! I haven't seen clothes like yours around here before. The storm must have thrown you a long way, huh?"
+    unna "Yeah, you got it! I haven't seen clothes like yours around here before. The storm must have carried you a long way, huh?"
 
     y "Haha...you could say that. Thank you for having me."
 
@@ -362,10 +362,11 @@ label jorshouse:
             y shocked  "Really?"
             parvy "Ew! Gross!"
             j "Haha! No, just messing with you. These are my younger siblings."
+            y happy "Of course, haha."
 
     parvy "...what kind of mer are you?"
 
-    "She circles me with a surprising amount of intensity."
+    "Parvy circles me with a surprising amount of intensity."
 
     ny nervous "She can't tell I'm not actually a mermaid, can she?"
 
@@ -387,37 +388,13 @@ label jorshouse:
 
     "I follow the family upwards towards a platform on top of the homes."
 
-    "Even high up, the foliage is thick. Is that what's protecting us from the storm?"
-
-    "They quickly get to work preparing the fish Jorunn brought back." 
+    "Everyone quickly gets to work preparing the fish Jorunn brought back." 
 
     y mermaid neutral "Is there anything I can help with?"
 
-    unna "Ah, can you grab me the big basket there?" 
+    unna "Ah, don't worry about it, you're our guest! Go ahead and make yourself comfortable, we'll be done soon."
 
-    menu basketpick:
-        set menuset
-        ny "There's several baskets she gestured to."
-        "\"This short one?\"":
-            "I pick up one of the baskets near the center of the platform."
-            "It's full of seagrass. Some of the pieces inside have been woven together."
-            unna "Oh, not that one. Should have a bigger handle."
-            y "Ah, my bad. I'll put this one back."
-            jump basketpick
-
-        "\"Maybe that tall one?\"": #correct choice
-            "I pick up one of the baskets near the center of the platform."
-            "It's filled with some kind of sea plant. They look like small fruits."
-            unna "That's the one! Thank you, [y]."
-
-        "\"Or is it this wide one?\"":
-            "I pick up one of the baskets near the center of the platform."
-            "It's full of colorful seashells."
-            unna "Oh, not that one. It'll be smaller than that."
-            y "Oops. I'll just put this back..."
-            jump basketpick
-
-    "Unna hands half of its contents over to Jorunn, who starts sorting through them."
+    "Unna hands a basket over to Jorunn, who starts sorting through its contents."
 
     "It's obvious this is something they've done together many times."
 
@@ -437,117 +414,131 @@ label jorshouse:
 
     "Parvy hands me a bowl. She seems quite intent on sticking by my side."
 
-    y "Oh, thank you!"
+    y happy "Oh, thank you!"
 
     j "I'm sure it's not what you're used to, but help yourself to what you want!"
 
-    "There's a lot of things I don't recognize on the table."
-   
-    "Well, here goes nothing."
+    ny neutral "Right...this is my first meal as a mermaid."
 
+    "Where do I even start? There's a whole spread laid out-leafy greens, some things that look like fruit, and fish."
+
+    ny nervous "Hang on...aren't those the same fish Jorunn stole from the prince?"
+
+    "Oh dear. {w} Well, here goes nothing."
+
+    #show text line is for debugging purposes, but might be useful for the player too
     menu makefood:
-        ny happy "What should I eat?"
-        "Kelp.":
-            $ kelp += 1
-            if kelp == 1:
-                "I add some kelp to the wrap. It looks like it's been seasoned with a bright orange spice."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+        ny happy "What should I add to my bowl?"
+        "Leafy Greens":
+            $ greens += 1
+            if greens == 1:
+                "I add some greens to the bowl. If you look at it from here, it kind of looks like lettuce."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if kelp == 2:
-                "I add some more kelp to the wrap. My meal is starting to look like a salad."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if greens == 2:
+                "I add more greens to the bowl. My meal is starting to look like a salad."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if kelp == 3:
-                "I add even more kelp to the wrap. The village must have really made me crave some greens."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if greens == 3:
+                "I add even more greens to the bowl. Being surrounded by sea plants must have really made me crave some greens."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if kelp == 4:
-                ny nervous "Er...I think that's enough kelp."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if greens == 4:
+                ny nervous "Er...I think that's enough leafy greens."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
 
-        "Sea Vegetable":
-            $veggie += 1
-            if veggie == 1:
-                "I add some of those blue roots to the wrap. I bet these will be pretty crunchy."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+        "Sea Fruit?":
+            $fruit += 1
+            if fruit == 1:
+                "I add some blue fruits to the bowl. I bet they'll taste berry good."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if veggie == 2:    
-                "I add another kind of sea vegetable to the wrap. They're dark red and shaped like radishes, but strangely squishy."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if fruit == 2:    
+                "I add another fruit to the bowl. These are smooth and yellow. They'll pear nicely with the blue fruits."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if veggie == 3:
-                "I add one last bit of sea vegetables to the wrap. At least, I assume these pickle-like things are vegetables."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if fruit == 3:
+                "I add one last kind of fruit to the bowl. My bowl looks grape! Fruitful, even. How very a-peeling."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if veggie == 4:
-                ny nervous "Er...I think that's enough vegetables."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+            if fruit == 4:
+                ny nervous "Er...I think that's enough fruit."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
 
         "Fish":
             $fish += 1
             if fish == 1:
-                "I add some fish to the wrap. The little slices of meat are a pretty orange color."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                "I add some fish to the bowl. They've been filleted rather neatly."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
             if fish == 2:
-                "I add some more fish to the wrap. This is starting to look rather fishy."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                "I add more fish to the bowl. This meal is starting to look rather fishy."
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
             if fish == 3:
-                "I finish off the wrap with even more fish. I'm still not sure what kind of fish this is, but it looks rather tasty. Mmm. Protein."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                "I finish off the bowl with even more fish. I'm still not sure what kind of fish this is. Oh well!"
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
             if fish == 4:
                 ny nervous "Er...I think that's enough fish."
-                show text "I've added [kelp] kelp, [veggie] veggies and [fish] fish." at topright
+                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
         
         "I've added enough.":
             jump fooddone
     
     label fooddone:
-        "With our wraps finished, we all dig in."
 
-    #Wrap Outcomes
+    #Bowl Outcomes
 
     #One of each
-    if kelp == 1 and veggie == 1 and fish == 1:
+    if greens == 1 and fruit == 1 and fish == 1:
         "This is a nice, well-rounded meal."
-        "It seems Parvy chose the same as me. She seems to have relaxed a lot since Jorunn arrived home."
+        "It seems Unna chose the same as me. I guess she isn't much of a picky eater."
 
-    #Two kelp
-    if kelp == 2 and veggie == 0 and fish == 0:
-        "I made a wrap filled with greens."
-        "It seems Unna chose the same as me. "
+    #Two leafy greens
+    if greens == 2 and fruit == 0 and fish == 0:
+        "I've made a bowl filled with leafy greens."
   
-    #Three kelp
-    if kelp == 3 and veggie == 0 and fish == 0:
-        "There could not be more green in this meal. This is a salad wrap to end all salad wraps."
+    #Three leafy greens
+    if greens == 3 and fruit == 0 and fish == 0:
+        "There could not be more green in this meal. This is a salad bowl to end all salad bowls."
+        "It seems Jorunn chose the same as me. I wonder if he's a picky eater?"
 
-    #Two veggie
-    if kelp == 0 and veggie == 2 and fish == 0:
-        "This wrap has a nice medley of vegetables."
+    #Two fruit
+    if greens == 0 and fruit == 2 and fish == 0:
+        "I've made a bowl filled with fruit."
 
-    #Three veggie
-    if kelp == 0 and veggie == 3 and fish == 0:
-        "The vegetables are singing a three-part harmony in my mouth!"
-        "It seems Jorunn chose the same as me. He adds some light blue seasoning to his wrap."
+    #Three fruit
+    if greens == 0 and fruit == 3 and fish == 0:
+        "These fruits are singing a three-part harmony in my mouth!"
 
     #Two fish
-    if kelp == 0 and veggie == 0 and fish == 2:
-        "I made a wrap with lots of fish. The savory taste is just what I needed."
+    if greens == 0 and fruit == 0 and fish == 2:
+        "I've made a bowl with lots of fish."
+        "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
 
     #Three fish
-    if kelp == 0 and veggie == 0 and fish == 3:
-        "All of the fish stares at me from inside the wrap. I try not to think about what might have happened if Prashadi hadn't turned me into a mermaid."
+    if greens == 0 and fruit == 0 and fish == 3:
+        "The fish fillets are staring at me from inside the bowl."
+        "...Why did I add so much fish?"
+        show jorunn glee with dissolve
+        j "..."
 
     #No fish
-    if fish == 0:
-        $ jorunn_points += 1
-        "I notice Jorunn watching Unna and Parvy as he eats."
-        "He must really care for them."
+    if greens >=2 or fruit >=2 and fish == 0:
+        if greens > fruit:
+            $ jorunn_points += 1
+            j "Guess you're a fan of greens, huh?"
+        if fruit > greens:
+            $ jorunn_points += 1
+            j "Guess you're a fan of fruits, huh?"
+    
+        y "Well...you could say I've had enough fish to last me a lifetime."
+
+        j "Hehe, I don't care for fish either."
 
     
     #WRAP MEAL END
