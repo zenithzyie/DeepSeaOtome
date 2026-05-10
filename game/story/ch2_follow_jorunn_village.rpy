@@ -432,9 +432,14 @@ label jorshouse:
     "Oh dear. {w} Well, here goes nothing."
 
     #show text line is for debugging purposes, but might be useful for the player too
+    $ makingfoodtext = "What should I add to my bowl?"
     menu makefood:
-        ny happy "What should I add to my bowl?"
+        ny happy "[ makingfoodtext ]"
         "Leafy Greens":
+            if addfood == 0:
+                $ makingfoodtext = "What else?"
+            elif addfood == 1:
+                $ makingfoodtext = "Any finally..."
             $ greens += 1
             $ addfood += 1
             if greens == 1:
@@ -457,6 +462,10 @@ label jorshouse:
                 jump makefood
 
         "Sea Fruit?":
+            if addfood == 0:
+                $ makingfoodtext = "What else?"
+            elif addfood == 1:
+                $ makingfoodtext = "Any finally..."            
             $ fruit += 1
             $ addfood += 1
             if fruit == 1:
@@ -477,8 +486,11 @@ label jorshouse:
                 "I add one last kind of fruit to the bowl. My bowl looks grape! Fruitful, even. How very a-peeling."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump fooddone
-
         "Fish":
+            if addfood == 0:
+                $ makingfoodtext = "What else?"
+            elif addfood == 1:
+                $ makingfoodtext = "Any finally..."
             $ fish += 1
             $ addfood += 1
             if fish == 1:
@@ -499,7 +511,6 @@ label jorshouse:
                 "I finish off the bowl with even more fish. I'm still not sure what kind of fish this is. Oh well!"
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump fooddone
-
     label fooddone:
 
     #Bowl Outcomes
