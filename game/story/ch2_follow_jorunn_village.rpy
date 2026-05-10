@@ -260,7 +260,6 @@ label succeedconvincemoss:
     ny happy "I can't believe that worked."
     "Following Jorunn's lead, we swim further into the village."
 
-
     # picked Jor's suggestion (Trader)
     if traderpick:
         show jorunn glee with dissolve
@@ -387,7 +386,9 @@ label jorshouse:
     y happy "That sounds wonderful."
 
     scene bg jorvillage afternoon:
-        fit "contain"
+        align (0.5, 1.0)
+        pos (0.5, 1.64)
+        zoom 0.34
     with dissolve
 
     "I follow the family upwards towards a platform on top of the homes."
