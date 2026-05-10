@@ -369,6 +369,7 @@ label ch2_follow_jorunn:
     menu:
         "Take his hand.":
             $ jorunn_points += 1
+            $ takehand = 1
             y "Alright. I'll follow your lead, then."
             j "Hold tight, okay?"
             j "It'd be terrible to lose such a pretty girl here!"

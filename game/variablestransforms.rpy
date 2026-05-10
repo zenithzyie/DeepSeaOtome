@@ -82,19 +82,18 @@ default lookedatwindow = False
 default pickedsomeone = False
 default pickedsomething = False
 default sillyjune = False
-default excuseme = False
-default sadjune = False
-default jorright = False
+default takehand = False
 default failconvince = 0
 default traderpick = False
 default amnesiapick = False
-default alaskapick = False
+default kansaspick = False
 default pr_questions = 0
 default greens = 0
 default fruit = 0
 default fish = 0
 default looked_through = False
 default addfood = 0
+default snoop = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()

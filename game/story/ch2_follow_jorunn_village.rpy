@@ -1,29 +1,20 @@
 label ch2_jorunn_village:
 ##This is the continuation of Follow Jorunn after leaving Prashadi's cave
 
-    scene bg black:
-        fit "contain"
-    pause 0.7
-
-    "The tunnels are as dark as my first trip through them. I feel a bit more courageous knowing that I have a plan now."
-
-    "We reach the end of the cave and I can see the light spilling out from the exit."
-
     #SCENE CHANGE - sea wilderness
     scene bg sea with dissolve
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
-
-    "It's a relief to be back out into the ocean. The darkness was starting to make me uncomfortable."
 
     $ speaking_char = "Jorunn"
     show jorunn glee with dissolve
 
     #hand check
-    "I let go of Jorunn's hand and follow him through the water."
+    if takehand == True:
+        "Once we're out of the darkness, I let go of Jorunn's hand."
 
-    j "I should probably mention that the village doesn't get too many visitors these days. They might have some questions for you."
+    j mermaid neutral "I should probably mention that the village doesn't get too many visitors these days. They might have some questions for you."
 
-    y mermaid neutral "Oh, right. What should I say?"
+    y "Oh, right. What should I say?"
 
     y nervous "I need to be careful. They can't know I'm human."
 
@@ -74,8 +65,7 @@ label ch2_jorunn_village:
     $ speaking_char = "Jorunn"
     show jorunn glee with dissolve
 
-    #village name needed
-    j mermaid neutral "Here we are! Welcome to <village name here>."
+    j mermaid neutral "Here we are! Welcome to our village."
 
     y shocked "Wow...!"
 
@@ -84,7 +74,7 @@ label ch2_jorunn_village:
     "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
 
     if looked_through:
-        "Large plant stalks cover the entire area. I wonder if they’re protecting us from the storm?"
+        "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
         "The structures on them remind me of treehouses. That must be where the mermaids live."
     else:
         "The structures on the plant stalks remind me of treehouses. That must be where the mermaids live."
@@ -170,13 +160,13 @@ label ch2_jorunn_village:
                     ny nervous "That could've gone better..."
                     jump failedconvincemoss
 
-                "\"Alaska.\"": #success
-                    $ alaskapick = True
-                    moss "A'lass Ka? Never heard of it."
-                    y "Yes, exactly. It's {i}really{/i} far away."
+                "\"Kansas.\"": #success
+                    $ kansaspick = True
+                    moss "Can'zass? Never heard of it."
+                    y neutral "Yes, exactly. It's {i}really{/i} far away."
                     j "Oh, yeah! It's supposed to be way north. You really oughta get out more often."
                     moss "Shut it!"
-                    y nervous "I'm sorry to impose..."
+                    y nervous "Look, I'm sorry to impose..."
                     y "It's just been a really long trip. I don't think I can keep traveling in the storm."
                     j "You're not going to turn her away, are you, Mossy?"
                     moss "..."
@@ -284,18 +274,23 @@ label succeedconvincemoss:
         j "We gotta stick together, yeah?"
 
 
-    #pass Alaska check
-    if alaskapick:
+    #pass Kansas check
+    if kansaspick:
         show jorunn glee with dissolve
         j "Well, that's not exactly what I had in mind, but it worked out pretty well!"
-        y "Thank you for backing me up, Jorunn."
+        y happy "Thank you for backing me up, Jorunn."
         j "Sure thing!"
         j "We gotta stick together, yeah?"
         "..."
-        j "So, what is Alaska, anyway?"
+        j "So, what is Kansas, anyway?"
         y "Oh, it's a fictional place!"
         y "My grandfather used to tell me stories about it as a child."
-        j "Really? The name sounds pretty interesting. Too bad it's not real."
+        y "There was one about a girl who got swept up in a storm."
+        "..."
+        ny nervous "Now that I think about it, that's kind of what happened to me."
+        j "Really? You gotta tell me about it sometime."
+        y happy "Sure! I'd love to."
+
 
     #SCENE CHANGE - Jorunn's House
 
@@ -306,6 +301,7 @@ label jorshouse:
     "We stop at the entrance to one of the homes."
 
     show jorunn glee at jorunn_center
+    $ speaking_char = "Jorunn"
 
     j mermaid neutral "Well, here we are!"
 
@@ -313,9 +309,9 @@ label jorshouse:
 
     "A younger mermaid swims up to us from the inside. She looks relieved to see Jorunn."
 
-    u "There you are."
+    u "You're back!"
 
-    j "Hey, Unna! I'm back!"
+    j "I am back! Hey, Unna."
 
     unna "I wasn't sure if you were going to make it back in time with the storm."
 
@@ -357,7 +353,7 @@ label jorshouse:
             j "Nope, found them in a basket one day when I was out for a swim!"
             y "Oh, really? What a coincidence! They look just like you."
             j "Don't they though? Haha, I'm just kidding. They're my sisters."
-            y "Of course."
+            y "Of course, haha."
 
         "\"Are they your children, Jorunn?\"":
             $ jorunn_points += 1
@@ -365,13 +361,13 @@ label jorshouse:
             y shocked  "Really?"
             parvy "Ew! Gross!"
             j "Haha! No, just messing with you. These are my younger siblings."
-            y happy "Of course, haha."
+            y happy "Ah, of course."
 
     parvy "...what kind of mer are you?"
 
     "Parvy circles me with a surprising amount of intensity."
 
-    ny nervous "She can't tell I'm not actually a mermaid, can she?"
+    ny nervous "She can't tell I'm actually a human, can she?"
 
     y neutral "Oh, well, my name is-"
 
@@ -385,6 +381,8 @@ label jorshouse:
 
     y happy "That sounds wonderful."
 
+
+    #SCENE CHANGE - Platform of Home
     scene bg jorvillage afternoon:
         align (0.5, 1.0)
         pos (0.5, 1.64)
@@ -393,7 +391,8 @@ label jorshouse:
 
     "I follow the family upwards towards a platform on top of the homes."
 
-    "Everyone quickly gets to work preparing the fish Jorunn brought back."
+    show jorunn glee with dissolve
+    $ speaking_char = "Unna"
 
     y mermaid neutral "Is there anything I can help with?"
 
@@ -417,9 +416,11 @@ label jorshouse:
 
     parvy "Here."
 
-    "Parvy hands me a bowl. She seems quite intent on sticking by my side."
+    "Parvy hands me an empty bowl. She seems quite intent on staying by my side."
 
-    y happy "Oh, thank you!"
+    y happy "Thank you."
+
+    "They've made quick work of getting everything ready."
 
     j "I'm sure it's not what you're used to, but help yourself to what you want!"
 
@@ -565,18 +566,226 @@ label jorshouse:
 
     #WRAP MEAL END
     hide text
-    "Time passes, and we finish eating."
+    "I take a bite of the food."
 
-    y "Thank you for the meal. That was delicious."
+    parvy "How is it? Do you like it?"
 
-    j "Right? Unna is such an amazing cook, aren't you?"
+    y "It's good! Thank you for the meal."
 
-    "He rubs Unna's hair affectionately."
+    parvy "What kind of food do you eat where you're from?"
 
-    show unna blushing
+    y "We have something similar."
 
-    unna "..."
+    parvy "Are you actually from the capital? Is that where your outfit's from?"
 
+    j "Parvy, all these questions for [y] and none for me, huh? I'm hurt! Don't you wanna know what I've been up to?"
+
+    parvy "I see you all the time!"
+
+    "Jorunn makes an exaggerated motion like he's been struck."
+
+    j "Arugh...[y] you've stolen my sister!"
+
+    unna "Hehe. You know, Parvy is usually pretty shy. I guess she's taken a liking to you!"
+
+    y "Hehe."
+
+    "My outfit must really stand out for Parvy to think I'm from the capital."
+
+    parvy "And what's in your bag, [y]? Do you collect anything?"
+
+    y "My bag?"
+
+    "Now that she mentions it, Prashadi's spell did give me a purse."
+
+    "I haven't really had the time to think about it."
+
+    "Opening it reveals..."
+    show black:
+        alpha 0.35
+    show camera_mermaid at atcamera:
+        zoom 0.18
+    with dissolve
+  
+    parvy "What is it?"
+
+    y shocked "It's...my camera."
+
+    "How is this even possible?"
+
+    "It looks a little different, but the weight of it feels familiar in my hands. It's definitely my camera."
+
+    hide camera_mermaid
+    hide black
+    with dissolve
+    
+    parvy "A camera?"
+
+    y "Well, uh..."
+
+    "They're all staring at me curiously."
+
+    "Would it be okay to tell them? It doesn't look like a normal camera anymore."
+
+    y "It takes pictures. So you can have a physical copy of your memories."
+
+    parvy "How does it work?"
+
+    y "You just point it at what you want to remember, then..."
+
+    menu:
+        "Take a picture of the family.":
+            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            show camera with irisin
+            hide camera with dissolve
+            show black:
+                alpha 0.35
+            show photo_frame at atphoto
+            with dissolve
+
+    parvy "...!"
+
+    "A photo pops out from the top of the camera."
+
+    y shocked "Wow..."
+
+    "It really worked. And the colors don't even bleed."
+
+    "This is incredible! I never thought I'd be taking photos underwater."
+
+    hide photo_frame with dissolve
+
+    "The three siblings are photographed staring curiously into the camera. Parvy looks especially shocked."
+
+    y happy "Here. What do you think?"
+
+    "I hand the photograph to them."
+
+    parvy "That's...that's so cool...!"
+
+    parvy "Unna, look it's us! We're on a tiny square!"
+
+    unna "Wow, how did you do that? Is it a magic item?"
+
+    y "Haha...something like that."
+
+    y "It's for you! Please keep it."
+
+    unna "Thank you! We'll take good care of it."
+
+    unna "And the photo stays with you forever? Incredible..."
+
+    y "A photo lasts forever, you have to keep them safe though, they're precious memories."
+
+    "She does have a point, now that I think about it."
+
+    "You can never really forget about something when it's captured in a photo."
+
+    "I should take more pictures when I can. But for now, I should probably get some sleep."
+
+    "It's hard to believe I'll be back on the surface tomorrow."
+
+    "I fail to stifle a yawn, and all three of the siblings notice it."
+
+    y "Sleepy June is sleepy. Night all."
+
+    j "No problem. We could honestly all call it a night."
+
+    parvy "Aww, bedtime already?"
+
+    unna "I'll clean up here. Parvy, can you set up a bed for Jor in our room?"
+
+    parvy "...Yeah, I guess so."
+
+    j "Chin up, Parvy. If we're all sleeping together I can tell you a story beforehand."
+
+    parvy "Yay!"
+
+    unna "Your room's just down the hall there. Goodnight, [y]!"
+
+    y "Goodnight, everyone."
+
+    "With a smile and a wave, I head off to the room Unna had indicated and swim inside."
+
+    #SCENE CHANGE - Jor's room
+
+    scene bg jorbedroom with fade:
+        fit "contain"
+    "The room is small but comfortable."
+
+    $ speaking_char = "Jorunn"
+
+    #CHOICE
+    menu:
+        y mermaid neutral "What should I do?"
+        "Snoop around the room.":
+            $ snoop = True
+            "My curiousity gets the better of me."
+        
+        "Go to bed.":
+            y "I'm beat ya'll."
+
+    if snoop == True:
+        show jorunn glee with dissolve
+        "Jor sees me in the room and goes rigid for a second, then smiles big at me."
+        j "Just so you know, [y], since we're getting up so early I saved some leftovers for breakfast."
+        j "See ya in the morning!"
+        "He swims out before I can say anything in response."
+        hide jorunn with dissolve
+
+    "I can figure out what to do after some rest."
+    scene bg black with Dissolve(2.0)
+    stop music fadeout 1.0
+    "..."
+
+#(transition here for dream)
+    play music bgm_skyllaCave volume 0.8
+    show bg drowning:
+        fit "contain"
+    with dissolve
+    "..."
+    "There's light above me, but it's drifting further and further away."
+    "..."
+    "I try to reach for it, but my body won't respond."
+    "..."
+    "What's happening to me?"
+
+    menu:
+        "Something.":
+            $ pickedsomething = True
+            "I think I came here to do something..."
+            "But what?"
+        "Someone.":
+            $ pickedsomeone = True
+            "I think I came here with someone..."
+            "But who?"
+
+    "..."
+    "..."
+    "..."
+    "I open my mouth to call out for help, but saltwater floods my lungs."
+    scene bg white with Dissolve(2.0)
+    "No! It can't end like this!{w=1}{nw}"
+    stop music fadeout 2.5
+
+#(transition here)
+    scene bg jorbedroom:
+        fit "contain"
+    play music bgm_capital volume 0.8
+    $ config.side_image_tag = "june"
+    ny mermaid shocked "I sit up in bed with a gasp." with vpunch
+    y "I'm...not drowning."
+    "What was with that dream?"
+    if pickedsomething:
+        "I can't shake the feeling that I was trying to do something important. It all seemed way too real."
+    if pickedsomeone:
+        "I can't shake the feeling that I was with someone important. It felt far too real."
+
+    ny nervous "Could it mean anything?"
+
+    "What if the magic is only temporary? If it starts to fall apart, I'll drown."
+
+    "No. I have to find a way back home before that happens."
 
 
     jump endofdemo
