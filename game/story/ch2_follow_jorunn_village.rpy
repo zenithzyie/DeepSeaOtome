@@ -83,7 +83,11 @@ label ch2_jorunn_village:
 
     "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
 
-    "The structures on them remind me of treehouses. That must be where the mermaids live."
+    if looked_through:
+        "Large plant stalks cover the entire area. I wonder if they’re protecting us from the storm?"
+        "The structures on them remind me of treehouses. That must be where the mermaids live."
+    else:
+        "The structures on the plant stalks remind me of treehouses. That must be where the mermaids live."
 
     ny sad "I wish I could take a picture of it..."
 
@@ -338,14 +342,14 @@ label jorshouse:
 
     parvy "...Hi, Jor."
 
-    j "There she is!" 
+    j "There she is!"
 
     if childrenplaying:
         # Pro mermaid:
         if promermaid >= 1:
-            "I can't help but smile. I've never seen a mermaid so small before." 
+            "I can't help but smile. I've never seen a mermaid so small before."
             "She reminds me of the children I saw in Aquantis."
-    
+
     "The three of them all look so much alike."
 
     menu:
@@ -378,7 +382,7 @@ label jorshouse:
 
     parvy "Guh..."
 
-    j "You must be pretty hungry too, huh, [y]? Let's go get some food, yeah?" 
+    j "You must be pretty hungry too, huh, [y]? Let's go get some food, yeah?"
 
     y happy "That sounds wonderful."
 
@@ -388,7 +392,7 @@ label jorshouse:
 
     "I follow the family upwards towards a platform on top of the homes."
 
-    "Everyone quickly gets to work preparing the fish Jorunn brought back." 
+    "Everyone quickly gets to work preparing the fish Jorunn brought back."
 
     y mermaid neutral "Is there anything I can help with?"
 
@@ -431,64 +435,70 @@ label jorshouse:
         ny happy "What should I add to my bowl?"
         "Leafy Greens":
             $ greens += 1
+            $ addfood += 1
             if greens == 1:
                 "I add some greens to the bowl. If you look at it from here, it kind of looks like lettuce."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
             if greens == 2:
                 "I add more greens to the bowl. My meal is starting to look like a salad."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
             if greens == 3:
                 "I add even more greens to the bowl. Being surrounded by sea plants must have really made me crave some greens."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
-            if greens == 4:
-                ny nervous "Er...I think that's enough leafy greens."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
 
         "Sea Fruit?":
-            $fruit += 1
+            $ fruit += 1
+            $ addfood += 1
             if fruit == 1:
                 "I add some blue fruits to the bowl. I bet they'll taste berry good."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
-            if fruit == 2:    
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
+            if fruit == 2:
                 "I add another fruit to the bowl. These are smooth and yellow. They'll pear nicely with the blue fruits."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
             if fruit == 3:
                 "I add one last kind of fruit to the bowl. My bowl looks grape! Fruitful, even. How very a-peeling."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
-            if fruit == 4:
-                ny nervous "Er...I think that's enough fruit."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                jump fooddone
 
         "Fish":
-            $fish += 1
+            $ fish += 1
+            $ addfood += 1
             if fish == 1:
                 "I add some fish to the bowl. They've been filleted rather neatly."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
             if fish == 2:
                 "I add more fish to the bowl. This meal is starting to look rather fishy."
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                if addfood == 3:
+                    jump fooddone
+                else:
+                    jump makefood
             if fish == 3:
                 "I finish off the bowl with even more fish. I'm still not sure what kind of fish this is. Oh well!"
                 show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
-            if fish == 4:
-                ny nervous "Er...I think that's enough fish."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
-        
-        "I've added enough.":
-            jump fooddone
-    
+                jump fooddone
+
     label fooddone:
 
     #Bowl Outcomes
@@ -499,48 +509,48 @@ label jorshouse:
         "It seems Unna chose the same as me. I guess she isn't much of a picky eater."
 
     #Two leafy greens
-    if greens == 2 and fruit == 0 and fish == 0:
+    if greens == 2:
         "I've made a bowl filled with leafy greens."
-  
+
     #Three leafy greens
-    if greens == 3 and fruit == 0 and fish == 0:
+    if greens == 3:
         "There could not be more green in this meal. This is a salad bowl to end all salad bowls."
         "It seems Jorunn chose the same as me. I wonder if he's a picky eater?"
 
     #Two fruit
-    if greens == 0 and fruit == 2 and fish == 0:
+    if fruit == 2:
         "I've made a bowl filled with fruit."
 
     #Three fruit
-    if greens == 0 and fruit == 3 and fish == 0:
+    if fruit == 3:
         "These fruits are singing a three-part harmony in my mouth!"
 
     #Two fish
-    if greens == 0 and fruit == 0 and fish == 2:
+    if fish == 2:
         "I've made a bowl with lots of fish."
         "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
 
     #Three fish
-    if greens == 0 and fruit == 0 and fish == 3:
+    if fish == 3:
         "The fish fillets are staring at me from inside the bowl."
         "...Why did I add so much fish?"
         show jorunn glee with dissolve
         j "..."
 
     #No fish
-    if greens >=2 or fruit >=2 and fish == 0:
+    if fish == 0:
         if greens > fruit:
             $ jorunn_points += 1
             j "Guess you're a fan of greens, huh?"
         if fruit > greens:
             $ jorunn_points += 1
             j "Guess you're a fan of fruits, huh?"
-    
+
         y "Well...you could say I've had enough fish to last me a lifetime."
 
         j "Hehe, I don't care for fish either."
 
-    
+
     #WRAP MEAL END
     hide text
     "Time passes, and we finish eating."
@@ -548,10 +558,12 @@ label jorshouse:
     y "Thank you for the meal. That was delicious."
 
     j "Right? Unna is such an amazing cook, aren't you?"
-    
+
     "He rubs Unna's hair affectionately."
 
-    unna blushing "..."
+    show unna blushing
+
+    unna "..."
 
 
 

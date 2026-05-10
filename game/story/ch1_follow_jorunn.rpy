@@ -122,6 +122,7 @@ label ch1_followjorunn:
     menu:
         "I'm nested in the merman's hair..."
         "Try to look through.":
+            $ looked_through = True
             $ jorunn_points += 1
             "My curiosity wins over, and I swim forward to try to peer through the hair."
             "As if realizing my intentions, he angles his shoulders to give me a better view."

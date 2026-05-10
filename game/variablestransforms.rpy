@@ -93,7 +93,8 @@ default pr_questions = 0
 default greens = 0
 default fruit = 0
 default fish = 0
-default fooddone = 0
+default looked_through = False
+default addfood = 0
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
