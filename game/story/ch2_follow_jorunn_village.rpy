@@ -440,7 +440,7 @@ label jorshouse:
             if addfood == 0:
                 $ makingfoodtext = "What else?"
             elif addfood == 1:
-                $ makingfoodtext = "Any finally..."
+                $ makingfoodtext = "And finally..."
             $ greens += 1
             $ addfood += 1
             if greens == 1:
@@ -466,7 +466,7 @@ label jorshouse:
             if addfood == 0:
                 $ makingfoodtext = "What else?"
             elif addfood == 1:
-                $ makingfoodtext = "Any finally..."            
+                $ makingfoodtext = "And finally..."            
             $ fruit += 1
             $ addfood += 1
             if fruit == 1:
@@ -491,7 +491,7 @@ label jorshouse:
             if addfood == 0:
                 $ makingfoodtext = "What else?"
             elif addfood == 1:
-                $ makingfoodtext = "Any finally..."
+                $ makingfoodtext = "And finally..."
             $ fish += 1
             $ addfood += 1
             if fish == 1:
@@ -606,7 +606,7 @@ label jorshouse:
     show camera_mermaid at atcamera:
         zoom 0.18
     with dissolve
-  
+
     parvy "What is it?"
 
     y shocked "It's...my camera."
@@ -618,7 +618,7 @@ label jorshouse:
     hide camera_mermaid
     hide black
     with dissolve
-    
+
     parvy "A camera?"
 
     y "Well, uh..."
@@ -721,7 +721,7 @@ label jorshouse:
         "Snoop around the room.":
             $ snoop = True
             "My curiousity gets the better of me."
-        
+
         "Go to bed.":
             y "I'm beat ya'll."
 
