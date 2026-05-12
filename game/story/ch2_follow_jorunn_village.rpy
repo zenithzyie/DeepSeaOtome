@@ -296,11 +296,13 @@ label succeedconvincemoss:
 
 label jorshouse:
 
-    scene bg jorbedroom with fade:
-        fit "contain"
+    show black with dissolve
+    pause 1
+    hide black with dissolve
+
     "We stop at the entrance to one of the homes."
 
-    show jorunn happy at jorunn_center
+    show jorunn happy
     $ speaking_char = "Jorunn"
 
     j mermaid neutral "Well, here we are!"
@@ -308,6 +310,11 @@ label jorshouse:
     u "Jor?"
 
     "A younger mermaid swims up to us from the inside. She looks relieved to see Jorunn."
+
+    show jorunn at jorunn_right with move
+    show thioran at unna_left with dissolve
+
+    $ speaking_char = "Thioran"
 
     u "You're back!"
 
@@ -335,6 +342,8 @@ label jorshouse:
 
     "As if on cue, a small figure swims out of the undergrowth to greet us."
 
+    show parvy at parvy_center with dissolve
+
     parvy "...Hi, Jor."
 
     j "There she is!"
@@ -344,6 +353,8 @@ label jorshouse:
         if promermaid >= antimermaid:
             "I can't help but smile. I've never seen a mermaid so small before."
             "She reminds me of the children I saw in Aquantis."
+
+    $ speaking_char = "all"
 
     "The three of them all look so much alike."
 
@@ -371,11 +382,20 @@ label jorshouse:
 
     y neutral "Oh, well, my name is-"
 
-    parvy "Are you from the capital? Is that the kind of clothes they wear there? I heard they live in houses made from rocks!"
+    show parvy smile with dissolve
+
+    parvy "Are you from the capital?"
+    parvy "Is that the kind of clothes they wear there?"
+    show parvy happy with dissolve
+    parvy "I heard they live in houses made from rocks!"
 
     j "Alright you busybug, let's give our guest some space. She's had a long day."
 
+    show parvy upset with dissolve
+
     parvy "Guh..."
+
+    show parvy neutral with dissolve
 
     j "You must be pretty hungry too, huh, [y]? Let's go get some food, yeah?"
 
@@ -383,18 +403,34 @@ label jorshouse:
 
 
     #SCENE CHANGE - Platform of Home
+
     scene bg jorvillage afternoon:
         align (0.5, 1.0)
-        pos (0.5, 1.64)
+        pos (0.5, 1.0)
         zoom 0.34
     with dissolve
 
-    "I follow the family upwards towards a platform on top of the homes."
+    window auto hide
+    show bg jorvillage afternoon:
+        linear 3 pos (0.5, 1.64) zoom 0.34
+    with Pause(3.10)
+
+    show bg jorvillage afternoon:
+        pos (0.5, 1.64) zoom 0.34
+
+    window auto show
+
+    show jorunn at jorunn_right
+    show thioran at unna_left
+    show parvy at parvy_center
+    with dissolve
+
+    ny mermaid neutral "I follow the family upwards towards a platform on top of the homes."
 
     show jorunn happy with dissolve
     $ speaking_char = "Unna"
 
-    y mermaid neutral "Is there anything I can help with?"
+    y "Is there anything I can help with?"
 
     unna "Ah, don't worry about it, you're our guest! Go ahead and make yourself comfortable, we'll be done soon."
 
@@ -430,9 +466,10 @@ label jorshouse:
 
     ny nervous "Hang on...aren't those the same fish Jorunn stole from the prince?"
 
-    "Oh dear. {w} Well, here goes nothing."
+    "Oh dear."
+    ny neutral "Well, here goes nothing."
 
-    #show text line is for debugging purposes, but might be useful for the player too
+    #show text line is for debugging purposes
     $ makingfoodtext = "What should I add to my bowl?"
     menu makefood:
         ny happy "[ makingfoodtext ]"
@@ -445,21 +482,21 @@ label jorshouse:
             $ addfood += 1
             if greens == 1:
                 "I add some greens to the bowl. If you look at it from here, it kind of looks like lettuce."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if greens == 2:
                 "I add more greens to the bowl. My meal is starting to look like a salad."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if greens == 3:
                 "I add even more greens to the bowl. Being surrounded by sea plants must have really made me crave some greens."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump makefood
 
         "Sea Fruit?":
@@ -471,21 +508,21 @@ label jorshouse:
             $ addfood += 1
             if fruit == 1:
                 "I add some blue fruits to the bowl. I bet they'll taste berry good."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if fruit == 2:
                 "I add another fruit to the bowl. These are smooth and yellow. They'll pear nicely with the blue fruits."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if fruit == 3:
                 "I add one last kind of fruit to the bowl. My bowl looks grape! Fruitful, even. How very a-peeling."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump fooddone
         "Fish":
             if addfood == 0:
@@ -496,21 +533,21 @@ label jorshouse:
             $ addfood += 1
             if fish == 1:
                 "I add some fish to the bowl. They've been filleted rather neatly."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if fish == 2:
                 "I add more fish to the bowl. This meal is starting to look rather fishy."
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 if addfood == 3:
                     jump fooddone
                 else:
                     jump makefood
             if fish == 3:
                 "I finish off the bowl with even more fish. I'm still not sure what kind of fish this is. Oh well!"
-                show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
+                #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
                 jump fooddone
     label fooddone:
 
@@ -596,9 +633,11 @@ label jorshouse:
 
     y "My bag?"
 
-    "Now that she mentions it, Prashadi's spell did give me a purse."
+    ny shocked "Now that she mentions it, Prashadi's spell did give me a purse."
 
-    "I haven't really had the time to think about it."
+    ny neutral "I haven't really had the time to think about it."
+
+    ny happy "Well, let's see!"
 
     "Opening it reveals..."
     show black:
@@ -640,7 +679,7 @@ label jorshouse:
             hide camera with dissolve
             show black:
                 alpha 0.35
-            show photo_frame at atphoto
+            show photo_black at atphoto
             with dissolve
 
     parvy "...!"
@@ -653,7 +692,9 @@ label jorshouse:
 
     "This is incredible! I never thought I'd be taking photos underwater."
 
-    hide photo_frame with dissolve
+    hide photo_black
+    hide black
+    with dissolve
 
     "The three siblings are photographed staring curiously into the camera. Parvy looks especially shocked."
 

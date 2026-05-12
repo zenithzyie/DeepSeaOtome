@@ -36,6 +36,10 @@ define j = Character("Jorunn", image="june", ctc="ctc_pos", ctc_position="fixed"
 define g = Character("Grandfather", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Grandfather", namebox_background=Frame("gui/namebox_grandpa.png", 0, 0))
 define Pr = Character("Prashadi", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Prashadi", namebox_background=Frame("gui/namebox_prashadi.png", 0, 0))
 ######################################################################
+#Secondary Character Names (no nameplate but has sprite)
+define unna = Character("Unna", image="june", ctc="ctc_pos", ctc_position="fixed", callback = name_callback, cb_name="Unna")
+define parvy = Character("Parvy", image="june", ctc="ctc_pos", ctc_position="fixed", callback = name_callback, cb_name="Parvy")
+######################################################################
 #NPC Names
 define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
 define kid = Character("Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -50,8 +54,6 @@ define guard = Character("Guard", image="june", ctc="ctc_pos", ctc_position="fix
 define quietmaid = Character("Quiet Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 define loudmaid = Character("Loud Servant", image="june", ctc="ctc_pos", ctc_position="fixed")
 define moss = Character("Moss", image="june", ctc="ctc_pos", ctc_position="fixed")
-define unna = Character("Unna", image="june", ctc="ctc_pos", ctc_position="fixed")
-define parvy = Character("Parvy", image="june", ctc="ctc_pos", ctc_position="fixed")
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
@@ -162,7 +164,7 @@ define thioran_left = Position(xpos=0.23)
 define thioran_center = Position(xpos=0.45)
 ######################################################################
 layeredimage thioran:
-    at sprite_highlight('Prince Thioran')
+    at sprite_highlight('Thioran')
     group expressions auto:
         attribute frown default
 
@@ -230,7 +232,7 @@ layeredimage side june:
         at june_location
 
     group expressions if_any["mermaid"]:
-        attribute neutral:
+        attribute neutral default:
             "images/sprites/june/expressions/side_june_mermaid_expressions_neutral.png"
         attribute happy:
             "images/sprites/june/expressions/side_june_mermaid_expressions_happy.png"
@@ -239,7 +241,7 @@ layeredimage side june:
         attribute shocked:
             "images/sprites/june/expressions/side_june_mermaid_expressions_shocked.png"
         attribute nervous:
-            "images/sprites/june/expressionsside_june_mermaid_expressions_nervous.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_nervous.png"
         attribute sad:
             "images/sprites/june/expressions/side_june_mermaid_expressions_sad.png"
         attribute flustered:
@@ -254,7 +256,7 @@ layeredimage side june:
             pos (169, 153)
     group closedeyes if_any["mermaid"]:
         attribute closedeyes:
-            "images/sprites/june/expressions/side_june_closedeyes_veryhappy.png"
+            "images/sprites/june/expressions/side_june_mermaid_closedeyes_veryhappy.png"
             zoom 0.12
             pos (169, 153)
     group eyes auto:
@@ -266,7 +268,7 @@ layeredimage side june:
             Null()
         attribute closedeyes:
             Null()
-    group hairbrow if_any["human"]:
+    group hairbrow:
         attribute hairbrow default:
             "images/sprites/june/base/side_june_hairbrow.png"
         at june_location
@@ -368,9 +370,37 @@ layeredimage hunter:
 ## Jorunn Sprite #####################################################
 ######################################################################
 define jorunn_center = Position(xpos=0.47)
+define jorunn_right = Position(xpos=0.65)
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
+    attribute base default
+
+    group expressions auto:
+        attribute neutral default
+
+    zoom 0.133
+    ypos 804
+######################################################################
+## Unna Sprite #######################################################
+######################################################################
+define unna_left = Position(xpos=0.25)
+######################################################################
+layeredimage unna:
+    at sprite_highlight('Unna')
+    attribute base default
+
+    group expressions auto:
+        attribute neutral default
+
+######################################################################
+## Parvy Sprite ######################################################
+######################################################################
+define parvy_left = Position(xpos=0.13)
+define parvy_center = Position(xpos=0.47)
+######################################################################
+layeredimage parvy:
+    at sprite_highlight('Parvy')
     attribute base default
 
     group expressions auto:
