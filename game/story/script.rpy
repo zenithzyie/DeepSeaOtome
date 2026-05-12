@@ -1400,7 +1400,7 @@ label timeskip1:
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
     show thioran angry at thioran_left
-    show jorunn sweat at right2
+    show jorunn hesistant at right2
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
@@ -1411,10 +1411,6 @@ label timeskip1:
     "Curiosity piqued, I push a bit further through the foliage to get a better look."
 
     hide kelp with dissolve
-
-#    show thioran angry at thioran_left
-#    show jorunn sweat at right2
-#    with dissolve
 
     $ speaking_char = "all"
     "A pair of mermaids are staring each other down."
@@ -1433,7 +1429,7 @@ label timeskip1:
     up "You thieving little-"
 
     show thioran shocked at jumpin2
-    show jorunn sweat at jumpin
+    show jorunn nervous at jumpin
     with vpunch
 
     "Just then, a loud rumble echoes throughout the area."

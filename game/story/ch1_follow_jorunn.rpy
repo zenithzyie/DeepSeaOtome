@@ -52,12 +52,12 @@ label ch1_followjorunn:
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster, I push my way through the current."
 
-    show jorunn glee:
+    show jorunn happy:
         subpixel True
         pos (0.66, 1080) zoom 1.0
         linear 0.39 pos (0.45, 1914) zoom 2.0
     with Pause(0.39)
-    show jorunn glee:
+    show jorunn happy:
         pos (0.45, 1914) zoom 2.0
 
     "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
@@ -65,7 +65,7 @@ label ch1_followjorunn:
     uj "Huh?"
     y "Blub!!"
     "A deft hand snatches me up."
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     uj "Oh, well this is new! Never had a fish come up to my net before."
     y "{i}Blub blub blub!!{/i}" with screenShake
     "Wait, hang on now! Please don't eat me!"
@@ -82,12 +82,12 @@ label ch1_followjorunn:
     "The shard he is holding suddenly crumbles to pieces."
     uj "Weird. This thing stinks of magic."
 
-    #show jorunn glee:
+    #show jorunn happy:
         #subpixel True
         #pos (0.45, 1914) zoom 2.0
         #linear 0.30 pos (0.45, 2592) zoom 2.75
     #with Pause(0.30)
-    #show jorunn glee:
+    #show jorunn happy:
         #subpixel True ypos 2592 zoom 2.75
 
     uj "Now that I think about it..."
@@ -98,12 +98,12 @@ label ch1_followjorunn:
     "A rumble echoes through the water as the currents become stronger." with screenShake
     "It feels like the sea storm is picking up even more!"
 
-    #show jorunn glee:
+    #show jorunn happy:
         #subpixel True
         #pos (0.45, 2592) zoom 2.75
         #linear 0.32 pos (0.5, 1080) zoom 1.0
     #with Pause(0.32)
-    #show jorunn glee:
+    #show jorunn happy:
         #pos (0.5, 1080) zoom 1.0
 
     uj "First thing's first, we'd better get out of here."
@@ -128,7 +128,7 @@ label ch1_followjorunn:
             "As if realizing my intentions, he angles his shoulders to give me a better view."
             "The foliage is thick here, tall plants towering over the both of us like massive trees."
             "With the storm muffled by the cover of the kelp forest, the swim almost feels...{w} peaceful."
-            show jorunn glee with dissolve
+            show jorunn happy with dissolve
             uj "It's pretty way out here, don't you think?"
             y "Blub!"
             "I really wish I could take a picture of the ocean."
@@ -141,7 +141,7 @@ label ch1_followjorunn:
             "If it bothers the merman he doesn't say anything about it."
             "..."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
     "Jorunn...such strange names mermaids have."
     j "But you can call me Jor. That's what everyone else calls me too."
@@ -155,7 +155,7 @@ label ch1_followjorunn:
     j "And you look like magic stuff."
     "Miss Prash...?"
     "Is it possible? Is there another mermaid out there that can turn me human again?"
-    show jorunn sweat with dissolve
+    show jorunn hesitant with dissolve
     j "Or, uh, unless I'm losing it, and you're just a normal fish."
     j "I hope I'm not just talking to myself right now..."
     show jorunn neutral with dissolve
@@ -170,7 +170,7 @@ label ch1_followjorunn:
 
 #SCENE CHANGE? - Kelp Forest
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "Almost there, little fishie! I hope you've been enjoying the ride so far."
     show jorunn neutral with dissolve
     "With that, he takes us into a cave, leaving the kelp forest behind."
@@ -219,12 +219,12 @@ label ch1_followjorunn:
     $ config.side_image_tag = "june"
     ny neutral fish "Are those...stars above us?"
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "Miss Prash! Are you in here?"
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
     "The sky? How is this even possible? Does that mean there's air above us too?"
     "But we definitely swam deeper to get here."
-    show jorunn sweat with dissolve
+    show jorunn hesitant with dissolve
     j "Hello? Miss Prash?"
     j "..."
     j "Prashadi!!" with vpunch
@@ -232,7 +232,7 @@ label ch1_followjorunn:
     "I'm not sure what to expect."
     "The mermaids in the Deep Market had long hair and shiny scales."
     "Maybe she will be similar to them?"
-    show jorunn glee at right2 with move
+    show jorunn happy at right2 with move
     u "Is that Jorunn I hear?"
     "The voice sounds heart-wrenchingly familiar."
     "A figure swims into view from the darker recesses of the cave."
@@ -247,8 +247,8 @@ label ch1_followjorunn:
     with fade
     "Grandfather!?"
 
-    u "Now here's a face you don't see very often!"
-    u "What brings you all the way down here, boy?"
+    gpa "Now here's a face you don't see very often!"
+    gpa "What brings you all the way down here, boy?"
     j "Did you miss me? I found something I think you'd like to see."
     j "Take a look, Miss Prash!"
 
@@ -276,7 +276,7 @@ label ch1_followjorunn:
     Pr "It appears she's been cursed as well."
     j "She's no normal fish, is she?"
     Pr "Precisely. This one is a human!"
-    show jorunn sweat with dissolve
+    show jorunn hesitant with dissolve
     j "What...?"
     Pr "Your little friend here used to have legs. And a voice. Possibly even hair."
     Pr "A real human, she was."
@@ -313,7 +313,5 @@ label ch1_followjorunn:
     "All I can hear is the water lapping around my body."
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
-
-#    jump endofdemo
 
     call ch2_follow_jorunn

@@ -2,6 +2,7 @@ label ch2_follow_jorunn:
 ##This is the beginning of the Prashadi Cave continuation, after June is transformed into a mermaid.
 
 #SCENE CHANGE - FADE INTO MERMAID CG
+    $ merjune = True
 
     show cg_mermaidprashadi:
         align (0.5, 1.0)
@@ -54,7 +55,7 @@ label ch2_follow_jorunn:
     show jorunn flustered at right2 with dissolve
     ny nervous "Joruun stares at me in surprise."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     "But when our eyes meet, he quickly schools his expression back into a smile."
 
     j "It's a good thing I brought you here. To think I almost turned such a pretty girl into dinner!"
@@ -148,7 +149,7 @@ label ch2_follow_jorunn:
 
     Pr "Now, boy..."
 
-    show jorunn sweat with dissolve
+    show jorunn hesitant with dissolve
     j "This siren who cursed [y]...she must be the same one who's causing all these storms here, isn't she?"
 
     Pr "It's likely, yes."
@@ -213,7 +214,7 @@ label ch2_follow_jorunn:
     show prashadi angry with dissolve
     Pr "But I will not be responsible for your deaths, you hear?"
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "Course not. I'm not planning on dying anytime soon."
 
     y happy "Thank you, Prashadi!"
@@ -247,7 +248,7 @@ label ch2_follow_jorunn:
             Pr "As scattered as they are, I can point you in the right direction."
             y "And after that? How will I know when I've found one?"
             Pr "That is where you're fortunate Jorunn has offered his help."
-            show jorunn glee with dissolve
+            show jorunn happy with dissolve
             "Jorunn gives me a confident smile."
             j "I've got a good eye for magic!"
             y "Oh! I'll be grateful for your help, then."
@@ -287,7 +288,7 @@ label ch2_follow_jorunn:
 
     y shocked "Pardon?"
 
-    show jorunn sweat with dissolve
+    show jorunn hesitant with dissolve
     j "Land? You want us to find a relic up there?"
 
     Pr "Yes, I will grant you the means to do so."
@@ -306,7 +307,7 @@ label ch2_follow_jorunn:
 
     "Perhaps I could find a way to leave them a letter? Just to let them know I'm alive..."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "...Well, I can't say I've been up on land before. I guess I'll be in your care, [y]!"
 
     y happy "Yes, of course."
@@ -332,7 +333,7 @@ label ch2_follow_jorunn:
     j "So, how will the illusion work? Are you going to cast the spell on us now?"
 
     show prashadi neutral with dissolve
-    Pr "...It has been a very long time since I've last done this." 
+    Pr "...It has been a very long time since I've last done this."
 
     "A gentle coolness passes over me as Prashadi casts their spell."
 
@@ -349,7 +350,7 @@ label ch2_follow_jorunn:
 
     ny "Would either of them let me spend the night? I wouldn't want to impose any more than I already have."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     "Jorunn seems to catch my eye."
 
     j "Why don't you stay over at my village for the night, [y]?"
@@ -397,9 +398,6 @@ label ch2_follow_jorunn:
     y happy "We'll be careful!"
 
     "Prashadi's warning echoes in my mind as I exit the cave with Jorunn."
-
-    hide jorunn with dissolve
-    hide prashadi with dissolve
 
     #BLACK SCENE
     scene bg black with fade

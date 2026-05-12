@@ -6,7 +6,7 @@ label ch2_jorunn_village:
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
 
     $ speaking_char = "Jorunn"
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
 
     #hand check
     if takehand == True:
@@ -18,13 +18,13 @@ label ch2_jorunn_village:
 
     y nervous "I need to be careful. They can't know I'm human."
 
-    #Anti mermaid:
-    if antimermaid >= 1:
-        "Who knows what they could do to me?"
-
     # Pro mermaid:
-    if promermaid >= 1:
+    if promermaid >= antimermaid:
         "I don't think they'd be too happy about that."
+
+    #Anti mermaid:
+    if antimermaid > promermaid:
+        "Who knows what they could do to me?"
 
     j "How about this - we could say you're a traveling trader! They used to come by pretty often before the storms got worse."
 
@@ -63,7 +63,7 @@ label ch2_jorunn_village:
     window auto show
 
     $ speaking_char = "Jorunn"
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
 
     j mermaid neutral "Here we are! Welcome to our village."
 
@@ -83,7 +83,7 @@ label ch2_jorunn_village:
 
     "One of the villagers near the entrance swims up to us."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "Hey, mossyhead! It's good to see you. I'm back!"
 
     moss "Ugh. I told you not to call me that."
@@ -245,14 +245,14 @@ label failedconvincemoss:
     #AFTER SUCCESSFUL CONVO (FINALLY)
 label succeedconvincemoss:
     moss "Whatever. Just don't cause any trouble."
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     j "Yep! Thanks, Mossy!"
     ny happy "I can't believe that worked."
     "Following Jorunn's lead, we swim further into the village."
 
     # picked Jor's suggestion (Trader)
     if traderpick:
-        show jorunn glee with dissolve
+        show jorunn happy with dissolve
         j "Hehe. Nice job, [y]. You've got a knack for this kind of stuff, huh?"
         menu:
             "\"Well, I couldn't have done it without your advice.\"":
@@ -267,7 +267,7 @@ label succeedconvincemoss:
 
     # pass Amnesia check
     if amnesiapick:
-        show jorunn glee with dissolve
+        show jorunn happy with dissolve
         j "Well, that's not exactly what I had in mind, but it worked out pretty well!"
         y "Thank you for backing me up, Jorunn."
         j "Sure thing!"
@@ -276,7 +276,7 @@ label succeedconvincemoss:
 
     #pass Kansas check
     if kansaspick:
-        show jorunn glee with dissolve
+        show jorunn happy with dissolve
         j "Well, that's not exactly what I had in mind, but it worked out pretty well!"
         y happy "Thank you for backing me up, Jorunn."
         j "Sure thing!"
@@ -300,7 +300,7 @@ label jorshouse:
         fit "contain"
     "We stop at the entrance to one of the homes."
 
-    show jorunn glee at jorunn_center
+    show jorunn happy at jorunn_center
     $ speaking_char = "Jorunn"
 
     j mermaid neutral "Well, here we are!"
@@ -341,7 +341,7 @@ label jorshouse:
 
     if childrenplaying:
         # Pro mermaid:
-        if promermaid >= 1:
+        if promermaid >= antimermaid:
             "I can't help but smile. I've never seen a mermaid so small before."
             "She reminds me of the children I saw in Aquantis."
 
@@ -391,7 +391,7 @@ label jorshouse:
 
     "I follow the family upwards towards a platform on top of the homes."
 
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     $ speaking_char = "Unna"
 
     y mermaid neutral "Is there anything I can help with?"
@@ -405,11 +405,11 @@ label jorshouse:
     "..."
 
     # Pro mermaid:
-    if promermaid >= 1:
+    if promermaid >= antimermaid:
         "Did the mermaids in the underground market have families like this? Did they eat like this too?"
 
     #Anti mermaid:
-    if antimermaid >= 1:
+    if antimermaid > promermaid:
         "It's curious to see mermaids acting like this. It makes them feel so...human."
 
     "..."
@@ -466,7 +466,7 @@ label jorshouse:
             if addfood == 0:
                 $ makingfoodtext = "What else?"
             elif addfood == 1:
-                $ makingfoodtext = "And finally..."            
+                $ makingfoodtext = "And finally..."
             $ fruit += 1
             $ addfood += 1
             if fruit == 1:
@@ -547,7 +547,7 @@ label jorshouse:
     if fish == 3:
         "The fish fillets are staring at me from inside the bowl."
         "...Why did I add so much fish?"
-        show jorunn glee with dissolve
+        show jorunn happy with dissolve
         j "..."
 
     #No fish
@@ -726,7 +726,7 @@ label jorshouse:
             y "I'm beat ya'll."
 
     if snoop == True:
-        show jorunn glee with dissolve
+        show jorunn happy with dissolve
         "Jor sees me in the room and goes rigid for a second, then smiles big at me."
         j "Just so you know, [y], since we're getting up so early I saved some leftovers for breakfast."
         j "See ya in the morning!"

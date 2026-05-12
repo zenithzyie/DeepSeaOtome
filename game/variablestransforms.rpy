@@ -72,6 +72,7 @@ default seastorm = False
 default promermaid = 0
 default antimermaid = 0
 default knocking = 0
+default merjune = False
 default hairpin = False
 default coinpurse = False
 default letter = False
@@ -162,27 +163,17 @@ define thioran_center = Position(xpos=0.45)
 ######################################################################
 layeredimage thioran:
     at sprite_highlight('Prince Thioran')
-    group expressions:
-        attribute angry:
-            "images/sprites/thioran/expressions/thioran_angry.png"
-        attribute blush:
-            "images/sprites/thioran/expressions/thioran_blush.png"
-#        attribute neutral:
-#            "images/sprites/thioran/expressions/thioran_neutral.png"
-        attribute frown:
-            "images/sprites/thioran/expressions/thioran_frown.png"
-        attribute soft:
-            "images/sprites/thioran/expressions/thioran_soft.png"
-        attribute shocked:
-            "images/sprites/thioran/expressions/thioran_shocked.png"
+    group expressions auto:
+        attribute frown default
+
     group closedeyes:
         attribute closedeyes:
-            "images/sprites/thioran/expressions/thioran_blink.png"
+            "images/sprites/thioran/expressions/thioran_expressions_blink.png"
     zoom 0.27
     ypos 730
     group eyes auto:
         attribute blinking default:
-            "images/sprites/thioran/expressions/thioran_blink.png" at blink
+            "images/sprites/thioran/expressions/thioran_expressions_blink.png" at blink
         attribute closedeyes:
             Null()
 ######################################################################
@@ -190,17 +181,13 @@ layeredimage thioran:
 ######################################################################
 layeredimage grandpa:
     at sprite_highlight('Grandfather')
-    group expressions:
-        attribute happy:
-            "images/sprites/grandpa/expressions/grandpa_happy.png"
-        attribute shocked:
-            "images/sprites/grandpa/expressions/grandpa_shocked.png"
-        attribute neutral:
-            "images/sprites/grandpa/expressions/grandpa_neutral.png"
+    group expressions auto:
+        attribute neutral default
+
     zoom 0.124
     group eyes auto:
         attribute blinking default:
-            "images/sprites/grandpa/expressions/grandpa_blink.png" at blink
+            "images/sprites/grandpa/expressions/grandpa_expressions_blink.png" at blink
 ######################################################################
 ##June - Mermaid and Human Sprites ###################################
 ##The expressions automatically swap to mermaid w/ body mermaid ######
@@ -216,61 +203,63 @@ layeredimage side june:
             fit "contain"
             xsize 320
             pos (157, 130)
-    group body:
-        attribute human default:
+    group base:
+        attribute base default:
             "images/sprites/june/base/side_june_base.png"
         attribute mermaid:
-            "images/sprites/june/base/side_merjune_base.png"
+            "images/sprites/june/base/side_june_mermaid_base.png"
         at june_location
-    group expressions if_any["human"]:
-        attribute neutral:
-            "images/sprites/june/expressions/side_june_neutral.png"
+
+    group expressions:
+        attribute neutral default:
+            "images/sprites/june/expressions/side_june_expressions_neutral.png"
         attribute happy:
-            "images/sprites/june/expressions/side_june_happy.png"
+            "images/sprites/june/expressions/side_june_expressions_happy.png"
         attribute frustrated:
-            "images/sprites/june/expressions/side_june_frustrated.png"
+            "images/sprites/june/expressions/side_june_expressions_frustrated.png"
         attribute shocked:
-            "images/sprites/june/expressions/side_june_shocked.png"
+            "images/sprites/june/expressions/side_june_expressions_shocked.png"
         attribute nervous:
-            "images/sprites/june/expressions/side_june_nervous.png"
+            "images/sprites/june/expressions/side_june_expressions_nervous.png"
         attribute sad:
-            "images/sprites/june/expressions/side_june_sad.png"
+            "images/sprites/june/expressions/side_june_expressions_sad.png"
         attribute flustered:
-            "images/sprites/june/expressions/side_june_flustered.png"
+            "images/sprites/june/expressions/side_june_expressions_flustered.png"
         attribute veryhappy:
-            "images/sprites/june/expressions/side_june_veryhappy.png"
+            "images/sprites/june/expressions/side_june_expressions_veryhappy.png"
         at june_location
+
     group expressions if_any["mermaid"]:
         attribute neutral:
-            "images/sprites/june/expressions/side_merjune_neutral.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_neutral.png"
         attribute happy:
-            "images/sprites/june/expressions/side_merjune_happy.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_happy.png"
         attribute frustrated:
-            "images/sprites/june/expressions/side_merjune_frustrated.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_frustrated.png"
         attribute shocked:
-            "images/sprites/june/expressions/side_merjune_shocked.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_shocked.png"
         attribute nervous:
-            "images/sprites/june/expressions/side_merjune_nervous.png"
+            "images/sprites/june/expressionsside_june_mermaid_expressions_nervous.png"
         attribute sad:
-            "images/sprites/june/expressions/side_merjune_sad.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_sad.png"
         attribute flustered:
-            "images/sprites/june/expressions/side_merjune_flustered.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_flustered.png"
         attribute veryhappy:
-            "images/sprites/june/expressions/side_merjune_veryhappy.png"
+            "images/sprites/june/expressions/side_june_mermaid_expressions_veryhappy.png"
         at june_location
-    group closedeyes if_any["human"]:
+    group closedeyes:
         attribute closedeyes:
-            "images/sprites/june/expressions/side_june_blink.png"
+            "images/sprites/june/expressions/side_june_closedeyes_veryhappy.png"
             zoom 0.12
             pos (169, 153)
     group closedeyes if_any["mermaid"]:
         attribute closedeyes:
-            "images/sprites/june/expressions/side_merjune_blink.png"
+            "images/sprites/june/expressions/side_june_closedeyes_veryhappy.png"
             zoom 0.12
             pos (169, 153)
     group eyes auto:
         attribute blinking default:
-            "images/sprites/june/expressions/side_june_blink.png" at blink
+            "images/sprites/june/expressions/side_june_expressions_blink.png" at blink
             zoom 0.12
             pos (169, 153)
         attribute veryhappy:
@@ -283,7 +272,7 @@ layeredimage side june:
         at june_location
     group hairbrow if_any["mermaid"]:
         attribute hairbrow default:
-            "images/sprites/june/base/side_merjune_hairbrow.png"
+            "images/sprites/june/base/side_june_mermaid_hairbrow.png"
         at june_location
     group frontborder:
         attribute frontborder default:
@@ -306,60 +295,29 @@ layeredimage side june fish:
 ######################################################################
 layeredimage skylla:
     at sprite_highlight('Skylla')
-    group expressions:
-        attribute neutral:
-            "images/sprites/skylla/expressions/skylla_neutral.png"
-        attribute angry:
-            "images/sprites/skylla/expressions/skylla_angry.png"
-        attribute angryteeth:
-            "images/sprites/skylla/expressions/skylla_angryteeth.png"
-        attribute flustered:
-            "images/sprites/skylla/expressions/skylla_flustered.png"
-        attribute happy:
-            "images/sprites/skylla/expressions/skylla_happy.png"
-        attribute nervous:
-            "images/sprites/skylla/expressions/skylla_nervous.png"
-        attribute sad:
-            "images/sprites/skylla/expressions/skylla_sad.png"
-        attribute shocked:
-            "images/sprites/skylla/expressions/skylla_shocked.png"
+    group expressions auto:
+        attribute neutral default
+
     zoom 0.29
     ypos 780
     group eyes auto:
         attribute blinking default:
-            "images/sprites/skylla/expressions/skylla_blink.png" at blink
+            "images/sprites/skylla/expressions/skylla_expressions_blink.png" at blink
 ######################################################################
 ## Prashadi Sprite ###################################################
 ######################################################################
 layeredimage prashadi:
     at sprite_highlight('Prashadi')
-    group expressions:
-        attribute neutral:
-            "images/sprites/prashadi/expressions/prashgrandpa_neutral.png"
-            fit "contain"
-            xysize (1100,1100)
-        attribute angry:
-            "images/sprites/prashadi/expressions/prashgrandpa_angry.png"
-            fit "contain"
-            xysize (1100,1100)
-        attribute happy:
-            "images/sprites/prashadi/expressions/prashgrandpa_happy.png"
-            fit "contain"
-            xysize (1100,1100)
-        attribute nervous:
-            "images/sprites/pr`ashadi/expressions/prashgrandpa_nervous.png"
-            fit "contain"
-            xysize (1100,1100)
-        attribute shocked:
-            "images/sprites/prashadi/expressions/prashgrandpa_shocked.png"
-            fit "contain"
-            xysize (1100,1100)
+    group expressions auto:
+        attribute neutral default
+        fit "contain"
+        xysize (1250,1250)
     group eyes auto:
         attribute blinking default:
-            "images/sprites/prashadi/expressions/prashgrandpa_blink.png" at blink
+            "images/sprites/prashadi/expressions/prashadi_expressions_blink.png" at blink
             fit "contain"
-            xysize (1100,1100)
-    ypos 1190
+            xysize (1250,1250)
+    ypos 1300
 ######################################################################
 ##Cetus Sprite #######################################################
 ######################################################################
@@ -368,30 +326,19 @@ define cetus_center = Position(xpos=0.29)
 ######################################################################
 layeredimage cetus:
     at sprite_highlight('Cetus')
-    group body:
-        attribute body default:
-            "images/sprites/cetus/base/cetus_base.png"
-    group expressions:
-        attribute neutral:
-            "images/sprites/cetus/expressions/cetus_neutral.png"
-        attribute shocked:
-            "images/sprites/cetus/expressions/cetus_shocked.png"
-        attribute smirk:
-            "images/sprites/cetus/expressions/cetus_smirk.png"
-        attribute displeased:
-            "images/sprites/cetus/expressions/cetus_displeased.png"
-        attribute smile:
-            "images/sprites/cetus/expressions/cetus_smile.png"
-        attribute bittersmile:
-            "images/sprites/cetus/expressions/cetus_bittersmile.png"
+    attribute base default
+
+    group expressions auto:
+        attribute neutral default
+
     group closedeyes:
         attribute closedeyes:
-            "images/sprites/cetus/expressions/cetus_blink.png"
+            "images/sprites/cetus/expressions/cetus_expressions_blink.png"
     zoom 0.16
     ypos 60
     group eyes auto:
         attribute blinking default:
-            "images/sprites/cetus/expressions/cetus_blink.png" at blink
+            "images/sprites/cetus/expressions/cetus_expressions_blink.png" at blink
         attribute closedeyes:
             Null()
 ######################################################################
@@ -401,33 +348,15 @@ define hunter_center = Position(xpos=0.53)
 ######################################################################
 layeredimage hunter:
     at sprite_highlight('Hunter')
-    group body:
-        attribute body default:
-            "images/sprites/hunter/base/hunter_base.png"
-    group expressions:
-        attribute neutral:
-            "images/sprites/hunter/expressions/hunter_neutral.png"
-        attribute angry:
-            "images/sprites/hunter/expressions/hunter_angry.png"
-        attribute raisedeyebrow:
-            "images/sprites/hunter/expressions/hunter_eyebrowraise.png"
-        attribute flustered:
-            "images/sprites/hunter/expressions/hunter_flustered.png"
-        attribute happy:
-            "images/sprites/hunter/expressions/hunter_happy.png"
-        attribute nervous:
-            "images/sprites/hunter/expressions/hunter_nervous.png"
-        attribute sad:
-            "images/sprites/hunter/expressions/hunter_sad.png"
-        attribute shocked:
-            "images/sprites/hunter/expressions/hunter_shocked.png"
-        attribute warmsmile:
-            "images/sprites/hunter/expressions/hunter_warmsmile.png"
-        attribute 2:
-            "images/sprites/hunter/expressions/hunter_neutral.png"
+    attribute base default
+
+    group expressions auto:
+        attribute neutral default
+
     group coverings:
         attribute facemask:
             "images/sprites/hunter/accessories/hunter_mask.png"
+
     group eyes auto:
         attribute blinking default:
             "images/sprites/hunter/expressions/hunter_blink.png" at blink
@@ -442,21 +371,13 @@ define jorunn_center = Position(xpos=0.47)
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
-    group expressions:
-        attribute pissed:
-            "images/sprites/jorunn/expressions/jorunn_pissed.png"
-        attribute flustered:
-            "images/sprites/jorunn/expressions/jorunn_flustered.png"
-        attribute neutral:
-            "images/sprites/jorunn/expressions/jorunn_neutral.png"
-        attribute glee:
-            "images/sprites/jorunn/expressions/jorunn_glee.png"
-        attribute sweat:
-            "images/sprites/jorunn/expressions/jorunn_sweat.png"
-        attribute shocked:
-            "images/sprites/jorunn/expressions/jorunn_shocked.png"
-    zoom 0.34
-    ypos 1080
+    attribute base default
+
+    group expressions auto:
+        attribute neutral default
+
+    zoom 0.133
+    ypos 804
 ######################################################################
 init python:
     config.side_image_tag = "june"

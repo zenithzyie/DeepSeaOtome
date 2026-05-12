@@ -3,6 +3,8 @@ label ch2_followthio:
 
 #SCENE CHANGE - FADE INTO MERMAID CG
 
+    $ merjune = True
+
     show cg_mermaidcetus:
         align (0.5, 1.0)
         pos (0.5, 1.26)
