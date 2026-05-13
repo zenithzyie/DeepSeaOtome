@@ -150,17 +150,17 @@ define followthief = Achievement(
     hide_name=True,
     hide_description=True,
 )
-#define datingspeedrun = Achievement(
+define datingspeedrun = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
-#    name=_("THE FASTEST DATING SIM"),
-#    id="follow-thief",
+    name=_("THE FASTEST DATING SIM"),
+    id="datingspeedrun",
     ## Description.
-#    description=_("Jorunn had to cover for you."),
-#    unlocked_image="gui/ach/chibi_jor.png",
-#    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
-#    hide_name=False,
-#    hide_description=False,
-#)
+    description=_("Jorunn had to cover for you."),
+    unlocked_image="gui/ach/chibi_jor.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
+    hide_name=True,
+    hide_description=True,
+)
 define finished_demo_thio = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
     name=_("Part Of Your World"),

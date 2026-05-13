@@ -206,6 +206,7 @@ label ch2_jorunn_village:
     # JOR FAIL SAVE
 
 label failedconvincemoss:
+
     show jorunn neutral with dissolve
     j "Okay, fine. You're right. That isn't why she's here."
     j "The real reason is..."
@@ -226,6 +227,7 @@ label failedconvincemoss:
     "But...isn't he supposed to be watching the gate?"
     "..."
     show jorunn neutral with dissolve
+    $ datingspeedrun.grant()
     "Following Jorunn's lead, we swim further into the village."
     j "Whew. Guess you're the type who likes to do things her own way, huh?"
 
@@ -296,11 +298,10 @@ label succeedconvincemoss:
     #SCENE CHANGE - Jorunn's House
 
 label jorshouse:
-    scene bg jorvillage afternoon:
+    scene bg jorvillage afternoon with fade:
         align (0.5, 1.0)
         pos (0.5, 1.0)
         zoom 0.34
-    with dissolve
 
     "We stop at the entrance to one of the homes."
 
@@ -622,13 +623,13 @@ label jorshouse:
 
     show jorunn shocked with dissolve
 
-    j "Arugh...[y] you've stolen my sister!"
+    j "Arugh...[y], you've stolen my sister!"
 
     y "Hehe."
 
     unna "You know, Parvy is usually pretty shy. I guess she's taken a liking to you!"
 
-    "My outfit must really stand out for Parvy to think I'm from the capital."
+    "My outfit must really stand out...I wonder how far the capital is from the village."
 
     parvy "And what's in your bag, [y]? Do you collect anything?"
 
@@ -707,13 +708,13 @@ label jorshouse:
 
     parvy "That's...that's so cool!"
 
-    parvy "Unna, look it's us! We're on a tiny square!"
+    parvy "Unna, look it's us! We're on a little square!"
 
     unna "Wow, how did you do that? Is it a magic item?"
 
     y "Haha...something like that."
 
-    y "The ‘tiny square’ is called a photograph. It’s for you! Please keep it."
+    y "The ‘little square’ is called a photograph. It’s for you! Please keep it."
 
     unna "Thank you! We'll take good care of it."
 
@@ -764,7 +765,7 @@ label jorshouse:
 
     j mermaid neutral "It’s just in here."
 
-    "The room is small but comfortable."
+    "Jorunn's room is small but comfortable."
 
     $ speaking_char = "Jorunn"
 
@@ -780,6 +781,7 @@ label jorshouse:
             y "That’s true. Thank you, Jorunn."
 
         "\"Thank you.\"":
+            y "I appreciate you letting me stay here."
             pass
 
     j "Course! Least I can do for my partner in crime."
@@ -818,40 +820,48 @@ label jorshouse:
             y "I’d better put this back..."
 
 
-    "I can figure out what to do after some rest."
+    "I can feel my eyes start to grow heavy. I guess everything is finally catching up to me."
+    "Time to get some rest."
     scene bg black with Dissolve(2.0)
     stop music fadeout 1.0
     "..."
 
 #(transition here for dream)
     play music bgm_skyllaCave volume 0.8
-    show bg drowning:
+    scene bg underground market:
         fit "contain"
+    show black:
+        alpha 0.7
     with dissolve
     "..."
-    "There's light above me, but it's drifting further and further away."
+    "I’m at that mysterious market again."
     "..."
-    "I try to reach for it, but my body won't respond."
+    "It feels like something is drawing me in."
     "..."
-    "What's happening to me?"
+    "Where do I go?"
 
     menu:
-        "Something.":
-            $ pickedsomething = True
-            "I think I came here to do something..."
+        "Forward.":
+            $ pickedforward = True
+            "There’s something I need to do here, something very important."
             "But what?"
-        "Someone.":
-            $ pickedsomeone = True
-            "I think I came here with someone..."
+        "Back.":
+            $ pickedback = True
+            "I need to go back...there’s someone waiting for me."
             "But who?"
 
     "..."
     "..."
     "..."
-    "I open my mouth to call out for help, but saltwater floods my lungs."
-    scene bg white with Dissolve(2.0)
-    "No! It can't end like this!{w=1}{nw}"
+    "Something is urging me to move faster."
+    "But my legs feel like lead. I’m slowing down."
+
+    scene bg black with Dissolve(2.0)
+    "No! I need to keep going!{w=1}{nw}"
     stop music fadeout 2.5
+    "..."
+    j "...!"
+    j "[y]...!"
 
 #(transition here)
     scene bg jorbedroom:
@@ -859,18 +869,22 @@ label jorshouse:
     play music bgm_capital volume 0.8
     $ config.side_image_tag = "june"
     ny mermaid shocked "I sit up in bed with a gasp." with vpunch
-    y "I'm...not drowning."
-    "What was with that dream?"
-    if pickedsomething:
-        "I can't shake the feeling that I was trying to do something important. It all seemed way too real."
-    if pickedsomeone:
-        "I can't shake the feeling that I was with someone important. It felt far too real."
 
-    ny nervous "Could it mean anything?"
+    show jorunn happy at jorunn_center with dissolve
+    j "Good morning!"
 
-    "What if the magic is only temporary? If it starts to fall apart, I'll drown."
+    y "Ah…Jorunn? Hello."
 
-    "No. I have to find a way back home before that happens."
+    "I’m still in Jorunn’s room...I must’ve been dreaming."
 
+    j "You okay? You were talking in your sleep just now."
+
+    y "Oh, was I? Sorry. I think I was having a strange dream."
+
+    j "Well, with everything that’s happening it’d be weirder if they were normal."
+
+    j "You ready for our big day?"
+
+    "Right. It’s time to head ashore with Jorunn. I hope Prashadi keeps their word."
 
     jump endofdemo

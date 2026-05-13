@@ -267,21 +267,15 @@ label ch1_followjorunn:
     j "Why would anyone cast a spell like that?"
     Pr "Why don't we find out?"
 
-    "A spearkling mist begins to roll in and fill the cavern."
+    "A sparkling mist begins to roll in and fill the cavern."
+    show mist:
+        zoom 0.2667
+    with dissolve
     "The water starts to feel heavy, like it's clinging to my fins as he begins."
     "His hands wave like they're weaving something together from the water around us."
     "It's an entirely foreign movement to me."
     "This merman cannot possibly be Grandfather."
-    show mist:
-        zoom 0.2667
-    with dissolve
-    "A strange, sparkling mist begins to envelop me."
-    "My fins start to itch and tingle. I begin writhing in the thickening water with discomfort, bubbles spurting all around."
-    "Before I can decide if the mist is safe, it gently carries me upward."
-    "I'm being pulled towards the surface of the water."
-    "The tingling in my fins grows stronger as the mist gets thicker. I can't see anything."
-    "My whole fish body feels like it's being pulled apart then put back together in the same instant."
-    "I squeeze my eyes shut. All I can do is hope I'm not about to drown."
+
 
     #BLACK SCENE
     scene bg black with fade

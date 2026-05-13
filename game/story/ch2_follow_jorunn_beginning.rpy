@@ -192,7 +192,7 @@ label ch2_follow_jorunn:
 
     j "Well, you're not giving us much of a choice."
 
-    j "I'll leave it up to you-whether you want us to be going in unprepared or not."
+    j "I'll leave it up to you- whether you want us to be going in unprepared or not."
 
     j "But I'm not going to be sitting around doing nothing."
 
@@ -391,6 +391,7 @@ label ch2_follow_jorunn:
 
     j  "Thanks, Miss Prash. We'll be back before you know it."
 
+    show prashadi neutral with dissolve
     Pr "It's still too early to thank me yet, boy..."
 
     Pr "Mind your time wisely on land. The illusion will dissolve once you return to the sea."
