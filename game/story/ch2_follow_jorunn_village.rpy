@@ -16,7 +16,7 @@ label ch2_jorunn_village:
 
     y "Oh, right. What should I say?"
 
-    y nervous "I need to be careful. They can't know I'm human."
+    ny nervous "I need to be careful. They can't know I'm human."
 
     # Pro mermaid:
     if promermaid >= antimermaid:
@@ -83,7 +83,7 @@ label ch2_jorunn_village:
 
     "One of the villagers near the entrance swims up to us."
 
-    show jorunn happy with dissolve
+    show jorunn happy at jorunn_right with move
     j "Hey, mossyhead! It's good to see you. I'm back!"
 
     moss "Ugh. I told you not to call me that."
@@ -96,7 +96,7 @@ label ch2_jorunn_village:
 
     moss "What?"
 
-    "His features immediately turn to suspicion."
+    "His face scrunches up a bit."
 
     moss "You don't look like you're from these waters. What are you doing all the way out here?"
 
@@ -141,7 +141,7 @@ label ch2_jorunn_village:
             menu faraway:
                 "\"From the...mermaid capital?\"": #fail
                     $ failconvince += 1
-                    moss "Visiting...{i}here?{/i} {w}   From the capital?"
+                    moss "Visiting...{i}here?{/i} {w=0.4}From the capital?"
                     moss "Why would you want to leave right when the festival's about to start?"
                     ny nervous "What festival? I just said the first thing that came to my mind!"
                     y "I guess I really didn't think it through...haha..."
@@ -248,6 +248,7 @@ label succeedconvincemoss:
     show jorunn happy with dissolve
     j "Yep! Thanks, Mossy!"
     ny happy "I can't believe that worked."
+    show jorunn happy at jorunn_center with move
     "Following Jorunn's lead, we swim further into the village."
 
     # picked Jor's suggestion (Trader)
@@ -285,7 +286,7 @@ label succeedconvincemoss:
         j "So, what is Kansas, anyway?"
         y "Oh, it's a fictional place!"
         y "My grandfather used to tell me stories about it as a child."
-        y "There was one about a girl who got swept up in a storm."
+        y "I liked the one about a girl who got swept up in a storm the most."
         "..."
         ny nervous "Now that I think about it, that's kind of what happened to me."
         j "Really? You gotta tell me about it sometime."
@@ -295,14 +296,15 @@ label succeedconvincemoss:
     #SCENE CHANGE - Jorunn's House
 
 label jorshouse:
-
-    show black with dissolve
-    pause 1
-    hide black with dissolve
+    scene bg jorvillage afternoon:
+        align (0.5, 1.0)
+        pos (0.5, 1.0)
+        zoom 0.34
+    with dissolve
 
     "We stop at the entrance to one of the homes."
 
-    show jorunn happy
+    show jorunn happy with dissolve
     $ speaking_char = "Jorunn"
 
     j mermaid neutral "Well, here we are!"
@@ -312,9 +314,9 @@ label jorshouse:
     "A younger mermaid swims up to us from the inside. She looks relieved to see Jorunn."
 
     show jorunn at jorunn_right with move
-    show thioran at unna_left with dissolve
+    show unna at unna_left with dissolve
 
-    $ speaking_char = "Thioran"
+    $ speaking_char = "Unna"
 
     u "You're back!"
 
@@ -378,7 +380,7 @@ label jorshouse:
 
     "Parvy circles me with a surprising amount of intensity."
 
-    ny nervous "She can't tell I'm actually a human, can she?"
+    ny nervous "Can she tell I’m not a mermaid? Surely not, right?"
 
     y neutral "Oh, well, my name is-"
 
@@ -421,18 +423,19 @@ label jorshouse:
     window auto show
 
     show jorunn at jorunn_right
-    show thioran at unna_left
+    show unna at unna_left
     show parvy at parvy_center
     with dissolve
 
     ny mermaid neutral "I follow the family upwards towards a platform on top of the homes."
 
     show jorunn happy with dissolve
-    $ speaking_char = "Unna"
 
     y "Is there anything I can help with?"
 
     unna "Ah, don't worry about it, you're our guest! Go ahead and make yourself comfortable, we'll be done soon."
+
+    $ speaking_char = "None"
 
     "Unna hands a basket over to Jorunn, who starts sorting through its contents."
 
@@ -464,9 +467,7 @@ label jorshouse:
 
     "Where do I even start? There's a whole spread laid out-leafy greens, some things that look like fruit, and fish."
 
-    ny nervous "Hang on...aren't those the same fish Jorunn stole from the prince?"
-
-    "Oh dear."
+    ny nervous "Hang on...aren't those the same fish Jorunn stole from the prince? {w}Oh dear."
     ny neutral "Well, here goes nothing."
 
     #show text line is for debugging purposes
@@ -556,7 +557,8 @@ label jorshouse:
     #One of each
     if greens == 1 and fruit == 1 and fish == 1:
         "This is a nice, well-rounded meal."
-        "It seems Unna chose the same as me. I guess she isn't much of a picky eater."
+        $ speaking_char = "Unna"
+        "It seems Unna chose the same as me. I guess she isn't much of a picky eater either."
 
     #Two leafy greens
     if greens == 2:
@@ -565,6 +567,7 @@ label jorshouse:
     #Three leafy greens
     if greens == 3:
         "There could not be more green in this meal. This is a salad bowl to end all salad bowls."
+        $ speaking_char = "Jorunn"
         "It seems Jorunn chose the same as me. I wonder if he's a picky eater?"
 
     #Two fruit
@@ -578,31 +581,27 @@ label jorshouse:
     #Two fish
     if fish == 2:
         "I've made a bowl with lots of fish."
+        $ speaking_char = "Parvy"
+        show parvy smile with dissolve
         "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
 
     #Three fish
     if fish == 3:
         "The fish fillets are staring at me from inside the bowl."
         "...Why did I add so much fish?"
-        show jorunn happy with dissolve
+        show jorunn smile with dissolve
         j "..."
 
     #No fish
     if fish == 0:
-        if greens > fruit:
-            $ jorunn_points += 1
-            j "Guess you're a fan of greens, huh?"
-        if fruit > greens:
-            $ jorunn_points += 1
-            j "Guess you're a fan of fruits, huh?"
+        $ jorunn_points += 1
+        j "Not a fan of fish, huh?"
 
         y "Well...you could say I've had enough fish to last me a lifetime."
 
-        j "Hehe, I don't care for fish either."
-
 
     #WRAP MEAL END
-    hide text
+#    hide text
     "I take a bite of the food."
 
     parvy "How is it? Do you like it?"
@@ -613,19 +612,21 @@ label jorshouse:
 
     y "We have something similar."
 
-    parvy "Are you actually from the capital? Is that where your outfit's from?"
+    parvy "Are you actually from the capital? Did you get your outfit there?"
 
     j "Parvy, all these questions for [y] and none for me, huh? I'm hurt! Don't you wanna know what I've been up to?"
 
     parvy "I see you all the time!"
 
-    "Jorunn makes an exaggerated motion like he's been struck."
+    "Jorunn makes an exaggerated motion like he's been struck." with vpunch
+
+    show jorunn shocked with dissolve
 
     j "Arugh...[y] you've stolen my sister!"
 
-    unna "Hehe. You know, Parvy is usually pretty shy. I guess she's taken a liking to you!"
-
     y "Hehe."
+
+    unna "You know, Parvy is usually pretty shy. I guess she's taken a liking to you!"
 
     "My outfit must really stand out for Parvy to think I'm from the capital."
 
@@ -633,9 +634,7 @@ label jorshouse:
 
     y "My bag?"
 
-    ny shocked "Now that she mentions it, Prashadi's spell did give me a purse."
-
-    ny neutral "I haven't really had the time to think about it."
+    ny shocked "Now that she mentions it, Prashadi's spell did give me a purse. I haven't really had the time to think about it."
 
     ny happy "Well, let's see!"
 
@@ -658,9 +657,13 @@ label jorshouse:
     hide black
     with dissolve
 
+    show parvy smile with dissolve
+
     parvy "A camera?"
 
     y "Well, uh..."
+
+    $ speaking_char = "all"
 
     "They're all staring at me curiously."
 
@@ -702,7 +705,7 @@ label jorshouse:
 
     "I hand the photograph to them."
 
-    parvy "That's...that's so cool...!"
+    parvy "That's...that's so cool!"
 
     parvy "Unna, look it's us! We're on a tiny square!"
 
@@ -710,69 +713,110 @@ label jorshouse:
 
     y "Haha...something like that."
 
-    y "It's for you! Please keep it."
+    y "The ‘tiny square’ is called a photograph. It’s for you! Please keep it."
 
     unna "Thank you! We'll take good care of it."
 
-    unna "And the photo stays with you forever? Incredible..."
+    j "..."
 
-    y "A photo lasts forever, you have to keep them safe though, they're precious memories."
+    parvy "Look, Jor! Isn’t this amazing?"
 
-    "She does have a point, now that I think about it."
+    j "It is, isn’t it? Don’t forget to thank [y] now."
 
-    "You can never really forget about something when it's captured in a photo."
+    parvy "Thank you, [y]!"
 
-    "I should take more pictures when I can. But for now, I should probably get some sleep."
+    "Parvy’s eyes are shining. She looks like she has a lot more questions to ask."
 
-    "It's hard to believe I'll be back on the surface tomorrow."
+    j "Well, it’s getting late, isn’t it? Why don’t we head inside? You must be exhausted, [y]."
 
-    "I fail to stifle a yawn, and all three of the siblings notice it."
+    y "Oh, yes. I think that’s a good idea."
 
-    y "Sleepy June is sleepy. Night all."
+    "What a strange day this has been. I am rather exhausted."
 
-    j "No problem. We could honestly all call it a night."
+    j "You can hunker down in my room for the night."
 
-    parvy "Aww, bedtime already?"
+    j "Follow me. I’ll show you the way."
 
-    unna "I'll clean up here. Parvy, can you set up a bed for Jor in our room?"
+    unna "I’ll clean up here. Parvy, you should head to bed too."
 
-    parvy "...Yeah, I guess so."
+    parvy "What? No! I want to help."
 
-    j "Chin up, Parvy. If we're all sleeping together I can tell you a story beforehand."
+    j "Just don’t stay up too late, okay? Come on, [y]."
 
-    parvy "Yay!"
+    y "Goodnight, everyone!"
 
-    unna "Your room's just down the hall there. Goodnight, [y]!"
+    "I wave goodbye to the sisters and follow Jorunn. He takes me to one of the rooms beneath the platform."
 
-    y "Goodnight, everyone."
+    #SCENE CHANGE - Jor room
 
-    "With a smile and a wave, I head off to the room Unna had indicated and swim inside."
-
-    #SCENE CHANGE - Jor's room
-
-    scene bg jorbedroom with fade:
+    scene bg jorbedroom with dissolve:
         fit "contain"
+        xalign 0.5
+        subpixel True
+        zoom 1.05
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
+    scene bg jorbedroom:
+        fit "contain"
+
+    show jorunn neutral at jorunn_center with dissolve
+
+    j mermaid neutral "It’s just in here."
+
     "The room is small but comfortable."
 
     $ speaking_char = "Jorunn"
 
+    menu:
+        ny mermaid neutral "Dare I ask...?"
+        "\"Are we...sharing the room?\"":
+            j "What, did you want to share?"
+            "Jorunn suddenly leans in closer, his hair brushing against my face."
+            y "I, uh-"
+            j "Haha! Just kidding. I’ll be sleeping in one of my sister’s rooms for the night. You’ve got this room all to yourself."
+            "...He seems to have a teasing streak, doesn’t he?"
+            j "I’m sure you could use some time to yourself. Besides, we’ll be seeing each other a lot now anyways."
+            y "That’s true. Thank you, Jorunn."
+
+        "\"Thank you.\"":
+            pass
+
+    j "Course! Least I can do for my partner in crime."
+
+    j "We have to wake up early, yeah? So get some rest while you can."
+
+    j "I’m going to help clean up. Good night, [y]!"
+
+    hide jorunn with dissolve
+
+    "Jorunn leaves, and I’m alone once more."
+
     #CHOICE
     menu:
         y mermaid neutral "What should I do?"
-        "Snoop around the room.":
+
+        "Go to sleep.":
+            pass
+
+        "Look around the room first.":
             $ snoop = True
-            "My curiousity gets the better of me."
+            "I’m pretty tired, but a quick look around the room couldn’t hurt, right?"
+            "It’s not like it’s everyday I get to see what a mermaid’s room looks like."
+            "I hope Jorunn won’t mind."
+            "..."
+            y "What’s this?"
+            "There’s a small box tucked away on one of the shelves."
+            "I wonder what could be inside?"
+            "..."
+            "..."
+            "Ugh...The lid’s rather stubborn."
+            "After a few more tries, the box finally opens."
+            "Inside is…"
+            y "A bracelet?"
+            "Come to think of it, Jorunn and his family were all wearing bracelets. I wonder why this one is hidden away?"
+            y "I’d better put this back..."
 
-        "Go to bed.":
-            y "I'm beat ya'll."
-
-    if snoop == True:
-        show jorunn happy with dissolve
-        "Jor sees me in the room and goes rigid for a second, then smiles big at me."
-        j "Just so you know, [y], since we're getting up so early I saved some leftovers for breakfast."
-        j "See ya in the morning!"
-        "He swims out before I can say anything in response."
-        hide jorunn with dissolve
 
     "I can figure out what to do after some rest."
     scene bg black with Dissolve(2.0)
