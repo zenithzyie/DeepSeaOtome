@@ -88,7 +88,6 @@ default pickedforward = False
 default pickedback = False
 default sillyjune = False
 default takehand = False
-default failconvince = 0
 default traderpick = False
 default amnesiapick = False
 default kansaspick = False

@@ -83,4 +83,8 @@ image bg white = ("images/bgs/bg white.jpg")
 
 #other images
 image chibi_merjune = ("gui/ach/chibi_merjune.png")
+image chibi_june = ("gui/ach/chibi_june.png")
+image chibi_hunter = ("gui/ach/chibi_hunter.png")
 image chibi_thio = ("gui/ach/chibi_thio.png")
+image chibi_cetus = ("gui/ach/chibi_cetus.png")
+image chibi_jor = ("gui/ach/chibi_jor.png")

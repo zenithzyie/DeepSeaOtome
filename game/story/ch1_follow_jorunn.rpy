@@ -12,15 +12,16 @@ label ch1_followjorunn:
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster, I push my way through the current."
 
-    show jorunn happy:
-        subpixel True
-        pos (0.66, 1080) zoom 1.0
-        linear 0.39 pos (0.45, 1914) zoom 2.0
-    with Pause(0.39)
-    show jorunn happy:
-        pos (0.45, 1914) zoom 2.0
+#zoom needs fixed for new sprite
+#    show jorunn happy:
+#        subpixel True
+#        pos (0.66, 1080) zoom 1.0
+#        linear 0.39 pos (0.45, 1914) zoom 2.0
+#    with Pause(0.39)
+#    show jorunn happy:
+#        pos (0.45, 1914) zoom 2.0
 
-    "I can't stop! I crash into the scrappy boy's shoulder." with vpunch
+    "I can't stop! I crash into the thief's shoulder." with vpunch
     show jorunn shocked with dissolve
     uj "Huh?"
     y "Blub!!"

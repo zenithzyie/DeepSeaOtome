@@ -53,6 +53,7 @@ label ch2_follow_jorunn:
             ny flustered "I've never worn such a revealing outfit before!"
 
     show jorunn flustered at right2 with dissolve
+    $ speaking_char = "Jorunn"
     ny nervous "Joruun stares at me in surprise."
 
     show jorunn happy with dissolve
@@ -112,21 +113,28 @@ label ch2_follow_jorunn:
 
     y nervous "It was because of a siren. She's the one who lured me into the sea."
 
+    show jorunn neutral with dissolve
+
     j "A siren?"
 
     Pr "How curious...How curious indeed. Do you remember anything else about this siren?"
 
+    show black with dissolve
+
     "I explain everything in clear detail, right up to the point where Jorunn saved me from the storm."
+
+    hide black with dissolve
 
     y "She called herself Skylla. Is that anyone you might know?"
 
     Pr "I knew of a 'Skylla', but that was some time ago. And she was certainly no siren."
-
+    show jorunn hesitant with dissolve
     j "Do you think she could be the same mermaid, Miss Prash?"
 
     Pr "Hmm..."
 
     Pr "Whoever she is, she's certainly done a number on our human friend."
+    show jorunn neutral with dissolve
 
     y "Prashadi, is it possible for you to turn me back into a human?"
 
@@ -184,6 +192,8 @@ label ch2_follow_jorunn:
 
     j "Prashadi, if you really won't help us, then we'll just have to figure it out ourselves."
 
+    show jorunn happy with dissolve
+
     j "You can't stop us from doing that now, can you?"
 
     show prashadi shocked with dissolve
@@ -191,6 +201,8 @@ label ch2_follow_jorunn:
     Pr "Jorunn. Don't be foolish."
 
     j "Well, you're not giving us much of a choice."
+
+    show jorunn neutral with dissolve
 
     j "I'll leave it up to you- whether you want us to be going in unprepared or not."
 
@@ -209,6 +221,7 @@ label ch2_follow_jorunn:
             pass
 
     show prashadi neutral with dissolve
+    Pr "..."
     Pr "...Very well."
 
     show prashadi angry with dissolve
@@ -229,39 +242,49 @@ label ch2_follow_jorunn:
 
     show jorunn neutral with dissolve
     j "Magic items, basically. They show up in a lot of children's tales."
-
+    ny shocked "Children's tales?"
+    $ prquestiontext = "I have so many questions..."
     menu whatisrelic:
         set menuset
-        "I have so many questions..."
+        ny neutral "[ prquestiontext ]"
         "\"What do they look like?\"":
             $ pr_questions += 1
+            if pr_questions == 3:
+                $ prquestiontext = "I think that's all for now."
             show prashadi neutral with dissolve
             Pr "Anything. They can look as different as you and me."
             "A fleeting look of nostalgia passes over Prashadi's face."
             Pr "A scroll, a trident, or perhaps a ring..."
             Pr "Just to name a few, you might say."
-            "That isn't very specific, but I think I get the idea."
+            ny frustrated "That isn't very specific, but I think I get the idea."
             jump whatisrelic
 
         "\"How do we find these relics?\"":
             $ pr_questions += 1
+            if pr_questions == 3:
+                $ prquestiontext = "I think that's all for now."
             Pr "As scattered as they are, I can point you in the right direction."
             y "And after that? How will I know when I've found one?"
             Pr "That is where you're fortunate Jorunn has offered his help."
-            show jorunn happy with dissolve
+            #no dissolve here (for smooth transition)
+            show jorunn happy
+            $ speaking_char = "Jorunn"
             "Jorunn gives me a confident smile."
             j "I've got a good eye for magic!"
-            y "Oh! I'll be grateful for your help, then."
+            y happy "Oh! I'll be grateful for your help, then."
             "Now that I think about it, he was able to sense there was something different about me as a fish too."
             "I wonder how he learned to do that. Is it a mermaid thing?"
             jump whatisrelic
 
         "\"Will these relics undo my curse?\"":
             $ pr_questions += 1
+            if pr_questions == 3:
+                $ prquestiontext = "I think that's all for now."
             Pr "They will play a part in it, yes."
             y "Just 'a part'? Is there something else we need to do?"
             Pr "In due time, little fry. Bring me a relic first, then we'll see."
             menu:
+                y neutral "..."
                 "\"Alright.\"":
                     "I want to know more, but..."
                     "I'd better not press any further."
@@ -349,10 +372,10 @@ label ch2_follow_jorunn:
     ny nervous "But it's not like I have a place to stay."
 
     ny "Would either of them let me spend the night? I wouldn't want to impose any more than I already have."
-
-    show jorunn happy with dissolve
+    $ speaking_char = "Jorunn"
     "Jorunn seems to catch my eye."
 
+    show jorunn happy with dissolve
     j "Why don't you stay over at my village for the night, [y]?"
 
     j "I've gotta pop in before we head out tomorrow, anyways."
@@ -371,7 +394,7 @@ label ch2_follow_jorunn:
         "Take his hand.":
             $ jorunn_points += 1
             $ takehand = 1
-            y "Alright. I'll follow your lead, then."
+            y happy "Alright. I'll follow your lead, then."
             j "Hold tight, okay?"
             j "It'd be terrible to lose such a pretty girl here!"
             "I hadn't really noticed it as a fish, but his hand feels surprisingly calloused when it slips around my own."
@@ -396,7 +419,7 @@ label ch2_follow_jorunn:
 
     Pr "Mind your time wisely on land. The illusion will dissolve once you return to the sea."
 
-    y happy "We'll be careful!"
+    y "We'll be careful!"
 
     "Prashadi's warning echoes in my mind as I exit the cave with Jorunn."
 
