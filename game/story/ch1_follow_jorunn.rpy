@@ -6,26 +6,6 @@ label ch1_followjorunn:
     hide thioran angry with moveoutleft
 #potential promermaid count: 2 or 1
 #potential antimermaid count: 2 or 1
-    #testing beach bg
-
-    scene bg beach:
-        fit "contain"
-    "omg bg"
-    show jorunn neutral
-    "jor is lonely..."
-    $ config.side_image_tag = "june"
-    ny neutral "now june is here"
-#    scene bg beach:
-#        fit "contain"
-    show jorunn neutral at Position(xpos=0.30)
-    show hunter neutral at Position(xpos=0.7)
-    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
-    $ config.side_image_tag = "None"
-    "Beach episode time?!"
-    $ config.side_image_tag = "june"
-    ny neutral "Wow I never knew you could swim on land, Jor!"
-    h "I am also here"
-    #end of testing
     "The thief seems to know his way around. Maybe he can get me out of this mess."
     "Alright, [y]! It's now or never!"
     "3...2...1!!"

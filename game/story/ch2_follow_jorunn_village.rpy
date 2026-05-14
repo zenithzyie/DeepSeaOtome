@@ -883,8 +883,144 @@ label jorshouse:
 
     j "Well, with everything that’s happening it’d be weirder if they were normal."
 
-    j "You ready for our big day?"
+    j "You ready to go?"
 
-    "Right. It’s time to head ashore with Jorunn. I hope Prashadi keeps their word."
+    "Right. It’s time to head ashore. I hope Prashadi keeps their word."
+
+    j "We need to swim quietly so we don’t wake up my sisters. Unna’s a little prickly in the morning, if you can believe it."
+
+    y "Do your siblings know we’re leaving?"
+
+    j "They know, yeah. I’m usually up this early when I head out, so this is nothing new."
+
+    y "Are you sure they’ll be alright without saying goodbye?"
+
+    j "Unna’s good at looking after Parvy. Nothing for you to worry about, [y]."
+
+    "..."
+
+    menu:
+        "I could say something…"
+        "What if this was your last chance to say goodbye?":
+            y "Not that it is, but…I wish I could have said something more before…"
+            "Before I fell into the sea..."
+            j "It’s okay. We will be coming back."
+            "Jorunn is resolute in his response."
+            y "You’re right."
+            "No more doubts! We will get that relic, and we will make it back."
+        "Don’t ask":
+            y "I’m ready when you are."
+            j "Great. Just follow my lead."
+
+    "I follow Jorunn, swimming as quietly as I can."
+
+#SCENE CHANGE
+    scene bg jorvillage morning:
+        fit "contain"
+    "We continue on through the village. At this hour, it’s mostly empty."
+
+    "Mr. Mossyhead must still be asleep. Thank goodness."
+
+    "The villagers that notice us wave at Jorunn and wish him luck."
+
+    "I guess he really does leave like this often."
+
+#SCENE CHANGE
+
+    scene bg sea:
+        fit "contain"
+    "..."
+
+    "The two of us swim a bit further on. The shore feels so far."
+
+    "..."
+
+    "I can see the outline of metal ships moving above us. We must be getting close to the port."
+
+    "If I remember right, there’s some isolated beaches further down the shoreline."
+
+    y "We should keep going. I know a good place for us to surface."
+
+    j "You got it!"
+
+    "..."
+
+    #testing beach bg
+
+    scene bg beach:
+        fit "contain"
+    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
+
+    show jorunn neutral
+
+    ny neutral "We arrive on shore at last. It’s empty here, and pleasantly quiet."
+
+    "I flop down on my back to catch my breath, and Jorunn does the same beside me."
+
+    "Prashadi’s spell worked. I’m finally human again, even if it’s only temporary."
+
+    j "Hey, look, my tail’s been split in two!"
+
+    y "You’ve got legs now, Jor!"
+
+    j "And my body feels so heavy. How do you humans get around like this?"
+
+    y "Don’t worry. It’s not so bad once you get used to it."
+
+    "Ah, it feels so nice to feel the sun again!"
+
+    "..."
+
+    "But even as I lay here and enjoy it, I know we can’t stay like this."
+
+    "We have a job to do."
+
+    y "Do you sense any relics?"
+
+    j "Nope! Not yet."
+
+    y "We should start looking around then. It has to be somewhere in Aquantis."
+
+    "But how are we going to find one relic in this whole city?"
+
+    "I rise to my feet and watch Jorunn attempt to do the same."
+
+    "His legs are visibly shaking."
+
+    y "Will you be alright to walk?"
+
+    j "That weird way humans move is called walking, huh? Oh yeah, I can definitely handle a little walking."
+
+    "Jorunn takes a few slow but steady steps. He seems to get the hang of it rather quickly."
+
+    y "You’re a natural!"
+
+    j "Haha! Being a human is easy."
+
+    "With his newfound ability to walk, Jorunn looks around in wonder."
+
+    j "Whoa."
+
+    j "You can see so much from here. The human world is bigger than it looks."
+
+    y "It is a nice view, that’s for sure. We’re right at the edge of the city."
+
+    "Oh, I know why I thought of this beach. I’ve been here before, when I was younger."
+
+    "The memory is faint, but I still remember it. Hunter and I found so many different shells back then."
+
+    h "This part of the beach is the best. None of the other kids want to go here, so..."
+
+    "Come to think of it, wasn’t Hunter the one who showed me this place?"
+
+    h "...[y]?"
+
+    show hunter shocked
+
+    "I look over to see Hunter standing just a few feet away from me."
+
+    h "You’re… {i}alive?{/i}"
+
+    #end of testing
 
     jump endofdemo
