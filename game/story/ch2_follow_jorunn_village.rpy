@@ -497,7 +497,7 @@ label jorshouse:
     $ speaking_char = "none"
     ny neutral "Right...this is my first meal as a mermaid."
 
-    ny shocked "Where do I even start? There's a whole spread laid out-leafy greens, some things that look like fruit, and fish."
+    ny shocked "Where do I even start? There's a whole spread laid out - leafy greens, some things that look like fruit, and fish."
 
     ny nervous "Hang on...aren't those the same fish Jorunn stole from the prince? {w}Oh dear."
     ny neutral "Well, here goes nothing."
@@ -764,11 +764,9 @@ label jorshouse:
 
     unna "Thank you! We'll take good care of it."
 
-    j "..."
-
     parvy "Look, Jor! Isn’t this amazing?"
 
-    j "It is, isn’t it? Don’t forget to thank [y] now."
+    j "...It is, isn’t it? Don’t forget to thank [y] now."
 
     parvy "Thank you, [y]!"
 
@@ -850,7 +848,7 @@ label jorshouse:
             "...He seems to have a teasing streak, doesn’t he?"
             show jorunn happy with dissolve
             j neutral "I’m sure you could use some time to yourself. Besides, we’ll be seeing each other a lot now anyways."
-            y happy "That’s true. Thank you, Jor."
+            y happy "That’s true. Thank you, Jorunn."
 
         "\"Thank you.\"":
             y "I appreciate you letting me stay here."
@@ -888,6 +886,7 @@ label jorshouse:
             ny frustrated "Ugh...The lid’s rather stubborn."
             ny neutral "After a few more tries, the box finally opens."
             "Inside is…"
+            show bracelet at atphoto with dissolve
             y "A bracelet?"
             "Come to think of it, Jorunn and his family were all wearing bracelets. I wonder why this one is hidden away?"
             y nervous "I’d better put this back..."
@@ -951,7 +950,7 @@ label jorshouse:
     with dissolve
     j "Good morning!"
 
-    y "Ah...Jor? Hello."
+    y "Ah...Jorunn? Hello."
 
     "I’m still in Jorunn’s room...I must’ve been dreaming."
 
@@ -1079,21 +1078,32 @@ label jorshouse:
 
     show jorunn hesitant with dissolve
 
-    "His legs are visibly shaking."
-
     y shocked "Will you be alright to walk?"
 
     show jorunn shocked with dissolve
 
     j "That weird way humans move is called walking, huh? Oh yeah, I can definitely handle a little walking."
 
-    "Jorunn takes a few slow but steady steps. He seems to get the hang of it rather quickly."
+    "His legs are visibly shaking."
 
-    show jorunn neutral with dissolve
-    y happy "You’re a natural!"
+    menu:
+        "Offer to help.":
+            y neutral "Here, take my hand. I’ll help keep you balanced."
+            show jorunn teasing with dissolve
+            if takehand:
+                j "You want to hold my hand again so soon, huh, [y]?"
+            else:
+                j "You change your mind about holding my hand, huh, [y]?"
+            show jorunn neutral with dissolve
+            "With my help, Jorunn takes a few slow but steady steps. He seems to have gotten the hang of it rather quickly."
+            j "Thanks."
 
-    show jorunn smile with dissolve
-    j "Haha! Being a human is easy."
+        "Let him be.":
+            "Jorunn takes a few slow but steady steps. He seems to get the hang of it rather quickly."
+            show jorunn neutral with dissolve
+            y happy "You’re a natural!"
+            show jorunn smile with dissolve
+            j "Haha! Being a human is easy."
 
     "With his newfound ability to walk, Jorunn looks around in wonder."
 

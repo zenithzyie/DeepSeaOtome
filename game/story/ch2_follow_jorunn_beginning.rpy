@@ -34,7 +34,7 @@ label ch2_follow_jorunn:
         fit "contain"
     $ speaking_char = "Prashadi"
     show prashadi neutral at left2
-    show jorunn flustered at right2
+    show jorunn hesitant at right2
     with dissolve
 
     $ followthief.grant()
@@ -69,7 +69,7 @@ label ch2_follow_jorunn:
 
     menu:
         "\"Who are you?\"":
-            "You look just like my grandfather. But he's human like me."
+            y "You look just like my grandfather. But he's human like me."
             Pr "Oho, is that who you see?"
             Pr "Well, I am certainly old enough to be your grandfather."
             "Right, of course it couldn't be him."
@@ -299,7 +299,7 @@ label ch2_follow_jorunn:
                     "That seems to be as far as I can push."
                     "I suppose I'll have to leave it at that..."
                     jump whatisrelic
-        "That's all I wanted to ask." if pr_questions >= 1:
+        "That's all for now." if pr_questions == 3:
             pass
     y neutral "So, where should we start looking?"
 
@@ -393,7 +393,7 @@ label ch2_follow_jorunn:
     menu:
         "Take his hand.":
             $ jorunn_points += 1
-            $ takehand = 1
+            $ takehand = True
             y happy "Alright. I'll follow your lead, then."
             j "Hold tight, okay?"
             j "It'd be terrible to lose such a pretty girl here!"

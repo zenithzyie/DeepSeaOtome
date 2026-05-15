@@ -67,28 +67,28 @@ label test_particles():
         "Walkthroughs"
 
         "Image, amount, and particle_size":
-            call test_particles_image_amount_size
+            call test_particles_image_amount_size from _call_test_particles_image_amount_size
 
         "Speed, velocity, and acceleration":
-            call test_particles_speed
+            call test_particles_speed from _call_test_particles_speed
 
         "Slow start, fast, and delay":
-            call test_particles_slow_fast_delay
+            call test_particles_slow_fast_delay from _call_test_particles_slow_fast_delay
 
         "Distribution functions":
-            call test_particles_distribution
+            call test_particles_distribution from _call_test_particles_distribution
 
         "Start positions":
-            call test_particles_start_positions
+            call test_particles_start_positions from _call_test_particles_start_positions
 
         "Masks and static images":
-            call test_particles_masks_static
+            call test_particles_masks_static from _call_test_particles_masks_static
 
         "Flutter Particles":
-            call test_flutter_particles
+            call test_flutter_particles from _call_test_flutter_particles
 
         "Perspective Particles":
-            call test_perspective_particles
+            call test_perspective_particles from _call_test_perspective_particles
 
         "-> Particle Examples":
             jump test_particles_examples
@@ -98,15 +98,15 @@ label test_particles():
 
     menu test_particles_examples(screen="test_particles_choices"):
         "Falling snow":
-            call test_particles_snow
+            call test_particles_snow from _call_test_particles_snow
         "Campfire smoke and sparks":
-            call test_particles_campfire
+            call test_particles_campfire from _call_test_particles_campfire
         "Falling leaves":
-            call test_particles_leaves
+            call test_particles_leaves from _call_test_particles_leaves
         "Fireflies":
-            call test_particles_fireflies
+            call test_particles_fireflies from _call_test_particles_fireflies
         "Rain":
-            call test_particles_rain
+            call test_particles_rain from _call_test_particles_rain
         "-> Back to walkthroughs":
             jump test_particles_menu
 

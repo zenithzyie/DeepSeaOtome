@@ -21,12 +21,23 @@ label ch1_followjorunn:
 #    show jorunn happy:
 #        pos (0.45, 1914) zoom 2.0
 
+    show jorunn glee:
+        subpixel True
+        pos (0.66, 1.0) zoom 1.0
+        ease 0.5 pos (0.47, 930) zoom 1.4
+    with Pause(0.60)
+    show jorunn glee:
+        pos (0.47, 930) zoom 1.4
+    with dissolve
+
     "I can't stop! I crash into the thief's shoulder." with vpunch
-    show jorunn shocked with dissolve
     uj "Huh?"
     y "Blub!!"
     "A deft hand snatches me up."
-    show jorunn happy with dissolve
+    show jorunn shocked
+    show jorunn shocked:
+        pos (0.47, 930) zoom 1.4
+    with dissolve
     uj "Oh, well this is new! Never had a fish come up to my net before."
     y "{i}Blub blub blub!!{/i}" with screenShake
     "Wait, hang on now! Please don't eat me!"
@@ -269,4 +280,4 @@ label ch1_followjorunn:
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 
-    call ch2_follow_jorunn
+    call ch2_follow_jorunn from _call_ch2_follow_jorunn
