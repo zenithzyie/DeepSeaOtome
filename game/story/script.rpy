@@ -1400,7 +1400,7 @@ label timeskip1:
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
     show thioran angry at thioran_left
-    show jorunn hesistant at right2
+    show jorunn hesitant at jorunn_right
     show kelp with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
@@ -1416,27 +1416,28 @@ label timeskip1:
     "A pair of mermaids are staring each other down."
     $ speaking_char = "Jorunn"
     "One of them is carrying a large net stuffed full of fish."
-    $ speaking_char = "Prince Thioran"
+    $ speaking_char = "Thioran"
     "The other has fins in a striking shade of blue, unlike anything I've ever seen.{w} He has what appears to be a guard hovering close to his side."
 
     "Prince? Guard? Do mermaids really have those kinds of things?"
-    $ speaking_char = "Prince Thioran"
+    $ speaking_char = "Thioran"
     up "Are you suggesting that {i}we{/i} sink to {i}your{/i} level?"
     $ speaking_char = "Jorunn"
     uj "Oh, no. Of course not!"
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     uj "...But if the shell fits!"
     up "You thieving little-"
 
     show thioran shocked at jumpin2
-    show jorunn nervous at jumpin
+    show jorunn hesitant at jumpin
+    $ speaking_char = "all"
     with vpunch
 
     "Just then, a loud rumble echoes throughout the area."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show thioran angry with dissolve
     up "Damn it. Why now, of all times...!"
-    show jorunn glee with dissolve
+    show jorunn happy with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
     "The rumble comes again, louder this time." with vpunch

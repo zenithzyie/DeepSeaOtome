@@ -1,6 +1,7 @@
 label ch2_follow_jorunn:
 ##This is the beginning of the Prashadi Cave continuation, after June is transformed into a mermaid.
-
+#potential promermaid count: 3 or 2 or 1 or 0
+#potential antimermaid count: 3 or 2 or 1 or 0
 #SCENE CHANGE - FADE INTO MERMAID CG
     $ merjune = True
 
@@ -213,10 +214,12 @@ label ch2_follow_jorunn:
     menu:
         y frustrated "..."
         "\"I don't want to be a mermaid for the rest of my life!\"":
+            $ antimermaid += 1
             y "Please. I don't belong here."
             pass
 
         "\"I have family waiting for me.\"":
+            $ promermaid += 1
             y "Please. Wouldn't you want to get back to your family too?"
             pass
 
@@ -250,7 +253,7 @@ label ch2_follow_jorunn:
         "\"What do they look like?\"":
             $ pr_questions += 1
             if pr_questions == 3:
-                $ prquestiontext = "I think that's all for now."
+                $ prquestiontext = "..."
             show prashadi neutral with dissolve
             Pr "Anything. They can look as different as you and me."
             "A fleeting look of nostalgia passes over Prashadi's face."
@@ -262,7 +265,7 @@ label ch2_follow_jorunn:
         "\"How do we find these relics?\"":
             $ pr_questions += 1
             if pr_questions == 3:
-                $ prquestiontext = "I think that's all for now."
+                $ prquestiontext = "..."
             Pr "As scattered as they are, I can point you in the right direction."
             y "And after that? How will I know when I've found one?"
             Pr "That is where you're fortunate Jorunn has offered his help."
@@ -279,7 +282,7 @@ label ch2_follow_jorunn:
         "\"Will these relics undo my curse?\"":
             $ pr_questions += 1
             if pr_questions == 3:
-                $ prquestiontext = "I think that's all for now."
+                $ prquestiontext = "..."
             Pr "They will play a part in it, yes."
             y "Just 'a part'? Is there something else we need to do?"
             Pr "In due time, little fry. Bring me a relic first, then we'll see."

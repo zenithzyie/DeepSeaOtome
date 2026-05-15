@@ -880,25 +880,35 @@ label jorshouse:
             ny neutral "..."
             y shocked "What’s this?"
             "There’s a small box tucked away on one of the shelves."
-            "I wonder what could be inside?"
-            ny neutral "..."
-            "..."
-            ny frustrated "Ugh...The lid’s rather stubborn."
-            ny neutral "After a few more tries, the box finally opens."
-            "Inside is…"
-            show black:
-                alpha 0.7
-            show bracelet at atphoto:
-                xpos 470
-                zoom 2
-            with dissolve
-            y "A bracelet?"
-            "Come to think of it, Jorunn and his family were all wearing bracelets. I wonder why this one is hidden away?"
-            y nervous "I’d better put this back..."
+
+            menu:
+                "I wonder what could be inside?"
+                "Open the box.":
+                    ny neutral "..."
+                    "..."
+                    ny frustrated "Ugh...The lid’s rather stubborn."
+                    ny neutral "After a few more tries, the box finally opens."
+                    "Inside is…"
+                    show black:
+                        alpha 0.7
+                    show bracelet at atphoto:
+                        xpos 470
+                        zoom 2
+                    with dissolve
+                    y "A bracelet?"
+                    "Come to think of it, Jorunn and his family were all wearing bracelets. I wonder why this one is hidden away?"
+                    y nervous "I’d better put this back..."
+                    hide black
+                    hide bracelet
+                    with dissolve
+                "Don't open the box.":
+                    y neutral "No, I'd better not."
+                    "Even if I’m curious about what’s inside, opening it might be going too far."
+                    "I put the box back on the shelf."
 
 
-    ny neutral "I can feel my eyes start to grow heavy. I guess everything is finally catching up to me."
-    "Time to get some rest."
+    ny sad "I can feel my eyes start to grow heavy. I guess everything is finally catching up to me."
+    ny neutral "Time to get some rest."
     scene bg black with Dissolve(2.0)
     stop music fadeout 1.0
     "..."
@@ -911,7 +921,7 @@ label jorshouse:
         alpha 0.7
     with dissolve
     "..."
-    "I’m at that mysterious market again."
+    "I’m at that underground market again."
     "..."
     "It feels like something is drawing me in."
     "..."

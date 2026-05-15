@@ -1,7 +1,7 @@
 
 #BRANCH - FOLLOW THIORAN
+#pro and anti mermaid don't matter here
 label ch1_followprince:
-    #pro and anti mermaid don't matter here
     hide screen notify2
     hide jorunn glee with moveoutright
     show thioran at Position(xpos=0.45)
@@ -9,7 +9,6 @@ label ch1_followprince:
     $ config.side_image_tag = "june"
     "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
     "Alright, [y]! It's now or never!"
-    "3...2...1!!"
     y "BLUBBB!!!!" with vpunch
     "With all the might I can muster, I push my way through the current."
 
