@@ -886,7 +886,12 @@ label jorshouse:
             ny frustrated "Ugh...The lid’s rather stubborn."
             ny neutral "After a few more tries, the box finally opens."
             "Inside is…"
-            show bracelet at atphoto with dissolve
+            show black:
+                alpha 0.7
+            show bracelet at atphoto:
+                xpos 470
+                zoom 2
+            with dissolve
             y "A bracelet?"
             "Come to think of it, Jorunn and his family were all wearing bracelets. I wonder why this one is hidden away?"
             y nervous "I’d better put this back..."
