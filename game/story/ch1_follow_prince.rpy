@@ -219,7 +219,7 @@ label ch1_followprince:
     "No! I'll drown! I don't want to die like this!"
     show thioran shocked with dissolve
     p "Wait a moment, Uncle. There's something wrong."
-    play sound "audio/sfx_CetusCastMagic.ogg"
+    play sound "audio/sfx_CetusCastMagic.ogg" volume 0.6
     "The magic crescendos, and the tightness around me grows in kind."
     scene bg black with dissolve
     "I squeeze my eyes shut. All I can do is prepare for the worst."

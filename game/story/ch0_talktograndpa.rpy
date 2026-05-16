@@ -68,6 +68,7 @@ label grandpatalk:
     show grandpa neutral with dissolve
     g "...Later, little birdie. I'll tell ye later."
     g "How long are ye stayin' in Aquantis for?"
+    play sound "audio/sfx_coffee.ogg" volume 0.5
     y "Well... {w}I didn't give it much thought. I just wanted to come see you."
     g "Aye? Then we have plenty of time."
     g "Here ye are, [y]."

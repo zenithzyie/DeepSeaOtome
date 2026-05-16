@@ -392,7 +392,7 @@ label afterknocking:
     "There is no response at first, but..."
     stop music fadeout 5.0
 
-    play sound "audio/sfx_brickWallMoving.mp3" volume 0.44
+    play sound "audio/sfx_brickWallMoving.ogg" volume 0.5
     #SCENE CHANGE - Black Screen
     scene bg black
     with slideawayright
@@ -403,7 +403,7 @@ label afterknocking:
     ny nervous "A rattling door slides closed the moment I enter."
     "It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
-    play sound "audio/sfx_elevator.wav" volume 0.1
+    #play sound "audio/sfx_elevator2.wav" volume 0.1
     #sounds off
     "The rickety elevator descends down for a while."
     "..."
@@ -1321,7 +1321,7 @@ label timeskip1:
 
     show skylla neutral with dissolve
     "Before I can finish the thought, the siren swims back to me."
-    play sound "audio/sfx_bubblePop.mp3" volume 0.2
+    play sound "audio/sfx_bubblePop.ogg" volume 0.4
     show skylla happy:
         subpixel True
         ypos 780 zoom 1.0
@@ -1396,6 +1396,7 @@ label timeskip1:
 
     "What was that? Is there another mermaid here?"
     "I quickly dart into some foliage to hide."
+    play sound "audio/sfx_seaweedRustle.ogg" volume 0.5
 
     #THIO AND JOR ENTER THE STAGE
     #Voice Lines Start (old, deleted the comments where they were due to script changes)
@@ -1433,6 +1434,7 @@ label timeskip1:
     $ speaking_char = "all"
     with vpunch
 
+    play sound "audio/sfx_seaStormRumble.ogg" volume 0.6
     "Just then, a loud rumble echoes throughout the area."
     guard "It's another sea storm, Your Highness! We must head back now before it picks up any further."
     show thioran angry with dissolve
@@ -1477,13 +1479,16 @@ label ch1_badend1:
     "Both mermaids swim away, and I'm alone."
     "Sort of..."
     "The other fish are swimming in a frenzy trying to get away from the vortex of water."
+    play sound "audio/sfx_seaStormRumble.ogg" volume 0.6
     "The sea storm gets louder and louder."
     "What if I hid in the seaweed again?"
+    play sound "audio/sfx_seaStormRumble.ogg" volume 0.9
     "The sea storm is getting closer with every moment I hesitate."
     "I know! I'll try taking shelter in a nearby rock formation!"
     "The problem is, everything is so far away from me."
     "It'll take far too long to reach shelter."
     "I try swimming anyway, moving as fast as I can."
+    play sound "audio/sfx_seaStormRumble.ogg"
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It's too late!"
     "The last thing I see before everything goes dark is something large crashing right into me."

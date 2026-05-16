@@ -147,7 +147,7 @@ label ch2_followthio:
 
     c "I hear humans have been sailing further from their shores as of late."
 
-    play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.4
+    play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.5
     ny shocked "A chill runs down my spine as the throne room doors close behind us."
 
 
@@ -465,7 +465,7 @@ label ch2_followthio:
 
     "I need to find him."
 
-    play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.4
+    play sound "audio/sfx_StoneDoorClose.ogg" fadeout 2.0 volume 0.4
 
     ny shocked "I open the door to swim out, but a guard suddenly blocks my way."
 
@@ -479,7 +479,7 @@ label ch2_followthio:
 
     guard "When your presence is required, you will know. Please stay inside your room."
 
-    play sound "audio/sfx_stoneDoorClose.ogg"
+    play sound "audio/sfx_StoneDoorClose.ogg"
     queue sound "audio/sfx_doorLockClick.ogg"
     ny shocked "I'm forced to move back as the door is quickly shut in my face."
     "But unlike last time, the sharp click of a lock soon follows."

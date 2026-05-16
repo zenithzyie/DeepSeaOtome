@@ -183,7 +183,7 @@ label ch2_castle_escaperoom:
                         "Small bag.":
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
-                            play sound "audio/sfx_coinJingle.ogg"
+                            play sound "audio/sfx_coinJingle.ogg" volume 0.7
                             "There's some gold and silver shells inside. This looks like somebody's coinpurse."
                             "Do mermaids barter the same way humans do?"
                             "I'll hold onto this for now."
@@ -205,7 +205,7 @@ label ch2_castle_escaperoom:
 
         "Bribe the guard" if coinpurse == True:
                 if not bribeguard:
-                    play sound "audio/sfx_coinJingle.ogg"
+                    play sound "audio/sfx_coinJingle.ogg" volume 0.7
                     "The coinpurse jingles faintly in my bag."
                     "That fishmonger in Aquantis wasn't too helpful either until I offered him money."
                     ny frustrated "I have to try everything I can here. It's the only way to get home."
@@ -216,7 +216,7 @@ label ch2_castle_escaperoom:
                     y neutral "Excuse me. Sir Guard?"
                     guard "What is it now?"
                     y "Could you please take me to Lord Cetus? I can pay you."
-                    play sound "audio/sfx_longerCoinJingle.ogg"
+                    play sound "audio/sfx_longerCoinJingle.ogg" volume 0.7
                     ny happy "I jingle the coinpurse in hopes of getting his attention."
                     guard "So desperate as to resort to bribery?"
                     guard "Try that again and your new room might become the castle dungeons."
