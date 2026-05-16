@@ -1,38 +1,59 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/script.rpy", line 1464, in script call
+  File "game/story/script.rpy", line 65, in script call
+    call chapter1 from _call_chapter1
+  File "game/story/script.rpy", line 1467, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch1_follow_jorunn.rpy", line 272, in script call
-    call ch2_follow_jorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 396, in script
-    $ takehand = true
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 396, in <module>
-    $ takehand = true
-                 ^^^^
-NameError: name 'true' is not defined. Did you mean: 'True'?
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 252, in script
+    ny neutral "[ prquestiontext ]"
+NameError: name 'prquestiontext' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/story/script.rpy", line 1464, in script call
+  File "game/story/script.rpy", line 65, in script call
+    call chapter1 from _call_chapter1
+  File "game/story/script.rpy", line 1467, in script call
     call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch1_follow_jorunn.rpy", line 272, in script call
-    call ch2_follow_jorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 396, in script
-    $ takehand = true
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1273, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 396, in <module>
-    $ takehand = true
-                 ^^^^
-NameError: name 'true' is not defined. Did you mean: 'True'?
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 252, in script
+    ny neutral "[ prquestiontext ]"
+  File "renpy/ast.py", line 2925, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1550, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1464, in prefix_suffix
+    return sub(prefix) + sub(body, translate=not renpy.game.context().translated) + sub(suffix)
+                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^              
+  File "renpy/character.py", line 1443, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+  File "renpy/substitutions.py", line 355, in substitute
+    s = interpolate(s, variables)  # type: ignore
+        ~~~~~~~~~~~^^^^^^^^^^^^^^                
+  File "renpy/substitutions.py", line 89, in interpolate
+    raise e
+  File "renpy/substitutions.py", line 81, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'prquestiontext' is not defined
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
-HeartsDepthDEMO 3.0.1
-Thu May 14 19:53:53 2026
+HeartsDepthDEMO 4.0
+Fri May 15 20:32:46 2026

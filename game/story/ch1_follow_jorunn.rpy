@@ -213,7 +213,7 @@ label ch1_followjorunn:
         "This is..."
         "What kind of trick is this?":
             "Is this some sort of mermaid magic?"
-            "Either way, it's undeniable that this ‘Prashadi’ has Grandfather's face."
+            "Either way, it's undeniable that this 'Prashadi' has Grandfather's face."
 
         "Is that actually him?":
             "Has he been living some kind of double life this entire time?"
