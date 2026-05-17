@@ -416,8 +416,8 @@ label afterknocking:
 
     #SCENE CHANGE -  Underground Black Market Faire
     play music bgm_blackMarket volume 0.5
-    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.02 loop
-    play ambience2 "audio/sfx_runningSewer.ogg" fadein 4.0 volume 0.4 loop
+    play ambience "audio/sfx_crowdDeepMarket.ogg" fadein 4.0 volume 0.2 loop
+    play ambience2 "audio/sfx_runningSewer.ogg" volume 0.4 loop
     #scene bg underground market with slideawayleft
     #ZOOM IN ON SPECIFIC PARTS WITH FADES TO BLACK
     window auto hide
@@ -648,7 +648,7 @@ label afterknocking:
             "What are mermaids even used for? Bait? Food?"
             "Hunter must have noticed I was staring for too long. He pulls on my hand and walks faster through the crowd."
 
-    play ambience "audio/sfx_crowd.wav" fadein 3.0 volume 0.1 loop
+    play ambience "audio/sfx_crowdDeepMarket.ogg" fadein 4.0 volume 0.2 loop
 #    camera:
 #        zoom 1.0
     scene bg underground market:
@@ -1094,7 +1094,7 @@ label timeskip1:
     #play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
     $ renpy.music.set_volume(0.3, 2, 'music')
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 0.5 volume 0.1 loop
-    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0 loop
+    play sound "audio/sfx_hum.ogg" volume 1.5 fadein 1.0 loop
 
     u shocked "Come...come with me..."
     hide black
@@ -1175,7 +1175,7 @@ label timeskip1:
     siren "After all these long years...you've finally returned home to me..."
     "..."
     "...Where am I?"
-    play sound "audio/sfx_hum.mp3" volume 1.0 fadein 1.0
+    play sound "audio/sfx_hum.ogg" volume 1.0 fadein 1.0
     siren "Hmm, hmm, hmm."
     "A strange voice is humming a familiar song."
     stop sound fadeout 1.0
@@ -1332,11 +1332,14 @@ label timeskip1:
     "Her clawed fingers pop the bubble, then close around my body."
     "She could pop me in an instant as well."
     s "Hold still now, cute thing. This won't hurt."
-    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
-    "It's a lie.{w} A burning pain spreads through my body as if the siren is trying to pull me apart from within." with vpunch
+    play sound "audio/sfx_hum.ogg" volume 1.5
+    play ambience "audio/sfx_skyllaCastMagic.ogg" volume 0.5 noloop
+    "It's a lie.{w} A burning pain spreads through my body as if the siren is trying to pull me apart from within." 
+    with vpunch
     s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
     show skylla angry
     "The moment I feel like I'm about to snap in two, a sudden blinding light flashes throughout the cave." with flash
+    stop sound fadeout 1.0
 
     #FLASH EFFECT
     stop sound
@@ -1363,14 +1366,15 @@ label timeskip1:
     "Her tentacles try to grab me, but I'm too small for them to catch."
     s "Fine! Be like that!"
     show skylla angryteeth with dissolve
-    play sound "audio/sfx_hum.mp3" volume 1.5 fadein 1.0
+    play sound "audio/sfx_hum.ogg" volume 1.5 fadein 1.0
+    play ambience "audio/sfx_skyllaCastMagic.ogg" volume 0.5 noloop
     "She begins humming to herself again, and a bolt of magic shoots out of her hands."
     "I twist away just in time, and the magic collides with one of the glowing crystals on the wall." with vpunch
     hide skylla with dissolve
     stop sound fadeout 2.0
     "Time seems to slow down."
     "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
-    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.3
+    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.1
     extend "and in the next second the crystals explode."
     y "...!" with vpunch
     "The explosion has created a hole just big enough for me to squeeze through."
