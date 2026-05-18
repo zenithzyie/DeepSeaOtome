@@ -608,7 +608,7 @@ label jorshouse:
 
     #Three fruit
     if fruit == 3:
-        "These fruits are singing a three-part harmony in my mouth!"
+        "There is so much fruit in here. Did I overdo it?"
 
     #Two fish
     if fish == 2:
@@ -1040,6 +1040,8 @@ label jorshouse:
 
     "I can see the outline of metal ships moving above us. We must be getting close to the port."
 
+    j "The surface is busy this morning."
+
     "If I remember right, there's some isolated beaches further down the shoreline."
 
     y "We should keep going. I know a good place for us to surface."
@@ -1053,53 +1055,85 @@ label jorshouse:
     with fade
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
 
-    "We arrive on shore at last. It's empty here, and pleasantly quiet."
+    "We arrive on shore at last, and I take in a breath of air."
 
-    "I flop down on my back to catch my breath, and Jorunn does the same beside me."
+    ny shocked "Oh! Prashadi’s spell worked! It appears they kept their word."
+
+    "Is this really an illusion? I feel so...normal. Like I never fell off the boat to begin with."
+
+    ny neutral "I lay down on my back to catch my breath, and Jorunn does the same beside me."
 
     show jorunn neutral with dissolve
 
-    ny shocked "Prashadi's spell worked. I'm finally human again, even if it's only temporary."
+    y shocked "...!"
 
-    show jorunn shocked with dissolve
+    "Jorunn has changed too. It’s strange to see him with legs."
 
-    j "Hey, look, my tail's been split in two!"
+    y neutral "Jorunn, how are you feeling?"
 
-    y happy "You've got legs now, Jor!"
+    show jorunn hesitant
 
-    j "And my body feels so heavy. How do you humans get around like this?"
+    j "Ah...achoo!" with screenShake
 
-    y "Don't worry. It's not so bad once you get used to it."
+    show jorunn smile
 
-    ny veryhappy "Ah, it feels so nice to feel the sun again!"
+    j "Well, I’ve been warmer that’s for sure."
+
+    y "I could say the same."
+
+    "Prashadi’s spell gave us clothes, but they’ve been soaked through with water."
+
+    y "Don’t worry. We’ll dry off quickly once the sun comes up."
+
+    "It is chillier here than I remember."
+
+    "I think Hunter is the one who showed me this place. This is the same beach we used to play on as children."
+
+    "Did the land ahead of us always feel so vast? How do we even begin searching through all of it?"
 
     "..."
 
-    ny nervous "But even as I lay here and enjoy it, I know we can't stay like this."
+    y "I don’t suppose you sense any relics nearby here, do you?"
 
-    "We have a job to do."
+    show jorunn smile with dissolve
 
-    y neutral "Do you sense any relics?"
+    j "Can’t say that I do."
+
+    y "Right, of course."
+
+    ny nervous "There’s no way it would be that simple..."
+
+    show jorunn happy
+
+    j "But you know, when a mer uses a relic, it leaves an impression."
+
+    j "The magic lingers, even if they’re not holding onto it anymore."
+
+    y neutral "Do you think it’ll do the same with humans?"
 
     show jorunn neutral with dissolve
 
-    j "Nope! Not yet."
+    j "Well, why don’t we go find out? It might make our search easier."
 
-    y "We should start looking around then. It has to be somewhere in Aquantis."
+    y "Let’s check the market, then! I know lots of people go through that area."
 
-    ny nervous "But how are we going to find one relic in this whole city?"
+    ny nervous "If we can find something there, then maybe we wouldn’t have to head to the eerier market underground."
 
-    ny neutral "I rise to my feet and watch Jorunn attempt to do the same."
+    j "Let’s get going then. We aren’t far from the city, yeah?"
+
+    y neutral "Right."
+
+    "I quickly rise to my feet. Jorunn watches me and begins to do the same."
 
     show jorunn hesitant with dissolve
 
+    "He’s moving his legs rather carefully."
+
     y shocked "Will you be alright to walk?"
 
-    show jorunn shocked with dissolve
+    show jorunn smile with dissolve
 
-    j "That weird way humans move is called walking, huh? Oh yeah, I can definitely handle a little walking."
-
-    "His legs are visibly shaking."
+    j "Well...there’s a first time for everything, right? Don’t worry, I’ll get the hang of it soon enough."
 
     menu:
         "Offer to help.":
@@ -1107,58 +1141,46 @@ label jorshouse:
             show jorunn teasing with dissolve
             if takehand:
                 j "You want to hold my hand again so soon, huh, [y]?"
+                y "Huh? I just thought you could use the help!"
             else:
                 j "You change your mind about holding my hand, huh, [y]?"
+                y "That’s different!"
             show jorunn neutral with dissolve
-            "With my help, Jorunn takes a few slow but steady steps. He seems to have gotten the hang of it rather quickly."
-            j "Thanks."
+            "With my help, Jorunn takes a few steps across the sand. He seems to have gotten the hang of it rather quickly."
+            y "You’re a natural at this!"
+            j "Ah, that’s too bad though. I was hoping to hold your hand a bit longer."
 
         "Let him be.":
             "Jorunn takes a few slow but steady steps. He seems to get the hang of it rather quickly."
             show jorunn neutral with dissolve
             y happy "You're a natural!"
             show jorunn smile with dissolve
-            j "Haha! Being a human is easy."
-
-    "With his newfound ability to walk, Jorunn looks around in wonder."
-
-    show jorunn shocked with dissolve
-
-    j "Whoa."
+            j "Well, I have a pretty lady to keep up with, don’t I?"
 
     show jorunn happy with dissolve
-    j "You can see so much from here. The human world is bigger than it looks."
+    j "Anyway, let’s be off, yeah?"
 
-    y "It is a nice view, that's for sure. We're right at the edge of the city."
+    y "Before we go...you should know that there are mermaid hunters in the city too."
 
-    ny shocked "Oh, I know why I thought of this beach. I've been here before, when I was younger."
+    j "I can’t say I’m surprised. Don’t worry, we’ll just have to be careful, right?"
 
-    ny happy "The memory is faint, but I still remember it. Hunter and I found so many different shells back then."
+    y "Right."
 
-    hide jorunn
-    show black:
-        alpha 0.3
-    show noise:
-        alpha 0.6
-    show bg beach:
-        fit "contain"
-    with fade
-    h "This part of the beach is the best. None of the other kids want to go here, so..."
+    "...I hope it will be that easy."
 
-    hide black
-    hide noise
-    show jorunn happy
-    with dissolve
+    "It’s not just Jorunn who’s a mermaid. I can’t forget that my human body right now is just an illusion too."
 
-    ny neutral "Come to think of it, wasn't Hunter the one who showed me this place?"
+    "If we ran into Hunter or Grandfather, I’m still not sure what I would do."
 
-    h "...[y]?"
+    novisualhunter "...[y]?"
+
+    ny shocked "I know that voice..."
 
     hide jorunn
     show hunter shocked at hunter_center
     with dissolve
 
-    ny shocked "I look over to see Hunter standing just a few feet away from me."
+#    ny shocked "I look over to see Hunter standing just a few feet away from me."
 
     h "You're… {i}alive?{/i}"
 

@@ -62,6 +62,7 @@ define novisualjor = Character("Mischievous Voice", image="june", ctc="ctc_pos",
 define up = Character("Princely Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Thioran", namebox_background=Frame("gui/namebox_thio.png", 0, 0))
 define uj = Character("Thieving Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn", namebox_background=Frame("gui/namebox_jor.png", 0, 0))
 define uhunter = Character("Strange Man", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter",namebox_background=Frame("gui/namebox_hunter.png", 0, 0))
+define novisualhunter = Character("Familiar Voice", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter", namebox_background=Frame("gui/namebox_hunter.png", 0, 0))
 define ucetus = Character("Royal Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Cetus",namebox_background=Frame("gui/namebox_cetus.png", 0, 0))
 define siren = Character("Melodious Voice", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla", namebox_background=Frame("gui/namebox_skylla.png", 0, 0))
 define siren2 = Character("Siren", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Skylla", namebox_background=Frame("gui/namebox_skylla.png", 0, 0))
