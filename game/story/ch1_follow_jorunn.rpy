@@ -39,8 +39,8 @@ label ch1_followjorunn:
     uj "Oh?"
     "It takes me a moment to recognize it myself."
     "It looks like a shard of the glowing stones back from the siren's cave."
-    "The shard he is holding suddenly crumbles to pieces."
     uj "Weird. This thing stinks of magic."
+    "The shard he is holding suddenly crumbles to pieces."
     uj "Now that I think about it..."
     show jorunn smile with dissolve
     uj "So do you, little fishie!"

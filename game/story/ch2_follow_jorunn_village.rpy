@@ -83,12 +83,10 @@ label ch2_jorunn_village:
 
     ny "So this is what Jorunn's village looks like! I've never seen so many mermaids in one place before."
 
-    "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
-
     if looked_through:
-        "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
         "The structures on them remind me of treehouses. That must be where the mermaids live."
     else:
+        "Large plant stalks cover the entire area. I wonder if they're protecting us from the storm?"
         "The structures on the plant stalks remind me of treehouses. That must be where the mermaids live."
 
     ny sad "I wish I could take a picture of it..."
@@ -353,13 +351,13 @@ label jorshouse:
 
     j "Aw, come on, as if a little current like that could stop me."
 
-    unna "And- oh, hello! Who's this with you?"
+    unna "And - oh, hello! Who's this with you?"
 
     show jorunn neutral with dissolve
 
     j "This is [y]. Found her all caught up in the storm outside. She'll be staying the night 'til it passes over."
 
-    y happy "It's nice to meet you- Unna, is it?"
+    y happy "It's nice to meet you - Unna, is it?"
 
     unna "Yeah, you got it! I haven't seen clothes like yours around here before. The storm must have carried you a long way, huh?"
 

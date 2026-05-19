@@ -205,7 +205,7 @@ label ch2_follow_jorunn:
 
     show jorunn neutral with dissolve
 
-    j "I'll leave it up to you- whether you want us to be going in unprepared or not."
+    j "I'll leave it up to you - whether you want us to be going in unprepared or not."
 
     j "But I'm not going to be sitting around doing nothing."
 
@@ -299,7 +299,6 @@ label ch2_follow_jorunn:
                     Pr "I've already warned you that breaking this curse will be no simple matter. Prove to me that you can handle this task."
                     Pr "Only then will I trust you with what comes next."
                     y frustrated  "..."
-                    "That seems to be as far as I can push."
                     "I suppose I'll have to leave it at that..."
                     jump whatisrelic
         "That's all for now." if pr_questions == 3:
