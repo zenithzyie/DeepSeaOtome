@@ -376,7 +376,9 @@ define jorunn_right = Position(xpos=0.65)
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
-    attribute base default
+    group base:
+        attribute mermaid default
+        attribute human
 
     group expressions auto:
         attribute neutral default

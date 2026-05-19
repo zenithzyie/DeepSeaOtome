@@ -1063,7 +1063,7 @@ label jorshouse:
 
     ny neutral "I lay down on my back to catch my breath, and Jorunn does the same beside me."
 
-    show jorunn neutral with dissolve
+    show jorunn human neutral with dissolve
 
     y shocked "...!"
 
