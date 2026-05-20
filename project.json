@@ -1,7 +1,8 @@
 {
   "build_update": false,
   "packages": [
-    "mac"
+    "mac",
+    "pc"
   ],
   "add_from": true,
   "force_recompile": true,

@@ -1334,7 +1334,7 @@ label timeskip1:
     s "Hold still now, cute thing. This won't hurt."
     play sound "audio/sfx_hum.ogg" volume 1.5
     play ambience "audio/sfx_skyllaCastMagic.ogg" volume 0.5 noloop
-    "It's a lie.{w} A burning pain spreads through my body as if the siren is trying to pull me apart from within." 
+    "It's a lie.{w} A burning pain spreads through my body as if the siren is trying to pull me apart from within."
     with vpunch
     s "It's okay! Don't be stubborn now. Come on, it's {i}me!{/i}"
     show skylla angry

@@ -106,17 +106,6 @@ image blackmask = "gui/ach/blackmask.png"
 ## description to be tied to a specific save file, for example).
 ## The order you declare achievements in is the order they will appear in the
 ## achievement gallery, by default.
-define knockknock = Achievement(
-    ## The human-readable name, as it'll appear in the popup and in the gallery.
-    name=_("ALRIGHT ALREADY"),
-    id="alright-already",
-    ## Description.
-    description=_("At least you got in, right?"),
-    unlocked_image="gui/ach/chibi_june.png",
-    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
-    hide_name=True,
-    hide_description=True,
-)
 define followprince = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
     name=_("The Royal Road"),
@@ -128,17 +117,6 @@ define followprince = Achievement(
     hide_name=True,
     hide_description=True,
 )
-define perfectescaperoom = Achievement(
-    ## The human-readable name, as it'll appear in the popup and in the gallery.
-    name=_("Sought A Way Out"),
-    id="escaped-room",
-    ## Description.
-    description=_("Escaped the guest room on your first try."),
-    unlocked_image="gui/ach/chibi_cetus.png",
-    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_cetus.png")),
-    hide_name=True,
-    hide_description=True,
-)
 define followthief = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
     name=_("Into The Wild"),
@@ -147,6 +125,17 @@ define followthief = Achievement(
     description=_("Chose to follow the Thieving Merman."),
     unlocked_image="gui/ach/chibi_jor.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_jor.png")),
+    hide_name=True,
+    hide_description=True,
+)
+define perfectescaperoom = Achievement(
+    ## The human-readable name, as it'll appear in the popup and in the gallery.
+    name=_("Sought A Way Out"),
+    id="escaped-room",
+    ## Description.
+    description=_("Escaped the guest room on your first try."),
+    unlocked_image="gui/ach/chibi_cetus.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_cetus.png")),
     hide_name=True,
     hide_description=True,
 )
@@ -178,6 +167,17 @@ define finished_demo_jor = Achievement(
     id="finished-demo-jor",
     ## Description.
     description=_("Thank you for playing the demo! (Jorunn Side)"),
+    unlocked_image="gui/ach/chibi_june.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
+    hide_name=True,
+    hide_description=True,
+)
+define knockknock = Achievement(
+    ## The human-readable name, as it'll appear in the popup and in the gallery.
+    name=_("ALRIGHT ALREADY"),
+    id="alright-already",
+    ## Description.
+    description=_("At least you got in, right?"),
     unlocked_image="gui/ach/chibi_june.png",
     locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
     hide_name=True,

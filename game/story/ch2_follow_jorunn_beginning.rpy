@@ -53,8 +53,8 @@ label ch2_follow_jorunn:
         "I'm practically naked!":
             ny flustered "I've never worn such a revealing outfit before!"
 
-    show jorunn flustered at right2 with dissolve
     $ speaking_char = "Jorunn"
+    y "..."
     ny nervous "Joruun stares at me in surprise."
 
     show jorunn happy with dissolve
@@ -73,7 +73,7 @@ label ch2_follow_jorunn:
             y "You look just like my grandfather. But he's human like me."
             Pr "Oho, is that who you see?"
             Pr "Well, I am certainly old enough to be your grandfather."
-            "Right, of course it couldn't be him."
+            ny neutral "Right, of course it couldn't be him."
 
         "\"How did you do that?\"":
             Pr "I've picked up a few tricks over the years."
@@ -120,11 +120,17 @@ label ch2_follow_jorunn:
 
     Pr "How curious...How curious indeed. Do you remember anything else about this siren?"
 
-    show black with dissolve
+    show cg_skyllahands:
+        fit "contain"
+    show black:
+        alpha 0.5
+    with dissolve
 
     "I explain everything in clear detail, right up to the point where Jorunn saved me from the storm."
 
-    hide black with dissolve
+    hide cg_skyllahands
+    hide black
+    with dissolve
 
     y "She called herself Skylla. Is that anyone you might know?"
 
@@ -171,6 +177,7 @@ label ch2_follow_jorunn:
     else:
         "Just how long have these storms been going on for?"
 
+    show jorunn neutral
     j "I know you're trying to look out for us, but I don't think whatever she's planning to do with [y] will stop with the curse."
 
     j "If we let things be, it'll be trouble for all of us."
@@ -243,7 +250,7 @@ label ch2_follow_jorunn:
 
     y neutral "Relics? Like...antiques?"
 
-    show jorunn neutral with dissolve
+    show jorunn neutral
     j "Magic items, basically. They show up in a lot of children's tales."
     ny shocked "Children's tales?"
     $ prquestiontext = "I have so many questions..."
@@ -275,6 +282,7 @@ label ch2_follow_jorunn:
             "Jorunn gives me a confident smile."
             j "I've got a good eye for magic!"
             y happy "Oh! I'll be grateful for your help, then."
+            show jorunn smile with dissolve
             "Now that I think about it, he was able to sense there was something different about me as a fish too."
             "I wonder how he learned to do that. Is it a mermaid thing?"
             jump whatisrelic
@@ -316,7 +324,7 @@ label ch2_follow_jorunn:
     show jorunn hesitant with dissolve
     j "Land? You want us to find a relic up there?"
 
-    Pr "Yes, I will grant you the means to do so."
+    Pr "Yes, and I will grant you the means to do so."
 
     y "I thought you said you couldn't break the curse?"
 
@@ -341,21 +349,21 @@ label ch2_follow_jorunn:
 
     menu:
         "\"Thank you for agreeing to help.\"":
-            y "I know it must be a lot to go up on land like this."
+            y neutral "I know it must be a lot to go up on land like this."
             j "Course! We'll make the most out of it, yeah?"
             "He doesn't seem nervous at all."
-            "I find myself smiling back at him. His cheer is infectious."
+            ny happy "I find myself smiling back at him. His cheer is infectious."
 
         "\"But are you sure you're okay with going up on land?\"":
             $ jorunn_points += 1
             j "Course! Said we'd figure this out together, didn't I?"
-            y "Still, we've only just met. You're taking a big risk by going up there."
+            y neutral "Still, we've only just met. You're taking a big risk by going up there."
             j "Well, guess I am, aren't I? If you treat me to a meal I'll consider us even, hehe."
-            y "I think I can work with that."
+            y happy "I think I can work with that."
             "He doesn't look nervous at all. It seems I was worried for nothing."
 
     show jorunn neutral with dissolve
-    j "So, how will the illusion work? Are you going to cast the spell on us now?"
+    j neutral "So, how will the illusion work? Are you going to cast the spell on us now?"
 
     show prashadi neutral with dissolve
     Pr "...It has been a very long time since I've last done this."
@@ -377,6 +385,7 @@ label ch2_follow_jorunn:
     $ speaking_char = "Jorunn"
     "Jorunn seems to catch my eye."
 
+    show prashadi neutral
     show jorunn happy with dissolve
     j "Why don't you stay over at my village for the night, [y]?"
 

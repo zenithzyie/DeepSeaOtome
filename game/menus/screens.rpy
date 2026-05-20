@@ -128,15 +128,16 @@ screen quick_menu():
             xalign 0.489
             yalign 0.995
 
-            textbutton _("Back") action Rollback()
+            #textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
             textbutton _("      ") action None
-            textbutton _("Auto") action Preference("auto-forward", "toggle")
             textbutton _("Save") action ShowMenu('save')
+            textbutton _("Load") action ShowMenu('load')
             #textbutton _("Q.Save") action QuickSave()
             #textbutton _("Q.Load") action QuickLoad()
-            textbutton _("Prefs") action ShowMenu('prefs_menu')
+            textbutton _("Menu") action ShowMenu('prefs_menu')
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever

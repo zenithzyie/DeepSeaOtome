@@ -62,6 +62,8 @@ label ch2_jorunn_village:
         zoom 0.34
     with dissolve
 
+    play music audio.bgm_jorVillage volume 1.0 fadein 1.0
+
     window auto hide
     show bg jorvillage afternoon:
         linear 6 pos (0.5, 1.0) zoom 0.34
@@ -94,7 +96,7 @@ label ch2_jorunn_village:
     "One of the villagers near the entrance swims up to us."
 
     show jorunn happy at jorunn_right with move
-    j "Hey, mossyhead! It's good to see you. I'm back!"
+    j nervous "Hey, mossyhead! It's good to see you. I'm back!"
 
     moss "Ugh. I told you not to call me that."
 
@@ -122,7 +124,7 @@ label ch2_jorunn_village:
                     show jorunn hesitant with dissolve
                     moss "Everything? With whom?"
                     moss "We're the only village around here for days."
-                    y "Uh, from further away."
+                    y shocked "Uh, from further away."
                     "Mr. Mossyhead's frown deepens."
                     ny nervous "Oh dear, I don't think he bought it."
                     jump failedconvincemoss
@@ -137,20 +139,20 @@ label ch2_jorunn_village:
                     j "You should have seen it, [y]!"
                     j "He made a big fuss about how he'd make the best trades, then came back empty-handed after losing everything! Haha."
                     y shocked "Oh no...I guess that makes two of us."
-                    moss "Ugh..."
+                    moss "Ugh..." with vpunch
                     jump succeedconvincemoss
 
                 "\"I wanted to travel light.\"": #fail
                     show jorunn hesitant with dissolve
-                    y "A heavy pack would just slow me down."
+                    y veryhappy "A heavy pack would just slow me down."
                     moss "Right. A trader traveling light."
                     moss "How stupid do you think I am?"
-                    y nervous "Er..."
-                    "That sounded better in my head."
+                    y shocked "Er..."
+                    ny nervous "That sounded better in my head."
                     jump failedconvincemoss
 
         "\"I'm visiting from far away.\"":
-            show jorunn neutral with dissolve
+            show jorunn neutral
             moss "How far, exactly?"
             menu faraway:
                 "\"From the...mermaid capital?\"": #fail
@@ -168,7 +170,7 @@ label ch2_jorunn_village:
                     y "You wouldn't have heard of it."
                     moss "Try me."
                     y "But it's like super duper far away. Seriously far away."
-                    y "It's like...twenty blue whales and a giant squid length...{w}away?"
+                    y shocked "It's like...twenty blue whales and a giant squid length...{w}away?"
                     moss "If you can't give a proper answer, you should just leave."
                     moss "Take your nonsense elsewhere."
                     ny nervous "That could've gone better..."
@@ -189,14 +191,14 @@ label ch2_jorunn_village:
                     jump succeedconvincemoss
 
         "\"No clue. I have amnesia.\"":
-            show jorunn neutral with dissolve
+            show jorunn neutral
             $ amnesiapick = True
             moss "You...what?"
             menu headinjury:
                 "\"I just don't remember anything.\"": #fail
                     show jorunn neutral with dissolve
                     moss "...?"
-                    y "It's true! All of my memories are gone."
+                    y shocked "It's true! All of my memories are gone."
                     moss "Do you think I have fish for brains? If you're going to talk nonsense, you can leave."
                     ny nervous "I was so sure that would work!"
                     jump failedconvincemoss
@@ -204,7 +206,7 @@ label ch2_jorunn_village:
                 "\"I hit my head real bad in the storm.\"": #success
                     show jorunn shocked with dissolve
                     j "It's true! I found her passed out on a rock."
-                    y "I have proof! There's a bump on my head!!"
+                    y shocked "I have proof! There's a bump on my head!"
                     y "Do you want to see it?"
                     moss "I really don't."
                     j "It's a nasty bump! I thought she was dead when I found her!"
@@ -215,10 +217,10 @@ label ch2_jorunn_village:
                 "\"I'm trying to remember who I was by visiting lots of different places.\"": #fail
                     show jorunn hesitant with dissolve
                     moss "And you thought a village way out here would help?"
-                    y "Maybe I've been here before and I just don't remember!"
+                    y shocked "Maybe I've been here before and I just don't remember!"
                     moss "You haven't."
                     moss "We would remember someone using such a terrible excuse."
-                    "That usually goes better in the movies..."
+                    ny nervous "That usually goes better in the movies..."
                     jump failedconvincemoss
 
     # JOR FAIL SAVE
@@ -238,10 +240,10 @@ label failedconvincemoss:
     j "You're not gonna tell anyone, are you Mossy? We're not ready to tell my family yet!"
     moss "I...uh..."
     moss "L-lover or not, I'll kick you out the moment you cause any trouble, you hear?"
-    y nervous "Pardon? I won't cause any trouble."
+    y shocked "I won't cause any trouble!"
     moss "Damnit...!! Whatever! You owe me for this!"
     "He swims away from us in a hurry."
-    "But...isn't he supposed to be watching the gate?"
+    ny neutral "But...isn't he supposed to be watching the gate?"
     "..."
     show jorunn neutral with dissolve
     $ datingspeedrun.grant()
@@ -263,7 +265,7 @@ label failedconvincemoss:
 
     #AFTER SUCCESSFUL CONVO (FINALLY)
 label succeedconvincemoss:
-    moss "Whatever. Just don't cause any trouble."
+    moss neutral "Whatever. Just don't cause any trouble."
     show jorunn happy with dissolve
     j "Yep! Thanks, Mossy!"
     ny happy "I can't believe that worked."
@@ -304,7 +306,7 @@ label succeedconvincemoss:
         j "We gotta stick together, yeah?"
         show jorunn smile with dissolve
         "..."
-        j "So, what is Kansas, anyway?"
+        j "So, what is Kansas, anyways?"
         y "Oh, it's a fictional place!"
         y "My grandfather used to tell me stories about it as a child."
         y "I liked the one about a girl who got swept up in a storm the most."
@@ -335,30 +337,33 @@ label jorshouse:
     "A younger mermaid swims up to us from the inside. She looks relieved to see Jorunn."
 
     show jorunn at jorunn_right with move
-    show unna at unna_left with dissolve
+    show unna happy at unna_left with dissolve
 
     $ speaking_char = "Unna"
 
     u "You're back!"
 
-    show jorunn happy with dissolve
+    show jorunn happy
 
     j "I am back! Hey, Unna."
 
+    show unna neutral
     unna "I wasn't sure if you were going to make it back in time with the storm."
 
-    show jorunn smile with dissolve
+    show jorunn smile
 
     j "Aw, come on, as if a little current like that could stop me."
 
+    show unna shocked
     unna "And - oh, hello! Who's this with you?"
 
-    show jorunn neutral with dissolve
+    show jorunn neutral
 
     j "This is [y]. Found her all caught up in the storm outside. She'll be staying the night 'til it passes over."
 
     y happy "It's nice to meet you - Unna, is it?"
 
+    show unna happy
     unna "Yeah, you got it! I haven't seen clothes like yours around here before. The storm must have carried you a long way, huh?"
 
     y "Haha...you could say that. Thank you for having me."
@@ -367,6 +372,7 @@ label jorshouse:
 
     j "Where's Parvy? Have you two eaten yet?"
 
+    show unna neutral
     unna "Not yet. We were hoping to eat together with you."
 
     "As if on cue, a small figure swims out of the undergrowth to greet us."
@@ -374,8 +380,9 @@ label jorshouse:
     show parvy at parvy_center with dissolve
 
     parvy "...Hi, Jor."
-
-    show jorunn happy with dissolve
+    show unna happy
+    show jorunn happy
+    with dissolve
 
     j "There she is!"
 
@@ -387,7 +394,7 @@ label jorshouse:
 
     $ speaking_char = "all"
 
-    "The three of them all look so much alike."
+    "The three of them look so much alike."
 
     menu:
         ny neutral "I wonder..."
@@ -460,10 +467,12 @@ label jorshouse:
 
     y "Is there anything I can help with?"
 
+    show unna happy
     unna "Ah, don't worry about it, you're our guest! Go ahead and make yourself comfortable, we'll be done soon."
 
     $ speaking_char = "None"
 
+    show jorunn smile
     "Unna hands a basket over to Jorunn, who starts sorting through its contents."
 
     "It's obvious this is something they've done together many times."
@@ -485,7 +494,7 @@ label jorshouse:
     "Parvy hands me an empty bowl. She seems quite intent on staying by my side."
 
     y happy "Thank you."
-
+    show parvy smile with dissolve
     "They've made quick work of getting everything ready."
 
     #no dissolve for smooth transition
@@ -606,7 +615,7 @@ label jorshouse:
 
     #Three fruit
     if fruit == 3:
-        "There is so much fruit in here. Did I overdo it?"
+        ny shocked "There is so much fruit in here. Did I overdo it?"
 
     #Two fish
     if fish == 2:
@@ -625,7 +634,7 @@ label jorshouse:
     #No fish
     if fish == 0:
         $ jorunn_points += 1
-        j "Not a fan of fish, huh?"
+        j neutral "Not a fan of fish, huh?"
 
         y "Well...you could say I've had enough fish to last me a lifetime."
 
@@ -640,11 +649,11 @@ label jorshouse:
 
     parvy "What kind of food do you eat where you're from?"
 
-    y "We have something similar."
+    y veryhappy "We have something similar."
 
     show parvy smile with dissolve
 
-    parvy "Are you actually from the capital? Did you get your outfit there?"
+    parvy happy "Are you actually from the capital? Did you get your outfit there?"
 
     show jorunn neutral
     j "Parvy, all these questions for [y] and none for me, huh? I'm hurt! Don't you wanna know what I've been up to?"
@@ -652,9 +661,9 @@ label jorshouse:
     show parvy neutral
     parvy "I see you all the time!"
 
+    $ speaking_char = "Jorunn"
+    show jorunn shocked
     "Jorunn makes an exaggerated motion like he's been struck." with vpunch
-
-    show jorunn shocked with dissolve
 
     j "Arugh...[y], you've stolen my sister!"
 
@@ -706,13 +715,13 @@ label jorshouse:
 
     "Would it be okay to tell them? It doesn't look like a normal camera anymore."
 
-    y "It takes pictures. So you can have a physical copy of your memories."
+    y neutral "It takes pictures. So you can have a physical copy of your memories."
 
     show parvy smile with dissolve
 
     parvy "How does it work?"
 
-    y "You just point it at what you want to remember, then..."
+    y happy "You just point it at what you want to remember, then..."
 
     menu:
         "Take a picture of the family.":
@@ -722,8 +731,9 @@ label jorshouse:
             show black:
                 alpha 0.35
             show photo_black at atphoto
-            show parvy shocked
             show jorunn shocked
+            show unna shocked
+            show parvy shocked
             with dissolve
 
     parvy "...!"
@@ -754,7 +764,8 @@ label jorshouse:
 
     parvy "Unna, look it's us! We're on a little square!"
 
-    unna "Wow, how did you do that? Is it a magic item?"
+    show unna happy
+    unna "Wow! How did you do that? Is it a magic item?"
 
     y veryhappy "Haha...something like that."
 
@@ -828,15 +839,15 @@ label jorshouse:
             "Jorunn suddenly leans in closer, his hair brushing against my face."
             show jorunn neutral:
                 ypos 930 zoom 1.3
-                ease 0.3 ypos 1152 xpos 0.43 zoom 1.7
+                ease 0.3 ypos 1152 xpos 0.47 zoom 1.7
             with Pause(0.4)
             show jorunn teasing:
-                ypos 1152 xpos 0.43 zoom 1.7
+                ypos 1152 xpos 0.47 zoom 1.7
             with dissolve
             j "What, did you want to share?"
             y flustered "I, uh-"
             show jorunn smile:
-                ypos 1152 xpos 0.43 zoom 1.7
+                ypos 1152 xpos 0.47 zoom 1.7
                 ease 0.3 ypos 930 xpos 0.47 zoom 1.3
             with Pause(0.4)
             show jorunn smile:
@@ -845,7 +856,7 @@ label jorshouse:
             j "Haha! Just kidding. I'll be sleeping in one of my sister's rooms for the night. You've got this room all to yourself."
             "...He seems to have a teasing streak, doesn't he?"
             show jorunn happy with dissolve
-            j neutral "I'm sure you could use some time to yourself. Besides, we'll be seeing each other a lot now anyways."
+            j neutral "I'm sure you could use some time alone. Besides, we'll be seeing each other a lot now anyways."
             y happy "That's true. Thank you, Jorunn."
 
         "\"Thank you.\"":
@@ -865,7 +876,7 @@ label jorshouse:
 
     #CHOICE
     menu:
-        y mermaid neutral "What should I do?"
+        y "What should I do?"
 
         "Go to sleep.":
             pass
@@ -873,7 +884,7 @@ label jorshouse:
         "Look around the room first.":
             $ snoop = True
             "I'm pretty tired, but a quick look around the room couldn't hurt, right?"
-            "It's not like it's everyday I get to see what a mermaid's room looks like."
+            "It's not every day I get to see what a mermaid's room looks like."
             ny nervous "I hope Jorunn won't mind."
             ny neutral "..."
             y shocked "What's this?"
@@ -905,7 +916,7 @@ label jorshouse:
                     "I put the box back on the shelf."
 
 
-    ny sad "I can feel my eyes start to grow heavy. I guess everything is finally catching up to me."
+    "I can feel my eyes start to grow heavy. I guess everything is finally catching up to me."
     ny neutral "Time to get some rest."
     scene bg black with Dissolve(2.0)
     stop music fadeout 1.0
@@ -975,7 +986,11 @@ label jorshouse:
     show jorunn neutral with dissolve
     j "Well, with everything that's happening it'd be weirder if they were normal."
 
+    ny nervous "...Maybe the stress is getting to me."
+
     j "You ready to go?"
+
+    y neutral "I am."
 
     "Right. It's time to head ashore. I hope Prashadi keeps their word."
 
@@ -1032,10 +1047,13 @@ label jorshouse:
     "..."
 
     show jorunn neutral at jorunn_center with dissolve
-    ny mermaid neutral "The two of us swim further on. The shore feels so far."
+    ny mermaid neutral "The two of us swim further on."
 
     "..."
 
+    scene bg drowning:
+        fit "contain"
+    with dissolve
     "I can see the outline of metal ships moving above us. We must be getting close to the port."
 
     j "The surface is busy this morning."
@@ -1044,7 +1062,7 @@ label jorshouse:
 
     y "We should keep going. I know a good place for us to surface."
 
-    j "You got it!"
+    j "You got it."
 
     "..."
 
@@ -1061,8 +1079,9 @@ label jorshouse:
 
     ny neutral "I lay down on my back to catch my breath, and Jorunn does the same beside me."
 
-    show jorunn human neutral with dissolve
-
+    show jorunn human neutral
+    show jorunn human neutral at jorunn_closeup
+    with dissolve
     y shocked "...!"
 
     "Jorunn has changed too. It’s strange to see him with legs."
@@ -1071,7 +1090,7 @@ label jorshouse:
 
     show jorunn hesitant
 
-    j "Ah...achoo!" with screenShake
+    j shocked "Ah...achoo!" with screenShake
 
     show jorunn smile
 
@@ -1079,9 +1098,9 @@ label jorshouse:
 
     y "I could say the same."
 
-    "Prashadi’s spell gave us clothes, but they’ve been soaked through with water."
+    ny frustrated "Prashadi’s spell gave us clothes, but they’ve been soaked through with water."
 
-    y "Don’t worry. We’ll dry off quickly once the sun comes up."
+    y neutral "Don’t worry. We’ll dry off quickly once the sun comes up."
 
     "It is chillier here than I remember."
 
@@ -1093,7 +1112,7 @@ label jorshouse:
 
     y "I don’t suppose you sense any relics nearby here, do you?"
 
-    show jorunn smile with dissolve
+    show jorunn neutral with dissolve
 
     j "Can’t say that I do."
 
@@ -1101,9 +1120,11 @@ label jorshouse:
 
     ny nervous "There’s no way it would be that simple..."
 
-    show jorunn happy
+    show jorunn happy with dissolve
 
     j "But you know, when a mer uses a relic, it leaves an impression."
+
+    show jorunn smile with dissolve
 
     j "The magic lingers, even if they’re not holding onto it anymore."
 
@@ -1113,9 +1134,9 @@ label jorshouse:
 
     j "Well, why don’t we go find out? It might make our search easier."
 
-    y "Let’s check the market, then! I know lots of people go through that area."
+    y happy "Let’s check the market, then! I know lots of people go through that area."
 
-    ny nervous "If we can find something there, then maybe we wouldn’t have to head to the eerier market underground."
+    "If we can find something there, then maybe we wouldn’t have to head to the eerier market underground."
 
     j "Let’s get going then. We aren’t far from the city, yeah?"
 
@@ -1139,13 +1160,14 @@ label jorshouse:
             show jorunn teasing with dissolve
             if takehand:
                 j "You want to hold my hand again so soon, huh, [y]?"
-                y "Huh? I just thought you could use the help!"
+                y shocked "Huh? I just thought you could use the help!"
             else:
                 j "You change your mind about holding my hand, huh, [y]?"
-                y "That’s different!"
+                y shocked "That’s different!"
             show jorunn neutral with dissolve
-            "With my help, Jorunn takes a few steps across the sand. He seems to have gotten the hang of it rather quickly."
-            y "You’re a natural at this!"
+            ny neutral "With my help, Jorunn takes a few steps across the sand. He seems to have gotten the hang of it rather quickly."
+            y happy "You’re a natural at this!"
+            show jorunn smile with dissolve
             j "Ah, that’s too bad though. I was hoping to hold your hand a bit longer."
 
         "Let him be.":
@@ -1156,19 +1178,21 @@ label jorshouse:
             j "Well, I have a pretty lady to keep up with, don’t I?"
 
     show jorunn happy with dissolve
-    j "Anyway, let’s be off, yeah?"
+    j "Anyways, let’s be off, yeah?"
 
-    y "Before we go...you should know that there are mermaid hunters in the city too."
+    y neutral "Before we go...you should know that there are mermaid hunters in the city too."
 
     j "I can’t say I’m surprised. Don’t worry, we’ll just have to be careful, right?"
 
     y "Right."
 
-    "...I hope it will be that easy."
+    ny nervous "...I hope it will be that easy."
 
     "It’s not just Jorunn who’s a mermaid. I can’t forget that my human body right now is just an illusion too."
 
     "If we ran into Hunter or Grandfather, I’m still not sure what I would do."
+
+    stop music fadeout 1.0
 
     novisualhunter "...[y]?"
 

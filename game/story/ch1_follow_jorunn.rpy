@@ -4,7 +4,7 @@ label ch1_followjorunn:
     $ followthief.grant()
     hide screen notify2
     hide thioran angry with moveoutleft
-    show jorunn neutral at jorunn_center with move
+    show jorunn neutral at Position(xpos=0.52) with move
 #potential promermaid count: 2 or 1 or 0
 #potential antimermaid count: 2 or 1 or 0
     "The thief seems to know his way around. Maybe he can get me out of this mess."
@@ -14,11 +14,11 @@ label ch1_followjorunn:
 
     show jorunn neutral:
         subpixel True
-        pos (0.47, 804) zoom 1.0
-        ease 0.41 pos (0.42, 1355) zoom 2.04
+        pos (0.52, 804) zoom 1.0
+        ease 0.41 pos (0.50, 1355) zoom 2.04
     with Pause(0.50)
     show jorunn neutral:
-        ease 0.41 pos (0.42, 1355) zoom 2.04
+        ease 0.41 pos (0.50, 1355) zoom 2.04
 
     "I can't stop! I crash into the thief's shoulder." with vpunch
     show jorunn hesitant with dissolve
@@ -27,7 +27,7 @@ label ch1_followjorunn:
     "A deft hand snatches me up."
     show jorunn smile with dissolve
     uj "Oh, well this is new! Never had a fish come up to my net before."
-    y "{i}Blub blub blub!!{/i}" with screenShake
+    y "{i}Blub blub blub!!{/i}" with hpunch
     "Wait, hang on now! Please don't eat me!"
     "If only I could speak real words!"
     show jorunn neutral with dissolve
@@ -151,6 +151,7 @@ label ch1_followjorunn:
             if antimermaid >= 2:
                 "His kind is the reason why I fell off Hunter's boat in the first place."
             "Anything could be in here, and I'm just letting him lead me to my doom."
+            "..."
             "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
     j "And here we are!"
@@ -162,7 +163,7 @@ label ch1_followjorunn:
 
     scene bg prashadi cave:
         fit "contain"
-    with dissolve
+    with fade
 
     $ config.side_image_tag = "june"
     ny neutral fish "Are those...stars above us?"
@@ -213,7 +214,7 @@ label ch1_followjorunn:
         "This is..."
         "What kind of trick is this?":
             "Is this some sort of mermaid magic?"
-            "Either way, it's undeniable that this 'Prashadi' has Grandfather's face."
+            "Whatever the case, it's undeniable that this 'Prashadi' has Grandfather's face."
 
         "Is that actually him?":
             "Has he been living some kind of double life this entire time?"
@@ -223,7 +224,7 @@ label ch1_followjorunn:
     Pr "It appears she's been cursed as well."
     j "She's no normal fish, is she?"
     Pr "Precisely. This one is a human!"
-    show jorunn hesitant with dissolve
+    show jorunn hesitant
     j "What?"
     Pr "Your little friend here used to have legs. And a voice. Possibly even hair."
     Pr "A real human, she was."

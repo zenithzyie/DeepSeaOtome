@@ -444,10 +444,10 @@ label cetus_office:
 
     menu:
         "But..."
-        "My family and friends think I'm dead!":
+        "\"My family and friends think I'm dead!\"":
             c sad "A pity."
             pass
-        "There are people waiting for me.":
+        "\"There are people waiting for me.\"":
             c frustrated "A pity."
             pass
 
@@ -464,14 +464,14 @@ label cetus_office:
     menu changehismind:
         set menuset
         ny nervous "There must be something I can say to change his mind."
-        "I could go out and help you hunt the siren!":
+        "\"I could go out and help you hunt the siren!\"":
             y neutral "I've seen her lair, after all."
             y happy "If we work together, I'm sure we'll have a better chance!"
             show cetus neutral with dissolve
             c "If nothing else, your sheer recklessness should be applauded."
             pass
 
-        "I could bring you back things from the surface.":
+        "\"I could bring you back things from the surface.\"":
             c "I have no interest in your human toys."
             c "And even if I did, why should I believe that you'd keep your word?"
             y shocked "..."

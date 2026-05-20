@@ -131,8 +131,8 @@ define audio.bgm_prashCave = "audio/music/02 Magic in the Meadow.mp3"
 define audio.bgm_blackMarket = "audio/music/05 The Matron_s Scribe.ogg"
 define audio.bgm_portTown = "audio/music/07 Song for Slumber.ogg"
 define audio.bgm_cave = "audio/music/08 Mist Across the Castle Plains.mp3"
-define audio.bgm_jorVilliage = "audio/music/10 Tiny Creatures Along the Way.mp3"
-define audio.bgm_palaceThrone = "audio/music/11 Successful Journey.mp3"
+define audio.bgm_creatures = "audio/music/10 Tiny Creatures Along the Way.mp3"
+define audio.bgm_jorVillage = "audio/music/11 Successful Journey.mp3"
 define audio.bgm_skyllaCave = "audio/music/12 Spectral Phantoms Awake.ogg"
 define audio.bgm_capital = "audio/music/13 Beatiful Reflections.ogg"
 ######################################################################
@@ -373,6 +373,10 @@ layeredimage hunter:
 ######################################################################
 define jorunn_center = Position(xpos=0.47)
 define jorunn_right = Position(xpos=0.65)
+transform jorunn_closeup:
+    xpos 0.47
+    ypos 930
+    zoom 1.3
 ######################################################################
 layeredimage jorunn:
     at sprite_highlight('Jorunn')
@@ -382,6 +386,10 @@ layeredimage jorunn:
 
     group expressions auto:
         attribute neutral default
+
+    group bangs if_any["human"]:
+        attribute bangs default:
+            "images/sprites/jorunn/jorunn_bangs.png"
 
     zoom 0.133
     ypos 804
@@ -397,8 +405,12 @@ layeredimage unna:
     group expressions auto:
         attribute neutral default
 
-    zoom 0.133
-    ypos 804
+    group eyes auto:
+        attribute blinking default:
+            "images/sprites/unna/unna_blink.png" at blink
+
+    zoom 0.1314
+    ypos 826
 ######################################################################
 ## Parvy Sprite ######################################################
 ######################################################################
