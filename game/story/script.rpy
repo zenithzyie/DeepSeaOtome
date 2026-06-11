@@ -161,28 +161,6 @@ label chapter1:
     ny frustrated "Trying to grab anyone's attention around here is impossible!"
     "Were they always this unfriendly when I was younger? {w}I can't remember."
 
-    #SCENE CHANGE - (Shabbier part of Town)
-    show bg shabby town:
-        fit "contain"
-        xalign 0.5
-        subpixel True
-        zoom 1.05
-        linear 1.75 zoom 1.0
-    with dissolve
-    with Pause(1.75)
-    show bg shabby town:
-        fit "contain"
-
-    "The further I walk down from the top of the city, the more the atmosphere seems to change."
-    ny neutral "It looks like these parts have fallen onto harder times. I remember it being a bit more lively."
-    "Now, the street feels gloomy and unwelcoming."
-    "Rather than being ignored, it seems I'm attracting uncomfortable attention."
-    badguy "Tch, Inlanders. What's someone like her out here for?"
-    badguy "Oy, you don't see many of them 'ere anymore. And she got a fancy lookin' bag on her. That could land us a nice bit of coin, aye?"
-
-    ny frustrated "They're hardly being secretive about wanting to rob me!"
-    "I quickly walk away from the men watching me, holding my bag closer to my side."
-
     #SCENE CHANGE - (Shabby Market [Zoomed In])
     #SUBTLE ZOOM IN FROM CENTRE
     window auto hide
@@ -197,7 +175,7 @@ label chapter1:
         fit "contain"
     play ambience "audio/sfx_crowdAquantis.ogg" volume 0.9 loop
     #make this a more occasional/easygoing market sfx
-    ny neutral "In my rush to escape, I find myself at a market."
+    ny neutral "After wandering for awhile, I find myself at a market."
     ny happy "There's more people here. And more to look at, as well."
     menu:
         "My eyes are drawn to..."
@@ -250,6 +228,29 @@ label chapter1:
 
     "Perhaps they can help me find Grandfather's address."
 
+    show text "I should head _____ to _____ ______" at puzzletxt
+
+    menu locationriddle1:
+        "Where do I need to go?"
+        "south":
+            pass
+        "west":
+            pass
+        "east":
+            pass
+
+    show text "I should head (direction) to _____ ______"
+
+    menu locationriddle2:
+        "Where do I need to go?"
+        "seasalt":
+            pass
+        "seabreeze":
+            pass
+        "seasea":
+            pass
+
+    "wow! puzzle"
     menu talktownsfolk:
         set menuset
         ny happy "Talk to..."
