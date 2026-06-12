@@ -68,24 +68,32 @@ label ch1_followprince:
     "Some time passes, and the prince stops suddenly, jostling me from my thoughts."
     "I notice a multitude of colorful lights seeping through his fingers. Are we really at the bottom of the ocean? How can it be so bright here?"
     "Intrigued, I swim a bit closer to get a better look."
-    window auto hide
-    scene bg capitalcity:
-        xalign 0.5
-        subpixel True
-        zoom 1.05
-        linear 1.75 zoom 1.0
-    with dissolve
-    with Pause(1.75)
+#zoom broken bc of new bg size
+#    window auto hide
+#    scene bg_marislumina:
+#        xalign 0.5
+#        subpixel True
+#        zoom 1.05
+#        linear 1.75 zoom 1.0
+#    with dissolve
+#    with Pause(1.75)
 
     play music bgm_capital volume 0.8
-    show bg capitalcity
+    show bg_marislumina:
+        fit "contain"
     ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more mermaids than I could ever count."
     "I feel smaller than I already am..."
     "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
     "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
-    show thioran frown at Position(xpos=0.45) with dissolve
+    show thioran frown at thioran_center with dissolve
     up "Go on ahead to make a report on the storm. I will return to the palace shortly."
     guard "Yes, my prince."
+    y neutral mermaid "hello sir"
+    show thioran:
+        pos (0.38, 1060) zoom 1.6
+    y shocked mermaid "hello sir"
+    hide thioran
+    y "ohhh stars"
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with the prince in this strange but beautiful city."
     "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."

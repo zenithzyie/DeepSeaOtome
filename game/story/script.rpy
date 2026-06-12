@@ -216,7 +216,6 @@ label chapter1:
                 align (0.5,0.5)
             with dissolve
             pause
-            #"Several Fishing Companies Absorbed by Morrowe Family: What Will They Do Now?"
             y "Morrowe...that name sounds familiar."
             y neutral "But where have I heard it from?"
             hide black
@@ -228,63 +227,45 @@ label chapter1:
 
     "Perhaps they can help me find Grandfather's address."
 
-    show text "I should head _____ to _____ ______" at puzzletxt
-
-    menu locationriddle1:
-        "Where do I need to go?"
-        "south":
-            pass
-        "west":
-            pass
-        "east":
-            pass
-
-    show text "I should head (direction) to _____ ______"
-
-    menu locationriddle2:
-        "Where do I need to go?"
-        "seasalt":
-            pass
-        "seabreeze":
-            pass
-        "seasea":
-            pass
-
-    "wow! puzzle"
     menu talktownsfolk:
         set menuset
         ny happy "Talk to..."
-        "Elderly woman":
+        "Elderly Woman":
+            "There's an elderly woman browsing the vegetable stand."
+            "She has a kindly look about her."
             y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
-            "The woman turns to me. She has a strange look on her face."
-            woman "Knock knock."
-            y "Pardon?"
-            woman "Knock knock."
-            y "Oh, I know this one. Who's there?"
-            woman "Knock knock."
-            y neutral "..."
-            y "Uh...knock knock?"
-            "The woman grins toothily."
-            woman "Gehehehe! The wall!"
-            ny nervous "It doesn't seem like she's trying to tell me a joke at all."
-            y "Have a good day, ma'am."
-            "I quickly walk away from the strange woman, though I can't help but feel like whatever she kept repeating is important somehow."
+            woman "O' course, dearie. Where you headin'?"
+            "I show her the address on the letter."
+            woman "Oh my, are you sure? Aquantis has some better places to see. We've a real pretty beachside."
+            "Can she tell I'm not a local?"
+            y "Oh well, I'm looking for my grandfather. This is the only address I have."
+            "She squints at the paper."
+            woman "Why, this says Finch on it. So you're Herman's granddaughter, are you?"
+            y "I am! Do you know him?"
+            woman "Everybody knows everybody ‘round here, dearie. Why, I was there when your grandparents got married!"
+            y "Really? Wow!"
+            woman "He was quite the looker back in the day. Hoho!"
+            woman "Try going {color=#f2b950}west{/color}. You'll find the entrance to where you wanna be there in the {color=#f2b950}Seasalt Alley.{/color}"
+            y "I see. Thank you for your help!"
+            woman "Don't be a stranger now!"
 
             jump talktownsfolk
 
-        "Child with toy":
+        "Children playing":
             y "Hey, there! Do you know where I could find this area?"
-            "The child is holding a plush octopus tightly. It looks well-loved."
-            "I show him the address on the letter."
-            kid "Oh, I know that place!"
-            kid "That's near the west alley. My mama says I can't play over there."
-            kid "She says it's full of bad people."
-            kid "Are you bad people?"
-            y "No, I'm just looking for someone who lives there."
-            y "Thank you for your help."
-            kid "No problem, lady!"
-            "He dashes off with a giggle."
-            ny nervous "I have no choice but to find someone else for more information."
+            energetickid "I win! I get to be the mermaid hunter now!"
+            playfulkid "You cheated! It's still my turn."
+
+            y "hello...? Can u hear me...?"
+            "The kids seem busy playing their game."
+
+            energetickid "No way! Last time when we were playing, I got grounded because of you, so it should be my turn!"
+            playfulkid "It was your idea to go to the alley!"
+            energetickid "But you're the one you kept {color=#f2b950}knocking{/color} the ball against {color=#f2b950}the wall!{/color}"
+            playfulkid "How was I supposed to know the grown-ups would get mad at us for that! It's a stupid wall!"
+            "The kids begin squabbling with one another."
+            y "Oh dear..."
+            "I don't think I'll be getting any directions from them."
 
             jump talktownsfolk
 
@@ -292,48 +273,203 @@ label chapter1:
             #ny shocked "I just hope I'm not expected to buy the fish covered in flies."
 
             #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
-            y happy "Good day to you sir. I'm sorry for disrupting you, but-"
-            fishmonger shocked "Bass or tilapia?" with vpunch
-            y shocked "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
-            fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then ya leave, ya get it?"
-            y frustrated "I will pay you for the help! I'm just looking for this address."
-            fishmonger "I ain't gonna be telling any airsick Inlandler how to get—"
-            "Before he can deny me again, I show him the bottom half of the letter where the address is clearly written."
-            "He squints at the paper."
-            fishmonger "What did ya say ya name was again?"
-            y neutral "It's [y] Finch."
-            fishmonger "Finch, ya say..."
+            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four pence per fish.'"
+            y "Good day to you sir. I'm sorry for disrupting you, but-"
+            fishmonger "Bass or halibut?" with screenShake
+            y "Huh?"
+            fishmonger "Bass or halibut? Whaddya want?"
+
+            menu fishbuy:
+                set menuset
+                "Whaddya want?"
+                "Bass.":
+                    y "I'll take the bass."
+
+                "Halibut.":
+                    y "I'll take the halibut."
+
+                "I'm not looking to buy fish right now.":
+                    $ notbuyfish = True
+                    y shocked "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
+                    fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then we'll talk, ya get it?"
+                    "Clearly, the only language merchants speak is money..."
+                    jump fishbuy
+
+            "The fishmonger wraps up a fillet for me in a bag."
+            fishmonger "Five coins."
+            y "Huh? But your sign here says four."
+            fishmonger "It's on account'o the inflation. ‘Sides, that sign's old."
+            y "..."
+            fishmonger "You want the fish or not?"
+            y "I suppose."
+            "I put five coins on the table and he hands me the bag with the fish in it."
+            if notbuyfish:
+                fishmonger "Alright whaddya wanna know."
+            else:
+                y "Could I also trouble you for some directions?"
+            y "I'm looking for this address here."
+            "I show him the address on the letter."
             "He scratches his chin and sighs."
-            fishmonger "The code's {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
+            fishmonger "The code's to get in is {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
-            "He stares at me with a glimmer of greed in his eyes."
-            fishmonger "Payment?"
-            ny nervous "Clearly, the only language merchants speak is money..."
-            y "Oh, yes. Thank you so much for the help."
-            #PUT GOLD CLINK SFX HERE
-            ny frustrated "That was far from helpful!"
-            "But I leave him a fair amount of coin for his trouble anyway."
+            "That doesn't tell me where to go at all!"
+            y "Thank you so much for the help."
 
             jump talktownsfolk
 
     "It seems I have spoken to everyone I can in the area."
+    "I need to get my thoughts in order."
 
+label locationriddle:
     #possible choice?
-    "According to what I've been told, I need to go to the west alley and knock on the wall."
+    $ puzzle1 = "_____"
+    $ puzzle2 = "_____"
+    $ puzzle3 = "_____"
+    show black:
+        alpha 0.5
 
-    "The code was...{color=#f2b950}five, three, four{/color}?"
+    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
+        xalign 0.5
+        ypos 200
+
+    menu locationriddle1:
+        "Where do I need to go?"
+        "South":
+            $ puzzle1 = "south"
+        "West":
+            $ puzzle1 = "west"
+        "East":
+            $ puzzle1 = "east"
+
+    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
+        xalign 0.5
+        ypos 200
+    menu locationriddle2:
+        "Where do I need to go?"
+        "Seasalt":
+            $ puzzle2 = "Seasalt"
+        "Seabreeze":
+            $ puzzle2 = "Seabreeze"
+        "Seafoam":
+            $ puzzle2 = "Seafoam"
+
+    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
+        xalign 0.5
+        ypos 200
+    menu locationriddle3:
+        "Where do I need to go?"
+        "Avenue":
+            $ puzzle3 = "Avenue"
+        "Alley":
+            $ puzzle3 = "Alley"
+        "Abbey":
+            $ puzzle3 = "Abbey"
+
+    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
+        xalign 0.5
+        ypos 200
+
+    #SUCCESS:
+    if puzzle1 == "west" and puzzle2 == "Seasalt" and puzzle3 == "Alley":
+        hide text
+        hide black
+        with dissolve
+        "I should head west to Seasalt Alley."
+
+        "Wait for me, Grandfather! I'll see you soon."
+    else:
+        #FAIL:
+        "Is that really the answer? Maybe I should think about it some more..."
+        jump locationriddle
+
+
+    scene bg shabby town:
+        fit "contain"
+    with dissolve
+    ny neutral "I head out of the market and to the backstreets."
+    "The further I walk, the more the atmosphere seems to change."
+    "It looks like these parts have fallen onto harder times."
+
+    badguy "Tch, Inlanders. What's someone like her out here for?"
+
+    badguy "Oy, you don’t see many of them out ‘ere anymore."
+    badguy "And she got a fancy lookin’ bag on her. That could land us a nice bit o’coin, aye?"
+
+    ny frustrated "They're hardly being secretive about wanting to rob me!"
+
+    "I quickly walk away from the men watching me, holding my bag closer to my side."
+
+    ny shocked "Ah! Here's Seasalt Alley."
+
+    scene bg shabby town:
+        fit "contain"
+    with fade
+
+    ny neutral "I walk further into the alley and quickly reach a dead end."
+
+    "On the right, there’s a plain wooden door."
+    "The left wall's bricks are discolored and eroded compared to the rest."
+    "The ground is solid. I don’t think it could move if it wanted to."
+
+    "What do I do now? The fishmonger mentioned putting a code in somewhere."
+
+    #Puzzle minigame begins:
+    "I need to get my thoughts in order."
+
+label wallriddle:
+    $ wallpuzzle1 = "_____"
+    $ wallpuzzle2 = "_____"
+
+    show black:
+        alpha 0.5
+    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
+        xalign 0.5
+        ypos 200
+
+    menu wallriddle1:
+        "What do I need to do?"
+        "Play soccer":
+            $ wallpuzzle1 = "play soccer on"
+        "Knock":
+            $ wallpuzzle1 = "knock on"
+        "Break":
+            $ wallpuzzle1 = "break"
+
+    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
+        xalign 0.5
+        ypos 200
+
+    menu wallriddle2:
+        "What do I need to do?"
+        "Ground":
+            $ wallpuzzle2 = "ground"
+        "Door":
+            $ wallpuzzle2 = "door"
+        "Wall":
+            $ wallpuzzle2 = "wall"
+
+    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
+        xalign 0.5
+        ypos 200
+
+    #SUCCESS:
+    if wallpuzzle1 == "knock on" and wallpuzzle2 == "wall":
+        hide text
+        hide black
+        with dissolve
+        "I should knock on the wall."
+
+    else:
+        #FAIL:
+        "Is that really the answer? Maybe I should think about it some more..."
+        jump wallriddle
 
     scene bg brickwall with dissolve
     stop ambience fadeout 5.0
     #should we stop the music here/play something else?
     $ config.side_image_tag = "june"
-    ny neutral "I make my way past the market area to a narrow alley."
-    "Upon reaching the end of the alley, I turn and come across a strange brick wall. The bricks are discolored and eroded compared to the rest."
-    "Well."
-    "I stare at the wall for a few moments."
-    "This is certainly not something I had planned for this trip, but if it's the only way to get to Grandfather..."
-    "I suppose I'll just have to give it a go."
-
+    ny neutral "There must be a shortcut hidden here. How exciting! I'll have to tell Grandfather about my adventure."
+    "...But if this doesn't work, I'll just head to the port and try looking around there."
 label knocking:
     if knocking >= 3:
         jump knockwhatever

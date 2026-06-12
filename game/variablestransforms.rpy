@@ -117,8 +117,6 @@ define moreright = Position(xpos=0.60)
 define farright = Position(xpos=0.70)
 define prettyfarright = Position(xpos=0.85)
 
-define puzzletext = Position(422, 115)
-
 transform cflip:
     xzoom -1
 #For when we add the ability to toggle gore (eventually)

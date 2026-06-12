@@ -52,6 +52,7 @@ layeredimage bg_hunterboat_stormy:
             #alpha 0.2
 ############
 #testing cetus image
+############
 transform firefly_blink(child=None, fade_time=0.2, visible_time=1.0, zoom=1.0):
     child
     zoom zoom
@@ -72,3 +73,24 @@ layeredimage bg_cetusoffice1:
 #        "test_firefly" at firefly_blink
     attribute bg_cetus default:
         "images/bgs/bg cetus study.jpg"
+
+############
+#Maris Lumina - Capital City
+############
+transform luminastars_blink(child=None, fade_time=0.5, visible_time=2.0, zoom=1.0):
+    child
+    zoom zoom
+    alpha 0.0
+    linear fade_time alpha 1.0
+    pause visible_time-fade_time*0.5
+    linear fade_time alpha 0.0
+    repeat
+layeredimage bg_marislumina:
+    group city:
+        attribute day default:
+            "images/bgs/marislumina/bg capitalcity.jpg"
+    group sparkle auto:
+        attribute showsparkle default:
+            "images/bgs/marislumina/sparkle.png" at luminastars_blink
+        attribute nosparkle:
+            Null()
