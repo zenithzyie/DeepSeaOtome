@@ -226,11 +226,30 @@ label chapter1:
     ny happy "After looking around, it seems like the townsfolk are friendlier here."
 
     "Perhaps they can help me find Grandfather's address."
+    $ oldladyinfo = False
+    $ kidsinfo = False
+    $ fishmongerinfo = False
+label marketpuzzle:
+    show bg shabby market:
+        fit "contain"
+    menu marketstart:
+        ny neutral "Hm..."
+        "Ask around.":
+            jump talktownsfolk
+
+        "Wander around.":
+            if oldladyinfo:
+                jump seasaltalley
+
+            else:
+                "But I’m not quite sure where to start looking. Maybe I should ask around first?"
+                jump marketpuzzle
 
     menu talktownsfolk:
-        set menuset
+        #set menuset
         ny happy "Talk to..."
         "Elderly Woman":
+            $ oldladyinfo = True
             "There's an elderly woman browsing the vegetable stand."
             "She has a kindly look about her."
             y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
@@ -252,6 +271,7 @@ label chapter1:
             jump talktownsfolk
 
         "Children playing":
+            $ kidsinfo = True
             y "Hey, there! Do you know where I could find this area?"
             energetickid "I win! I get to be the mermaid hunter now!"
             playfulkid "You cheated! It's still my turn."
@@ -270,10 +290,8 @@ label chapter1:
             jump talktownsfolk
 
         "Fishmonger":
-            #ny shocked "I just hope I'm not expected to buy the fish covered in flies."
-
-            #SCENE CHANGE - Shabby Market (fishmonger npc sprite)
-            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four pence per fish.'"
+            $ fishmongerinfo = True
+            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four coppers per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
             y "Huh?"
@@ -283,9 +301,11 @@ label chapter1:
                 set menuset
                 "Whaddya want?"
                 "Bass.":
+                    $ notbuyfish = False
                     y "I'll take the bass."
 
                 "Halibut.":
+                    $ notbuyfish = False
                     y "I'll take the halibut."
 
                 "I'm not looking to buy fish right now.":
@@ -296,13 +316,13 @@ label chapter1:
                     jump fishbuy
 
             "The fishmonger wraps up a fillet for me in a bag."
-            fishmonger "Five coins."
+            fishmonger "Five coppers."
             y "Huh? But your sign here says four."
             fishmonger "It's on account'o the inflation. ‘Sides, that sign's old."
             y "..."
             fishmonger "You want the fish or not?"
             y "I suppose."
-            "I put five coins on the table and he hands me the bag with the fish in it."
+            "I put five copper coins on the table and he hands me the bag with the fish in it."
             if notbuyfish:
                 fishmonger "Alright whaddya wanna know."
             else:
@@ -316,161 +336,63 @@ label chapter1:
             y "Thank you so much for the help."
 
             jump talktownsfolk
+        "Go back.":
+            jump marketpuzzle
 
     "It seems I have spoken to everyone I can in the area."
-    "I need to get my thoughts in order."
+    jump marketpuzzle
 
-label locationriddle:
-    #possible choice?
-    $ puzzle1 = "_____"
-    $ puzzle2 = "_____"
-    $ puzzle3 = "_____"
-    show black:
-        alpha 0.5
-
-    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
-        xalign 0.5
-        ypos 200
-
-    menu locationriddle1:
-        "Where do I need to go?"
-        "South":
-            $ puzzle1 = "south"
-        "West":
-            $ puzzle1 = "west"
-        "East":
-            $ puzzle1 = "east"
-
-    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
-        xalign 0.5
-        ypos 200
-    menu locationriddle2:
-        "Where do I need to go?"
-        "Seasalt":
-            $ puzzle2 = "Seasalt"
-        "Seabreeze":
-            $ puzzle2 = "Seabreeze"
-        "Seafoam":
-            $ puzzle2 = "Seafoam"
-
-    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
-        xalign 0.5
-        ypos 200
-    menu locationriddle3:
-        "Where do I need to go?"
-        "Avenue":
-            $ puzzle3 = "Avenue"
-        "Alley":
-            $ puzzle3 = "Alley"
-        "Abbey":
-            $ puzzle3 = "Abbey"
-
-    show text "I should head [ puzzle1 ] to [ puzzle2 ] [ puzzle3 ]":
-        xalign 0.5
-        ypos 200
-
-    #SUCCESS:
-    if puzzle1 == "west" and puzzle2 == "Seasalt" and puzzle3 == "Alley":
-        hide text
-        hide black
-        with dissolve
-        "I should head west to Seasalt Alley."
-
-        "Wait for me, Grandfather! I'll see you soon."
-    else:
-        #FAIL:
-        "Is that really the answer? Maybe I should think about it some more..."
-        jump locationriddle
-
-
-    scene bg shabby town:
-        fit "contain"
-    with dissolve
-    ny neutral "I head out of the market and to the backstreets."
-    "The further I walk, the more the atmosphere seems to change."
-    "It looks like these parts have fallen onto harder times."
-
-    badguy "Tch, Inlanders. What's someone like her out here for?"
-
-    badguy "Oy, you don’t see many of them out ‘ere anymore."
-    badguy "And she got a fancy lookin’ bag on her. That could land us a nice bit o’coin, aye?"
-
-    ny frustrated "They're hardly being secretive about wanting to rob me!"
-
-    "I quickly walk away from the men watching me, holding my bag closer to my side."
-
-    ny shocked "Ah! Here's Seasalt Alley."
-
+label seasaltalley:
     scene bg shabby town:
         fit "contain"
     with fade
-
+    ny shocked "Ah! Here's Seasalt Alley."
     ny neutral "I walk further into the alley and quickly reach a dead end."
+    if kidsinfo and fishmongerinfo:
+        "Hmm the kids mentioned knocking on the wall…and fishmonger mentioned a code…i think i know what to do here!"
+        "Knock in the code"
+        "PLAYER INPUT HERE"
+        jump knocking
+    if kidsinfo:
+        "They mentioned something about knocking on the wall. Maybe…?"
+        menu nokidknock:
+            "Knock on wall":
+                "I knock against the wall."
+                "knock knock knock."
+                "...nope.. That wasn't it."
+                "I think i need more info :("
+                jump marketpuzzle
+            "Go back.":
+                jump marketpuzzle
 
-    "On the right, there’s a plain wooden door."
-    "The left wall's bricks are discolored and eroded compared to the rest."
-    "The ground is solid. I don’t think it could move if it wanted to."
-
-    "What do I do now? The fishmonger mentioned putting a code in somewhere."
-
-    #Puzzle minigame begins:
-    "I need to get my thoughts in order."
-
-label wallriddle:
-    $ wallpuzzle1 = "_____"
-    $ wallpuzzle2 = "_____"
-
-    show black:
-        alpha 0.5
-    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
-        xalign 0.5
-        ypos 200
-
-    menu wallriddle1:
-        "What do I need to do?"
-        "Play soccer":
-            $ wallpuzzle1 = "play soccer on"
-        "Knock":
-            $ wallpuzzle1 = "knock on"
-        "Break":
-            $ wallpuzzle1 = "break"
-
-    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
-        xalign 0.5
-        ypos 200
-
-    menu wallriddle2:
-        "What do I need to do?"
-        "Ground":
-            $ wallpuzzle2 = "ground"
-        "Door":
-            $ wallpuzzle2 = "door"
-        "Wall":
-            $ wallpuzzle2 = "wall"
-
-    show text "I should [ wallpuzzle1 ] the [ wallpuzzle2 ].":
-        xalign 0.5
-        ypos 200
-
-    #SUCCESS:
-    if wallpuzzle1 == "knock on" and wallpuzzle2 == "wall":
-        hide text
-        hide black
-        with dissolve
-        "I should knock on the wall."
+    if fishmongerinfo:
+        "Uhh i have a code"
+        "Maybe i use it here somehow???"
+        menu nocodeinput:
+            "Speak the code":
+                "Hm. I YELL THE CODE LOUDLY"
+                "input code here"
+                "534!!!!"
+                "SHUT UP!!!!"
+                "IM< SLEEPIN HERE!!!!"
+                "Oh ok! My bad bro!"
+                "I think i need more info :("
+                jump marketpuzzle
+            "Go back":
+                jump marketpuzzle
 
     else:
-        #FAIL:
-        "Is that really the answer? Maybe I should think about it some more..."
-        jump wallriddle
+        "Idk what do do here..."
+        "I go back to the market."
+        jump marketpuzzle
 
+label knocking:
     scene bg brickwall with dissolve
     stop ambience fadeout 5.0
     #should we stop the music here/play something else?
     $ config.side_image_tag = "june"
     ny neutral "There must be a shortcut hidden here. How exciting! I'll have to tell Grandfather about my adventure."
     "...But if this doesn't work, I'll just head to the port and try looking around there."
-label knocking:
     if knocking >= 3:
         jump knockwhatever
     else:
