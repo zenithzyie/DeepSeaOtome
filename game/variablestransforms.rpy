@@ -42,6 +42,7 @@ define parvy = Character("Parvy", image="june", ctc="ctc_pos", ctc_position="fix
 ######################################################################
 #NPC Names
 define t = Character("Townsperson", image="june", ctc="ctc_pos", ctc_position="fixed")
+define person = Character("Passerby", image="june", ctc="ctc_pos", ctc_position="fixed")
 define kid = Character("Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
 define energetickid = Character("Energetic Kid", image="june", ctc="ctc_pos", ctc_position="fixed")
 define playfulkid = Character("Playful Kid", image="june", ctc="ctc_pos", ctc_position="fixed")

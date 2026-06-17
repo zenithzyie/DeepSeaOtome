@@ -170,8 +170,6 @@ label ch2_followthio:
 
     y "Yes, of course..."
 
-#    ny frustrated "And the prince isn’t really princely at all."
-
     "No, I've got to stay calm. {w} Just keep swimming, [y]."
 
     scene bg palace hallway:
@@ -257,14 +255,16 @@ label ch2_followthio:
     "I should go inside. The prince doesn't seem too happy with me right now."
 
     y "Thank yo-"
-
     if not renpy.seen_image("cg_thiokabedon"):
+        play sound "audio/sfx_thioKabedon.ogg"
         scene cg_thiokabedon with vpunch:
             fit "contain"
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
+        play sound "audio/sfx_thioKabedon.ogg"
         scene cg_thiokabedon with vpunch:
             fit "contain"
+    #volume 0.5
 
     "Prince Thioran suddenly leans over me, trapping me between his body and the door."
     "He's leaning in so close!"
@@ -302,7 +302,7 @@ label ch2_followthio:
         fit "contain"
     with fade
 
-    play sound "audio/sfx_stoneDoorClose.ogg" volume 0.5
+    play sound "audio/sfx_stoneDoorClose2.ogg"
     "The door closes before I can get another word in."
 
     ny mermaid shocked "What was that?"
@@ -321,7 +321,7 @@ label ch2_followthio:
 
     ny neutral "There's what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
 
-    play sound "audio/sfx_bedFlop.ogg" volume 0.5
+    play sound "audio/sfx_bedFlop2.ogg" volume 0.5
 
     ny shocked "Ack!" with vpunch
     "Did I lay on something?"

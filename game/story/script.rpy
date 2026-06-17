@@ -229,15 +229,20 @@ label chapter1:
     $ oldladyinfo = False
     $ kidsinfo = False
     $ fishmongerinfo = False
+    $ visitedalley = False
+    $ bass = False
+    $ halibut = False
+    $ saiditlouder = False
 label marketpuzzle:
+    hide black with fade
     show bg shabby market:
         fit "contain"
     menu marketstart:
-        ny neutral "Hm..."
+        ny neutral "Hmm..."
         "Ask around.":
             jump talktownsfolk
 
-        "Wander around.":
+        "Go look elsewhere.":
             if oldladyinfo:
                 jump seasaltalley
 
@@ -262,9 +267,11 @@ label marketpuzzle:
             woman "Why, this says Finch on it. So you're Herman's granddaughter, are you?"
             y "I am! Do you know him?"
             woman "Everybody knows everybody ‘round here, dearie. Why, I was there when your grandparents got married!"
-            y "Really? Wow!"
             woman "He was quite the looker back in the day. Hoho!"
-            woman "Try going {color=#f2b950}west{/color}. You'll find the entrance to where you wanna be there in the {color=#f2b950}Seasalt Alley.{/color}"
+            y "Really?"
+            "Huh. It sure is a small world."
+            woman "Try goin' {color=#f2b950}west{/color} ‘til you reach the end of the alley."
+            woman "You'll find what you're lookin' for there."
             y "I see. Thank you for your help!"
             woman "Don't be a stranger now!"
 
@@ -276,7 +283,7 @@ label marketpuzzle:
             energetickid "I win! I get to be the mermaid hunter now!"
             playfulkid "You cheated! It's still my turn."
 
-            y "hello...? Can u hear me...?"
+            y "Excuse me?"
             "The kids seem busy playing their game."
 
             energetickid "No way! Last time when we were playing, I got grounded because of you, so it should be my turn!"
@@ -290,8 +297,9 @@ label marketpuzzle:
             jump talktownsfolk
 
         "Fishmonger":
+            $ notbuyfish = False
             $ fishmongerinfo = True
-            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four coppers per fish.'"
+            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four copper per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
             y "Huh?"
@@ -301,18 +309,19 @@ label marketpuzzle:
                 set menuset
                 "Whaddya want?"
                 "Bass.":
-                    $ notbuyfish = False
+                    $ bass = True
                     y "I'll take the bass."
 
                 "Halibut.":
-                    $ notbuyfish = False
+                    $ halibut = True
                     y "I'll take the halibut."
 
                 "I'm not looking to buy fish right now.":
                     $ notbuyfish = True
-                    y shocked "Oh- er, well...I'm not looking to buy fish right now. Could you please help me with the directions to-"
+                    y shocked "Could you please help me with the directions to-"
                     fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then we'll talk, ya get it?"
                     "Clearly, the only language merchants speak is money..."
+                    $ notbuyfish = True
                     jump fishbuy
 
             "The fishmonger wraps up a fillet for me in a bag."
@@ -320,20 +329,27 @@ label marketpuzzle:
             y "Huh? But your sign here says four."
             fishmonger "It's on account'o the inflation. ‘Sides, that sign's old."
             y "..."
-            fishmonger "You want the fish or not?"
-            y "I suppose."
+            fishmonger "Ya want the fish or not?"
+            y "I...suppose."
             "I put five copper coins on the table and he hands me the bag with the fish in it."
             if notbuyfish:
-                fishmonger "Alright whaddya wanna know."
+                fishmonger "A’right, whaddya wanna know."
             else:
                 y "Could I also trouble you for some directions?"
             y "I'm looking for this address here."
             "I show him the address on the letter."
             "He scratches his chin and sighs."
-            fishmonger "The code's to get in is {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
+            fishmonger "The code to get in is {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
             "That doesn't tell me where to go at all!"
-            y "Thank you so much for the help."
+            y "What do you mean by code?"
+            if bass:
+                fishmonger "What, ya want the halibut too? Five silvers."
+            if halibut:
+                fishmonger "What, ya want the bass too? Five silvers."
+
+            y "{i}FIVE SIL{/i}- {w=0.3}no, that’s quite alright, thank you." with screenShake
+            "There’s a limit to my coinpurse, Mr. Fishmonger!"
 
             jump talktownsfolk
         "Go back.":
@@ -346,15 +362,20 @@ label seasaltalley:
     scene bg shabby town:
         fit "contain"
     with fade
-    ny shocked "Ah! Here's Seasalt Alley."
-    ny neutral "I walk further into the alley and quickly reach a dead end."
+    if visitedalley:
+        ny neutral "I return to the alleyway."
+    else:
+        $ visitedalley = True
+        "I follow the old woman’s directions and head west."
+        ny neutral "It looks like the alleyway ends here."
+
     if kidsinfo and fishmongerinfo:
-        "Hmm the kids mentioned knocking on the wall…and fishmonger mentioned a code…i think i know what to do here!"
-        "Knock in the code"
-        "PLAYER INPUT HERE"
+        "Let’s see… The fishmonger gave me a code, and the kids mentioned something about knocking on the wall."
+        "Maybe I can try knocking the code on the wall?"
+
         jump knocking
     if kidsinfo:
-        "They mentioned something about knocking on the wall. Maybe…?"
+        "Those kids earlier mentioned something about knocking on the wall. Maybe...?"
         menu nokidknock:
             "Knock on wall":
                 "I knock against the wall."
@@ -366,33 +387,57 @@ label seasaltalley:
                 jump marketpuzzle
 
     if fishmongerinfo:
-        "Uhh i have a code"
-        "Maybe i use it here somehow???"
+        if saiditlouder:
+            "No...I'm not doing that again."
+            "...I should go ask around some more."
+            jump marketpuzzle
+        "Well...the fishmonger did give me some kind of code."
+        "Maybe I can use it here somehow?"
+
         menu nocodeinput:
-            "Speak the code":
-                "Hm. I YELL THE CODE LOUDLY"
-                "input code here"
-                "534!!!!"
-                "SHUT UP!!!!"
-                "IM< SLEEPIN HERE!!!!"
-                "Oh ok! My bad bro!"
-                "I think i need more info :("
-                jump marketpuzzle
+            "Say the code":
+                y "Five..three, four?"
+                y "..."
+                "There is no response."
+                "A passerby stops to give me a strange look."
+                "I feel a bit awkward now."
+                y "......"
+                menu:
+                    "Say it louder.":
+                        $ saiditlouder = True
+                        y "Five, three, four- please open the door!!!" with screenShake
+                        "There is no response at first, but..."
+                        person "Inlanders..."
+                        "The passerby shakes their head at me and continues walking."
+                        "This is getting embarrassing. I should go ask around some more."
+                        jump marketpuzzle
+                    "Go back.":
+                        "Maybe I should go around and ask some more..."
+                        show black with fade
+                        jump marketpuzzle
             "Go back":
+                show black with fade
                 jump marketpuzzle
 
     else:
-        "Idk what do do here..."
+        if visitedalley:
+            "I’m still not sure what to do...I should go ask around some more."
+        else:
+            "I’m not sure what to do...Maybe I should go ask around some more."
         "I go back to the market."
+        show black with dissolve
         jump marketpuzzle
 
 label knocking:
-    scene bg brickwall with dissolve
-    stop ambience fadeout 5.0
-    #should we stop the music here/play something else?
+    if knocking == 0:
+        scene bg brickwall with dissolve
+        stop ambience fadeout 5.0
+        #should we stop the music here/play something else?
+        ny neutral "Well, this isn’t how I was expecting my day to go."
+        "...Here goes nothing!"
+
     $ config.side_image_tag = "june"
-    ny neutral "There must be a shortcut hidden here. How exciting! I'll have to tell Grandfather about my adventure."
-    "...But if this doesn't work, I'll just head to the port and try looking around there."
+
     if knocking >= 3:
         jump knockwhatever
     else:
