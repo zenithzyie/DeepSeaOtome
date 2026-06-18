@@ -1,89 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-Compiling ATL code at game/story/ch2_follow_jorunn_beginning.rpy:124
+While running game code:
   File "game/story/script.rpy", line 65, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1471, in script call
-    call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch1_follow_jorunn.rpy", line 257, in script call
-    call ch2_follow_jorunn from _call_ch2_follow_jorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 123, in script
-    show cg skyllahands:
-  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
-    return OG_SHOW(name, at_list, layer, *args, **kwargs)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 124, in <module>
-    fit contain
-        ^^^^^^^
-NameError: name 'contain' is not defined
+  File "game/story/script.rpy", line 1572, in script call
+    call ch1_followprince from _call_ch1_followprince
+  File "game/story/ch1_follow_prince.rpy", line 71, in script
+    if settleback:
+  File "game/story/ch1_follow_prince.rpy", line 71, in <module>
+    if settleback:
+       ^^^^^^^^^^ 
+NameError: name 'settleback' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
   File "game/story/script.rpy", line 65, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1471, in script call
-    call ch1_followjorunn from _call_ch1_followjorunn
-  File "game/story/ch1_follow_jorunn.rpy", line 257, in script call
-    call ch2_follow_jorunn from _call_ch2_follow_jorunn
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 123, in script
-    show cg skyllahands:
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "game/plugins/layered_image_mask_tips.rpy", line 159, in cutin_show
-    return OG_SHOW(name, at_list, layer, *args, **kwargs)
-           ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/displayexports.py", line 513, in show
-    sls.add(
-    ~~~~~~~^
-        layer,
-        ^^^^^^
-    ...<8 lines>...
-        transient=transient,
-        ^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/display/scenelists.py", line 464, in add
-    thing.visit_all(lambda d: None)
-    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 448, in visit_all
-    for d in self.visit():
-             ~~~~~~~~~~^^ 
-  File "renpy/atl.py", line 739, in visit
-    block = self.compile()
-            ~~~~~~~~~~~~^^
-  File "renpy/atl.py", line 650, in compile
-    block = self.atl.compile(self.context)
-            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "renpy/atl.py", line 844, in compile
-    statements = [i.compile(ctx) for i in self.statements]
-                  ~~~~~~~~~^^^^^                          
-  File "renpy/atl.py", line 1178, in compile
-    value = ctx.eval(expr)
-            ~~~~~~~~^^^^^^
-  File "renpy/atl.py", line 308, in eval
-    return renpy.python.py_eval(expr, locals=self.context)
-           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/story/script.rpy", line 1572, in script call
+    call ch1_followprince from _call_ch1_followprince
+  File "game/story/ch1_follow_prince.rpy", line 71, in script
+    if settleback:
+  File "renpy/ast.py", line 2079, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
   File "renpy/python.py", line 1305, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1298, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 124, in <module>
-    fit contain
-        ^^^^^^^
-NameError: name 'contain' is not defined
+  File "game/story/ch1_follow_prince.rpy", line 71, in <module>
+    if settleback:
+       ^^^^^^^^^^ 
+NameError: name 'settleback' is not defined
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.2.26010301
 HeartsDepthDEMO 4.0
-Wed May 20 04:27:24 2026
+Wed Jun 17 20:08:37 2026

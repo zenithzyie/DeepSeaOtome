@@ -321,7 +321,7 @@ label ch2_followthio:
 
     ny neutral "There's what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
 
-    play sound "audio/sfx_bedFlop2.ogg" volume 0.5
+    play sound "audio/sfx_bedFlop.ogg"
 
     ny shocked "Ack!" with vpunch
     "Did I lay on something?"
@@ -344,7 +344,7 @@ label ch2_followthio:
     menu:
         "Take a picture of..."
         "The lamp?":
-            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            play sound "audio/sfx_cameraMermaid.ogg"
             show camera with irisin
             hide camera with dissolve
             show black:
@@ -358,7 +358,7 @@ label ch2_followthio:
 
 
         "The window.":
-            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            play sound "audio/sfx_cameraMermaid.ogg"
             show camera with irisin
             hide camera with dissolve
             show black:

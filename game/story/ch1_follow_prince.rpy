@@ -7,10 +7,9 @@ label ch1_followprince:
     show thioran at Position(xpos=0.45)
     with move
     $ config.side_image_tag = "june"
-    "Perhaps the prince would be kind to someone in need? I hope this fishy shape I'm in isn't some sort of delicacy..."
+    "Perhaps the prince would be kind to someone in need?"
     "Alright, [y]! It's now or never!"
-    y "BLUBBB!!!!" with vpunch
-    "With all the might I can muster, I push my way through the current."
+    "With all the might I can muster, I push my way through the current towards him."
 
     show thioran angry:
         subpixel True
@@ -20,54 +19,62 @@ label ch1_followprince:
     show thioran angry:
         pos (0.38, 1288) zoom 2.0
 
-    "I can't stop! I crash into the back of the princely merman's head." with vpunch
     #SCREEN SHAKE
-    up "!!!"
-    up "Who-"
-    y "Blub blub!"
+
+    up "What-" with vpunch
     show thioran shocked with dissolve
-    up "...?"
+
     "For a brief moment I think I've made some sort of mistake and that I'll be eaten on the spot."
-    "Then, with a surprising amount of gentleness, his hands come up to cup my body."
-    guard "Your Highness?"
+
     y "{i}Blub blub blub!!{/i}"
-    "Please help me! If I stay out in this storm I'll die!"
+
+    "Please help me! If I stay out in this storm I’ll die!"
+
     "If only I could speak real words!"
-    "Strangely enough, he pauses as if he can understand what I'm saying."
-    guard "Is something the matter? The storm is closing in."
+
+    "Strangely enough, he pauses as if he can understand what I’m saying."
+
+    guard "Your Highness? Is something the matter?"
+
     show thioran frown with dissolve
-    up "No. It's nothing."
-    "Suddenly he tucks me close to his body, his hands carefully shielding me from view."
-    up "Let's go."
+    up "No. It’s nothing."
+
+    "With a surprising amount of gentleness, he tucks me close to his body, shielding me from view."
+
+    up "Let’s go."
+
     "Thank goodness. Looks like I made the right choice after all."
-    "I can feel the merman begin to swim. I'm exhausted but curious about where we're going."
+
+    "The prince swims forward. I wonder where we’re going?"
 
     menu:
         "I'm nested in the princely merman's hands..."
         "Look through.":
-            "My curiosity wins over, and I swim forward a little to try to peer through the space between the prince's fingers."
-            "It looks as though we're swimming somewhere deeper into the depths of the ocean. Foliage and sand whip past us. We are going quite fast!"
-            "His hands continue to shield me as he keeps swimming onward."
+            $ settleback = False
+            "I swim forward to peer through the prince’s fingers."
+            "It looks like we’re swimming deeper into the ocean. Foliage and sand whip past us. He’s going quite fast!"
 
         "Settle back.":
             #+1 Thio
-            "My exhaustion wins over and I lean back against the merman's skin, desperate for a minute of rest."
+            $ settleback = True
+            "My exhaustion wins over and I lean back against the merman, desperate for a moment of rest."
             "I must be held somewhere against his chest. I can feel his heartbeat, going strong and steady."
-            "It's warm and comforting."
-            "The storm rumbles on, and I have no need to fear it any longer."
-            "The prince swims on in silence."
-
-    "Left alone with my thoughts, my mind races every which way."
-    "Am I the first human to experience the sea like this?"
-    "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
-    "All those memories made with it must be gone now, lost to me just like my own body."
+            if promermaid >= antimermaid:
+                "It’s rather comforting."
+            if antimermaid > promermaid:
+                "It’s oddly comforting."
 
 #SCENE CHANGE - Capital City (zoomed in)
     $ config.side_image_tag = "june"
     scene bg black with dissolve
-    "Some time passes, and the prince stops suddenly, jostling me from my thoughts."
-    "I notice a multitude of colorful lights seeping through his fingers. Are we really at the bottom of the ocean? How can it be so bright here?"
-    "Intrigued, I swim a bit closer to get a better look."
+    "Some time passes, and the prince suddenly stops, jostling me from my thoughts."
+    "Is that...light seeping through his fingers?"
+
+    if settleback:
+        "Intrigued, I swim a bit closer to get a better look."
+    else:
+        pass
+
 #zoom broken bc of new bg size
 #    window auto hide
 #    scene bg_marislumina:
@@ -81,19 +88,16 @@ label ch1_followprince:
     play music bgm_capital volume 0.8
     show bg_marislumina:
         fit "contain"
-    ny neutral fish "My fish eyes grow even wider as I spot several towering seashell structures and more mermaids than I could ever count."
-    "I feel smaller than I already am..."
-    "Colorful corals are everywhere, decorating mermaid homes and streetways like the people back home decorate their homes with flowers."
-    "Would that I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
+
+    ny neutral fish "Are we really at the bottom of the ocean? How can it be so bright here?"
+
+    "How beautiful. This must be where the mermaids live."
+
+    "If only I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
+
     show thioran frown at thioran_center with dissolve
-    up "Go on ahead to make a report on the storm. I will return to the palace shortly."
+    up "Go on ahead to make a report on the storm. I shall return to the palace shortly."
     guard "Yes, my prince."
-    y neutral mermaid "hello sir"
-    show thioran:
-        pos (0.38, 1060) zoom 1.6
-    y shocked mermaid "hello sir"
-    hide thioran
-    y "ohhh stars"
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with the prince in this strange but beautiful city."
     "He begins moving forward again. Now that we are away from the threat of the storm, it is at a more leisurely pace."
     "I glance up at him, but I notice he is glancing at me as well. Our eyes meet for a brief moment."

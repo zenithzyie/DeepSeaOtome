@@ -503,7 +503,8 @@ label afterknocking:
     ny shocked "The brick wall suddenly pulls back."
     "With cautionary steps, I move inside."
     $ config.side_image_tag = "None"
-    #note: this could be somehting like....better
+
+    play sound "audio/sfx_elevatorDoor.ogg"
     ny nervous "A rattling door slides closed the moment I enter."
     "It must be an ancient elevator, rusted and old."
     #SFX -  Elevator
@@ -515,7 +516,7 @@ label afterknocking:
     "I start to regret stepping inside - who knows what I will find so far down?"
     "..."
     #SFX -  Elevator
-    play sound "audio/sfx_elevator2.wav" volume 0.1
+    play sound "audio/sfx_elevatorDing.ogg"
     "The elevator finally comes to a stop, and the door opens."
 
     #SCENE CHANGE -  Underground Black Market Faire

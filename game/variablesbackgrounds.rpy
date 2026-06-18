@@ -92,5 +92,6 @@ layeredimage bg_marislumina:
     group sparkle auto:
         attribute showsparkle default:
             "images/bgs/marislumina/sparkle.png" at luminastars_blink
+            #fit "contain"
         attribute nosparkle:
             Null()
