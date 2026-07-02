@@ -86,16 +86,21 @@ label ch1_followprince:
 #    with Pause(1.75)
 
     play music bgm_capital volume 0.8
-    show bg_marislumina:
+    show bg_marislumina night:
         fit "contain"
-
+    show black:
+        alpha 0.2
     ny neutral fish "Are we really at the bottom of the ocean? How can it be so bright here?"
 
     "How beautiful. This must be where the mermaids live."
 
     "If only I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
 
-    show thioran frown at thioran_center with dissolve
+    hide black
+    show thioran frown at thioran_center
+    show black:
+        alpha 0.2
+    with dissolve
     up "Go on ahead to make a report on the storm. I shall return to the palace shortly."
     guard "Yes, my prince."
     "I glimpse the guard that had been following him bow and swim away, leaving me alone with the prince in this strange but beautiful city."
@@ -105,7 +110,7 @@ label ch1_followprince:
     up "Is something the matter?"
     "He seems concerned about my well-being, even though we have just met."
     "A truly princely fellow!"
-    y "Blub!"
+    y"Blub!"
     "I shake myself in response. I'm already quite comfortable."
     "I'm just glad he isn't finding my staring strange."
     show thioran frown with dissolve
@@ -113,8 +118,10 @@ label ch1_followprince:
     up "We will be at the palace before long. How did you end up so far away? And alone?"
     "Earlier, when I tried speaking to him, he seemed to understand me. Maybe he can speak fish after all?"
     "I'm not really sure how much he can hear, but I'm willing to try telling him my story."
+    $ night = True
     y "Blub...{w}blub?"
-    y "Blub..."
+    y mermaid shocked "Blub..."
+    #hide thioran
     show thioran shocked with dissolve
     up "What are you..."
     up "I apologize. It appears I can't fully understand your meaning."

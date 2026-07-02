@@ -123,8 +123,17 @@ transform cflip:
 #For when we add the ability to toggle gore (eventually)
 #define show_gross = False
 ######################################################################
+#Misc transforms
 transform ts_moveZ(dist, ts_speed=0.5):
     linear ts_speed zoom dist yoffset (-dist*100 if dist < 1.0 else (dist-1.0) * 750)
+
+#first version
+#transform night_filter:
+#    matrixcolor BrightnessMatrix(-0.01) * TintMatrix("#2C2C4B")
+
+#second version
+transform night_filter:
+    matrixcolor SaturationMatrix(0.5) * TintMatrix("#2C2C4B")
 
 ######################################################################
 #Audio / BGM
@@ -168,8 +177,17 @@ define thioran_center = Position(xpos=0.45)
 ######################################################################
 layeredimage thioran:
     at sprite_highlight('Thioran')
+
+#experimenting w night filter
+#    attribute night:
+#        Null()
+
     group expressions auto:
         attribute frown default
+
+#    group expressions auto when night:
+#        attribute frown default
+#        at night_filter
 
     group closedeyes:
         attribute closedeyes:
@@ -208,14 +226,15 @@ layeredimage side june:
             fit "contain"
             xsize 320
             pos (157, 130)
-    group base:
+
+    group base auto:
         attribute base default:
             "images/sprites/june/base/side_june_base.png"
         attribute mermaid:
             "images/sprites/june/base/side_june_mermaid_base.png"
         at june_location
 
-    group expressions:
+    group expressions auto:
         attribute neutral default:
             "images/sprites/june/expressions/side_june_expressions_neutral.png"
         attribute happy:
@@ -233,6 +252,7 @@ layeredimage side june:
         attribute veryhappy:
             "images/sprites/june/expressions/side_june_expressions_veryhappy.png"
         at june_location
+
 
     group expressions if_any["mermaid"]:
         attribute neutral default:
@@ -331,6 +351,7 @@ define cetus_center = Position(xpos=0.29)
 ######################################################################
 layeredimage cetus:
     at sprite_highlight('Cetus')
+
     attribute base default
 
     group expressions auto:

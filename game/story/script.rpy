@@ -5,6 +5,7 @@ label start:
     $ cetus_points = 0
     $ promermaid = 0
     $ antimermaid = 0
+    $ night = False
 
 #potential promermaid count: 1 or 0
 #potential antimermaid count: 1 or 0

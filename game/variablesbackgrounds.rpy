@@ -89,9 +89,12 @@ layeredimage bg_marislumina:
     group city:
         attribute day default:
             "images/bgs/marislumina/bg capitalcity.jpg"
-    group sparkle auto:
-        attribute showsparkle default:
-            "images/bgs/marislumina/sparkle.png" at luminastars_blink
+        attribute night:
+            "images/bgs/marislumina/bg capitalcity night.jpg"
+
+    #group sparkle auto:
+    #    attribute showsparkle default:
+    #        "images/bgs/marislumina/sparkle.png" at luminastars_blink
             #fit "contain"
         attribute nosparkle:
             Null()
