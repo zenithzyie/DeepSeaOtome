@@ -54,6 +54,13 @@ label ch2_castle_escaperoom:
                         ny sad "My hand is rather sore though..."
                         "Sir Guard would probably stop me if I tried to do that again."
                         "I should find a quieter way to open the window."
+                        show bg palace guestroom: #zoom out window
+                            subpixel True
+                            pos (-630, -100) zoom 1.49
+                            linear 1.17 pos (0, 0) zoom 1.0
+                        with Pause(1.27)
+                        show bg palace guestroom:
+                            pos (0, 0) zoom 1.0
                         jump escapebegin
                 "Not yet...":
                     "I shouldn't be too reckless. I only have one chance at escaping."
