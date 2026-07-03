@@ -248,7 +248,7 @@ label marketpuzzle:
                 jump seasaltalley
 
             else:
-                "But I’m not quite sure where to start looking. Maybe I should ask around first?"
+                "But I'm not quite sure where to start looking. Maybe I should ask around first?"
                 jump marketpuzzle
 
     menu talktownsfolk:
@@ -267,11 +267,11 @@ label marketpuzzle:
             "She squints at the paper."
             woman "Why, this says Finch on it. So you're Herman's granddaughter, are you?"
             y "I am! Do you know him?"
-            woman "Everybody knows everybody ‘round here, dearie. Why, I was there when your grandparents got married!"
+            woman "Everybody knows everybody 'round here, dearie. Why, I was there when your grandparents got married!"
             woman "He was quite the looker back in the day. Hoho!"
             y "Really?"
             "Huh. It sure is a small world."
-            woman "Try goin' {color=#f2b950}west{/color} ‘til you reach the end of the alley."
+            woman "Try goin' {color=#f2b950}west{/color} 'til you reach the end of the alley."
             woman "You'll find what you're lookin' for there."
             y "I see. Thank you for your help!"
             woman "Don't be a stranger now!"
@@ -300,7 +300,7 @@ label marketpuzzle:
         "Fishmonger":
             $ notbuyfish = False
             $ fishmongerinfo = True
-            "A fishmonger mans his stand, reading a newspaper. His signboard reads ‘Four copper per fish.'"
+            "A fishmonger mans his stand, reading a newspaper. His signboard reads 'Four copper per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
             y "Huh?"
@@ -328,13 +328,13 @@ label marketpuzzle:
             "The fishmonger wraps up a fillet for me in a bag."
             fishmonger "Five coppers."
             y "Huh? But your sign here says four."
-            fishmonger "It's on account'o the inflation. ‘Sides, that sign's old."
+            fishmonger "It's on account'o the inflation. 'Sides, that sign's old."
             y "..."
             fishmonger "Ya want the fish or not?"
             y "I...suppose."
             "I put five copper coins on the table and he hands me the bag with the fish in it."
             if notbuyfish:
-                fishmonger "A’right, whaddya wanna know."
+                fishmonger "A'right, whaddya wanna know."
             else:
                 y "Could I also trouble you for some directions?"
             y "I'm looking for this address here."
@@ -349,8 +349,8 @@ label marketpuzzle:
             if halibut:
                 fishmonger "What, ya want the bass too? Five silvers."
 
-            y "{i}FIVE SIL{/i}- {w=0.3}no, that’s quite alright, thank you." with screenShake
-            "There’s a limit to my coinpurse, Mr. Fishmonger!"
+            y "{i}FIVE SIL{/i}- {w=0.3}no, that's quite alright, thank you." with screenShake
+            "There's a limit to my coinpurse, Mr. Fishmonger!"
 
             jump talktownsfolk
         "Go back.":
@@ -367,11 +367,11 @@ label seasaltalley:
         ny neutral "I return to the alleyway."
     else:
         $ visitedalley = True
-        "I follow the old woman’s directions and head west."
+        "I follow the old woman's directions and head west."
         ny neutral "It looks like the alleyway ends here."
 
     if kidsinfo and fishmongerinfo:
-        "Let’s see… The fishmonger gave me a code, and the kids mentioned something about knocking on the wall."
+        "Let's see… The fishmonger gave me a code, and the kids mentioned something about knocking on the wall."
         "Maybe I can try knocking the code on the wall?"
 
         jump knocking
@@ -379,10 +379,9 @@ label seasaltalley:
         "Those kids earlier mentioned something about knocking on the wall. Maybe...?"
         menu nokidknock:
             "Knock on wall":
-                "I knock against the wall."
-                "knock knock knock."
-                "...nope.. That wasn't it."
-                "I think i need more info :("
+                "..."
+                "This doesn't seem right. I must be missing something."
+                "Maybe I should ask around some more."
                 jump marketpuzzle
             "Go back.":
                 jump marketpuzzle
@@ -397,7 +396,7 @@ label seasaltalley:
 
         menu nocodeinput:
             "Say the code":
-                y "Five..three, four?"
+                y "Five...three, four?"
                 y "..."
                 "There is no response."
                 "A passerby stops to give me a strange look."
@@ -422,9 +421,9 @@ label seasaltalley:
 
     else:
         if visitedalley:
-            "I’m still not sure what to do...I should go ask around some more."
+            "I'm still not sure what to do...I should go ask around some more."
         else:
-            "I’m not sure what to do...Maybe I should go ask around some more."
+            "I'm not sure what to do...Maybe I should go ask around some more."
         "I go back to the market."
         show black with dissolve
         jump marketpuzzle
@@ -434,7 +433,7 @@ label knocking:
         scene bg brickwall with dissolve
         stop ambience fadeout 5.0
         #should we stop the music here/play something else?
-        ny neutral "Well, this isn’t how I was expecting my day to go."
+        ny neutral "Well, this isn't how I was expecting my day to go."
         "...Here goes nothing!"
 
     $ config.side_image_tag = "june"
