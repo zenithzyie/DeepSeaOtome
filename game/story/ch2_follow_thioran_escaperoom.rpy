@@ -103,7 +103,7 @@ label ch2_castle_escaperoom:
 
                     if promermaid > antimermaid:
                         ny shocked "Wow, I look so different!"
-                        "The colors and fabrics are pretty, but I miss my coat a bit as well."
+                        "The new clothes I’m wearing are quite beautiful, but I do miss my coat."
                         ny flustered "Without it, I feel a little exposed..."
                         camera: #zoom out mirror
                             subpixel True
@@ -242,9 +242,8 @@ label escapedroom_tohallway:
         fit "contain"
     with fade
     $ config.side_image_tag = "june"
-    ny mermaid neutral "I find myself in another hallway."
-    ny shocked "Huh. I suppose this is better than having to find my way back inside the castle."
-    ny nervous "That guard's probably just around the corner. I doubt he's moved all day."
+    ny mermaid neutral "I find myself...in another hallway?"
+    ny nervous "Then that guard's probably just around the corner. I doubt he's moved all day."
     "He said that Cetus was in his study. But...I have no idea where to start."
     ny neutral "I need to find him before Sir Guard realizes I'm gone."
     "Hmm..."
@@ -466,11 +465,11 @@ label cetus_office:
 
     "No. There must be something I can say to change his mind."
 
-    y "Would you turn me back into a human if I could return the favor?"
+    y neutral "Would you turn me back into a human if I could return the favor?"
 
     menu changehismind:
         set menuset
-        ny nervous "There must be something I can say to change his mind."
+        ny frustrated "What can I say?"
         "\"I could go out and help you hunt the siren!\"":
             y neutral "I've seen her lair, after all."
             y happy "If we work together, I'm sure we'll have a better chance!"
@@ -562,7 +561,7 @@ label cetus_office:
 
     y "Then how can I trust that you'll keep your word?"
 
-    c "Because you don't have a choice. I believe your desperation outweighs your uncertainty."
+    c "Because you don't have a choice. Your desperation outweighs your uncertainty."
 
     "Well...he isn't wrong."
 

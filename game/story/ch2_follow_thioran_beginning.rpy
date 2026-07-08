@@ -19,6 +19,7 @@ label ch2_followthio:
     if not renpy.seen_image("cg_mermaidcetus"):
         show cg_mermaidcetus:
             pos (0.5, 2.64) zoom 0.34
+        play sound "audio/sfx/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         show cg_mermaidcetus:
@@ -47,9 +48,7 @@ label ch2_followthio:
     p "What is this?"
 
     show cetus neutral with dissolve
-    c "It appears her true form has been revealed after lifting the curse."
-
-    c "The little fish you brought home was never a fish at all, Prince Thioran."
+    c "It appears the little fish you brought home was never a fish at all, Prince Thioran."
 
     c "Do you still feel drawn to her, as you previously described?"
 
@@ -79,7 +78,17 @@ label ch2_followthio:
 
     y "Well..."
 
+    show cg_skyllahands:
+        fit "contain"
+    show black:
+        alpha 0.5
+    with dissolve
+
     "From waking up trapped in a bubble to escaping the siren's cave, I tell them everything - except for the fact that I'm human."
+
+    hide cg_skyllahands
+    hide black
+    with dissolve
 
     ny nervous "I'd better keep that part to myself. I don't know what they'll do if they find out what I really am."
 
@@ -87,7 +96,7 @@ label ch2_followthio:
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
-    ny neutral "A student? Are they referring to Skylla?"
+    ny neutral "A student? What is he talking about?"
 
     p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
@@ -170,7 +179,7 @@ label ch2_followthio:
 
     y "Yes, of course..."
 
-    "No, I've got to stay calm. {w} Just keep swimming, [y]."
+    "No, I've got to stay calm. {w}Just keep swimming, [y]."
 
     scene bg palace hallway:
         fit "contain"
@@ -191,12 +200,10 @@ label ch2_followthio:
     show thioran frown at thioran_center
     with fade
 
-    ny mermaid neutral "The mysterious room lingers in my mind as we move past it in silence."
-
     "..."
     "..."
 
-    "There's a pair of voices talking up ahead."
+    ny mermaid neutral "There's a pair of voices talking up ahead."
 
     "Two servants are hanging up elaborate decorations in the hallway."
 
@@ -319,7 +326,7 @@ label ch2_followthio:
 
     "I can't believe a simple boat trip ended up like this. I feel exhausted just thinking about it."
 
-    ny neutral "There's what appears to be a bed on one side of the room. {w}Maybe I should rest for a bit."
+    ny neutral "There's a bed on one side of the room. {w}Maybe I should rest for a bit."
 
     play sound "audio/sfx_bedFlop.ogg"
 

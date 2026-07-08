@@ -1069,7 +1069,10 @@ label jorshouse:
     scene bg beach:
         fit "contain"
     with fade
-    play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
+
+    play ambience "audio/sfx_wavesCalm.ogg" loop volume 1.0 fadein 1.0
+    play ambience2 "audio/sfx_seagulls.ogg" loop volume 0.2 fadein 1.0
+    stop music fadeout 1.0
 
     "We arrive on shore at last, and I take in a breath of air."
 
@@ -1192,7 +1195,8 @@ label jorshouse:
 
     "If we ran into Hunter or Grandfather, I’m still not sure what I would do."
 
-    stop music fadeout 1.0
+    stop ambience fadeout 1.0
+    stop ambience2 fadeout 1.0
 
     novisualhunter "...[y]?"
 

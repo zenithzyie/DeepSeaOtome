@@ -84,6 +84,7 @@ label chapter1:
     if not renpy.seen_image("cg_train"):
         scene cg_train with dissolve:
             fit "contain"
+        play sound "audio/sfx/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         scene cg_train with dissolve:
