@@ -2,7 +2,9 @@ label ch2_jorunn_village:
 ##This is the continuation of Follow Jorunn after leaving Prashadi's cave
 
     #SCENE CHANGE - sea wilderness
-    scene bg sea with dissolve
+    scene bg jorvillagenearby:
+        fit "contain"
+    with dissolve
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
 
     $ speaking_char = "Jorunn"

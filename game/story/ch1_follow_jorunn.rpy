@@ -56,14 +56,18 @@ label ch1_followjorunn:
     "He's not going to eat me!"
     "Thank goodness. Looks like I made the right choice after all."
 
-    window auto hide
-    show black
-    with dissolve
-    pause 0.2
-    hide black
+#    window auto hide
+#    show black
+#    with dissolve
+#    pause 0.2
+#    hide black
+    scene bg jorvillagenearby:
+        fit "contain"
     show jorunn neutral
-    with dissolve
-    window auto show
+    show jorunn neutral:
+        pos (0.50, 1355) zoom 2.04
+    with fade
+#    window auto show
 
     ny neutral fish "The thief swims forward at a steady pace, unbothered by the growing sea storm."
 
