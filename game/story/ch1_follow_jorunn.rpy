@@ -9,8 +9,7 @@ label ch1_followjorunn:
 #potential antimermaid count: 2 or 1 or 0
     "The thief seems to know his way around. Maybe he can get me out of this mess."
     "Alright, [y]! It's now or never!"
-    y "BLUBBB!!!!" with vpunch
-    "With all the might I can muster, I push my way through the current."
+    "With all the might I can muster, I push my way through the current towards him."
 
     show jorunn neutral:
         subpixel True
@@ -20,7 +19,6 @@ label ch1_followjorunn:
     show jorunn neutral:
         ease 0.41 pos (0.50, 1355) zoom 2.04
 
-    "I can't stop! I crash into the thief's shoulder." with vpunch
     show jorunn hesitant with dissolve
     uj "Huh?"
     y "Blub!!"
@@ -38,9 +36,8 @@ label ch1_followjorunn:
     show jorunn hesitant with dissolve
     uj "Oh?"
     "It takes me a moment to recognize it myself."
-    "It looks like a shard of the glowing stones back from the siren's cave."
+    "Is that...crystal? It must have come from the siren’s cave."
     uj "Weird. This thing stinks of magic."
-    "The shard he is holding suddenly crumbles to pieces."
     uj "Now that I think about it..."
     show jorunn smile with dissolve
     uj "So do you, little fishie!"
@@ -76,12 +73,12 @@ label ch1_followjorunn:
         "Try to look through.":
             $ looked_through = True
             $ jorunn_points += 1
-            "My curiosity wins over, and I swim forward to try to peer through the hair."
+            "My curiosity wins over, and I swim forward to try to peer through his hair."
             "As if realizing my intentions, he angles his shoulders to give me a better view."
             "The foliage is thick here, tall plants towering over the both of us like massive trees."
             "With the storm muffled by the cover of the kelp forest, the swim almost feels...{w} peaceful."
             show jorunn smile with dissolve
-            uj "It's pretty way out here, don't you think?"
+            uj "It's pretty out here, don't you think?"
             y "Blub!"
             "I really wish I could take a picture of the ocean."
             uj "If we go a bit further out, you'll see my home."
@@ -95,7 +92,10 @@ label ch1_followjorunn:
 
     show jorunn happy with dissolve
     j "I'm Jorunn, by the way! {w}Sorry, guess I should've said that earlier."
-    "Jorunn...such strange names mermaids have."
+    if promermaid >= antimermaid:
+        "Jorunn...such interesting names mermaids have."
+    if antimermaid > promermaid:
+        "Jorunn...such strange names mermaids have."
     j "But you can call me Jor. That's what everyone else calls me too."
     j "Hey, you don't happen to have a name yourself, do you?"
     y "Blub!"
@@ -115,12 +115,6 @@ label ch1_followjorunn:
     y "Blub!!!"
     $ speaking_char = "None"
     "Even so, he keeps swimming, content to keep me in his hair for the time being."
-    "The storm rumbles on, and he quiets down to focus on the journey."
-    "Left alone with my thoughts, my mind races every which way."
-    "Am I the first human to experience the sea like this?"
-    "I wish I had my camera. {w}But it wouldn't have survived the plunge..."
-    "All those memories made with it must be gone now, lost to me just like my own body."
-    y "..."
 
 #SCENE CHANGE? - Kelp Forest
 
@@ -137,7 +131,7 @@ label ch1_followjorunn:
     "I think this is what he must have meant."
     "I can't see anything in front of me at all."
     "The only signs that I'm alive are my own thoughts, and the feel of Jorunn's steady swimming as he takes us deeper still."
-    "As the darkness stretches on, I begin to feel anxious."
+    "It feels like there’s no end to this darkness…"
 
     menu:
         "I'm sure it will be alright.":
@@ -151,7 +145,7 @@ label ch1_followjorunn:
         "I regret trusting him.":
             $ antimermaid += 1
             "Maybe I made the wrong decision..."
-            "What was I thinking, trusting a merman?"
+            "What was I thinking, trusting a mermaid?"
             if antimermaid >= 2:
                 "His kind is the reason why I fell off Hunter's boat in the first place."
             "Anything could be in here, and I'm just letting him lead me to my doom."
@@ -175,8 +169,7 @@ label ch1_followjorunn:
     show jorunn happy at jorunn_center with dissolve
     j "Miss Prash! Are you in here?"
     "Sure enough, what looks to be the night sky is shining above us, illuminating the entire cavern in a gentle glow."
-    "The sky? How is this even possible? Does that mean there's air above us too?"
-    "But we definitely swam deeper to get here."
+    "The sky? How is this even possible? We definitely swam deeper to get here."
     show jorunn hesitant with dissolve
     j "Hello? Miss Prash?"
     j "..."
@@ -215,15 +208,15 @@ label ch1_followjorunn:
     "His hands carefully cup my body."
 
     menu:
-        "This is..."
-        "What kind of trick is this?":
+        "What is this...?"
+        "This can’t be right.":
             "Is this some sort of mermaid magic?"
-            "Whatever the case, it's undeniable that this 'Prashadi' has Grandfather's face."
+            "Whatever the reason may be, it's undeniable that this 'Prashadi' has Grandfather's face."
 
         "Is that actually him?":
             "Has he been living some kind of double life this entire time?"
             "But why would he kill his own kind?"
-            "Regardless, it seems he is known as Prashadi here."
+            "Regardless, it seems he is known as 'Prashadi' here."
 
     Pr "It appears she's been cursed as well."
     j "She's no normal fish, is she?"
@@ -239,22 +232,25 @@ label ch1_followjorunn:
     j "Why would anyone cast a spell like that?"
     Pr "Why don't we find out?"
 
-    "A sparkling mist begins to roll in and fill the cavern."
     show mist:
         zoom 0.2667
     with dissolve
-    "The water starts to feel heavy, like it's clinging to my fins."
-    "His hands wave like they're weaving something together from the water around us."
-    "It's an entirely foreign movement to me."
-    "This merman cannot possibly be Grandfather."
+    "A mist begins to roll in and fill the cavern."
+
+    "Then, a gentle coolness passes over me as it envelops my body."
+
+    "Prashadi’s hands move like they're weaving something together from the water around us."
+
+    "Is he casting a spell?"
+
+    "No...this mermaid can’t possibly be Grandfather!"
 
     #BLACK SCENE
     scene bg black with fade
-
-    "Grandfather...Hunter..."
-    "Will they spend the rest of their years never knowing what happened to me after the storm?"
+    "What’s happening to me?"
+    "Grandfather...!"
+    "Grandfather...! Hunter!"
     "..."
-    "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me afloat."
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."
 

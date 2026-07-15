@@ -597,6 +597,22 @@ label jorshouse:
 
     #One of each
     if greens == 1 and fruit == 1 and fish == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.4)
+        show fillet1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.51)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.57)
+        with dissolve
         "This is a nice, well-rounded meal."
         $ speaking_char = "Unna"
         "It seems Unna chose the same as me. I guess she isn't much of a picky eater either."
