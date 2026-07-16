@@ -1324,7 +1324,7 @@ label timeskip1:
             "A bubble?"
 
     scene bg skylla cave:
-        zoom 0.5
+        fit "contain"
     #keep this at a 0.5 zoom until new bg
     show skylla happy
     show skylla happy:

@@ -72,14 +72,17 @@ image bg nice town = ("images/bgs/bg nice town.jpg")
 image bg palace guestroom = ("images/bgs/bg palace guestroom.jpg")
 image bg palace hallway = ("images/bgs/bg palace hallway.jpg")
 image bg port = ("images/bgs/bg port.jpg")
-image bg prashadi cave = ("images/bgs/bg prashadi cave.jpg")
+#image bg prashadi cave = ("images/bgs/bg prashadi cave.jpg")
+image bg prashadi cave = Movie(play="images/bgs/bg prashadi cave.webm", loop=True)
 image bg sea = ("images/bgs/bg sea.PNG")
 image bg shabby market = ("images/bgs/bg shabby market.jpg")
 image bg shabby town = ("images/bgs/bg shabby town.jpg")
-image bg skylla cave = ("images/bgs/bg skylla cave.png")
+image bg skylla cave = ("images/bgs/bg skylla cave.jpg")
 image bg throneroom = ("images/bgs/bg throneroom.jpg")
 image bg underground market = ("images/bgs/bg underground market.jpg")
 image bg white = ("images/bgs/bg white.jpg")
+
+
 
 #other images
 image chibi_merjune = ("gui/ach/chibi_merjune.png")
