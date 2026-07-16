@@ -1,41 +1,38 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/script.rpy", line 65, in script call
-    call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1572, in script call
-    call ch1_followprince from _call_ch1_followprince
-  File "game/story/ch1_follow_prince.rpy", line 71, in script
-    if settleback:
-  File "game/story/ch1_follow_prince.rpy", line 71, in <module>
-    if settleback:
-       ^^^^^^^^^^ 
-NameError: name 'settleback' is not defined
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 440, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 608, in script
+    with atcamera
+TypeError: got an unexpected keyword argument 'old_widget'
 
 -- Full Traceback ------------------------------------------------------------
 
-Traceback (most recent call last):
-  File "game/story/script.rpy", line 65, in script call
-    call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1572, in script call
-    call ch1_followprince from _call_ch1_followprince
-  File "game/story/ch1_follow_prince.rpy", line 71, in script
-    if settleback:
-  File "renpy/ast.py", line 2079, in execute
-    if renpy.python.py_eval(condition):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch1_follow_prince.rpy", line 71, in <module>
-    if settleback:
-       ^^^^^^^^^^ 
-NameError: name 'settleback' is not defined
+Full traceback:
+  File "game/story/ch2_follow_jorunn_beginning.rpy", line 440, in script call
+    call ch2_jorunn_village from _call_ch2_jorunn_village
+  File "game/story/ch2_follow_jorunn_village.rpy", line 608, in script
+    with atcamera
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\ast.py", line 1361, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\exports\statementexports.py", line 257, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 1578, in do_with
+    return self.interact(trans_pause=True,
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2215, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2666, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2575, in instantiate_transition
+    trans = self.ongoing_transition[layer](
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\atl.py", line 623, in __call__
+    new_scope = signature.apply(args, kwargs, partial=True, apply_defaults=False)
+  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\parameter.py", line 384, in apply
+    raise TypeError(
+TypeError: got an unexpected keyword argument 'old_widget'
 
-Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.5.2.26010301
+Windows-10-10.0.19045 AMD64
+Ren'Py 8.3.2.24090902
 HeartsDepthDEMO 4.0
-Wed Jun 17 20:08:37 2026
+Tue Jul 14 21:24:16 2026
