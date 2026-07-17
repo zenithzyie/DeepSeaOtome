@@ -275,8 +275,7 @@ layeredimage side june:
     group closedeyes:
         attribute closedeyes:
             "images/sprites/june/expressions/side_june_closedeyes_veryhappy.png"
-            zoom 0.12
-            pos (169, 153)
+            at june_location
     group closedeyes if_any["mermaid"]:
         attribute closedeyes:
             "images/sprites/june/expressions/side_june_mermaid_closedeyes_veryhappy.png"
@@ -294,11 +293,11 @@ layeredimage side june:
     group hairbrow:
         attribute hairbrow default:
             "images/sprites/june/base/side_june_hairbrow.png"
-        at june_location
+            at june_location
     group hairbrow if_any["mermaid"]:
         attribute hairbrow default:
             "images/sprites/june/base/side_june_mermaid_hairbrow.png"
-        at june_location
+            at june_location
     group frontborder:
         attribute frontborder default:
             "images/sprites/june/ui/border_front.png"

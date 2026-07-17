@@ -520,7 +520,7 @@ init -999 python in myconfig:
     ## been earned.
     ACHIEVEMENT_CALLBACK = None
     ## A sound to play when the achievement is granted
-    ACHIEVEMENT_SOUND = None
+    ACHIEVEMENT_SOUND = "audio/sfx_memoryTrigger.ogg"
     ACHIEVEMENT_CHANNEL = "audio"
     ## The text that's shown when an achievement's name or description
     ## is hidden.
@@ -550,4 +550,3 @@ init -499 python:
 screen finish_animating_achievement(num):
     timer myconfig.ACHIEVEMENT_HIDE_TIME:
         action [SetDict(custom_achievements.onscreen_achievements, num, None), Hide()]
-

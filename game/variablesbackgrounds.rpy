@@ -1,6 +1,6 @@
-############
+####################################################################################
 #Layered Backgrounds
-############
+####################################################################################
 #Hunter's Boat - Stormy
 ############
 transform lightning1:
@@ -50,9 +50,9 @@ layeredimage bg_hunterboat_stormy:
         attribute huntersboat default:
             "images/bgs/hunterstormyboat/stormy2.png"
             #alpha 0.2
-############
+####################################################################################
 #testing cetus image
-############
+####################################################################################
 transform firefly_blink(child=None, fade_time=0.2, visible_time=1.0, zoom=1.0):
     child
     zoom zoom
@@ -74,9 +74,9 @@ layeredimage bg_cetusoffice1:
     attribute bg_cetus default:
         "images/bgs/bg cetus study.jpg"
 
-############
+####################################################################################
 #Maris Lumina - Capital City
-############
+####################################################################################
 transform luminastars_blink(child=None, fade_time=0.5, visible_time=2.0, zoom=1.0):
     child
     zoom zoom
@@ -98,3 +98,37 @@ layeredimage bg_marislumina:
             #fit "contain"
         attribute nosparkle:
             Null()
+
+####################################################################################
+#Prashadi's Cave
+####################################################################################
+#transform prashadistars1_blink(child=None, fade_time=0.8, visible_time=2.5, zoom=1.0):
+#    child
+#    zoom zoom
+#    alpha 0.0
+#    linear fade_time alpha 1.0
+#    pause visible_time-fade_time*0.5
+#    linear fade_time alpha 0.0
+#    repeat
+############
+transform prashadistars2_blink(child=None, fade_time=0.8, visible_time=4.0):
+    child
+#    zoom zoom
+    alpha 0.0
+    linear fade_time alpha 1.0
+    pause visible_time-fade_time*0.5
+    linear fade_time alpha 0.0
+    repeat
+############
+layeredimage bg_prashadicave:
+    attribute cave default:
+        "images/bgs/prashadicave/base.jpg"
+
+    group sparkle auto:
+        attribute star2 default:
+            "images/bgs/prashadicave/star2.png" at prashadistars2_blink
+            #fit "contain"
+        attribute star1 default:
+            "images/bgs/prashadicave/star1.png"
+            #at prashadistars1_blink
+            #fit "contain"

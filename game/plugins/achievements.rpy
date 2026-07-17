@@ -55,7 +55,7 @@ define myconfig.ACHIEVEMENT_HIDE_TIME = 1.0
 define myconfig.SHOW_ACHIEVEMENT_POPUPS = True
 ## This can be set to a sound that plays when the achievement popup appears.
 ## None does not play a sound.
-define myconfig.ACHIEVEMENT_SOUND = "audio/sfx/sfx_memoryTrigger.ogg"
+define myconfig.ACHIEVEMENT_SOUND = "audio/sfx_memoryTrigger.ogg"
 ## If the sound plays, this sets the channel it will play on. The audio
 ## channel plays on the sfx mixer, and can play overlapping sounds if multiple
 ## achievements are earned at once.

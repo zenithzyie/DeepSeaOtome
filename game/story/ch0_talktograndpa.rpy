@@ -33,7 +33,7 @@ label grandpatalk:
             fit "contain"
             xalign 0.5
         with dissolve
-        play sound "audio/sfx/sfx_memoryTrigger.ogg" volume 1.0
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         show cg_familyportrait:

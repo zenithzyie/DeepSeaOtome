@@ -159,7 +159,7 @@ label ch1_followjorunn:
 
     "...!"
 
-    scene bg prashadi cave:
+    scene bg_prashadicave:
         fit "contain"
     with fade
 

@@ -84,7 +84,7 @@ label chapter1:
     if not renpy.seen_image("cg_train"):
         scene cg_train with dissolve:
             fit "contain"
-        play sound "audio/sfx/sfx_memoryTrigger.ogg" volume 1.0
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         scene cg_train with dissolve:
@@ -734,6 +734,7 @@ label afterknocking:
     if not renpy.seen_image("cg_sushi"):
         show cg_sushi
         hide cg_sushi
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     $ config.side_image_tag = "None"
     "Another mermaid, similar to the one banging on the glass, is on display in front of the tank."
@@ -1294,11 +1295,12 @@ label timeskip1:
 
     if not renpy.seen_image("cg_skyllahands"):
         scene cg_skyllahands with dissolve:
-            zoom 0.343
+            fit "contain"
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         scene cg_skyllahands with dissolve:
-            zoom 0.343
+            fit "contain"
 
 
     #SCENE CHANGE - skylla cg
@@ -1493,7 +1495,9 @@ label timeskip1:
     "I can hear the siren cursing as I swim away."
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
 
-    scene bg sea with vpunch
+    scene bg sea:
+        fit "contain"
+    with vpunch
     play music "audio/music_underwater.ogg" volume 1.0 fadeout 1.0
     $ config.side_image_tag = "june"
     y fish neutral "Blub...{w=0.2}blub..."

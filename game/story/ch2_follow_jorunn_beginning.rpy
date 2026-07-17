@@ -19,6 +19,7 @@ label ch2_follow_jorunn:
     if not renpy.seen_image("cg_mermaidprashadi"):
         show cg_mermaidprashadi:
             pos (0.5, 2.64) zoom 0.34
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         show cg_mermaidprashadi:

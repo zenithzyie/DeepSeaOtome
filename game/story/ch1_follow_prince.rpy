@@ -88,20 +88,20 @@ label ch1_followprince:
 #    with Pause(1.75)
 
     play music bgm_capital volume 0.8
-    show bg_marislumina night:
+    scene bg_marislumina day:
         fit "contain"
-    show black:
-        alpha 0.2
+    with dissolve
+
     ny neutral fish "Are we really at the bottom of the ocean? How can it be so bright here?"
 
-    "How beautiful. This must be where the mermaids live."
+    "This must be where the mermaids live. It's beautiful."
+
+    "I wonder how they built this underwater? I can only imagine how long it took."
 
     "If only I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
 
-    hide black
+
     show thioran frown at thioran_center
-    show black:
-        alpha 0.2
     with dissolve
     up "Go on ahead to make a report on the storm. I shall return to the palace shortly."
 
@@ -121,29 +121,23 @@ label ch1_followprince:
         "Something like that..."
     if antimermaid > promermaid:
         "You have no idea..."
- 
+
     up "I suppose that makes two of us."
 
     "Can he really understand me?"
 
-    #TESTING WEEEEE
-    show thioran frown with dissolve
-    $ night = True
-    y "Blub...{w}blub?"
-    y mermaid shocked "Blub..."
-    #hide thioran
-    show thioran shocked with dissolve
-
     menu:
         "Maybe I should try saying something..."
-        "Hello? Can you hear me...?":
+        "\"Hello? Can you hear me...?\"":
             y "Blub{w} blub...?"
 
-        "A siren did this to me!":
+        "\"A siren did this to me!\"":
             y "Blub blub blub!"
 
-        "HELP ME!!!":
+        "\"HELP ME!!!\"":
             y "BLUB BLUB!!!" with screenShake
+
+    up "Is something the matter?"
 
     up "Are you sick? Injured?"
 
@@ -163,11 +157,17 @@ label ch1_followprince:
 
     "The prince begins to move with newfound purpose."
 
+#    scene bg_marislumina day:
+#        fit "contain"
+#    show thioran frown at thioran_center
+#    with fade
+
     "The city is bustling, but he avoids the crowds in favor of swimming through a quieter area."
 
     "All I can do is stay between his hands."
 
-    #fade transition (same scene)
+    scene bg black
+    with fade
 
     "Eventually, we arrive at the tallest structure, which must be the castle."
 
@@ -184,7 +184,7 @@ label ch1_followprince:
     scene bg throneroom:
         fit "contain"
     "Our final destination - a grand throne room."
-    "What a sight..."
+    ny neutral fish "What a sight..."
     "Light is pouring through the open windows."
 
     $ speaking_char = "all"
@@ -201,8 +201,8 @@ label ch1_followprince:
     #this section needs edited
 
     show cetus shocked with dissolve
-    ny neutral fish "He holds himself proudly, but he abandons this as soon as he sees the prince."
-    
+    "He holds himself proudly, but he abandons this as soon as he sees the prince."
+
     ucetus "Prince Thioran! Where have you been?"
 
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
@@ -215,15 +215,16 @@ label ch1_followprince:
 
     "Cetus shakes his head and sighs."
 
+    show cetus neutral
+
     c "No matter. As long as you're safe."
 
     c "Now, what troubles you? You look as though you've swallowed an urchin."
 
-    p "It's just-{w}here. I found her near the storm."
+    p "It's just-{w=0.2} here. I found her near the storm."
 
     "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
 
-    show cetus neutral with dissolve
     c "Oh...? Find another pet for yourself out there, nephew?"
 
     c "You know you don't need my permission to keep her."
@@ -248,7 +249,7 @@ label ch1_followprince:
 
     "June thought here"
 
-    
+
 
     $ speaking_char = "Cetus"
     "Cetus slowly approaches me, brows furrowing."
