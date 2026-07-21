@@ -1333,9 +1333,9 @@ label timeskip1:
         ypos 1050 zoom 1.5
     with dissolve
     $ config.side_image_tag = "june"
-    siren2 "Aw. You're hurting my feelings! Aren't you happy to see me?"
+    siren2 neutral fish "Aw. You're hurting my feelings! Aren't you happy to see me?"
     siren2 "When Skylla calls, little mers are meant to follow."
-    ny neutral fish "Skylla...? Is that the name of this siren?"
+    "Skylla...? Is that the name of this siren?"
 
     show skylla neutral
 
