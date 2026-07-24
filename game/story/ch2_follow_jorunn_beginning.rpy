@@ -32,7 +32,7 @@ label ch2_follow_jorunn:
 
     "And my voice is back!"
 
-    scene bg prashadi cave loop:
+    scene bg prashadi cave:
         fit "contain"
     $ speaking_char = "Prashadi"
     show prashadi neutral at left2

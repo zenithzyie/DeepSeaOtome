@@ -242,14 +242,18 @@ label ch1_followjorunn:
     "Prashadi’s hands move like they're weaving something together from the water around us."
 
     "Is he casting a spell?"
-
+    play sound "audio/sfx_prashadiMagicCast.ogg" volume 1.0
     "No...this mermaid can’t possibly be Grandfather!"
 
     #BLACK SCENE
     scene bg black with fade
     "What’s happening to me?"
-    "Grandfather...!"
-    "Grandfather...! Hunter!"
+    #if no hunter points
+    if hunter_points == 0:
+        "Grandfather...!"
+    #if hunter points
+    else:
+        "Grandfather...! Hunter!"
     "..."
     Pr "Ah...From the depths, your true form emerges! Well, only partially."
     "I open my eyes."

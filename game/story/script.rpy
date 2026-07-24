@@ -1511,9 +1511,7 @@ label timeskip1:
     "What was that? Is there another mermaid here?"
     "I quickly dart into some foliage to hide."
     play sound "audio/sfx_seaweedRustle.ogg" volume 0.5
-
-    #THIO AND JOR ENTER THE STAGE
-    #Voice Lines Start (old, deleted the comments where they were due to script changes)
+    
     show thioran angry at thioran_left
     show jorunn hesitant at jorunn_right
     show kelp with vpunch
