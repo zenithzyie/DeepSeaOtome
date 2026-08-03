@@ -1325,7 +1325,7 @@ label timeskip1:
             "I try to swim at her, but something blocks me before I can get close enough." with vpunch
             "A bubble?"
 
-    scene bg skylla cave:
+    scene bg skylla cave1:
         fit "contain"
     #keep this at a 0.5 zoom until new bg
     show skylla happy
@@ -1484,8 +1484,11 @@ label timeskip1:
     "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
     play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.1
     extend "and in the next second the crystals explode."
-    y "...!" with vpunch
-    "The explosion has created a hole just big enough for me to squeeze through."
+    scene bg skylla cave2:
+        fit "contain"
+    with vpunch
+    y fish neutral "...!"
+    #"The explosion has created a hole just big enough for me to squeeze through."
     "This is my chance!"
     stop music
     scene bg black
@@ -1511,7 +1514,7 @@ label timeskip1:
     "What was that? Is there another mermaid here?"
     "I quickly dart into some foliage to hide."
     play sound "audio/sfx_seaweedRustle.ogg" volume 0.5
-    
+
     show thioran angry at thioran_left
     show jorunn hesitant at jorunn_right
     show kelp with vpunch

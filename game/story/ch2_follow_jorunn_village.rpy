@@ -539,7 +539,7 @@ label jorshouse:
             if greens == 3:
                 "I add even more greens to the bowl. Being surrounded by sea plants must have really made me crave some greens."
                 #show text "I've added [greens] leafy greens, [fruit] fruit and [fish] fish." at topright
-                jump makefood
+                jump fooddone
 
         "Sea Fruit?":
             if addfood == 0:
@@ -594,7 +594,7 @@ label jorshouse:
     label fooddone:
 
     #Bowl Outcomes
-
+########################################################################################################
     #One of each
     if greens == 1 and fruit == 1 and fish == 1:
         show plate:
@@ -616,39 +616,193 @@ label jorshouse:
         "This is a nice, well-rounded meal."
         $ speaking_char = "Unna"
         "It seems Unna chose the same as me. I guess she isn't much of a picky eater either."
-
+########################################################################################################
     #Two leafy greens
-    if greens == 2:
+    if greens == 2 and fruit == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.4)
+        show seaweed2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.51)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.57)
+        with dissolve
         "I've made a bowl filled with leafy greens."
-
+###############################################################################
+    if greens == 2 and fish == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.4)
+        show seaweed2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.51)
+        show fillet1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.57)
+        with dissolve
+        "I've made a bowl filled with leafy greens."
+########################################################################################################
     #Three leafy greens
     if greens == 3:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.4)
+        show seaweed2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.47)
+        show seaweed3:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.53)
+        with dissolve
         "There could not be more green in this meal. This is a salad bowl to end all salad bowls."
         $ speaking_char = "Jorunn"
         "It seems Jorunn chose the same as me. I wonder if he's a picky eater?"
-
+########################################################################################################
     #Two fruit
-    if fruit == 2:
-        "I've made a bowl filled with fruit."
-
+    if fruit == 2 and fish == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show fillet1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.45)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.47, 0.54)
+        show fruit2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.56, 0.49)
+        with dissolve
+        ny neutral "I've made a bowl filled with fruit."
+        hide plate
+        hide fillet1
+        hide fruit1
+        hide fruit2
+        with dissolve
+###############################################################################
+    if fruit == 2 and greens == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.45)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.47, 0.54)
+        show fruit2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.56, 0.49)
+        with dissolve
+        ny neutral "I've made a bowl filled with fruit."
+        hide plate
+        hide seaweed1
+        hide fruit1
+        hide fruit2
+        with dissolve
+########################################################################################################
     #Three fruit
     if fruit == 3:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show fruit3:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.42)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.47, 0.54)
+        show fruit2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.55, 0.51)
+        with dissolve
         ny shocked "There is so much fruit in here. Did I overdo it?"
-
+        hide plate
+        hide fruit3
+        hide fruit1
+        hide fruit2
+        with dissolve
+########################################################################################################
     #Two fish
     if fish == 2:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show fish1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.42)
+        show fish2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.47, 0.54)
+        show fruit2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.55, 0.51)
+        with dissolve
         "I've made a bowl with lots of fish."
         $ speaking_char = "Parvy"
         show parvy smile with dissolve
-        "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
+        ny neutral "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
 
     #Three fish
     if fish == 3:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show fish1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.45)
+        show fish2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.5)
+        show fish3:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.52, 0.55)
+        with dissolve
+
         "The fish fillets are staring at me from inside the bowl."
         ny shocked "...Why did I add so much fish?"
         show jorunn smile with dissolve
         j "..."
-
+        hide plate
+        hide fish1
+        hide fish2
+        hide fish3
+        with dissolve
     #No fish
     if fish == 0:
         $ jorunn_points += 1
