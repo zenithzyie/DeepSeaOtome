@@ -102,6 +102,15 @@ screen charnameinput():
 #        action Return()
 
 
+style rtn_btn_button:
+    properties gui.button_properties("choice_button")
+    xalign 0.5
+
+style rtn_btn_button_text:
+    properties gui.button_properties("choice_button")
+    xalign 0.5
+    size 20
+
 ################################################################################
 ## Choice screen ###############################################################
 ################################################################################
@@ -110,7 +119,18 @@ screen choice(items):
 
     vbox:
         for i in items:
-            textbutton i.caption action i.action
+            if i.caption == "Return.":
+                null height 40               
+                textbutton i.caption action i.action:
+                    idle_background Frame("gui/button/choice_return_idle_background.png", 0, 0)
+                    hover_background  Frame("gui/button/choice_return_hover_background.png", 0, 0)
+                    xalign 0.5
+                    text_size 20
+                    xsize 250
+                    ysize 50
+            else:
+                textbutton i.caption action i.action
+            
 
 ################################################################################
 ## Quick Menu screen ###########################################################
