@@ -1382,23 +1382,23 @@ label timeskip1:
         subpixel True
         parallel:
             ease 0.52 pos (0, 0)
-            ease 0.88 pos (-864, -7)
-            ease 0.80 pos (-12, -475)
-            ease 0.78 pos (-858, -480)
+            ease 0.88 pos (-750, -7)
+            ease 0.80 pos (-12, -400)
+            ease 0.78 pos (-750, -400)
         parallel:
             zoom 1.0
             ease 0.52 zoom 1.61
     with Pause(2.98)
     camera:
-        pos (-858, -480) zoom 1.61
+        pos (-750, -400) zoom 1.61
     with Pause(0.4)
     camera:
         subpixel True
-        pos (-858, -480)
-        linear 0.83 pos (-804, -318)
+        pos (-750, -400)
+        linear 0.83 pos (-750, -100)
     with Pause(0.93)
     camera:
-        pos (-804, -318)
+        pos  (-750, -100)
     window auto show
 
     "From what I can see, there's only one path forward: deeper into the siren's lair."
@@ -1406,11 +1406,11 @@ label timeskip1:
     window auto hide
     camera:
         subpixel True
-        pos (-804, -318) zoom 1.61
-        linear 1.32 pos (-108, -102) zoom 2.04
-    with Pause(1.42)
+        pos (-750, -100) zoom 1.61
+        linear 1.22 pos (-108, -400) zoom 2.04
+    with Pause(1.32)
     camera:
-        pos (-108, -102) zoom 2.04
+        pos (-108, -400)  zoom 2.04
     window auto show
 
     "Glowing crystals line the walls, but I don't see how that could help me."
@@ -1418,7 +1418,7 @@ label timeskip1:
     window auto hide
     camera:
         subpixel True
-        pos (-108, -102) zoom 2.04
+        pos (-108, -400) zoom 2.04
         linear 0.40 pos (0, 0) zoom 1.0
     with Pause(0.50)
     camera:
