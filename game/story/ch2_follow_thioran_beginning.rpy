@@ -371,6 +371,7 @@ label ch2_followthio:
             show black:
                 alpha 0.35
             show photo_guestroom2 at atphoto
+            with dissolve
             ny shocked "A photo pops out from the top of the camera."
             y neutral "The star in the center is so eye-catching."
             y "I remember seeing the same shape earlier too. Does it mean something?"

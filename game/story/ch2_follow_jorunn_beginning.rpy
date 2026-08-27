@@ -26,6 +26,9 @@ label ch2_follow_jorunn:
             pos (0.5, 2.64) zoom 0.34
     window auto show
 
+    $ followthief.grant()
+
+
     "I stare down at it, confused, before my eyes trace it upward and find that it's connected to me."
 
     y "Oh! I'm...a mermaid?"

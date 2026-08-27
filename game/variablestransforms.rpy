@@ -58,8 +58,8 @@ define moss = Character("Moss", image="june", ctc="ctc_pos", ctc_position="fixed
 ######################################################################
 #Unknown Character Names
 define u = Character("???", image="june", ctc="ctc_pos", ctc_position="fixed")
-define novisualthio = Character("Angry Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
-define novisualjor = Character("Mischievous Voice", image="june", ctc="ctc_pos", ctc_position="fixed")
+define novisualthio = Character("Angry Voice", image="june", ctc="ctc_pos", ctc_position="fixed", callback = name_callback, cb_name="Thioran", namebox_background=Frame("gui/namebox_thio.png", 0, 0))
+define novisualjor = Character("Mischievous Voice", image="june", ctc="ctc_pos", ctc_position="fixed", callback = name_callback, cb_name="Jorunn", namebox_background=Frame("gui/namebox_jor.png", 0, 0))
 define up = Character("Princely Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Thioran", namebox_background=Frame("gui/namebox_thio.png", 0, 0))
 define uj = Character("Thieving Merman", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Jorunn", namebox_background=Frame("gui/namebox_jor.png", 0, 0))
 define uhunter = Character("Strange Man", image="june", ctc="ctc_pos", ctc_position="fixed",callback = name_callback, cb_name="Hunter",namebox_background=Frame("gui/namebox_hunter.png", 0, 0))

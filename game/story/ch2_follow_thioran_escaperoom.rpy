@@ -152,6 +152,11 @@ label ch2_castle_escaperoom:
                             $ letter = True
                             show black:
                                 alpha 0.7
+                            show fangirlsletter:
+                                zoom 0.3
+                                xalign 0.5
+                                ypos 120
+                                alpha 0.5
                             play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
                             show text "{i}My Dearest Lord Cetus.{/i}{w}":
                                 align (0.5,0.5)
@@ -171,6 +176,7 @@ label ch2_castle_escaperoom:
                             pause
                             hide text
                             hide black
+                            hide fangirlsletter
                             with dissolve
                             ny neutral "{i}If you would allow me the opportunity, I could show you where to put all of those tentacles of yours-{/i}"
                             y flustered "Oh!"
@@ -181,20 +187,44 @@ label ch2_castle_escaperoom:
 
                         "Hairpin.":
                             $ hairpin = True
+                            show black:
+                                alpha 0.5
+                            show hairpin:
+                                zoom 0.2
+                                #zoom 0.2 for larger
+                                xalign 0.5
+                                ypos 156
+                                #ypos 156 for larger
+                            with dissolve
                             ny neutral "There's what appears to be an ornate hairpin resting inside the dresser."
                             y happy "How beautiful. Did it belong to the last person who stayed here?"
                             ny neutral "The pointy end is rather thin. Maybe I can use this for something?"
                             "I'll keep it in my bag for now."
+                            hide black
+                            hide hairpin
+                            with dissolve
                             jump checkdresser
 
                         "Small bag.":
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
                             play sound "audio/sfx_coinJingle.ogg" volume 0.7
+                            show black:
+                                alpha 0.5
+                            show coinpurse:
+                                zoom 0.15
+                                #zoom 0.2 for larger
+                                xalign 0.5
+                                ypos 176
+                                #ypos 156 for larger
+                            with dissolve
                             "There's some gold and silver shells inside. This looks like somebody's coinpurse."
                             "Do mermaids barter the same way humans do?"
                             "I'll hold onto this for now."
                             ny shocked "I hope the previous guest doesn't come looking for it..."
+                            hide black
+                            hide coinpurse
+                            with dissolve
                             jump checkdresser
 
                         "Return." if coinpurse and hairpin:

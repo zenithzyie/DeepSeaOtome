@@ -241,7 +241,7 @@ label marketpuzzle:
         fit "contain"
     menu marketstart:
         ny neutral "Hmm..."
-        "Ask around.":
+        "Ask around." if not oldladyinfo and not kidsinfo and not fishmongerinfo:
             jump talktownsfolk
 
         "Go look elsewhere.":
@@ -253,9 +253,8 @@ label marketpuzzle:
                 jump marketpuzzle
 
     menu talktownsfolk:
-        #set menuset
         ny happy "Talk to..."
-        "Elderly Woman":
+        "Elderly Woman" if not oldladyinfo:
             $ oldladyinfo = True
             "There's an elderly woman browsing the vegetable stand."
             "She has a kindly look about her."
@@ -279,7 +278,7 @@ label marketpuzzle:
 
             jump talktownsfolk
 
-        "Children playing":
+        "Children playing" if not kidsinfo:
             $ kidsinfo = True
             y "Hey, there! Do you know where I could find this area?"
             energetickid "I win! I get to be the mermaid hunter now!"
@@ -298,25 +297,41 @@ label marketpuzzle:
 
             jump talktownsfolk
 
-        "Fishmonger":
+        "Fishmonger" if not fishmongerinfo:
             $ notbuyfish = False
             $ fishmongerinfo = True
             "A fishmonger mans his stand, reading a newspaper. His signboard reads 'Four copper per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
-            y "Huh?"
+            y shocked "Huh?"
             fishmonger "Bass or halibut? Whaddya want?"
 
             menu fishbuy:
                 set menuset
-                "Whaddya want?"
+                ny neutral "Whaddya want?"
                 "Bass.":
                     $ bass = True
+                    $ halibut = False
                     y "I'll take the bass."
+                    show black:
+                        alpha 0.5
+                    show bassfish:
+                        zoom 0.2
+                        xalign 0.5
+                        ypos 156
+                    with dissolve
 
                 "Halibut.":
                     $ halibut = True
+                    $ bass = False
                     y "I'll take the halibut."
+                    show black:
+                        alpha 0.5
+                    show halibutfish:
+                        zoom 0.2
+                        xalign 0.5
+                        ypos 156
+                    with dissolve
 
                 "I'm not looking to buy fish right now.":
                     $ notbuyfish = True
@@ -326,31 +341,38 @@ label marketpuzzle:
                     $ notbuyfish = True
                     jump fishbuy
 
-            "The fishmonger wraps up a fillet for me in a bag."
+            ny neutral "The fishmonger wraps up a fish for me in a bag."
+            hide black
+            if bass:
+                hide bassfish
+            if halibut:
+                hide halibutfish
+            with dissolve
             fishmonger "Five coppers."
-            y "Huh? But your sign here says four."
+            y shocked "Huh? But your sign here says four."
             fishmonger "It's on account'o the inflation. 'Sides, that sign's old."
             y "..."
             fishmonger "Ya want the fish or not?"
-            y "I...suppose."
+            y neutral "I...suppose."
             "I put five copper coins on the table and he hands me the bag with the fish in it."
             if notbuyfish:
                 fishmonger "A'right, whaddya wanna know."
             else:
                 y "Could I also trouble you for some directions?"
-            y "I'm looking for this address here."
+            y happy "I'm looking for this address here."
             "I show him the address on the letter."
             "He scratches his chin and sighs."
             fishmonger "The code to get in is {color=#f2b950}five, three, four.{/color} An' remember to pause in between!"
             fishmonger "That's all I know, and all I'll say."
-            "That doesn't tell me where to go at all!"
-            y "What do you mean by code?"
+            ny frustrated "That doesn't tell me where to go at all!"
+            y neutral "What do you mean by code?"
             if bass:
                 fishmonger "What, ya want the halibut too? Five silvers."
+
             if halibut:
                 fishmonger "What, ya want the bass too? Five silvers."
 
-            y "{i}FIVE SIL{/i}- {w=0.3}no, that's quite alright, thank you." with screenShake
+            y shocked "{i}FIVE SIL{/i}- {w=0.3}no, that's quite alright, thank you." with screenShake
             "There's a limit to my coinpurse, Mr. Fishmonger!"
 
             jump talktownsfolk
@@ -431,7 +453,9 @@ label seasaltalley:
 
 label knocking:
     if knocking == 0:
-        scene bg brickwall with dissolve
+        scene bg brickwall:
+            fit "contain"
+        with dissolve
         stop ambience fadeout 5.0
         #should we stop the music here/play something else?
         ny neutral "Well, this isn't how I was expecting my day to go."
@@ -1517,7 +1541,9 @@ label timeskip1:
 
     show thioran angry at thioran_left
     show jorunn hesitant at jorunn_right
-    show kelp with vpunch
+    show kelp:
+        fit "contain"
+    with vpunch
     novisualthio "The further out you swim, the more guilty you are! Those fish belong to the Capital."
     novisualthio "Return them now, and your judgment will be fair."
     novisualjor "I'm very sorry, {i}my prince{/i}, but I was hoping I could skip the judgment part entirely!"
