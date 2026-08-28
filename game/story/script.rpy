@@ -235,6 +235,7 @@ label chapter1:
     $ bass = False
     $ halibut = False
     $ saiditlouder = False
+    $ talktotext = "Talk to..."
 label marketpuzzle:
     hide black with fade
     show bg shabby market:
@@ -253,7 +254,7 @@ label marketpuzzle:
                 jump marketpuzzle
 
     menu talktownsfolk:
-        ny happy "Talk to..."
+        ny happy "[ talktotext ]"
         "Elderly Woman" if not oldladyinfo:
             $ oldladyinfo = True
             "There's an elderly woman browsing the vegetable stand."
@@ -275,6 +276,8 @@ label marketpuzzle:
             woman "You'll find what you're lookin' for there."
             y "I see. Thank you for your help!"
             woman "Don't be a stranger now!"
+            if oldladyinfo and kidsinfo and fishmongerinfo:
+                $ talktotext = "..."
 
             jump talktownsfolk
 
@@ -294,6 +297,8 @@ label marketpuzzle:
             "The kids begin squabbling with one another."
             y "Oh dear..."
             "I don't think I'll be getting any directions from them."
+            if oldladyinfo and kidsinfo and fishmongerinfo:
+                $ talktotext = "..."
 
             jump talktownsfolk
 
@@ -374,9 +379,11 @@ label marketpuzzle:
 
             y shocked "{i}FIVE SIL{/i}- {w=0.3}no, that's quite alright, thank you." with screenShake
             "There's a limit to my coinpurse, Mr. Fishmonger!"
+            if oldladyinfo and kidsinfo and fishmongerinfo:
+                $ talktotext = "..."
 
             jump talktownsfolk
-        "Go back.":
+        "Return.":
             jump marketpuzzle
 
     "It seems I have spoken to everyone I can in the area."
@@ -1116,26 +1123,44 @@ label timeskip1:
     show hunter neutral with dissolve
     h "Yep. But if they spot my little skiff, the show's over."
     ny neutral "I take my camera out of my purse."
-    show black:
-        alpha 0.55
-    show camera_human at atcamera:
-        zoom 0.18
-    with dissolve
+#    show black:
+#        alpha 0.55
+#    show camera_human at atcamera:
+#        zoom 0.18
+#    with dissolve
     "I wonder if I'll be able to catch a picture of a mermaid?"
     "That should be more than enough to impress Grandfather."
-    hide black
-    hide camera_human
-    show hunter happy
-    with dissolve
+#    hide black
+#    hide camera_human
+#    show hunter happy
+#    with dissolve
+    if not renpy.seen_image("cg_hunterboat"):
+        scene cg_hunterboat:
+            fit "contain"
+        camera:
+            xpos 0 ypos 0 zoom 1.0
+        with dissolve
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg_hunterboat:
+            fit "contain"
+        camera:
+            xpos 0 ypos 0 zoom 1.0
+        with dissolve
+    $ config.side_image_tag = "None"
     h "So, you're into photography now?"
-    y veryhappy "Aye, Captain!"
+    y "Aye, Captain!"
     h "Heh. Didn't think you'd have the patience for it."
-    y happy "Perhaps not when I was younger, but I really enjoy it now."
+    y "Perhaps not when I was younger, but I really enjoy it now."
     y "It's like making physical copies of memories. Even if you forget something, the photo lasts forever."
-    y neutral "Do you keep any records as a mermaid hunter? Photos?"
-    show hunter neutral with dissolve
+    y "Do you keep any records as a mermaid hunter? Photos?"
     h "Records, yes. Photos, no."
     h "Don't like being near them any more than we have to."
+    scene bg hunterboat:
+        fit "contain"
+    show hunter neutral at Position(xpos=0.55)
+    with dissolve
+    $ config.side_image_tag = "june"
     y shocked "Oh. They're really that dangerous?"
     h "Yeah. It's the pretty ones you gotta watch out for."
     h neutral "Nothing for you to worry about though. You'll be-"

@@ -604,7 +604,7 @@ label jorshouse:
             zoom 0.2
             align (0.5, 0.5)
             pos (0.5, 0.4)
-        show fillet1:
+        show fish1:
             zoom 0.2
             align (0.5, 0.5)
             pos (0.5, 0.51)
@@ -616,27 +616,40 @@ label jorshouse:
         "This is a nice, well-rounded meal."
         $ speaking_char = "Unna"
         "It seems Unna chose the same as me. I guess she isn't much of a picky eater either."
+        hide plate
+        hide seaweed1
+        hide fish1
+        hide fruit1
+        with dissolve
 ########################################################################################################
-    #Two leafy greens
+    #Two leafy greens and fruit
     if greens == 2 and fruit == 1:
         show plate:
             zoom 0.2
             align (0.5, 0.5)
-        show seaweed1:
-            zoom 0.2
-            align (0.5, 0.5)
-            pos (0.5, 0.4)
-        show seaweed2:
-            zoom 0.2
-            align (0.5, 0.5)
-            pos (0.5, 0.51)
         show fruit1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.52, 0.57)
+            pos (0.50, 0.51)
+            rotate -6.0
+        show seaweed1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.49, 0.44)
+        show seaweed2:
+            zoom 0.2
+            align (0.5, 0.5)
+            xpos 0.5
         with dissolve
+
         "I've made a bowl filled with leafy greens."
+        hide plate
+        hide seaweed1
+        hide seaweed2
+        hide fruit1
+        with dissolve
 ###############################################################################
+    #Two leafy greens and fish
     if greens == 2 and fish == 1:
         show plate:
             zoom 0.2
@@ -644,17 +657,22 @@ label jorshouse:
         show seaweed1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.4)
+            pos (0.48, 0.44)
         show seaweed2:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.51)
-        show fillet1:
+            pos (0.53, 0.55)
+        show fish1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.52, 0.57)
+            pos (0.51, 0.51)
         with dissolve
         "I've made a bowl filled with leafy greens."
+        hide plate
+        hide seaweed1
+        hide seaweed2
+        hide fish1
+        with dissolve
 ########################################################################################################
     #Three leafy greens
     if greens == 3:
@@ -677,24 +695,30 @@ label jorshouse:
         "There could not be more green in this meal. This is a salad bowl to end all salad bowls."
         $ speaking_char = "Jorunn"
         "It seems Jorunn chose the same as me. I wonder if he's a picky eater?"
+        hide plate
+        hide seaweed1
+        hide seaweed2
+        hide seaweed3
+        with dissolve
 ########################################################################################################
-    #Two fruit
+    #Two fruit and fish
     if fruit == 2 and fish == 1:
         show plate:
             zoom 0.2
             align (0.5, 0.5)
-        show fillet1:
+        show fish1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.45)
+            pos (0.49, 0.45)
         show fruit1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.47, 0.54)
+            pos (0.48, 0.46)
+            rotate -6.0
         show fruit2:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.56, 0.49)
+            pos (0.5, 0.5)
         with dissolve
         ny neutral "I've made a bowl filled with fruit."
         hide plate
@@ -703,6 +727,7 @@ label jorshouse:
         hide fruit2
         with dissolve
 ###############################################################################
+    #Two fruit and seaweed
     if fruit == 2 and greens == 1:
         show plate:
             zoom 0.2
@@ -710,15 +735,16 @@ label jorshouse:
         show seaweed1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.45)
+            pos (0.49, 0.42)s
         show fruit1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.47, 0.54)
+            pos (0.48, 0.46)
+            rotate -6.0
         show fruit2:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.56, 0.49)
+            pos (0.5, 0.5)
         with dissolve
         ny neutral "I've made a bowl filled with fruit."
         hide plate
@@ -735,15 +761,19 @@ label jorshouse:
         show fruit3:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.42)
-        show fruit1:
-            zoom 0.2
-            align (0.5, 0.5)
-            pos (0.47, 0.54)
+            pos (0.5, 0.5)
+            rotate -6.0
         show fruit2:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.55, 0.51)
+            pos (0.51, 0.51)
+            rotate 192.0
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.53, 0.55)
+            rotate -186.0
+
         with dissolve
         ny shocked "There is so much fruit in here. Did I overdo it?"
         hide plate
@@ -752,29 +782,65 @@ label jorshouse:
         hide fruit2
         with dissolve
 ########################################################################################################
-    #Two fish
-    if fish == 2:
+    #Two fish and fruit
+    if fish == 2 and fruit == 1:
+        show plate:
+            zoom 0.2
+            align (0.5, 0.5)
+        show fruit1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.50, 0.51)
+            rotate -6.0
+        show fish1:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.45)
+        show fish2:
+            zoom 0.2
+            align (0.5, 0.5)
+            pos (0.5, 0.5)
+        with dissolve
+        "I've made a bowl with lots of fish."
+        $ speaking_char = "Parvy"
+        show parvy smile with dissolve
+        ny neutral "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
+        hide plate
+        hide fish1
+        hide fish2
+        hide fruit2
+        with dissolve
+
+###############################################################################
+    #Two fish and seaweed
+    if fish == 2 and greens == 1:
         show plate:
             zoom 0.2
             align (0.5, 0.5)
         show fish1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.5, 0.42)
+            pos (0.5, 0.45)
         show fish2:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.47, 0.54)
-        show fruit2:
+            pos (0.5, 0.5)
+        show seaweed1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.55, 0.51)
+            pos (0.52, 0.55)
         with dissolve
         "I've made a bowl with lots of fish."
         $ speaking_char = "Parvy"
         show parvy smile with dissolve
         ny neutral "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
+        hide plate
+        hide fish1
+        hide fish2
+        hide seaweed1
+        with dissolve
 
+###############################################################################
     #Three fish
     if fish == 3:
         show plate:
@@ -803,6 +869,7 @@ label jorshouse:
         hide fish2
         hide fish3
         with dissolve
+###############################################################################
     #No fish
     if fish == 0:
         $ jorunn_points += 1
