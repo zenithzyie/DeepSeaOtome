@@ -964,7 +964,7 @@ label jorshouse:
 
     menu:
         "Take a picture of the family.":
-            play sound "audio/sfx_cameraShutter.ogg" volume 0.8
+            play sound "audio/sfx_waterCameraClick.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             show black:

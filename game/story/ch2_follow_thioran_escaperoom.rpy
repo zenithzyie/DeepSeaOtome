@@ -157,7 +157,7 @@ label ch2_castle_escaperoom:
                                 xalign 0.5
                                 ypos 120
                                 alpha 0.5
-                            play sound "audio/sfx_thickPaperRustle.ogg" volume 0.8
+                            play sound "audio/sfx_thickPaperRustle.ogg" volume 0.4
                             show text "{i}My Dearest Lord Cetus.{/i}{w}":
                                 align (0.5,0.5)
                             with dissolve

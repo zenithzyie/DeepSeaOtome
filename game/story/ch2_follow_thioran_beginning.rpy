@@ -351,7 +351,7 @@ label ch2_followthio:
     menu:
         "Take a picture of..."
         "The lamp?":
-            play sound "audio/sfx_cameraMermaid.ogg"
+            play sound "audio/sfx_waterCameraClick.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             show black:
@@ -365,7 +365,7 @@ label ch2_followthio:
 
 
         "The window.":
-            play sound "audio/sfx_cameraMermaid.ogg"
+            play sound "audio/sfx_waterCameraClick.ogg" volume 0.8
             show camera with irisin
             hide camera with dissolve
             show black:
