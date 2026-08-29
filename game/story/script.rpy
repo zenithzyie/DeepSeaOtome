@@ -1536,7 +1536,7 @@ label timeskip1:
     stop sound fadeout 2.0
     "Time seems to slow down."
     "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
-    play sound "audio/sfx_glowStoneExplosion.mp3" volume 0.1
+    play sound "audio/sfx_glowStoneExplosion.ogg"
     extend "and in the next second the crystals explode."
     scene bg skylla cave2:
         fit "contain"
@@ -1545,12 +1545,15 @@ label timeskip1:
     #"The explosion has created a hole just big enough for me to squeeze through."
     "This is my chance!"
     stop music
+    stop sound
     scene bg black
     with fade
 
+    play sound "audio/sfx_heartThump.ogg" loop
     "My heart is thumping madly in my chest as I force my way through the debris. "
     "I can hear the siren cursing as I swim away."
     "It doesn't matter where I go, just as long as it's far away from that awful witch!"
+    stop sound fadeout 2.0
 
     scene bg sea:
         fit "contain"
