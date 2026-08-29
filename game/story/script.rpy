@@ -1129,7 +1129,7 @@ label timeskip1:
 #        zoom 0.18
 #    with dissolve
     "I wonder if I'll be able to catch a picture of a mermaid?"
-    "That should be more than enough to impress Grandfather."
+    ny happy "That should be more than enough to impress Grandfather."
 #    hide black
 #    hide camera_human
 #    show hunter happy
@@ -1137,6 +1137,9 @@ label timeskip1:
     if not renpy.seen_image("cg_hunterboat"):
         scene cg_hunterboat:
             fit "contain"
+            #pos (-36, -6) zoom 0.38
+
+
         camera:
             xpos 0 ypos 0 zoom 1.0
         with dissolve
@@ -1144,9 +1147,11 @@ label timeskip1:
     else:
         scene cg_hunterboat:
             fit "contain"
+            #pos (-36, -6) zoom 0.38
         camera:
             xpos 0 ypos 0 zoom 1.0
         with dissolve
+
     $ config.side_image_tag = "None"
     h "So, you're into photography now?"
     y "Aye, Captain!"
