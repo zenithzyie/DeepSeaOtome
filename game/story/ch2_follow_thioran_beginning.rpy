@@ -309,7 +309,7 @@ label ch2_followthio:
         fit "contain"
     with fade
 
-    play sound "audio/sfx_stoneDoorClose2.ogg"
+    play sound "audio/sfx_stoneDoorClose.ogg"
     "The door closes before I can get another word in."
 
     ny mermaid shocked "What was that?"
@@ -328,13 +328,14 @@ label ch2_followthio:
 
     ny neutral "There's a bed on one side of the room. {w}Maybe I should rest for a bit."
 
-    play sound "audio/sfx_bedFlop.ogg"
+    play sound "audio/sfx_bedFlop.ogg" volume 0.4
 
     ny shocked "Ack!" with vpunch
     "Did I lay on something?"
     "Looking down, I find a purse attached to my waist."
     ny neutral "Oh, right. This must have been created by the magic spell too. I hadn't really had the time to think about it."
     "Opening it reveals..."
+    play sound "audio/sfx_seaBagRustle.ogg" volume 0.6
     show black:
         alpha 0.35
     show camera_mermaid at atcamera:

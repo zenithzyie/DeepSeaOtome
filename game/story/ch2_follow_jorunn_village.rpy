@@ -925,6 +925,7 @@ label jorshouse:
     ny happy "Well, let's see!"
 
     "Opening it reveals..."
+    play sound "audio/sfx_seaBagRustle.ogg" volume 0.6
     show black:
         alpha 0.35
     show camera_mermaid at atcamera:
@@ -1136,7 +1137,8 @@ label jorshouse:
                     "..."
                     ny frustrated "Ugh...The lid's rather stubborn."
                     ny neutral "After a few more tries, the box finally opens."
-                    "Inside is…"
+                    play sound "audio/sfx_seaBoxOpen.ogg"
+                    "Inside is..."
                     show black:
                         alpha 0.7
                     show bracelet at atphoto:
@@ -1250,7 +1252,7 @@ label jorshouse:
         "I could say something..."
         "\"What if this was your last chance to say goodbye?\"":
             show jorunn neutral with dissolve
-            y "Not that it is, but...I wish I could have said something more before…"
+            y "Not that it is, but...I wish I could have said something more before..."
             "Before I fell into the sea..."
             show jorunn smile with dissolve
             j "It's okay. We will be coming back."
@@ -1314,11 +1316,13 @@ label jorshouse:
     stop music fadeout 1.0
 
     "We arrive on shore at last, and I take in a breath of air."
+    play sound "audio/sfx_lightSplash.ogg" volume 0.4
 
-    ny shocked "Oh! Prashadi’s spell worked! It appears they kept their word."
+    ny shocked "Oh! Prashadi's spell worked! It appears they kept their word."
 
     "Is this really an illusion? I feel so...normal. Like I never fell off the boat to begin with."
 
+    play sound "audio/sfx_sandRest.ogg" volume 0.4
     ny neutral "I lay down on my back to catch my breath, and Jorunn does the same beside me."
 
     show jorunn human neutral
@@ -1326,7 +1330,7 @@ label jorshouse:
     with dissolve
     y shocked "...!"
 
-    "Jorunn has changed too. It’s strange to see him with legs."
+    "Jorunn has changed too. It's strange to see him with legs."
 
     y neutral "Jorunn, how are you feeling?"
 
@@ -1336,13 +1340,13 @@ label jorshouse:
 
     show jorunn smile
 
-    j "Well, I’ve been warmer that’s for sure."
+    j "Well, I've been warmer that's for sure."
 
     y "I could say the same."
 
-    ny frustrated "Prashadi’s spell gave us clothes, but they’ve been soaked through with water."
+    ny frustrated "Prashadi's spell gave us clothes, but they've been soaked through with water."
 
-    y neutral "Don’t worry. We’ll dry off quickly once the sun comes up."
+    y neutral "Don't worry. We'll dry off quickly once the sun comes up."
 
     "It is chillier here than I remember."
 
@@ -1352,15 +1356,15 @@ label jorshouse:
 
     "..."
 
-    y "I don’t suppose you sense any relics nearby here, do you?"
+    y "I don't suppose you sense any relics nearby here, do you?"
 
     show jorunn neutral with dissolve
 
-    j "Can’t say that I do."
+    j "Can't say that I do."
 
     y "Right, of course."
 
-    ny nervous "There’s no way it would be that simple..."
+    ny nervous "There's no way it would be that simple..."
 
     show jorunn happy with dissolve
 
@@ -1368,19 +1372,19 @@ label jorshouse:
 
     show jorunn smile with dissolve
 
-    j "The magic lingers, even if they’re not holding onto it anymore."
+    j "The magic lingers, even if they're not holding onto it anymore."
 
-    y neutral "Do you think it’ll do the same with humans?"
+    y neutral "Do you think it'll do the same with humans?"
 
     show jorunn neutral with dissolve
 
-    j "Well, why don’t we go find out? It might make our search easier."
+    j "Well, why don't we go find out? It might make our search easier."
 
-    y happy "Let’s check the market, then! I know lots of people go through that area."
+    y happy "Let's check the market, then! I know lots of people go through that area."
 
-    "If we can find something there, then maybe we wouldn’t have to head to the eerier market underground."
+    "If we can find something there, then maybe we wouldn't have to head to the eerier market underground."
 
-    j "Let’s get going then. We aren’t far from the city, yeah?"
+    j "Let's get going then. We aren't far from the city, yeah?"
 
     y neutral "Right."
 
@@ -1388,13 +1392,13 @@ label jorshouse:
 
     show jorunn hesitant with dissolve
 
-    "He’s moving his legs rather carefully."
+    "He's moving his legs rather carefully."
 
     y shocked "Will you be alright to walk?"
 
     show jorunn smile with dissolve
 
-    j "Well...there’s a first time for everything, right? Don’t worry, I’ll get the hang of it soon enough."
+    j "Well...there's a first time for everything, right? Don't worry, I'll get the hang of it soon enough."
 
     menu:
         "Offer to help.":
@@ -1405,34 +1409,34 @@ label jorshouse:
                 y shocked "Huh? I just thought you could use the help!"
             else:
                 j "You change your mind about holding my hand, huh, [y]?"
-                y shocked "That’s different!"
+                y shocked "That's different!"
             show jorunn neutral with dissolve
             ny neutral "With my help, Jorunn takes a few steps across the sand. He seems to have gotten the hang of it rather quickly."
-            y happy "You’re a natural at this!"
+            y happy "You're a natural at this!"
             show jorunn smile with dissolve
-            j "Ah, that’s too bad though. I was hoping to hold your hand a bit longer."
+            j "Ah, that's too bad though. I was hoping to hold your hand a bit longer."
 
         "Let him be.":
             "Jorunn takes a few slow but steady steps. He seems to get the hang of it rather quickly."
             show jorunn neutral with dissolve
             y happy "You're a natural!"
             show jorunn smile with dissolve
-            j "Well, I have a pretty lady to keep up with, don’t I?"
+            j "Well, I have a pretty lady to keep up with, don't I?"
 
     show jorunn happy with dissolve
-    j "Anyways, let’s be off, yeah?"
+    j "Anyways, let's be off, yeah?"
 
     y neutral "Before we go...you should know that there are mermaid hunters in the city too."
 
-    j "I can’t say I’m surprised. Don’t worry, we’ll just have to be careful, right?"
+    j "I can't say I'm surprised. Don't worry, we'll just have to be careful, right?"
 
     y "Right."
 
     ny nervous "...I hope it will be that easy."
 
-    "It’s not just Jorunn who’s a mermaid. I can’t forget that my human body right now is just an illusion too."
+    "It's not just Jorunn who's a mermaid. I can't forget that my human body right now is just an illusion too."
 
-    "If we ran into Hunter or Grandfather, I’m still not sure what I would do."
+    "If we ran into Hunter or Grandfather, I'm still not sure what I would do."
 
     stop ambience fadeout 1.0
     stop ambience2 fadeout 1.0
@@ -1447,7 +1451,7 @@ label jorshouse:
 
 #    ny shocked "I look over to see Hunter standing just a few feet away from me."
 
-    h "You're… {i}alive?{/i}"
+    h "You're... {i}alive?{/i}"
 
     $ finished_demo_jor.grant()
 

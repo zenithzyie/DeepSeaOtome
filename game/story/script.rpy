@@ -16,6 +16,7 @@ label start:
 
 label get_name:
     stop music fadeout 3.0
+    play ambience "audio/sfx_wavesCalm.ogg" volume 0.1 loop fadein 3.0
     scene letter:
         fit "contain"
 
@@ -44,6 +45,7 @@ label get_name:
     with dissolve
     pause
     hide text with dissolve
+    stop ambience fadeout 2.0
 
 label enter_name:
 
@@ -72,7 +74,7 @@ label chapter1:
     #SCENE = CG (Train)
     scene bg black with dissolve
     with Pause(1.10)
-    play sound "audio/sfx_trainHorn.ogg" volume 4.0 fadeout 4.0
+    play sound "audio/sfx_trainHorn.ogg" volume 0.7 fadeout 4.0
     with Pause(4.00)
     play music "audio/music_town.mp3" fadein 1.0 volume 0.9
 
@@ -124,6 +126,7 @@ label chapter1:
     show camera_human at atcamera:
         zoom 0.18
     with dissolve
+    play sound "audio/sfx_bagRustle.ogg" volume 0.6
     "As soon as I exit the train car, I take my camera out of my purse."
     y veryhappy "This is a great place for a picture!"
     hide black
@@ -359,6 +362,7 @@ label marketpuzzle:
             y "..."
             fishmonger "Ya want the fish or not?"
             y neutral "I...suppose."
+            play sound "audio/sfx_coinJingle.ogg" volume 0.6
             "I put five copper coins on the table and he hands me the bag with the fish in it."
             if notbuyfish:
                 fishmonger "A'right, whaddya wanna know."
@@ -401,7 +405,7 @@ label seasaltalley:
         ny neutral "It looks like the alleyway ends here."
 
     if kidsinfo and fishmongerinfo:
-        "Let's see… The fishmonger gave me a code, and the kids mentioned something about knocking on the wall."
+        "Let's see... The fishmonger gave me a code, and the kids mentioned something about knocking on the wall."
         "Maybe I can try knocking the code on the wall?"
 
         jump knocking
@@ -1252,7 +1256,7 @@ label timeskip1:
 
     stop ambience fadeout 2.0
     $ config.side_image_tag = "june"
-    #play sound "audio/sfx_waveCrash.wav" volume 0.06 fadein 1.0
+    #play sound "audio/sfx_waveCrash.ogg" volume 0.06 fadein 1.0
     $ renpy.music.set_volume(0.3, 2, 'music')
     play ambience "audio/sfx_wavesChoppy.ogg" fadein 0.5 volume 0.1 loop
     play sound "audio/sfx_hum.ogg" volume 1.5 fadein 1.0 loop

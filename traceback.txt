@@ -1,38 +1,55 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 440, in script call
-    call ch2_jorunn_village from _call_ch2_jorunn_village
-  File "game/story/ch2_follow_jorunn_village.rpy", line 608, in script
-    with atcamera
-TypeError: got an unexpected keyword argument 'old_widget'
+  File "game/story/script.rpy", line 66, in script call
+    call chapter1 from _call_chapter1
+  File "game/story/script.rpy", line 257, in script
+    ny happy "[ talktotext ]"
+NameError: name 'talktotext' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
-Full traceback:
-  File "game/story/ch2_follow_jorunn_beginning.rpy", line 440, in script call
-    call ch2_jorunn_village from _call_ch2_jorunn_village
-  File "game/story/ch2_follow_jorunn_village.rpy", line 608, in script
-    with atcamera
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\ast.py", line 1361, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\exports\statementexports.py", line 257, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 1578, in do_with
-    return self.interact(trans_pause=True,
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2215, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2666, in interact_core
-    trans = instantiate_transition(None, old_root, layers_root)
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\display\core.py", line 2575, in instantiate_transition
-    trans = self.ongoing_transition[layer](
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\atl.py", line 623, in __call__
-    new_scope = signature.apply(args, kwargs, partial=True, apply_defaults=False)
-  File "C:\Users\kansa\Downloads\downloads\renpy-7.5.3-sdk\renpy\parameter.py", line 384, in apply
-    raise TypeError(
-TypeError: got an unexpected keyword argument 'old_widget'
+Traceback (most recent call last):
+  File "game/story/script.rpy", line 66, in script call
+    call chapter1 from _call_chapter1
+  File "game/story/script.rpy", line 257, in script
+    ny happy "[ talktotext ]"
+  File "renpy/ast.py", line 2935, in execute
+    Say.execute(self)
+    ~~~~~~~~~~~^^^^^^
+  File "renpy/ast.py", line 994, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1550, in __call__
+    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1464, in prefix_suffix
+    return sub(prefix) + sub(body, translate=not renpy.game.context().translated) + sub(suffix)
+                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^              
+  File "renpy/character.py", line 1443, in sub
+    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
+  File "renpy/substitutions.py", line 355, in substitute
+    s = interpolate(s, variables)  # type: ignore
+        ~~~~~~~~~~~^^^^^^^^^^^^^^                
+  File "renpy/substitutions.py", line 89, in interpolate
+    raise e
+  File "renpy/substitutions.py", line 81, in interpolate
+    value = renpy.python.py_eval(code, {}, scope)
+            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1308, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1301, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<none>", line 1, in <module>
+NameError: name 'talktotext' is not defined
 
-Windows-10-10.0.19045 AMD64
-Ren'Py 8.3.2.24090902
+Windows-11-10.0.26200-SP0 AMD64
+Ren'Py 8.5.3.26051504
 HeartsDepthDEMO 4.0
-Tue Jul 14 21:24:16 2026
+Sun Aug 30 19:56:20 2026

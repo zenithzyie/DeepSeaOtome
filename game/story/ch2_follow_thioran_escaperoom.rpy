@@ -46,7 +46,7 @@ label ch2_castle_escaperoom:
                         $ punchwindow = True
                         "I lean against the window and push with all my might."
                         "The window doesn't even budge."
-                        play sound "audio/sfx_fistAgainstWindow.ogg"
+                        play sound "audio/sfx_fistAgainstWindow.ogg" volume 0.5
                         ny frustrated "In a surge of desperation, I slam a fist against the glass." with vpunch
                         y shocked "Ouch!"
                         guard "Everything alright in there?"
@@ -103,7 +103,7 @@ label ch2_castle_escaperoom:
 
                     if promermaid > antimermaid:
                         ny shocked "Wow, I look so different!"
-                        "The new clothes I’m wearing are quite beautiful, but I do miss my coat."
+                        "The new clothes I'm wearing are quite beautiful, but I do miss my coat."
                         ny flustered "Without it, I feel a little exposed..."
                         camera: #zoom out mirror
                             subpixel True
@@ -208,7 +208,7 @@ label ch2_castle_escaperoom:
                         "Small bag.":
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
-                            play sound "audio/sfx_coinJingle.ogg" volume 0.7
+                            play sound "audio/sfx_coinpurse.ogg" volume 0.4
                             show black:
                                 alpha 0.5
                             show coinpurse:
@@ -242,18 +242,18 @@ label ch2_castle_escaperoom:
 
         "Bribe the guard" if coinpurse == True:
                 if not bribeguard:
-                    play sound "audio/sfx_coinJingle.ogg" volume 0.7
+                    play sound "audio/sfx_coinpurse.ogg" volume 0.2
                     "The coinpurse jingles faintly in my bag."
                     "That fishmonger in Aquantis wasn't too helpful either until I offered him money."
                     ny frustrated "I have to try everything I can here. It's the only way to get home."
                     $ bribeguard = True
                     $ failescape += 1
-                    play sound "audio/sfx_guestDoorKnock.ogg"
+                    play sound "audio/sfx_guestDoorKnock.ogg" volume 0.5
                     "I knock on the door."
                     y neutral "Excuse me. Sir Guard?"
                     guard "What is it now?"
                     y "Could you please take me to Lord Cetus? I can pay you."
-                    play sound "audio/sfx_longerCoinJingle.ogg" volume 0.7
+                    play sound "audio/sfx_underwaterCoinJingle.ogg" volume 0.7
                     ny happy "I jingle the coinpurse in hopes of getting his attention."
                     guard "So desperate as to resort to bribery?"
                     guard "Try that again and your new room might become the castle dungeons."
@@ -314,7 +314,7 @@ label escapedroom_tohallway:
 
     y "..."
     "Here goes nothing..."
-    play sound "audio/sfx_guestDoorKnock.ogg"
+    play sound "audio/sfx_guestDoorKnock.ogg" volume 0.5
     "..."
     "..."
     "..."

@@ -35,7 +35,7 @@ label ch1_followjorunn:
     show jorunn hesitant with dissolve
     uj "Oh?"
     "It takes me a moment to recognize it myself."
-    "Is that...crystal? It must have come from the siren’s cave."
+    "Is that...crystal? It must have come from the siren's cave."
     uj "Weird. This thing stinks of magic."
     uj "Now that I think about it..."
     show jorunn smile with dissolve
@@ -124,13 +124,14 @@ label ch1_followjorunn:
     scene bg black with dissolve
     stop music fadeout 5.0
     y "...!"
+    play sound "audio/sfx_caveAmbience.ogg" fadein 3.0 loop volume 0.5
     "The deeper we go, the darker it gets."
     "Grandfather told me stories of how dangerous the sea could be at night."
     "Storms would roll in without warning, stealing away the moon and turning everything pitch black."
     "I think this is what he must have meant."
     "I can't see anything in front of me at all."
     "The only signs that I'm alive are my own thoughts, and the feel of Jorunn's steady swimming as he takes us deeper still."
-    "It feels like there’s no end to this darkness…"
+    "It feels like there's no end to this darkness..."
 
     menu:
         "I'm sure it will be alright.":
@@ -151,6 +152,7 @@ label ch1_followjorunn:
             "..."
             "Just when I think we're going to be wandering around in this dark void forever, something glimmers in the distance."
 
+    stop sound fadeout 4.0
     j "And here we are!"
 
 #SCENE CHANGE - Prashadi's Cave
@@ -208,7 +210,7 @@ label ch1_followjorunn:
 
     menu:
         "What is this...?"
-        "This can’t be right.":
+        "This can't be right.":
             "Is this some sort of mermaid magic?"
             "Whatever the reason may be, it's undeniable that this 'Prashadi' has Grandfather's face."
 
@@ -238,15 +240,15 @@ label ch1_followjorunn:
 
     "Then, a gentle coolness passes over me as it envelops my body."
 
-    "Prashadi’s hands move like they're weaving something together from the water around us."
+    "Prashadi's hands move like they're weaving something together from the water around us."
 
     "Is he casting a spell?"
     play sound "audio/sfx_prashadiMagicCast.ogg" volume 1.0
-    "No...this mermaid can’t possibly be Grandfather!"
+    "No...this mermaid can't possibly be Grandfather!"
 
     #BLACK SCENE
     scene bg black with fade
-    "What’s happening to me?"
+    "What's happening to me?"
     #if no hunter points
     if hunter_points == 0:
         "Grandfather...!"
