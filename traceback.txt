@@ -1,55 +1,41 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/story/script.rpy", line 66, in script call
+  File "game/story/script.rpy", line 68, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 257, in script
-    ny happy "[ talktotext ]"
-NameError: name 'talktotext' is not defined
+  File "game/story/script.rpy", line 1642, in script call
+    call ch1_followprince from _call_ch1_followprince
+  File "game/story/ch1_follow_prince.rpy", line 75, in script
+    if settleback:
+  File "game/story/ch1_follow_prince.rpy", line 75, in <module>
+    if settleback:
+       ^^^^^^^^^^ 
+NameError: name 'settleback' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/story/script.rpy", line 66, in script call
+  File "game/story/script.rpy", line 68, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 257, in script
-    ny happy "[ talktotext ]"
-  File "renpy/ast.py", line 2935, in execute
-    Say.execute(self)
-    ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 994, in execute
-    renpy.exports.say(who, what, *args, **kwargs)
-    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/sayexports.py", line 129, in say
-    who(what, *args, **kwargs)
-    ~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1550, in __call__
-    what = self.prefix_suffix("what", self.what_prefix, what, self.what_suffix)
-           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/character.py", line 1464, in prefix_suffix
-    return sub(prefix) + sub(body, translate=not renpy.game.context().translated) + sub(suffix)
-                         ~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^              
-  File "renpy/character.py", line 1443, in sub
-    return renpy.substitutions.substitute(s, scope=scope, force=force, translate=translate)[0]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^   
-  File "renpy/substitutions.py", line 355, in substitute
-    s = interpolate(s, variables)  # type: ignore
-        ~~~~~~~~~~~^^^^^^^^^^^^^^                
-  File "renpy/substitutions.py", line 89, in interpolate
-    raise e
-  File "renpy/substitutions.py", line 81, in interpolate
-    value = renpy.python.py_eval(code, {}, scope)
-            ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "game/story/script.rpy", line 1642, in script call
+    call ch1_followprince from _call_ch1_followprince
+  File "game/story/ch1_follow_prince.rpy", line 75, in script
+    if settleback:
+  File "renpy/ast.py", line 2089, in execute
+    if renpy.python.py_eval(condition):
+       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
   File "renpy/python.py", line 1308, in py_eval
     return py_eval_bytecode(code, globals, locals)
            ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/python.py", line 1301, in py_eval_bytecode
     return eval(bytecode, globals, locals)
            ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<none>", line 1, in <module>
-NameError: name 'talktotext' is not defined
+  File "game/story/ch1_follow_prince.rpy", line 75, in <module>
+    if settleback:
+       ^^^^^^^^^^ 
+NameError: name 'settleback' is not defined
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.3.26051504
 HeartsDepthDEMO 4.0
-Sun Aug 30 19:56:20 2026
+Sun Aug 30 21:03:10 2026

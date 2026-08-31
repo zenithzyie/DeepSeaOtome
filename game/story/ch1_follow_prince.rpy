@@ -198,8 +198,6 @@ label ch1_followprince:
     show thioran frown at thioran_left
     with dissolve
 
-    #this section needs edited
-
     show cetus shocked with dissolve
     "He holds himself proudly, but he abandons this as soon as he sees the prince."
 
@@ -223,13 +221,11 @@ label ch1_followprince:
 
     p "It's just-{w=0.2} here. I found her near the storm."
 
-    "Gently, he brings me forth, presenting me to his uncle like a treasure he had discovered."
+    "He carefully holds me up to his uncle."
 
     c "Oh...? Find another pet for yourself out there, nephew?"
 
     c "You know you don't need my permission to keep her."
-
-    "Oh dear. He isn't actually planning to keep me as a pet, is he?"
 
     p "There's something unusual about this one. I found shards caught in her fins."
 
@@ -237,72 +233,71 @@ label ch1_followprince:
 
     p "It wasn't normal debris. I suspect it might have been magical in nature."
 
-    p "And I feel...drawn to her. I can't quite explain it."
+    p "And I feel...drawn to her. {w}In a way I can't quite explain."
 
-    "Drawn to me? huh"
+    "Drawn to me?"
 
     p "Will you take a look, Uncle?"
 
-    c "Hmm. Very well."
+    c "...Very well."
 
     y "Blub!"
 
-    "June thought here"
-
-
-
     $ speaking_char = "Cetus"
-    "Cetus slowly approaches me, brows furrowing."
-    "It almost feels like he's staring right through me, right at something I can't see."
+    "Cetus slowly approaches me, his brows furrowing."
+    "It almost feels like he's staring right through me."
     c "Hmm?"
-    "I feel oddly flustered as he inspects my body."
     "This would be a rather inappropriate gaze if I were still a human."
     c "Let me take a closer look."
     menu:
-        "Move forward.":
+        "Stay very still.":
             #(+1 cetus)
-            "I'll do anything if he can help me return to normal!"
-            "I swim closer to him, indicating my agreement."
+            $ cetus_points += 1
+            "I'd better hold still. Maybe he can help me return to normal?"
 
         "Look back.":
-            "I glance back up at Prince Thioran. He gives me the slightest of nods."
+            "I glance back over at Prince Thioran. He gives me the slightest of nods."
             show thioran soft with dissolve
-            p "Go on, it's alright."
+            p "It's alright."
             #(+1 thio)
-            "Well, if the prince says it's alright..."
+            $ prince_points += 1
+            "Well, if the prince says it's fine..."
             show thioran frown with dissolve
 
     "I brace myself as Cetus reaches for me, but his hands are clinical as they brush over my fins."
     c "What an interesting little thing."
-    "The prince moves closer to us with a troubled look."
     p "What do you see, Uncle?"
-    c "Hmm...She's not from these waters, that I can tell."
-    c "More importantly, she's been cursed. By something rather skilled, no less."
-    p "Cursed?"
-    "That's right! Thank goodness he can tell."
-    "If only I hadn't been stupid enough to fall for that sea witch's music..."
+    c "Where did you find her?"
+    p "...By the outskirts. She swam up to me when the storm began." 
+    c "Well, you've always had a knack for finding curious things." 
+    c  "This fish is cursed."
+    "That's right! Thank goodness he can tell." 
+    "If only I hadn't fallen for that sea witch's music..." 
+    p "Cursed? How could that...?"
     p "Is there anything you can do?"
-    c "Though the curse is rather complex, it won't be a match for me."
-    c "I shall start unraveling the enchantment. You may wish to swim back, Prince Thioran."
-    "Really? Just like that? I'll finally be free from this nightmare!"
+    c "Possibly. You may wish to swim back, Prince Thioran."
     "Cetus's hands begin to glow."
     "His hands move like the conductor of an orchestra, and strings of magic entwine themselves around my body."
+    "Really? Just like that? I'll finally be free from this nightmare!"
     "Wait...{w} what will happen if I turn back into a human underwater?"
-    "A tingling feeling runs from my head to my tailfins and for a moment, I feel as though I am being stretched uncomfortably tight."
+    "A tingling feeling runs throughout my body. I feel as though I am being stretched uncomfortably tight."
     y "{i}Blub! Blub!{/i}"
     "No! I'll drown! I don't want to die like this!"
     show thioran shocked with dissolve
     p "Wait a moment, Uncle. There's something wrong."
     play sound "audio/sfx_CetusCastMagic.ogg" volume 0.6
-    "The magic crescendos, and the tightness around me grows in kind."
+    "But Cetus does not stop his spell, and the magic crescendos in kind."
     scene bg black with dissolve
     "I squeeze my eyes shut. All I can do is prepare for the worst."
-    "Grandfather...! Hunter!"
+
+    #if no hunter points
+    if hunter_points == 0:
+        "Grandfather...!"
+    #if hunter points
+    else:
+        "Grandfather...! Hunter!"
 
     "Then, all at once the discomfort disappears. {w}An odd sort of warmth rushes over me instead, as gentle as silk on my skin."
-    "I gasp for breath, relieved to find that I'm not drowning."
-    "I begin to instinctively tread water. My legs feel like they are tied together, but they are still managing to keep me from going downward."
-    "There is nothing but the sound of flowing water around me."
     "I open my eyes."
 
     call ch2_followthio from _call_ch2_followthio
