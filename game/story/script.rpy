@@ -267,7 +267,7 @@ label marketpuzzle:
             "I show her the address on the letter."
             woman "Oh my, are you sure? Aquantis has some better places to see. We've a real pretty beachside."
             "Can she tell I'm not a local?"
-            y "Oh well, I'm looking for my grandfather. This is the only address I have."
+            y "Oh, well, I'm looking for my grandfather. This is the only address I have."
             "She squints at the paper."
             woman "Why, this says Finch on it. So you're Herman's granddaughter, are you?"
             y "I am! Do you know him?"
@@ -308,7 +308,7 @@ label marketpuzzle:
         "Fishmonger" if not fishmongerinfo:
             $ notbuyfish = False
             $ fishmongerinfo = True
-            "A fishmonger mans his stand, reading a newspaper. His signboard reads 'Four copper per fish.'"
+            "A fishmonger mans his stand while reading a newspaper. His signboard reads 'Four copper per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
             y shocked "Huh?"
@@ -621,7 +621,7 @@ label afterknocking:
 #    window auto show
 
     uhunter shocked "Careful where you point that thing. I wouldn't take your camera out here 'less you want to leave in a barrel."
-    "I freeze as a stranger's hand reaches over to cover my own ."
+    "I freeze as a stranger's hand reaches over to cover my own."
     uhunter "Thought I saw a familiar face in the crowd. Didn't know it was you, [y] Finch."
     ny shocked "How does he know my name?" with vpunch
     "I quickly yank my hand away."
@@ -834,7 +834,7 @@ label afterknocking:
             h "Don't be fooled, [y]. They're more dangerous than they look."
 
     ny neutral "A lot has changed since I last saw him."
-    h "Y'know, the old man used to hunt mermaids, too."
+    h "Y'know, the old man used to hunt mermaids too."
     y shocked "Really? {i}Grandfather{/i} did?"
     h "Yep- the best of us. Then he retired and sold most of his ships to my mother."
     y "I know Grandfather owned a ship, but I don't remember him mentioning anything about mermaids."
@@ -843,13 +843,13 @@ label afterknocking:
     if promermaid >= 1:
         ny nervous "I can't believe Grandfather did something like that."
         "If I were a mermaid, I'd rather meet my end at sea. {w}Not here. {w}Not like this."
-        y  "Can we keep moving?"
+        y "Can we keep moving?"
         y "I don't think I can stand being here any longer."
         "He gives my hand a reassuring squeeze."
 
     if antimermaid >= 1:
         ny neutral "Grandfather and Hunter make their living in a world like this."
-        "That's the way it is."
+        "That's just the way it is here."
         y "How much further do we have to go?"
 
     h "Exit's right this way. C'mon, [y]."
@@ -891,7 +891,7 @@ label afterknocking:
     show hunter happy with dissolve
     h  "Don't keel over just yet."
     y happy "I wouldn't dream of it."
-    "We're at the portside now, the edge of the country. The ocean looks so vast and endless."
+    "We're at the portside now; the edge of the country. The ocean looks so vast and endless."
     "Sailors are carrying supplies to and from the ships at the dock."
     y "Does Grandfather live on one of these?"
     show hunter neutral at farright with move
@@ -903,7 +903,7 @@ label afterknocking:
     ny nervous "All these years apart are finally coming to an end."
     "Perhaps my parents estranged us over a misunderstanding, and it will be a simple, happy reunion with no trouble at all."
     ny frustrated "I want to hear his side of it, regardless."
-    ny neutral "We cross the ramp onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
+    ny neutral "We cross onto Grandfather's ship and approach the closed doors of the Captain's Quarters."
     play sound "audio/sfx_shipDoorKnock.ogg"
     "Hunter gives a few strong knocks with the back of his hand."
     "..."
@@ -1007,7 +1007,7 @@ label timeskip1:
     show hunter happy with dissolve
     h "Sure. Had some time today."
 
-    y "It's been awhile since I last went shopping for fish."
+    y "It's been a while since I last went shopping for fish."
 
     show grandpa happy with dissolve
     g "Don't ye worry, little birdie. I know my way around the markets."
@@ -1019,7 +1019,7 @@ label timeskip1:
 
     g happy "Ye ain't really tasted fish till yer out at sea. There's all kinds."
 
-    g "O'course some fish bite back. Ye got to watch out for the mermaids out there."
+    g "O'course, some fish bite back. Ye got to watch out for the mermaids out there."
 
     show grandpa neutral with dissolve
     g "Worst is the sirens."
@@ -1036,7 +1036,7 @@ label timeskip1:
     ny neutral "I've learned some things from Grandfather in my time here."
     "He's quite proud of his history at sea."
     if promermaid >= 1:
-        ny nervous " I don't know how I feel about it."
+        ny nervous " I'm not sure how I feel about it."
     g "Ain't got any reason to regret all that. Yer here now, and that's what matters."
     y neutral "Have we ever been out to sea together? I don't recall if we have."
     show grandpa neutral with dissolve
@@ -1101,7 +1101,7 @@ label timeskip1:
     y veryhappy "Thank you! You won't regret it, Hunter."
     y happy "It'll be fun. We can pretend to be pirates, just like when we were kids!"
     show hunter happy with dissolve
-    h "Sure. But I get to be Captain this time."
+    h "Sure. But I get to be the Captain this time."
 
     #SCENE CHANGE - Sea
     scene black
@@ -1126,6 +1126,7 @@ label timeskip1:
     y shocked "Mermaids sunbathe? Really?"
     show hunter neutral with dissolve
     h "Yep. But if they spot my little skiff, the show's over."
+    play sound "audio/sfx_bagrustle.ogg"
     ny neutral "I take my camera out of my purse."
 #    show black:
 #        alpha 0.55
@@ -1212,7 +1213,7 @@ label timeskip1:
 
     if seastorm:
         "I remember reading something about storms that appear without warning like this."
-        "I should be safe since Hunter is with me, right?"
+        "I should be safe since Hunter is here, right?"
 
     hide hunter neutral with vpunch
     "The boat creaks as he tries to turn it back towards the port."
@@ -1408,7 +1409,7 @@ label timeskip1:
     s "Now, where did I put that pestle?"
     hide skylla neutral with dissolve
     "I need to get out of here!"
-    "But no matter how hard I press my hands - well, fins - against the bubble, I can't push through."
+    "But no matter how hard I press my hands - well, fins - against the bubble, I can hardly push through."
     "I'm trapped. There's no doubt about it."
     "Am I cursed to stay like this...forever?"
     #stop music fadeout 2.0
@@ -1541,12 +1542,11 @@ label timeskip1:
     "Time seems to slow down."
     "I hear a whirring like the sound of a shrill kettle,{nw} {w=0.3}"
     play sound "audio/sfx_glowStoneExplosion.ogg"
-    extend "and in the next second the crystals explode."
+    extend "and in the next second, the crystals explode."
     scene bg skylla cave2:
         fit "contain"
     with vpunch
     y fish neutral "...!"
-    #"The explosion has created a hole just big enough for me to squeeze through."
     "This is my chance!"
     stop music
     stop sound
@@ -1620,6 +1620,7 @@ label timeskip1:
     show jorunn happy with dissolve
     uj "Well, I guess that's my cue! I'll be taking these home then. Goodbye!"
     $ speaking_char = "None"
+    play sound "audio/sfx_seaStormRumble.ogg" volume 0.8
     "The rumble comes again, louder this time." with vpunch
     "What should I do? I don't think I can survive a storm on my own!"
     "The mermaids could be dangerous, like Hunter warned, but they might be my only shot at getting help right now."
@@ -1656,17 +1657,20 @@ label ch1_badend1:
     "I can't trust either of them!"
     "Both mermaids swim away, and I'm alone."
     "Sort of..."
-    "The other fish are swimming in a frenzy trying to get away from the vortex of water."
+    "Other fish are swimming in a frenzy trying to get away from the vortex of water."
     play sound "audio/sfx_seaStormRumble.ogg" volume 0.6
     "The sea storm gets louder and louder."
     "What if I hid in the seaweed again?"
     play sound "audio/sfx_seaStormRumble.ogg" volume 0.9
     "The sea storm is getting closer with every moment I hesitate."
-    "I know! I'll try taking shelter in a nearby rock formation!"
+    "I know! I'll try taking shelter in the rocks nearby!"
     "The problem is, everything is so far away from me."
     "It'll take far too long to reach shelter."
     "I try swimming anyway, moving as fast as I can."
     play sound "audio/sfx_seaStormRumble.ogg"
+    show bg sea:
+        blur 8.00
+    with dissolve
     "The storm roils behind me, and I feel myself being sucked into the whirling water..."
     "It's too late!"
     "The last thing I see before everything goes dark is something large crashing right into me."
