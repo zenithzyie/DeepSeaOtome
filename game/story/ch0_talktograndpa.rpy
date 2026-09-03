@@ -80,14 +80,47 @@ label grandpatalk:
     show grandpa happy with dissolve
     g "There's always room for ye here."
 
-    ny neutral "It looks like I won't be getting anything out of Grandfather today..."
+    g "Why don’t I make ye some dinner? Ye must be starving by now."
 
-    "Perhaps he just needs time."
+    ny neutral "It looks like I won’t be getting anything out of Grandfather today…"
 
-    ny happy "Well, I'm not planning on leaving soon. I can wait a little longer for him."
+    y happy "Oh, how about fish stew?"
 
-    g "Why don't I make ye some stew for dinner. Yer favorite."
-    y veryhappy"That sounds wonderful."
+    if bass:
+        show black:
+            alpha 0.5
+        show bassfish:
+            zoom 0.2
+            xalign 0.5
+            ypos 156
+        with dissolve
+        "I hand him the bass I got at the market."
+
+    if halibut:
+        show black:
+            alpha 0.5
+        show halibutfish:
+            zoom 0.2
+            xalign 0.5
+            ypos 156
+        with dissolve
+        "I hand him the halibut I got at the market."
+
+    hide black
+    if bass:
+        hide bassfish
+    if halibut:
+        hide halibutfish
+    with dissolve
+
+    g "Hoho, I don’t see why not. I still have yer favorite recipe."
+
+    y veryhappy "That sounds wonderful."
+
+    "Perhaps Grandfather just needs time."
+
+    ny happy "Well, I’m not planning on leaving soon. I can wait a little longer for him."
+
 
     stop music fadeout 1.0
 

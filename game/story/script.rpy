@@ -728,7 +728,7 @@ label afterknocking:
     show hunter neutral facemask
     with dissolve
 
-    "I slide the coat over my shoulders and Hunter pulls his mask back up."
+    ny neutral "I slide the coat over my shoulders and Hunter pulls his mask back up."
     "He takes my hand, leading me through the crowd. I try my best to keep in step with his long strides."
     "As we're walking, I see something moving out of the corner of my eye."
     "Without thinking, I glance up. "
@@ -744,7 +744,7 @@ label afterknocking:
 
     $ config.side_image_tag = "june"
 
-    y neutral "Beautiful..."
+    y shocked "Beautiful..."
 
     $ config.side_image_tag = "None"
 
