@@ -1243,7 +1243,7 @@ label timeskip1:
             $ hunter_points += 1
             "I shouldn't take unnecessary risks."
             "My life isn't worth a blurry storm photo."
-            ny neutral "I keep my purse closed and move away from the edge."
+            ny neutral "I put my camera back and move away from the edge."
 
         "I can't give up on a picture.":
             show black:
