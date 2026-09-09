@@ -22,6 +22,12 @@ transform logoappear:
     pause 0.2
 #transform that the logo does on main menu
 ######################################################################
+transform clickonme:
+    xpos 1040
+    ypos 489
+    zoom 0.7
+#transform that the logo does on main menu
+######################################################################
 #Protagonist + Narrator Names
 define y = Character("[player_name]", image="june", ctc="ctc_pos", ctc_position="fixed", namebox_background=Frame("gui/namebox_june.png", 0, 0))
 define ny = Character(None, what_italic=True, image="june", ctc="ctc_pos", ctc_position="fixed") # for narration

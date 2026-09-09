@@ -194,6 +194,18 @@ define badend1 = Achievement(
     hide_name=True,
     hide_description=True,
 )
+define clickedme = Achievement(
+    ## The human-readable name, as it'll appear in the popup and in the gallery.
+    name=_("Ooh, Shiny!"),
+    id="clicked-me",
+    ## Description.
+    description=_("You're a star. Rather, you clicked on the star. Congrats!"),
+    unlocked_image="gui/ach/chibi_june.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
+    hide_name=True,
+    hide_description=True,
+)
+
 ## You can grant an achievement in-game with `$ sample_achievement.grant()`
 ################################################################################
 ## SCREENS

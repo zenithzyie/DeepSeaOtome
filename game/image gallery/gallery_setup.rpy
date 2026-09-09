@@ -34,7 +34,7 @@ init python:
     gallery_items.append(GalleryItem("Train to Aquantis", ["cg_train"], "cg_train", "wide"))
     gallery_items.append(GalleryItem("The Deep Market", ["cg_sushi"] ,"cg_sushi", "wide"))
     gallery_items.append(GalleryItem("Family Portrait", ["cg_familyportrait"], "cg_familyportrait", "wide" ))
-    gallery_items.append(GalleryItem("Boat", ["cg_hunterboat"], "cg_hunterboat", "wide" ))
+    gallery_items.append(GalleryItem("Seaside Trip", ["cg_hunterboat"], "cg_hunterboat", "wide" ))
     gallery_items.append(GalleryItem("The Curse", ["cg_skyllahands"],"cg_skyllahands" , "wide"))
     gallery_items.append(GalleryItem("The Mermaid", ["cg_mermaidcetus"], "cg_mermaidcetus", "tall" ))
     gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))

@@ -86,6 +86,12 @@ screen main_menu():
     add gui.main_menu_background size (1280, 720)
     add "gui/logo_idle.png" at logoappear size (550, 264)
 
+    imagebutton:
+        idle "images/clickme.png"
+        hover "images/clickme.png"
+        action Function(clickedme.grant)
+        at clickonme
+
     if main_menu:
         imagebutton:
             auto "gui/button/mainside_%s.png"
