@@ -802,14 +802,14 @@ label jorshouse:
             pos (0.5, 0.5)
         with dissolve
         "I've made a bowl with lots of fish."
-        $ speaking_char = "Parvy"
-        show parvy smile with dissolve
-        ny neutral "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
         hide plate
         hide fish1
         hide fish2
-        hide fruit2
+        hide fruit1
+        $ speaking_char = "Parvy"
+        show parvy smile
         with dissolve
+        ny neutral "It seems Parvy chose the same as me. She looks pretty pleased to see my bowl."
 
 ###############################################################################
     #Two fish and seaweed
@@ -998,18 +998,30 @@ label jorshouse:
 
     "I hand the photograph to them."
 
-    show parvy happy with vpunch
+#    $ speaking_char = "None"
+
+    if not renpy.seen_image("cg_jorunnfamily"):
+        scene cg_jorunnfamily with dissolve:
+            fit "contain"
+        $ renpy.notify("A new CG has been unlocked in the gallery.")
+    else:
+        scene cg_jorunnfamily with dissolve:
+            fit "contain"
+
+#    show parvy happy with vpunch
 
     parvy "That's...that's so cool!"
 
     parvy "Unna, look it's us! We're on a little square!"
 
-    show unna happy
+#    show unna happy
     unna "Wow! How did you do that? Is it a magic item?"
 
-    y veryhappy "Haha...something like that."
+#veryhappy
+    y "Haha...something like that."
 
-    y happy "The 'little square' is called a photograph. It's for you! Please keep it."
+#happy
+    y "The 'little square' is called a photograph. It's for you! Please keep it."
 
     unna "Thank you! We'll take good care of it."
 
@@ -1019,9 +1031,22 @@ label jorshouse:
 
     parvy "Thank you, [y]!"
 
-    "Parvy's eyes are shining. She looks like she has a lot more questions to ask."
+#    hide cg_jorunnfamily
+    scene bg jorvillage afternoon:
+        align (0.5, 1.0)
+        pos (0.5, 1.0)
+        zoom 0.34
 
-    show jorunn neutral
+    show bg jorvillage afternoon:
+        pos (0.5, 1.64) zoom 0.34
+
+    $ speaking_char = "all"
+    show jorunn smile at jorunn_right
+    show unna happy at unna_left
+    show parvy happy at parvy_center
+    with dissolve
+
+    ny mermaid happy "Parvy's eyes are shining. She looks like she has a lot more questions to ask."
 
     j "Well, it's getting late, isn't it? Why don't we head inside? You must be exhausted, [y]."
 

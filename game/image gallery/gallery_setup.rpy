@@ -40,6 +40,7 @@ init python:
     gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
     gallery_items.append(GalleryItem("Suspicion", ["cg_thiokabedon"],"cg_thiokabedon", "wide" ))
     gallery_items.append(GalleryItem("The Negotiation", ["cg_cetusoffice"], "cg_cetusoffice", "wide"))
+    gallery_items.append(GalleryItem("A Photo", ["cg_jorunnfamily"], "cg_jorunnfamily", "wide"))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")
@@ -57,6 +58,7 @@ image cg_mermaid_cetus = ("images/gallery/cg/cg_mermaidcetus.jpg")
 image cg_mermaid_prashadi = ("images/gallery/cg/cg_mermaidprashadi.jpg")
 image cg_thiokabedon = ("images/gallery/cg/cg_thiokabedon.jpg")
 image cg_cetusoffice = ("images/gallery/cg/cg_cetusoffice.jpg")
+image cg_jorunnfamily = ("images/gallery/cg/cg_jorunnfamily.jpg")
 
 #background images
 image bg black = ("images/bgs/bg black.jpg")
