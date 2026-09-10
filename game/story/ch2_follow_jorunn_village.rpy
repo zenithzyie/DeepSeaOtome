@@ -1027,11 +1027,7 @@ label jorshouse:
 
     parvy "Look, Jor! Isn't this amazing?"
 
-    j "...It is, isn't it? Don't forget to thank [y] now."
-
-    parvy "Thank you, [y]!"
-
-#    hide cg_jorunnfamily
+    #    hide cg_jorunnfamily
     scene bg jorvillage afternoon:
         align (0.5, 1.0)
         pos (0.5, 1.0)
@@ -1045,6 +1041,10 @@ label jorshouse:
     show unna happy at unna_left
     show parvy happy at parvy_center
     with dissolve
+
+    j "...It is, isn't it? Don't forget to thank [y] now."
+
+    parvy "Thank you, [y]!"
 
     ny mermaid happy "Parvy's eyes are shining. She looks like she has a lot more questions to ask."
 
