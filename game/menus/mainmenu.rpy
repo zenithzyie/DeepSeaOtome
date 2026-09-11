@@ -165,27 +165,35 @@ style main_menu_version:
 style main_menu:
     size_group "navigation"
     properties gui.button_properties("navigation_button")
+    activate_sound "audio/sfx_choiceClick.ogg"
 
 style main_menu_button:
     properties gui.text_properties("navigation_button")
+    activate_sound "audio/sfx_choiceClick.ogg"
     xalign 0.5
 
 style main_menu_button_text:
     properties gui.text_properties("navigation_button")
+    activate_sound "audio/sfx_choiceClick.ogg"
     xalign 0.5
     xpos 0.5
     idle_color "#fff"
     hover_color '#66a3e0'
     size 29
 
+style image_button:
+    activate_sound "audio/sfx_choiceClick.ogg"
+
 style main_menu_imagebutton_text1:
     properties gui.text_properties("navigation_button")
+#    activate_sound "audio/sfx_choiceClick.ogg"
     xalign 0.5
     yalign 0.49
     size 29
 
 style main_menu_imagebutton_text:
     properties gui.text_properties("navigation_button")
+#    activate_sound "audio/sfx_choiceClick.ogg"
     color "#fff"
     xalign 0.5
     yalign 0.49

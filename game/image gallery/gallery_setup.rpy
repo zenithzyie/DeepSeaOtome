@@ -40,7 +40,7 @@ init python:
     gallery_items.append(GalleryItem("Transformation", ["cg_mermaidprashadi"], "cg_mermaidprashadi", "tall" ))
     gallery_items.append(GalleryItem("Suspicion", ["cg_thiokabedon"],"cg_thiokabedon", "wide" ))
     gallery_items.append(GalleryItem("The Negotiation", ["cg_cetusoffice"], "cg_cetusoffice", "wide"))
-    gallery_items.append(GalleryItem("A Photo", ["cg_jorunnfamily"], "cg_jorunnfamily", "wide"))
+    gallery_items.append(GalleryItem("A Little Square", ["cg_jorunnfamily"], "cg_jorunnfamily", "wide"))
 
 #gallery idle border?
 image idleLG = ("images/gallery/idleLG.png")

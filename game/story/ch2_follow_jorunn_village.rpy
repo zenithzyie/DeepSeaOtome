@@ -611,7 +611,7 @@ label jorshouse:
         show fruit1:
             zoom 0.2
             align (0.5, 0.5)
-            pos (0.52, 0.57)
+            pos (0.50, 0.51)
         with dissolve
         "This is a nice, well-rounded meal."
         $ speaking_char = "Unna"
@@ -878,6 +878,7 @@ label jorshouse:
         y "Well...you could say I've had enough fish to last me a lifetime."
 
 
+    $ speaking_char = "None"
     #MEAL END
 #    hide text
     ny neutral "I take a bite of the food."
@@ -909,6 +910,7 @@ label jorshouse:
     y veryhappy "Hehe."
 
     show jorunn smile
+    show unna happy
 
     unna happy "You know, Parvy is usually pretty shy. I guess she's taken a liking to you!"
 

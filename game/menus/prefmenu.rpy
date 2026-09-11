@@ -20,6 +20,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("Resume", style ="main_menu_imagebutton_text")
                     idle_foreground Text("Resume", style ="main_menu_imagebutton_text")
+                    activate_sound None
                     action Return()
                     at customzoom
 
@@ -27,6 +28,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("History", style ="main_menu_imagebutton_text")
                     idle_foreground Text("History", style ="main_menu_imagebutton_text")
+                    activate_sound None
                     action ShowMenu("history")
                     at customzoom
 
@@ -34,6 +36,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("Save", style ="main_menu_imagebutton_text")
                     idle_foreground Text("Save", style ="main_menu_imagebutton_text")
+                    activate_sound None
                     action ShowMenu("save")
                     at customzoom
 
@@ -41,6 +44,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("Load", style ="main_menu_imagebutton_text")
                     idle_foreground Text("Load", style ="main_menu_imagebutton_text")
+                    activate_sound None
                     action ShowMenu("load")
                     at customzoom
 
@@ -48,6 +52,7 @@ screen prefs_menu():
                     auto "gui/button/mainside_%s.png"
                     hover_foreground Text("Settings", style ="main_menu_imagebutton_text")
                     idle_foreground Text("Settings", style ="main_menu_imagebutton_text")
+                    activate_sound None
                     action [ShowMenu("preferences"),ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
                     at customzoom
 
@@ -56,6 +61,7 @@ screen prefs_menu():
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("End Replay", style ="main_menu_imagebutton_text")
                         idle_foreground Text("End Replay", style ="main_menu_imagebutton_text")
+                        activate_sound None
                         action EndReplay(confirm=True)
                         at customzoom
 
@@ -64,6 +70,7 @@ screen prefs_menu():
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
                         idle_foreground Text("Main Menu", style ="main_menu_imagebutton_text")
+                        activate_sound None
                         action MainMenu()
                         at customzoom
 
@@ -75,6 +82,7 @@ screen prefs_menu():
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("Quit", style ="main_menu_imagebutton_text")
                         idle_foreground Text("Quit", style ="main_menu_imagebutton_text")
+                        activate_sound None
                         action Quit(confirm=not main_menu)
                         at customzoom
 
@@ -115,12 +123,14 @@ screen preferences():
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("System", style ="main_menu_imagebutton_text")
                         idle_foreground Text("System", style ="main_menu_imagebutton_text")
+                        activate_sound None
                         action [ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
                         at customzoom
                     imagebutton:
                         auto "gui/button/mainside_%s.png"
                         hover_foreground Text("Audio", style ="main_menu_imagebutton_text")
                         idle_foreground Text("Audio", style ="main_menu_imagebutton_text")
+                        activate_sound None
                         action [ShowMenu("sub_menu_audio"), Hide("sub_menu_text"), Hide("help"), Hide("credits")]
                         at customzoom
                     if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
@@ -129,6 +139,7 @@ screen preferences():
                             auto "gui/button/mainside_%s.png"
                             hover_foreground Text("Help", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Help", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action [ShowMenu("help"), Hide("sub_menu_text"), Hide("sub_menu_audio"), Hide("credits")]
                             at customzoom
                         #textbutton _("Help") action ShowMenu("help")
@@ -169,6 +180,7 @@ screen sub_menu_text():
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Window", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Window", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action Preference("display", "window")
                             at customzoomsmall
                         #textbutton _("Fullscreen") action Preference("display", "fullscreen")
@@ -176,6 +188,7 @@ screen sub_menu_text():
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Fullscreen", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action Preference("display", "fullscreen")
                             at customzoomsmall
 
@@ -190,18 +203,21 @@ screen sub_menu_text():
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Unseen Text", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action Preference("skip", "toggle")
                             at customzoomsmall
                         imagebutton:
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("After Choices", style ="main_menu_imagebutton_text")
                             idle_foreground Text("After Choices", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action Preference("after choices", "toggle")
                             at customzoomsmall
                         imagebutton:
                             auto "gui/button/blue_%s.png"
                             hover_foreground Text("Transitions", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Transitions", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action InvertSelected(Preference("transitions", "toggle"))
                             at customzoomsmall
                         #textbutton _("Unseen Text") action Preference("skip", "toggle")
@@ -231,6 +247,7 @@ screen sub_menu_text():
                                 auto "gui/button/blue_%s.png"
                                 hover_foreground Text("Speech Pauses", style ="main_menu_imagebutton_text")
                                 idle_foreground Text("Speech Pauses", style ="main_menu_imagebutton_text")
+                                activate_sound None
                                 action ToggleField(persistent,"speech_pauses")
                                 at customzoomsmall
                             null width 10
@@ -320,6 +337,7 @@ screen sub_menu_audio():
                             auto "gui/button/menu_%s_background.png"
                             hover_foreground Text("Mute All", style ="main_menu_imagebutton_text")
                             idle_foreground Text("Mute All", style ="main_menu_imagebutton_text")
+                            activate_sound None
                             action Preference("all mute", "toggle")
                             at customzoom
                             #style "mute_all_button"

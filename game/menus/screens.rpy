@@ -104,10 +104,12 @@ screen charnameinput():
 
 style rtn_btn_button:
     properties gui.button_properties("choice_button")
+    #activate_sound "audio/sfx_choiceClick.ogg"
     xalign 0.5
 
 style rtn_btn_button_text:
     properties gui.button_properties("choice_button")
+    #activate_sound "audio/sfx_choiceClick.ogg"
     xalign 0.5
     size 20
 
@@ -120,17 +122,19 @@ screen choice(items):
     vbox:
         for i in items:
             if i.caption == "Return.":
-                null height 40               
+                null height 40
                 textbutton i.caption action i.action:
                     idle_background Frame("gui/button/choice_return_idle_background.png", 0, 0)
                     hover_background  Frame("gui/button/choice_return_hover_background.png", 0, 0)
+                    activate_sound "audio/sfx_choiceClick.ogg"
                     xalign 0.5
                     text_size 20
                     xsize 250
                     ysize 50
             else:
-                textbutton i.caption action i.action
-            
+                textbutton i.caption action i.action:
+                    activate_sound "audio/sfx_choiceClick.ogg"
+
 
 ################################################################################
 ## Quick Menu screen ###########################################################
@@ -246,6 +250,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
         auto "gui/button/blue_%s.png"
         hover_foreground Text("Return", style ="main_menu_imagebutton_text")
         idle_foreground Text("Return", style ="main_menu_imagebutton_text")
+        #activate_sound "audio/sfx_choiceClick.ogg"
         action Return()
         at customzoomsmall
 
@@ -331,6 +336,7 @@ screen game_menu_prefs(title, scroll=None, yinitial=0.0, spacing=0):
         auto "gui/button/blue_%s.png"
         hover_foreground Text("Return", style ="main_menu_imagebutton_text")
         idle_foreground Text("Return", style ="main_menu_imagebutton_text")
+        #activate_sound "audio/sfx_choiceClick.ogg"
         if main_menu:
                 action ShowMenu("main_menu")
         else:

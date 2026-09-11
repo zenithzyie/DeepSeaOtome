@@ -26,7 +26,7 @@ transform clickonme:
     xpos 1040
     ypos 489
     zoom 0.7
-#transform that the logo does on main menu
+#transform for the star achievement
 ######################################################################
 #Protagonist + Narrator Names
 define y = Character("[player_name]", image="june", ctc="ctc_pos", ctc_position="fixed", namebox_background=Frame("gui/namebox_june.png", 0, 0))
@@ -106,6 +106,17 @@ default fish = 0
 default looked_through = False
 default addfood = 0
 default snoop = False
+default oldladyinfo = False
+default kidsinfo = False
+default fishmongerinfo = False
+default visitedalley = False
+default bass = False
+default halibut = False
+default notbuyfish = False
+default saiditlouder = False
+default talktotext = "Talk to..."
+default askedaround = "Hmm..."
+default knowslocation = "Go look elsewhere."
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()

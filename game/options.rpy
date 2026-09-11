@@ -50,6 +50,8 @@ define config.has_sound = True
 define config.has_music = True
 define config.has_voice = False
 
+#Skips sound effects if player is skipping
+define config.skip_sounds = True
 ## Additional Sound Channels below
 
 init python:

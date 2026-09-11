@@ -136,6 +136,7 @@ label chapter1:
     menu:
         ny happy "Take a picture of..."
         "The seaside view.":
+            pause 0.5
             play sound "audio/sfx_cameraShutter.ogg" volume 1.0
             show camera with irisin
             hide camera with dissolve
@@ -148,6 +149,7 @@ label chapter1:
             hide photo_aquantis1 with dissolve
 
         "The town buildings.":
+            pause 0.5
             play sound "audio/sfx_cameraShutter.ogg" volume 1.0
             show camera with irisin
             hide camera with dissolve
@@ -179,7 +181,6 @@ label chapter1:
     show bg shabby market:
         fit "contain"
     play ambience "audio/sfx_crowdAquantis.ogg" volume 0.9 loop
-    #make this a more occasional/easygoing market sfx
     ny neutral "After wandering for awhile, I find myself at a market."
     ny happy "There's more people here. And more to look at, as well."
     menu:
@@ -231,24 +232,18 @@ label chapter1:
     ny happy "After looking around, it seems like the townsfolk are friendlier here."
 
     "Perhaps they can help me find Grandfather's address."
-    $ oldladyinfo = False
-    $ kidsinfo = False
-    $ fishmongerinfo = False
-    $ visitedalley = False
-    $ bass = False
-    $ halibut = False
-    $ saiditlouder = False
-    $ talktotext = "Talk to..."
+
 label marketpuzzle:
-    hide black with fade
+#    hide black with fade
     show bg shabby market:
         fit "contain"
+    with fade
     menu marketstart:
-        ny neutral "Hmm..."
-        "Ask around." if not oldladyinfo and not kidsinfo and not fishmongerinfo:
+        ny neutral "[ askedaround ]"
+        "Ask around." if not (oldladyinfo and kidsinfo and fishmongerinfo):
             jump talktownsfolk
 
-        "Go look elsewhere.":
+        "[ knowslocation ]":
             if oldladyinfo:
                 jump seasaltalley
 
@@ -259,38 +254,39 @@ label marketpuzzle:
     menu talktownsfolk:
         ny happy "[ talktotext ]"
         "Elderly Woman" if not oldladyinfo:
-            $ oldladyinfo = True
             "There's an elderly woman browsing the vegetable stand."
             "She has a kindly look about her."
-            y "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
+            y happy "Good day to you, ma'am. I apologize for the disruption, but could I trouble you for directions?"
             woman "O' course, dearie. Where you headin'?"
             "I show her the address on the letter."
             woman "Oh my, are you sure? Aquantis has some better places to see. We've a real pretty beachside."
-            "Can she tell I'm not a local?"
-            y "Oh, well, I'm looking for my grandfather. This is the only address I have."
+            ny shocked "Can she tell I'm not a local?"
+            y happy "Oh, well, I'm looking for my grandfather. This is the only address I have."
             "She squints at the paper."
             woman "Why, this says Finch on it. So you're Herman's granddaughter, are you?"
             y "I am! Do you know him?"
             woman "Everybody knows everybody 'round here, dearie. Why, I was there when your grandparents got married!"
             woman "He was quite the looker back in the day. Hoho!"
-            y "Really?"
+            y shocked "Really?"
             "Huh. It sure is a small world."
-            woman "Try goin' {color=#f2b950}west{/color} 'til you reach the end of the alley."
+            woman neutral "Try goin' {color=#f2b950}west{/color} 'til you reach the end of the alley."
             woman "You'll find what you're lookin' for there."
-            y "I see. Thank you for your help!"
+            y happy "I see. Thank you for your help!"
             woman "Don't be a stranger now!"
+            $ oldladyinfo = True
+            $ knowslocation = "Go to the west alley."
             if oldladyinfo and kidsinfo and fishmongerinfo:
                 $ talktotext = "..."
+                $ askedaround = "I think I know what to do now."
 
             jump talktownsfolk
 
         "Children playing" if not kidsinfo:
-            $ kidsinfo = True
             y "Hey, there! Do you know where I could find this area?"
             energetickid "I win! I get to be the mermaid hunter now!"
             playfulkid "You cheated! It's still my turn."
 
-            y "Excuse me?"
+            y neutral "Excuse me?"
             "The kids seem busy playing their game."
 
             energetickid "No way! Last time when we were playing, I got grounded because of you, so it should be my turn!"
@@ -298,16 +294,16 @@ label marketpuzzle:
             energetickid "But you're the one you kept {color=#f2b950}knocking{/color} the ball against {color=#f2b950}the wall!{/color}"
             playfulkid "How was I supposed to know the grown-ups would get mad at us for that! It's a stupid wall!"
             "The kids begin squabbling with one another."
-            y "Oh dear..."
+            y nervous "Oh dear..."
             "I don't think I'll be getting any directions from them."
+            $ kidsinfo = True
             if oldladyinfo and kidsinfo and fishmongerinfo:
                 $ talktotext = "..."
+                $ askedaround = "I think I know what to do now."
 
             jump talktownsfolk
 
         "Fishmonger" if not fishmongerinfo:
-            $ notbuyfish = False
-            $ fishmongerinfo = True
             "A fishmonger mans his stand while reading a newspaper. His signboard reads 'Four copper per fish.'"
             y "Good day to you sir. I'm sorry for disrupting you, but-"
             fishmonger "Bass or halibut?" with screenShake
@@ -342,7 +338,6 @@ label marketpuzzle:
                     with dissolve
 
                 "I'm not looking to buy fish right now.":
-                    $ notbuyfish = True
                     y shocked "Could you please help me with the directions to-"
                     fishmonger "Do I look like a map stand? I sell fish. Ya buy fish, then we'll talk, ya get it?"
                     "Clearly, the only language merchants speak is money..."
@@ -383,8 +378,10 @@ label marketpuzzle:
 
             y shocked "{i}FIVE SIL{/i}- {w=0.3}no, that's quite alright, thank you." with screenShake
             "There's a limit to my coinpurse, Mr. Fishmonger!"
+            $ fishmongerinfo = True
             if oldladyinfo and kidsinfo and fishmongerinfo:
                 $ talktotext = "..."
+                $ askedaround = "I think I know what to do now."
 
             jump talktownsfolk
         "Return.":
@@ -412,12 +409,12 @@ label seasaltalley:
     if kidsinfo:
         "Those kids earlier mentioned something about knocking on the wall. Maybe...?"
         menu nokidknock:
-            "Knock on wall":
+            "Knock on the wall.":
                 "..."
-                "This doesn't seem right. I must be missing something."
-                "Maybe I should ask around some more."
+                ny frustrated "This doesn't seem right. I must be missing something."
+                ny neutral "Maybe I should ask around some more."
                 jump marketpuzzle
-            "Go back.":
+            "Return.":
                 jump marketpuzzle
 
     if fishmongerinfo:
@@ -445,12 +442,12 @@ label seasaltalley:
                         "The passerby shakes their head at me and continues walking."
                         "This is getting embarrassing. I should go ask around some more."
                         jump marketpuzzle
-                    "Go back.":
+                    "Return.":
                         "Maybe I should go around and ask some more..."
                         show black with fade
                         jump marketpuzzle
-            "Go back":
-                show black with fade
+            "Return.":
+                #show black with fade
                 jump marketpuzzle
 
     else:
@@ -459,7 +456,7 @@ label seasaltalley:
         else:
             "I'm not sure what to do...Maybe I should go ask around some more."
         "I go back to the market."
-        show black with dissolve
+        #show black with dissolve
         jump marketpuzzle
 
 label knocking:
