@@ -35,7 +35,7 @@ transform cg_fit:
     fit "contain"
     xalign 0.5
 
-#FOR ZOOM FUNTIONALITY 
+#FOR ZOOM FUNTIONALITY
 default zoomnum = 1.0 #default zoom
 default zoom_max = 2.0 #zoom maximum
 define zoom_min = 1.0 #zoom minimum
@@ -61,6 +61,8 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
     zorder 10
     imagebutton:
         idle ("gui/game_menu.png")
+        activate_sound None
+        hover_sound None
         action Hide("gallery_closeup", dissolve)
         at cg_fit
     viewport id "vp":
@@ -74,15 +76,17 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
                 add images.images:
                     xalign 0.5
                     at cg_zoomable
-    viewport id "vp":   
+    viewport id "vp":
         hbox:
-            xsize 1280     
+            xsize 1280
             ysize 720
             imagebutton:
                 style "return_button"
                 auto "gui/button/blue_%s.png"
                 hover_foreground Text("Return", style ="main_menu_imagebutton_text")
                 idle_foreground Text("Return", style ="main_menu_imagebutton_text")
+                activate_sound "audio/sfx_choiceClick.ogg"
+                hover_sound "audio/sfx_choiceHover.ogg"
                 action (Hide("gallery_closeup", dissolve))
                 at customzoomsmall
 
@@ -90,7 +94,7 @@ screen gallery_closeup(images): #shows full sized image as a button on top of ev
     key "mousedown_4" action (Function(zoom_in), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomin, images))
     key "mousedown_5" action (Function(zoom_out), Hide("gallery_closeup", dissolve), Show("gallery_closeup", zoomout, images))
 
-#FOR ZOOM FUNTIONALITY 
+#FOR ZOOM FUNTIONALITY
 init python:
     maxnumx = 4
     maxnumy = 4

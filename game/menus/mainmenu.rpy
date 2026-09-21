@@ -38,24 +38,28 @@ screen titleMainMenu():
                 auto "startbutton_%s"
                 hover_foreground Text("Start", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Start", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action Start()
 
             imagebutton:
                 auto "loadbutton_%s"
                 hover_foreground Text("Load", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Load", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action ShowMenu("load")
 
             imagebutton:
                 auto "albumbutton_%s"
                 hover_foreground Text("Album", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Album", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action ShowMenu("gallery_B")
 
             imagebutton:
                 auto "achievementsbutton_%s"
                 hover_foreground Text("Achievements", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Achievements", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action ShowMenu("achievement_gallery")
 
 
@@ -63,6 +67,7 @@ screen titleMainMenu():
                 auto "settingsbutton_%s"
                 hover_foreground Text("Settings", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Settings", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action [ShowMenu("preferences"), ShowMenu("sub_menu_text"), ShowMenu("sub_menu_text"), Hide("sub_menu_audio"), Hide("help"), Hide("credits")]
 
         if _in_replay:
@@ -77,6 +82,7 @@ screen titleMainMenu():
                 auto "quitbutton_%s"
                 hover_foreground Text("Quit", style ="main_menu_imagebutton_text1", color ="#66a3e0")
                 idle_foreground Text("Quit", style ="main_menu_imagebutton_text1")
+                #activate_sound None
                 action Quit(confirm=not main_menu)
 
 screen main_menu():
@@ -89,6 +95,8 @@ screen main_menu():
     imagebutton:
         idle "images/clickme.png"
         hover "images/clickme.png"
+        activate_sound None
+        hover_sound None
         action Function(clickedme.grant)
         at clickonme
 
@@ -97,6 +105,7 @@ screen main_menu():
             auto "gui/button/mainside_%s.png"
             hover_foreground Text("News", style ="main_menu_imagebutton_text")
             idle_foreground Text("News", style ="main_menu_imagebutton_text")
+            hover_sound None
             action OpenURL("https://zenithzyie.itch.io/hearts-depth/devlog")
             xalign 0.105
             yalign 0.95
@@ -175,6 +184,7 @@ style main_menu_button:
 style main_menu_button_text:
     properties gui.text_properties("navigation_button")
     activate_sound "audio/sfx_choiceClick.ogg"
+    hover_sound "audio/sfx_choiceHover.ogg"
     xalign 0.5
     xpos 0.5
     idle_color "#fff"
@@ -183,6 +193,7 @@ style main_menu_button_text:
 
 style image_button:
     activate_sound "audio/sfx_choiceClick.ogg"
+    hover_sound "audio/sfx_choiceHover.ogg"
 
 style main_menu_imagebutton_text1:
     properties gui.text_properties("navigation_button")

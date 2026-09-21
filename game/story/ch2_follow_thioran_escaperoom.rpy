@@ -240,7 +240,7 @@ label ch2_castle_escaperoom:
                 "Return.":
                     jump escapebegin
 
-        "Bribe the guard" if coinpurse == True:
+        "Bribe the guard." if coinpurse == True:
                 if not bribeguard:
                     play sound "audio/sfx_coinpurse.ogg" volume 0.2
                     "The coinpurse jingles faintly in my bag."

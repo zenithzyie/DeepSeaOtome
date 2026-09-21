@@ -48,6 +48,8 @@ screen gallery_B():
                                 idle_foreground "idleLG"
                                 idle gallery_items[i].locked
                                 hover_foreground "hoverimgLG"
+                                activate_sound None
+                                hover_sound None
                                 action NullAction()
                                 at imageThumb
                             #will show "Unlock" + Name of the CG
@@ -63,6 +65,8 @@ screen gallery_B():
                                 idle_foreground "idleLG"
                                 idle "thumb_" + gallery_items[i].thumbname
                                 hover_foreground "hoverimgLG"
+                                activate_sound None
+                                hover_sound None
                                 action (Show("gallery_closeup", dissolve, gallery_items[i]), Function(reset_zoom), Function(set_zoom, gallery_items[i].sizing))
                                 at imageThumb
                             #show name of CG
