@@ -3,39 +3,35 @@
 While running game code:
   File "game/story/script.rpy", line 68, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1642, in script call
+  File "game/story/script.rpy", line 1640, in script call
     call ch1_followprince from _call_ch1_followprince
-  File "game/story/ch1_follow_prince.rpy", line 75, in script
-    if settleback:
-  File "game/story/ch1_follow_prince.rpy", line 75, in <module>
-    if settleback:
-       ^^^^^^^^^^ 
-NameError: name 'settleback' is not defined
+  File "game/story/ch1_follow_prince.rpy", line 303, in script call
+    call ch2_followthio from _call_ch2_followthio
+  File "game/story/ch2_follow_thioran_beginning.rpy", line 504, in script call
+    call ch2_castle_escaperoom from _call_ch2_castle_escaperoom
+  File "game/story/ch2_follow_thioran_escaperoom.rpy", line 611, in script
+Exception: Could not find return label ('game/story/ch2_follow_thioran_escaperoom.rpy', 410653526, 444).
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
   File "game/story/script.rpy", line 68, in script call
     call chapter1 from _call_chapter1
-  File "game/story/script.rpy", line 1642, in script call
+  File "game/story/script.rpy", line 1640, in script call
     call ch1_followprince from _call_ch1_followprince
-  File "game/story/ch1_follow_prince.rpy", line 75, in script
-    if settleback:
-  File "renpy/ast.py", line 2089, in execute
-    if renpy.python.py_eval(condition):
-       ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/python.py", line 1308, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1301, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/story/ch1_follow_prince.rpy", line 75, in <module>
-    if settleback:
-       ^^^^^^^^^^ 
-NameError: name 'settleback' is not defined
+  File "game/story/ch1_follow_prince.rpy", line 303, in script call
+    call ch2_followthio from _call_ch2_followthio
+  File "game/story/ch2_follow_thioran_beginning.rpy", line 504, in script call
+    call ch2_castle_escaperoom from _call_ch2_castle_escaperoom
+  File "game/story/ch2_follow_thioran_escaperoom.rpy", line 611, in script
+  File "renpy/ast.py", line 1710, in execute
+    next_node(renpy.game.context().lookup_return(pop=True))
+              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^ 
+  File "renpy/execution.py", line 812, in lookup_return
+    raise Exception("Could not find return label {!r}.".format(self.return_stack[-1]))
+Exception: Could not find return label ('game/story/ch2_follow_thioran_escaperoom.rpy', 410653526, 444).
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.3.26051504
 HeartsDepthDEMO 4.0
-Sun Aug 30 21:03:10 2026
+Wed Sep 30 21:00:57 2026
