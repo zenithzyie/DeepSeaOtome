@@ -117,6 +117,8 @@ default saiditlouder = False
 default talktotext = "Talk to..."
 default askedaround = "Hmm..."
 default knowslocation = "Go look elsewhere."
+default mural = False
+default keystone = False
 ######################################################################
 #Various Variables 2: Electric Boogaloo
 default menuset = set()
