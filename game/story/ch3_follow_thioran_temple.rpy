@@ -15,7 +15,7 @@ label ch3_office_temple:
         ypos 60
     with dissolve
 
-    c "There's a temple located a short distance away from the city. You can start your search there."
+    c mermaid neutral "There's a temple located a short distance away from the city. You can start your search there."
 
     c "Take my nephew with you. He will know the way."
 
@@ -25,7 +25,9 @@ label ch3_office_temple:
 
     c "Still, he is the only one who knows about your involvement with the siren. I'd like it to remain that way."
 
-    c "But I'll warn you to keep our little deal to yourself. If my nephew learns about your true nature, things will only become more troublesome."
+    c "But I'll warn you to keep our little deal to yourself."
+
+    c "If my nephew learns about your true nature, things will only become more troublesome."
 
     y "...I understand."
 
@@ -83,9 +85,9 @@ label ch3_office_temple:
         fit "contain"
     with dissolve
 
-    show thioran neutral at thioran_center with dissolve
+    show thioran frown at thioran_center with dissolve
 
-    y mermaid veryhappy "Oh! Good morning, Prince Thioran."
+    y mermaid neutral "Oh! Good morning, Prince Thioran."
 
     play music "audio/music/13 Beatiful Reflections.ogg" fadein 1.0 volume 0.8
 
@@ -95,7 +97,7 @@ label ch3_office_temple:
 
     y "I'll be in your care today."
 
-    p "...I told you that I'd be keeping an eye on you. If you try to pull any of your tricks today, I'll know." 
+    p "...I told you that I'd be keeping an eye on you. If you try to pull any of your tricks today, I'll know."
 
     y "I won't cause any trouble, I promise you."
 
@@ -105,7 +107,8 @@ label ch3_office_temple:
 
     scene bg sea:
         fit "contain"
-    with dissolve
+    with fade
+    show thioran frown at thioran_center with dissolve
 
     "He leads me out of the city, keeping a quick and determined pace."
 
@@ -114,10 +117,11 @@ label ch3_office_temple:
     ny mermaid nervous "Is there anything I could say to break the ice?"
 
     menu:
-        "\"I've never stayed in the capital before. My room is very nice.\"":
+        "\"I've never stayed in the capital before.\"":
+            y happy "My room is very nice."
             p "You're not visiting for some leisure trip,{i} [y] Finch{/i}. You'd do well to remember that."
             y flustered "Yes, of course. I know..."
-            "He doesn't have to say my name like it's some kind of curse!"
+            ny nervous "He doesn't have to say my name like it's some kind of curse!"
 
         "\"Did you sleep well?\"":
             p "..."
@@ -127,7 +131,9 @@ label ch3_office_temple:
         "\"...\"":
             "I'd better not. He really doesn't look like he wants to talk."
 
-    "We continue to swim along without a word.  Eventually, we arrive at an old building."
+    "We continue to swim along without a word."
+
+    "Eventually, we arrive at an old building."
 
     y "Oh, is this it?"
 
@@ -139,7 +145,7 @@ label ch3_office_temple:
 
     p "Save your thanks for the King Regent. I am only here to escort you by his will."
 
-    #(tiny text) 
+    #(tiny text)
     p "{size=*0.8}...Though I doubt we'll find any trace of the siren this close to the city.{/size}"
 
     "Traces of the siren? So that's what Cetus told him we're looking for..."
@@ -160,7 +166,7 @@ label ch3_office_temple:
 
     y mermaid shocked "Oh, wow...How beautiful."
 
-    "This place must have been rather important, once. But now, all I can feel is a strange and inexplicable sadness. We must be the first visitors in a long time." 
+    "This place must have been rather important, once. But now, all I can feel is a strange and inexplicable sadness. We must be the first visitors in a long time."
 
     ny nervous "I wish I could take a picture, but I'd better not take my camera out in front of the prince."
 
@@ -170,6 +176,7 @@ label ch3_office_temple:
 
     "Let's see... Cetus did tell me the relic could be anything."
 
+label statuepuzzlestart:
     menu:
         "Where should I start looking?"
     #After the first choice "Where should I look next?"
@@ -229,14 +236,14 @@ label ch3_office_temple:
             y "Wow...that's incredible. I had no idea there was a story like that."
 
             menu:
-                "Could anyone learn magic like Maris did?": 
+                "Could anyone learn magic like Maris did?":
                     #(+1 Cetus)
                     $ cetus_points += 1
                     p "No. Magic died out ages ago. Only a few remain who still practice it, but that."
                     y "I see..."
                     y "Well that's unfortunate."
 
-                "Is Lumina your ancestor?": 
+                "Is Lumina your ancestor?":
                     #(+1 Thio)
                     $ prince_points += 1
                     p "Yes. It is the duty of her descendants to be the guiding light of the sea."
@@ -247,7 +254,7 @@ label ch3_office_temple:
 
             "Everyone up on land would never believe mermaids have a kind of history like this."
 
-            #If Festival Asked is False:  
+            #If Festival Asked is False:
             p "It'd do you well to remember it this time. The coming festival is a celebration of our founding day."
             y shocked "I see."
 
@@ -259,6 +266,7 @@ label ch3_office_temple:
             y veryhappy "Thank you for explaining it to me, Prince Thioran!"
 
             p "..."
+            jump statuepuzzlestart
 
         "Look at statue":
         #If murals is False:
@@ -288,6 +296,7 @@ label ch3_office_temple:
                         y "Oh, nothing! Haha... Just paying my respects."
                         p "By trying to break her? Cease that immediately."
                         "Okay, so that didn't work. Maybe I should go look around some more."
+                        jump statuepuzzlestart
 
             #If no keystone + mural:
                     if keystone == False and mural == True:
@@ -299,14 +308,15 @@ label ch3_office_temple:
                         y "{i}Huh?{/i}" with screenShake
                         y "Oh no! I was just...just, dusting her off!"
                         p "..."
-                        "The prince looks rather perturbed." 
+                        "The prince looks rather perturbed."
                         "I must be missing something. I should go look around some more."
+                        jump statuepuzzlestart
 
             #If keystone is True:
                     if keystone == True:
                         "Maybe I could do something with this gem I found?"
             #(Keystone) Choice:
-                        menu:  
+                        menu:
                             "Use the stone on the statue..."
 
                             "In her eye.":
@@ -314,23 +324,24 @@ label ch3_office_temple:
                                 "..."
                                 "It kind of looks like she's wearing an eyepatch."
                                 "As pretty as her eyes may have been, I don't think this would quite fit."
+                                jump statuepuzzlestart
 
                             "In her hand.":
                                 "I place it in the palm of her outstretched hand."
                                 "Won't you accept this, miss?"
                                 "Nothing happens."
                                 "Hmm. That's not right."
+                                jump statuepuzzlestart
 
             #If murals is True:
-                        #if mural == True:
-                            #"In her chest.":
-                                #"There's a small divot in the statue's chest."
-                                #"I carefully place the stone inside."
-                                #jump to puzzle finished
+                            "In her chest." if mural:
+                                "There's a small divot in the statue's chest."
+                                "I carefully place the stone inside."
+                                jump statuepuzzlefinished
 
                 "Come back to it.":
                     "I think I'll look at this  later..."
-
+                    jump statuepuzzlestart
 
         "Look at plant life":
             "This place really feels unattended. There's vegetation everywhere."
@@ -352,7 +363,7 @@ label ch3_office_temple:
                     $keystone = True
                     "I swim closer to get a better look. This plant is blooming with dozens of pale blue flowers."
                     "I reach out to touch one and notice something nestled beneath all the foliage."
-                    "It feels warm to the touch." 
+                    "It feels warm to the touch."
                     "I feel oddly drawn to it."
                     "Could this be the relic?"
                     "But why didn't Cetus just get it himself? Maybe there's more to it...{w}I'd better keep looking for now."
@@ -363,12 +374,15 @@ label ch3_office_temple:
                     p "This is an old temple. There are many stones here."
                     y "Well...that's true."
                     "Still, it can't hurt to hold onto it."
+                    jump statuepuzzlestart
 
                 "Stay here.":
                     "Let me go look at the other things first."
                     "I'll come back to this later."
+                    jump statuepuzzlestart
 
     #When June finishes the puzzle:
+label statuepuzzlefinished:
     "The stone fits perfectly."
     "The stone starts glowing, emitting a bright blue light."
     y "Oh!"

@@ -53,9 +53,6 @@ label enter_name:
 
     call screen charnameinput with dissolve
 
-    #$player_name = renpy.input("What is your name?", default = "June", length=15)
-    #this is the old player name code for reference
-
     $player_name.strip
 
     if player_name == "":
@@ -237,7 +234,8 @@ label marketpuzzle:
 #    hide black with fade
     show bg shabby market:
         fit "contain"
-    with fade
+    if oldladyinfo or kidsinfo or fishmongerinfo:
+        with fade
     menu marketstart:
         ny neutral "[ askedaround ]"
         "Ask around." if not (oldladyinfo and kidsinfo and fishmongerinfo):
