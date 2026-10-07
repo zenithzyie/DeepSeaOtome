@@ -77,15 +77,16 @@ label ch1_followprince:
     else:
         pass
 
-#zoom broken bc of new bg size
-#    window auto hide
-#    scene bg_marislumina:
-#        xalign 0.5
-#        subpixel True
-#        zoom 1.05
-#        linear 1.75 zoom 1.0
-#    with dissolve
-#    with Pause(1.75)
+#zoom 
+    window auto hide
+    scene bg_marislumina:
+        fit "contain"
+        xalign 0.5
+        subpixel True
+        zoom 1.05
+        linear 1.75 zoom 1.0
+    with dissolve
+    with Pause(1.75)
 
     play music bgm_capital volume 0.8
     scene bg_marislumina day:
