@@ -972,7 +972,7 @@ label jorshouse:
             hide camera with dissolve
             show black:
                 alpha 0.35
-            show photo_black at atphoto
+            show photo_jorfamily at atphoto
             show jorunn shocked
             show unna shocked
             show parvy shocked
@@ -990,7 +990,7 @@ label jorshouse:
 
     "This is incredible! I never thought I'd be taking photos underwater."
 
-    hide photo_black
+    hide photo_jorfamily
     hide black
     with dissolve
 

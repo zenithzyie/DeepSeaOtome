@@ -240,6 +240,7 @@ label ch2_followthio:
     menu:
         "Should I say something...?"
         "\"Is there a festival happening soon?\"":
+            $ askedaboutfestival = True
             p "Of course there is. Do not make a mockery of me."
             y flustered "Oh, right."
             y "I'm sorry. It must have slipped my mind."

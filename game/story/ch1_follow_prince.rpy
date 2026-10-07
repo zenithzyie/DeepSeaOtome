@@ -96,10 +96,7 @@ label ch1_followprince:
 
     "This must be where the mermaids live. It's beautiful."
 
-    "I wonder how they built this underwater? I can only imagine how long it took."
-
     "If only I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
-
 
     show thioran frown at thioran_center
     with dissolve
@@ -111,8 +108,12 @@ label ch1_followprince:
 
     "Now that we're alone, the prince relaxes his hands around me."
 
+    show thioran soft
+    with dissolve
     up "You're safe now. The storm can't reach us in the city."
 
+    show thioran frown
+    with dissolve
     up "How did you end up here? Did you get separated from your school?"
 
     y "Blub..."
@@ -129,7 +130,7 @@ label ch1_followprince:
     menu:
         "Maybe I should try saying something..."
         "\"Hello? Can you hear me...?\"":
-            y "Blub{w} blub...?"
+            y "Blub...{w=0.2}blub...?"
 
         "\"A siren did this to me!\"":
             y "Blub blub blub!"
@@ -137,12 +138,16 @@ label ch1_followprince:
         "\"HELP ME!!!\"":
             y "BLUB BLUB!!!" with screenShake
 
+    show thioran shocked
+    with dissolve
     up "Is something the matter?"
 
     up "Are you sick? Injured?"
 
     "...Apparently not."
 
+    show thioran frown
+    with dissolve
     "The prince inspects me carefully."
 
     up "Hold still for a moment."
@@ -268,11 +273,11 @@ label ch1_followprince:
     c "What an interesting little thing."
     p "What do you see, Uncle?"
     c "Where did you find her?"
-    p "...By the outskirts. She swam up to me when the storm began." 
-    c "Well, you've always had a knack for finding curious things." 
+    p "...By the outskirts. She swam up to me when the storm began."
+    c "Well, you've always had a knack for finding curious things."
     c  "This fish is cursed."
-    "That's right! Thank goodness he can tell." 
-    "If only I hadn't fallen for that sea witch's music..." 
+    "That's right! Thank goodness he can tell."
+    "If only I hadn't fallen for that sea witch's music..."
     p "Cursed? How could that...?"
     p "Is there anything you can do?"
     c "Possibly. You may wish to swim back, Prince Thioran."

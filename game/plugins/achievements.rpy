@@ -172,6 +172,19 @@ define finished_demo_jor = Achievement(
     hide_name=True,
     hide_description=True,
 )
+
+define inlanders = Achievement(
+    ## The human-readable name, as it'll appear in the popup and in the gallery.
+    name=_("Inlanders..."),
+    id="inlanders",
+    ## Description.
+    description=_("It's okay. I appreciate your rhymes."),
+    unlocked_image="gui/ach/chibi_june.png",
+    locked_image=AlphaMask("blackmask", At("gui/ach/chibi_june.png")),
+    hide_name=True,
+    hide_description=True,
+)
+
 define knockknock = Achievement(
     ## The human-readable name, as it'll appear in the popup and in the gallery.
     name=_("ALRIGHT ALREADY"),
@@ -291,24 +304,6 @@ transform achievement_popout():
 ## way to display the various information.
 screen achievement_gallery():
     tag menu
-
-#    add VBox(Transform("#1d2847", ysize=110), "#131b31") # Background
-#    add "images/bgs/bg drowning.jpg" size (1280, 720)
-    # add "bgs/bg drowning.jpg":
-    #     fit "contain"
-    #     alpha 0.7
-#    add HBox(Transform("#1d2847", xsize=800)):
-#        alpha 0.5
-#    add Solid("#1d2847"):
-#        alpha 1
-
-#    add "gui/game_menu.png":
-#        alpha 0.8
-#        #xsize 820
-#        fit "contain"
-#        xpos -425
-
-#    add Solid("#1d2847", xysize = (742,100))
     use game_menu(("Achievements: ") + "{earned}/{total}".format(
                 earned=Achievement.num_earned(), total=Achievement.num_total())):
     ############################################################################
@@ -389,19 +384,6 @@ screen achievement_gallery():
                                         style_suffix "progress_text"
             ## So there's a bit of space at the bottom after scrolling all the way.
             #null height 10
-
-        ## A header that shows how many achievements you've earned, out of
-        ## the total number of achievements in the game. Feel free to remove
-        ## or relocate this.
-        # label __("Achievements: ") + "{earned}/{total}".format(
-        #         earned=Achievement.num_earned(), total=Achievement.num_total()):
-        #     text_size 52 xalign 0.5 ypos 10 text_color "#fff" top_padding 15
-
-        ## This is an example of a button you might have during development which
-        ## will reset all achievement progress at once. It can also be provided
-        ## to players if you'd like them to be able to reset their achievement
-        ## progress.
-        # textbutton "Reset All" action Achievement.Reset() align (1.0, 0.0)
 
 style achievement_button:
     size_group 'achievement'

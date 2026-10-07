@@ -117,6 +117,7 @@ default saiditlouder = False
 default talktotext = "Talk to..."
 default askedaround = "Hmm..."
 default knowslocation = "Go look elsewhere."
+default askedaboutfestival = False
 default mural = False
 default keystone = False
 ######################################################################

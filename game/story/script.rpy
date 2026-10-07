@@ -178,7 +178,7 @@ label chapter1:
     show bg shabby market:
         fit "contain"
     play ambience "audio/sfx_crowdAquantis.ogg" volume 0.9 loop
-    ny neutral "After wandering for awhile, I find myself at a market."
+    ny neutral "After wandering for a while, I find myself at a market."
     ny happy "There's more people here. And more to look at, as well."
     menu:
         "My eyes are drawn to..."
@@ -429,16 +429,18 @@ label seasaltalley:
                 y "..."
                 "There is no response."
                 "A passerby stops to give me a strange look."
-                "I feel a bit awkward now."
+                ny nervous "I feel a bit awkward now."
                 y "......"
                 menu:
                     "Say it louder.":
                         $ saiditlouder = True
-                        y "Five, three, four- please open the door!!!" with screenShake
-                        "There is no response at first, but..."
+                        y shocked "Five, three, four- please open the door!!!" with screenShake
+                        ny neutral "There is no response at first, but..."
                         person "Inlanders..."
+                        $ inlanders.grant()
                         "The passerby shakes their head at me and continues walking."
-                        "This is getting embarrassing. I should go ask around some more."
+                        ny flustered "This is getting embarrassing."
+                        ny frustrated "I should go ask around some more..."
                         jump marketpuzzle
                     "Return.":
                         "Maybe I should go around and ask some more..."
@@ -1004,13 +1006,15 @@ label timeskip1:
 
     y "It's been a while since I last went shopping for fish."
 
+    ny neutral "Well, besides the fish I was forced to buy the other day."
+
     show grandpa happy with dissolve
-    g "Don't ye worry, little birdie. I know my way around the markets."
+    g happy "Don't ye worry, little birdie. I know my way around the markets."
 
     show hunter neutral with dissolve
     h "There any fish you got in mind?"
 
-    y veryhappy "I have no idea. Whatever tastes good, I suppose."
+    y veryhappy "Whatever tastes good, I suppose."
 
     g happy "Ye ain't really tasted fish till yer out at sea. There's all kinds."
 

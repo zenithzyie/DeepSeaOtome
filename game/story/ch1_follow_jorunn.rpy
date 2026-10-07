@@ -6,6 +6,7 @@ label ch1_followjorunn:
     hide screen notify2
     hide thioran angry with moveoutleft
     show jorunn neutral at Position(xpos=0.52) with move
+    $ config.side_image_tag = "june"
     "The thief seems to know his way around. Maybe he can get me out of this mess."
     "Alright, [y]! It's now or never!"
     "With all the might I can muster, I push my way through the current towards him."
