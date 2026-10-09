@@ -226,7 +226,7 @@ label ch2_castle_escaperoom:
                             with dissolve
                             jump checkdresser
 
-                        "Return.":
+                        "Return":
                             if (coinpurse and hairpin and letter):
                                 ny neutral "It seems like I've searched through everything here."
                             else:
@@ -239,7 +239,7 @@ label ch2_castle_escaperoom:
                             show bg palace guestroom:
                                 pos (0, 0) zoom 1.0
                             jump escapebegin
-                "Return.":
+                "Return":
                     jump escapebegin
 
         "Bribe the guard." if coinpurse == True:
