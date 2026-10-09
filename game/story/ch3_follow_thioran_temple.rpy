@@ -148,7 +148,7 @@ label ch3_office_temple:
 
     p "Yes."
 
-    "It reminds me of the drawings of ancient mausoleums in my father’s books."
+    "It reminds me of the drawings of ancient mausoleums in my father's books."
 
     y "Thank you for guiding me here."
 
@@ -167,7 +167,7 @@ label ch3_office_temple:
 
     play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.5
 
-    "It opens slowly, like it’s been sealed shut for a long time, and I follow him inside."
+    "It opens slowly, like it's been sealed shut for a long time, and I follow him inside."
 
     #SCENE CHANGE - TEMPLE INTERIOR
 

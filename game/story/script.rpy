@@ -425,7 +425,7 @@ label seasaltalley:
         "Maybe I can use it here somehow?"
 
         menu nocodeinput:
-            "Say the code":
+            "Say the code.":
                 y "Five...three, four?"
                 y "..."
                 "There is no response."
@@ -1643,13 +1643,13 @@ label timeskip1:
 
     menu:
         "What do I do...?"
-        "Follow Striking Prince":
+        "Follow Striking Prince.":
             $ prince_points += 1
             call ch1_followprince from _call_ch1_followprince
-        "Follow Thieving Merman":
+        "Follow Thieving Merman.":
             $ jorunn_points += 1
             call ch1_followjorunn from _call_ch1_followjorunn
-        "Find another way" if antimermaid >= 1:
+        "Find another way." if antimermaid >= 1:
             jump ch1_badend1
 
 label ch1_badend1:

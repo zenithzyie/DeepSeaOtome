@@ -262,11 +262,11 @@ label ch1_followprince:
             "I'd better hold still. Maybe he can help me return to normal?"
 
         "Look back.":
+            #(+1 thio)
+            $ prince_points += 1
             "I glance back over at Prince Thioran. He gives me the slightest of nods."
             show thioran soft with dissolve
             p "It's alright."
-            #(+1 thio)
-            $ prince_points += 1
             "Well, if the prince says it's fine..."
             show thioran frown with dissolve
 

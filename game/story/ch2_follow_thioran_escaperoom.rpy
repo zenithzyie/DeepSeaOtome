@@ -148,7 +148,7 @@ label ch2_castle_escaperoom:
                     menu checkdresser:
                         set menuset
                         ny neutral "Let's see..."
-                        "Letter.":
+                        "Letter":
                             $ letter = True
                             show black:
                                 alpha 0.7
@@ -185,7 +185,7 @@ label ch2_castle_escaperoom:
                             y "I think I'll leave this here..."
                             jump checkdresser
 
-                        "Hairpin.":
+                        "Hairpin":
                             $ hairpin = True
                             show black:
                                 alpha 0.5
@@ -205,7 +205,7 @@ label ch2_castle_escaperoom:
                             with dissolve
                             jump checkdresser
 
-                        "Small bag.":
+                        "Small bag":
                             $ coinpurse = True
                             "I spy a small bag tucked in the back of the drawer."
                             play sound "audio/sfx_coinpurse.ogg" volume 0.4
