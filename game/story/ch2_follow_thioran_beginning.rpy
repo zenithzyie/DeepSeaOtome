@@ -58,11 +58,14 @@ label ch2_followthio:
 
     c "I see. How curious."
 
+    show thioran angry
     p "This has to be some kind of trick. Did you plan all of this to get inside the castle? Were you sent here as a spy?"
 
     y "I, ah-"
 
     c "Save your frustrations, Prince Thioran. She knows she must explain herself."
+
+    show thioran frown
 
     "He stares pointedly at me."
 
@@ -92,12 +95,14 @@ label ch2_followthio:
 
     ny nervous "I'd better keep that part to myself. I don't know what they'll do if they find out what I really am."
 
+    show thioran shocked
     p "A siren..."
 
     c "Then our suspicions are correct. Another Student has indeed appeared."
 
     ny neutral "A student? What is he talking about?"
 
+    show thioran perturbed
     p "Damn it. Then this '[y]' is lucky to have made it here alive."
 
     c "She is quite lucky, indeed. These continuous storms are becoming deadlier, and our people grow weary."
@@ -105,7 +110,7 @@ label ch2_followthio:
     c "Some have even resorted to theft."
 
     #(show thio grumpier face)
-#    show thioran with dissolve
+    show thioran frown
     p "..."
 
 #    show thioran with dissolve
@@ -154,6 +159,7 @@ label ch2_followthio:
 
     "For just a moment, his eyes meet mine."
 
+    stop music fadeout 2.5
     c "I hear humans have been sailing further from their shores as of late."
 
     play sound "audio/sfx_heavyDoorClose.ogg" fadeout 2.0 volume 0.5
@@ -165,7 +171,7 @@ label ch2_followthio:
         fit "contain"
     show thioran frown at thioran_center
     with dissolve
-
+    play music bgm_skyllaCave volume 0.8
     $ speaking_char = "all"
     ny mermaid shocked "The prince stays silent as we swim away, but the uneasy feeling doesn't leave me."
 
@@ -179,13 +185,14 @@ label ch2_followthio:
 
     y "Yes, of course..."
 
+    stop music fadeout 2.5
     "No, I've got to stay calm. {w}Just keep swimming, [y]."
 
     scene bg palace hallway:
         fit "contain"
     show thioran frown at thioran_center
     with fade
-
+    play music bgm_capital volume 0.8
     "..."
     "..."
 
@@ -361,8 +368,8 @@ label ch2_followthio:
             show photo_guestroom1 at atphoto
             with dissolve
             ny shocked "A photo pops out from the top of the camera."
-            y neutral "It's lit up like a lamp, but surely it can't be using fire or electricity."
-            y "I wonder if it's powered by magic?"
+            y "It's lit up like a lamp, but surely it can't be using fire or electricity."
+            y neutral "I wonder if it's powered by magic?"
             hide photo_guestroom1 with dissolve
 
 
@@ -375,8 +382,8 @@ label ch2_followthio:
             show photo_guestroom2 at atphoto
             with dissolve
             ny shocked "A photo pops out from the top of the camera."
-            y neutral "The star in the center is so eye-catching."
-            y "I remember seeing the same shape earlier too. Does it mean something?"
+            y "The star in the center is so eye-catching."
+            y neutral "I remember seeing the same shape earlier too. Does it mean something?"
 
             hide photo_guestroom2 with dissolve
 

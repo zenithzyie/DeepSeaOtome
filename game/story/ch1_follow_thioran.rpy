@@ -1,7 +1,7 @@
 
 #BRANCH - FOLLOW THIORAN
 #pro and anti mermaid don't matter here
-label ch1_followprince:
+label ch1_followthioran:
     hide screen notify2
     hide jorunn glee with moveoutright
     show thioran at Position(xpos=0.45)
@@ -11,13 +11,24 @@ label ch1_followprince:
     "Alright, [y]! It's now or never!"
     "With all the might I can muster, I push my way through the current towards him."
 
+#    show thioran angry:
+#        subpixel True
+#        pos (0.13, 1.13) zoom 1.0
+#        linear 0.36 pos (0.38, 1288) zoom 2.0
+#    with Pause(0.46)
+#    show thioran angry:
+#        pos (0.38, 1288) zoom 2.0
+
+
     show thioran angry:
-        subpixel True
-        pos (0.45, 730) zoom 1.0
-        linear 0.36 pos (0.38, 1288) zoom 2.0
+        subpixel True xzoom 1.0
+        pos (0.45, 1.13) zoom 1.0
+        linear 0.36 pos (0.42, 1.63) zoom 1.6
     with Pause(0.46)
     show thioran angry:
-        pos (0.38, 1288) zoom 2.0
+        pos (0.42, 1.63) zoom 1.6
+    window auto show
+
 
     #SCREEN SHAKE
 
@@ -36,7 +47,7 @@ label ch1_followprince:
 
     guard "Your Highness? Is something the matter?"
 
-    show thioran frown with dissolve
+    show thioran neutral with dissolve
     up "No. It's nothing."
 
     "With a surprising amount of gentleness, he tucks me close to his body."
@@ -77,7 +88,7 @@ label ch1_followprince:
     else:
         pass
 
-#zoom 
+#zoom
     window auto hide
     scene bg_marislumina:
         fit "contain"
@@ -99,7 +110,7 @@ label ch1_followprince:
 
     "If only I could capture this sight in a photo! No one on land would ever believe such a place exists down here."
 
-    show thioran frown at thioran_center
+    show thioran neutral at thioran_center
     with dissolve
     up "Go on ahead to make a report on the storm. I shall return to the palace shortly."
 
@@ -109,7 +120,7 @@ label ch1_followprince:
 
     "Now that we're alone, the prince relaxes his hands around me."
 
-    show thioran soft
+    show thioran smile
     with dissolve
     up "You're safe now. The storm can't reach us in the city."
 
@@ -147,7 +158,7 @@ label ch1_followprince:
 
     "...Apparently not."
 
-    show thioran frown
+    show thioran neutral
     with dissolve
     "The prince inspects me carefully."
 
@@ -156,6 +167,9 @@ label ch1_followprince:
     "He gently pulls something from my fins."
 
     "Is that...crystal? It must have come from the siren's cave."
+
+    show thioran frown
+    with dissolve
 
     up "..."
 
@@ -201,7 +215,7 @@ label ch1_followprince:
     $ speaking_char = "all"
     show cetus neutral at cetus_right:
         xzoom -1
-    show thioran frown at thioran_left
+    show thioran neutral at thioran_left
     with dissolve
 
     show cetus shocked with dissolve
@@ -209,6 +223,7 @@ label ch1_followprince:
 
     ucetus "Prince Thioran! Where have you been?"
 
+    show thioran frown
     p "Uncle Cetus. It has been a long day. You will have to forgive my impropriety."
 
     "Uncle? Does this mean that he's royalty too?"
@@ -265,7 +280,7 @@ label ch1_followprince:
             #(+1 thio)
             $ prince_points += 1
             "I glance back over at Prince Thioran. He gives me the slightest of nods."
-            show thioran soft with dissolve
+            show thioran smile with dissolve
             p "It's alright."
             "Well, if the prince says it's fine..."
             show thioran frown with dissolve

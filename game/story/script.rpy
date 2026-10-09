@@ -1612,7 +1612,7 @@ label timeskip1:
     uj "...But if the shell fits!"
     up "You thieving little-"
 
-    show thioran shocked at jumpin2
+    show thioran shocked at jumpin
     show jorunn hesitant at jumpin
     $ speaking_char = "all"
     with vpunch

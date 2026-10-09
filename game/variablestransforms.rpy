@@ -115,7 +115,7 @@ layeredimage thioran:
     attribute base default
 
     group expressions auto:
-        attribute frown default
+        attribute neutral default
 
 #    group eyes auto:
 #        attribute neutral default
