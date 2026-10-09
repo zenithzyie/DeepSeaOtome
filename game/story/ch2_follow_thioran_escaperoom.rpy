@@ -603,8 +603,8 @@ label cetus_office:
 
     c "An excellent choice. Now, here is what you must do..."
 
-    #$ finished_demo_thio.grant()
+    $ finished_demo_thio.grant()
 
-    #jump endofdemo
+    jump endofdemo
 
-    call ch3_office_temple from _call_ch3_office_temple
+    #call ch3_office_temple from _call_ch3_office_temple

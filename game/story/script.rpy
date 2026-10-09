@@ -382,7 +382,7 @@ label marketpuzzle:
                 $ askedaround = "I think I know what to do now."
 
             jump talktownsfolk
-        "Return.":
+        "Return":
             jump marketpuzzle
 
     "It seems I have spoken to everyone I can in the area."
@@ -408,11 +408,12 @@ label seasaltalley:
         "Those kids earlier mentioned something about knocking on the wall. Maybe...?"
         menu nokidknock:
             "Knock on the wall.":
+                play sound "audio/sfx_knocking3.ogg" volume 0.5
                 "..."
                 ny frustrated "This doesn't seem right. I must be missing something."
                 ny neutral "Maybe I should ask around some more."
                 jump marketpuzzle
-            "Return.":
+            "Return":
                 jump marketpuzzle
 
     if fishmongerinfo:
@@ -438,15 +439,15 @@ label seasaltalley:
                         ny neutral "There is no response at first, but..."
                         person "Inlanders..."
                         $ inlanders.grant()
-                        "The passerby shakes their head at me and continues walking."
-                        ny flustered "This is getting embarrassing."
+                        ny flustered "The passerby shakes their head at me and continues walking."
+                        "This is getting embarrassing."
                         ny frustrated "I should go ask around some more..."
                         jump marketpuzzle
-                    "Return.":
+                    "Return":
                         "Maybe I should go around and ask some more..."
                         show black with fade
                         jump marketpuzzle
-            "Return.":
+            "Return":
                 #show black with fade
                 jump marketpuzzle
 
@@ -455,7 +456,6 @@ label seasaltalley:
             "I'm still not sure what to do...I should go ask around some more."
         else:
             "I'm not sure what to do...Maybe I should go ask around some more."
-        "I go back to the market."
         #show black with dissolve
         jump marketpuzzle
 
@@ -489,9 +489,11 @@ label knocking:
             $ knocking += 1
             jump knocking
         "5":
+            play sound "audio/sfx_knocking5.ogg" volume 0.5
             menu:
                 "Next was..."
                 "3":
+                    play sound "audio/sfx_knocking3.ogg" volume 0.5
                     menu:
                         "And finally..."
                         "3":
@@ -500,6 +502,7 @@ label knocking:
                             $ knocking += 1
                             jump knocking
                         "4":
+                            play sound "audio/sfx_knocking4.ogg" volume 0.5
                             jump afterknocking
                         "5":
                             ny frustrated "Was that it? Nothing is happening."
@@ -521,9 +524,11 @@ label knockwhatever:
     ny nervous "After a few attempts, I'm fairly certain I've forgotten the code."
     y "..."
     y frustrated "Whatever!"
+    play sound "audio/sfx_knocking5.ogg" volume 0.5
+    play sound "audio/sfx_knocking4.ogg" volume 0.5
+    play sound "audio/sfx_knocking3.ogg" volume 0.5
     "I knock on the wall repeatedly in frustration, with no rhyme or reason!" with screenShake
     y "..."
-    $ knockknock.grant()
 
 label afterknocking:
     "There is no response at first, but..."
@@ -534,6 +539,7 @@ label afterknocking:
     scene bg black
     with slideawayright
     ny shocked "The brick wall suddenly pulls back."
+    $ knockknock.grant()
     "With cautionary steps, I move inside."
     $ config.side_image_tag = "None"
 
@@ -1008,7 +1014,7 @@ label timeskip1:
 
     ny neutral "Well, besides the fish I was forced to buy the other day."
 
-    show grandpa happy with dissolve
+    show grandpa happy
     g happy "Don't ye worry, little birdie. I know my way around the markets."
 
     show hunter neutral with dissolve

@@ -123,7 +123,7 @@ screen choice(items):
 
     vbox:
         for i in items:
-            if i.caption == "Return.":
+            if i.caption == "Return":
                 null height 40
                 textbutton i.caption action i.action:
                     idle_background Frame("gui/button/choice_return_idle_background.png", 0, 0)
