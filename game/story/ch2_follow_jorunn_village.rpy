@@ -722,7 +722,7 @@ label jorshouse:
         with dissolve
         ny neutral "I've made a bowl filled with fruit."
         hide plate
-        hide fillet1
+        hide fish1
         hide fruit1
         hide fruit2
         with dissolve

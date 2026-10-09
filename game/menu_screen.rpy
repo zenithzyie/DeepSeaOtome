@@ -30,12 +30,12 @@ init python:
             self.menu_height = menu_height
 
         def predict(self):
-            renpy.predict_screen("_alternate_menu", self.button_list, 
+            renpy.predict_screen("_alternate_menu", self.button_list,
                 menu_width=self.menu_width, menu_height=self.menu_height, style_prefix=self.style_prefix, _transient=True)
 
         def __call__(self):
 
-            renpy.show_screen("_alternate_menu", self.button_list, 
+            renpy.show_screen("_alternate_menu", self.button_list,
                 menu_width=self.menu_width, menu_height=self.menu_height, style_prefix=self.style_prefix, _transient=True)
             renpy.restart_interaction()
 

@@ -19,7 +19,7 @@ label ch2_followthio:
     if not renpy.seen_image("cg_mermaidcetus"):
         show cg_mermaidcetus:
             pos (0.5, 2.64) zoom 0.34
-        play sound "audio/sfx/sfx_memoryTrigger.ogg" volume 1.0
+        play sound "audio/sfx_memoryTrigger.ogg" volume 1.0
         $ renpy.notify("A new CG has been unlocked in the gallery.")
     else:
         show cg_mermaidcetus:

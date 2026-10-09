@@ -1651,7 +1651,7 @@ label timeskip1:
         "What do I do...?"
         "Follow Striking Prince.":
             $ prince_points += 1
-            call ch1_followprince from _call_ch1_followprince
+            call ch1_followthioran from _call_ch1_followthioran
         "Follow Thieving Merman.":
             $ jorunn_points += 1
             call ch1_followjorunn from _call_ch1_followjorunn
