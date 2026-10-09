@@ -96,6 +96,8 @@ image chibi_thio = ("gui/ach/chibi_thio.png")
 image chibi_cetus = ("gui/ach/chibi_cetus.png")
 image chibi_jor = ("gui/ach/chibi_jor.png")
 
+#prop images
+image stormposter = ("images/props/poster.png")
 image halibutfish = ("images/props/fish_halibut.png")
 image bassfish = ("images/props/fish_bass.png")
 image fangirlsletter = ("images/props/fangirl_letter.png")

@@ -185,19 +185,25 @@ label chapter1:
         "The newsboard":
             $ seastorm = True
             "There's a board filled with notices and posters here."
-            y neutral "Beware of sudden storms..."
             show black:
                 alpha 0.7
-            show text "{i}Deadly sea storms can strike without rhyme or reason. {p}{w}Use caution when traveling without seasoned sailors.{p}{w}{/i}":
-                align (0.5,0.5)
+            show stormposter:
+                zoom 0.23
+                xalign 0.5
+                ypos 0.16
             with dissolve
-            pause
+            y neutral "Beware of sudden storms..."
+            #"Huh. Deadly sea storms can strike without rhyme or reason. Use caution when traveling without seasoned sailors..."
+            #show text "{i}Deadly sea storms can strike without rhyme or reason. {p}{w}Use caution when traveling without seasoned sailors.{p}{w}{/i}":
+            #    align (0.5,0.5)
+            #with dissolve
+            #pause
             t "Those storms aren't something to mess with. Stay safe if you're heading out to sea, missy!"
-            hide black
-            hide text
-            with dissolve
             y happy "I will. Thank you!"
-            "The man walks off, and I browse over a few more posters before turning away."
+            hide black
+            hide stormposter
+            with dissolve
+            ny neutral "The man walks off, and I browse over a few more posters before turning away."
 
 
         "Children playing in the street":

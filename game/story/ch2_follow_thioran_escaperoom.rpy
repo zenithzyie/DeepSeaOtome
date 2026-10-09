@@ -21,7 +21,7 @@ label ch2_castle_escaperoom:
                 $ lookedatwindow = True
                 "It's difficult to see through the stained glass. Does it lead outside of the castle?"
                 "There's no handle on the window, but there's a small gap between the glass and the wall."
-                "If I had something thin, maybe I could pry it open."
+                "If I had {color=#f2b950}something thin{/color}, maybe I could pry it open."
             if lookedatwindow:
                 pass
 
@@ -63,7 +63,7 @@ label ch2_castle_escaperoom:
                             pos (0, 0) zoom 1.0
                         jump escapebegin
                 "Not yet...":
-                    "I shouldn't be too reckless. I only have one chance at escaping."
+                    "I shouldn't be so reckless. I should keep looking around."
                     show bg palace guestroom: #zoom out window
                         subpixel True
                         pos (-630, -100) zoom 1.49
@@ -135,7 +135,7 @@ label ch2_castle_escaperoom:
                     show bg palace guestroom:
                         pos (-1680,-770) zoom 2.35
                     "I open the dresser."
-                    if coinpurse and hairpin:
+                    if (coinpurse and hairpin and letter):
                         "It seems like I've searched through everything here."
                         show bg palace guestroom: #zoom out dresser
                             subpixel True
@@ -146,10 +146,8 @@ label ch2_castle_escaperoom:
                             pos (0, 0) zoom 1.0
                         jump escapebegin
                     menu checkdresser:
-                        set menuset
                         ny neutral "Let's see..."
-                        "Letter":
-                            $ letter = True
+                        "Letter" if not letter:
                             show black:
                                 alpha 0.7
                             show fangirlsletter:
@@ -182,11 +180,11 @@ label ch2_castle_escaperoom:
                             y flustered "Oh!"
                             "The rest of the letter is filled with the fantasies of a young noble woman."
                             play sound "audio/sfx_stoneDrawerClose.ogg" volume 0.8
+                            $ letter = True
                             y "I think I'll leave this here..."
                             jump checkdresser
 
-                        "Hairpin":
-                            $ hairpin = True
+                        "Hairpin" if not hairpin:
                             show black:
                                 alpha 0.5
                             show hairpin:
@@ -198,15 +196,15 @@ label ch2_castle_escaperoom:
                             with dissolve
                             ny neutral "There's what appears to be an ornate hairpin resting inside the dresser."
                             y happy "How beautiful. Did it belong to the last person who stayed here?"
-                            ny neutral "The pointy end is rather thin. Maybe I can use this for something?"
+                            ny neutral "The pointy end is rather {color=#f2b950}thin{/color}. Maybe I can use this for something?"
+                            $ hairpin = True
                             "I'll keep it in my bag for now."
                             hide black
                             hide hairpin
                             with dissolve
                             jump checkdresser
 
-                        "Small bag":
-                            $ coinpurse = True
+                        "Small bag" if not coinpurse:
                             "I spy a small bag tucked in the back of the drawer."
                             play sound "audio/sfx_coinpurse.ogg" volume 0.4
                             show black:
@@ -218,17 +216,21 @@ label ch2_castle_escaperoom:
                                 ypos 176
                                 #ypos 156 for larger
                             with dissolve
-                            "There's some gold and silver shells inside. This looks like somebody's coinpurse."
+                            "There's some gold and silver shells inside. This looks like somebody's {color=#f2b950}coinpurse{/color}."
                             "Do mermaids barter the same way humans do?"
                             "I'll hold onto this for now."
+                            $ coinpurse = True
                             ny shocked "I hope the previous guest doesn't come looking for it..."
                             hide black
                             hide coinpurse
                             with dissolve
                             jump checkdresser
 
-                        "Return." if coinpurse and hairpin:
-                            ny neutral"It seems like I've searched through everything here."
+                        "Return.":
+                            if (coinpurse and hairpin and letter):
+                                ny neutral "It seems like I've searched through everything here."
+                            else:
+                                ny neutral "I'll come back to this later."
                             show bg palace guestroom: #zoom out dresser
                                 subpixel True
                                 pos (-1680,-770) zoom 2.35
